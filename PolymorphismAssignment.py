@@ -1,4 +1,5 @@
 
+
 #Parent Class StarTrek TOS
 class StarTrekBlue:
     creator = 'Gene Roddenberry'
@@ -60,3 +61,4 @@ if __name__ == "__main__":
    
     uberfan = StarTrekYellow()
     uberfan.getTickets()
+
