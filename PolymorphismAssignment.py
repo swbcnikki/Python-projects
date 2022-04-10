@@ -20,7 +20,7 @@ class StarTrekBlue:
 
             
 #Child Class StarTrek TNG
-class StarTrekRed:
+class StarTrekRed(StarTrekBlue):
     TNG_captain = 'Jean-Luc Picard'
     TNG_vessel = 'USS Enterprise D'
     TNG_security_chief = 'Worf son of Mogh'
@@ -28,7 +28,7 @@ class StarTrekRed:
     def getTickets(self):
         enter_TNG_captain = input('Name of TNG captain: ')
         enter_TNG_vessel = input('Name of TNG vessel: ')
-        enter_TNG_security_chief = ('Full name of TNG Chief of Security: ')
+        enter_TNG_security_chief = input('Full name of TNG Chief of Security: ')
         if (enter_TNG_captain == self.TNG_captain and enter_TNG_vessel == self.TNG_vessel and enter_TNG_security_chief == self.TNG_security_chief):
             print('\nYou win tickets to TrekkieCon level 2!\n')
         else:
@@ -36,7 +36,7 @@ class StarTrekRed:
 
 
 #Child Class StarTrek DS9
-class StarTrekYellow:
+class StarTrekYellow(StarTrekBlue):
     DS9_captain = 'Benjamin Sisko'
     DS9_vessel = 'USS Defiant'
     DS9_setting = 'Space Station'
