@@ -201,7 +201,7 @@ def onUpdate(self):
             count = cur.fetchone()[0]
             print(count)
             cur.execute("""SELECT COUNT(col_email) FROM tbl_phonebook WHERE col_email = '{}'""".format(var_email))
-            count = cur.fetchone()[0]
+            count2 = cur.fetchone()[0]
             print(count2)
             if count == 0 or count2 == 0: #If proposed changes are not already in the database, then proceed
                 response = messagebox.askokcancel('Update Request','The following changes ({}) and ({}) will be implemented for ({}). \n\nProceed with the update request?'.format(var_phone,var_email))
@@ -212,15 +212,15 @@ def onUpdate(self):
                         cursor.execute("""UPDATE tbl_phonebook SET col_phone = '(0)',col_email = '(1)' WHERE col_fullname = '(2)'""".format(var_phone,var_email))
                         onClear(self)
                         conn.commit()
-                    else:
-                        messagebox.showinfo('Cancel request','No changes have been made to ({}).'.format(var_value))
                 else:
-                    messagebox.showinfo('No changes detected','Both({}) and ({}) \nalready exist in the database for this name. \n\nYour update request has been cancelled.'.format(var_phone,var_email))
-                onClear(self)
-            conn.close()
-        else:
-            messagebox.showerror('Missing information','Please select a name from the list. \nThen edit the phone or email information.')
-        onClear(self)    
+                    messagebox.showinfo('Cancel request','No changes have been made to ({}).'.format(var_value))
+            else:
+                messagebox.showinfo('No changes detected','Both({}) and ({}) \nalready exist in the database for this name. \n\nYour update request has been cancelled.'.format(var_phone,var_email))
+            onClear(self)
+        conn.close()
+    else:
+        messagebox.showerror('Missing information','Please select a name from the list. \nThen edit the phone or email information.')
+    onClear(self)    
                                         
    
    
