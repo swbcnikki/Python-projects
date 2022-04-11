@@ -19,7 +19,6 @@ def load_gui(self):
     self.lbl_user = tk.Label(self.master, text='User:')
     self.lbl_user.grid(row=0, column=2, padx=(0,0), pady=(10,0), sticky=N+W)
 
-
     self.txt_fname = tk.Entry(self.master,text='')
     self.txt_fname.grid(row=1,column=0,rowspan=1,columnspan=2,padx=(30,40),pady=(0,0),sticky=N+E+W)
     self.txt_lname = tk.Entry(self.master,text='')

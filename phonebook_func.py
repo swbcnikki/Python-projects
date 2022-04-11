@@ -174,7 +174,7 @@ def onRefresh(self):
         i = 0
         while i < count:
             cursor.execute("""SELECT col_fullname FROM tbl_phonebook""")
-            varList = cursor.fetchall()[1]
+            varList = cursor.fetchall()[i]
             for item in varList:
                 self.lstList1.insert(0,str(item))
                 i = i + 1
