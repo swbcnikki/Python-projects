@@ -31,9 +31,9 @@ def ask_quit(self):
 def create_db(self):
     conn = sqlite3.connect('phonebook.db')
     with conn:
-        cur = conn.curser()
+        cur = conn.cursor()
         cur.execute("CREATE TABLE if not exists tbl_phonebook( \
-            ID INTERIOR PRIMARY KEY AUTOINCREMENT, \
+            ID INTEGER PRIMARY KEY AUTOINCREMENT, \
             col_fname TEXT, \
             col_lname TEXT, \
             col_fullname TEXT, \
