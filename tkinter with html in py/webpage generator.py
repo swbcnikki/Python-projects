@@ -1,4 +1,6 @@
-
+import tkinter as tk
+from tkinter import*
+import webbrowser
 
 f = open('myfile.html', 'w')
 
@@ -13,5 +15,5 @@ text = '''
 '''
 f.write(text)
 f.close()
-
+webbrowser.open_new_tab('myfiles.html')
 
