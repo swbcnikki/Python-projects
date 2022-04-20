@@ -2,7 +2,7 @@
 
 from tkinter import *
 import tkinter as tk
-from tkhtmlview import HTMLLabel
+import webbrowser
 
 
 class ParentWindow(Frame):
@@ -47,19 +47,20 @@ class ParentWindow(Frame):
       
         f = open('tkinterWebpage.html', 'w')
         
-        text = '''
+        text = ('''
             <html>
                 <body>
                     <h1>
-                    User: {self.txtName} said {self.txtSentence}
+                    User: {} said, {}
                     </h1>
                 </body>
             </html>
-        '''
+        ''').format(self.txtName.get(),self.txtSentence.get())
         f.write(text)
         f.close()
+        webbrowser.open_new_tab('tkinterWebpage.html')
                         
-             
+          
 
         
 
