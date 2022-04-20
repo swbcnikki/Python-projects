@@ -43,24 +43,21 @@ class ParentWindow(Frame):
         self.btnSubmit = Button(self.master, text='Submit', width=7, height=1, command=self.submit)
         self.btnSubmit.grid(row=3, column=1,padx=(0,0), pady=(30,0), sticky=NE)
 
-    def submit(self):
-        yn = self.varName.get()
-        ys = self.varSentence.get()
+    def submit(self):        
+      
+        f = open('tkinterWebpage.html', 'w')
         
-
-    f = open('tkinterWebpage.html', 'w')
-        
-    text = '''
-        <html>
-            <body>
-                <h1>
-                Today, {{}} wrote {{}}.format(yn,ys)
-                </h1>
-            </body>
-        </html>
-    '''
-    f.write(text)
-    f.close()
+        text = '''
+            <html>
+                <body>
+                    <h1>
+                    User: {self.txtName} said {self.txtSentence}
+                    </h1>
+                </body>
+            </html>
+        '''
+        f.write(text)
+        f.close()
                         
              
 
