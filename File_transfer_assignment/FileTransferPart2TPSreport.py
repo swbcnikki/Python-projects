@@ -38,6 +38,7 @@ source = '/Users/Bibo/Documents/GitHub/Python-Projects/Python-projects_in_Github
 
 def selectiveCopy(source, destination): #selects the specific files you want
     for i in files: #move the files represented by i
+        os.path.getmtime(source)
         if mtime<24: #if timestamp is less than 24 hours ago
             shutil.move(source+i, destination)
 
