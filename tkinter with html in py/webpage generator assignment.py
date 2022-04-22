@@ -22,16 +22,16 @@ class ParentWindow(Frame):
         self.master.title('Webpage Generator')
         self.master.config(bg='#FFA07A')
 
-        
+      
 #set the variables to string
         self.varName = StringVar()
         self.varSentence = StringVar()
 
         
-#create the label for the name
+        #create the label for the name
         self.lblName = Label(self.master, text='Your Name', font=('Ariel', 12), fg='white', bg='darkblue')
         self.lblName.grid(row=0, column=0,padx=(30,0), pady=(30,0))
-#create the label for the sentence
+        #create the label for the sentence
         self.lblSentence = Label(self.master, text='Your Sentence', font=('Ariel', 12), fg='white', bg='darkblue')
         self.lblSentence.grid(row=1, column=0,padx=(30,0), pady=(30,0))
 
@@ -70,8 +70,5 @@ class ParentWindow(Frame):
         
 
 
-if __name__=='__main__':
-    root = Tk()
-    App = ParentWindow(root)
-    root.mainloop()
+
 

@@ -1,2 +1,2 @@
-This is due everyday at noon with detailed reports 
-from the last 24 hours.
+Report is due everyday by noon with details of 
+all yesterday's transactions.
