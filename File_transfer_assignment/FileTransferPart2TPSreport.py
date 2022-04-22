@@ -4,6 +4,7 @@ import os
 from datetime import datetime, timedelta
 import tkinter as tk
 from tkinter import *
+from tkinter import filedialog as fd
 
 class ParentWindow(Frame):
     def __init__(self,master):
@@ -20,7 +21,6 @@ class ParentWindow(Frame):
         #set the variables to string
         self.varSource = StringVar()
         self.varDestination = StringVar()
-
 
 
         #label for the source file
@@ -43,38 +43,43 @@ class ParentWindow(Frame):
 
         self.btnBrowseD = Button(self.master, text='Browse', width=10,height=1,command=self.browseD)
         self.btnBrowseD.grid(row=1,column=4,padx=(0,0),pady=(30,0))
+      
 
-       
-
-        self.btnMove = Button(self.master, text='Move files', width=10, height=1, command=self.move)
+        self.btnMove = Button(self.master, text='Move files', width=10, height=1, command=self.selectiveCopy)
         self.btnMove.grid(row=2, column=1,padx=(0,0), pady=(30,0), sticky=NW)
 
         self.btnClose = Button(self.master, text='Close', width=10, height=1, command=self.close_window)
         self.btnClose.grid(row=2, column=3,padx=(0,0), pady=(30,0), sticky=NE)
 
-    def selectiveCopy(source, destination): #selects the specific files you want
-        x = datetime.datetime.now() #time right now
-        y = x - datetime.timedelta(hours=24) #time 24hours ago
-        for i in files: #move the files represented by i (i is the filename and extention)
-            timeStamp = os.path.getmtime(source) #evaluate the timestamp
+    def selectiveCopy(self): #selects the specific files you want
+        source = self.txtSource.get()
+        destination = self.txtDestination.get()
+        files = os.listdir(source)
+        for i in files:
+            filepath=os.path.join(source, i)
+            
+            x = datetime.now() #time right now
+            y = x - timedelta(hours=24) #time 24hours ago
+            modtime=os.path.getmtime(filepath)
+            datetimeOfFile=datetime.fromtimestamp(modtime)
+            if y < datetimeOfFile:
+                shutil.move(source + '/' + i, destination)
+                print(i + ' was transferred')
+           
 
     #browse button action
     def browseS(self):
-        #Peter has prepared the reports that go in a general folder with old and new files
-        source = '/Users/Bibo/Documents/GitHub/Python-Projects/Python-projects_in_Github/File_transfer_assignment/PeterGibbonsSends/'
+        sName=fd.askdirectory() #to access where the files are
+        self.txtSource.insert(0,sName)
+        print(sName)
+              
 
     def browseD(self):
-        #Bill is expecting to receive the report
-        destination = '/Users/Bibo/Documents/GitHub/Python-Projects/Python-projects_in_Github/File_transfer_assignment/BillLumberghreceives/'
-        files = os.listdir(source)        
-
-
-    #move files button
-    def move(self):
-        if timeStamp == y:
-            shutil.move(source+i, destination) #move those particular files
- 
-    
+        dName=fd.askdirectory() #to access where the files are
+        self.txtDestination.insert(0,dName)
+        print(dName)
+        
+            
     #close button
     def close_window(self):
         self.master.destroy() #close the tkinter
