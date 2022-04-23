@@ -1,4 +1,11 @@
 
+'''
+The point of this assignment is to create a GUI to allow the user to browse and choose a folder to move
+the files from, and populate the text box with said folder, browse and choose a folder to send the file
+to, and populate the text box with said folder. Also, a button to click and move the files successfully
+once the folders have been selected and a close button to close the screen
+'''
+
 import shutil
 import os
 from datetime import datetime, timedelta
@@ -13,8 +20,8 @@ class ParentWindow(Frame):
 
         #tkinter page parameters and name
         self.master = master
-        self.master.minsize(1000,500)
-        self.master.maxsize(1000,500)
+        self.master.minsize(700,250)
+        self.master.maxsize(700,250)
         self.master.title('File Transfer of TPS Reports')
         self.master.config(bg='#005C5C')
         
@@ -38,45 +45,47 @@ class ParentWindow(Frame):
         self.txtDestination.grid(row=1,column=1,sticky=tk.W,padx=(30,0), pady=(30,0))
 
         #create buttons
-        self.btnBrowseS = Button(self.master, text='Browse', width=10,height=1,command=self.browseS)
+        self.btnBrowseS = Button(self.master, text='Browse', width=10,height=1,fg='black',bg='#C4CED4',command=self.browseS)
         self.btnBrowseS.grid(row=0,column=4,padx=(0,0),pady=(30,0))
 
-        self.btnBrowseD = Button(self.master, text='Browse', width=10,height=1,command=self.browseD)
+        self.btnBrowseD = Button(self.master, text='Browse', width=10,height=1,fg='black',bg='#C4CED4',command=self.browseD)
         self.btnBrowseD.grid(row=1,column=4,padx=(0,0),pady=(30,0))
       
 
-        self.btnMove = Button(self.master, text='Move files', width=10, height=1, command=self.selectiveCopy)
+        self.btnMove = Button(self.master, text='Move files', width=10, height=1,fg='black',bg='#FFCC00', command=self.selectiveMove)
         self.btnMove.grid(row=2, column=1,padx=(0,0), pady=(30,0), sticky=NW)
 
-        self.btnClose = Button(self.master, text='Close', width=10, height=1, command=self.close_window)
+        self.btnClose = Button(self.master, text='Close', width=10, height=1,fg='white',bg='#D50032', command=self.close_window)
         self.btnClose.grid(row=2, column=3,padx=(0,0), pady=(30,0), sticky=NE)
 
-    def selectiveCopy(self): #selects the specific files you want
-        source = self.txtSource.get()
-        destination = self.txtDestination.get()
-        files = os.listdir(source)
+
+        #Move button code - this tells it what to do
+    def selectiveMove(self): #selects the specific files you want
+        source = self.txtSource.get() #locate the source folder
+        destination = self.txtDestination.get() #locate the destination folder
+        files = os.listdir(source) #files in the source folder
         for i in files:
-            filepath=os.path.join(source, i)
+            filepath=os.path.join(source, i) #full filepath that has the path(source) and the file with extension (i)
             
             x = datetime.now() #time right now
             y = x - timedelta(hours=24) #time 24hours ago
-            modtime=os.path.getmtime(filepath)
-            datetimeOfFile=datetime.fromtimestamp(modtime)
+            modtime=os.path.getmtime(filepath) #checks when the file was last modified. Was it within the 24hr window?
+            datetimeOfFile=datetime.fromtimestamp(modtime)#when file was modified last
             if y < datetimeOfFile:
-                shutil.move(source + '/' + i, destination)
-                print(i + ' was transferred')
+                shutil.move(source + '/' + i, destination) #source is the path, i is the file and its extension
+                print(i + ' was transferred') #response on shell to action taken
            
 
     #browse button action
     def browseS(self):
-        sName=fd.askdirectory() #to access where the files are
-        self.txtSource.insert(0,sName)
+        sName=fd.askdirectory() #to access the source folder
+        self.txtSource.insert(0,sName) #populates the text box with the file path
         print(sName)
               
 
     def browseD(self):
-        dName=fd.askdirectory() #to access where the files are
-        self.txtDestination.insert(0,dName)
+        dName=fd.askdirectory() #to access the destination folder
+        self.txtDestination.insert(0,dName) #populates the text box with the file path
         print(dName)
         
             
