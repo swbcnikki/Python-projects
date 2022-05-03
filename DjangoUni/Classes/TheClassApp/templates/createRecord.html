@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Class Registration{% endblock %}
+
+{% block header %}Create a new class:{% endblock %}
+
+{% block content %}
+    <div class="admin_panel">
+        <form method="POST" action="{% url 'createRecord' %}">
+            <div class="frmObject_container">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div class="frmBtn_container">
+                <input type="submit" class="btn" value="Create New Class" name="Save_Item">
+                <a href="{% url 'admin_console' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

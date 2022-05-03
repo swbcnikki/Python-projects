@@ -20,4 +20,5 @@ from . import views #file is within the main folder so only a . is required for 
 urlpatterns = [
     path('', views.home, name='home'), #if the user does not add a path extension eg admin, it takes them to the home page
     path('admin/', admin.site.urls),
+
 ]

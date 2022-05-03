@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be74a20d-81d4-46c9-8aae-bcafd2ade7ef" name="Changes" comment="" />
+    <list default="true" id="be74a20d-81d4-46c9-8aae-bcafd2ade7ef" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/Classes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Classes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/TheClassApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/TheClassApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/TheClassApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/TheClassApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/TheClassApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/TheClassApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/TheClassApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/TheClassApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PyDjNew/techproject/src/mainapp/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PyDjNew/techproject/src/mainapp/products/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +35,12 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bibo\Documents\GitHub\Python-Projects\Python-projects_in_Github\DjangoUni\Classes\TheClassApp\templates" />
+      <recent name="C:\Users\Bibo\Documents\GitHub\Python-Projects\Python-projects_in_Github\DjangoUni\Classes\templates" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
