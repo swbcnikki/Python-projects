@@ -27,7 +27,7 @@ def details(request, pk):
 def delete(request, pk):
     pk = int(pk)
     item = get_object_or_404(Product, pk=pk)
-    if request.method == 'POsT':
+    if request.method == 'POST':
         item.delete()
         return redirect('admin_console')
     context = {'item': item}
