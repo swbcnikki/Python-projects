@@ -1,0 +1,30 @@
+{% extends 'NoteTaking/NoteTaking_base.html' %}
+
+{% block title %} NoteTaking - Confirm Delete {% endblock title %}
+
+
+{% block content %}
+    <div class="notetaking_page_title">
+        <div class="notetaking_page_title">
+            <h1>Delete Note</u></h1>
+        </div>
+
+        <hr>
+
+        <div class="list_notes">
+            <form method="POST" action=".">
+                {% csrf_token %}
+                <h4>Are you sure you want to delete <u>{{ item.Title }}</u>?</h4>
+                <br>
+                <div>
+                    <input type="submit" value="Get rid of it!" class="btn btn-danger"/>-
+                    <button class="btn btn-dark">
+                        <a href="{% url 'NoteTaking_home' %}" style="color: white;">
+                            Cancel
+                        </a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

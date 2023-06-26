@@ -1,0 +1,19 @@
+{% extends 'ArtistTrack_base.html' %}
+{% block title %}Details{% endblock %}
+{% block header %}Playlist Details{% endblock %}
+{% block body %}
+
+<div class="container red-text at-opaque-container">
+    <form name="PlaylistForm" method="POST" action="">
+        <table class="table table-rsponsive">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+            <input class="btn btn-primary btn-block" type="submit" value="Save Changes">
+        </table>
+    </form>
+    <a href="./playlist_delete"><button class="btn btn-danger" >Delete Playlist From Library</button></a>
+    <a href="{% url 'at_library' %}"><button class="btn btn-secondary">Back to Library</button></a>
+</div>
+
+{% endblock %}

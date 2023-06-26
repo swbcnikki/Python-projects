@@ -1,0 +1,23 @@
+{% extends 'MoveState/movestate_base.html' %}
+
+{% block title %}MoveState{% endblock %}
+
+{% block header %}Edit:{% endblock %}
+
+{% block content %}
+
+<div class="adminBox">
+    <form name="MovesForm" method="POST">
+        <table>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_table }}
+        </table>
+        <div class="btnBox">
+            <input type="submit" class="btn" value="Change" name="addItem">
+            <button class="btn"><a href="{% url 'list_state' %}">Cancel</a></button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

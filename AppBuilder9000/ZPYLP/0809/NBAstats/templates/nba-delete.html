@@ -1,0 +1,20 @@
+{% extends "nba-base.html" %}
+
+
+{% block title %}Delete Player{% endblock %}
+
+{% block header %}Delete Player{% endblock %}
+
+{% block content %}
+    <div class="container-main">
+
+        <form method="post">
+            {% csrf_token %}
+            <h3>Delete this player and associated stats?</h3>
+            <p>{{ year }} - {{ player }}</p>
+            <br>
+            <button type="submit" class="lilBtn">Delete Player</button>
+            <button class="lilBtn"><a href="{% url 'display-all' %}">Cancel</a></button>
+        </form>
+    </div>
+{% endblock %}

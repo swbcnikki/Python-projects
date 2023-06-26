@@ -1,0 +1,14 @@
+{% extends 'WorldRecipes/WR_base.html' %}
+
+{% block title %} Add Your Recipe {% endblock %}
+
+{% block content %}
+<div class="center">
+    <h3>Add Your Recipe Below:</h3>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ADD</button>
+    </form>
+</div>
+{% endblock %}

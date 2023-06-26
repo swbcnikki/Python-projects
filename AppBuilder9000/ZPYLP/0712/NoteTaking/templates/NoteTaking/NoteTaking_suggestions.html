@@ -1,0 +1,43 @@
+{% extends 'NoteTaking/NoteTaking_base.html' %}
+
+{% block title %} NoteTaking - Add Suggestion {% endblock title %}
+
+
+{% block content %}
+    <div class="notetaking_page_title">
+        <div class="notetaking_page_title">
+            <h1>Add Suggestion</u></h1>
+        </div>
+
+        <hr>
+
+        <div class="list_notes">
+            <form method="POST" action=".">
+                <table>
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.as_table }}
+                </table>
+                <br/>
+                <div>
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" >
+                      Add note
+                    </button> -
+                    <input id="moreSuggestions" type="button" class="btn btn-warning" value="More Suggestions?" onclick="" />-
+                    <a href="{% url 'NoteTaking_home' %}">
+                        <button type="button" class="btn btn-danger">
+                            Cancel
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        <!--This Ajax function will refresh the page when the "More Suggestions?" button is click-->
+        $('#moreSuggestions').click(function() {
+            location.reload();
+        });
+    </script>
+{% endblock content %}

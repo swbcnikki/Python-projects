@@ -1,0 +1,42 @@
+{% extends "gamestats_base.html" %}
+
+{% load static %}
+
+{% block title %} Game Reviews {% endblock %}
+
+{% block header %} Explore new games {% endblock %}
+<!--- Paragraph on the home page of the app -->
+{% block content %}
+
+<div class="table-search-bg">
+<div class="dbSearch">
+    <form  method="get" action="" accept-charset="utf-8">
+      Search for a game:
+      <input class="queryBox" name="name" type="text" placeholder="Search">
+      <input class="btn btn-dark neu-button" type="submit" value="OK">
+    </form>
+</div>
+
+<div id="container" class="table-responsive w-75 mx-auto">
+    <table id="table" class="table table-dark table-hover table-striped text-center add-spacing" data-toggle="table">
+        <thead class="table-spacer">
+            <tr>
+                <th scope="col" data-field="name" data-sortable="true" class="w-25 neu-table-left remove-border">Game</th>
+                <th scope="col" data-field="ratings" data-sortable="true" class="w-25 remove-border">Genres</th>
+                <th scope="col" data-field="release" data-sortable="true" class="w-25 neu-table-right remove-border">Release Date</th>
+            </tr>
+        </thead>
+        <tbody class="table-spacer">
+            {% for name, genre, release in data %}
+            <tr>
+                <td class="w-25 neu-table-left remove-border">{{ name }}</td>
+                <td class="w-25 remove-border">{{ genre }}</td>
+                <td class="w-25 neu-table-right remove-border">{{ release }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+
+{% endblock %}

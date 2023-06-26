@@ -1,0 +1,65 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+
+{% block title %}MusicApp{% endblock %}
+
+{% block header %}Artist Search Results{% endblock %}
+
+{% block content %}
+
+<form class="searchbox" action="{% url 'MusicApp_artist_search_results' %}" method="GET" value="{{request.GET.q}}">
+<input type="text" name="q" value="{{request.GET.q}}" placeholder="Artist Name"/>
+<input type="submit" name="submit" class="btn" value="Search"/>
+</form>
+<!--- q will be used to retain the query that the user inputs in name="q" and value="{{request.GET.q}}" ----->
+
+{% if submitbutton == 'Search' and request.GET.q != '' %}
+<!---- Ensures field isn't empty when button clicked to avoid an empty query---->
+    {% if results %}
+    <!-- if submit button was clicked and query is entered, then display: --->
+    <table class="index_table">
+        <tr>
+            <th>Name</th>
+            <th>Group/Solo</th>
+            <th>Genre</th>
+            <th>Year Formed</th>
+            <th>Active</th>
+            <th>Image URL</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>
+                {{ result.artist_name }}
+            </td>
+            <td>
+                {{ result.group_or_solo }}
+            </td>
+            <td>
+                {{ result.genre }}
+            </td>
+            <td>
+                {{ result.year_formed }}
+            </td>
+            <td>
+                {{ result.active }}
+            </td>
+            <td>
+                {{ result.image_url }}
+            </td>
+        </tr>
+        {% endfor %}
+        <! ---------- If artist isn't found in database------>
+        {% else %}
+        <div class="text-container">
+        <p class="text">There are no search results for that artist name. <br>
+            Please check your spelling or you can add a new artist <a href="{% url 'MusicApp_create_artist' %}">Here.</a></p>
+        </div>
+        {% endif %}
+        {% endif %}
+
+    </table>
+
+<button type="button"><a href="{% url 'MusicApp_artist_index' %}">Return</a></button>
+
+
+
+{% endblock %}

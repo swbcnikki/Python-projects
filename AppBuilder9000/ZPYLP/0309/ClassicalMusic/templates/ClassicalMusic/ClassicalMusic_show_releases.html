@@ -1,0 +1,99 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+
+<header class="page_header">
+    <h1>Releases</h1>
+</header>
+
+
+<!-- ERRORS & BUTTONS BAND-->
+<div class="button-container">
+    <div>{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}</div>
+    <div >
+    </div>
+    <div>
+        <a class="icon-link " onclick="show_table()">
+            <i class="far fa-list-alt big-icon icon"></i>
+        </a>
+        &nbsp;
+        <a class="icon-link "  onclick="show_gallery()">
+            <i class="fas fa-grip-vertical big-icon icon"></i>
+        </a>
+        <a class="edit_icon" href="{% url 'ClassicalMusic_add_release' %}">
+            <i class="far fa-plus-square big-icon"></i>
+        </a>
+
+    </div>
+</div>
+
+
+<section id="table">
+    <table id="sort-table" class="table table-main">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Title</th>
+                <th>Composition</th>
+                <th>Authors</th>
+                <th>Performers</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for release in releases %}
+                <tr>
+                    <td>
+                        <a href="{% url 'ClassicalMusic_details_release' release.pk %}">{{ release.title }}</a></td>
+                    <td>
+                        {% if release.composition_id %}
+                            <a href="{% url 'ClassicalMusic_details_composition' release.composition_id %}">{{ release.composition_title }}</a>
+                        {% else %}
+                            NO COMPOSITIONS
+                        {% endif %}
+                    </td>
+                    <td>{{ release.author_names }}</td>
+                    <td>{{ release.performer_names }}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <div class="gallery-container">
+        {% for release in releases %}
+            {% ifchanged %}
+                <!-- RELEASE-CONTAINER 1-->
+                <div class="release-container">
+                    <a class="gallery-link" href="{% url 'ClassicalMusic_details_release' release.pk %}">
+                        <div class="card-top">
+                            <h6 class="center">{{ release.title }}</h6>
+                            <p class="center">{{ release.author_names }}</p>
+                        </div>
+                        <div class="gallery-image-container">
+                            <img class="gallery-image" src="{% if release.image_url %}{{ release.image_url }}{% else %}{% static 'ClassicalMusic/images/music-4661526_1920.jpg' %}{% endif %}" alt="{{ release.title }}">
+                        </div>
+                        <div class="role center italic card-bottom">{{ release.performer_names }}</div>
+                    </a>
+                </div>
+                <!-- END RELEASE-CONTAINER 1-->
+            {% endifchanged %}
+
+        {% endfor %}
+    </div>
+</section>
+<!-- END GALLERY -->
+
+
+{% endblock %}
+
+

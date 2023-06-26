@@ -1,0 +1,65 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+
+{% block title %}MusicApp{% endblock %}
+
+{% block header %}Album Search Results{% endblock %}
+
+{% block content %}
+
+<form class="searchbox" action="{% url 'MusicApp_album_search_results' %}" method="GET" value="{{request.GET.q}}">
+<input type="text" name="q" value="{{request.GET.q}}" placeholder="Search Album Names"/>
+<input type="submit" name="submit" class="btn" value="Search"/>
+</form>
+<!--- q will be used to retain the query that the user inputs in name="q" and value="{{request.GET.q}}" ----->
+
+{% if submitbutton == 'Search' and request.GET.q != '' %}
+<!---- Ensures field isn't empty when button clicked to avoid an empty query---->
+    {% if results %}
+    <!-- if submit button was clicked and query is entered, then display: --->
+    <table class="index_table">
+        <tr>
+            <th>Name</th>
+            <th>Artist</th>
+            <th>Date Released</th>
+            <th># Tracks</th>
+            <th>Genre</th>
+            <th>Image URL</th>
+        </tr>
+        {% for result in results %}
+         <tr>
+            <td>
+                {{ result.album_name }}
+            </td>
+            <td>
+                {{ result.artist_name }}
+            </td>
+            <td>
+                {{ result.date_album_released }}
+            </td>
+            <td>
+                {{ result.number_of_tracks }}
+            </td>
+            <td>
+                {{ result.genre }}
+            </td>
+            <td>
+                {{ result.img_url }}
+            </td>
+        </tr>
+        {% endfor %}
+        <! ---------- If album isn't found in database------>
+        {% else %}
+        <div class="text-container">
+        <p class="text">There are no search results for that album name. <br>
+            Please check your spelling or you can add a new album <a href="{% url 'MusicApp_create_album' %}">Here.</a></p>
+        </div>
+        {% endif %}
+        {% endif %}
+
+    </table>
+
+<button type="button"><a href="{% url 'MusicApp_album_index' %}">Return</a></button>
+
+
+
+{% endblock %}

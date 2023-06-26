@@ -1,0 +1,55 @@
+{% extends "Personality_base.html" %}
+
+{% block title %}Personality{% endblock %}
+
+{% block header %}Take the test or die!{% endblock %}
+
+{% block content %}
+
+<h3>{{person.name}}'s Profile</h3>
+
+<img id="chart" src={{url}} alt="Static Chart"/>
+    <br>
+    <br>
+    <br>
+	<div id="account-form">
+		<table class="table table-responsive" id ="transactions-table">
+    <tr id="headerRow">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Openness</th>
+        <th>Conscientiousness</th>
+        <th>Extroversion</th>
+        <th>Agreeableness</th>
+        <th>Neuroticism</th>
+    </tr>
+    <tr>
+        <td class="center">{{ person.name }}</td>
+        <td class="center">{{ person.age }}</td>
+        <td class="left">{{ person.sex }}</td>
+        <td class="center">{{ person.o_average_score }}%</td>
+        <td class="center">{{ person.c_average_score }}%</td>
+        <td class="center">{{ person.e_average_score }}%</td>
+        <td class="right">{{ person.a_average_score }}%</td>
+        <td class="right">{{ person.n_average_score }}%</td>
+    </tr>
+</table>
+        <!--<button href="{% url 'personality_edit' person.id%}">Edit Account</button>-->
+        <button type="submit"><a href="{% url 'personality_edit' person.id %}">Edit Account</a></button>
+        <button type="submit"><a href="{% url 'personality_compare' %}">Compare Traits</a></button>
+        <br>
+        <br>
+        <h3>Find a career that matches your personality:</h3>
+        <form method="POST">
+			{% csrf_token %}
+            <table class="edit">
+			{{ form }}
+            </table>
+			<button id="new-account-button" type="submit" name="Save_Account">View Jobs</button>
+		</form>
+
+
+	</div>
+
+{% endblock %}

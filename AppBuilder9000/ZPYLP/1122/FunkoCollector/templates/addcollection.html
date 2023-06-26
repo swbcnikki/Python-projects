@@ -1,0 +1,30 @@
+{% extends 'funkocollectorbase.html' %}
+{% block title %}Create New Account{% endblock %}
+
+
+{% block body %}
+
+<!-- html file for displaying the form in a Bootstrap styled form with input boxes to submit information to the
+	database -->
+<div class="container form-div">
+	<div class="form-group">
+		<h1>Add to collection.</h1>
+
+		<!-- django code with an if statement.  If the form was filled out and submitted, display "Your new funko pop
+		 	was submitted successfully!!!" -->
+		{% if submitted %}
+		Your New Funko Pop was submitted Successfully!!!
+
+		<!-- If not submitted then display the form ready for input -->
+		{% else %}
+			<form action="" method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+			  <input type="submit" value="Submit" class="btn btn-primary">
+			</form>
+
+		<!-- end django if statement -->
+		{% endif %}
+	</div>
+</div>
+{% endblock %}

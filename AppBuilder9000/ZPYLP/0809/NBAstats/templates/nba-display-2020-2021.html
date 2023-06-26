@@ -1,0 +1,42 @@
+{% extends "nba-base.html" %}
+
+{% block title %}My Players 2021{% endblock %}
+
+{% block header %}My Players{% endblock %}
+
+{% block content %}
+    <div class="container-main">
+        <br>
+        <label>Select Year:</label>
+        <select onChange="window.location.href=this.value">
+            <option>-----------</option>
+            <option value="{% url 'display-2021' %}">2020-2021</option>
+            <option value="{% url 'display-2020' %}">2019-2020</option>
+            <option value="{% url 'display-2019' %}">2018-2019</option>
+            <option value="{% url 'display-all' %}">All</option>
+        </select>
+        <a href="{% url 'add-player' %}"><button class="lilBtn btnRight">Add Player</button></a>
+        <br>
+        <h3>2020-2021</h3>
+        <table>
+            <tr class="headerRow">
+                <th>Player</th>
+                <th>DRebs</th>
+                <th>Steals</th>
+                <th>Blocks</th>
+                <th>Details</th>
+            </tr>
+            {% for key in players %}
+            <tr>
+                <td class="left">{{ key.playerName }}</td>
+                <td class="center">{{ key.defRebs }}</td>
+                <td class="center">{{ key.steals }}</td>
+                <td class="center">{{ key.blocks }}</td>
+                <td class="right"><a class="details-link" href="../{{ key.pk }}/details/">Details</a></td>
+            </tr>
+            {% endfor %}
+
+
+        </table>
+    </div>
+{% endblock %}

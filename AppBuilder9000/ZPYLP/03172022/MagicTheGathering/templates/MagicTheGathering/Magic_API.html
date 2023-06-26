@@ -1,0 +1,46 @@
+{% extends 'MagicTheGathering/MagicTheGathering_base.html' %}
+
+{% load static %}
+
+{% block title %}API Page{% endblock %}
+
+{% block header %}API:{% endblock %}
+
+{% block content %}
+
+<div>
+    <h3>Search a Card</h3>
+    <div>
+		<form method="post" action="{% url 'MagicTheGathering_API' %}">
+			{% csrf_token %}
+			<input type="text" name="mtg" placeholder="Enter Card name">
+        	<input type="submit" value="Search">
+		</form>
+	</div>
+</div>
+
+<div id="all-collection-form">
+
+	<table class="table table-responsive" id ="transactions-table">
+				<!-- Replace this with the Django populated transactions -->
+				<tr id="headerRow">
+					<th>Name</th>
+					<th>Color</th>
+					<th>Type</th>
+					<th>Cost</th>
+                    <th>Text</th>
+				</tr>
+				<tr>	<!-- Specify fields to be displayed -->
+					<td class="center">{{ name }}<br/>
+					<td class="center">{{ color }}<br/>
+					<td class="left">{{ type }}<br/>
+					<td class="right">{{ manaCost }}<br/>
+					<td class="right">{{ text }}<br/>
+				</tr>
+</div>
+
+
+
+
+
+{% endblock %}

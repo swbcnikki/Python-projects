@@ -1,0 +1,25 @@
+{% load static %}
+<!Doctype html>
+<html lang="en" class="bg_img">
+      <head>
+          <meta charset="UTF-8">
+          <title>{% block title %}{% endblock %}</title>
+          <meta name="viewport" content="width=device-width", initial-scale="1">
+          <link rel="stylesheet" type="text/css" href="{% static 'css/SportsCars.css' %}">
+      </head>
+
+      <ul class="topnav">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'Supercars' %}">Supercars</a></li>
+          <li><a href="{% url 'AddSportsCar' %}">Add a Car</a></li>
+      </ul>
+
+      <body>
+            <div class="page_container">
+                <header class="header_title">
+                    <h1>{% block header %}{% endblock %}</h1>
+                </header>
+                {% block content %}{% endblock %}
+            </div>
+      </body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" >
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title%}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet", href ="{% static '/CSS/layout.css' %}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+
+    <!--Navbar-->
+
+    <div class="w3-top" style ="opacity:.7;">
+        <div class="w3-bar w3-grey w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue"  title="NavMenu"><i class="fa fa-bars"></i></a>
+            <a href= "{% url 'NeighborhoodReview/NeighborhoodReview_home.html' %}" class="w3-bar-item w3-button w3-padding-large w3-white" >Home</a>
+            <a href="{% url 'NeighborhoodReview/CreateReview.html' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Write a Review</a>
+            <a href="{% url 'NeighborhoodReview/CreateNewNeighborhood.html' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Add a New Neighborhood</a>
+            <a href="{% url 'NeighborhoodReview/BeautifulSoup.html' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">County Stats/Tax Rates </a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">TBD4</a>
+        </div>
+    </div>
+
+    <!--Navbar End-->
+
+
+        <div class="bgimg w3-container" style="padding:700px 16px">
+            <div class="w3-display-middle textfill">
+                 <h2 style ="font-size:35px; padding-bottom: 25px; padding-top: 50px" >{% block header %}{% endblock %}
+                    <hr class="w3-border-grey" style="margin:auto;width:80%;padding-bottom: 20px;">
+                 </h2>
+                    <p>{% block content %}{% endblock %}</p>
+          </div>
+        </div>
+
+</body>
+
+</html>

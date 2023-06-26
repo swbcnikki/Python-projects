@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="An App for Displaying And Singing Along to Sea Shanties">
+        <meta name="author" content="Keen Little">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/shanty.css' %}">
+    </head>
+
+	<body>
+
+        <!-- navbar -->
+
+        <div class="navbar">
+            <ul>
+                <li><a href="{% url 'shanties_home' %}"> Home </a></li>
+                <li><a href="{% url 'shanties_add' %}"> Add Song </a></li>
+                <li><a href="{% url 'shanties_display' %}"> Song List </a></li>
+                <li><a href="#"> ##### </a></li>
+            </ul>
+        </div>
+
+        <!-- page title (replace with django?) -->
+
+        <div class="pageTitle">
+            <h1>The Sea Shanty App</h1>
+        </div>
+        <hr>
+
+        {% block content %}{% endblock %}
+
+        <!-- Footer nav (base) -->
+
+        <!-- byline (base) -->
+
+    </body>
+
+</html>

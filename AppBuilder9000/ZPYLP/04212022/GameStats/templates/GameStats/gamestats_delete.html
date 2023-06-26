@@ -1,0 +1,16 @@
+{% extends "gamestats_base.html" %}
+{% load static %}
+{% block title %}Game Reviews{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block header %}Delete Review{% endblock %}
+
+{% block content %}
+<div id="form-container" class="w-50 mx-auto">
+    <form method='POST' class="text-center">
+        {% csrf_token %}
+        <h2 class="text-center text-light">{{ details.name }}</h2>
+        <button type="submit" class="btn btn-outline-secondary w-50 neu-button" onclick="return confirm('Are you sure you want to delete this?')">Delete</button>
+    </form>
+</div>
+{% endblock %}

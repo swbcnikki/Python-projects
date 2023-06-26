@@ -1,0 +1,23 @@
+{% extends 'lofi_base.html' %}
+
+{% block title %}Add To The Playlist{% endblock %}
+
+{% block header %}ADD SONG{% endblock %}
+
+
+{% block content %}
+
+<div>
+    <form method="POST" action="{% url 'lofi_add' %}">
+        <div class="form_container">
+            {% csrf_token %}
+            <table class="frm_table">{{ form.as_table }}</table>
+        <input class="btn" type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+
+
+
+{% endblock %}

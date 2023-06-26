@@ -1,0 +1,29 @@
+
+
+body {
+    background-image: url('../images/florida_birds_home.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+
+}
+
+.add_bird_form {
+	position: left;
+
+	margin-top: 10vh;
+    margin-left: 2vw;
+    margin-right: 35vw;
+	color: navy;
+}
+
+
+
+
+
+
+
+
+
+

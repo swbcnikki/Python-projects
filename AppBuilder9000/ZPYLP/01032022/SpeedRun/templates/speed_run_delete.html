@@ -1,0 +1,20 @@
+{% extends 'speed_run_base.html' %}
+{% load static %}
+
+{% block title %}Delete Speedrun{% endblock %}
+
+{% block content %}
+
+    <h1 class="homeHeading">Are you sure you want to delete?</h1>
+
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ item.as_p}}
+            <div>
+                <button type="submit" class="btn btn-dark" name="Delete">Delete?</button>
+                <a href="{% url 'speed_run_home' %}"><button type="button" class="btn btn-dark">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

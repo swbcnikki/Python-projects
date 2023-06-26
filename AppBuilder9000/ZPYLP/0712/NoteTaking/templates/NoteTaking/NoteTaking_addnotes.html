@@ -1,0 +1,34 @@
+{% extends 'NoteTaking/NoteTaking_base.html' %}
+
+{% block title %} NoteTaking - Add Notes {% endblock title %}
+
+
+{% block content %}
+    <div class="add_notes_page_container">
+
+        <div class="add_notes_page_title">
+            <h1>Add a Note</h1>
+        </div>
+
+        <hr>
+
+        <div class="add_notes_form">
+            <form class="add_notes_form_container" method="POST">
+                <div>
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.as_p }}
+                </div>
+
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Create New Note">
+                    <a href="{% url 'NoteTaking_home' %}">
+                        <button type="button" class="btn btn-danger" value="Cancel">
+                            Cancel
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

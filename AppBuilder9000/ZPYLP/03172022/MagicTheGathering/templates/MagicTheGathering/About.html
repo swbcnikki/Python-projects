@@ -1,0 +1,25 @@
+{% extends 'MagicTheGathering/MagicTheGathering_base.html' %}
+{% block title%}About{% endblock %}
+{% block content %}
+<form align="center" name="productForm" method="POST" action="../How_Too/">
+    {% csrf_token %}
+    <input type="submit" value="Scrape Some Pages to learn about magic!" id="inputbtn">
+    <div font-style="italic" align="center">* The numbers are a reference to MediaWiki reference points</div>
+    <div class="info_container">
+        <h3>About Magic The Gathering!</h3>
+        {{ about1 }}
+        {{ about2 }}
+        {{ about3 }}
+        {{ about4 }}
+    </div>
+    <div>
+        <iframe width="600" height="400" src="https://youtube.com/embed/b5W9t62t10I?controls=0&loop=0&autoplay=1" allow="autoplay">
+        </iframe>
+    </div>
+    <div class="info_container">
+        <h3>Gameplay for Magic The Gathering!</h3>
+        {{ about5 }}
+        {{ about6 }}
+        {{ about7 }}
+    </div>
+{% endblock %}

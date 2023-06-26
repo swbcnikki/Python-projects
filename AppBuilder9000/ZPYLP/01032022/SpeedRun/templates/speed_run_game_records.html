@@ -1,0 +1,33 @@
+{% extends 'speed_run_base.html' %}
+{% load static %}
+
+{% block title %}{{ gamename.game_name }} Records{% endblock %}
+
+{% block content %}
+
+<h1 class="homeHeading">{{ gamename.game_name }}</h1>
+
+<div class="table-container">
+    <table class="table table-dark table-striped w-75 p-3 position-absolute top-50 start-50 translate-middle">
+        <thead>
+            <tr class="table-dark">
+                <th>Player</th>
+                <th>Time</th>
+                <th>Platform</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        {% for record in records %}
+        <tbody>
+            <tr class="table-dark">
+                <td class="table-dark"><a href="{% url 'speed_run_details' record.pk %}">{{ record.player }}</td>
+                <td class="table-dark">{{ record.time }}</td>
+                <td class="table-dark">{{ record.platform }}</td>
+                <td class="table-dark">{{ record.date }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

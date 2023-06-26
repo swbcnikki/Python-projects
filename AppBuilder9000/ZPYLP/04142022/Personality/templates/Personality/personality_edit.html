@@ -1,0 +1,22 @@
+{% extends "Personality_base.html" %}
+
+{% block title %}Personality{% endblock %}
+
+{% block header %}Take the test or die!{% endblock %}
+
+{% block content %}
+
+<h3>Edit Account</h3>
+	<div id="account-form">
+		<form method="POST">
+			{% csrf_token %}
+			<table class="edit">
+			{{ form }}
+			</table>
+			<button id="new-account-button" type="submit" name="Save_Account">Save Changes</button>
+		</form>
+		<br>
+		<button type="submit" class="new-account-button"><a href="{% url 'personality_delete' person.id %}">Delete</a></button>
+	</div>
+
+{% endblock %}

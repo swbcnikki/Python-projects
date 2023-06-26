@@ -1,0 +1,37 @@
+{% extends "nba-base.html" %}
+
+{% block title %}NBA Individual Stats{% endblock %}
+
+{% block header %}Individual Defensive Stats{% endblock %}
+
+{% block content %}
+    <div class="container-main">
+        <br>
+        <label>Year: {{ year }}</label>
+        <br>
+        <table>
+            <tr class="headerRow">
+                <th>Player</th>
+                <th>DRebs</th>
+                <th>Steals</th>
+                <th>Blocks</th>
+                <th>Total Def Points</th>
+            </tr>
+
+            <tr>
+                <td class="left">{{ playerName }}</td>
+                <td class="center">{{ defRebs }}</td>
+                <td class="center">{{ steals }}</td>
+                <td class="center">{{ blocks }}</td>
+                <td class="right">{{ total_def_points }}</td>
+            </tr>
+        </table>
+
+        <p class="smallFont">*Steals and Blocks are each worth 3 points. Rebounds are worth 1 point.</p>
+        <br><br>
+        <a href="../{{ key.pk }}edit/"><button class="lilBtn">Edit Player</button></a>
+        <a href="../{{ key.pk }}delete/"><button class="lilBtn">Delete Player</button></a>
+        <a href="{% url 'display-all' %}"><button class="lilBtn btnRight">Back</button></a>
+    </div>
+
+{% endblock %}

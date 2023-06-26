@@ -1,0 +1,33 @@
+{% extends "find_pet_base.html" %}
+{% load static %}
+
+{% block title %}Edit Listing{% endblock %}
+{% block content %}
+<div id="available_bg">
+</div>
+
+    <div class="apply_title">
+        <p id="applicant_title">Search Recent Listings</p>
+        <p class="title_caption">Who can we help you look for today?</p>
+    </div>
+
+    <div class="row">
+
+
+            <div class="form_container2">
+                <div class="header_container">
+                    <p class="container_header">Filter results:</p>
+                </div>
+                <br>
+
+                <form method="POST" id="filter_form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <p>Number of Results: Min: 1, Max: 50</p>
+                    <div class="row">
+                        <button class="form_submit" type="submit" name="Edit_Listing">Search</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+{% endblock %}

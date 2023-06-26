@@ -1,0 +1,17 @@
+
+
+
+
+{% block title %} Anime {% endblock %}
+
+{% block header %} Anime Forum {% endblock %}
+
+{% block content %}
+
+<ul>
+    <li><a href="{% url 'Anime_home' %}" class="button1 bouncy">Home</a></li>
+    <li><a href="{% url 'Anime_create' %}" class="button1 bouncy">Add</a></li>
+    <li><a href="{% url '' %}" class="button1 bouncy">Entries</a></li>
+</ul>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+body {
+    background-image: url(/static/Images/VideoGameBackground.jpg);
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+h1 {
+color: #f8f8f8;
+font-family: 'Helvetica Neue', sans-serif;
+font-size: 275px;
+font-weight: bold;
+letter-spacing: -1px;
+line-height: 1;
+text-align: center;
+}
+
+
+p {
+color: #f8f8f8;
+font-family: 'Raleway',sans-serif;
+font-size: 18px;
+font-weight: 500;
+line-height: 32px;
+margin: 0 0 24px;
+text-align: center;
+}
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+li {
+color: #f8f8f8;
+font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+border-bottom: 1px solid #ccc;
+}
+

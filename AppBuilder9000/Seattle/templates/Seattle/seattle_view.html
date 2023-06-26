@@ -1,0 +1,20 @@
+{% extends "seattle_base.html" %}
+
+{% block content %}
+<h1>Your Plan:</h1>
+<table class="views">
+    <tr>
+        <th>Category</th>
+        <th>Place</th>
+        <th>Description</th>
+    </tr>
+    {% for p in place %}
+    <tr>
+        <td>{{ p.Category }}</td>
+        <td><a href="{% url 'seattle_details' p.id %}">{{ p.Place }}</a></td>
+        <td>{{ p.Description }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

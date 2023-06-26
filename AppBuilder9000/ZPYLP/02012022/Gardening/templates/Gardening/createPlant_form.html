@@ -1,0 +1,47 @@
+{% extends 'Gardening/gardening_base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+{% crispy form form.helper %}
+
+{% block content %}
+<!--This is the container that holds the garden planner form-->
+<div class="jumbotron text-white bg-dark py-2" style="width: 60%; margin:0 auto;">
+  <h1 style="text-align:center; color:#ff5200;">My Garden Planner</h1>
+<!--  This is the garden planner form-->
+  <form method="POST" action="" name="create_plant" class="">
+    {% csrf_token %}
+<!--    These are the form field sections-->
+    <div class="row d-flex justify-content-center">
+      <div class="col-8">
+        {{ form.name|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-4">
+        {{ form.type|as_crispy_field }}
+      </div>
+      <div class="col-4">
+        {{ form.season_planted|as_crispy_field }}
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+      <div class="col-4">
+        {{ form.date_planted|as_crispy_field }}
+      </div>
+      <div class="col-4">
+        {{ form.days_to_harvest|as_crispy_field }}
+      </div>
+    </div>
+<!--    This button submits the form-->
+    <div class="row d-flex justify-content-center">
+      <button type="submit" value="Save" class="btn" style="color:#ff5200;">Submit</button>
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}

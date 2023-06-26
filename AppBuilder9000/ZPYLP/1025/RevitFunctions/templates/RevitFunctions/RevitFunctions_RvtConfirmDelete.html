@@ -1,0 +1,78 @@
+<!-- 4. templates utilizing Django block tags.
+	# prior to this is 3. views.py
+	# templates renders the webpage, describes the design with basic logic statements of the page in html.
+		#Child can override Parent's settings.
+	# save file and check if these are working in browser.
+		#check dB and make sure objects are populated.
+	# next requires connecting the classes (views) with the functions by 5. urls.py
+-->
+
+<!-- Add RvtEdit page -->
+<!-- Story5, Step 4: Include the option to delete an item with a confirmation that the user wants to delete. -->
+<!-- next create tables to format dB. -->
+
+
+{% extends "RevitFunctions/RevitFunctions_base.html" %}
+{% block title %}CONFIRM DELETE{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container px-5">
+	    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">Confirm Delete</h2>
+                <p class="lead fw-normal text-muted mb-0">Are you sure you would like to delete the following from the database?</p>
+            </div>
+
+			<form method="POST">												<!-- must add this for views.py function to post -->
+			{% csrf_token %}
+
+
+        {{ rvtdelete.as_table }}
+
+            <div class="table">
+				<table class="table table-responsive" id ="transactions-table">
+					<!-- Replace this with the Django populated transactions -->
+					<!-- Story4, Step4: Display all the details of the item on the details page. -->
+					<tr id="th">
+						<th>Revit Title</th>									<!-- header fields -->
+						<th>Revit Description</th>
+						<th>Revit Category</th>
+						<th>Revit Level</th>
+						<th>Job Category</th>
+					</tr>
+
+						<tr id="td" style="color: red">                         <!-- set values to delete as red -->
+							<td>{{ rvtdelete.revit_title }}</td>				<!-- shows all categories, make sure spelling match -->
+							<td>{{ rvtdelete.revit_description }}</td>			<!-- should read the custom variable from the RevitFunctions_RvitDetails function, not the function itself.-->
+							<td>{{ rvtdelete.revit_category }}</td>
+							<td>{{ rvtdelete.revit_level }}</td>
+							<td>{{ rvtdelete.job_category }}</td>
+						</tr>
+
+				</table>
+			</div>
+
+
+        <!-- Submit Button-->
+            <div class="d-block ">
+                <input type ='submit' value='CONFIRMED' class="btn btn-primary btn-lg float-end" id="confirmButton">
+                                                                                <!-- button align to right -->
+                                                                                <!-- because its input type, just give it a class matching button
+                                                                                        instead of listing button class ="" -->
+
+
+            </div>
+			</form>
+
+			<!-- keep this outside of the method = 'POST', or else it will read as confirming to delete!!! -->
+			<a href="{% url 'RevitFunctions_RvtRecords' %}"><button class="btn btn-primary btn-lg float-start" id="cancelButton" type="submit">CANCEL</button></a>
+			<br>
+			<br>
+			                                                                    <!-- button align to left -->
+        </div>
+    </div>
+</section>
+
+{% endblock %}

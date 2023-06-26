@@ -1,0 +1,19 @@
+{% extends "ATVTrails_base.html" %}
+{% load static %}
+{% block title %} ATV Trails  {% endblock %}
+{% block header %}<center>Find and log your favorite trails.</center>  {% endblock %}
+
+
+{% block content %}
+#safety image
+<div>
+    <center><img src="/static/images/safety.jpg"></center>
+</div>
+#buttons
+<div><center>
+    <a href="{% url 'trail_scrape' %}"><button type="button" class="btn-container-left">Click here for Trending Trails</button></a>
+    <a href ="{% url 'list_trails' %}"><button type="button" class="btn-container-right">Click her for your list of Trails</button></a>
+</center></div>
+
+
+{% endblock %}

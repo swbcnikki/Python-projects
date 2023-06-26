@@ -1,0 +1,15 @@
+{% extends "Coffeeshop\coffee_base.html" %}
+{% load static %}
+
+{% block content %}
+{% for data in data %}
+
+<ul>
+    {{ data.type | capfirst}}
+    {{ data.name }}
+    {{ data.price }}
+    {{ data.description }}
+</ul>
+
+{% endfor %}
+{% endblock %}

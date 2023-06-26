@@ -1,0 +1,43 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}Top Books{% endblock %}
+{% block header%}Top Books{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="section">
+        <p class="eighty">The following are the top 20 selling books from Barnes and Noble. Visit this page often to see the updated list.</p>
+    </div>
+    <div class="top-books">
+    {% for key, value in returnList.items %}
+        <div class="top-book card">
+            <form action="{% url 'BookClubApp_AddBookWishlist' %}" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <input type="hidden" name="read" value="False" id="id_read">
+                <div class="top-number">{{ key|add:'1'}}</div>
+                {% for key2, value2 in value.items %}
+                    {% if key2 == 'formatted_link' %}
+                        <a class="top-book-inner-div" href="{{value2}}">
+                            {% elif key2 == 'formatted_image' %}
+                                <input type="hidden" name="image" maxlength="250" required="" id="id_image" value="{{value2}}">
+                                <div class="top-book-image card-img-top" style="background:url({{value2}}) no-repeat; background-size:cover; background-position:center;"></div>
+                                {% elif key2 == 'title' %}
+                                <input type="hidden" name="title" maxlength="250" required="" id="id_title" value="{{value2}}">
+                                <h4 class="card-header">{{value2}}</h4>
+                                {% elif key2 == 'authors' %}
+                                    <div class="card-body">
+                                        <p style="color:#444;">{{value2}}</p>
+                                        <input type="hidden" name="author" maxlength="250" required="" id="id_author" value="{{value2}}">
+                                    </div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+                <button class="btn btn-secondary"  type="submit" formmethod="post">Add to Wishlist</button>
+            </form>
+        </div>
+    {% endfor %}
+    </div>
+    <p class="eighty">To see more top sellers, see the <a href="https://www.barnesandnoble.com/b/books/_/N-1fZ29Z8q8" target="_blank">Barnes and Noble Top 100 list</a>.</p>
+</div>
+{% endblock %}

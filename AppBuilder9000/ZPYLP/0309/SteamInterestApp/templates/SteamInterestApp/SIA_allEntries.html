@@ -1,0 +1,70 @@
+{% extends 'SteamInterestApp/SIA_base.html' %}
+
+{% load static %}
+
+<!--This page will be used for displaying all entries in our templates!
+It also extends our base, which means minimal formatting
+-->
+
+{% block title %} Steam Interest App - All entries {% endblock %}
+
+
+{% block header %} Your Steam Library {% endblock %}
+
+{% block content %}
+    <!--
+    <table class="table-dark table-bordered justify-content-center text-center container" style="margin: 0px auto">
+    -->
+    <div class="container text-center border border-white">
+        <div class="row" style="font-weight: bold">
+            <!--For some reason, my bootstrap class of font-weight-bold is not being recognized...
+            I'm manually styling these classes for now, but I don't get why it's not working...
+            -->
+            <div class="col-lg border border-white"><span class="font-weight-bold">Game Title</span></div>
+            <div class="col-lg border border-white">Genre</div>
+            <div class="col-lg border border-white">Interest Level</div>
+            <div class="col-lg border border-white">Details</div>
+        </div>
+
+            <!--We create a for loop here to create a new table row and entries for each game in our list!
+            Eventually, I do want to add in some additional filtering methods, as I think it'll be clunky otherwise-->
+            {% for game in page_obj %}
+                <div class="row">
+
+                    <div class="col">{{ game.game_title }}</div>
+                    <div class="col">{{ game.genre}}</div>
+                    <div class="col">{{ game.interest_level}}</div>
+                    <div class="col"><a href="../{{game.id}}/details/">View Details</a></div>
+                </div>
+            {% endfor %}
+
+        <div class="row border border-white">
+            {% if page_obj.has_previous %}
+                <div class="col"><a href="?page=1">&laquo; first</a></div>
+                <div class="col"><a href="?page={{ page_obj.previous_page_number }}">previous</a></div>
+            {% else %}
+                <div class="col"></div>
+                <div class="col"></div>
+            {% endif %}
+
+            <div class="col">
+                <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</span>
+            </div>
+
+            {% if page_obj.has_next %}
+                <div class="col"><a href="?page={{ page_obj.next_page_number }}">next</a></div>
+                <div class="col"><a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a></div>
+            {% else %}
+                <div class="col"></div>
+                <div class="col"></div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!--Little snippet for code testing
+    <p class="font-weight-bold text-info">Why is the font turning blue for text-info class but not bolding for font-weight-bold bootstrap class??</p>
+    -->
+
+
+
+{% endblock %}

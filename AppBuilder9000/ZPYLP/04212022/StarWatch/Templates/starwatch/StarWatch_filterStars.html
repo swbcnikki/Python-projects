@@ -1,0 +1,34 @@
+{% extends "StarWatch_base.html" %}
+{% load static %}
+
+{% block title %}Stars{% endblock %}
+
+{% block header %}
+    <div class=" m-4 jumbotron jumbotron-fluid w-80 display1">
+        <h2 class="text-center display-4">Stars</h2>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="centered_container">
+    <table id="table" class=' text-center box table table-info  table-hover table-bordered table-centered'>
+        <thread>
+            <tr>
+                <th scope="col" data-field="object_name">Object</th>
+                <th scope="col" data-field="object_nickName">Nick-Name</th>
+                <th scope="col" data-field="object_description">Description</th>
+            </tr>
+        </thread>
+        <tbody>
+        {% for star in stars %}
+            <tr>
+                <td><a href="{% url 'StarWatch_objectDetails' star.id %}">{{ star }}</a></td>
+                <td>{{ star.object_nickName }}</td>
+                <td>{{ star.object_description }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

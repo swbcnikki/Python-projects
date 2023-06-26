@@ -1,0 +1,16 @@
+{% extends "ControlInventory/ControlInventory_base.html" %}
+{% load static %}
+
+	{% block title%}Add New Product{% endblock %}
+
+	{% block content %}
+        <h3>Create Product Information</h3>
+			<div>
+				<form method="POST">
+					{% csrf_token %}
+					{{form.as_p}}
+					<button id="new-product-button" type="submit" name="Save_Product">Add Product</button>
+				</form>
+				<br>
+			</div>
+	{% endblock %}

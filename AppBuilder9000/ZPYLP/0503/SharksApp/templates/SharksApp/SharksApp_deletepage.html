@@ -1,0 +1,19 @@
+{% extends "SharksApp_base.html" %}
+{% block title %}Welcome!{% endblock %}
+{% block header %}Welcome Shark Lovers! {% endblock %}
+{% block content %}
+
+        <form class="modal_content" method="POST" action="../{{  shark.pk }}SharksApp_deletepage/">
+            {% csrf_token %}
+            <div class="modal_container">
+                <h1>Delete Species</h1>
+                <p>Are you sure you want to delete this species from the database?</p>
+
+                <div class="clearfix">
+                    <input type="submit" value="Yes">
+                    <a class="delete_btn" href="{% url 'SharksApp_displaydb' %}">No</a>
+                </div>
+            </div>
+        </form>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "GrandmasRecipes/GrandmasRecipes_base.html" %}
+{% load static %}
+
+{% block title %}Grandmas Recipes{% endblock %}
+
+{% block header %}<h3>The Cookbook</h3>{% endblock %}
+
+{% block content %}
+    <table id="cookbook">
+        <thead class="table_header"> <!--tbl headers-->
+            <tr>
+                <tc scope="col"> Name </tc>
+                <tc scope="col"> Category </tc>
+                <tc scope="col"> Prep Time </tc>
+            </tr>
+        </thead>
+        <tbody class="tbl_body"> <!--rows-->
+            {% for Recipes in recipes %} <!-- iterate through database, output results to list -->
+                <tr>
+                    <td><a class="recipe_hyperlink" href="{% url 'GrandmasRecipes_details' Recipes.id %}"> {{ Recipes }}</a></td>
+                    <td>{{ Recipes.category }}</td>
+                    <td>{{ Recipes.prep_time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

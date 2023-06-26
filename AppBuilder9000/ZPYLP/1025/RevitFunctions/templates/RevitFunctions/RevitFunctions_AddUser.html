@@ -1,0 +1,55 @@
+<!-- 4. templates utilizing Django block tags.
+	# prior to this is 3. views.py
+	# templates renders the webpage, describes the design with basic logic statements of the page in html.
+		#Child can override Parent's settings.
+	# save file and check if these are working in browser.
+		#check dB and make sure objects are populated.
+	# next requires connecting the classes (views) with the functions by 5. urls.py
+-->
+
+<!-- AddUser page -->
+<!-- Story2, Step 3: Add a template to your app folder for creating a new item. -->
+<!-- next create tables to format dB. -->
+{% extends 'RevitFunctions/RevitFunctions_base.html' %}
+{% block title %}Add New User{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container px-5">
+        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+
+                <h2 class="fw-bolder">+ADD NEW USER</h2>
+                <p class="lead fw-normal text-muted mb-0">Please Enter Info Below</p>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6 col-xl-6">                         <!-- col-lg-6 is the offset of the form contents -->
+
+                    <div class="form-floating mb-3">                    <!-- space after the form with light grey color -->
+                            <!-- must add this for views.py function to post -->
+                            <form method="POST">                        <!-- Replaced HTML form with the Django Form, Django’s login form is returned using the POST method,
+                                                                                 in which the browser bundles up the form data, encodes it for transmission, sends it to the server,
+                                                                                 and then receives back its response. -->
+                                {% csrf_token %}                        <!-- CSRF middleware and template tag provides easy-to-use protection against Cross Site Request Forgeries.
+                                                                                 attack occurs when a malicious website contains a link, a form button or some JavaScript that is
+                                                                                 intended to perform some action on your website, using the credentials of a logged-in user who visits
+                                                                                 the malicious site in their browser.-->
+                                <table>                                 <!-- organize form as a table. {{ form.as_p}} will format it as a paragraph -->
+                                    {{ form.as_table }}
+                                </table>
+                                </br>
+
+                                <!-- Submit Button-->
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">ADD USER</button>
+                                                                        <!-- Make buttons look inactive by adding the disabled boolean attribute to any <button> element. -->
+                                </div>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

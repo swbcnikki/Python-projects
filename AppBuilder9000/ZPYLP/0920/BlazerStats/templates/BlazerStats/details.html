@@ -1,0 +1,37 @@
+{% extends "BlazerStats/base.html" %}
+{% load static %}
+{% block title %} Blazer Stats Player Details {% endblock %}
+
+{% block header %}
+    <h1>Player Details</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <table id="table" class="table table-dark table-bordered table-hover text-center">
+            <caption>*PPG: Points Per Game<br>*PER: Player Efficiency Rating<br>*Win Shares: An estimate of the number of wins contributed by a player</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Player</th>
+                    <th scope="col">Seasons</th>
+                    <th scope="col">PPG*</th>
+                    <th scope="col">PER*</th>
+                    <th scope="col">Win Shares*</th>
+                    <th scope="col">Hall of Fame</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ details.Name }}</td>
+                    <td>{{ details.Seasons }}</td>
+                    <td>{{ details.Points_Per_Game }}</td>
+                    <td>{{ details.Player_Efficiency_Rating }}</td>
+                    <td>{{ details.Win_Shares }}</td>
+                    <td>{{ details.Hall_of_Fame }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="{% url 'player_edit' details.pk %}"><button type="button" class="btn btn-secondary btn-lg">Edit</button></a>
+        <a href="{% url 'player_delete' details.pk %}"><button type="button" class="btn btn-secondary btn-lg">Delete</button></a>
+    </div>
+{% endblock %}

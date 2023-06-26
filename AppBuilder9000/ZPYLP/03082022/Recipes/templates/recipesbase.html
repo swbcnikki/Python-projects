@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/recipes.css' %}">
+    </head>
+    <body>
+        <div class="content">
+            <div class="nav">
+                {% include "Recipes/recipesnav.html" %}
+            </div>
+            <div class="content">
+                <p class="header">{% block header %}{% endblock %}</p>
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

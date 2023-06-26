@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+
+
+
+    {% block content %}{% endblock %}
+
+
+    <div class="footer">
+        <p>Sushi Recipes for the Sushi Chef 2021 | Cody Harris</p>
+    </div>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/Sushi_Recipes.css' %}">
+</head>
+
+<header>
+    <div class="navbar">
+
+        <a href="{% url 'Sushi_Recipes_Home' %}">Home</a>
+        <a href="{% url 'Sushi_Recipes_Create' %}">Sushi Recipes</a>
+        <a href="{% url 'Sushi_Recipes_View' %}">Ingredients</a>
+    </div>
+</header>
+<body id="body"></body>
+</html>

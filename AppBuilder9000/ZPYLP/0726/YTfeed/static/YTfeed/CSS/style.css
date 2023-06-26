@@ -1,0 +1,159 @@
+/* Style the background */
+.backdrop {
+padding-top: 2em;
+text-align: center;
+background-color: black;
+color:white;
+background-image: url('images/YTfeedIMG1.png');
+background-attachment: fixed;
+background-size: 100%;
+background-position: top;
+background-repeat: no-repeat;
+}
+/*Style the navbar */
+.navbar a{
+color:red;
+size: large;
+font-family: 'Oswald', sans-serif;
+font-size: 2em;
+padding: 40px;
+}
+
+h1{
+font-size:3em
+}
+/*Style for the button to add movies */
+#new-button{
+padding: 20px;
+background-color: white;
+color: red;
+font-family: 'Zen Tokyo Zoo';
+font-size: 20px;
+}
+
+#movie-form{
+padding: 20px;
+margin:0,0,0,0;
+}
+
+/*Style for the p elements in the form */
+p{
+padding:5px;
+font-size:25px;
+text-align:top;
+color:#19fd9c;
+}
+
+/*Style the inputs for the form */
+input{
+padding:10px;
+width:25%;
+margin: 10px;
+box-sizing: border-box;
+}
+/* Style the search box */
+#movieSearch {
+width: 100%,
+font-size: 18px;
+padding: 11px;
+}
+/*Style the navigation menu */
+#movieMenu{
+list-style-type: none;
+padding:0;
+margin:0;
+}
+/*Style the navigation links */
+#movieMenu li a{
+padding: 12px;
+text-decoration: none;
+color: red;
+display: block;
+}
+
+#movieMenu li a: hover {
+background-color: yellow;
+}
+
+#search-button{
+padding: 3px;
+background-color: white;
+color: black;
+font-family: 'Zen Tokyo Zoo';
+font-size: 20px;
+}
+
+#addedMovies {
+font-size:30px;
+letter-spacing:2px;
+font-family: 'Josefin Sans', sans-serif;
+color:#4CEC38;
+text-decoration: underline;
+}
+
+#remove-button {
+padding: 3px;
+background-color: blue;
+color: black;
+font-family: 'Zen Tokyo Zoo';
+font-size: 20px;
+}
+
+#edit-button {
+padding: 3px;
+background-color: white;
+color: black;
+font-family: 'Zen Tokyo Zoo';
+font-size: 20px;
+}
+
+.function-button{
+color:#a7eef2;
+font-size: 15px;
+margin:0;
+padding:0;
+}
+
+#list-link{
+color:red;
+font-size: 40px;
+font-family: 'Oswald', sans-serif;
+}
+
+#NYS{
+font-family: 'Josefin Sans', sans-serif;
+color:#4CEC38;
+text-decoration: underline;
+}
+
+#SDS{
+font-family: 'Oswald', sans-serif;
+color:#4CEC38;
+text-decoration: overline underline;
+
+}
+
+
+
+
+
+#PSS{
+font-family: 'Share Tech Mono', monospace;
+color:#4CEC38;
+}
+
+#ZenFont{
+font-family: 'Zen Tokyo Zoo';
+}
+
+#JosefinFont{
+font-family: 'Josefin Sans', sans-serif;
+}
+
+#OswaldFont{
+font-family: 'Oswald', sans-serif;
+}
+
+#TechFont{
+font-family: 'Share Tech Mono', monospace;
+}

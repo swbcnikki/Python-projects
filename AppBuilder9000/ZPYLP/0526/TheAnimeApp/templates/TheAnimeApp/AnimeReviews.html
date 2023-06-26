@@ -1,0 +1,12 @@
+{% extends 'TheAnimeApp/AnimeBase.html' %}
+{% load static %}
+{% block content %}
+<h1>Reviews<br/><br/></h1>
+
+{% for item in all %}
+        <p><strong>{{ item }}</strong><br/>
+        {{ item.Review }}<br/><br/></p>
+    <hr>
+{% endfor %}
+
+{% endblock %}

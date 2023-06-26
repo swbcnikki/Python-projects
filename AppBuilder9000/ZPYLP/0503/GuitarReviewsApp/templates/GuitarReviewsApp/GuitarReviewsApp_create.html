@@ -1,0 +1,17 @@
+{% extends 'GuitarReviewsApp/GuitarReviewsApp_base.html'%}
+
+{% block title %} Add Review {% endblock %}
+
+{% block content %}
+    <h2>Create A Review</h2>
+    <p>Please submit your honest reviews on guitars<br>
+    you have experienced!</p>
+    <div id="form-container">
+       <form id="form" action="" method="post">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}

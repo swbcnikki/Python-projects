@@ -1,0 +1,26 @@
+{% extends 'KeyMaster_base.html' %}
+{% block title %}Add Game to List{% endblock %}
+{% block content %}
+    <h3>Here are the lists of your games, dlc, and your wishlist!</h3>
+
+    <div class="GameContainer">
+        <h3>List of Owned Games</h3>
+        {% for game in game_list %}
+        <br>
+        <a href="{% url 'details' game.pk %}">Game Title:<strong>{{ game.game_name|title }}</strong></a>
+
+        <br>
+        {% endfor %}
+        <br>
+        <br>
+        <h3>Game Wishlist</h3>
+
+        {% for wish in wish_list %}
+        <br>
+        <a href="{% url 'wish_details' wish.pk %}">Game title:<strong>{{ wish.game_title|title }}</strong>
+        <br>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

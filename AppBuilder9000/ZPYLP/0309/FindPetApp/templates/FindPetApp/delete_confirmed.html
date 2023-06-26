@@ -1,0 +1,13 @@
+{% extends "find_pet_base.html" %}
+{% load static %}
+
+{% block title %}Delete Confirmation{% endblock %}
+{% block content %}
+<div id="available_bg">
+</div>
+    <div class="apply_title">
+        <p id="applicant_title">Listing removed for {{ pet }}!</p>
+        <p class="title_caption">Thank you for keeping us up to date!</p>
+        <p class="title_caption">Want to go back to view current <a href="{% url 'available_pets' %}">Available Listings?</a></p>
+    </div>
+{% endblock %}

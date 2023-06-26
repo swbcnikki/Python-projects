@@ -1,0 +1,50 @@
+{% extends "funkocollectorbase.html" %}
+
+{% block title %}Funko Collector{% endblock %}
+{% block body %}
+<!-- display the data from a search queried from a database in a table with bootstrap styling -->
+<div class="container">
+    <!-- if there was an input displayed -->
+    {% if searched %}
+        <h1>You searched for {{ searched }}</h1>
+            <table class="table">
+          <thead>
+            <tr class="table-dark">
+              <th scope="col">Size</th>
+              <th scope="col">Name</th>
+              <th scope="col">Fandom</th>
+              <th scope="col">Chase</th>
+              <th scope="col">Purchase Price</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+        <tbody>
+        <br>
+        <!-- django code with a for loop to iterate though the database with a searched criteria inputted into the search
+            box on the nav bar.  Will display all fields for the object that was searched for.-->
+        {% for pop in pops %}
+        <tr>
+        <td class="table-info">{{ pop.size }}</td>
+        <td class="table-info">{{ pop.name }}</td>
+        <td class="table-info">{{ pop.fandome }}</td>
+        <td class="table-info">{{ pop.chase }}</td>
+        <td class="table-info">{{ pop.purchase_price }}</td>
+        <td class="table-info">{{ pop.value }}</td>
+        </tr>
+        <!-- end django for loop -->
+        {% endfor %}
+        {{ pop }}
+        </tbody>
+</table>
+</div>
+    <!-- if no input was in the search box, the  -->
+    {% else %}
+        <h1>Hey! You forgot to search for a Pop!</h1>
+    {% endif %}
+
+
+
+</div>
+
+
+{% endblock %}

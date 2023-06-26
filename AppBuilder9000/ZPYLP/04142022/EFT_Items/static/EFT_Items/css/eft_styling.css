@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+}
+
+.EFTHeader {
+    text-align: center;
+    color: #CFCFCF;
+}
+
+.EFTInfo {
+    color: #CFCFCF;
+    border: 1px solid;
+    background-color: #333439;
+    margin: 10em auto;
+    padding-bottom: 2em; /* adds padding to the bottom of the EFTInfo div to make form look better */
+    opacity: .9;
+    width: 75%;
+}
+
+.EFTExplained {
+    text-align: center;
+}
+
+/* Styling for background image */
+.bg_img {
+    background-image: url('/static/EFT_Items/images/EFT.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-color: #333439;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Styling for Navbar */
+.EFTNavbar {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    position: -webkit-sticky; /* Sticks navbar to the top */
+	position: sticky;
+	top: 0;
+	z-index: 1; /* Sets navbar to always be on top */
+}
+.EFTNavbar a {
+    float: left;
+    list-style-type: none;
+    display: inline-block;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+}
+.EFTNavbar a:hover {
+    background-color: gray;
+}
+
+/* Styling for form */
+.EFTContainer {
+    margin: 0 auto;
+    width: 25%;
+    height: 50%;
+    background-color: #333439;
+    border: 1px solid;
+    opacity: .9;
+}
+.EFTForm {
+    padding-left: 1.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+/* Styling for table */
+#TableStyle th, td {
+    border: 1px solid #CFCFCF;
+    padding: 8px;
+    background-color: #3F3F3F;
+}
+#TableStyle th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #1E1E1E;
+}
+table.dataTable {
+    width: 95% !important;
+}
+.dataTables_wrapper .dataTables_filter {
+    margin-right: 2.25em;
+    color: #CFCFCF !important;
+    padding-bottom: .5em;
+}
+#TableStyle a {
+    color: #6F94A2;
+}
+#TableStyle tr:hover td {
+    background-color: #282828;
+}

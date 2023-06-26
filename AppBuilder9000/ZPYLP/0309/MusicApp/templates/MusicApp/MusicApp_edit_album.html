@@ -1,0 +1,56 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}MusicApp{% endblock %}
+
+
+{% block content %}
+
+<div class="Edit">
+    <form method="POST" action="{% url 'MusicApp_edit_album' albums.pk %}">
+        <h1>Update Album</h1>
+        <div class="frmObject_container">
+            <!------ Security Token ----->
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <!------ Insert form with crispy formatting ----->
+            {% crispy form %}
+
+            <div class="frmBtn_container">
+                <!-------Update Album Button------>
+                <input type="submit" class="btn" value="Save Album" name="Save_Album">
+                <!-------Cancel & return to Details Page ------->
+                <button type="button" class="btn" value="Cancel"><a href="{% url 'MusicApp_album_details' albums.pk %}">Cancel</a></button>
+                <!-------Delete Album button, opens Modal for Confirmation---------->
+                <button onclick="document.getElementById('modal').style.display='block'" type="button" class="btn">Delete</button>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+
+<!---- Confirm Delete Modal ----------->
+<div id="modal" class="modal">
+    <!------Close modal button------->
+  <span onclick="document.getElementById('modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <hr>
+    <div class="modal_container">
+        <h2>Delete Album</h2>
+        <p>Are you sure you want to delete {{ albums.album_name }}?</p>
+
+        <!----- Form to Delete Album, will call Delete function ------>
+        <form class="modal-content" method="POST" action="../Delete/">
+              {% csrf_token %}
+            <input class="delete_btn btn" type="submit" value="Delete">
+        </form>
+            <button class="btn" onclick="document.getElementById('modal').style.display='none'">Cancel</button>
+
+    </div>
+</div>
+
+
+{% endblock %}
+{% block footer %} {% endblock %}

@@ -1,0 +1,201 @@
+body {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #CFD8DC;
+}
+body,
+html { height: 100%;}
+
+/* ------------- */
+/* Base Template */
+/* ------------- */
+
+.page_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 200px;
+    text-align: center;
+
+}
+
+.content_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url( "/static/img/NoteTaking-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.content_header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.content_body {
+    height: 100%;
+}
+
+/* ------ */
+/* Navbar */
+/* ------ */
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 200px;
+    background-color:rgb(22, 22, 22);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-header {
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.sidebar-brand {
+    height: 65px;
+    position: relative;
+    background-image: linear-gradient(to bottom, #051937, #061f3e, #072646, #082d4e, #093455);
+    padding-top: 0.5em;
+    border-radius: 2px;
+    cursor: default;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+
+.sidebar-brand p {
+    text-shadow: 1px 0px 1px rgba(0,0,0,0.51);
+    color: #ddd;
+}
+
+.sidebar-nav li {
+    position: relative;
+    line-height: 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    flex-direction: column;
+    color: #ddd;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+}
+
+/* -------------- */
+/* Add Notes Page */
+/* -------------- */
+
+.add_notes_page_container {
+    width: 100%;
+    height: 100%;
+}
+
+.add_notes_page_title {
+    color: white;
+    margin: 20px;
+}
+
+.add_notes_page_title h1 {
+    color: white;
+    text-shadow: 1.5px 1.5px 1.5px #A0452B;
+}
+
+.add_notes_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+.add_notes_form_container {
+    width: 50%;
+}
+
+/* ----------------- */
+/* Add Category Page */
+/* ----------------- */
+
+.add_category_page_container {
+    width: 100%;
+    height: 100%;
+}
+
+.add_category_page_title {
+    color: white;
+    margin: 20px;
+}
+
+.add_category_page_title h1 {
+    color: white;
+    text-shadow: 1.5px 1.5px 1.5px #A0452B;
+}
+
+.add_category_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+.add_category_form_container {
+    width: 50%;
+}
+
+/* --------------------- */
+/* Home and Details Page */
+/* --------------------- */
+
+.notetaking_page_container {
+    width: 100%;
+    height: 100%;
+}
+
+.notetaking_page_title {
+    color: white;
+    margin: 20px;
+    text-shadow: 1.5px 1.5px 1.5px #A0452B;
+}
+
+.list_notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+.list-group {
+    width: 40%;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+
+.api_widget {
+    position: absolute;
+    right: 10px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}

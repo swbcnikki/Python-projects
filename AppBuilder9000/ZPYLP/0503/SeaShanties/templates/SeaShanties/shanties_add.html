@@ -1,0 +1,17 @@
+{% extends 'SeaShanties/shanties_base.html' %}
+
+{% block title %} Shanties -- Add Song {% endblock %}
+
+{% block content %}
+
+    <div id="ShantiesForm" class="ShantiesForm">
+        <h2>Add your own song here!</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="new-song-btn" type="submit" name="Save_Song">Save Song</button>
+        </form>
+        <br>
+    </div>
+
+{% endblock %}

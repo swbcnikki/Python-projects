@@ -1,0 +1,15 @@
+{% extends 'WorldRecipes/WR_base.html' %}
+
+{% block title %} Recipes {% endblock %}
+
+{% block content %}
+
+<div class="center recipedetails">
+    <ul>
+        {% for item in all_recipes %}
+        <li><a href="{% url 'WR_recipe_details' item.id %}">{{ item.recipe_name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

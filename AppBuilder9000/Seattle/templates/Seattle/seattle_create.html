@@ -1,0 +1,16 @@
+{% extends "seattle_base.html" %}
+
+{% block title %}Seattle{% endblock %}
+
+{% block content %}
+
+<div class="create">
+    <h1>Create</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

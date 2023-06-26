@@ -1,0 +1,484 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: overlay;  /*--for scrollbar--*/
+  overflow-x: hidden;
+}
+
+html, body{
+	width: 100%;
+    height: 100%;
+    margin: 0;
+	padding: 0;
+}
+
+.page_container {
+    flex: 1 1 auto;
+    max-width: 100%;
+}
+
+header {
+    padding-top: 70px;
+    text-align: center;
+}
+
+/*----------NavBar-----------*/
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+/* Float the list items side by side */
+ul.navbar li {
+    float: left;
+}
+/* Style the links inside the list items */
+ul.navbar li a {
+    display: inline-block;
+    color: rgb(243,243,243);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+ul.navbar li a:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.5s;
+    background-color: rgba(0,0,0,0.8);
+}
+
+/*---------AddTrail Form------------*/
+.AddTrail { /*form container*/
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.5);
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.frmObject_container { /*text within container*/
+    display: block;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    padding: 30px 5px 0px;
+}
+
+.frmBtn_container { /*button container*/
+    display: block;
+    margin: auto;
+    padding: 10px 5px 40px;
+    text-align: center;
+}
+
+.btn {
+	flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.7);
+    color: rgb(243,243,243);
+    text-decoration: none;
+    border: none;
+    font-size:15px;
+}
+
+.btn:hover {
+    background-color: rgba(0,0,0,0.3);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn a{
+    color: rgb(243,243,243);
+    text-decoration: none;
+}
+
+label { /*form labels*/
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    margin-top: 1%;
+    color: rgb(243,243,243);
+    font-size: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    margin-top: 1%;
+    padding: 1px;
+    font-size: 18px;
+    background-color: rgba(243,243,243,0.7);
+}
+
+
+select { /*drop down box*/
+    display: block;
+    width: 100%;
+    margin-top: 1%;
+    padding: 1px;
+    font-size: 18px;
+    background-color: rgba(243,243,243,0.7);
+    text-align: left;
+}
+
+input[type="submit"] {
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+/*--for description--*/
+textarea {
+    height: 50px;
+    width: 100%;
+    background-color: rgba(243,243,243,0.7);
+}
+
+
+/*------------Trail Index Table-----------*/
+.index_container { /*index container*/
+    margin: 0 auto;
+    height: 85%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.trail_table {
+    background-color: rgba(0,0,0,0.5);
+    margin: auto;
+    padding: 20px;
+    font-size: 18px;
+    color: rgba(243,243,243, 0.8);
+}
+
+th, td {
+    padding: 5px 20px 5px;
+    text-align: left;
+}
+
+td a {
+   text-decoration: underline;
+   color: rgba(243,243,243, 0.85);
+   font-weight: 500;
+   letter-spacing: .55px;
+}
+
+td a:hover {
+    color: rgba(243,243,243,0.4);
+}
+
+th {
+    color: black;
+    font-size: 20px;
+}
+
+/*---Pagination---*/
+.pagination {
+    list-style-type: none;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 18px;
+    width: 590px;
+}
+
+.pagination li{
+    float: left;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 5px;
+    background-color: rgba(0,0,0,0.3);
+    color: rgb(243,243,243);
+}
+
+.pagination a{
+    text-decoration: none;
+    color: rgb(243,243,243);
+}
+
+.pagination li:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+li.active {
+    background-color: rgba(116, 83, 38,0.3);
+    color: rgb(243,243,243);
+}
+
+li.active:hover {
+    background-color: rgba(116, 83, 38,0.3);
+}
+
+/*------Search Box-----*/
+.searchbox { /*form container*/
+    display: flex;
+    align-items: center; /*vertical alignment*/
+    width: 400px;
+    margin: auto;
+}
+
+.searchbox input[type="text"] {
+    display: block;
+    margin: 10px 5px;
+    padding: 5px;
+}
+
+.searchbox input[type="submit"] {
+    display: block;
+    margin: 10px 5px;
+}
+
+/* No search results text*/
+.text {
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+}
+
+/* Link in search results text*/
+.text a {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.7);
+    color: rgba(243,243,243);
+    padding: 1px 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.text a:hover {
+    background-color: rgba(243,243,243,0.9);
+    color: black;
+}
+
+/*---Return to index button from searchpage -----*/
+.return {
+    display: block;
+    text-align: center;
+    margin: 15px auto;
+    width: 70px;
+    font-size: 18px;
+}
+
+/*----------Details Page------------*/
+.TrailDetails{
+    margin: 0 auto;
+    max-width: 70%;
+    height: 90%;
+    background-color: rgba(0,0,0,0.5);
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.details_container {
+    display: grid;
+    width: 95%;
+    margin: auto;
+    text-align: left;
+    padding: 20px 5px 0px;
+    color: rgba(243,243,243,1);
+}
+
+.details_container h1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 10px;
+}
+
+.column1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    margin-bottom: 10px;
+    width: 27vw;
+}
+
+.column2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    margin-bottom: 10px;
+    width: 40vw;
+}
+
+.bottom_row {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    padding: 10px 0;
+}
+
+.details {
+    padding: 10px;
+}
+
+.details p{
+    font-size: 18px;
+}
+
+.trail_image {
+    display: block;
+    margin: auto;
+    width: 90%;
+    max-height: auto;
+}
+
+/*---Return to index button----*/
+
+
+.details_btn {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.7);
+    border: none;
+    font-size:18px;
+}
+
+.details_btn:hover {
+    background-color: rgba(0,0,0,0.3);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.details_btn > a{
+    text-decoration: none;
+    color: rgb(243,243,243);
+}
+
+.edit_image {
+    width: 17px;
+    height: 17px;
+}
+
+
+/*---------Confirm Delete Modal---------*/
+.modal {
+    display: none; /* hidden by default */
+    position: fixed; /* stay in place */
+    z-index: 1; /* placed on top of elements */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  /* centers modal on screen */
+    width: 30%:
+    height: 20%;
+    overflow: auto; /* enable scroll if needed */
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 50px;
+    border: 1px solid black;
+}
+
+.modal_container {
+    padding: 5px;
+    text-align: center;
+    background-color: rgba(243,243,243,0.7);
+}
+
+.modal-content {
+    margin: auto;
+}
+
+hr {
+    border: 1px solid rgba(243,243,243,0.7);
+}
+
+/* Modal close button */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(243,243,243,0.8);
+}
+
+.close:hover,
+ .close:focus {
+    color: rgba(166,147,89,0.4); /* light brown */
+    cursor: pointer;
+}
+
+.delete_btn,
+.cancel_btn {
+    width: 30%;
+    margin: 10px;
+    float: left;
+}
+
+.delete_btn {
+    margin-left: 16%;
+}
+
+/*---------Footer--------------*/
+
+.footer {
+    clear: both;
+    position: relative;
+    left:0;
+    bottom:0;
+    width:100%;
+    margin-top: 60px;
+    margin-bottom: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: right;
+    padding: 10px 40px 10px 0px;
+    font-size: 15px;
+}
+
+/*--------Background Image----------*/
+.background {
+    background-color: gray;
+    background-image: url('/static/images/MountainTrail.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+    background-position: center;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*---scrollbar styling----*/
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.6);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.4);
+}

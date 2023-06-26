@@ -1,0 +1,15 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+  {% for Route in route_list %}
+    <center>
+    <h3 style="color:red;"><strong>{{ delete_user_route }}</strong></h3>
+    </center>
+  {% endfor %}
+{% block content %}
+<form method="POST">
+        {% csrf_token %}
+        <h3>Are you sure you want to delete this?</h3>
+        <button type="submit" onclick="return confirm('Last chance!!')">Delete</button>
+    </form>
+{% endblock %}

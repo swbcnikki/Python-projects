@@ -1,0 +1,17 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+
+{% block title %}MusicApp{% endblock %}
+
+{% block content %}
+
+<div class="artist-chart">
+    <h1>This Week's Most Streamed Artists:</h1>
+    {% if artist_list %}
+    {% for a in artist_list %}
+   <div class="artist-list">
+       <h5 class="artist-name">{{ a }}</h5>
+   </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

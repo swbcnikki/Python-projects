@@ -1,0 +1,71 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}Wishlist{% endblock %}
+{% block header%}Wishlist{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="section">
+            <p class="eighty">Have a book you want to read but don't have time right now? Add it to your wishlist so you can access it later! To add books, click on the Add Book button.</p>
+        </div>
+        <!-- iterate through books -->
+         <div class="booklist">
+            {% for book in books %}
+             <div class="card">
+                 <a href="{{ book.get_absolute_url }}">
+                     {% if book.image %}
+                        <div class="top-book-image card-img-top" style="background:url({{book.image}}) no-repeat; background-size:cover; background-position:center;"></div>
+                     {% else %}
+                        <div class="top-book-image card-img-top" style="background:url({% static 'images/No-image-available.png' %}) no-repeat; background-size:cover; background-position:center;"></div>
+                     {% endif %}
+                 </a>
+                <h4 class="card-header">
+                    <div class="title">
+                        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+                    </div>
+                    <div class="icons">
+                        <a class="icon" data-toggle="tooltip" data-placement="top" title="Delete book from your list" href="{% url 'BookClubApp_delete' pk=book.pk %}"><i class="fas fa-minus-circle" title="Delete"></i></a>
+                        <a class="icon" data-toggle="tooltip" data-placement="top" title="Mark this book as read" href="{% url 'BookClubApp_MarkRead' pk=book.pk read=book.read %}"><i class="far fa-check-square" title="Mark Read"></i></a>
+                    </div>
+                </h4>
+                 <a href="{{ book.get_absolute_url }}">
+                     <div class="card-body">
+                             {% for author in book.authors_as_list %}
+                                <!--some authors are returned in a format that looks like a list but is saved as a string,
+                                so the cut method removes extra characters-->
+                                <p class="card-title" style="color:#444;"><em>{{ author|cut:","|cut:"["|cut:"]" }}</em></p>
+                             {% endfor %}
+                     </div>
+                 </a>
+             </div>
+            {% endfor %}
+        </div>
+        {% if books.has_other_pages %}
+          <ul class="pagination">
+            {% if books.has_previous %}
+              <li class="page-item"><a class="page-link" href="?page={{ books.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+              <li class="page-item disabled"><span>&laquo;</span></li>
+            {% endif %}
+            {% for i in books.paginator.page_range %}
+              {% if books.number == i %}
+                <li class="page-item active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+              {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+              {% endif %}
+            {% endfor %}
+            {% if books.has_next %}
+              <li class="page-item"><a class="page-link" href="?page={{ books.next_page_number }}">&raquo;</a></li>
+            {% else %}
+              <li class="page-item disabled"><span>&raquo;</span></li>
+            {% endif %}
+          </ul>
+        {% endif %}
+        <p class="eighty"><a class="btn btn-secondary" href="{% url 'BookClubApp_searchForm' %}" style="margin-top:30px;">Add Book</a></p>
+    </div>
+    <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+    </script>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!-- Navbar code, utilizing Bootstrap -->
+
+<nav class="recordsnav navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="{% url 'records_home' %}">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="{% url 'records_view' %}">View</a>
+          <a class="nav-item nav-link" href="{% url 'records_add' %}">Add</a>
+          <a class="nav-item nav-link" href="{% url 'records_random' %}">Random Pick</a>
+        </div>
+  </div>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search Your Collection" aria-label="Search">
+    <button class="recordsbtn btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>

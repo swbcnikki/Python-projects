@@ -1,0 +1,26 @@
+{% extends "BestGamesEver/base.html" %}
+{% load static %}
+{% block title %} Search{% endblock %}
+
+
+{% block content %}
+
+<div id="main">
+        <h1>Find Game</h1>
+        <form method="get">
+            <label for="game"></label>
+            <input type="text" name="game" id="game" value="{{ request.GET.game }}" placeholder="game..."><br>
+            <input type="submit" value="Submit"/>
+        </form>
+        {% if game %}
+            <h3>{{ game.title }}</h3>
+            <h3>{{ game.price }}</h3>
+        {% endif %}
+    </div>
+
+
+
+
+{% endblock %}
+
+

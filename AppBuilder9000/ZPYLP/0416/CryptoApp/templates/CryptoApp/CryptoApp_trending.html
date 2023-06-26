@@ -1,0 +1,34 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Cryptocurrency Trends {% endblock %}
+
+{% block header %}Trending Coins{% endblock %}
+
+{% block content %}
+
+    <p>Top 7 trending coins, according to CoinGecko.com:</p>
+    <ol class="trending-list">
+        <li>{{ trend.name1 }}<br>
+            Symbol: {{ trend.symbol1 }}<br>
+            Market Cap Rank: {{ trend.market_cap_rank1 }}</li><br>
+        <li>{{ trend.name2 }}<br>
+            Symbol: {{ trend.symbol2 }}<br>
+            Market Cap Rank: {{ trend.market_cap_rank2 }}</li><br>
+        <li>{{ trend.name3 }}<br>
+            Symbol: {{ trend.symbol3 }}<br>
+            Market Cap Rank: {{ trend.market_cap_rank3 }}</li><br>
+        <li>{{ trend.name4 }}<br>
+            Symbol: {{ trend.symbol4 }}<br>
+            Market Cap Rank: {{ trend.market_cap_rank4 }}</li><br>
+        <li>{{ trend.name5 }}<br>
+            Symbol: {{ trend.symbol5 }}<br>
+            Market Cap Rank: {{ trend.market_cap_rank5 }}</li><br>
+        <li>{{ trend.name6 }}<br>
+            Symbol: {{ trend.symbol6 }}<br>
+            Market Cap Rank: {{ trend.market_cap_rank6 }}</li><br>
+        <li>{{ trend.name7 }}<br>
+            Symbol: {{ trend.symbol7 }}<br>
+            Market Cap Rank: {{ trend.market_cap_rank7 }}</li>
+    </ol>
+
+{% endblock %}

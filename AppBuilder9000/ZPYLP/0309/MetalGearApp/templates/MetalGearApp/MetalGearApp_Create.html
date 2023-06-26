@@ -1,0 +1,27 @@
+{% extends "MetalGearApp/MetalGearApp_Base.html" %}
+{% load static %}
+
+{% block title %}Diamond Dog Enlist{% endblock %}
+{% block content %}
+    <div class="enlist-container">
+        <div>
+            <h1 class="">Enlist in the Diamond Dogs</h1>
+            <p>Fill the information below to enlist in the Big Boss's Army</p>
+        </div>
+                <div class="card card-body">
+                    <div class="form-container">
+                        <form method="POST" novalidate>
+                            <div class="form-object-container">
+                                {% csrf_token %}
+                                {{ form.non_field_errors }}
+                                {{ form.as_p }}
+                            </div>
+                            <div class="form-btn-container">
+                                <input type="submit" class="btn" value="Enlist!" name="save_item">
+                                <a href="{% url 'MetalGearApp_Home' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+{% endblock %}

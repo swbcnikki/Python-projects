@@ -1,0 +1,16 @@
+{% extends "fantasyFB_base.html" %}
+
+{% block title %}&#127944;Fantasy Football!&#127944;{% endblock %}
+
+{% block header %}Add a Hero!{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" name="fantasyFB_form" id="sub-btn">Add Player</button>
+        </form>
+        <a href="{% url 'fantasyFB_home' %}"><button id="cancel">Cancel</button></a>
+    </div>
+{% endblock %}

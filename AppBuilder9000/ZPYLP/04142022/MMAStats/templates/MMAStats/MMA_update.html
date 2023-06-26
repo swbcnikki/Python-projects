@@ -1,0 +1,19 @@
+{% extends "MMAStats/MMA_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page allows you to edit a specific entry.
+{% endcomment %}
+    <h1>
+        Update Stats
+    </h1>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <input type="submit" value="Update" class="btn btn-outline-success">
+    </form>
+
+{% endblock %}

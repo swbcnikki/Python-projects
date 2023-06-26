@@ -1,0 +1,42 @@
+{% extends "DNDCharacters/dnd_characters_base.html" %}
+
+{% block title %}Dungeons and Dragons Characters!{% endblock %}
+
+
+{% block header %} <h1 class="welcomeh1">Welcome to the Beginning of Your New Grand Adventure! </h1>{% endblock %}
+
+{% block content%}
+    <div class="cards">
+
+      <div class="card">
+        <img src="static/images/HowToImage.jpg" alt="..." class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title">How To Play Dungeons and Dragons!</h2>
+          <p>
+            Click here to figure out how to play!. <a href="{% url 'dnd_characters_HowTo' %}">Read more...</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="static/images/TypesOfClasses.jpg" alt="..." class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title">Class Descriptions</h2>
+          <p>
+            Here is a brief summary of the classes! <a href="{% url 'dnd_characters_ClassDescript' %}">Read more...</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="static/images/creation.jpg" alt="..." class="card-img-top">
+        <div class="card-body">
+          <h2 class="card-title">Create your Character</h2>
+          <p>
+            Click Here to Start your adventure into the dungeon and dragon world! <a href="{% url 'createCharacter' %}">Read more...</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+/* BASIC STYLING */
+body {
+  background-color: lightgray;
+}
+
+h1 {
+  text-align: center;
+    color: blue;
+}
+
+h2 {
+  text-align: center;
+    color: red;
+}
+
+div {
+  background-color: lightblue;
+}
+
+p {
+  background-color: orange;
+}

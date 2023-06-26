@@ -1,0 +1,169 @@
+
+.footer {
+    position: fixed;
+    text-transform: uppercase;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    height: 70px;
+    background-color: rgba(0,0,0,0.0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a {
+padding-bottom: 10px;
+text-decoration: none;
+text-size: 4em;
+font-weight: bold;
+background-image: linear-gradient(to left, white, blue);
+-webkit-background-clip: text;
+-moz-background-clip: text;
+background-clip: text;
+color: transparent;
+
+}
+
+*{margin: 0;}
+
+body {
+    background-image: url("../images/purple.jpg");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    background-size: cover;
+    background-position: left;
+}
+
+html {
+    min-height: 100%;
+    overflow-y: scroll;
+}
+
+.navbar { /*styling the navbar*/
+    width: 100%;
+    background-color: rgba(48,100,231,0);
+}
+.navbar ul {
+    text-align: center;
+    margin-right: 250px;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    padding-top: 10px;
+}
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 20px;
+    transition: all ease 1s;
+    position: relative;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.navbar ul li a:hover {
+    color: white;
+    background: rgba(238, 130, 238, 0.7);
+}
+
+h1 {
+text-align: center;
+color: white;
+margin: 3% auto;
+text-shadow: 2px 2px 5px black;
+font-size: 2em;
+}
+
+/* fancy/span/span.fancier is all part of the javascript animation. Had to name span.fancier because "span.fade" conflicted
+with bootstrap or another online styling service */
+
+.fancy {
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+    margin: 3% auto;
+}
+span {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+span.fancier {
+    opacity:1;
+}
+
+/* Styling for home page books parent-book-div is the container and the-kid is each individual book image */
+
+.outer-parent-book-div {
+    width: 50vw;
+    height: 25vw;
+    background:rgba(48,100,231,0.2);
+    display:flex;
+    margin: 4% auto;
+    border: 2px solid white;
+    justify-content: center;
+}
+
+
+.add-book-container { /* creating a container to hold my form*/
+    width: 400px;
+    height: 500px;
+    background-color: rgba(48,100,231,0.2);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1% auto;
+    border: 1px solid white;
+}
+.add-book-form {
+    color: white;
+    font-size: 12px;
+    text-shadow: 3px 3px 5px black;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.book-tables {  /*styling the table layout to render my form aesthetically */
+    color: white;
+    font-size: 0.9em;
+    min-width: 400px;
+    max-width: 80vw;
+    margin: 2% auto;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+.book-tables thead tr {
+    background-color: #2A48F5;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+.book-tables th,
+.book-tables td {
+    padding: 12px 15px;
+}
+.book-tables tbody tr {
+    border-bottom: 2px solid white;
+    background-color: rgba(0,0,0,0.7);
+    font-weight: bold;
+}
+.book-tables tbody tr:nth-of-type(odd) {
+    border-bottom: 2px solid white;
+    background-color: rgba(173, 165, 173, 0.9);
+    color: black;
+    font-weight: bold;
+}
+.delete-btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

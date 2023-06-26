@@ -1,0 +1,23 @@
+{% extends 'funkocollectorbase.html' %}
+{% block title %}Details{% endblock %}
+
+
+{% block body %}
+<div class="container form-div">
+    <div>
+        <h1>Pop Details...</h1>
+        <h2 class="red_font"><u>{{ detailspop }}</u></h2>
+        <ul>
+            <h3>
+            <li>{{ detailspop.size }}<br/></li>
+            <li>{{ detailspop.fandome }}<br/></li>
+            <li>Rare:&nbsp{{ detailspop.chase }}<br/></li>
+            <li>${{ detailspop.purchase_price }}<br/></li>
+            <li>${{ detailspop.value }}<br/></li>
+            </h3>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}

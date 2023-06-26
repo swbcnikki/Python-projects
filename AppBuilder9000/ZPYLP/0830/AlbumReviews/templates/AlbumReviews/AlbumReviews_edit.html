@@ -1,0 +1,21 @@
+{% extends 'AlbumReviews/AlbumReviews_base.html' %}
+	{% block title%}Edit Album{% endblock %}
+
+	{% block content %}
+		<div>
+
+			<form method="POST">
+				<div class="add_form">
+					<h1>Edit Album</h1>
+					<p>
+						{% csrf_token %}
+                		{{ form.as_p }}
+					</p>
+					<div class="btn-container">
+						<button type="submit" value="Submit">Submit</button>
+						<button value="Cancel"><a href="{% url 'AlbumReviews_list' %}">Cancel</a></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	{% endblock %}

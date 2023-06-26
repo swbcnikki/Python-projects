@@ -1,0 +1,29 @@
+{% extends 'FloridaBirds/FloridaBirds_base.html' %}
+
+{% block title %}  Florida Birds Details {% endblock %}
+
+{% block navbar%}{% endblock %}
+
+{% block content %}
+
+
+<br>
+<br>
+<br>
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h1>{{birddetail.bird_name}}</h1></div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">{{birddetail.description}}</h5>
+    <h5 class="card-title">{{birddetail.habitat}}</h5>
+    <p class="card-text">Date seen: {{birddetail.date_seen}}</p>
+  </div>
+</div>
+
+<div>
+  <a href="{% url 'florida_birds_delete' birddetail.pk%}" class="btn btn-outline-danger ">Delete</a>
+  <a href= "{% url 'florida_birds_edit' birddetail.pk %}"><button type="button" class="btn btn-outline-success">Edit</button></a>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "StockMarketBase.html" %}
+
+{% block StockTitle %} Create Your Account! {% endblock %}
+
+
+
+{% block StockPageHeading %} Enter your information below! {% endblock %}
+
+{% block Content %}
+<div id="account-form">
+		<form method="POST"> <!-- Replace this with the Django Form -->
+			{% csrf_token %}
+			{{form.as_p}}
+			<button id="new-account-button" type="submit" name="Save_Account">Create Account</button>
+		</form>
+</div>
+
+
+
+{% endblock %}
+

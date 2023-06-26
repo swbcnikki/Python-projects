@@ -1,0 +1,12 @@
+{% extends "AwesomeWeather/AwesomeWeather_base.html" %}
+{% load static %}
+{% block title %}Awesome Weather Events{% endblock %}
+
+{% block content %}
+<ul>
+    <li>{{ facts.state }}</li>
+    <li>{{ facts.town }}</li>
+    <li>{{ facts.date }}</li>
+    <li>{{ facts.event }}</li>
+</ul>
+{% endblock %}

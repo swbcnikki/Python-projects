@@ -1,0 +1,36 @@
+{% extends "StockMarketBase.html" %}
+
+{% block StockTitle %} Your Account {% endblock %}
+
+
+
+{% block StockPageHeading %} See your balance, add Value {% endblock %}
+
+{% block content %}
+
+			<h2>RECENT TRANSACTIONS</h2>
+
+			<table class="table table-responsive" id ="transactions-table">
+				<!-- Replace this with the Django populated transactions -->
+				<tr id="headerRow">
+					<th>Date</th>
+					<th>Type</th>
+					<th>Description</th>
+					<th>Amount</th>
+					<th>Balance</th>
+				</tr>
+				{% for key, total in table_contents.items %}
+				<tr>
+					<td class="center">{{ key.date }}</td>
+					<td class="center">{{ key.type }}</td>
+					<td class="left">{{ key.description }}</td>
+					<td class="right">{{ key.amount }}</td>
+					<td class="right">{{ total }}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+
+			<br><br>
+{% endblock %}
+

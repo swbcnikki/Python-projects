@@ -1,0 +1,16 @@
+{% extends 'StockApp/StockApp_base.html' %}
+
+{% block title %}Edit A Stock{% endblock %}
+
+{% block content %}
+
+	<h3>Edit {{ this_stock }} Stock</h3>
+	<div id="Add-Form">
+		<form id="form" method="POST" action="">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button id="save-stock" type="submit" name="edit">Save </button>
+		</form>
+	</div>
+
+{% endblock %}

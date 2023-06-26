@@ -1,0 +1,27 @@
+{% extends "Personality_base.html" %}
+
+{% block title %}Personality{% endblock %}
+
+{% block header %}Take the test or die!{% endblock %}
+
+{% block content %}
+<h3>Job Details</h3>
+<p class="center"><a class="blue" href="{{ job_url }}">Visit Page on Indeed.</a></p>
+<div id="account-form">
+		<table class="table table-responsive" id ="transactions-table">
+    <tr id="headerRow">
+        <th>Title</th>
+        <th>Company</th>
+        <th>Location</th>
+    </tr>
+    {% for job in job_list %}
+    <tr>
+        <td class="left"><a href="">{{ job.0 }}</a></td>
+        <td class="center">{{ job.1 }}</td>
+        <td class="right">{{ job.2 }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <button type="submit" class="new-account-button"><a href="{% url 'personality_details' person.id %}">Return</a></button>
+</div>
+{% endblock %}

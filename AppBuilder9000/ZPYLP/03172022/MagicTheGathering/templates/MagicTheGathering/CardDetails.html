@@ -1,0 +1,34 @@
+{% extends 'MagicTheGathering/MagicTheGathering_base.html' %}
+
+{% load static %}
+
+{% block title %}Card Details{% endblock %}
+
+{% block content %}
+<div id="all-collection-form">
+
+	<table class="table table-responsive" id ="transactions-table">
+				<!-- Replace this with the Django populated transactions -->
+				<tr id="headerRow">
+					<th>Name</th>
+					<th>Color</th>
+					<th>Type</th>
+					<th>Cost</th>
+                    <th>Text</th>
+				</tr>
+				<tr>	<!-- Specify fields to be displayed -->
+					<td class="center">{{ card_details.card_name }}<br/>
+					<td class="center">{{ card_details.card_color }}<br/>
+					<td class="left">{{ card_details.card_type }}<br/>
+					<td class="right">{{ card_details.card_cost }}<br/>
+					<td class="right">{{ card_details.card_text }}<br/>
+				</tr>
+</div>
+
+<div class="fromBtn_container">
+	<a href="{% url 'editCardInfo' card_details.id %}"><button type="submit" class="btn" id="button2">Edit Card Info</button></a>
+	<a href="{% url 'collection' %}"><button type="submit" class="btn" id="button4">Cancel</button></a>
+</div>
+
+
+{% endblock %}

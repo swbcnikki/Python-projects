@@ -1,0 +1,10 @@
+{% extends "seattle_base.html" %}
+
+{% block content %}
+<div class="detail">
+    <h1>Your plan:</h1>
+    <h4 style="padding: 10px;">{{ place.Category }}</h4>
+    <h4 style="padding: 10px;">{{ place.Place }}</h4>
+    <p style="padding: 10px;">{{ place.Description }}</p>
+</div>
+{% endblock %}

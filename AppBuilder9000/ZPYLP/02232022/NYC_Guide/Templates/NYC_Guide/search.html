@@ -1,0 +1,55 @@
+{% extends 'nyc_base.html' %}
+
+{% block title%}Search for a New York City Restaurant{% endblock %}
+
+	{% block content %}
+
+    {% if searched %}
+        <h2>You Searched For {{ searched }}</h2>
+    {% else %}
+        <h2>Search NYC Restaurants</h2>
+    {% endif %}
+    <br>
+<br>
+<br>
+<br>
+    <form method=POST action="{% url 'search' %}">
+        {% csrf_token %}
+
+        <input class="search" type="search" placeholder="Search Restaurants" aria-label="Search" name="searched">
+        <br>
+        <button class="search_btn" type="submit">Search</button>
+
+    </form>
+
+            {% for Restaurants in restaurants %}
+                 <table class="details-table">
+				<tr>
+					<th>Name</th>
+                    <th>Cuisine</th>
+                    <th>Price Range</th>
+					<th>Neighborhood</th>
+					<th>Borough</th>
+                    <th>Address</th>
+                    <th>State</th>
+                    <th>ZIP Code</th>
+
+				</tr>
+				<tr>
+					<td>{{ Restaurants.restaurant_name }}</td>
+                    <td>{{ Restaurants.cuisine }}</td>
+                    <td>{{ Restaurants.price_range }}</td>
+					<td>{{ Restaurants.neighborhood }}</td>
+					<td>{{ Restaurants.address }}</td>
+					<td>{{ Restaurants.borough }}</td>
+                    <td>{{ Restaurants.state }}</td>
+                    <td>{{ Restaurants.zip_code }}</td>
+				</tr>
+			</table>
+
+            <button type="submit" class="update-button"><a href="{% url 'update' Restaurants.id %}">Update</a></button>
+            <br>
+            <button type="submit" class="update-button"><a href="{% url 'delete' Restaurants.id %}">Delete</a></button>
+            {% endfor %}
+
+	{% endblock %}

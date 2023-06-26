@@ -1,0 +1,26 @@
+{% extends "TVshowAPP/base.html" %}
+
+{% block title %}List of Shows{% endblock %}
+
+{% block header %}Here is your list of popular TV shows Sorted Aplhabetically:{% endblock %}
+
+{% block content %}
+
+
+<table class="container">
+<h1>Sorted Alphabetically:</h1>
+    <tr>
+    <th>Show Name</th>
+    <th>Genre</th>
+    <th>Network</th>
+    <th>Seasons</th>
+    </tr>
+    {% for show in sorted_shows %}
+    <tr><td>{{ show.show_name|title }}</td><td>{{ show.genre }}</td><td>{{ show.network }}</td><td>{{ show.seasons }}</td></tr>
+    {% endfor %}
+</table>
+<div class="center">
+    <button type="button" class="btn" value="Back"><a href="{% url 'seeShow' %}">Back</a></button>
+</div>
+
+{% endblock %}

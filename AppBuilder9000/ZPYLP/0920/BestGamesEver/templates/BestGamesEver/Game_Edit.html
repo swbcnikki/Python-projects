@@ -1,0 +1,22 @@
+{% extends "BestGamesEver/base.html" %}
+{% load static %}
+{% block title %} Edit Entry{% endblock %}
+
+
+{% block content %}
+
+<h2 style="text-align:center; color:white;">Make an Edit</h2>
+
+        <form method ='POST'>
+            {% csrf_token %}
+            <table id="table" class="table table-dark table-bordered table-hover text-center">
+                {{ form.as_table }}
+            </table>
+            <button type="submit" class="btn btn-secondary btn-lg">Edit</button>
+
+        </form>
+
+
+{% endblock %}
+
+

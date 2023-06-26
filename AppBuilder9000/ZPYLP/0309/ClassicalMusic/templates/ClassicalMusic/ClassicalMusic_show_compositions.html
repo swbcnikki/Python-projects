@@ -1,0 +1,72 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+
+<header class="page_header">
+    <h1>Compositions</h1>
+</header>
+
+
+<!-- ERRORS & BUTTONS BAND-->
+<div class="button-container">
+    <div>{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}</div>
+    <div >
+    </div>
+    <div>
+        <a class="edit_icon" href="{% url 'ClassicalMusic_add_composition' %}">
+            <i class="far fa-plus-square big-icon"></i>
+        </a>
+    </div>
+</div>
+
+<table  id="sort-table" class="table table-main">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Instrumentation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for composition in compositions %}
+            <tr>
+                <td>
+                    <a href="{% url 'ClassicalMusic_details_composition' composition.pk %}">{{ composition.title }}</a>
+                </td>
+                <td>
+                    {% for author in composition.authors.all %}
+                        {% if forloop.last %}
+                            <a href="{% url 'ClassicalMusic_details_musician' author.pk %}">{{ author }}</a> - <span class="role">{{ author.role|lower }}</span>
+                        {% else %}
+                            <a href="{% url 'ClassicalMusic_details_musician' author.pk %}">{{ author }}</a> - <span class="role">{{ author.role|lower }}</span>,
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for instrument in composition.instrumentation.all %}
+                        {% if forloop.last %}
+                            {{ instrument.role|lower }}
+                        {% else %}
+                            {{ instrument.role|lower }},
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+{% endblock %}
+
+

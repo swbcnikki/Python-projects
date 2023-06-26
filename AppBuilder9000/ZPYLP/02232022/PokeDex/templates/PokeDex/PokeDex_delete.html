@@ -1,0 +1,21 @@
+{% extends "PokeDex/PokeDex_base.html" %}
+{% load static %}
+
+{% block title %} Edit PokeDex {% endblock %}
+
+{% block header %} Delete Pokemon {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+<div id="delete-container" style="padding-top: 380px; padding-left: 223px; padding-right: 964px;">
+    <form method="post">
+        {% csrf_token %}
+        {{ pokemon.as_p }}
+        <h4 style="text-align: center; padding-top: 25px;">Deleting Pokemon: {{ show_pokemon.name }}</h4>
+        <br><br>
+        <button type="submit" class="btn btn-dark btn-lg w-25 mx-auto" style="float: left;" onclick="return confirm('Are you sure you want to delete this Pokémon?')">Delete</button>
+        <a href="{% url 'show_pokemon' %}"><button type="button" class="btn btn-dark btn-lg w-25 mx-auto" style="float: right;">Cancel</button></a>
+    </form>
+</div>
+
+{% endblock %}

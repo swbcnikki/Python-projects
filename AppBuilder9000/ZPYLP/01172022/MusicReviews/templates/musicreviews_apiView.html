@@ -1,0 +1,40 @@
+{% extends "musicreviews_base.html" %}
+{% load static %}
+{% block title %} News {% endblock %}
+
+{% block header %} <div class="videotext"> music news </div> {% endblock %}
+
+{% block content %}
+
+    <div class="navbarSteady">
+        <a href="{% url 'back_home' %}">&#8592;</a>
+        <a href="{% url 'music_reviews_home' %}">Home</a>
+        <a href="{% url 'review_view' %}">Reviews</a>
+        <a href="{% url 'createReview' %}">Add Reviews</a>
+        <a href="{% url 'beautiful_soup' %}">Music</a>
+        <b><a href="{% url 'apiLoad' %}">News</a></b>
+    </div>
+
+    <div class="scrapedText">
+        {{ text }}
+        <br>
+        <p class="bounce"> source = <a target="_blank" href="{{ link }}"> {{ publishedby }} </a> </p>
+        <p> published on {{ published }} </p>
+    </div>
+
+    <div class="scrapedText">
+        {{ text1 }}
+        <br>
+        <p class="bounce"> source = <a class="bounce" target="_blank" href="{{ link1 }}"> {{ publishedby1 }} </a></p>
+        <p> published on {{ published1 }} </p>
+    </div>
+
+    <div class="scrapedText">
+        {{ text2 }}
+        <br>
+        <p class="bounce"> source = <a target="_blank" href="{{ link1 }}"> {{ publishedby2 }} </a> </p>
+        <p> published on {{ published2 }} </p>
+    </div>
+
+
+{% endblock %}

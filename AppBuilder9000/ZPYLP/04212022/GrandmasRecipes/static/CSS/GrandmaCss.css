@@ -1,0 +1,106 @@
+
+
+
+body {
+	position: relative;
+	overflow: scroll; /* Show scrollbars */
+	background: url("../img/GrandmasKitchenPhoto.jpg");
+	background-size: auto;
+
+}
+html {
+    height: 100%;
+    margin: 0;
+	padding: 0;
+}
+
+p {
+	padding: 2px 16px;
+	font-size: 20px;
+	font-family: 'Lato', Georgia, sans-serif;
+	color: DarkKhaki;
+	text-align: center;
+	padding-right: 400px;
+}
+
+h1 {
+    color: DarkKhaki;
+    font-family: 'Lobster';
+
+    margin:0 auto;
+    text-align: center;
+    padding-right: 70px;
+}
+
+h2 {
+    color: DarkKhaki;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+h6 {
+    color: DarkKhaki;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding-right: 400px;
+    font-size: 20px;
+}
+
+h5 {
+    color: DarkKhaki;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding-right: 400px;
+    font-size: 20px;
+}
+
+header {
+    color: DarkKhaki;
+    font-family: 'Lobster';
+
+    margin:0 auto;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+.nav {
+    color: DarkKhaki;
+    font-family: 'Lobster';
+    text-align: left;
+    font-size: 20px;
+
+}
+
+
+td {
+    color: DarkKhaki;
+    padding-left: 70px;
+    padding-top:25px;
+    padding-right: 70px;
+    font-size: 20px;
+}
+tc{
+    color: DarkKhaki;
+    padding-left: 80px;
+    padding-top:25px;
+    padding-right: 70px;
+    font-size: 30px;
+
+}
+
+
+button{
+    color: #0404B4;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding-left 100px;
+    padding-bottom 100px;
+}
+
+
+

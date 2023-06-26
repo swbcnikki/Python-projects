@@ -1,0 +1,16 @@
+{% extends 'Reading/Reading_Base.html' %}
+{% block title %}Record Reading{% endblock %}
+
+{% block content %}
+<div class="form_container">
+    <form method="POST">
+        <h1>Record Reading Form</h1>
+        <div class="frmObject_container">
+        {% csrf_token %}
+        {{ form.as_p }}
+            <button type="submit" name="Reading_Create">Add Record</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

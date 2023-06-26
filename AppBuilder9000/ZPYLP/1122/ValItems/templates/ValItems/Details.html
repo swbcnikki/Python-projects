@@ -1,0 +1,19 @@
+{% extends "Val_base.html" %}
+
+{% block title %}Valheim Items{% endblock %}
+
+{% block content %}
+<form>
+<div class="view_container">
+    <ul class="item_ul">
+        <li>Name: {{ items.item_name }}</li>
+        <li>Type: {{ items.item_type }}</li>
+        <li>Level: {{ items.item_level }}</li>
+        <li>Description: {{ items.item_description }}</li>
+    </ul>
+
+    <button class="edit-item-button"><a href="{% url 'Val_edit' items.pk %}">Edit</a></button>
+    <button class="delete-item-button"><a href="{% url 'Val_delete2' items.pk %}">Delete</a></button>
+</div>
+</form>
+{% endblock %}

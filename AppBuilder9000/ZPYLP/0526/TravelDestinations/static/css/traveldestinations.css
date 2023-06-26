@@ -1,0 +1,35 @@
+/**** Nar bar ***/ 
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(136, 3, 3);
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #111;
+}
+
+
+body {
+    background-image: url("../images/travel.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 208, 0, 0.062);
+}
+
+

@@ -1,0 +1,60 @@
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+crossorigin="anonymous">
+<style>
+	body{
+		background-color: #438f48;
+	}
+	input{
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		box-sizing: border-box;
+	}
+	input::placeholder {
+	  color: #a6a5a1;
+	}
+	.submit{
+		background-color: #c7c154;
+	}
+	.center-column{
+		width:600px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}
+	.item-row{
+		background-color: #851d22;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+	.btn-danger{
+		background-color: #ffae19;
+		border-color: #e59400;
+	}
+</style>
+
+<div class="center-column">
+
+<p>Are you sure you want to delete "{{item}}"?</p>
+
+<form method="POST" action="">
+    {% csrf_token %}
+        <div class="item-row">
+       <a class="btn btn-sm btn-info" href="{% url campsites_list %}" role="button">No</a>
+<!--
+       <a class="btn btn-sm btn-info" type="submit" role="button">YES</a>
+-->
+     <input class="btn btn-sm btn-info" type="submit" value="Yes">
+        <!--<input class="btn btn-sm btn-info" href="{% url 'list' %}" type="button" value="No">-->
+
+        </div>
+</form>
+</div>

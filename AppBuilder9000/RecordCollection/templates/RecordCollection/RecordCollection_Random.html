@@ -1,0 +1,16 @@
+{% extends "RecordCollection/RecordCollection_base.html" %}
+
+{% load static %}
+
+{% block title %} Record Collection Random {% endblock %}
+
+
+
+{% block content %}
+<div class="recordscard card text-white text-center mb-3 " style="max-width: 69rem;">
+  <div class="card-body">
+    <p class="card-text">A Work In Progress<br>Recommendations coming soon</p>
+      <a href="{% url 'records_home' %}" class="recordsbtn btn btn-dark">Home</a>
+  </div>
+</div>
+{% endblock %}

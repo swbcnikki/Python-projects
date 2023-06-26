@@ -1,0 +1,39 @@
+{% extends 'Quotes/Quotes_base.html' %}
+
+{% block title %}DATABASE{% endblock %}
+
+{% block header %}SONG LIST{% endblock %}
+
+{% block content %}
+
+            <table class="table table-dark table-striped table-bordered border-light">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Author</th>
+                        <th scope="col">Quote</th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for quotes in Quotes_data %}
+                        <tr class="table-dark">
+                            <td class="table-dark">
+                                {{ quotes.Author }}
+                            </td>
+                            <td class="table-dark">
+                                {{ quotes.Quote }}
+                            </td>
+                            <td class="table-dark mx-auto text-center">
+                                <a href="{% url 'Quotes_details' quotes.pk %}" style="text-decoration: none;"><button class="btn btn-light">Quote Details</button></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+{% endblock %}
+
+

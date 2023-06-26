@@ -1,0 +1,12 @@
+{% extends 'nyc_base.html' %}
+	{% block title%}Add Your Own Favorite Restaurant{% endblock %}
+	{% block content %}
+			<div class="rest-form">
+				<form method="POST">
+					{% csrf_token %}
+					{{form.as_p}}
+					<button id="new-rest-button" type="submit" name="Save_Restaurant">Add Your Restaurant</button>
+				</form>
+				<br>
+			</div>
+	{% endblock %}

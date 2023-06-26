@@ -1,0 +1,18 @@
+{% extends "wordnerd/WordNerd_base.html" %}
+
+{% block title %} Create a word  {% endblock %}
+
+{% block header %} {% endblock %}
+{% block content %}
+<!--This is the section where one can enter the data for the word-->
+<h2>Word Form</h2>
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{wordForm.as_p}}
+    <input type="submit" name="submitW">
+</form>
+
+
+
+{% endblock %}

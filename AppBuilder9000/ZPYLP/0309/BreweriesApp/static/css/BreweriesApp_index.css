@@ -1,0 +1,38 @@
+/* whole table */
+.table-container {
+    width: 90%;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 7px;
+    padding: 1rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem
+}
+
+.table td{
+    font-size: .9rem;
+    border: none;
+}
+
+.table th{
+    border: none;
+    color: whitesmoke;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0,0,0,0.2);
+    color: whitesmoke;
+    border-radius: 7px;
+    width: 90%;
+}
+
+a {
+    color: whitesmoke !important;
+    text-decoration: none;
+}
+
+a:hover{
+    color: whitesmoke;
+    text-decoration: none;
+}

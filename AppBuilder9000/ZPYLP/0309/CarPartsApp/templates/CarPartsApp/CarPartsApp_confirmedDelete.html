@@ -1,0 +1,21 @@
+{% extends "CarPartsApp/CarPartsApp_base.html" %}
+{% load static %}
+{% block title %}Details{% endblock %}
+{% block header %} Would You like to make changes? {% endblock %}
+
+{% block content %}
+
+
+    <p>Are You sure you want to delete this?</p>
+
+
+
+
+    <form action="#" method="POST">
+        {% csrf_token %}
+
+        <input type="submit" name="Confirm">
+        <button type="button" value="cancel"><a href="{% url 'CarPartsApp_myParts' %}">Cancel</a> </button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+/*================GENERAL STYLING=============*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*BODY */
+body {
+    background: url("../images/knife_background.png") no-repeat center fixed;
+    background-size: cover;
+}
+
+.header-title h1 {
+    font-family: 'Helvetica, sans-serif'
+    color: black ;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: rgb(63, 197, 240);
+}
+
+/*NAVBAR STYLING*/
+.navbar {
+    overflow: hidden;
+    background-color: rgb(238, 245, 178);
+}
+
+.navbar a {
+    font-weight: bold;
+    float: inline-start;
+    display: block;
+    color: rgb(63, 197, 240);
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.container {
+  padding: 2rem 0rem;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image {
+  td, th {
+    vertical-align: middle;
+    color: yellow;
+  }
+}
+/* Style the footer*/
+.footer {
+    position: fixed;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    background: rgb(238, 245, 178);
+    text-align: center;
+}

@@ -1,0 +1,26 @@
+{% extends 'SteamInterestApp/SIA_base.html' %}
+
+{% load static %}
+
+<!--This page will be used for adding an entry to our templates!
+It also extends our base, which means minimal formatting
+-->
+
+{% block title %} Steam Interest App - API Testing {% endblock %}
+
+{% block header %} Find info about a Steam game by its Game ID! {% endblock %}
+
+{% block morestyling %}<script src="{% static 'JS/SIA_SteamGameIDCall.js' %}" defer></script>{% endblock %}
+
+{% block content %}
+    <div class="justify-content-center text-center">
+        <p>Want to find out more about a game? Just enter the game ID in the box below!</p>
+        <p>Dusty Note: I would want a way to scrape from their database <a href="https://steamdb.info/apps/" target="_blank">here</a> so the numbers aren't completely arbitrary to enter!</p>
+        <p>NOTE: Game IDs are composed of only numbers, not letters!</p>
+        <p>A default to use is 440 for Team Fortress 2.</p>
+        <input type="text" id="SteamGameID" title="SteamGameID">
+        <button type="button" onclick="SteamGameIDCall()">Submit!</button>
+
+    </div>
+
+{% endblock %}

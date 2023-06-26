@@ -1,0 +1,50 @@
+{% extends 'Quotes/Quotes_base.html' %}
+
+{% block title %}DETAILS{% endblock %}
+
+{% block header %}Quote Details{% endblock %}
+
+
+{% block content %}
+
+<table class="table table-dark table-striped table-bordered border-light">
+    <thead>
+        <tr class="table-dark">
+            <th scope="col">Author</th>
+            <th scope="col">Quote</th>
+            <th scope="col">Year</th>
+            <th scope="col">Theme</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr class="table-dark">
+            <td class="table-dark">
+                {{ quote.Author }}
+            </td>
+            <td class="table-dark">
+                {{ quote.Quote }}
+            </td>
+            <td class="table-dark">
+                {{ quote.Year }}
+            </td>
+            <td class="table-dark">
+                {{ quote.subject }}
+            </td>
+            <td class="table-dark mx-auto text-center">
+                <a href="{% url 'Quotes_edit' quote.pk %}" style="text-decoration: none;" ><button class="btn btn-light">Edit</button></a>
+            </td>
+            <td class="table-dark mx-auto text-center">
+                <a href="{% url 'Quotes_validate' quote.pk %}" style="text-decoration: none;"><button class="btn btn-light">Delete</button></a>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+
+{% endblock %}

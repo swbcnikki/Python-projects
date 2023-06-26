@@ -1,0 +1,14 @@
+{% extends "RidleyVerse/RidleyVerse_base.html" %}
+{% load static %}
+{% block title %} RidleyVerse Home {% endblock %}
+
+{% block content %}
+<br>
+<h1 id="JosefinFont"> Welcome to the RidleyVerse. </h1>
+<br>
+<p id="TechFont"> This is the home of every connection in film to the Ridleyverse. <br>
+    The Ridleyverse is a combination of several different movies and series. <br>
+    It includes several universe's. From Alien, Predator, Bladerunner, and Soldier.</p>
+
+<a id="list-link" href="{% url 'List-Movies' %}"> Select to see the entire list of Cosmic Horror!</a>
+{% endblock %}

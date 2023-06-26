@@ -1,0 +1,36 @@
+{% load static %}
+
+<div class="col-3 pb-2">
+  <div style="height: auto; min-height: 20em;" class="card-body bg-secondary rounded p-2">
+
+    <div class="row">
+      <div class="col-2">
+        <p class="card-title text-white text-start pt-1"><strong></strong></p>
+      </div>
+      <div class="col-10">
+        <p class="card-title text-white h6 text-end pt-1">{{ card.date }} <strong>|</strong> {{ card.time }}</p>
+      </div>
+    </div>
+
+    <div class="row text-start text-white p-2">
+      <h4><strong>{{ card.title }}</strong></h4>
+    </div>
+    <div class="row text-start text-white px-3">
+      <p>{{ card.article| slice:":100" }}...</p>
+    </div>
+
+
+    <div class="row">
+      <div class="col text-start text-white">
+        <h6 class="pe-2"><em><strong>{{ card.tags }}</strong></em></h6>
+      </div>
+      <div class="col text-end text-white">
+        <h6 class="pe-2"><em><strong>Author: </strong>{{ card.first_name }} {{ card.last_name }}</em></h6>
+      </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end justify-content-end">
+      <a href="{% url 'details' card.pk %}"><button class="btn btn-outline-dark me-md-2" type="button">Details</button></a>
+    </div>
+
+  </div>
+</div>

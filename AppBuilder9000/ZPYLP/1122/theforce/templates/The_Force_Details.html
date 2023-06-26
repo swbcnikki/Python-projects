@@ -1,0 +1,34 @@
+{% extends 'The_Force_Base.html' %}
+{% load static %}
+{% block title %} The Force Details {% endblock %}
+
+{% block header %}
+    <h1>The Force Details</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <table id="table">
+            <thead>
+                <tr id="th">
+                    <th>Jedi</th>
+                    <th>Your Name</th>
+                    <th>Favorite Movie</th>
+                    <th>Favorite Scene</th>
+                    <th>Light or Dark side</th>
+                    <th>Is the Force With You</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="td">
+                    <td>{{ Details.Jedi }}</td>
+                    <td>{{ Details.Your_Name }}</td>
+                    <td>{{ Details.Your_favorite_movie }}</td>
+                    <td>{{ Details.Your_Favorite_Scene }}</td>
+                    <td>{{ Details.Light_or_Dark }}</td>
+                    <td>{{ Details.Is_The_Force_With_You }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "YTfeed/YTfeed_base.html" %}
+{% load static %
+{% block title %}Remove Youtuber{% endblock %}
+{% block content %}
+
+
+<div>
+    <form method="POST" id="youtuber-form">
+        {% csrf_token %}
+        {{form.as_p }}
+        <h3>Confirm Delete Entry? </h3>
+        <button id="remove-button" type="submit">Remove</button>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "texmex_base.html" %}
+
+{% block title %}Tex-Mex{% endblock %}
+
+{% block header %}Recipe Details:{% endblock %}
+
+{% block content %}
+
+    <center>
+        <table>
+            <tr>
+                <td>Food Type:</td>
+                <td>{{ item.type }}</td>
+            </tr>
+            <tr>
+                <td>Food Name:</td>
+                <td>{{ item.name }}</td>
+            </tr>
+            <tr>
+                <td>Servings:</td>
+                <td>{{ item.servings }}</td>
+            </tr>
+            <tr>
+                <td>Servings:</td>
+                <td>{{ item.servings }}</td>
+            </tr>
+            <tr>
+                <td>Recipe:</td>
+                <td> {{ item.recipe }}</td>
+            </tr>
+            <tr>
+                <td>Date Submitted:</td>
+                <td>{{ item.dateSubmitted }}</td>
+            </tr>
+        </table>
+    </center>
+
+
+
+
+{% endblock %}

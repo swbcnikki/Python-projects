@@ -1,0 +1,38 @@
+{% extends "DNDCharacters/dnd_characters_base.html" %}
+
+{% block title %}Dungeons and Dragons Characters!{% endblock %}
+
+
+{% block header %} <h1 class="welcomeh1">The Chosen ONES! </h1>{% endblock %}
+
+{% block content%}
+    <center>
+        <table class="table_container">
+                  <tr class="tbl_format">
+                    <th>Character Name</th>
+                    <th>Character Class</th>
+                    <th>Strength</th>
+                    <th>Dexterity</th>
+                    <th>Constitution</th>
+                    <th>Intellegence</th>
+                    <th>Wisdom</th>
+                    <th>Charisma</th>
+                    <th>Background</th>
+                  </tr>
+
+                  <tr>
+                    <td>{{ character.Character_Name }}</td>
+                    <td>{{ character.Character_Class }}</td>
+                    <td>{{ character.Strength }}</td>
+                    <td>{{ character.Dexterity }}</td>
+                    <td>{{ character.Constitution }}</td>
+                    <td>{{ character.Intellegence }}</td>
+                    <td>{{ character.Wisdom }}</td>
+                    <td>{{ character.Charisma }}</td>
+                    <td>{{ character.Background }}</td>
+                  </tr>
+
+            </table>
+    </center>
+
+{% endblock %}

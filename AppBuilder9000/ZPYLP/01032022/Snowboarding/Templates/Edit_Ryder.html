@@ -1,0 +1,18 @@
+{% extends "SnowboardingBase.html" %}
+{% block title %}Snowboarding{% endblock %}
+
+{% block content %}
+<h1 class="Edit">Edit Ryder</h1>
+
+    <div class="Edit_Ryder">
+        <form method="POST" class="RyderForm">
+            <div class="Submit">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_table }}
+                <button id="Edit_Ryder" type="submit" name="Save_Ryder">Save</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

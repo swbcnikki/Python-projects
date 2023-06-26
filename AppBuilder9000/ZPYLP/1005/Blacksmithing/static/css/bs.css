@@ -1,0 +1,136 @@
+/*** General Page Styling ***/
+
+
+/*** Body ***/
+
+body {
+    background-color: rgba(0,0,0,0.5);
+    background: url('/static/images/BS1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family:'Roboto',sans-serif;
+}
+
+/*** NAV ***/
+nav {
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #311a14bb;
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  top: 0;
+}
+
+li {
+    float: left;
+
+}
+
+li a {
+  display: block;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+
+}
+
+/*** FOOTER ***/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: #311a14bb;
+    color: white;
+    text-align: center;
+}
+
+/*** HEADER ***/
+header {
+    text-align: center;
+    color: white;
+
+}
+
+#form-container {
+	opacity: 0.8;
+	position: relative;
+	width: 800px;
+	height: auto;
+	border-radius: 8px;
+	border: 2px solid gray;
+	box-shadow: 4px 3px #240f0ac5;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	background-color: #311a14bb;
+}
+
+#custom {
+    opacity: 0.8;
+    border-radius: 8px;
+    border: 2px solid gray;
+    box-shadow: 4px 3px #240f0ac5;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #311a14bb;
+}
+
+.btn-container {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border: 2px solid gray;
+  margin: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  background-color: #311a14bb;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 1s;
+  margin-left: 685px;
+  overflow:auto;
+}
+.btn-container:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+@media all and (max-width:30em){
+.btn-container{
+  display:block;
+  margin:0.4em auto;
+    }
+}
+
+/*** Lists ***/
+#list-group {
+  background-color:white;
+	width: 90%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+	border: 2px solid gray;
+	border-collapse: collapse;
+	border-radius: 8px;
+	table-layout: auto;
+	float: center;
+	position: relative;
+}

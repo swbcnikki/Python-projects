@@ -1,0 +1,66 @@
+{% extends 'MagicTheGathering/MagicTheGathering_base.html' %}
+{% block title %}MTG Home{% endblock %}
+
+{% block content %}
+
+    <div class="header_container">
+        <h1> Welcome </h1>
+    </div>
+
+    <div class="about_container">
+        <h2> About Magic the Gathering! </h2>
+        <p>
+            Welcome to the wonderful world of Magic The Gathering! Magic is a head-to-head collectable card game!
+            It's filled with fantasy and strategy to can appeal to any individual! One of the largest parts about MTG
+            is keeping your cards organized and sorted! This app helps keep track of the cards you own by allowing you
+            to put them in a database and then search them up at a whim! Feel free to look into the About page if you're
+            looking to learn more about the game. Otherwise, have fun starting your collection!!
+        </p>
+        <button type="submit" class="button" id="button2"><a href="{% url 'How_Too' %}">About</a></button>
+    </div>
+
+    <div>
+        <h2> ADD A CARD TO THE DATA BASE</h2>
+        <div class="add_container">
+            <img class="picturecontainer" src="../static/Images/rhysticstudy.jpg" style="float:left;width:30%;height:30%">
+            Here is where you will add a card to your collection! The first step you want to do is make a collection!
+            Then you will add cards to the specific collection! After you add some cards to your collection you can go to your collection to look at all your cards!
+            <form method="POST">
+                <div>
+                    <button type="submit" class="button" id="button"><a href="{% url 'add' %}">ADD CARD</a></button>
+                    <button type="submit" class="button" id="button3"><a href="{% url 'create' %}">Make Collection</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <h2> LOOK AT YOUR DATA BASE</h2>
+            <div class="collection_container">
+                Here is where you will look at the cards in your collection!
+                <!--<form method="POST" action="">
+                    {% csrf_token %}
+                    <label id="index-label">Choose Account:</label>
+                    <select class="collection" name="menu" onChange="top.location.herf=this.option[this.selectedIndex].value;">
+                    {% for collection in collection %}
+                        <option value ="">{{ collection.collection_name }}</option>
+                    {% endfor %}
+                    </select>-->
+                    <button type="submit" id="button4"><a href="{% url 'collection' %}"> Go to Collection</a></button>
+                </form>
+            </div>
+        </div>
+
+    <div>
+
+        <div class="add_container">
+            <h3>Search a Card you want for your data base!</h3>
+            <form method="post" action="{% url 'MagicTheGathering_API' %}">
+                {% csrf_token %}
+                <input type="text" name="mtg" placeholder="Enter Card name">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!-- Story2, Step3: Add a template to your app folder for creating a new item. -->
+<!-- UserRecords page -->
+<!-- for formating the dB -->
+
+{% extends 'RevitFunctions/RevitFunctions_base.html' %}
+{% block title %}Users{% endblock %}
+
+{% block header %}<h2>USER RECORDS</h2>{% endblock %}
+
+{% block content %}
+		<div class="table">
+			<table class="table table-responsive" id ="transactions-table">
+				<!-- Replace this with the Django populated transactions -->
+				<tr id="headerRow">
+					<th>Email</th>
+					<th>Revit Level</th>
+					<th>Job Category</th>
+				</tr>
+				{% for userrecord, total in userrecords %}
+				<tr>
+					<td>{{ userrecord.email }}</td>
+					<td>{{ userrecord.revit_level }}</td>
+					<td>{{ userrecord.job_category }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+{% endblock %}

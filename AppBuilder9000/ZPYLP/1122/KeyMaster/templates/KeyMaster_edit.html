@@ -1,0 +1,17 @@
+{% extends 'KeyMaster_base.html' %}
+{% block title %}Add Game to List{% endblock %}
+{% block content %}
+    <h3>Game Details</h3>
+    <div class="GameContainer">
+        <form method="POST" action="../KeyMaster_edit/">
+            <table>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_table }}
+            </table>
+            <input class="button" type="submit">
+            <a href="{% url 'KeyMaster_home' %}"><button class="button" type="button">Cancel</button></a>
+        </form>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "HipHopReviews_base.html" %}
+{% load static %}
+
+{% block title %} Delete {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block content %}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <h1>Delete Review</h1>
+        <br><br>
+        <p>Delete this Review Request?</p>
+        <br>
+        <input type="submit" value="Yes">
+        <a href="{% url 'HipHopReviews_reviews' %}"><button type="button">Cancel</button></a>
+    </form>
+</div>
+{% endblock %}

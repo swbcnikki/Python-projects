@@ -1,0 +1,41 @@
+
+{% extends 'music_charts/mcharts_base.html' %}
+
+{% load static %}
+
+{% block content %}
+<p class="data-title">Music Records</p>
+    <div class="record-container">
+        <table class="record-table">
+            <thead>
+                <tr class="t-row">
+                    <th>Selection</th>
+                    <th>Artist</th>
+                    <th>Song</th>
+                    <th>Album</th>
+                    <th>Rank this week</th>
+                    <th>Details</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for event in data %}
+                <tr class="t-data">
+                    <td>{{ event.selection }}</td>
+                    <td>{{ event.artist_name }}</td>
+                    <td>{{ event.song_title }}</td>
+                    <td>{{ event.album_title }}</td>
+                    <td>{{ event.rank_this_week }}</td>
+                    <td><a href="{% url 'chart_details' event.pk %}">Show</a></td>
+                    <td><a href="{% url 'delete_event' event.id %}"><i class="far fa-trash-alt"></i></a></td>
+                    <td><a href="{% url 'edit_chart' event.id %}"><i class="far fa-edit"></i></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<footer id="bottom-info">
+      Top Music Charts &copy; 2021 | Michael Martinez
+</footer>
+{% endblock %}

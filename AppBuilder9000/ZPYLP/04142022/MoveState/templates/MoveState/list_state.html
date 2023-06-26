@@ -1,0 +1,27 @@
+{% extends "MoveState/movestate_base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="heading">Select your State:</h1>
+
+    <div class="admin_panel">
+        <form name="movestateForm" method="POST" action="">
+            <div class="formObject">
+                {% csrf_token %}
+                <label for="menu_id">Select state:</label>
+                <select id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
+                    <option class="dropdown-item" value="#"> </option>
+                {% for movestate in list %}
+                    <option value="{% url 'movestate_details' movestate.pk %}">{{ movestate.State }}</option>
+                {% endfor %}
+                </select>
+                <div class="fromBtn_container">
+                    <a href="{% url 'add_state' %}"><button type="button" class="btn">Add State</button></a>
+                    <a href="{% url 'movestate_home' %}"><button type="button" class="btn">Home</button></a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+{% endblock %}

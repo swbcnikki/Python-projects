@@ -1,0 +1,82 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+{% load static %}
+
+
+
+{% block title %}MusicApp{% endblock %}
+
+{% block header %}Albums{% endblock %}
+
+{% block content %}
+
+<!---- search box -------->
+<div class="search-input">
+    <form class="searchbox" action="{% url 'MusicApp_album_search_results' %}" method="GET" value="{{request.GET.q}}">
+        <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search Album Names"/>
+        <input type="submit" name="submit" class="btn" value="Search"/>
+    </form>
+</div>
+
+<!------- Container for Table -------->
+<div class="index_container">
+
+    <!------- Index Table -------->
+    <table class="index_table">
+        <tr>
+            <th>Name</th>
+            <th>Artist</th>
+            <th>Date Released</th>
+            <th># Tracks</th>
+            <th>Genre</th>
+            <th>Image URL</th>
+        </tr>
+        {% for album in albums %}
+         <tr>
+            <td>
+                <a href="{% url 'MusicApp_album_details' pk=album.id %}">{{ album.album_name }}</a>
+            </td>
+            <td>
+                {{ album.artist_name }}
+            </td>
+            <td>
+                {{ album.date_album_released }}
+            </td>
+            <td>
+                {{ album.number_of_tracks }}
+            </td>
+            <td>
+                {{ album.genre }}
+            </td>
+            <td>
+                {{ album.img_url }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<!--- Pagination to create additional pages if items exceed 10 --->
+{% if albums.has_other_pages %}
+  <ul class="pagination">
+    {% if albums.has_previous %}
+      <li><a href="?page={{ albums.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in albums.paginator.page_range %}
+      {% if albums.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only"></span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if albums.has_next %}
+      <li><a href="?page={{ albums.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "Resellers_MarketWatch/MarketWatch_base.html" %}
+
+{% block title %}Account{% endblock %}
+
+{% block content %}
+        <div class="container my-container">
+            <div class="row my-row" id="account-row1">
+                <div class="col-md-12 center-align-items-start my-col" id="account-r1c1">
+                </div>
+            </div>
+                <div class="row my-row" id="account-row2">
+                    <div class="col-md-6 center-align-items-start my-col d-grid gap-3 form-group" id="account-r2c1">
+                        <form method="post">
+                            <table>
+                                {% csrf_token %}
+                                {{ form.as_table }}
+                            </table>
+                            <br>
+                            <input id="account-btn" class="btn btn-primary" type="submit" value="submit">
+                        </form>
+                    </div>
+                    <div class="col-md-6 center-align-items-start my-col">
+                    </div>
+                </div>
+        </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

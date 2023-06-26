@@ -1,0 +1,53 @@
+{% extends "HikingApp/HikingApp_base.html" %}
+
+{% block title %} Hiking Trails {% endblock %}
+
+{% block header %} Search Results {% endblock %}
+
+{% block content %}
+
+<form class="searchbox" action="{% url 'HikingApp_searchresults' %}" method="GET" value="{{request.GET.q}}">
+<input type="text" name="q" value="{{request.GET.q}}" placeholder="Trail name or location"/>
+<input type="submit" name="submit" class="btn" value="Search"/>
+</form>
+<!--- q is used to retain the query the user enters in name="q" and value="{{request.GET.q}}" ----->
+
+{% if submitbutton == 'Search' and request.GET.q != '' %}
+<!---- Include to make sure the submit button was clicked and the field wasn't empty to avoid displaying templates on empty query;
+ if the submit button wasn't clicked then refer to else statement ---->
+    {% if results %}
+    <!-- if submit button was clicked and query is entered, then display: --->
+    <table class="trail_table">
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Difficulty</th>
+            <th>Camping</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>
+                {{ result.name }}
+            </td>
+            <td>
+                {{ result.location }}
+            </td>
+            <td>
+                {{ result.difficulty }}
+            </td>
+            <td>
+                {{ result.camping|yesno:"Yes,No" }}
+            </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <p class="text">No search results for this trail or location. Would you like to <a href="{% url 'HikingApp_addtrail' %}">add</a> one?</p>
+        {% endif %}
+        {% endif %}
+
+    </table>
+    <a href="{% url 'HikingApp_index' %}" class="return btn">Return</a>
+
+
+
+{% endblock %}

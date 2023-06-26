@@ -1,0 +1,15 @@
+{% extends 'ArtistTrack_base.html' %}
+{% block title %}ArtistTrack Edit{% endblock %}
+{% block header %}Delete Song{% endblock %}
+{% block body %}
+
+    <form method="POST" action="./playlist_delete">
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <p class="text-white">Are you sure you would like to delete: "{{ item.playlist_name }}" from the database?</p>
+
+        <input type="submit" value="Yes, delete it!" class="btn btn-danger">
+        <a href="./details"><button class="btn btn-primary" type="button">Cancel</button></a>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "MTB_Trails/mtb_trails_base.html" %}
+{% load static %}
+
+{% block title %}MTB Trails | Home{% endblock %}
+
+{% block header %}find your suffering{% endblock %}
+
+{% block content %}
+    <!-- Bootstrap button layout with custom CSS -->
+    <div class="home-btn--container btn-toolbar-horizontal">
+
+        <a href="{% url 'existing_reviews' %}" class="btn btn-dark btn-lg active"
+           role="button" aria-pressed="true">reviews</a>
+
+        <a href="{% url 'mtb_trails_review' %}" class="btn btn-dark btn-lg active"
+           role="button" aria-pressed="true">submit a review</a>
+
+        <a href="{% url 'trail_api' %}" class="btn btn-dark btn-lg active"
+           role="button" aria-pressed="true">search colorado</a>
+
+        <a href="{% url 'top_mtb' %}" class="btn btn-dark btn-lg active"
+           role="button" aria-pressed="true">top MTBs 2022</a>
+    </div>
+{% endblock %}

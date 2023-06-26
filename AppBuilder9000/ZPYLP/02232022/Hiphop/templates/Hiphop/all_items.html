@@ -1,0 +1,26 @@
+{% extends 'Hiphop/hiphop_base.html' %}
+{% load static %}
+
+{% block content%}
+
+    <h1>Hip Hop History: From The STREETS To The MAINSTREAM!</h1>
+            <table class="all_hiphop">
+                <tr>
+                    <th>80,s Music</th>
+                    <th>90,s Music</th>
+                    <th>2000,s music</th>
+                    <th>Today's music</th>
+                    <th>Mic's</th>
+                </tr>
+                {% for Hiphop in all_hiphop %}
+                <tr>
+                    <td><a href="{% url 'hiphop_details' Hiphop.id %}">{{Hiphop.eighties}}</a></td>
+                    <td>{{Hiphop.nineties}}</td>
+                    <td>{{Hiphop.two_thousand}}</td>
+                    <td>{{Hiphop.today}}</td>
+                    <td>{{Hiphop.mics}}</td>
+                </tr>
+            {% endfor %}
+            </table>
+
+{% endblock %}

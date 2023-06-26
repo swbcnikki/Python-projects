@@ -1,0 +1,18 @@
+{% extends "wordnerd/WordNerd_base.html" %}
+
+{% block title %} edit a word  {% endblock %}
+
+{% block header %} {% endblock %}
+{% block content %}
+<!--This is the section where one can enter the data for the word-->
+<h2>Update Word</h2>
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{Uform.as_p}}
+    <input type="submit" name="submitW">
+</form>
+
+
+
+{% endblock %}

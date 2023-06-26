@@ -1,0 +1,23 @@
+{% extends "texmex_base.html" %}
+
+{% block title %}Tex-Mex{% endblock %}
+
+{% block header %}Create A New Recipe:{% endblock %}
+
+{% block content %}
+
+<div class="admin_panel">
+    <form method="POST" action="{% url 'createRecord' %}">
+        <div class="frmObject_container">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+        </div>
+        <div class="frmBtn_container">
+            <input type="submit" class="btn" value="Create New Recipe" name="Save_Item">
+            <a href="{% url 'view_recipes' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

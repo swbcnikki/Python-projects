@@ -1,0 +1,87 @@
+{% extends "Traveling/Traveling_base.html" %}
+
+{% load static from staticfiles %}
+
+
+
+{% block title %}Bock a Flight{% endblock %}
+
+{% block header %}Just a step away{% endblock %}
+
+{% block content %}
+
+<div class="bg_img_p" >
+    <form name="PlaceForm" method="POST" action="">
+        <div class="p_container">
+            {% csrf_token %}
+            <br>
+
+            <label class="center" for="user">Account:</label>
+            <select name="user" id="user" onchange="top.location.href=this.options[this.selectedIndex].value;">
+                <option value="">--------</option>
+                {% for traveler in travelers %}
+                <option value="../{{traveler.pk }}/viewdetails/">{{ traveler }}</option>
+                {% endfor %}
+            </select>
+            <br>
+
+
+
+
+
+            <label for="locations">From:</label>
+            <select name="locations" id="locations">
+                <option value=""></option>
+                <option value="Current Location" >Current Location</option>
+            </select>
+
+            <label for="place" class="right-side"> To:</label>
+            <select name="place" id="place">
+
+                {% for place in places %}
+                <option value="">{{ place.place }}</option>
+
+                {% endfor %}
+            </select>
+            <br>
+            <label for="date">Departure Date:</label>
+            <input type="date" id="date" name="date" value="" min="2022-03-21" max="2023-03-21">&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <label for="rdate" class="middle">Return Date:</label>
+            <input type="date" id="rdate" name="date" value="" min="2022-03-21" max="2023-03-21">
+
+            <br>
+            <label for="dtime"> Departing Time:</label>
+            <input type="time" id="dtime" name="time" value="" min="06:00" max="20:00">
+            <label for="ctime" class="outmost"> Arrival Time:</label>
+            <input type="time" id="ctime" name="time" value="" min="08:00" max="22:00">
+
+
+
+            <br>
+            <label for="number" class="center" >No. Passengers:</label>
+            <select name="number" id="number">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6+">6+</option>
+            </select>
+
+            <br>
+            <button class='btn-center' type="button"><a href=""></a> Checkout!</button>
+
+
+        </div>
+
+    </form>
+
+
+
+
+</div>
+
+
+
+{% endblock %}

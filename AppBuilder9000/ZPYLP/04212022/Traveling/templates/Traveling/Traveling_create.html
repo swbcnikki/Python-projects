@@ -1,0 +1,31 @@
+{% extends "Traveling/Traveling_base.html" %}
+
+
+{% load static from staticfiles %}
+
+{% block title %}Sign Up!{% endblock %}
+
+{% block header %}Sign Up Here!{% endblock %}
+
+{%block content %}
+<div class="bg_img_c">
+    <div class="c_container">
+        <form method="POST" action="{% url 'Traveling_create' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class='btn-center' type="submit">Submit</button>
+            <a href="{% url 'Traveling_home' %}"><button type="button" class="btn" value="Cancel">Cancel</button> </a>
+
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+

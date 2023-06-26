@@ -1,0 +1,10 @@
+{% extends "YTfeed/YTfeed_base_base.html" %}
+{% load static %}
+{% block title %} {{ name }} {% endblock %}
+{% block content %}
+
+<h1 id="NYS">{{YTname}}</h1>
+<a id="list-link" href="{% url 'List-Youtubers' %}"> See Whats New With Your Favorite Youtubers!!!</a>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "VideoGameReviews/gamereviews_base.html" %}
+
+{% block title %} Video Game Review - Edit Entry {% endblock %}
+
+{% block header %} Edit Review {% endblock %}
+
+{% block content %}
+
+<div class="create_form p-3 mb-2 bg-dark text-white">
+    <form method ="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type ="submit" class="btn btn-secondary" value="Save" name="Save_Entry">
+        <a href="{% url 'gamereviews_displayitems' %}"><button type="button" class="btn btn-secondary" value="Cancel">Cancel</button></a>
+    </form>
+</div>
+
+{% endblock %}

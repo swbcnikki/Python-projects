@@ -1,0 +1,31 @@
+{% extends "Rock/RockBase.html" %}
+
+{% block title %}Hard Rock List{% endblock %}
+{% block content %}
+    <h3>Hard Rock of the 80' List</h3>
+
+<div class="admin_panel">
+   <form name="HardRockForm" method="POST" action="">
+       <div class="formObject">
+           {% csrf_token %}
+           <label for="menu_id">Select a Band Member from this list to edit:</label>
+           <select id="menu_id" name="menu" onchange="top.location.href=this.options[this.selectedIndex].value;">
+           {% for HardRock in list %}
+                   <option value="">_</option>
+                   <option value="{{HardRock.pk}}/details/">{{HardRock.member}}</option>
+            {% endfor %}
+           </select>
+           <div class="fromBtn_container">
+               <a href="{% url 'RockCreate' %}"><button type="button" class="btn">Add Band Member</button> </a>
+
+           </div>
+       </div>
+   </form>
+</div>
+
+
+
+
+
+
+{% endblock %}

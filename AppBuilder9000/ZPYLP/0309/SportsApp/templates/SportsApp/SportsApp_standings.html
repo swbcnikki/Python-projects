@@ -1,0 +1,90 @@
+{% extends "SportsApp/SportsApp_base.html" %}
+
+
+{% block title %}SportsApp{% endblock %}
+
+{% block header %}
+<div class="createPage-header">
+    <h1>Current NBA Standings</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="createPage-text">
+    <p class="createPage-txt-wrapper">Here you can find the current NBA standings for both the Eastern and Western Conferences!! <br>
+        This is updated daily!</p>
+</div>
+
+<div class="east-conf">
+    <table class="east-table">
+        <div>
+            <thead>
+                <tr>
+                    <th>Eastern Conference </th>
+                    <th>Wins:</th>
+                    <th>Losses:</th>
+                    <th>Win/Loss Percent:</th>
+                    <th>Games Back:</th>
+                    <th>Points per game:</th>
+                    <th>Opp pts per game:</th>
+                </tr>
+            </thead>
+            {% for east in easts_list %}
+            <div>
+                <tr>
+                    <td class="border">{{ east.east_team_name }}</td>
+                    <td class="border">{{ east.east_team_wins }}</td>
+                    <td class="border">{{ east.east_team_losses }}</td>
+                    <td class="border">{{ east.east_team_win_loss_pct }}</td>
+                    <td class="border">{{ east.east_team_games_back }}</td>
+                    <td class="border">{{ east.east_team_pts_per_game }}</td>
+                    <td class="border">{{ east.east_team_opp_pts_per_game }}</td>
+                </tr>
+            </div>
+
+        </div>
+
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+
+<div class="west-conf">
+    <table class="west-table">
+        <thead>
+             <tr>
+                <th>Western Conference</th>
+                <th>Wins:</th>
+                <th>Losses:</th>
+                <th>Win/Loss Percent:</th>
+                <th>Games Back:</th>
+                <th>Points per game:</th>
+                <th>Opp pts per game:</th>
+            </tr>
+        </thead>
+
+        {% for west in wests_list %}
+        <tr>
+            <td class="border">{{ west.west_team_name }}</td>
+            <td class="border">{{ west.west_team_wins }}</td>
+            <td class="border">{{ west.west_team_losses }}</td>
+            <td class="border">{{ west.west_team_win_loss_pct }}</td>
+            <td class="border">{{ west.west_team_games_back }}</td>
+            <td class="border">{{ west.west_team_pts_per_game }}</td>
+            <td class="border">{{ west.west_team_opp_pts_per_game }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

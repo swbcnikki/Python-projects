@@ -1,0 +1,26 @@
+{% extends "MoveState/movestate_base.html" %}
+{% load static %}
+
+{% block content %}
+    <section>
+        <div class="main">
+
+            <!-- Specify fields to be displayed -->
+            {{ details.State }}<br/>
+            {{ details.Sity }}<br/>
+            {{ details.Month }}<br/>
+            {{ details.Day }}<br/>
+            {{ details.description }}<br/>
+
+        </div>
+    </section>
+    <section>
+        <div class="adminBox">
+            <p class="list">Type: {{ details.type }}</p>
+            <p class="list">{{ details.description }}</p>
+            <button class="btn"><a href="{% url 'movestate_edit' details.pk %}">Edit</a></button>
+            <button class="btn"><a href="{% url 'movestate_delete' details.pk %}">Delete</a></button>
+        </div>
+    </section>
+
+{% endblock %}

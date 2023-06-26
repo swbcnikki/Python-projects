@@ -1,0 +1,36 @@
+.navBar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: gray;
+}
+
+.navBar a {
+    margin-left: 7px;
+
+}
+
+
+body {
+    background-color: lightgray;
+}
+
+.content {
+    margin-top: 30px;
+
+}
+
+
+
+.footerClass {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: gray;
+
+}
+
+
+

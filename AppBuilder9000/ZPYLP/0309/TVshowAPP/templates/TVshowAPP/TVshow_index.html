@@ -1,0 +1,39 @@
+{% extends "TVshowAPP/base.html" %}
+
+{% block title %}List of Shows with info{% endblock %}
+
+{% block header %}Here is your list of popular TV shows, click the link to find out more info about the show!{% endblock %}
+
+{% block content %}
+<h1>Your list of popular TV shows, click the link to find our more info about the show!</h1>
+    <div>
+    {% for tvshowdbs in page2 %}
+    <button type="button" class="btn"><a href="{% url 'showDetails' tvshowdbs.pk %}">{{ tvshowdbs.show_name|title }}</a></button><br>
+    {% endfor %}
+    </div>
+    <!-- pagination -->
+    <div class="pages">
+        {% if page2.has_other_pages %}
+        <ul>
+            {% if page2.has_previous %}
+                <a href="?page={{ page2.previous_page_number }}">Previous</a>
+            {% else %}
+                <span class="hide">Previous</span>
+            {% endif %}
+            {% for i in page2.paginator.page_range %}
+                {% if page2.number == i %}
+                    <span>Page {{ i }} of {{ page2.paginator.num_pages }}</span>
+                {% else %}
+                    <a href="?page={{ i }}">{{ i }}</a>
+                {% endif %}
+            {% endfor %}
+            {% if page2.has_next %}
+                <a href="?page={{ page2.next_page_number }}">Next</a>
+            {% else %}
+                <span class="hide">Next</span>
+            {% endif %}
+
+        </ul>
+        {% endif %}
+    </div>
+{% endblock %}

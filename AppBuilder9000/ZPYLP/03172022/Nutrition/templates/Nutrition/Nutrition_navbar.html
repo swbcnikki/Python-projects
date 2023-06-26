@@ -1,0 +1,34 @@
+<!--START NAV-->
+ <section id="home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-body" href="{% url 'Nutrition_home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-body" href="{% url 'create_account' %}">Create an Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-body" href="{% url 'make_query' %}">Make a Nutrition Path</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-body" href="{% url 'display_db' %}">Show Accounts and Paths</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-body" href="{% url 'scraper' %}">See Nutrition News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-body" href="{% url 'nutritionix_nutrients_api' %}">Is It Nutritious?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-body" href="{% url 'save_nutritionix_nutrients_api' %}">Search and Save Nutrition</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</section>
+<!--END NAV-->

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS/TrackingAppStyling.css' %}">
+    </head>
+    <body>
+        <div class="page_wrap">
+        <header>
+                <div class="navbar">
+                    <a href="{% url 'home' %}">App Directory</a>
+                    <br> <a href="{% url 'TrackApp_home' %}">Tracking Homepage</a>
+                    <br> <a href="{% url 'TrackApp_Add' %}">Add new location</a>
+                    <br> <a href="{% url 'TrackApp_display' %}">Display</a>
+                </div>
+                <div class="header_style">
+                <h1>{% block header %} {% endblock %}</h1>
+                </div>
+            </header>
+            <div>
+            {% block content %} {% endblock %}
+            </div>
+        </div>
+         <section class="footer">
+            <p>Tracking &copy;2021</p>
+        </section>
+    </body>
+</html>

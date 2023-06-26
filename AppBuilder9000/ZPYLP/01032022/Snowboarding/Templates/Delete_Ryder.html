@@ -1,0 +1,25 @@
+{% extends "SnowboardingBase.html" %}
+{% block title %}Snowboarding{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div>
+        <h1 class="Delete">Are You Sure You Want To Delete This Ryder</h1>
+
+    </div>
+    <div class="submitbutton">
+        <button id ="deletebutton" type="submit" name="Delete">Delete This Ryder</button>
+    </div>
+</form>
+
+    <div class="submitbutton">
+        <button id ="cancelbutton" type="submit" name="Cancel"><a href="{% url 'Ryders' %}">Cancel</a></button>
+        </div>
+
+
+
+
+
+{% endblock %}

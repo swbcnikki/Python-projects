@@ -1,0 +1,71 @@
+{% extends 'Nutrition/Nutrition_base.html' %}
+{% load static %}
+
+
+{% block title %}Database Item Details{% endblock %}
+
+{% block header %}Details:{% endblock %}
+
+{% block content %}
+
+	{% if item %}
+
+<br><br>
+			<h3>ACCOUNT DETAILS</h3>
+
+			<table class="table table-responsive" id ="transactions-table">
+
+				<tr id="headerRow">
+
+					<td>Name</td>
+					<td>Age</td>
+					<td>Gender</td>
+					<td>Email</td>
+				</tr>
+
+				<tr>
+
+					<td class="center">{{ item.name }}</td>
+					<td class="center">{{ item.age }}</td>
+					<td class="center">{{ item.gender }}</td>
+					<td class="center">{{ item.email }}</td>
+
+
+				</tr>
+
+
+			</table>
+
+<a href="{% url 'edit_account' item.id %}" class="btn btn-warning">Click to Edit</a>
+
+	{% elif nutrition_item %}
+<br><br>
+			<h3>NUTRITION PATH DETAILS</h3>
+
+			<table class="table table-responsive" id ="transactions-table2">
+
+				<tr id="">
+
+					<td>Name</td>
+					<td>Age</td>
+					<td>Gender</td>
+					<td>Area of Health</td>
+                    <td>Supplement Type</td>
+
+				</tr>
+
+				<tr>
+
+					<td class="center">{{ nutrition_item.name }}</td>
+					<td class="center">{{ nutrition_item.age }}</td>
+					<td class="center">{{ nutrition_item.gender }}</td>
+					<td class="center">{{ nutrition_item.area_of_health }}</td>
+                    <td class="center">{{ nutrition_item.supplement_type }}</td>
+				</tr>
+
+
+			</table>
+<a href="{% url 'edit_nutrition' nutrition_item.id %}" class="btn btn-warning">Click to Edit</a>
+	{% endif %}
+
+{% endblock %}

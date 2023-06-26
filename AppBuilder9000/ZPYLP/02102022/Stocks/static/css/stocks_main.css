@@ -1,0 +1,92 @@
+/* Temporary */
+html, body {
+    background-color: black;
+    color: green;
+    display: flexbox;
+    margin: 0;
+}
+
+footer p{
+    color: green;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #213e4a;
+}
+ul.topnav li {
+    float: left;
+}
+
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+ul.topnav li a:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+    background-color: #355664;
+}
+/* Hide the list item that contains the link that should
+   open and close the topnav on small screens */
+ul.topnav li.icon {
+	display: none;
+}
+
+input[type="submit"] {
+    flex-grow: 1;
+    width: 10%;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    color: black;
+    padding: 9px 0px 9px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+input[type="submit"]:hover {
+    background-color: #355664;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+.admin_panel {
+    margin: 0 auto;
+    width: 50%;
+    height: 80%;
+    background-color: green
+	border: 1px solid #d6d6d6;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    transition: 0.3s;
+}

@@ -1,0 +1,58 @@
+<!-- Displays all added records in database in a table with link to individual item details page, edit page, and confirmation delete page-->
+
+{% extends "WorkoutEquipment/WorkoutEquipBase.html" %}
+{% load static %}
+{% block title %} Workout Equipment {% endblock %}
+
+{% block header %} Product Details: {% endblock %}
+
+{% block content %}
+
+    <div class="admin_panel">
+            <div class="table">
+                <table>
+                    <thead>
+                    <tr class="table">
+                        <th data-field="id" data-sortable="true" class="w-25">Id</th>
+                        <th data-field="name" data-sortable="true" class="w-25">Name</th>
+                        <th data-field="type" data-sortable="true" class="w-25">Type</th>
+                        <th data-field="description" data-sortable="true" class="w-25">Description</th>
+                        <th data-field="image" data-sortable="true" class="w-25">price</th>
+                        <th data-field="image" data-sortable="true" class="w-25">image</th>
+                    </tr>
+                    </thead>
+                        <tbody>
+
+                        <tr class="table">   <!-- details (from view func) is dictionary object accessed through primary key this displays a single record in Db all fields-->
+                            <td>{{ details.id }}</td> <!--block tags representing db table values-->
+                            <td>{{ details.name }}</td>
+                            <td>{{ details.type }}</td>
+                            <td>{{ details.description }}</td>
+                            <td>{{ details.price }}</td>
+                            <td>{{ details.image }}</td>
+                        </tr>
+                        <div>
+                            <form method="POST" action="../workout_equip_details/">
+                                <table>
+                                    {% csrf_token %}
+                                    {{ form.non_field_errors }}
+                                    {{ form.as_table }}
+                                </table>
+                                <div class="frmBtn_container">  <!-- this form binds form instance and (below) takes pk
+                                                                     data parameter in to edit of delete based off which button is clicked-->
+                                    <div class ="frmBtn_container">
+                                        <button class="btn"><a href="../{{ form.pk }}workout_equip_edit/">EDIT</a></button>
+                                        <button class="btn"><a href="../{{ form.pk }}workout_equip_delete/">DELETE</a></button>
+                                        <button class="btn"><a href="{% url 'WorkoutEquipHome' %}">CANCEL</a></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        </tbody>
+                </table>
+            </div>
+
+    </div>
+
+
+{% endblock %}

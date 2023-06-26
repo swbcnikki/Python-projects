@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/MovieReviewsApp_css.css' %}">
+        <!-- Placeholder for individual page titles -->
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+    {% block content %}{% endblock %}
+        <div class="topnav">
+            <a href="MovieReviewsApp/MovieReviewsApp_home.html">Home</a>
+            <a href="#">Movies</a>
+            <a href="#">Link</a>
+        </div>
+
+        <div class="content">
+          <h2>Movie Reviews!</h2>
+          <p>Review the Movies you have seen!</p>
+        </div>
+
+        <header>
+            <nav>
+                <!-- Inserting navbar from separate file -->
+                {% include "MovieReviewsApp/MovieReviewsApp_navbar.html" %}
+            </nav>
+        </header>
+
+</body>
+</html>

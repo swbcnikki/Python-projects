@@ -1,0 +1,29 @@
+{% extends 'Composers/composers_base.html' %}
+{% load static %}
+
+{% block head %} Top 100 Composers {% endblock %}
+{% block title %} Top 100 Classic Composers {% endblock %}
+
+{% block content %}
+
+<div class="card bg-secondary align-items-center">
+    <div class="jumbotron jumbotron-responsive w-100 bg-dark text-white">
+        <h2 class="display-4">Top 100 composers of all time</h2>
+    </div>
+    <ul class="list-group-item bg-primary w-50 list-group-flush">
+        {% for comp in top100composers %}
+        <ul class="list-group-item  font-weight-bold">{{ forloop.counter }}. {{ comp }}</ul>
+        {% endfor %}
+    </ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

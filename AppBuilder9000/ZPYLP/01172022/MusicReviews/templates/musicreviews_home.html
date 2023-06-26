@@ -1,0 +1,30 @@
+{% extends "musicreviews_base.html" %}
+{% load static %}
+{% block title %} Music Reviews {% endblock %}
+
+{% block header %} <div class="videotext"> Welcome </div> {% endblock %}
+
+{% block content %}
+    <div class="navbar">
+        <a href="{% url 'back_home' %}">&#8592;</a>
+        <b><a href="{% url 'music_reviews_home' %}">Home</a></b>
+        <a href="{% url 'review_view' %}">Reviews</a>
+        <a href="{% url 'createReview' %}">Add Reviews</a>
+        <a href="{% url 'beautiful_soup' %}">Music</a>
+        <a href="{% url 'apiLoad' %}">News</a>
+    </div>
+
+
+    <div>
+        <button onclick="revealMessage()" id="revealBtn" style="display:block"> What is this website all about? </button>
+    </div>
+
+    <div id="hiddenMessage" style="display:none">
+        <p> We are all about music </p>
+        <p class="fade1"> Look at reviews of music </p>
+        <p class="fade2"> Write your own reviews </p>
+        <p class="fade3"> View the latest music news </p>
+    </div>
+
+        <script src="{% static 'js/Music_Reviews.js '%}"></script>
+{% endblock %}

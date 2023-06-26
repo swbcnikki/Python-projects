@@ -1,0 +1,84 @@
+{% extends 'WoWApp/WoWApp_base.html' %}
+
+{% block title %}World of Warcraft List {% endblock %}
+
+{% block content %}
+
+{% if characters.paginator.count == 0 %}
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">No characters have been created. Create one now!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <a href="{% url 'WoWAppCreateCharacter' %}">
+              <button type="button" class="btn-primary btn-lg">Create Character</button>
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!--creating a for loop to iterate through our subscribers_list that is defined in the views and giving each iteration a temp variable name of "subscriber"-->
+{% for character in characters.object_list %}
+<!--calling predefined css for the details boxes to come from the bottom of the screen-->
+    <div class="row">
+        <div class="w3-container w3-center w3-padding-small w3-animate-bottom">
+            <div class="index_pad">
+                <!--making each details box link to its individual details page through its primary key-->
+                <a class="card custom-card" href="{% url 'WoWAppCharacterDetail' pk=character.id %}">
+                    <div class="card-header">
+                        <!--grabbing the username for that particular iteration identified through the primary key-->
+                        {{ character.name|capfirst }}
+                    </div>
+                    <div class="card-body">
+                        <!--grabbing the first and last name for that particular iteration and applying the capfirst filter to ensure a uniform look even if the user did not input it that way-->
+                        {{ character.hero_name|capfirst }}
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+{% endfor %}
+<div class="row">
+    <!--calling predefined css for the details boxes to come from the left of the screen-->
+    <div class="w3-container w3-center w3-padding-small w3-animate-left pagination-container">
+        <!--bootstrap4 pagination class-->
+        <ul class="pagination">
+        <!--if statement checks to see if there is a previous page, if so then creates link to previous page-->
+        {% if characters.has_previous %}
+            <li class="page-link text-warning pagination-border"><a href="?page={{ characters.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        {% if characters.paginator.count > 5 %}
+            {% for page in characters.paginator.page_range %}
+                {% if characters.number == page %}
+                    <li class="page-item active pagination-border"><a class="page-link text-warning" href="?page={{ page }}">{{ page }}</a></li>
+                {% else %}
+                    <li class="page-item pagination-border"><a class="page-link text-warning" href="?page={{ page }}">{{ page }}</a> </li>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        {% if characters.has_next %}
+            <li class="page-link text-warning pagination-border"><a href="?page={{ characters.next_page_number }}">Next</a> </li>
+        {% endif %}
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="w3-container w3-center w3-animate-left index_button_container">
+        <a type="button" class="btn-lg btn-success" href="{% url 'WoWAppCreateCharacter' %}">Add character!</a>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

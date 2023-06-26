@@ -1,0 +1,44 @@
+
+{% extends "MovieReviews/moviereviews_base.html" %}
+
+{% load static %}
+
+{% block title %} See Our Movie Reviews {% endblock %}
+
+{% block content %}
+<!--- This pages displays all of movies in the database -->
+<h1> Reviewed Movies </h1>
+<div id="table_container" class="table-responsive w-75 mx-auto">
+        <table id="table" class="table table-dark table-bordered text-center" data-toggle="table">
+            <thread>
+                        <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Genre</th>
+                                <th scope="col">Director</th>
+                                <th scope="col">Actor</th>
+                                <th scope="col">Stars</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                        </tr>
+                        <tbody>
+                        {% for movies in movies %}
+                        <tr>
+                                <td><a href="{% url 'moviereviews_details' movies.id %}">{{ movies.title}}</a></td>
+                                <td>{{ movies.genre}}</td>
+                                <td>{{ movies.director }}</td>
+                                <td>{{ movies.actor }}</td>
+                                <td>{{ movies.stars }}</td>
+                                <td><a href="{% url 'moviereviews_edit' movies.id %}"><button class="btn btn-secondary btn-light" type="button">EDIT</button></a></td>
+                                <td><a href="{% url 'moviereviews_delete' movies.id %}"><button class="btn btn-secondary btn-light" type="button">DELETE</button></a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                </thread>
+        </table>
+</div>
+
+
+
+{% endblock %}
+
+

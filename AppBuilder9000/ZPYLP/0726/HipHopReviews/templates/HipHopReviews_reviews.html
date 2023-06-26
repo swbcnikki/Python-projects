@@ -1,0 +1,39 @@
+{% extends "HipHopReviews_base.html" %}
+{% load static %}
+
+{% block title %} Reviews {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block content %}
+<h1>Reviews and Requests</h1>
+<h3>Here you can view and read our repository<br>
+    of every Review we have done thus far, as well as view<br>
+    all current and fulfilled Review Requests!
+</h3>
+<br>
+<div class="display">
+    <div class="display2">
+        <table class="center">
+                <tr>
+                    <th>Artist Name</th>
+                    <th>Album Name</th>
+                    <th>Release Year</th>
+                </tr>
+                {% for item in display_reviews %}
+                <tr>
+                    <td>{{ item.ArtistName }}</td>
+                    <td>{{ item.AlbumName }}</td>
+                    <td>{{ item.ReleaseYear }}</td>
+                </tr>
+                <td>
+                <button><a href="{% url 'HipHopReviews_details' item.pk %}">Details</a></button>
+                </td>
+                {% endfor %}
+        </table>
+    </div>
+</div>
+<br>
+
+
+{% endblock %}

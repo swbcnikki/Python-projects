@@ -1,0 +1,21 @@
+{% extends "BestGamesEver/base.html" %}
+{% load static %}
+{% block title %} Add Your Favorite Games of all time! {% endblock %}
+
+
+
+{% block header %}
+    <h1 id="home">Add a game below</h1>
+{% endblock %}
+
+{% block content %}
+<div id="form-container">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="btn-container">
+            <button type="submit" value="Submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

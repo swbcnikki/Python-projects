@@ -1,0 +1,19 @@
+{% extends 'funkocollectorbase.html' %}
+{% block title %}Edit a Pop{% endblock %}
+
+
+{% block body %}
+
+<!-- html file for displaying the form in a Bootstrap styled form with prefilled data input boxes to edit information to
+the	database -->
+<div class="container form-div">
+	<div class="form-group">
+		<h1>Edit or Delete a Pop.</h1>
+			<form action="" method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+			  <input type="submit" value="Update" class="btn btn-primary">
+			</form>
+	</div>
+</div>
+{% endblock %}

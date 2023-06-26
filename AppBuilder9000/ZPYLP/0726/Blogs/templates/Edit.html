@@ -1,0 +1,47 @@
+{% extends 'blogs_home.html' %}
+
+{% block content%}
+
+<section class="section">
+    <div class="container">
+
+            <form method="POST" action="{% url 'EditPage' Entryinfo.pk %}">
+                <div class="field">
+                    <div class="control">
+
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+
+                        {{ form }}
+
+                    </div>
+                </div>
+
+                <div class="field is-grouped is-grouped-right">
+
+                    <div class="buttons">
+
+                        <button class="button is-primary is-light">Save</button>
+                        <a href="{% url 'DetailsPage' Entryinfo.pk %}" class="button is-link is-light">Return</a>
+
+
+                    </div>
+
+                </div>
+
+            </form>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

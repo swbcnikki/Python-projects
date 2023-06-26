@@ -1,0 +1,23 @@
+{% extends "Books/Books_Base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+
+{% block title %}Update Form{% endblock %}
+
+{% block content%}
+
+<h1 class = "fancy">Update Form</h1>
+
+<div class="add-book-container">
+    <form method="POST" class="add-book-form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button class="btn btn-success" type="submit" name="Update_Review">Update Review</button>
+        <a href="../Details/"><div class="btn btn-primary">Cancel</div></a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "Traveling/Traveling_base.html" %}
+
+{% load static from staticfiles %}
+
+
+
+{% block title %}Travel Agency{% endblock %}
+
+{% block header %}Everywhere in your hand{% endblock %}
+
+{% block content %}
+
+<div  class="bg_img_c">
+    <div class="cd_container">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <h3 class="text">Confirm?</h3>
+
+
+            {{ item.as_p }}
+            <p class="text">Are you sure want to delete the account,   {{ item }}?</p>
+
+            <br>
+            <br>
+            <input class="btn-sub" type="submit" value=" Yes, delete!" >
+            <a href="{% url 'Traveling_place' %}"><button class="btn-can" type="button">Cancel</button></a>
+        </form>
+
+    </div>
+
+
+
+</div>
+
+
+{% endblock %}

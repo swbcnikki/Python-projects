@@ -1,0 +1,23 @@
+{% extends 'MoveState/movestate_base.html' %}
+
+{% block title %}MoveState{% endblock %}
+
+{% block header %}Delete?{% endblock %}
+
+{% block content %}
+
+<div class="adminBox">
+    <form method="POST">
+        {% csrf_token %}
+
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you want to delete "{{ item.name }}" from the database?</p>
+
+        {{ item.as_p }}
+
+        <input type="submit" value="Yes, delete it!" class="btn">
+        <button class="btn" type="button"><a href="{% url 'list_state' %}">Cancel</a></button>
+    </form>
+</div>
+
+{% endblock %}

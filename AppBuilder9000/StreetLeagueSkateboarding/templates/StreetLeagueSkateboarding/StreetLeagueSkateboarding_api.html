@@ -1,0 +1,8 @@
+{% extends "StreetLeagueSkateboarding_base.html" %}
+
+{% block content %}
+<h1>API</h1>
+<h2>Temperature at the Skatepark: </h2>
+<h1>{{ current_temperature }}</h1>
+<button><a href="{% url 'StreetLeagueSkateboarding_save_api' temp_int %}">Save Temperature</a></button>
+{% endblock %}

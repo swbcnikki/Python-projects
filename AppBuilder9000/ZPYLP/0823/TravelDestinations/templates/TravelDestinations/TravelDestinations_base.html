@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="{% static '/css/TravelDestinations.css' %}">
+            <title>{% block title %}{% endblock %}</title>
+        </head>
+
+        <body>
+            <!-- Navbar -->
+            <div class="header">
+                <div class="nav">
+                    <ul class="menu-bar">
+                        <li><a href="{% url 'TravelDestinations_home.html' %}">Home</a></li>
+                        <li><a href="{% url 'TravelDestinations_destinations.html' %}">Destinations</a></li>
+                        <li><a href="{% url 'TravelDestinations_add.html' %}">Add Destination</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Navbar -->
+        </body>
+    </html>
+
+
+
+{% block content %}
+
+{% endblock %}

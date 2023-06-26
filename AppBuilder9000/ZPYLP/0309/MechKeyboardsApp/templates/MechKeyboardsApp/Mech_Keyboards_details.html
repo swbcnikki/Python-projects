@@ -1,0 +1,84 @@
+<!-- Extends from the base html -->
+{% extends "MechKeyboardsApp/Mech_Keyboards_base.html" %}
+
+<!-- Page title -->
+{% block title %}MechKeyboards{% endblock %}
+
+<!-- Page header -->
+{% block header %}
+    <div class="container-lg">
+        <h1>Build Details</h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<h2>{{ build.username }}</h2>
+
+<div class="container-details">
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-secondary">Case</span>
+            <p class="detail-p">{{ build.case }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-secondary">Switches</span>
+            <p class="detail-p">{{ build.switches }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-secondary">Pcb</span>
+            <p class="detail-p">{{ build.pcb }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-secondary">Keycaps</span>
+            <p class="detail-p">{{ build.keycaps }}</p>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-secondary">Plate</span>
+            <p class="detail-p">{{ build.plate }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-secondary">Date Created</span>
+            <p class="detail-p">{{ build.date_created }}</p>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-secondary">Stabilizers</span>
+            <p class="detail-p">{{ build.stabilizers }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-secondary">Email</span>
+            <p class="detail-p">{{ build.email }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p class="detail-p"><span class="badge bg-secondary">Notes</span></p>
+            <textarea class="detail-textarea" rows="10" cols="2" readonly="readonly">{{ build.notes }}</textarea>
+        </div>
+    </div>
+</div>
+
+<div class="detail-btn-container">
+    <a href="../edit_build/"><button type="button" class="btn" value="Edit Build">Edit Build</button></a>
+    <a href="../delete_build/"><button type="button" class="btn" value="Delete Build">Delete Build</button></a>
+    <a href="{% url 'keyboard_index' %}"><button type="button" class="btn" value="Go Back">Go Back</button></a>
+</div>
+
+{% endblock %}

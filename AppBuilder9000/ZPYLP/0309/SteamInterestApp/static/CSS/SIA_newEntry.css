@@ -1,0 +1,12 @@
+/* Simple CSS for our newEntry page
+I use Bootstrap for most styling, but I'll add a little here*/
+
+.formtable {
+    margin: 0px auto;
+}
+
+/*MAKE SURE TO REFRESH THE CACHE!
+Changes I keep making I'm not seeing since I keep forgetting to refresh the cache haha*/
+.formentrysubmit {
+    margin-top: 25px;
+}

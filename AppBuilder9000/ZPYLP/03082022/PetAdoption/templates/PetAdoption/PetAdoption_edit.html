@@ -1,0 +1,27 @@
+{% extends "PetAdoption_base.html" %}
+{% load static %}
+
+{% block title %}Edit Pet{% endblock %}
+
+{% block header %}Edit Pet{% endblock %}
+
+{% block content %}
+    <div class="form_container">
+        <form method="POST">
+            <div class="frmObject_container">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <div class="frmBtn_container">
+                <button class="formbtn" type="submit">Edit</button>
+            </div>
+        </form>
+    </div>
+    <div class="form_container">
+        <a href="{% url 'pet_adoption_delete' details.id %}">
+            <div class="frmBtn_container">
+                <button class="formbtn">DELETE</button>
+            </div>
+        </a>
+    </div>
+{% endblock %}

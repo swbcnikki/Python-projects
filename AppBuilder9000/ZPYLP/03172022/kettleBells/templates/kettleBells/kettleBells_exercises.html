@@ -1,0 +1,19 @@
+{% extends 'kettleBells_base.html' %}
+
+{% block title %}KettleBells{% endblock %}
+
+{% block header %}Exercises{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="adminBox">
+        <ul>
+        {% for moves in moves_list %}
+            <li class="kbli"><a href="{% url 'KB_details' moves.id %}">{{ moves.name }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'VideoGameReviews/VideoGameReviews_Base.html' %}
+{% load static %}
+{% block content %}
+
+<h1> Details! </h1>
+
+<div>
+    <ul>
+        <strong><li>Title: {{ video_detail.GameName }}</li></strong>
+        <li>Genre: {{ video_detail.GameGenre }}</li><br>
+        <li>Review: {{ video_detail.GameReview }}</li><br>
+        <li>Rating: {{ video_detail.GameRating }}</li><br>
+        <li>id: {{ video_detail.pk }} </li>
+    </ul>
+</div>
+{% endblock %}

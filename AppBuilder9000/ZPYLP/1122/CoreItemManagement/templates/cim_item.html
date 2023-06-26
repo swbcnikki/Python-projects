@@ -1,0 +1,70 @@
+{% extends "cim_base.html" %}
+
+{% block title %}Core Item Management{% endblock %}
+
+
+{% block header %}
+<div class="cim_Title">
+    <h1>Core Item Management</h1>
+    <h2>Item View</h2>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<!--
+Variables:
+{{ pk.part_num }}
+{{ pk.name }}
+{{ pk.count }}
+{{ pk.category }}
+{{ pk.price }}
+{{ pk.vendor }}
+-->
+<div style="width: 100%; text-align: center">
+    <!-- Container -->
+    <div style="display: inline-flex;">
+        <!-- Side A -->
+        <div style="float: left; margin: 1rem;">
+            <table>
+                <tr class="left">
+                    <th>Name:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ item.item_name }}</td>
+                </tr>
+                <tr class="left">
+                    <th>Part Number:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ item.item_pn }}</td>
+                </tr>
+                <tr class="left">
+                    <th>Category:</th>
+                    <th>Price:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ item.item_count }}</td>
+                    <td>{{ item.item_price }}</td>
+                </tr>
+                <tr class="left">
+                    <th>Category:</th>
+                    <th>Vendor:</th>
+                </tr>
+                <tr class="left">
+                    <td>{{ item.item_category }}</td>
+                    <td>{{ item.item_vendor }}</td>
+                </tr>
+            </table>
+        </div>
+        <!-- Side A -->
+        <!-- Side B -->
+        <div style="float: right; margin: 1rem;">
+            <img src="https://pngimg.com/uploads/question_mark/question_mark_PNG17.png" alt="{{ item.item_name }} Image">
+        </div>
+        <!-- Side B -->
+    </div>
+    <!-- Container -->
+</div>
+
+{% endblock %}

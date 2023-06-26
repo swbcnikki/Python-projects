@@ -1,0 +1,33 @@
+{% extends "MMAStats/MMA_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page web-scrapes to get up to date new and upcoming fights
+{% endcomment %}
+
+<h1>Upcoming and Past UFC Events</h1>
+
+
+<table border="2px solid white">
+    <thead>
+        <tr>
+            <th>Event Name and Date</th>
+            <th>Location</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    {% for event in event_list %}
+        <tr>
+            <td>{{ event.0 }} </td>
+            <td>{{ event.1 }} </td>
+            <td>{{ event.2 }}</td>
+            <td>{{ event.3 }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+html    {
+background-color: gray;
+color: white;
+}
+
+h3  {
+color:yellow;
+}
+
+td  {
+padding: 0 15px 0 15px;
+color: orange;
+}
+
+tr  {
+    padding: 0 15px 0 15px;
+    color: orange;
+    }
+
+table   {
+border: 1px solid yellow;
+}
+

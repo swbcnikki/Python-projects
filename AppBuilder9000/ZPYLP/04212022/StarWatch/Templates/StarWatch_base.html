@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/StarWatch_main.css' %}">
+    </head>
+
+    <!--Body-->
+    <body>
+        <div id="page-container">
+        <!--NAV-->
+            {% include "StarWatch/StarWatch_nav.html" %}
+        <!--END NAV-->
+
+        <!--Header-->
+                <h1>{% block header %}{% endblock %}</h1>
+        <!--END Header-->
+
+        <!--Main Content-->
+            <div id="content-wrap">
+                {% block content %}{% endblock %}
+            </div>
+        <!--END Main Content-->
+        </div>
+    </body>
+    <!-- END Body-->
+
+    <!--Footer-->
+    <footer class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 James Hannafin:
+        <a class="text-dark" href="https://jameshannafin.github.io/">jameshannafin.github.ios</a>
+      </div>
+    </footer>
+    <!--END Footer-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</html>

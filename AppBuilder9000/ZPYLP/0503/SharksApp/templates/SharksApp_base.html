@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="bg_image">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS/layout.css' %}"
+    </head>
+    <body>
+        <div class="page_wrap">
+        <header>
+                <div class="navbar">
+                    <a href="{% url 'home' %}">App Directory</a>
+                    <a href="{% url 'SharksApp_home' %}">Sharks Homepage</a>
+                    <a href="{% url 'SharksApp_displaydb' %}">Your Favorites</a>
+                    <a href="{% url 'SharksApp_newitem' %}">Add A Species</a>
+                </div>
+                <div class="header_style">
+                <h1>{% block header %} {% endblock %}</h1>
+                </div>
+            </header>
+            <div>
+            {% block content %} {% endblock %}
+            </div>
+        </div>
+         <section class="footer">
+            <p>Sharkopedia &copy;2021</p>
+        </section>
+    </body>
+</html>

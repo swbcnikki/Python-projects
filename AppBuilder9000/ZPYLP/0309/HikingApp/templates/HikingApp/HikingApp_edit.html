@@ -1,0 +1,54 @@
+{% extends "HikingApp/HikingApp_base.html" %}
+
+{% block title %} Hiking Trails {% endblock %}
+
+{% block header %} Edit trail: {% endblock %}
+
+{% block content %}
+
+<div class="AddTrail">
+    <form method="POST" action="{% url 'HikingApp_edit' trails.pk %}">
+        <div class="frmObject_container">
+            <!-- Cross site request forgery (csrf_token) protection -->
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+
+
+            <div class="frmBtn_container">
+                <!-------Update Trail Button------>
+                <input type="submit" class="btn" value="Update" name="Save_Item">
+                <!-------Cancel edits and return to details ------->
+                <button type="button" class="btn" value="Cancel"><a href="{% url 'HikingApp_details' trails.pk %}">Cancel</a></button>
+                <!-------Delete trail button, opens modal---------->
+                <button onclick="document.getElementById('modal').style.display='block'" type="button" class="btn">Delete</button>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+
+<!---- Confirm Delete Modal ----------->
+<div id="modal" class="modal">
+    <!------Close modal button------->
+  <span onclick="document.getElementById('modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <hr>
+    <div class="modal_container">
+        <h2>Delete Trail</h2>
+        <p>Are you sure you want to delete {{ trails.name }}?</p>
+
+        <!-----Form to delete trail; action leads to delete fxn------>
+        <form class="modal-content" method="POST" action="{% url 'HikingApp_delete' trails.pk %}">
+              {% csrf_token %}
+            <input class="delete_btn btn" type="submit" value="Delete">
+        </form>
+            <button class="cancel_btn btn" onclick="document.getElementById('modal').style.display='none'">Cancel</button>
+
+    </div>
+</div>
+
+
+{% endblock %}
+{% block footer %} {% endblock %}

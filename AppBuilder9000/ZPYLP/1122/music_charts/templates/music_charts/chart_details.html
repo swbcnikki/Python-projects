@@ -1,0 +1,18 @@
+{% extends 'music_charts/mcharts_base.html' %}
+
+{% load static %}
+
+{% block content %}
+        <p class="details-title">Details</p>
+<!------ this part creates the form for each primary key that is created in the db ---------------->
+<form class="detail-form" name="ChartsForm" method="POST">
+
+    <table class="detail-table">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_table }}
+    </table>
+
+</form>
+
+{% endblock %}

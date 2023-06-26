@@ -1,0 +1,22 @@
+{% extends "DNDCharacters/dnd_characters_base.html" %}
+
+{% block title %}Dungeons and Dragons Characters!{% endblock %}
+
+{% block header %} <h1 class="welcomeh1">Who will you be? Charcter Creation: </h1>{% endblock %}
+
+{% block content%}
+    <div class="form_container">
+        <form method="POST" action="{% url 'createCharacter' %}">
+            <div class="frmObject_container">
+                <!-- Cross Site Request Forgery (csrf_token) protection -->
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div class="frmBtn_container">
+                <input type="submit" class="btn" value="Create New Character" name="Save_Item">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

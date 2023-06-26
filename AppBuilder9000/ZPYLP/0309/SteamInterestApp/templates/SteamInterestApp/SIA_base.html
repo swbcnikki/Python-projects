@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+	<head>
+	    <meta charset="UTF-8">
+		<title>{% block title %}{% endblock %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+        <!--Gonna add a block here so additional styling can be set per page-->
+        {% block morestyling %}{% endblock %}
+
+        <!--This seems to be grabbing from the overall static folder rather than from static in my app...
+        Not anymore! By changing the pathway, we can now access the CSS folder-->
+        <link href="{% static 'CSS/SIA_footer.css' %}" rel="stylesheet" type="text/css">
+
+    </head>
+
+    <body class="bg-dark text-white">
+        <!--Add a navbar for every page, as we want easy navigation for users!-->
+        {% include 'SteamInterestApp/SIA_navbar.html' %}
+
+        <div class="page_container">
+            <header class="header-title text-center">
+                <!--We add a block header here so we can change it for each page-->
+                <h1 class="display-1">{% block header %}{% endblock %}</h1>
+		    </header>
+            <br>
+            <!--Finally, a content block that will change with each page-->
+            {% block content %}{% endblock %}
+        </div>
+
+        <!--Add a footer for every page!-->
+        {% include 'SteamInterestApp/SIA_footer.html' %}
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </body>
+</html>

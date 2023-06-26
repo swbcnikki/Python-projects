@@ -1,0 +1,28 @@
+{% extends "VP_TrackShows/base.html" %}
+{% load static %}
+
+{% block title %}All Shows{% endblock %}
+{% block header %}<h1>ALL SHOWS</h1>{% endblock %}
+{% block content %}
+<h2>Click to edit</h2>
+<div class="container">
+    <table data-toggle="table">
+        <tr>
+            <th>Title</th>
+            <th>Status</th>
+            <th>AirDay</th>
+            <th>AirTime</th>
+            <th>Network</th>
+        </tr>
+        {% for allshow in allshows %}
+        <tr>
+            <td><a href="{% url 'details' allshow.pk %}">{{ allshow }}</a></td>
+            <td>{{ allshow.status }}</td>
+            <td>{{ allshow.day_of_week }}</td>
+            <td>{{ allshow.airtime }}</td>
+            <td>{{ allshow.network }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

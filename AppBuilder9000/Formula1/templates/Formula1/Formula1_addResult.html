@@ -1,0 +1,24 @@
+{% extends "Formula1/Formula1_base.html" %}
+
+{% block title %}Formula 1{% endblock %}
+
+{% block header %}Add Results{% endblock %}
+
+{% block content %}
+
+<div class="results-form">
+    <form method="POST" action="{% url 'result_submit' %}">
+        <div class="form-obj-container">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+        </div>
+        <div class="form-btn-container">
+            <a href="{% url 'f1_home' %}"><button type="button" class="btn-form" id="btn-cancel" value="Cancel">Cancel</button></a>
+            <input type="submit" class="btn-form" id="btn-submit" value="Add Result" name="add_result">
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

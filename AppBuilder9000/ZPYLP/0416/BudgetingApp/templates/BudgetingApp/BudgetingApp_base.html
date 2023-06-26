@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="background">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/BudgetingApp.css' %}">
+</head>
+
+
+
+<body>
+      {% include "BudgetingApp/BudgetingApp_navbar.html" %}
+    <div class="div_container">
+        <header>
+            <h2 class="header" >{% block header %}{% endblock %}</h2>
+        </header>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+<section id="footer-wrap">
+    <footer class="footer">
+        <p>Author: Samuel Lehner</p>
+    </footer>
+</section>
+
+</html>

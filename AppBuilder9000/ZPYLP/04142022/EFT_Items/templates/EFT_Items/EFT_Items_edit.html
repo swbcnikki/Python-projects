@@ -1,0 +1,20 @@
+{% extends "EFT_Items/EFT_Items_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Escape From Tarkov{% endblock %}
+
+{% block header %}Edit Item:{% endblock %}
+
+{% block content %}
+
+<div class="EFTContainer">
+    <form action="" method="POST" class="EFTForm">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'HikingFunApp/HikingFunApp_base.html' %}
+
+{%block header %} Trail Details {% endblock %}
+
+{% block content %}
+    <div>
+        <form method="POST" action="{% url 'details' item.id %}">
+            <table>
+                {% csrf_token %}
+                {{  form.non_field_errors }}
+                {{ form.as_table }}
+            </table>
+           <div>
+                <p> You can makes changes to the hike information and submit using the button below. </p>
+                <button class="btn" type="submit"> Submit Changes </button>
+            </div>
+        </form>
+
+        <div>
+            <p>To delete this trail, click below:</p>
+            <button class="btn"><a href="{% url 'delete' item.id %}"><span style="color:red"> Delete </span> </a></button>
+        </div>
+    </div>
+
+{% endblock %}

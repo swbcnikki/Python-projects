@@ -1,0 +1,58 @@
+{%extends "SportsApp/SportsApp_base.html" %}
+
+<!-- Page title -->
+{% block title %}SportsApp{% endblock %}
+
+{% block header %}
+    <div class="createPage-header">
+        <h1>SportsApp Game Details</h1>
+    </div>
+{% endblock%}
+
+{%block content%}
+
+<h1 class="detail-email">Saved game for:  {{ game.email }}</h1>
+
+<div class="details-wrapper">
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary">Home Team</span>
+            <p class="detail-text">{{ game.home_team }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-primary">Away Team</span>
+            <p class="detail-text">{{ game.away_team }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary">Date of Game</span>
+            <p class="detail-text">{{ game.date_game }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-primary">Start Time</span>
+            <p class="detail-text">{{ game.time_start }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+                <p class="detail-text"><span class="badge bg-primary">Game Notes</span></p>
+                <textarea class="detail-text-box" rows="5" cols="2" readonly="readonly" placeholder="Click 'Edit Game' to add game notes!">{{ game.game_notes }}</textarea>
+        </div>
+    </div>
+</div>
+
+<div class="btn-wrapper">
+    <a href="{% url 'edit_game' game.pk %}"><button type="button" class="btn" value="Edit Game">Edit Game</button></a>
+    <a href="{% url 'delete_game' game.pk %}"><button type="button" class="btn" value="Delete Game">Delete Game</button> </a>
+    <a href="{% url 'add_game_archive' %}"><button type="button" class="btn" value="Back">Back</button> </a>
+</div>
+
+
+
+
+{% endblock %}

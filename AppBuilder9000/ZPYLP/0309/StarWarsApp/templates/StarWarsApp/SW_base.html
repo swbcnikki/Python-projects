@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="background">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}StarWars{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'StarWarsApp/css/SW_stylesheet.css' %}">
+    </head>
+    <body class="bg_img">
+        <!-- Bootstrap NavBar-->
+       <div class="topnav">
+          <a class="active" href="#">Home</a>
+          <a href="{% url 'SW_store' %}">Store</a>
+          <a href="{% url 'SW_AddProduct' %}">Add Product</a>
+          <a href="#">About</a>
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>
+

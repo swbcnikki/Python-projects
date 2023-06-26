@@ -1,0 +1,25 @@
+{% extends 'speed_run_base.html' %}
+{% load static %}
+
+{% block title %}Edit Speedrun{% endblock %}
+
+{% block content %}
+
+    <h1 class="homeHeading">Edit your record</h1>
+
+    <div class="form-container">
+        <form method="POST">
+            <!--cross site request forgery protection-->
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="frmBtn_container">
+                <input type="submit" class="btn btn-dark" value="Save Edit" name="Add_Record">
+                <a href="{% url 'speed_run_create_game' %}"><button type="button" class="btn btn-dark">Don't See your game?</button></a>
+                <a href="{% url 'speed_run_home' %}"><button type="button" class="btn btn-dark">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,48 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% load static %}
+
+{% block title %}Portland Neighborhood Review App {%  endblock %}
+
+{% block header %}Important Oregon Housing Stats {% endblock %}
+
+{% block content %}
+    <p>The below information is intended to provide information on taxes for each county Oregon. Portland Metro is
+    primarily in Multnomah, Washington and Clackamas counties
+    <br><br>
+    The data was pulled from <strong><u>https://smartasset.com/</u></strong>.
+    <br><br>
+    Direct Link: <a href = 'https://smartasset.com/taxes/oregon-property-tax-calculator#:~:text=Overview%20of%20Oregon%20Taxes&text=The%20effective%20property%20tax%20rate,average%20currently%20stands%20at%201.07%25.'>
+    Click Here</a>
+    </p><br>
+
+    <table id ="table">
+
+
+                <tr>
+                    <td style = "width:25%; text-align: center;font-size:18px;">County</td>
+                    <td style ="width:25%; text-align: center;font-size:18px;">Median Home Value</td>
+                    <td style ="width:25%; text-align: center;font-size:18px;">Avg Prpty Tax Pymt</td>
+                    <td style ="width:25%; text-align: center;font-size:18px;">Prty Tax Rate</td>
+
+                </tr>
+
+
+        {% for td in zipped_list   %}
+            <tr>
+                <td style = "text-align: center">
+                    {{ td.0 }}
+                </td>
+                 <td style = "text-align: center">
+                    {{ td.1 }}
+                </td>
+                 <td style = "text-align: center">
+                    {{ td.2 }}
+                </td>
+                 <td style = "text-align: center">
+                    {{ td.3 }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

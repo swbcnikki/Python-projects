@@ -1,0 +1,10 @@
+{% extends "SciFiWatchlist/SciFiWatchlist_base.html" %}
+{% load static %}
+{% block title %} SciFi Watchlist Home {% endblock %}
+
+{% block content %}
+<h1>Welcome to the watchlist, enter at your own risk.</h1>
+<p>This is a place to stash a supreme collection of all of your SciFi pleasures. This is the home of the good...the bad...and the so bad, it's good.</p>
+
+<a id="list-link" href="{% url 'List-Movies' %}"> Select to see the entire list of cinematic gold!</a>
+{% endblock %}

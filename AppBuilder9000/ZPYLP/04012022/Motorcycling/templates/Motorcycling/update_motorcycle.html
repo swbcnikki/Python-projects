@@ -1,0 +1,25 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+{% block header %}
+<center>
+<h2>Edit Motorcycle</h2>
+</center>
+{% endblock %}
+
+    {{ edit_moto }}
+
+{% block content %}
+<center>
+<h3>Update Your Motorcycle</h3>
+<div id="form-container" class="table-responsive w-50 mx-auto">
+    <form method="POST">
+        {% csrf_token %}
+         <table id="table" class="table table-striped table-bordered table-hover">
+             {{ form.as_p }}
+         </table>
+         <button type="submit" value="update" class="btn btn-dark btn-sm btn-block w-20 mx-auto">Edit Motorcycle</button>
+    </form>
+</div>
+</center>
+{% endblock %}

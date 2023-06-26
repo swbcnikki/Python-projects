@@ -1,0 +1,30 @@
+{% extends "vehicles/Vehicles_base.html" %}
+{% load static %}
+{% block title %}Vehicle List{% endblock %}
+
+{% block header %}Vehicle Details{% endblock %}
+
+{% block content %}
+<div id="container" class="table-responsive w-75 mx-auto"style= "margin-left: 30%; padding-left: 100px; margin-right: 30%; background-color: black; align-content: center;">
+    <table id="table" class="table table-dark table-bordered table-hover text-center" style="color: white; margin-top: 1%; ">
+        <thead>
+            <tr>
+                <th scope="col" data-field="year" class="w-25">Year</th>
+                <th scope="col" data-field="vehicle_make" class="w-25">Make</th>
+                <th scope="col" data-field="vehicle_model" class="w-25">Model</th>
+                <th scope="col" data-field="cylinders" class="w-25">Cylinders</th>
+                <th scope="col" data-field="horsepower" class="w-25">Horsepower</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ details.year }}</td>
+                <td>{{ details.vehicle_make }}</td>
+                <td>{{ details.vehicle_model }}</td>
+                <td>{{ details.cylinders }}</td>
+                <td>{{ details.horsepower }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

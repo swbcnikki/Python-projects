@@ -1,0 +1,14 @@
+{% extends "RidleyVerse/RidleyVerse_base.html" %}
+{% load static %}
+{% block title %} Movies {% endblock %}
+{% block content %}
+<h1>The Connected RidleyVerse:</h1>
+<ul id="movieMenu">
+    {% for Movie in Movies %}
+    <li>
+      <a id="addedMovies" href="{% url 'Movie-Details' Movie.id %}">{{ Movie.FilmName|capfirst }} ({{ Movie.ReleaseYear}})</a>
+    </li>
+    <a class="function-button" href="{% url 'Update' Movie.id %}">Edit</a> <a  class="function-button" href="{% url 'Delete' Movie.id %}">Delete</a>
+    {% endfor %}
+</ul>
+{% endblock %}

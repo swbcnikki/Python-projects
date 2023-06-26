@@ -1,0 +1,30 @@
+{% extends "VideoGameReviews/gamereviews_base.html" %}
+
+{% block title %} Video Game Review - View Review {% endblock %}
+
+{% block header %} Review Details {% endblock %}
+
+{% block content %}
+
+<!-- Details list -->
+<div class="create_form">
+  <ul class="list-group">
+    <h1 class="list-group-item">{{ details.game|capfirst }}</h1>
+    <li class="list-group-item">{{ details.developer }}</li>
+    <h4 class="list-group-item">Developer</h4>
+    <li class="list-group-item">{{ details.review_score }}</li>
+    <h4 class="list-group-item">Score</h4>
+    <li class="list-group-item">{{ details.reviewer }}</li>
+    <h4 class="list-group-item">Reviewer</h4>
+    <li class="list-group-item">{{ details.summary }}</li>
+    <h4 class="list-group-item">Summary</h4>
+  </ul>
+  <!-- Delete, Edit, Back Buttons -->
+  <div class="btn-group" role="group">
+    <a href="{% url 'gamereviews_edit' details.pk %}"><button type="button" class="btn btn-secondary">Edit</button></a>
+    <a href="{% url 'gamereviews_delete' details.pk %}"><button type="button" class="btn btn-secondary">Delete</button></a>
+    <a href="{% url 'gamereviews_displayitems' %}"><button type="button" class="btn btn-secondary">Back</button></a>
+  </div>
+</div>
+
+{% endblock %}

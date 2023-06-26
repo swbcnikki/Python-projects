@@ -1,0 +1,20 @@
+{% extends "Cartoons/Cartoons_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page displays a top ten animations of all time list scraped from another website.
+{% endcomment %}
+
+<div class="jumbotron jumbotron-fluid bg-primary text-light text-center">
+    <h1 class="display-4">Top Ten Cartoons According to IndieWire</h2>
+    <h4>Click on a title to add it to our list!</h4>
+</div>
+<div class="card w-50 mx-auto list-group">
+    {% for titles in top_cartoons %}
+    <a href="{% url 'Cartoons_create' %}" class="list-group-item list-group-item-action list-group-flush font-weight-bold bg-warning text-light">
+        {{ titles }}
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

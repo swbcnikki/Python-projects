@@ -1,0 +1,48 @@
+{% extends "CampSite/CampSite_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} National Forest Sites {% endblock %}
+
+{% block jumbotron-text %} Find <br> Your <br> Spot {% endblock %}
+
+
+{% block content%}
+    <h2 class="table_header">National Forest Sites:</h2>
+    <table class="table table-responsive browse_table">
+        <tr id="header_row">
+            <th class="header_column">Site Name</th>
+            <th class="header_column">Access</th>
+            <th class="header_column">Type</th>
+            <th class="header_column">Link</th>
+        </tr>
+        {% for campsite in page_obj %}
+        <tr>
+            <td class="header_column"><strong>{{ campsite.name }}</strong></td>
+            <td class="header_column">{{ campsite.access }}</td>
+            <td>{{ campsite.type }}</td>
+            <td><a href="{{ campsite.full_link }}" target="_blank">Details</a></td>
+            {% endfor %}›
+        </tr>
+        <tr>
+
+        </tr>
+    </table>
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous%}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}

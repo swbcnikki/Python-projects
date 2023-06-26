@@ -1,0 +1,19 @@
+{% extends "MTB_Trails/mtb_trails_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}MTB Trails | Create a Review{% endblock %}
+
+{% block header %}review your ride{% endblock %}
+
+{% block content %}
+    <!-- Centering elements with custom CSS -->
+    <div class="form-review--container">
+        <form action="" method="POST" class="bottom-page--padding">
+            {% csrf_token %}
+                <!-- Crispy makes the Django form look nice -->
+                {{ form|crispy }}
+            <input type="submit" class="btn btn-dark btn-block" input="submit">
+        </form>
+    </div>
+{% endblock %}

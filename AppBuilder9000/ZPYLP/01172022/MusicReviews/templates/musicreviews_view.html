@@ -1,0 +1,41 @@
+{% extends "musicreviews_base.html" %}
+{% load static %}
+{% block title %} View Reviews {% endblock %}
+
+{% block header %} <div class="videotext"> all music reviews </div> {% endblock %}
+
+{% block content %}
+
+    <div class="navbarSteady">
+        <a href="{% url 'back_home' %}">&#8592;</a>
+        <a href="{% url 'music_reviews_home' %}">Home</a>
+        <b><a href="{% url 'review_view' %}">Reviews</a></b>
+        <a href="{% url 'createReview' %}">Add Reviews</a>
+        <a href="{% url 'beautiful_soup' %}">Music</a>
+        <a href="{% url 'apiLoad' %}">News</a>
+    </div>
+
+<div>
+    <form class="revView" method="post" action="">
+        <div>
+            {% csrf_token %}
+            <label>Select a review from the list: </label>
+            <br>
+            <br>
+                    {% for review in reviews %}
+                <ul>
+                    <div class="revList">
+                        <li><a href="{% url 'display_reviews' review.id %}">{{ review.Artist }} | {{ review.Song }} | {{ review.Stars }}</a></li>
+                    </div>
+                </ul>
+                    {% endfor %}
+            <div>
+                <a href="{% url 'createReview' %}"><button type="button" class="btn">Write new review</button></a>
+                <a href="{% url 'music_reviews_home' %}"><button type="button" class="btn">Cancel</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+

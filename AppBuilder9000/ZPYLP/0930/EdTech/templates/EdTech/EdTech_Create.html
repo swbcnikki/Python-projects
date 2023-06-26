@@ -1,0 +1,19 @@
+{% extends "EdTech/EdTech_Base.html" %}
+{% load static %}
+{% block title %} Add a Resource{% endblock %}
+
+{% block header %}
+<h1>New Resource Form</h1>
+{% endblock %}
+
+{% block content %}
+<div id="form-container">
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit" name="EdTech_Create">Add Resource</button>
+    </form>
+</div>
+{% endblock %}

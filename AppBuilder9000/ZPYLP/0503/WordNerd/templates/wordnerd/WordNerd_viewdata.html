@@ -1,0 +1,19 @@
+{% extends "wordnerd/WordNerd_base.html" %}
+{% block title %}View your words{% endblock %}
+<!--For loop that displays all the data with all-->
+{% block header %} <h2>Please Select a word to view its details!</h2>{% endblock%}
+{% block content %}
+<div id="scroll_box">
+<hr>
+<!--Lists all word names in a list that allows the user to click them and be redirected to a details page (WordNerd_worddetails.html)-->
+{% for words in allWords %}
+
+Name: <a id="Name_Select" href="{% url 'WordNerd_worddetails' words.id %}">{{ words.word_name }}</a> | <a href="{% url 'WordNerd_wordupdate' words.id %}">Edit</a>&#160;|&#160;<a href="{% url 'WordNerd_worddelete' words.id %}">Delete</a><br>
+
+<hr>
+
+{% endfor %}
+</div>
+{% endblock %}
+
+

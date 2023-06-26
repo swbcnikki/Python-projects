@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Skateboarding Contest</title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/StreetLeagueSkateboarding.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--Navigation Start-->
+        <div class="navbar">
+            <a href="{% url 'StreetLeagueSkateboarding_home' %}">Home</a>
+            <a href="{% url 'StreetLeagueSkateboarding_create' %}">Sign-Up</a>
+            <a href="{% url 'StreetLeagueSkateboarding_view' %}">Contestants</a>
+            <a href="{% url 'StreetLeagueSkateboarding_api' %}">API</a>
+            <a href="{% url 'StreetLeagueSkateboarding_save_api' 1000 %}">Saved API</a>
+            <a href="{% url 'StreetLeagueSkateboarding_bs' %}">Beautiful Soup</a>
+        </div>
+        <!--Navigation End-->
+        <!--Background Video Start-->
+        <video class="background_video" autoplay loop muted>
+            <source src="{% static 'images/skatepark.mp4' %}" type="video/mp4">
+        </video>
+        <!--Background Video End-->
+        <!--Logo Start-->
+        <div class="logo">
+            <img src="{% static 'images/skatelogo2.png' %}" type="image/png">
+        </div>
+        <!--Logo End-->
+        <!--Content Start-->
+        <div class="create-container">
+            {% block content %}{% endblock %}
+            <br><br>
+        </div>
+        <!--Content End-->
+        <!--Skater Animation Start-->
+        <div class="skater_animation"></div>
+        <!--Skater Animation End-->
+        <!--Footer Start-->
+        <footer>
+            <p class="footer">
+                J. Bowersock | 2022
+            </p>
+            <p class="video_attribution">
+                Video by Videvo
+            </p>
+        </footer>
+        <!--Footer End-->
+    </body>
+</html>

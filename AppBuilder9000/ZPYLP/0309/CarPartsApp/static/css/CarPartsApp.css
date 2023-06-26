@@ -1,0 +1,173 @@
+
+.bg_img {
+    background-image: url('/static/images/interior.gif');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+ul.topnav li {
+    float: left;
+}
+
+ul.topnav li a {
+    display: inline-block;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+ul.topnav li a:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+    background-color: white;
+}
+
+.topnav input[type=text] {
+    float: right;
+    padding: 5px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 20px;
+
+}
+
+ul.topnav li.icon {
+	display: none;
+
+}
+.block-footer {
+    text-align: right;
+}
+html, body {
+    font-color: white;
+}
+h1 {
+    text-align: center;
+    color: white;
+}
+td {
+    text-align: inline;
+}
+
+.formContainer2 {
+    max-width: 50%;
+    color: whitesmoke;
+    padding: 5px;
+    overflow: hidden;
+    border: 2px solid black;
+    background-color: white;
+    background: rgba(25,9,1,0.9);
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    top: 20%;
+
+}
+.btn {
+    flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 150px;
+    margin: 2% 2% 5% 2%;
+    color: black;
+    background-color: red;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 1px white;
+    border-radius: 6px;
+
+}
+
+.formBlock{
+	display: block;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    text-color: red;
+}
+
+.formImg {
+    float: right;
+}
+.formImg2 {
+    text-align: center;
+    padding-top: 100px;
+}
+.homeContainer {
+
+}
+.homeImg1 {
+    float: right;
+}
+.homeImg2 {
+    justify-content: left;
+}
+.heading1 {
+    text-align: center;
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.data-container {
+    color: red;
+    font-size: 35px;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    border: box;
+
+}
+.partsInfo {
+    border: box;
+    background-color: darkgray;
+}
+
+.index {
+    text-align: center;
+    font-size: 30px;
+}
+.detailsContainer {
+    justify-content: center;
+}
+.row1 {
+    border: box;
+    width: 300px;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    background-color: white;
+}
+.row2 {
+    text-align: right;
+    color: blue;
+}
+.edit_button {
+    text-align: center;
+    width: 60px;
+    height: 30px;
+    background-color: red;
+}

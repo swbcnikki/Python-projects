@@ -1,0 +1,13 @@
+{% extends "YTfeed/YTfeed_base.html" %}
+{% load static %}
+{% block title %} YTfeed Home {% endblock %}
+
+{% block content %}
+<br>
+<h1 id="JosefinFont"> Welcome to the YTfeed. </h1>
+<br>
+<p id="TechFont"> This is the your YTfeed! Stay up to date on all your subscriptions.<br>
+See the most recent videos for Youtubers you subscribe to.</p>
+
+<a id="list-link" href="{% url 'List-Youtubers' %}"> See Whats New With Your Favorite Youtubers!!!</a>
+{% endblock %}

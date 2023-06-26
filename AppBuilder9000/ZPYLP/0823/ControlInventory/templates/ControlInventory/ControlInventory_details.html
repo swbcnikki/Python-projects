@@ -1,0 +1,22 @@
+{% extends "ControlInventory/ControlInventory_base.html" %}
+{% load static %}
+
+{% block title %}Inventory Data Query{% endblock %}
+
+{% block header %}Account and Product Details - Query{% endblock %}
+
+{% block content %}
+
+    <div>
+        <h2><u>Choose Inventory Item to Query Information</u></h2>
+        <br>
+        {% for Product in item_list %}
+        <table id ="products">
+            <th><a href="{% url 'ControlInventory_detailspage.html' Product.id %} ">{{ Product.name }}</a></th>
+         </table>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,19 @@
+{% extends 'Composers/composers_base.html' %}
+{% load static %}
+
+{% block title%}Composers Delete{% endblock %}
+{% block header%}Delete Composer{% endblock %}
+
+{% block content %}
+<div id="form-container">
+    <form method='POST'>
+        {% csrf_token %}
+        {{ item.as_p }}
+        <h2> Deleting Composer: {{item.first_name}}</h2>
+        <button type="submit" class="btn btn-dark btn-lg" onclick="return confirm('Are you sure you want to delete this?')">Delete</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

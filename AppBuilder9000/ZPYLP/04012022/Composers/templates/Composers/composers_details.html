@@ -1,0 +1,37 @@
+{% extends 'Composers/composers_base.html' %}
+{%  load static %}
+
+<html>
+    <head>
+        {% block header %} Composers Details {% endblock %}
+        <title> {% block title %} Information about Composer {% endblock %} </title>
+    </head>
+{% block content %}
+    <div id="table-container" class="table-responsive mx-auto">
+    <table class="table table-hover">
+        <thead>
+            <tr> <!--Headings for table-->
+                <th scope="col" data-field='Era' data-sortable="True">Era</th>
+                <th scope="col" data-field='First_Name' data-sortable="True">First Name</th>
+                <th scope="col" data-field='Last_Name' data-sortable="True">Last Name</th>
+                <th scope="col" data-field='Birth_Year' data-sortable="True">Birth Year</th>
+                <th scope="col" data-field='Death_Year' data-sortable="True">Death Year</th>
+                <th scope="col" data-field='Nationality' data-sortable="True">Nationality</th>
+                <th scope="col" data-field='Description' data-sortable="True">Description</th>
+            </tr>
+        </thead>
+        <tr>
+                <td>{{ details.type | capfirst }}</td>
+                <td>{{ details.first_name | capfirst }}</td>
+                <td>{{ details.last_name | capfirst }}</td>
+                <td>{{ details.birth_year | capfirst }}</td>
+                <td>{{ details.death_year | capfirst }}</td>
+                <td>{{ details.nationality | capfirst }}</td>
+                <td>{{ details.description | capfirst }}</td>
+        </tr>
+    </table>
+        <a href="{% url 'composers_edit' details.pk %}"><button>Edit</button></a>
+        <a href="{% url 'composers_delete' details.pk %}"><button>Delete</button></a>
+    </div>
+</html>
+{% endblock %}

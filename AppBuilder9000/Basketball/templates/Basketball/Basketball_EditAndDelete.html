@@ -1,0 +1,14 @@
+{% extends "Basketball/Basketball_base.html" %}
+
+{% block content %}
+<p1>Edit A Game</p1>
+<br>
+<br>
+<br>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" name="Save_Pickup">Save Pickup Game</button>
+</form>
+{% endblock %}

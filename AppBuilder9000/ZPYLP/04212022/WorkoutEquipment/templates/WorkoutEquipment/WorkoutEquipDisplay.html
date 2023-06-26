@@ -1,0 +1,47 @@
+{% extends "WorkoutEquipment/WorkoutEquipBase.html" %}
+{% load static %}
+
+{% block title %} Equipment List {% endblock %}
+
+{% block header %} Equipment List {% endblock %}
+                                         <!--using for loop to iterate through
+                                   display_items dictionary object in view
+                                    function that displays all db items-->
+{% block content %}
+
+    <div class="admin_panel">
+        <form method="POST" action="{% url 'workout_equip_create' %}">
+            <div class="formObject">
+                <div class ='formObject'>
+                    <table class="formObject">
+                        <thead>
+                        <tr class="table">
+                            <th data-field="id" class="w-25">Id</th>
+                            <th data-field="name" class="w-25">name</th>
+                            <th data-field="type" class="w-25">Type</th>
+                            <th data-field="description" class="w-25">Description</th>
+                            <th data-field="price" class="w-25">price</th>
+                            <th data-field="image" class="w-25">image</th>
+                        </tr>
+                        </thead>
+                        <tbody>   <!-- interate through all WorkoutEquipment objects so it will display all Db records on table-->
+                            {% for equipment in display_items %}
+                            <tr class="table">
+                                <td>{{ equipment.id }}</td> <!--block tags representing db table values-->
+                                <td>{{ equipment.name }}</td> <!-- link of equipment.type to individual details pg-->
+                                <td><a class="details" href="{% url 'workout_equip_details' equipment.id %}">{{ equipment.type }}</a></td>
+                                <td>{{ equipment.description }}</td>
+                                <td>{{ equipment.price }}</td>
+                                <td>{{ equipment.image }}</td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+         </form>
+    </div>
+
+
+{% endblock %}

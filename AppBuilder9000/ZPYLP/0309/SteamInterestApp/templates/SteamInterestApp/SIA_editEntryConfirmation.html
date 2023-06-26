@@ -1,0 +1,25 @@
+{% extends 'SteamInterestApp/SIA_base.html' %}
+
+{% load static %}
+
+<!--This is basically identical to the SIA_entryConfirmation.html page...
+I just wanted a separate page to confirm that an entry was successfully edited rather than having the same page
+for adding an entry and editing an entry.
+-->
+
+{% block title %} Steam Interest App - Edit Successful {% endblock %}
+
+{% block header %} You have successfully edited your entry! {% endblock %}
+
+{% block content %}
+    <div class="justify-content-center text-center">
+        <h3>What do you want to do now?</h3>
+        <br>
+        <!--Two simple buttons incorporating onclick events to go back to the entry page or to go back home!-->
+        <button type="button" class="btn btn-info" onclick="window.location.href='{% url 'SIAAllEntries' %}';">View All Entries</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'SIAAddEntry' %}';">Add an Entry</button>
+        <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'SIAHome' %}';">Go Back Home</button>
+
+    </div>
+
+{% endblock %}

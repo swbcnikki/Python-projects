@@ -1,0 +1,16 @@
+{% extends "nba-base.html" %}
+
+{% block title %}Edit Player{% endblock %}
+
+{% block header %}Edit Player{% endblock %}
+
+{% block content %}
+    <div class="container-main">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="lilBtn">Make Changes</button>
+            <button class="lilBtn"><a href="{% url 'display-all' %}" class="btnLink">Cancel</a></button>
+        </form>
+    </div>
+{% endblock %}

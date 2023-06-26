@@ -1,0 +1,23 @@
+{% extends "FootballStats/Football_Stats_base.html" %}
+{% load static %}
+{% block title %}  {% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+    <h2 style="text-align: center; color: white;">Edit Player Stats</h2>
+    <div id="form-container" class="table-responsive w-50 mx-auto">
+        <form method='POST'>
+            {% csrf_token %}
+            <table class="table table-dark table-hover table-bordered border-white w-50 mx-auto text-center">
+                {{ form.as_table }}
+            </table>
+        <div class="container text-center">
+            <a href="{% url 'football_stats_home' %}"><button type="submit" class="btn btn-primary text-center btn-block w-50 mx-auto">Edit Player</button></a>
+        </div>
+        </form>
+
+    </div>
+{% endblock %}

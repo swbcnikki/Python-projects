@@ -1,0 +1,16 @@
+{% extends "VP_TrackShows/base.html" %}
+{% load static %}
+
+{% block title %}Add Show{% endblock %}
+{% block header %}<h1>ADD YOUR SHOW</h1>{% endblock %}
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit" name="create">ADD</button>
+    </form>
+</div>
+{% endblock %}

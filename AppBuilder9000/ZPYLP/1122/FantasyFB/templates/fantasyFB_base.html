@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/fantasyFB.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="bg-img">
+            <header>
+                {% block navbar %}
+                <div class="navbar">
+                    <a href="{% url 'fantasyFB_home' %}" class="navbtn">Home</a>
+                    <a href="{% url 'fantasyFB_roster' %}" class="navbtn">Roster</a>
+                    <a href="{% url 'fantasyFB_form' %}" class="navbtn">Add/Edit Heroes</a>
+                </div>
+                {% endblock %}
+                <h1>{% block header %}{% endblock %}</h1>
+            </header>
+        </div>
+
+        {% block content %}{% endblock %}
+
+    </body>
+
+
+
+</html>

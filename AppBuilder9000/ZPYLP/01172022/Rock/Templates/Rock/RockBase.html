@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href = " {% static 'CSS/HardRock.css' %}" >
+		<title>80's Hard RocK</title>
+	</head>
+	<header>
+		<h1>Welcome to the 80's Hard Rock</h1>
+	</header>
+
+
+	<body>
+		<div class="page_container">
+            {% include "Rock/NAV-Bar.html" %}
+            <header class="header-title">
+                <h1>{% block header %}{% endblock %}</h1>
+            </header>
+
+        </div>
+
+        {% include "Rock/HardRockFooter.html" %}
+
+
+
+		{% block content %}
+		{% endblock %}
+
+	</body>
+
+
+
+</html>

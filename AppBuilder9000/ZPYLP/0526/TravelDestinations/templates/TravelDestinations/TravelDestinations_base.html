@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Your Travel Wonders of the World</title>
+        <link rel="stylesheet" href="/Users/tenchamp31/Desktop/TravelDestinations/Travel Destinations/AppBuilder9000/TravelDestinations/static/css/traveldestinations.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/traveldestinations.css' %}">
+    </head>
+
+
+    <body>
+         <!--- Navigation Bar--> 
+          <div class="navbar">
+            <ul>
+                <li><a href="{% url 'TravelDestinations_home' %}"> Home </a></li>
+                <li><a href="{% url 'TravelDestinations_add' %}"> Add Destination</a></li>
+                <li><a href="{% url 'TravelDestinations_views' %}">View Destinations</a></li>
+            </ul>
+        </div>
+        <h1 style="text-align: center;">The App for all your Travel Destinations</h1>
+        {% block content %}{% endblock %}
+    </body>
+
+</html>

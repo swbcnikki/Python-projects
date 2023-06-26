@@ -1,0 +1,16 @@
+{% extends "AlbumReviews/AlbumReviews_base.html" %}
+{% block title %}Album Reviews{% endblock %}
+{% block header %}UK Top 10 Album Chart{% endblock %}
+
+{% block content %}
+    <div class="top_10_container">
+        <table class="top_10">
+            {% for album in albums %}
+                <tr>
+                    <td class="cover"><img src="{{ album.0 }}" alt="{{ album.1 }}"></td><td><h3>{{ album.1|title }} &#8212; {{ album.2 }}</h3></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

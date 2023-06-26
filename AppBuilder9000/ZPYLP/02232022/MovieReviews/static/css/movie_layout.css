@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+}
+
+html {
+    background-color: red;
+}
+
+.movie_body {
+    background-image: url('../images/moviereviews_5.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+    background-position: center;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+}
+
+body {
+	position: relative;
+	overflow: hidden;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+	padding: 0;
+}
+p {
+	padding: 2px 16px;
+	font-size: 35px;
+	text-align: center;
+	font-family: 'Lato', Georgia, sans-serif;
+	color: #66666;
+}
+h1 {
+    color: black;
+    font-family: 'Lobster';
+    font-size: 60px;
+    text-shadow: 3px 2px 1px rgba(181, 184, 255, 1);
+    margin:0 auto;
+    text-align: center;
+}
+h2 {
+    color: black;
+    font-size: 30px
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+h2 span {
+    font-variant: small-caps;
+    padding: 2px 16px;
+}
+
+h4 {
+    color: #0404B4;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.box {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.box>* {
+	flex: 1 1 160px;
+}
+.center-img {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #213e4a;
+}
+/* Float the list items side by side */
+ul.topnav li {
+    float: left;
+}
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+ul.topnav li a:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+    background-color: #355664;
+}
+/* Hide the list item that contains the link that should
+   open and close the topnav on small screens */
+ul.topnav li.icon {
+	display: none;
+}
+.header-title {
+	padding: 2px 16px;
+	text-align: center;
+}
+
+/* This is the entire page wrapper */
+.site-container {
+    max-width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* This controls the form size and contents */
+
+
+.admin_panel {
+    border-radius: 10px;
+    background-color: black;
+    padding: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30%
+    border: 1px solid rgba(0,0,0,0.4);
+    border-collapse: collapse;
+    color: white;
+    position: relative;
+
+}
+
+.admin_panel:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+.card {
+    /* Add shadows to create the lifting "card" effect */
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+	border-radius: 5px; /* 5px rounded corners */
+    transition: 0.3s;
+	width: 50%;
+	margin: 5px;
+	background-color: #fffaf4;
+	border: 1px solid #d6d6d6;
+}
+.card:hover {
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+.frmObject_container {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 0;
+    text-align: center;
+    color: white;
+    width: 80%;
+}
+
+
+.fieldWrapper{
+	display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.frmBtn_container {
+    display: flex;
+    flex-wrap: wrap;
+    position: center;
+    width: 100%;
+}
+
+.btn {
+	flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 100px; /* button size */
+    margin: 2% 2% 2% 2%;
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+.btn:hover {
+    background-color: lightgray;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+
+input[type="submit"] {
+    flex-grow: 1;
+    width: 10%;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    color: white;
+    padding: 9px 0px 9px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+select {
+	padding: 4px 10px;
+	width: 40%;
+	display: inline-block;
+	margin: 1% 0% 0 1%;
+	border: 2px solid silver;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #E8E8E8 inset;
+}
+
+input, textarea {
+    width: 100%;
+    margin: 1% 0 0 0;
+    padding: 1% 0 2% 1%;
+    line-height: 18px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 2px solid silver;
+}
+label {
+	display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 1% 0 0 0;
+    color: white;
+    line-height: 18px;
+    font-size: 20px;
+}
+#block-footer {
+    clear: both;
+    display: flex;
+    width: 100%;
+	-moz-box-sizing: border-box;
+    margin: 0 auto;
+    background-color: #black;
+    position: fixed;
+    bottom: 0;
+    height: 28px;
+    margin-top: -50px;
+
+}
+
+
+#block-footer a, #block-footer p {
+    flex: 1;
+    color: white;
+    padding: 15px 15px;
+	font-size: 13px;
+    line-height: 10px;
+	font-family:'PT Sans', Arial, Helvetica, sans-serif;
+}
+#footer-left {
+    width: 40%;
+    text-align: center;
+}
+#block-footer{
+	float:center;
+	clear:both;
+	width:100%;
+}
+#block-footer a {
+	color: white;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	text-decoration: none;
+	outline: medium none;
+}
+

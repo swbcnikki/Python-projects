@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href= "../../static/css/StockApp.css" >
+		<link rel="stylesheet" href= "{% static 'CSS/StockApp.css' %}" >
+		<title>{% block title%}{% endblock %}</title>
+	</head>
+	<header>
+		   <div>
+			  <ul>
+				<ul><a href="{%url 'StockApp_home' %}">Home Page</a></ul>
+				<ul><a href="{%url 'StockApp_Watchlist' %}">View Watchlist Stocks</a></ul>
+				<ul><a href="{%url 'StockApp_newstock' %}">Add a stock</a></ul>
+			  </ul>
+		   </div>
+	</header>
+	<body id="p">
+		<div class="p">
+			<body>
+
+
+			{% block content %}{% endblock %}
+
+
+			</body>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+
+{% extends 'eb_base.html' %}
+
+{% block title %}Reservations:{% endblock %}
+
+{% block header %}Book your trip:{% endblock %}
+
+{% block content %}
+    <div class="admin_panel">
+        <form method="POST">
+            <div class="frmObject_container">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div class="frmBtn_container">
+                <button><input type="submit" class="btn" value="Submit" name="Submit"></a></button>
+                <button><a href="{% url 'eb_home' %}">Cancel</a></button>
+            </div>
+        </form>
+    </div>
+
+
+<h5>View created reservations</h5>
+<button><a href="{% url 'eb_created' %}">Click Here</a></button>
+
+{{ eb_created }}
+
+    <h2>Type in an accommodation type for more information:<br></h2>
+    <form method="POST">
+    <input class="form-control" type="search">
+    <button><a href="{% url 'eb_accommodations' %}">Accommodation Descriptions</a></button>
+    </form>
+
+{% endblock %}

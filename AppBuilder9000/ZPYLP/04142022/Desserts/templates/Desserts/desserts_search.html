@@ -1,0 +1,35 @@
+<!-- This is the api results page for the Desserts App -->
+
+{% extends "Desserts/desserts_base.html" %}
+{% load static %}
+
+{% comment %}
+  This is page uses an API to scrape recipes from an online recipe collection .
+{% endcomment %}
+
+
+{% block title %} High Tea {% endblock %}
+
+{% block content %}
+
+<div class="card bg-transparent mb-3">
+  <img src="/static/images/dessert3.jpeg" class="card-img" alt="tea time cakes and cookies">
+</div>
+    <h1 class="card-title text-info text-center">High Tea Recipes</h1>
+
+
+<div class="container">
+  <div class="row row-cols-3">
+    {% for item in recipe_list %} <!-- iterate through database, output results to table -->
+        <div class="card my-2"  style="width: 18rem" >
+            <img src="{{ item.image }}" class="card-img-top" alt="{{ item.name }} image">
+            <div class="card-body">
+                <p class="card-text">
+                    <a class="text-info" href="{{ item.recipe_url }}">{{ item.name }}</a>
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

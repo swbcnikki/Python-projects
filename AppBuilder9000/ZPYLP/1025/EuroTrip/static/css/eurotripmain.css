@@ -1,0 +1,29 @@
+.footer {
+  color: white;
+  display: inline-block;
+  width: 30%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  text-align: center;
+}
+
+body {
+   background-image: url('/static/images/eastern/Bulgaria.jpg');
+
+   }
+.eastern {
+color : black;
+margin: auto;}
+
+.homepage {
+    font-family: "Papyrus", Fantasy;
+    color : white;
+    background-color : black;
+    opacity : 0.7;
+    width: 600px;
+    margin: auto;
+}
+

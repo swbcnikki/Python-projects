@@ -1,0 +1,36 @@
+{% extends "CarPartsApp/CarPartsApp_base.html" %}
+{% load static %}
+{% block title %}Details{% endblock %}
+{% block header %} Details about parts {% endblock %}
+
+{% block content %}
+<!--
+    <div class="detailsContainer">
+        <table class="details">
+            <tr><td>User Name:  </td><td>{{ myParts.user_name }}</td></tr>
+            <tr><td>Make:   </td><td>{{ myParts.make }}</td></tr>
+            <tr><td>Car Model:  </td><td>{{ myParts.car_Model }}</td></tr>
+            <tr><td>Year:   </td><td>{{ myParts.year }} </td></tr>
+            <tr><td>Part:   </td><td>{{ myParts.part }} </td></tr>
+            <tr><td>Image:  </td><td>{{ myParts.image }} </td></tr>
+            <tr><td>Total:  </td><td>{{ myParts.total }} </td></tr>
+        </table>
+    </div>
+
+
+-->
+
+    <div class="detailsContainer">
+        <p class="row1">User Name:  {{ myParts.user_name }}</p>
+        <p class="row1">Make:   {{ myParts.make }}</p>
+        <p class="row1">Car Model:   {{ myParts.car_Model }}</p>
+        <p class="row1">Year:   {{ myParts.year }}</p>
+        <p class="row1">Part:   {{ myParts.part }}</p>
+        <p class="row1">Total:   {{ myParts.total }}</p>
+    </div>
+    <a href="{% url 'CarPartsApp_myParts' %}">
+        <button type="button" class="btn btn-danger btn-lg">Back to My Parts</button>
+    </a>
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "Books/Books_Base.html" %}
+
+{% load static %}
+
+{% block title %} Books Home{% endblock %}
+
+{% block content %}
+
+<!-- Used javascript to create this welcome animation-->
+
+
+<!-- Creating a container to hold my book images on home page with hrefs to add book review page. -->
+<div class="outer-parent-book-div">
+
+        <div class="the-kid">
+            <a href="{% url 'books_reviews' %}">
+                <img src="../static/Books/images/Apollo.jpg" height="100%" width="100%">
+            </a>
+        </div>
+        <div class="the-kid">
+            <a href="{% url 'books_reviews' %}">
+        <img src="../static/Books/images/SpaceOdyssey.jpg" height="100%" width="100%">
+            </a>
+        </div>
+        <div class="the-kid">
+            <a href="{% url 'books_reviews' %}">
+        <img src="../static/Books/images/Jurassic.jpeg" height="100%" width="100%">
+            </a>
+        </div>
+
+</div>
+{% endblock %}

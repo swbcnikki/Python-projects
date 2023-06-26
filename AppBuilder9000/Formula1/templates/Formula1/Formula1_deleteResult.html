@@ -1,0 +1,23 @@
+{% extends "Formula1/Formula1_base.html" %}
+
+{% block title %}Formula 1{% endblock %}
+
+{% block header %}Are you sure you want to delete this result?{% endblock %}
+
+{% block content %}
+
+<div class="results-form">
+    <form method="POST" action="">
+        <div class="confirm-delete">
+            {% csrf_token %}
+            <p><b>{{ result }}</b></p>
+        </div>
+        <div class="form-btn-container">
+            <a href="{% url 'race_results' %}"><button type="button" class="btn-form" id="btn-cancel" value="Cancel">Cancel</button></a>
+            <input type="submit" class="btn-form" id="btn-submit" value="Delete Result" name="Delete_result">
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

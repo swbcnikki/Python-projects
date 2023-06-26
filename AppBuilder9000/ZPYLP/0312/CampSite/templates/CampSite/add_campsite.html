@@ -1,0 +1,47 @@
+{% extends "CampSite/CampSite_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} Add New Campsite {% endblock %}
+
+{% block jumbotron-text %} Share <br> Your <br> Spot {% endblock %}
+
+
+{% block content%}
+
+    <div class="form_container" >
+        <h1 class="add_form_header">Campsite Info</h1>
+        <form class='add_campsite' method="POST" action="">
+            {% csrf_token %}
+            <div class="form-row center-block">
+                <div class="form-group col-md-6 mb-0 ">
+                    {{ form.name|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-2 mb-0 ">
+                    {{ form.state|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-row center-block2">
+                <div class="form-group col-md-4 mb-0 center-block2">
+                    {{ form.access|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-4 mb-0">
+                    {{ form.type|as_crispy_field }}
+                </div>
+                <div class="form-group col-md-2 mb-0">
+                    {{ form.fee|as_crispy_field }}
+                </div>
+            </div>
+            <div class="form-group textarea">
+                {{ form.description|as_crispy_field }}
+            </div>
+            <div class="form-group textarea">
+                {{ form.directions|as_crispy_field }}
+            </div>
+            <button id="new_site_button" type="submit" name="Save_Site">Save New Site</button><br>
+            <a href="{% url 'browse' %}" class="btn btn-primary" id="browse">Back to Browse</a>
+        </form>
+        <br>
+    </div>
+
+{% endblock %}

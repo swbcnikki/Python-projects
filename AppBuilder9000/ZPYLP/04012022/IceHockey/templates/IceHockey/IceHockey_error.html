@@ -1,0 +1,11 @@
+{% extends "IceHockey_base.html" %}
+{% load static %}
+{% block title %}Ice Hockey{% endblock %}
+{% block content %}
+
+<h3 class="display-4 text-light text-center mt-5 mb-5">Favorite Player Name Not Found on Web</h3>
+<h5 class="text-light text-center mb-3">Please check spelling and try again</h5>
+<div class="row justify-content-center">
+    <a href="{% url 'IceHockey_edit' details.pk %}"><button type="button" class="btn text-center btn-info btn-lg w-20 mx-auto">Modify Player Information</button></a>
+</div>
+{% endblock %}

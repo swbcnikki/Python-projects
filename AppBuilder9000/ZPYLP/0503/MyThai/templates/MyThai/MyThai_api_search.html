@@ -1,0 +1,17 @@
+{% extends "MyThai/MyThai_base.html" %}
+
+{% block title %}MyThai! | Search{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="search-form">
+            <form action="{% url 'MyThai_results' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" name="searchRestaurants">Search</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "PetAdoption_base.html" %}
+{% load static %}
+
+{% block header %}Search{% endblock %}
+
+
+{% block content %}
+
+<br/>
+<div class="form_container">
+    <form action="{% url 'pet_adoption_search' %}" method="GET" value="{{request.GET.q}}">
+    <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search by name, breed, color, sex, keyword etc."/>
+        <br><br>
+    <div class="frmBtn_container">
+        <input class='formbtn' type="submit" name="submit" value="Search"/>
+    </div>
+    </form>
+</div>
+
+<!--This ensures all data isn't displayed if someone clicks search with an empty search bar field -->
+{% if submitbutton == 'Search' and request.GET.q != '' %}
+    <!--Only display 'No search results for this query' if submit button has been clicked, not on page load -->
+    {% if results %}
+        <h1>Results for <b>{{ request.GET.q }}</b></h1>
+        <br/><br/>
+
+        {% for result in results %}
+
+            <div class="row min-vw-50 justify-content-md-center">
+                <div class="col-sm-6">
+                    <div class="card text-center">
+                      <div class="card-header">
+                          ADOPT ME!
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">{{ result.name|capfirst }}</h5>
+                        <img class="card-img-top" src="../../static/images/allanimals.jpeg" alt="animal">
+                        <p class="card-text">{{ result.description }}</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Breed: {{ result.breed }}</li>
+                                <li class="list-group-item">Color: {{ result.color }}</li>
+                                <li class="list-group-item">Size: {{ result.size }} </li>
+                                <li class="list-group-item">Sex: {{ result.sex }}</li>
+                            </ul>
+                      </div>
+                      <div class="card-footer text-muted">
+                        {{ result.species }}
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+
+        {% endfor %}
+
+        {% else %}
+        No search results for this query
+    {% endif %}
+{% endif %}
+
+
+
+
+{% endblock %}

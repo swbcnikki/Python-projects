@@ -1,0 +1,38 @@
+body {
+    background-color: #bee9e4;
+}
+
+h2 {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+}
+h3 {
+    font- 30px;
+}
+
+#form-container {
+    line-height: 400px;
+  text-align:center;
+  vertical-align:middle;
+  display: inline-block;
+}
+
+#form {
+    display: inline-block;
+  vertical-align: middle;
+  line-height: 14px;
+}
+
+.navbar {
+    height: 60px;
+    width: 25%;
+    background-color: #BEE9E4;
+    margin-top: -10px;   /* No space between navbar and edge */
+    margin-left: -10px;
+}
+
+.navlink {
+    font-size: 25px;
+    padding: 12px;
+}

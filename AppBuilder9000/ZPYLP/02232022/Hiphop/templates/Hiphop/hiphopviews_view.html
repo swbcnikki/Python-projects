@@ -1,0 +1,19 @@
+{% extends "hiphop_base.html" %}
+{% load static %}
+
+{% block title %} View HipHop {% endblock %}
+
+{% block header %} <div class="phototext"> View some of my fav Hip Hop! </div> {% endblock %}
+
+{% block content %}
+
+<div class="">
+    <form name="hiphopForm" method="post" action="">
+        <div class="form-text">
+            {% csrf_token %}
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

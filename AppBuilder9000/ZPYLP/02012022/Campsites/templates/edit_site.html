@@ -1,0 +1,19 @@
+{% extends 'campsites_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block header %}CampSites{% endblock %}
+
+
+{% block content %}
+<h1 class="Edit">Edit Campsite</h1>
+
+    <div class="container">
+        <form method="POST" class="CampsitesForm">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="frmBtn_container">
+                <button id="edit_site" type="submit" value="Save Edit" name="save_site">Save</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

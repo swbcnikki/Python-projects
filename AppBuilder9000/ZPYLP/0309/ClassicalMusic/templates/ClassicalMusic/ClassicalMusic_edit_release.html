@@ -1,0 +1,18 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_jumbotron.html" %}
+{% load staticfiles %}
+
+
+{% block jumbotron %}
+	<h2>Edit Release</h2>
+    <form method="post" class="was-validated">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-custom-color">Save Release</button>
+        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_details_release' release.pk %}">Cancel</a>
+
+    </form>
+
+{% endblock %}
+
+

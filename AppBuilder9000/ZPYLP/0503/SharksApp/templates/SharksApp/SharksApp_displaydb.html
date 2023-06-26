@@ -1,0 +1,24 @@
+{% extends "SharksApp_base.html" %}
+
+{% block title %} Shark Database {% endblock %}
+
+{% block header %}
+    All About Your Favorite Sharks!
+    <h3>Click on a species name to view more details.</h3>
+{% endblock %}
+
+{% block content %}
+        <table>
+            <tr>
+                <th>Species</th>
+                <th>Description</th>
+            </tr>
+            {% for shark in all_sharks %}
+            <tr>
+                <td><a href="../{{ shark.pk }}/SharksApp_detailspage/">{{ shark.species }}</a></td>
+                <td>{{ shark.description }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

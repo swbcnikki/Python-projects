@@ -1,0 +1,21 @@
+{% extends "Drones/Drones_base.html" %}
+
+{% block title %}Drone{% endblock %}
+
+{% block header %}ADD DRONE:{% endblock %}
+
+{% block content %}
+
+
+    <div class="container text-center text-white">
+        <form method="POST" class="control-label col-xs-1">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="frmBtn_container">
+                <input type="submit" class="btn btn-primary" id="btn" value="Add Drone" name= "Drone_create">
+                <a href="{% url 'Drones_home' %}"><button type="button" class="btn btn-secondary" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

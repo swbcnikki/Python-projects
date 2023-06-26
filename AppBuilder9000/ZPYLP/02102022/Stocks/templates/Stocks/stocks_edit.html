@@ -1,0 +1,27 @@
+{% extends "Stocks/stocks_base.html" %}
+
+{% block title %}Stocks{% endblock %}
+
+{% block header %}Edit{% endblock %}
+
+{% block content %}
+
+<div class="center-txt">
+    <form name="stockForm" method="POST" action="../edit/">
+        <table class="center-tbl">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_table }}
+        </table>
+        <div>
+            <div>
+                <button type="submit">Submit</button>
+                <a href="../{{ item.pk }}delete/"><button type="button" value="delete">DELETE</button></a>
+                <a href="{% url 'stocks_favorites' %}"><button type="button" value="cancel">CANCEL</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "MMAStats/MMA_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page is simply a confirmation screen to delete an entry
+{% endcomment %}
+
+<h1>Are you sure you want to delete this entry?</h1>
+<p>You will not be able to get it back.</p>
+
+
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-outline-success" value="Yes" /><br>
+    <br>
+    <a href="{% url 'MMA_Stats' %}" class="btn btn-outline-danger">Cancel</a>
+</form>
+
+{% endblock %}

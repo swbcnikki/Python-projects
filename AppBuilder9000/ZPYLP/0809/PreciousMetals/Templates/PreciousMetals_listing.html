@@ -1,0 +1,26 @@
+{% extends "PreciousMetals_base.html" %}
+{% block title %} Your Inventory {% endblock title %}
+
+
+{% block content %}
+<br>
+<br>
+<h1 class="headstyle">Inventory:</h1>
+<br>
+        <div class="liststyle">
+                {% for PreciousMetalsItem in inv_list %}
+                <button class="head_button"><h3 class="larger_text"><a href="{% url 'PreciousMetals_details' PreciousMetalsItem.id %}">{{ PreciousMetalsItem }}:</a></h3></button>
+                <br>
+                <ul class="removeMarks">
+                        <li><strong>Type:</strong> {{ PreciousMetalsItem.type }}</li>
+                        <li><strong>Make:</strong> {{ PreciousMetalsItem.make }}</li>
+                        <li><strong>Ounces:</strong> {{ PreciousMetalsItem.ounces }}</li>
+                        <li><strong>Form:</strong> {{ PreciousMetalsItem.form }}</li>
+
+                </ul>
+                <br>
+                <br/>
+                {% endfor %}
+
+        </div>
+{% endblock content %}

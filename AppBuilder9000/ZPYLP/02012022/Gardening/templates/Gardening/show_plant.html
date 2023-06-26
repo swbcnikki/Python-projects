@@ -1,0 +1,40 @@
+{% extends "Gardening/gardening_base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!--This table displays all items in the database-->
+<div id="table_container" class="container mx-auto">
+    <h2 class="d-inline p-1 my-1 text-success">My Garden Planner🍎🐰🥕☘🍃</h2>
+    <hr>
+<!--    <div class="spacer"></div>-->
+    <table id="plant_table" class="table display table-light table-hover table-striped" style="text-align:center; color:#ff5200;">
+<!--        This is the header row of the table-->
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">Plant Name</th>
+          <th scope="col">Type</th>
+          <th scope="col">Season Planted</th>
+          <th scope="col">Date Planted</th>
+          <th scope="col">Days to Harvest/Maturity</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+<!--        This is the content added to the table from the database-->
+      <tbody>
+      {% for plant in show_plants %}
+        <tr>
+          <th scope="row">{{plant.name}}</th>
+          <td>{{plant.type}}</td>
+          <td>{{plant.season_planted}}</td>
+          <td>{{plant.date_planted}}</td>
+          <td>{{plant.days_to_harvest}} days</td>
+          <td><a href="{% url 'plant_details' plant.pk %}" name="plant_details">See details for this plant</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% endblock %}

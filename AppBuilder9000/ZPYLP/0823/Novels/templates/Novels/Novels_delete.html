@@ -1,0 +1,21 @@
+{% extends "Novels/Novels_base.html" %}
+
+{% block title %} All Entries {% endblock %}
+
+{% block header %} All Current Entries {% endblock %}
+
+{% block content %}
+
+  <form method="POST" action=".">
+      {% csrf_token %}
+      <h2>Confirm Delete</h2>
+      <p>Are you sure you want to delete "{{book.Title}}" from the database?</p>
+
+      {{ item.as_p }}
+
+      <input type="submit" value="Yes, delete this record" class="btn">
+      <a href = "{% url 'Novels_display' %}"><button type="button" class="btn">Cancel and Go Back</button></a>
+  </form>
+
+
+{% endblock %}

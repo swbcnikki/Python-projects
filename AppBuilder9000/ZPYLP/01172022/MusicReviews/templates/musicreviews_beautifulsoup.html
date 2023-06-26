@@ -1,0 +1,22 @@
+{% extends "musicreviews_base.html" %}
+{% load static %}
+{% block title %} Music {% endblock %}
+
+{% block header %} <div class="videotext"> what is music </div> {% endblock %}
+
+{% block content %}
+
+    <div class="navbarSteady">
+        <a href="{% url 'back_home' %}">&#8592;</a>
+        <a href="{% url 'music_reviews_home' %}">Home</a>
+        <a href="{% url 'review_view' %}">Reviews</a>
+        <a href="{% url 'createReview' %}">Add Reviews</a>
+       <b><a href="{% url 'beautiful_soup' %}">Music</a></b>
+        <a href="{% url 'apiLoad' %}">News</a>
+    </div>
+
+    <div class="scrapedText">
+        {{ text }}
+    </div>
+
+{% endblock %}

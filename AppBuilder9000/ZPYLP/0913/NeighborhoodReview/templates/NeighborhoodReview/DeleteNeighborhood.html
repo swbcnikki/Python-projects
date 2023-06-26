@@ -1,0 +1,16 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% block title %}Delete Neighborhood{%  endblock %} }
+
+{% block header %}Delete Summary{% endblock %}
+
+{% block content %}
+
+    <form method = 'POST'>
+        {% csrf_token %}
+        {{ item.as_p }}
+        <h4> Deleting Neighborhood {{ item.name }}</h4>
+            <input type="submit" value ="delete" onclick ="return confirm('Are you sure you want to delete this?')">
+    </form>
+
+{% endblock %}

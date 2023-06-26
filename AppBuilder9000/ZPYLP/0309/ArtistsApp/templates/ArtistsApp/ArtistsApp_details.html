@@ -1,0 +1,29 @@
+
+{% extends "ArtistsApp/ArtistsApp_base.html" %}
+
+{% block title %}Art List{% endblock %}
+
+
+{% block content %}
+<!--Displaying all player specs-->
+<table class="detail-table">
+  <thead>
+    <tr class="index-display">
+      <th scope="col">Title:</th>
+      <th scope="col">Artist:</th>
+      <th scope="col">Date Created:</th>
+      <th scope="col">Type:</th>
+    </tr>
+  </thead>
+<!--Getting player details and displaying below table header-->
+  <tbody>
+    <tr class="index-display">
+      <td>{{pieces.piece_title}}</td>
+      <td>{{pieces.artist}}</td>
+      <td>{{pieces.created_date}}</td>
+      <td>{{pieces.type}}</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
+

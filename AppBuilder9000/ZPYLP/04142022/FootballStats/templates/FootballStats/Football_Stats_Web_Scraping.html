@@ -1,0 +1,42 @@
+{% extends "FootballStats_base.html" %}
+{% load static %}
+{% block title %} Football Stats Web Scraping {% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+    <h3>Atlanta Falcons Roster</h3>
+    <h6>All data was gathered from </h6>
+    <div class="container" id="list-container">
+        <div id="container" class="table-responsive mx-auto">
+            <table id="table" class="table table-dark table-bordered table-hover text-center" data-toggle="table">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col" class="w-25">Player</th>
+                        <th scope="col">Position</th>
+                        <th scope="col" class="w-25">Height</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col" class="w-25">Birthdate</th>
+                        <th scope="col">Exp</th>
+                        <th scope="col" class="w-25">College</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for num, name, pos, height, weight, birthday, experience, college in zipped_list %}
+                    <tr>
+                        <td>{{ num }}</td>
+                        <td>{{ name }}</td>
+                        <td>{{ pos }}</td>
+                        <td>{{ height }}</td>
+                        <td>{{ weight }}</td>
+                        <td>{{ birthday }}</td>
+                        <td>{{ experience }}</td>
+                        <td>{{ college }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

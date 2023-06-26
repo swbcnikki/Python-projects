@@ -1,0 +1,44 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Cryptocurrency Summary {% endblock %}
+
+{% block header %}Summary Data{% endblock %}
+
+{% block content %}
+
+    <div class="display-table">
+        <table class="cryptoapp-display--table">
+            <tr>
+                <th class="cryptoapp-display--th">Currency</th>
+                <th class="cryptoapp-display--th">Coin/Token</th>
+                <th class="cryptoapp-display--th">Type</th>
+                <th class="cryptoapp-display--th">Launch Date</th>
+                <th class="cryptoapp-display--th">Value</th>
+                <th class="cryptoapp-display--th">Total Supply</th>
+                <th class="cryptoapp-display--th">Market Cap</th>
+                <th class="cryptoapp-display--th">Transactions/Second</th>
+                <th class="cryptoapp-display--th">Edit Currency</th>
+                <th class="cryptoapp-display--th">Update Status</th>
+                <th class="cryptoapp-display--th">Delete</th>
+            </tr>
+            {% for record in cryptos %}
+            <tr>
+                {# Using record.currency from CoinStatus ForeignKey to get Currency method values #}
+                <td class="cryptoapp-display--td"><a href="/CryptoApp/details/{{ record.id }}/"> {{ record.currency.chain_name }} </a></td>
+                <td class="cryptoapp-display--td">{{ record.currency.coin_unit }}</td>
+                <td class="cryptoapp-display--td">{{ record.currency.chain_type }}</td>
+                <td class="cryptoapp-display--td">{{ record.currency.launch_date }}</td>
+                <td class="cryptoapp-display--td">{{ record.value }}</td>
+                <td class="cryptoapp-display--td">{{ record.supply }}</td>
+                <td class="cryptoapp-display--td">{{ record.market_cap }}</td>
+                <td class="cryptoapp-display--td">{{ record.transactions_per_sec }}</td>
+                <td class="cryptoapp-display--td"><a href="/CryptoApp/edit/{{ record.id }}/">Edit</a></td>
+                <td class="cryptoapp-display--td"><a href="/CryptoApp/update/{{ record.id }}/">Update</a></td>
+                <td class="cryptoapp-display--td"><a href="/CryptoApp/delete/{{ record.id }}/">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+
+{% endblock %}

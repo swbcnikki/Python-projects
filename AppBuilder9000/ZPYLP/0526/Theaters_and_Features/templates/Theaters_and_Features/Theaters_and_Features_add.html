@@ -1,0 +1,17 @@
+{% extends "Theaters_and_Features/Theaters_and_Features_base.html" %}
+
+{% block title %} Add a Theater {% endblock %}
+{% block header %} Add a Theater and its Features {% endblock %}
+{% block content %}
+
+    <div class="FormContainer">
+        <div class="ContainerForm">
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button id="new_theater_btn" type="submit" name="Save_Theater">Save</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

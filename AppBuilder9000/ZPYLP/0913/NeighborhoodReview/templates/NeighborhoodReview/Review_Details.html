@@ -1,0 +1,37 @@
+
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% block title %}List all neighborhoods{%  endblock %} }
+
+{% block header %}Select ID to Edit/Delete Review{% endblock %}
+
+{% block content %}
+
+
+<h2 style = "text-align: center">Review List</h2>
+
+                <table class = "table table-dark" >
+
+                    <tr class ="table-font">
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Rating</th>
+                        <th>Neighborhood</th>
+                        <th>Comment</th>
+                    </tr>
+
+
+                {% for r in review_list %}
+                <div id = "review-summary-font">
+                    <tr>
+                        <td> <b><a href = "{% url 'Review_items.html' r.id %}">{{ r.id }}  </a> </b></td>
+                        <td>{{ r.date }}</td>
+                        <td>{{ r.rating }}</td>
+                        <td>{{ r.neighborhood_id }}</td>
+                        <td>{{ r.comment }}
+                    </tr>
+                </div>
+                {% endfor %}
+                </table>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load static %}
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>{% block title %}Precious Metals{% endblock title %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/PreciousMetals_main.css' %}">
+    </head>
+    <header>
+        <!-- navbar -->
+        <div class = navMenu>
+            <ul>
+                <li><a href="{% url 'PreciousMetals_home' %}">Home</a></li>
+                <li><a href="{% url 'PreciousMetals_listing' %}">Inventory</a></li>
+                <li><a href="{% url 'PreciousMetals_inventory' %}">Add Item</a></li>
+                <li><a href="{% url 'metal_rate' %}">Current Metal Prices</a></li>
+            </ul>
+        </div>
+    </header>
+    <body>
+
+    {% block content %}{% endblock content %}
+    </body>
+    <section>
+        <footer>Precious Metals 2021</footer>
+    </section>
+</html>

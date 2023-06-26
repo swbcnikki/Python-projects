@@ -1,0 +1,30 @@
+{% extends "texmex_base.html" %}
+
+{% block title %}Tex-Mex{% endblock %}
+
+{% block header %}Edit/Delete Recipe:{% endblock %}
+
+{% block content %}
+
+<div class="admin_panel">
+    <form name="foodForm" method="POST" action="./">
+        <table>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_table }}
+        </table>
+        <div class ="frmBtn_container">
+            <input type="submit">
+    </form>
+            <div class="frmBtn_container">
+                <a href="{% url 'delete' item.id %}" class="btn">DELETE</a>
+                <a href="{% url 'recipe_page' %}" class="btn">CANCEL</a>
+            </div>
+        </div>
+
+</div>
+
+
+
+
+{% endblock %}

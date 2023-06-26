@@ -1,0 +1,94 @@
+
+
+
+body {
+    background-image: url('/static/images/grunge.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* panel for song list */
+.panel {
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    background-image: url('/static/images/sky.jpg');
+    background-size: cover;
+    padding: 10px 10px;
+}
+
+/*----------------------------------------------------------------------------------------
+Form Styling
+------------------------------------------------------------------------------------------*/
+
+.form_container {
+    display: block;
+    width: 45%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.frm_table {
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+
+.delete_container {
+    margin
+}
+
+
+#id_name, #id_artist, #id_album, #id_year {
+    margin: 10px;
+}
+
+/* form submit button */
+.btn {
+    margin: 0 auto;
+}
+
+
+
+.header {
+    text-align: center;
+    color: white;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #303030;
+    position: relative;
+}
+
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #303030;
+    color: white;
+    text-align: center;
+    font-size: 10px;
+}
+
+/* table headings sizing */
+.sizem {
+    font-size: 20px;
+}
+
+.white_text {
+    color: white;
+}

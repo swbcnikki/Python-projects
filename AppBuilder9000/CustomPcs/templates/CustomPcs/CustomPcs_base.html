@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+
+<hmtl lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CustomPCs</title>
+        <link rel="stylesheet" href="{% static 'CustomPcs.css' %}">
+    </head>
+        <header>
+        <div class="NavBar">
+            <a href="">Home</a>
+            <a href="">The Builds</a>
+            <a href="">About</a>
+        </div>
+    </header>
+
+    <body>
+    {% block content %}
+
+    <p>CONTENT COMING SOON!</p>
+{% endblock %}
+    </body>
+
+    <section class="footer">
+        <p>&copy;2022 - CustomPc Builds</p>
+    </section>
+</hmtl>

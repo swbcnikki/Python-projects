@@ -1,0 +1,9 @@
+{% extends "Basketball/Basketball_base.html" %}
+
+{% block content %}
+    <form class="d-flex" method="POST" action="{% url 'Search_Pickup' %}">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search Name..." aria-label="Search" name="searched">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+    </form>
+{% endblock %}

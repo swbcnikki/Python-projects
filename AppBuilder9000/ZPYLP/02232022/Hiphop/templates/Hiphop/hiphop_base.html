@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome to the sickest hiphop page!{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/Hiphop_css.css' %}">
+</head>
+<body>
+    <!--navbar-->
+    <div class="navbar">
+        <a href="{% url 'hiphop_home' %}">Home</a>
+        <a href="">HipHop</a>
+        <a href="{% url 'hiphopviews_view' %}">Choose</a>
+        <a href="{% url 'all_items' %}">HIP HOP LIST</a>
+    </div>
+
+    <div class="header-title">
+        <h1>{% block header %} {% endblock %}</h1>
+    </div>
+
+
+    <div class="page_container">
+         {% block content %} {% endblock %}
+    </div>
+
+</body>
+</html>

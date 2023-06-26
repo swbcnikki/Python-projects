@@ -1,0 +1,48 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+
+{% block title %}MusicApp{% endblock %}
+
+{% block header %}Album Details{% endblock %}
+
+{% block content %}
+
+<div class="Details">
+    <div class="details-container">
+        {% csrf_token %}
+        <!------ Link Name to Edit Page with Image ------>
+        <h1>{{ albums.album_name }} <a href="{% url 'MusicApp_edit_album' albums.pk %}"><img src="/static/MusicApp/images/edit.png" class="edit-img"></a></h1>
+
+        <div>
+            <span class="details">
+                <h3>Artist:</h3>
+                <p>{{ albums.artist_name }}</p>
+            </span>
+            <span class="details">
+                <h3>Release Date:</h3>
+                <p>{{ albums.date_album_released}}</p>
+            </span>
+            <span class="details">
+                <h3>Number of Tracks:</h3>
+                <p>{{ albums.number_of_tracks }}</p>
+            </span>
+            <span class="details">
+                <h3>Genre:</h3>
+                <p>{{ albums.genre }}</p>
+            </span>
+            <span class="details">
+                <h3>Image URL:</h3>
+                <p>{{ albums.img_url }}</p>
+            </span>
+        </div>
+    </div>
+
+    <div>
+        <button type="button">
+            <a href="{% url 'MusicApp_album_index' %}">Return to Albums</a>
+        </button>
+    </div>
+
+</div>
+
+
+{% endblock %}

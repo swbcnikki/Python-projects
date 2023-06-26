@@ -1,0 +1,132 @@
+/*** General Page Styling ***/
+
+
+/*** Body ***/
+
+body {
+    background-color: rgba(0,0,0,0.5);
+    background-image: url('/static/images/TopGames2.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+/*** NAV ***/
+nav {
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #009b77;
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  top: 0;
+}
+
+li {
+    float: left;
+
+}
+
+li a {
+  display: block;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+
+}
+
+/*** Home page header ***/
+
+#home {
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+
+/*** FOOTER ***/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: #009b77;
+    color: white;
+    text-align: center;
+}
+
+/*** HEADER ***/
+header {
+    text-align: center;
+    color: white;
+
+}
+
+/*** FORM ***/
+#form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding-top: 20px
+}
+
+.btn-container {
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.2s;
+}
+.btn-container:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+}
+@media all and (max-width:30em){
+.btn-container{
+  display:block;
+  margin:0.4em auto;
+    }
+}
+
+
+#main {
+    text-align: center;
+    color: white;
+    padding-top: 100px
+}
+
+input[type='text'] {
+  width: 30%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid black;
+}
+input[type='submit'] {
+   width: 30%;
+   padding: 5px;
+   background: black;
+   color: white;
+   text-transform: uppercase;
+}
+

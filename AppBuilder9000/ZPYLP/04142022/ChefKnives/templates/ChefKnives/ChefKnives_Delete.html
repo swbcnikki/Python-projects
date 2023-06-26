@@ -1,0 +1,47 @@
+{% extends 'ChefKnives\ChefKnives_Base.html' %}
+
+{% block title %}Chef Knives{% endblock %}
+{% block header %} Are you sure you want to delete this knife?? {% endblock %}
+
+
+
+{% block content %}
+<div class="container">
+	<form action='.' method='POST'>
+		{% csrf_token %}
+		{{ object.as_table }}
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Brands</th>
+            <th scope="col">Price</th>
+            <th scope="col">Country Of Origin</th>
+            <th scope="col">Steal</th>
+            <th scope="col">Blade</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>{{object.brands}}</th>
+            <td>{{object.price}}</td>
+            <td>{{object.country_origin}}</td>
+            <td>{{object.steal}}</td>
+            <td>{{object.blade_style}}</td>
+            <td>
+
+			<a class="btn btn-outline-info" href="{% url 'ChefKnives_View' %}" role="button">Cancel</a>
+			<button class="btn btn-outline-danger" type="submit">Delete</button>
+
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

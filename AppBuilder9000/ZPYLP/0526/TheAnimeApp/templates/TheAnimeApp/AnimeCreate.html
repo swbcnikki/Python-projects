@@ -1,0 +1,54 @@
+{% extends 'TheAnimeApp/AnimeBase.html' %}
+{% load static %}
+{% block content %}
+<h1>Create your Review!</h1>
+
+<form method="POST" action="{% url 'AnimeCreate' %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Anime Title: </label>
+        <input type="text" class="form-control" name="AnimeName" aria-describedby="emailHelp" placeholder="Enter Title">
+      </div>
+      <div class="form-group">
+        <label class="form-label, fw-light">Genre: </label>
+        <input type="text" class="form-control" name="Genre" placeholder="Enter Genre">
+      </div>
+
+    <div class="form-group">
+        <label>About: </label>
+        <textarea class="form-control" rows="3" name="About" placeholder="Enter About"></textarea><br/>
+    </div>
+
+    <div class="col-md">
+        <div class="form-floating"></div>
+         <label>Rating: </label>
+         <select class="form-select"  name="Rating" aria-label="Floating label select example">
+            <option selected> ... </option>
+            <option value="1 Star">1</option>
+            <option value="2 Stars">2</option>
+            <option value="3 Stars">3</option>
+            <option value="4 Stars">4</option>
+            <option value="5 Stars">5</option>
+            <option value="6 Stars">6</option>
+            <option value="7 Stars">7</option>
+            <option value="8 Stars">8</option>
+            <option value="9 Stars">9</option>
+            <option value="10 Stars">10</option>
+         </select>
+    </div>
+
+    <div class="form-group">
+        <label>Review: </label>
+        <textarea class="form-control" rows="3" name="Review" placeholder="Enter Review"></textarea><br/>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-outline-dark" type="submit">Submit</button>
+    </div>
+    <br/>
+</form>
+
+
+{% endblock %}
+
+

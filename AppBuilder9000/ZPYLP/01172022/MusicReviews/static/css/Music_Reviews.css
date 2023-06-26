@@ -1,0 +1,327 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+/* navbar */
+
+.navbar {
+    overflow: hidden;
+    background-color: rgb(66, 66, 66);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 1px 1px 25px .5px black;
+    padding-left: 1em;
+    -webkit-animation: movenav 2s;
+    animation: movenav 2s;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    padding: .5em;
+    text-decoration: none;
+    color: white;
+    transition: transform 2s;
+}
+
+.navbar a:hover {
+    transform: scale(1.1);
+}
+
+.navbarSteady {
+    overflow: hidden;
+    background-color: rgb(66, 66, 66);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 1px 1px 25px .5px black;
+    padding-left: 1em;
+}
+
+.navbarSteady a {
+    float: left;
+    display: block;
+    padding: .5em;
+    text-decoration: none;
+    color: white;
+}
+
+.navbarSteady a:hover {
+    transform: scale(1.1);
+}
+
+
+@keyframes movenav {
+    from {top: -50vh;}
+    to {top: 0vh;}
+}
+
+/* navbar end */
+
+/* video */
+
+.backgroundvideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width:100%;
+    z-index: -1;
+}
+
+.videotext {
+    font-size: .8em;
+    text-transform: lowercase;
+    font-family: Verdana, sans-serif;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding-top: 1.5em;
+    text-shadow: 1px 1px black;
+    -webkit-animation: movetext 5s;
+    animation: movetext 5s;
+}
+
+@keyframes movetext {
+    from {top: -50vh;}
+    to {top: 0vh;}
+}
+
+/* video end */
+
+.review_form {
+    margin-top: 5.5em;
+    padding: 2em;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.308);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.revView {
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    max-width: 30%;
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(66,66,66,.5);
+}
+
+.revList {
+    background-color: rgba(66,66,66,.5);
+    padding: 1em;
+    border-radius: 15px
+}
+
+.revList li {
+    list-style-position: inside;
+    list-style-type: none;
+    text-shadow: 2px 1px 2px black;
+}
+
+.revList a {
+    text-decoration: none;
+    color: inherit;
+    line-height:1.8em;
+    padding:10px;
+}
+
+.revList p {
+    font-family: 'Courier New', monospace;
+    line-height:1.5em;
+}
+
+.revForm {
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(66,66,66,.5);
+    padding: 1em;
+    max-width: 35%;
+    border-radius: 10px;
+    color: white;
+}
+
+.revForm li {
+    list-style-position: inside;
+    list-style-type: none;
+    text-shadow: 2px 1px 2px black;
+}
+
+.revForm a {
+    text-decoration: none;
+    color: inherit;
+    line-height:1.8em;
+    padding:10px;
+}
+
+.revForm p {
+    font-family: 'Courier New', monospace;
+    line-height:1.5em;
+}
+
+.bounce {
+    transition: ease-in-out;
+    font-weight: bold;
+}
+
+.bounce {
+    transform: translateY(5px);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: bouncy;
+    animation-timing-function: cubic-bezier(2.5,.2,.3,2);
+}
+
+@keyframes bouncy {
+    0%, 100% {
+        transform:translateY(-7px);
+    }
+    50% {
+        transform:translateY(10px);
+    }
+}
+
+.btn {
+    font-family: 'Courier New', monospace;
+    border-radius:5px;
+}
+
+.btn:hover {
+    background-color: rgb(55, 65, 78);
+    color: white;
+}
+
+.dltContainer {
+    text-align: center;
+    background-color: rgba(66,66,66,.5);
+    color: white;
+    padding: 1em;
+    max-width: 35%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5em;
+}
+
+.dltContainer p {
+    text-shadow: 2px 1px 2px black;
+}
+
+label, h2 {
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px black;
+    text-transform: lowercase;
+}
+
+.dltText {
+    font-family: 'Courier New', monospace;
+}
+
+.dltText span {
+    text-transform: capitalize;
+}
+
+.scrapedText {
+    font-size: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    color: white;
+    background-color: rgba(0,0,0,.75);
+    width:50%;
+    line-height: 2em;
+    padding: 1em;
+    border-radius: 15px;
+    overflow:hidden;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.scrapedText a {
+    text-decoration:none;
+    font-weight:bold;
+    color:rgb(255, 0, 0);
+    width:40%;
+    overflow:hidden;
+    line-height: 2em;
+    border-radius: 15px;
+}
+
+#hiddenMessage {
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 20px;
+    line-height: 2em;
+    animation: fade 1.5s ease-in-out;
+    -webkit-animation: fade 1.5s ease-in-out;
+    text-shadow: 1px 1px 5px black;
+    font-family: 'Courier New', monospace;
+}
+
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 100}
+}
+
+.fade1 {
+    animation: fade1 3s ease-in-out;
+    -webkit-animation: fade1 3s ease-in-out;
+}
+
+@keyframes fade1 {
+    from {opacity: 0}
+    to {opacity: 100}
+}
+
+.fade2 {
+    animation: fade2 5.5s ease-in-out;
+    -webkit-animation: fade2 5.5s ease-in-out;
+}
+
+@keyframes fade2 {
+    from {opacity: 0}
+    to {opacity: 100}
+}
+
+.fade3 {
+    animation: fade3 7s ease-in-out;
+    -webkit-animation: fade3 7s ease-in-out;
+}
+
+@keyframes fade3 {
+    from {opacity: 0}
+    to {opacity: 100}
+}
+
+#revealBtn {
+    font-family: 'Courier New', monospace;
+    border-radius:5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    animation: fade 1.5s ease-in-out;
+    -webkit-animation: fade 1.5s ease-in-out;
+}
+
+#revealBtn:hover {
+    background-color: rgb(55, 65, 78);
+    color: white;
+}

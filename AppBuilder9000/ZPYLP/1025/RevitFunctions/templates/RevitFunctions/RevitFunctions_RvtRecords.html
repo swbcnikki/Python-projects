@@ -1,0 +1,59 @@
+<!-- 4. templates utilizing Django block tags.
+	# prior to this is 3. views.py
+	# templates renders the webpage, describes the design with basic logic statements of the page in html.
+		#Child can override Parent's settings.
+	# save file and check if these are working in browser.
+		#check dB and make sure objects are populated.
+	# next requires connecting the classes (views) with the functions by 5. urls.py
+-->
+
+<!-- Add RvtFunctions page -->
+<!-- Story3, Step 1: Create a new HTML page, link it from your home page. -->
+<!-- next create tables to format dB. -->
+{% extends 'RevitFunctions/RevitFunctions_base.html' %}   <!-- MUST remember to add the app name prior to the Masonry_base.html!!!! -->
+{% block title %}Records of Revit Functions{% endblock %}
+
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-5">
+	    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">&lt;Records&gt; Revit Functions</h2>
+                <p class="lead fw-normal text-muted mb-0">Revit Functions You Can Tackle!</p>
+            </div>
+
+			<div class="table">
+				<table class="table table-responsive" id ="transactions-table">
+					<!-- Replace this with the Django populated transactions -->
+
+					<tr id="th">
+						<th>Revit Title</th>									<!-- header field (show only the title -->
+
+					</tr>
+					{% for Rvt in rvtrecords %}									<!-- for loop to filter what should show -->
+																				<!-- Rvt can be anything, get the info from the variable from the class in views.py -->
+						<tr id="td">
+							<!-- Story9: Allow the user to save "favorites" of item -->
+							<td><input class="UserFavorites" type="checkbox" name="Favorites" value={{ Rvt.revit_title }}>{{ Rvt.revit_title }}</td>
+
+							<!-- shows all categories, make sure spelling match -->
+
+							<!-- Story4: step3: Add in a link for each item on the display all items page that will direct to the details page for that item -->
+							<td><a href="{% url 'RevitFunctions_RvtDetails' Rvt.pk %}">DETAILS</a></td>
+																				<!-- reference the same Rvt from this page -->
+							<!-- Story5: step3: Use model forms and instances to display the content of a single item from the database -->
+							<td><a href="{% url 'RevitFunctions_RvtEdit' Rvt.pk %}">EDIT</a></td>
+																				<!-- reference the same Rvt from this page -->
+
+							<td><a href="{% url 'RevitFunctions_RvtDelete' Rvt.pk %}">DELETE</a></td>
+																				<!-- reference the same Rvt from this page -->
+
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

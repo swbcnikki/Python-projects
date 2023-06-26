@@ -1,0 +1,53 @@
+{% load static %}
+
+<!doctype html>
+<html>
+    <head>
+        <title> {% block StockTitle %} {% endblock %} </title>
+        <meta viewport="width=content-width">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/StockMarketCSS.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <title>{% block title%}{% endblock %}</title>
+
+    </head>
+    <body>
+    <div class="JavaScriptDropdown">
+	<div class="btn-group">
+		<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Menu</button>
+		    <div class="dropdown-menu"><!-- Add in links based on your registered URLs -->
+				<a href="{% url 'StockMarketHome' %}" class="dropdown-item">Home</a>
+				<a href="{% url 'create' %}" class="dropdown-item">Create New Account</a>
+                <a href="{% url 'transaction' %}" class="dropdown-item">Transactions</a>
+                <a href="{% url 'display' %}" class="dropdown-item">Client Contact Information</a>
+                <a href="{% url 'API' %}" class="dropdown-item">API</a>
+
+
+
+
+			</div>
+	</div>
+</div>
+
+
+    <h1> {% block StockPageHeading %} {% endblock %} </h1>
+
+
+
+{% block Content %}
+
+    {% endblock %}
+
+
+    </body>
+    <footer>
+        <section id="block-footer">
+            <p id="footer-right"><a href="#">Terms</a>|<a href="#">Privacy</a></p>
+            <p id="footer-left">&copy;2022 - Stock Market Corner</p>
+        </section>
+    </footer>
+</html>

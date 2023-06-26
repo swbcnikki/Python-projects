@@ -1,0 +1,115 @@
+html {
+    background-image: url("/static/images/RecipesBg.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*NAVBAR STYLING*/
+
+a {
+  text-decoration: none; /*this gets rid of the underline on the navbar links*/
+}
+
+.navbarTest {
+  opacity: 0.85;
+  background-color: #927f68;
+  display: flex;
+  align-items: center;
+}
+
+
+.navbarTest ul {
+ /* Let's reset the margin and padding of the list so it's is flush. */
+  margin: 0;
+  padding: 0;
+  /*  removes the bullet points */
+  list-style-type: none;
+  /* display the list flex and align the items centered */
+  display: flex;
+  align-items:center;
+}
+
+.navbarTest ul li a {
+  color: #fff;
+  padding: 24px;
+  /*  This will ensure when we hover, focus, or is active we get the full width and height
+      of the container.
+  */
+  display: block;
+}
+
+/* When a user hovers, focuses or if the link is active change the background */
+.navbarTest ul a:hover,
+.navbarTest ul a:focus,
+.navbarTest ul .active {
+  background-color: #272727;
+}
+
+
+
+
+h1 {
+    color: #fff;
+    font-size: 120px;
+    padding-left: 40px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+p {
+    color: #fff;
+    font-size: 22px;
+    line-height: 15px;
+    padding-left: 40px;
+    margin-top: -50px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #927f68;
+    color: white;
+    text-align: center;
+    opacity: 0.85;
+}
+
+.practice {
+    color: white;
+    text-align: left;
+    text-shadow: 2px 2px 4px #000000;
+    padding-left: 80px;
+
+}
+
+table, th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    background: #927f68;
+}
+
+th {
+    background: white;
+}
+
+td {
+    background: white;
+}
+
+#Savebtn {
+    margin-left: 393px;
+}
+
+#Deletebtn {
+    margin-left: 393px;
+}

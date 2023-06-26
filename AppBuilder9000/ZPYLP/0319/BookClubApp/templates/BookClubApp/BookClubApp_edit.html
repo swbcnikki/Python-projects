@@ -1,0 +1,57 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}Edit Book{% endblock %}
+{% block header%}Edit Book{% endblock %}
+{% block content %}
+<!-- Form to edit books to the templates -->
+<div class="content">
+    <div class="book-form">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-secondary"  type="submit" name="Save_Book">Save</button>
+        </form>
+    </div>
+</div>
+<script>
+$( document ).ready(function() {
+    $('input[value!=""]').closest("p").addClass('filled');
+    $('textarea[value!=""]').closest("p").addClass('filled');
+    $('input[value=""]').closest("p").removeClass('filled');
+});
+    $("form input").on("blur input focus", function() {
+        var $field = $(this).closest("p");
+        if (this.value) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+
+    $("form input").on("focus", function() {
+        var $field = $(this).closest("p");
+        if (this) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+    $("form textarea").on("blur input focus", function() {
+        var $field = $(this).closest("p");
+        if (this.value) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+
+    $("form textarea").on("focus", function() {
+        var $field = $(this).closest("p");
+        if (this) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+</script>
+{% endblock %}

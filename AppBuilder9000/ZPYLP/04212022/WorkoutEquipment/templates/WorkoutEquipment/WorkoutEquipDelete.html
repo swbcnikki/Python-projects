@@ -1,0 +1,22 @@
+{% extends "WorkoutEquipment/WorkoutEquipBase.html" %}
+{% load static %}
+{% block title %}Delete Equipment Record{% endblock %}
+{% block header %}Delete Record{% endblock %}
+{% block content %}
+
+<div class="jumbotron fluid">
+    <div id="form-container">
+        <form method = 'POST'>
+            {% csrf_token %}
+            {{ item.as_p }}   <!-- displays all item info of individual record to be deleted-->
+            <h2>Delete Confirmation</h2>
+                <p>Are you sure you would like to delete the record:  "{{item.id}}, {{item.name}} , {{item.type}} , {{item.description}}", {{item.image}} from the database?</p>
+
+            <div>   <!-- this submits the delete request and confirms it, along with are you sure text box pop up-->
+                <button style="submit" class="btn" onclick="return confirm('Are you sure you want to delete this Equipment Item?')">Delete</button>
+                <button class="btn">Cancel</button>
+            </div>
+         </form>
+    </div>
+</div>
+{% endblock %}

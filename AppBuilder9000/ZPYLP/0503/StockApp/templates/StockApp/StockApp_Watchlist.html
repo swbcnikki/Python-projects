@@ -1,0 +1,26 @@
+{% extends 'StockApp/StockApp_base.html' %}
+
+{% block title %}Watchlist{% endblock %}
+
+{% block content %}
+<div>
+    <ul>
+        <div id="content" class="grid-container" >
+        {% csrf_token %}
+        {% for item in all_stocks %}
+            <div id="content" >
+            <br>
+            <ul>Stock: {{ item.name }}</ul>
+            <ul>Market Cap:{{ item.market_cap }}</ul>
+            <ul>Time Checked: {{ item.time_stamp }}</ul>
+            <ul>Price: {{ item.price }}</ul>
+            <ul>ID: {{ item.pk }} </ul>
+            <ul><a href="{%url 'StockApp_Details' pk=item.pk %}">Details</a></ul>
+            <br>
+            </div>
+            {% endfor %}
+        </div>
+    </ul>
+</div>
+
+{% endblock %}

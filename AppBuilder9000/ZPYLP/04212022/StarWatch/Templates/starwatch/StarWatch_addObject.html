@@ -1,0 +1,26 @@
+{% extends "StarWatch_base.html" %}
+{% load static %}
+
+{% block title %}Add Object{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+    <div class="m-5">
+        <div id="add_object">
+            <form method="POST">
+                <div class="box jumbotron jumbotron-fluid w-80 display1">
+                <h2 class="text-center display-3 ">Add a New Observation</h2>
+                </div>
+                {% csrf_token %}
+                     <table id="table" class=' text-center box table table-info  table-hover table-bordered table-centered'>
+                        {{ form.as_table }}
+                    </table>
+                <button type="submit" class="btn btn-primary text-center">Make Addition</button>
+            </form>
+        </div>
+    </div>
+    <br>
+<br>
+{% endblock %}
+

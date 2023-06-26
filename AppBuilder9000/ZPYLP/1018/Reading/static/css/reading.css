@@ -1,0 +1,128 @@
+/* BODY */
+
+body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.bg_img {
+    background-image: url('/static/images/books.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* NAV BAR */
+nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    position: absolute;
+}
+
+ul {
+    padding: 0;
+    margin: 0% auto;
+    overflow: hidden;
+    list-style: none;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    display: inline-block;
+}
+
+li a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 15px;
+    display: inline-block;
+}
+
+li a:hover {
+    color: white;
+    background-color: #9b775d;
+}
+
+#table, #th, #td {
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    text-align: center;
+    width: 50%;
+    background-color: white;
+}
+
+#th {
+    background-color: #333;
+    height: 50px;
+    color: white;
+}
+
+#td {
+    background-color: rgba(51,51,51,0.8);
+    color: white;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    color: white;
+}
+
+/* FORM */
+.form_container {
+    margin: 0 auto;
+    width: 30%;
+    height: 100%;
+    background-color: rgba(51,51,51,0.8);
+	border: 2px solid #333;
+	border-radius: 10px;
+	color: white;
+	position: relative;
+	padding-bottom: 50px;
+}
+
+.frmObject_container {
+	color: black;
+	display: inline-block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+label {
+	display: inline-block;
+    width: 95%;
+    text-align: left;
+    margin: 1% 0 0 0;
+    color: white;
+    font-weight: bold;
+    line-height: 18px;
+    font-size: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    margin: 1% 0 0 0;
+    padding: 1% 0 2% 1%;
+    line-height: 18px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 2px solid #9b775d;
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}

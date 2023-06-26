@@ -1,0 +1,23 @@
+{% extends "swu_base.html" %}
+
+{% load static %
+
+{% block title %}Remove Character{% endblock %}
+
+{% block content %}
+
+<div>
+    <script>
+    function myFunction() {
+      confirm("Are you sure you want to delete that Character?!");
+    }
+    </script>
+    <form method="POST" id="character-form">
+        {% csrf_token %}
+        {{form.as_p }}
+        <h3>Would like to remove this character? </h3>
+        <button id="delete-button" type="submit" onclick="myFunction()">Delete</button>
+    </form>
+</div>
+
+{% endblock %}

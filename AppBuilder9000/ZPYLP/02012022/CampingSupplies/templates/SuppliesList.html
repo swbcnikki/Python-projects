@@ -1,0 +1,42 @@
+{% extends 'Camping_Supplies_Base.html' %}
+{% block header %}Tents{% endblock %}
+
+{% include "Camping_Supplies_Navbar.html" %}
+
+{% block content %}
+
+<div class="admin_panel">
+    <form name="TentForm" method="POST" action="">
+        <div class="formObject">
+            {% csrf_token %}
+            <label for="menu_id">Select a campsite from the list to edit:</label>
+            <select id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
+            {% for Tent in Tents %}
+                <option value="">_</option>
+                <option value="../{{ Tent.pk }}/Tent_Details/">{{ Tent.Color }}</option>
+            {% endfor %}
+            </select>
+            <div class="fromBtn_container">
+                <a href="{% url 'Camping_Supplies_Create' %}"><button type="button" class="btn">Add New A New Tent</button></a>
+                <a href="{% url 'Camping_Supplies_Home' %}"><button type="button" class="btn">Home</button></a>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+
+<div class="main">
+
+	{% for campsites in campsites %}
+
+	<a href = "../{{ Tents.pk }}/Tents_Details/">{{ Tents.name }}<br/></a>
+        {{ campsites.description}}<br/>
+	<hr/>
+
+	{% endfor %}
+
+</div>
+
+{% endblock %}

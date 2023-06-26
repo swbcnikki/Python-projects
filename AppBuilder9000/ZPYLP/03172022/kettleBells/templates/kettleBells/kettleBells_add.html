@@ -1,0 +1,25 @@
+{% extends 'kettleBells_base.html' %}
+
+{% load static %}
+
+{% block title %}KettleBells{% endblock %}
+
+{% block header %}Add Exercise:{% endblock %}
+
+{% block content %}
+
+<div class="adminBox">
+    <form name="MovesForm" method="POST" action="{% url 'KB_add' %}">
+        {% csrf_token %}
+        <div class="frmContainer">
+           {{ form.non_field_errors }}
+           {{ form.as_p }}
+        </div>
+        <div class="btnBox">
+            <input type="submit" class="btn" value="Add Exercise" name="addItem">
+            <a href="{% url 'KB_home' %}"><button type="button" class="btn" value="Never Mind">Never Mind</button></a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

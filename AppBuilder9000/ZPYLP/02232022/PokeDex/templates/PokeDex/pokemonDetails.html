@@ -1,0 +1,33 @@
+{% extends "PokeDex/PokeDex_base.html" %}
+{% load static %}
+
+{% block title %}PokeDex{% endblock %}
+
+{% block header %}<h1 style="position: center;">Pokemon Details</h1>{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+<div id="container" class="table-responsive table-sm mx-auto" style="padding-top: 470px; padding-left: 225px; padding-right: 967px;">
+    <table id="table" class="table table-light table-hover text-center">
+        <thead>
+        <!-- this is text to be displayed in the rows of the table header-->
+            <tr>
+                <th scope="col" data-field="name">Name</th>
+                <th scope="col" data-field="type">Type</th>
+                <th scope="col" data-field="abilities">Abilities</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- this is saying get the name, type, and abilities details from the pokemon name that was clicked on
+                and then display it in the webpage-->
+                <td>{{ details.name }}</td>
+                <td>{{ details.type }}</td>
+                <td>{{ details.abilities }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'PokeDex_edit' details.pk %}"><button type="button" class="btn btn-dark btn-lg w-25 mx-auto" style="float: left;">Edit</button></a>
+    <a href="{% url 'PokeDex_delete' details.pk %}"><button type="button" class="btn btn-dark btn-lg w-25 mx-auto" style="float: right;">Delete</button></a>
+</div>
+{% endblock %}

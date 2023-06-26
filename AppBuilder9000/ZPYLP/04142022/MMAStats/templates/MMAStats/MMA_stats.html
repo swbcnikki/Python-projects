@@ -1,0 +1,51 @@
+{% extends "MMAStats/MMA_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this screen displays all basic entries made on fighters
+{% endcomment %}
+
+<section id="Stats">
+    <h1>MMA Stats</h1>
+    <p>Current Champions</p>
+    <center>
+        <a href="{% url 'MMA_Create' %}" class="btn btn-outline-warning">Create Entry</a>
+    </center>
+    <br>
+    <table border="1", width="600">
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Defenses</td>
+                <td>Pound For Pound Rank</td>
+                <td>Record</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for champion in champion_stats %}
+                <tr>
+                    <td class="dataEntries"><a href="{% url 'MMA_Details' champion.id %}">{{ champion.first_name }}</a></td>
+                    <td class="dataEntries">{{ champion.last_name }}</td>
+                    <td class="dataEntries">{{ champion.defenses }}</td>
+                    <td class="dataEntries">{{ champion.p4p_rank }}</td>
+                    <td class="dataEntries">{{ champion.record }}</td>
+                    <td>
+                        <div class="btns">
+                            <a href="{% url 'MMA_Update' champion.id %}" class="btn btn-outline-success">Edit</a>
+                            <a href="{% url 'MMA_Delete' champion.id %}" class="btn btn-outline-danger">Delete</a>
+                        </div>
+                    </td>
+            {% endfor %}
+                </tr>
+        </tbody>
+    </table>
+
+</section>
+
+<footer>
+    <p>-note that if the fighter is not P4P ranked, their rank will show as 0.</p>
+    <p>OR if a fighter is not currently a champion, their "defenses" will show as 0.</p>
+</footer>
+{% endblock %}

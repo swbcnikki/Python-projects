@@ -1,0 +1,27 @@
+{% extends "exercises_base.html" %}
+
+{% block title %}Exercises{% endblock %}
+
+{% block header %}Exercise Delete:{% endblock %}
+
+{% block content %}
+    <style>
+        h2 {color: black; font-size: 60px; font-weight: 900; font-family: 'Inconsolata'; text-shadow: 5px 3px 1px white; text-align: left; margin: 0 0 15px 25px;}
+        p {color:white; font-size: 25px;}
+    </style>
+    <!--action brings user back with .-->
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <!--wildcard in curly brackets calls the item, exercise-->
+        <p>Are you sure you want to delete "{{item.exercise_name}}" from the database?</p>
+        <!--form-->
+        {{ item.as_p }}
+
+        <input type="submit" value="Yes, delete it!" class="btn">
+        <!--instead of input which pulls action, placing url in <a> will bring user to specified page-->
+        <a href="{% url 'exercises_names' %}"><button class="btn" type="button">Cancel</button></a>
+    </form>
+
+
+{% endblock %}

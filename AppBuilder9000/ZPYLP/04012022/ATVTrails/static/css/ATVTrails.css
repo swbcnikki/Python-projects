@@ -1,0 +1,40 @@
+/*========================
+General Styling
+========================*/
+
+body {
+    background-image: url('../images/ATVTrails2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* New color for TopNav */
+.topnav {
+    background-color: green;
+}
+
+.trails_main {
+    text-align: center;
+    background-color: green;
+
+}
+.trails_head {
+    border: 1px solid black;
+    width: 100%;
+    background-color: green;
+    font-color: black;
+}
+.trails_body {
+    border: 1px solid black;
+    width: 100%;
+    background-color: green;
+    font-color: black;
+}
+
+.trail_table_trend {
+border: 1px solid black;
+    width: 100%;
+    background-color: green;
+    font-color: black;
+}

@@ -1,0 +1,20 @@
+{% extends 'Basketball/Basketball_base.html' %}
+
+{% block content %}
+
+
+
+   <div id="pickup_table">
+        <table>
+        {% for i in posts %}
+            <tr>
+                <th><a href="{% url 'details' i.id %}" >Name:</a><p>{{ i.name}}</p></th>
+                <th><p>Date:</p>{{ i.date}}</th>
+                <th><p>Points:</p>{{ i.points}}</th>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'BudgetingApp/BudgetingApp_base.html' %}
+
+{% block title %} Your Account!{% endblock %}
+
+
+
+{% block content %}
+  <h2>Your Account!</h2>
+
+
+<div>
+  <table style="margin-left:auto;margin-right:auto;">
+    <tr>
+      {% for item in items %}
+    <tr>
+        <th><a href="{% url 'BudgetingApp_details' item.pk %}">{{ item.username }}</a></th>
+    </tr>
+    <tr>
+        <th>{{ item.expense_name }}</th>
+        <td>{{ item.date_added }}</td>
+        <td>{{ item.cost }}</td><br>
+        <td>{{ item.details }}</td><br>
+    </tr>
+      {% empty %}
+      <li>Sorry, you have no account!.</li>
+      {% endfor %}
+    </tr>
+  </table>
+</div>
+
+{% endblock %}

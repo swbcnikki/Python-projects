@@ -1,0 +1,40 @@
+{% extends "StudyApp/study_app_base.html" %}
+{% load static %}
+
+{% block title %} Members {% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+ <div class="form-container">
+        <form name="UserForm" method="POST" action="../info/">
+            {% csrf_token %}
+            <h1>Members Portal</h1>
+            <p>Here, you can create a member profile, update current profiles, or login with existing credentials!</p>
+            <br>
+            <h2>Current Members</h2>
+            <p>Select a member from the list to see their info.</p>
+            <!-- USING BOOTSTRAP TO CREATE LIST-GROUP WITH SCROLLBAR
+                refer to bootstrap docs - components = list group,
+                scrollspy, and in utilities - overflow -->
+            <div class="overflow-auto">
+                <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+                    <div class="db-container">
+                    <!-- USE  'for' BLOCK TAG TO ITERATE THROUGH REGISTER MODEL
+                            be sure to include a dictionary {'register':register}
+                            in views.py -->
+                    {% for member in register %}
+                         <a href="../{{member.pk}}/info/" class="list-group-item list-group-item-action list-group-item-primary">{{ member.username|title }}</a>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <h2>Member Options</h2>
+                <a href="{% url 'sign_up' %}"><button type="button" value="Create">Create Profile</button></a>
+                <a href="{% url 'study_home' %}"><button type="button" name="Back">Back</button></a>
+                <a href="{% url 'login' %}"><button type="button" name="Members">Members Login</button></a>
+        </div>
+ </div>
+{% endblock %}

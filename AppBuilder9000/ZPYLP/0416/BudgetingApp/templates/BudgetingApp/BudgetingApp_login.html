@@ -1,0 +1,16 @@
+{% extends 'BudgetingApp/BudgetingApp_base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+    <button type="submit">Login</button>
+  </form>
+{% endblock %}

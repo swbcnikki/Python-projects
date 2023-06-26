@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-transparent">
+  <!-- need to add brand logo as homepage link -->
+  <a class="navbar-brand" href="{% url 'home' %}">App Builder 9000</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- using views functions to set active page -->
+      <li class="nav-item {{home_page}}">
+        <a class="nav-link" href="{% url 'cocktail_recipes_home' %}">Home</a>
+      </li>
+      <!-- using views functions to set active page -->
+      <li class="nav-item {{add_cocktail}}">
+        <a class="nav-link" href="{% url 'cocktail_recipes_add_cocktail' %}">Add Cocktail Recipe</a>
+      </li>
+      <li class="nav-item {{cocktail_list}}">
+        <a class="nav-link" href="{% url 'cocktail_recipes_cocktail_list' %}">Cocktail List</a>
+      </li>
+    </ul>
+    <!-- need to add functionality to this after DB is set up -->
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

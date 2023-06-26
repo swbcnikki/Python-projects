@@ -1,0 +1,71 @@
+<!-- This widget is used to Add workout equipment to track by user, it contains a dropdown item list
+    with all previously input items.  Updated with Javascript slideshow -->
+
+<!-- inherits elements and styling from WorkoutBase.html-->
+
+{% extends "WorkoutEquipment/WorkoutEquipBase.html" %}
+{% load static %}
+
+
+{% block title %} Track your Equipment {% endblock %}
+
+{% block header %} Add an Equipment type {% endblock %}
+
+{% block content %}
+
+    <div class="admin_panel">
+        <form name="workoutEquipmentForm" method="POST" action="">
+            <div class = "formObject">
+                <div class="fromBtn_container">
+                    <a href="{% url 'workout_equip_create' %}"><button type = "button" class="btn">Add Your Exercise Equipment</button></a>
+                    <a href="{% url 'WorkoutEquipHome' %}"><button type = "button" class="btn">Logout</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="admin_panel">        <!--Slideshow section -->
+        <div id="slideshow">
+            <div id="slideshow_background">
+                <div id="slideshow_container">
+                <!--slide 1/4 -->
+                    <div class="mySlides ">
+                        <img src="/static/img/workoutequipment5.jpeg" class="slideshow_imgs" alt="A Picture of me, error rendering image.">
+                        <div class="text">Find your gym setup!</div>
+                    </div>
+                    <!--slide 2/4 -->
+                    <div class="mySlides">
+                        <img src="/static/img/workoutequipment9.jpeg" class="slideshow_imgs" alt=" Error rendering image.">
+                        <div class="text">Free weights? </div>
+                    </div>
+                    <!--slide 3/4 -->
+                    <div class="mySlides">
+                        <img src="/static/img/workoutequipment.jpeg" class="slideshow_imgs" alt=" Error rendering image.">
+                        <div class="text">Mechanical weight setup?</div>
+                    </div>
+
+                    <!--slide 4/4 -->
+                    <div class="mySlides">
+                        <img src="/static/img/workoutequipment6.jpeg" class="slideshow_imgs" alt=" Error rendering image.">
+                        <div class="text">Treadmills?</div>
+                    </div>
+
+                    <!-- Nxt and previous btns-->
+                        <a class="previous" onclick="plus_slides(-1)">&#10094;</a>
+                        <a class="nxt" onclick="plus_slides(1)">&#10095;</a>
+                    </div>
+                    <br id="About"> <!--This adds space between imgs and dots-->
+
+                    <!--dots alternative way of navigation-->
+                    <div style="text-align: center;">
+                        <span class="dot" onclick="current_slide(1)"></span>
+                        <span class="dot" onclick="current_slide(2)"></span>
+                        <span class="dot" onclick="current_slide(3)"></span>
+                        <span class="dot" onclick="current_slide(4)"></span>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+{% endblock %}

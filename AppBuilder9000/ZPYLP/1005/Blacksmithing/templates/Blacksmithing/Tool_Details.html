@@ -1,0 +1,36 @@
+{% extends "Blacksmithing/base.html" %}
+{% load static %}
+{% block title %} Item Details {% endblock %}
+
+{% block header %}
+    <h1>View Tool</h1>
+{% endblock %}
+
+{% block content %}
+
+  <div style="
+    opacity: 0.8;
+    border-radius: 8px;
+    border: 2px solid gray;
+    margin: 0 500px;
+    background-color: #311a14bb;
+    text-align: center;
+    padding: 0 10px;
+">
+    <h1 style="text-decoration: underline">Tool</h1>
+    <h2>{{ details.name }}</h2>
+    <hr>
+    <h3 style="text-decoration: underline">Use</h3>
+    <h4>{{ details.use }}</h4>
+    <hr>
+    <h3 style="text-decoration: underline">Price</h3>
+    <h5>{{ details.price }}</h5>
+    <hr>
+    <h3 style="text-decoration: underline">Product Link</h3>
+    <h5 style="overflow-wrap: break-word">{{ details.link }}</h5>
+    <hr>
+    <h3 style="text-decoration: underline">Item Description</h3>
+    <h5>{{ details.description }}</h5>
+  </div>
+
+{% endblock %}

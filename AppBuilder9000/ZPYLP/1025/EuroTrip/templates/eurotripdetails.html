@@ -1,0 +1,31 @@
+{% extends "eurotripbase.html" %}
+{% load static %}
+{% block title %}Details on European Cities{% endblock %}
+
+{% block header %}City Details:{% endblock %}
+
+{% block content %}
+<table class="table table-dark table-borderless">
+  <th>Country</th>
+  <th>City</th>
+  <th>Prices</th>
+  <th>Time Zone</th>
+  <th>Safety</th>
+  <tr>
+    <td>{{item.country}}</td>
+    <td>{{item.city}}</td>
+    <td>{{item.prices}}</td>
+    <td>{{item.timeZone}}</td>
+    <td>{{item.safety}}</td>
+  </tr>
+</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="{% url 'etedit' item.pk %}" class="btn btn-outline-danger-">Update</a></li>
+    <li class="page-item"><a class="page-link" href="{% url 'etdelete' item.pk %}" class="btn btn-outline-danger-">Delete</a></li>
+    <li class="page-item"><a class="page-link" href="{% url 'eastern' %}">List of Locations</a></li>
+    <li class="page-item"><a class="page-link" href="{% url 'ethome' %}">Home</a></li>
+  </ul>
+</nav>
+{% endblock %}

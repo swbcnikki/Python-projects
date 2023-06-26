@@ -1,0 +1,47 @@
+{% extends "StockMarketBase.html" %}
+
+{% block StockTitle %} Edit Account Information {% endblock %}
+
+
+
+{% block StockPageHeading %} Edit and Delete Client Details {% endblock %}
+
+{% block Content %}
+
+
+
+
+
+	<h2>Client list and Information</h2>
+
+
+	<form method="POST">
+
+		<!-- Replace this with the Django populated transactions -->
+
+		{% csrf_token %}
+
+		<ul style="list-style-type:none;">
+			<h4>First Name:</h4>
+			<li>{{ form.first_name }}</li>
+
+			<h4>Last Name:</h4>
+			<li>{{ form.last_name }}</li>
+
+			<h4>Email:</h4>
+			<li>{{ form.email_address }}</li>
+
+			<h4>Initial Deposit:</h4>
+			<li>{{ form.initial_deposit }}</li>
+		</ul>
+
+
+		<br><br>
+		<button type="submit" name="edit_Account">Submit Changes</button>
+		<button><a href="{% url 'delete' account.id %}">Delete Account</a></button>
+
+	</form>
+
+	<br><br>
+
+{% endblock %}

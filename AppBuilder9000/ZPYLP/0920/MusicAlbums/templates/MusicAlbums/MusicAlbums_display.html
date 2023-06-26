@@ -1,0 +1,12 @@
+{% extends 'MusicAlbums/MusicAlbums_base.html' %}
+{% load static %}
+{% block content %}
+<h1>Music Albums</h1>
+<div class="displaylist">
+{% for item in all %}
+ <br>
+ Artist: <a href="{% url 'MusicAlbums_details' item.pk %}">{{ item.Artist }}</a><br>
+ Year: {{ item.Year }}<br><hr>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "HikingApp/HikingApp_base.html" %}
+
+{% block title %} Hiking Trails {% endblock %}
+
+{% block header %} Take a Hike! {% endblock %}
+
+{% block content %}
+
+<div class="index_container">
+    <!---- search box -------->
+<form class="searchbox" action="{% url 'HikingApp_searchresults' %}" method="GET" value="{{request.GET.q}}">
+<input type="text" name="q" value="{{request.GET.q}}" placeholder="Trail name or location"/>
+<input type="submit" name="submit" class="btn" value="Search"/>
+</form>
+<!---- index table ---->
+    <table class="trail_table">
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Difficulty</th>
+            <th>Camping</th>
+        </tr>
+        {% for trail in trails %}
+        <tr>
+            <td>
+                <a href="{% url 'HikingApp_details' pk=trail.id %}" class="trail_name">{{ trail.name }}</a>
+            </td>
+            <td>
+                {{ trail.location }}
+            </td>
+            <td>
+                {{ trail.difficulty }}
+            </td>
+            <td>
+                {{ trail.camping|yesno:"Yes,No" }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!--- paginator --->
+{% if trails.has_other_pages %}
+  <ul class="pagination">
+    {% if trails.has_previous %}
+      <li><a href="?page={{ trails.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in trails.paginator.page_range %}
+      {% if trails.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only"></span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if trails.has_next %}
+      <li><a href="?page={{ trails.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'speed_run_base.html' %}
+{% load static %}
+
+{% block title %}Record Details{% endblock %}
+
+{% block content %}
+
+<h1 class="homeHeading">{{ details.player }} Record</h1>
+
+<div class="container-md">
+    <table class="table table-dark table-striped w-75 p-3 position-absolute top-50 start-50 translate-middle">
+        <thead>
+            <tr class="table-dark">
+                <th>Player</th>
+                <th>Game</th>
+                <th>Time</th>
+                <th>Platform</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-dark">
+                <td class="table-dark">{{ details.player }}</td>
+                <td class="table-dark">{{ details.game }}</td>
+                <td class="table-dark">{{ details.time }}</td>
+                <td class="table-dark">{{ details.platform }}</td>
+                <td class="table-dark">{{ details.date }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a href="{% url 'speed_run_edit' details.pk %}"><button type="button" class="btn btn-dark" name="Edit_Record">Edit Record</button></a>
+        <a href="{% url 'speed_run_delete' details.pk %}"><button type="button" class="btn btn-dark" name="Delete_Record">Delete Record</button></a>
+    </div>
+</div>
+
+
+{% endblock %}

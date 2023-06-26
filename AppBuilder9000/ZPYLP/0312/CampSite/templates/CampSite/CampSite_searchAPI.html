@@ -1,0 +1,24 @@
+{% extends "CampSite/CampSite_base.html" %}
+{% load static %}
+
+
+{% block title %} Search {% endblock %}
+
+{% block jumbotron-text %} Find <br> Your <br> Spot {% endblock %}
+
+
+{% block content%}
+    <div class="search">
+        <h3>Search by National Park</h3><br>
+        <h5>Enter the name of the National Park you wish to explore.</h5><br>
+        <form action="{% url 'searchAPI' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+
+
+
+{% endblock %}

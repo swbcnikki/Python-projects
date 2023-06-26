@@ -1,0 +1,24 @@
+{% extends "Cartoons/Cartoons_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page displays a top ten animations of all time list scraped from another website.
+{% endcomment %}
+
+<div class="jumbotron jumbotron-fluid bg-primary text-light text-center">
+    <h1 class="display-4">Top 100 Animated Movies <br> According to Rotten Tomatoes</h1>
+</div>
+<ul class="card w-50 mx-auto list-group">
+        <li class="list-group-item font-weight-bold bg-danger text-light text-center">
+            Rank&ensp;|&ensp;Rating&ensp;|&ensp;Title&ensp;|&ensp;No. of Reviews
+        </li>
+</ul>
+<div class="card w-50 mx-auto list-group">
+    {% for titles in top_movies %}
+    <a class="list-group-item list-group-item-action list-group-flush font-weight-bold bg-primary text-light text-center">
+        {{ titles }}
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

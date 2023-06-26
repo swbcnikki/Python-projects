@@ -1,0 +1,51 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_jumbotron.html" %}
+{% load staticfiles %}
+
+
+{% block jumbotron %}
+	<h2>Add Movements</h2>
+    <h3>{{ composition }}</h3>
+    <form method="post" class="was-validated">
+        {% csrf_token %}
+         {{ form.non_field_errors }}
+         {{ formset.management_form }}
+            {% for form in formset %}
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+                <div class="form-row jumbotron-form">
+                    {% for field in form.visible_fields %}
+                        {% if field.label == "#" %}
+                            <div class="form-group col-3">
+                                {{ field.label }}
+                                {{ field }}
+                            </div>
+                        {% elif field.label == "Movement Title" %}
+                            <div class="form-group col-9">
+                                {{ field.label }}
+                                {{ field }}
+                            </div>
+                        {% elif field.label == "Composition" %}
+                            <div class="form-group col-0">
+                                {{ field }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        <br>
+        <button type="submit" class="btn btn-custom-color">Save Movements</button>
+        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_show_compositions' %}">Cancel</a>
+
+    </form>
+
+{% endblock %}
+
+
+{% block javascript %}
+    {{ block.super }}
+    {# This script does not work if you put it in a .js file. It can't read the django variable then #}
+    <script>
+        $(".composition-prefill").val({{ composition.pk }})
+    </script>
+{% endblock %}

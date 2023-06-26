@@ -1,0 +1,71 @@
+{% extends "SportsApp/SportsApp_base.html" %}
+
+{% block title %} SportsApp {% endblock %}
+
+
+{% block header %}
+    <div class="createPage-header">
+        <h1>Favorite Player Archive: </h1>
+    </div>
+{% endblock %}
+
+{%block content %}
+
+ <!-- Adding fav player display -->
+
+<div class="indexFav-wrapper">
+    <table class="fav-table">
+        <tr>
+            <th>Favorite Player </th>
+            <th>Plays On </th>
+            <th>Email </th>
+        </tr>
+        {% for fav in fav_list %}
+        <tr class="border">
+            <td>
+                {{ fav.fav_player }}
+            </td>
+            <td>
+                {{ fav.corresponding_team }}
+            </td>
+            <td>
+                {{ fav.email }}
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+
+{% if fav_list.has_other_pages %}
+  <ul class="paginator">
+    {% if fav_list.has_previous %}
+      <li><a href="?page={{ game_list.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in fav_list.paginator.page_range %}
+      {% if fav_list.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only"></span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if fav_list.has_next %}
+      <li><a href="?page={{ game_list.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

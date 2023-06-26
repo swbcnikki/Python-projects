@@ -1,0 +1,63 @@
+{% extends 'Nutrition/Nutrition_base.html' %}
+{% load static %}
+
+{% block title %}Royal Hotels{% endblock %}
+
+{% block header %}Edit Details:{% endblock %}
+
+{% block content %}
+<br>
+
+    {% if aform %}
+    <form name="productForm" method="POST" action="../edit_account/"><!--go back one directory (..) and say details-->
+
+        <table>
+            {% csrf_token %}
+            {{ aform.non_field_errors }}
+            {{ aform.as_table }} <!--this method puts in form data we get into a table format so long
+             as it is within <table> tags...basically this method creates all the HTML needed to render
+            the form data in a table format for us and so saves us a lot of coding -->
+        </table>
+
+
+            <div class="row">
+                <input class="btn btn-success pl-4 pr-4 mt-3 mb-3" type="submit" value="Submit"> <!--this associates /w the action attribute of the form tag above-->
+
+                <a href="{% url 'display_db' %}" class="btn btn-primary pl-4 pr-4 mt-3 mb-3 ml-3">CANCEL</a><!--this will call the admin_console method, which
+                will take us to the admin_console web page-->
+            </div>
+            <div class="row">
+                <a href="../{{ aform.pk }}delete_account/" class="btn btn-outline-danger mr-4">DELETE</a><!--this is saying go back a directory, put
+                a number in that corresponds to the form's pk (which is the item's pk), and calls delete
+                method to delete it-->
+            </div>
+    </form>
+
+    {% elif nform %}
+<br>
+    <form name="productForm" method="POST" action="../edit_nutrition/"><!--go back one directory (..) and say details-->
+
+        <table>
+            {% csrf_token %}
+            {{ nform.non_field_errors }}
+            {{ nform.as_table }} <!--this method puts in form data we get into a table format so long
+             as it is within <table> tags...basically this method creates all the HTML needed to render
+            the form data in a table format for us and so saves us a lot of coding -->
+        </table>
+        <div class="row">
+                <input class="btn btn-success pl-4 pr-4 mt-3 mb-3" type="submit" value="Submit"> <!--this associates /w the action attribute of the form tag above-->
+
+                <a href="{% url 'display_db' %}" class="btn btn-primary pl-4 pr-4 mt-3 mb-3 ml-3">CANCEL</a><!--this will call the admin_console method, which
+                will take us to the admin_console web page-->
+            </div>
+            <div class="row">
+                <a href="../{{ nform.pk }}delete_nutrition/" class="btn btn-outline-danger mr-4">DELETE</a><!--this is saying go back a directory, put
+                a number in that corresponds to the form's pk (which is the item's pk), and calls delete
+                method to delete it-->
+            </div>
+
+    </form>
+</div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "MTB_Trails/mtb_trails_base.html" %}
+{% load static %}
+
+{% block title %}MTB Trails | Reviews{% endblock %}
+
+{% block header %}reviews{% endblock %}
+
+{% block content %}
+
+    <!-- This custom class centers our elements -->
+    <div class="existing-reviews--container">
+        <!-- This class adds padding to bottom of page -->
+         <div class="bottom-page--padding">
+             <!-- Iterating through database and displaying in Bootstrap card class -->
+             {% for trail in trails %}
+             <!-- This class necessary to add padding to top and bottom of each review card -->
+             <div class="my-5">
+                <div class="card border-white text-white bg-dark" style="max-width: 50rem;">
+                <div class="card-header border-white text-danger">
+                    <a href="{% url 'review_details' trail.pk %}" class="btn btn-danger float-right btn-sm active"
+                       role="button" aria-pressed="true">More Info</a>{{ trail.trail_name }}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ trail.nearest_city }}, {{ trail.state }}</h5>
+                    <p class="card-text">{{ trail.review }}</p>
+                </div>
+                    <div class="card-footer border-white text-danger">{{ trail.difficulty }}</div>
+                </div>
+             {% endfor %}
+            </div>
+         </div>
+    </div>
+
+{% endblock %}

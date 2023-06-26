@@ -1,0 +1,29 @@
+{% extends 'Recipe_Maker/Recipe_Maker_base.html' %}
+
+{% block title %}Apple Pie Scrape{% endblock %}
+
+{% block content %}
+
+<div class="card text-center text-dark bg-warning mb-3 border-dark d-inline-flex d-flex justify-content-center w-50">
+  <div class="card-header border-dark">
+      The following recipe was scraped using Beautiful Soup
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{{ header }}</h3>
+    <h5 class="card-title">Ingredients:</h5>
+    <ul class="list-group">
+    {% for i in ingredients %}
+        <li class="list-group-item bg-warning">{{ i }}</li>
+    {% endfor %}
+    </ul>
+    <h5 class="card-title">Directions:</h5>
+    <ol class="list-group">
+    {% for d in description %}
+        <li class="list-group-item bg-warning">{{ d }}</li>
+    {% endfor %}
+    </ol>
+  </div>
+</div>
+
+
+{% endblock %}

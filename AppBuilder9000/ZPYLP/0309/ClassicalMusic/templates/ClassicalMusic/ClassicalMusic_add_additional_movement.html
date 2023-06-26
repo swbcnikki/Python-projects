@@ -1,0 +1,28 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_jumbotron.html" %}
+{% load staticfiles %}
+
+
+{% block jumbotron %}
+	<h2>Add Movement</h2>
+    <h3>{{ composition }}</h3>
+    <form method="post" class="was-validated">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_p }}
+        <br>
+        <button type="submit" class="btn btn-custom-color">Save Movement</button>
+        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_details_composition' composition.pk %}">Cancel</a>
+
+    </form>
+
+{% endblock %}
+
+
+{% block javascript %}
+    {{ block.super }}
+    {# This script does not work if you put it in a .js file. It can't read the django variable then #}
+    <script>
+        $(".composition-prefill").val({{ composition.pk }})
+    </script>
+
+{% endblock %}

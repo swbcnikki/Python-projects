@@ -1,0 +1,22 @@
+{% extends "CampSite/CampSite_base.html" %}
+{% load static %}
+
+{% block title %} CampSite {% endblock %}
+
+{% block jumbotron-text %} Find &nbsp <br> Your <br> Spot {% endblock %}
+
+
+{% block content%}
+<div class="container-home" >
+  <img class="card-img-top" src="/static/images/fire.jpg" alt="campfire">
+  <div class="body-home">
+    <br>
+    <h5 class="card-title">CampSite</h5>
+    <p class="home-text">A place to share and discover the best places to camp in the Pacific Northwest.</p><br>
+    <a href="{% url 'browse' %}" class="btn btn-primary" id="home-browse">Browse Sites</a>
+  </div>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends "TravelDestinations/TravelDestinations_base.html" %}
+
+{% load static %}
+
+{% block title %} Add Destination {% endblock %}
+
+{% block content  %}
+
+<h1>ADD DESTINATION TO YOUR WATCHLIST</h1>
+    <div id="DestinationForm">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="new-button" type="submit" name="add-destination">ADD</button>
+        </form>
+        <br>
+    </div>
+
+
+{% endblock %}

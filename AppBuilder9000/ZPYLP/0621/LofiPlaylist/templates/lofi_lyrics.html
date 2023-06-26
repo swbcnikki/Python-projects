@@ -1,0 +1,23 @@
+{% extends 'lofi_base.html' %}
+
+{% block content %}
+
+<div class="form_container">
+  <h1 class="white_text">Lyric Search:</h1>
+  <p class="white_text">If this takes too long to load you either listen to music
+    that no one except you and maybe a few other Lofi Nerds care about or you are horrible at spelling.
+    Please check your spelling or try another song.  Cheers!
+  </p>
+    <form action="/LofiPlaylist/lofi_lyrics" method="get">
+      <input type="text" name="artist" placeholder="artist" required><br><br>
+      <input type="text" name="title" placeholder="title" required><br><br>
+      <button type="submit">SEARCH</button><br><br>
+    </form>
+      <p class="white_text">
+          {{ lyrics }}
+      </p>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,301 @@
+/* ==========================================
+   GENERAL STYLING
+   ========================================== */
+
+body {
+    opacity: 1;
+    transition: 3s opacity;
+    font-family: "Helvetica";
+    text-shadow: 2px 2px 4px rgba(0,0,0,.5);
+    color: white;
+    background-image: url("../images/nbaLogoBG.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    counter-reset: Serial;  /* Set the Serial counter to 0 */
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+.container-main {
+    max-height: 450px;
+    max-width: 680px;
+    overflow: scroll;
+    margin-left: 40px;
+    padding: 0px 10px 20px 10px;
+	background-color: rgba(0,80,143,.95);
+    box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+    float: left;
+}
+
+.container-two {
+    float: left;
+    max-height: 450px;
+    max-width: 550px;
+    overflow: scroll;
+    margin-left: 40px;
+    padding: 0px 10px 40px 10px;
+	background-color: rgba(0,80,143,.95);
+    box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+}
+
+.container-alert {
+    max-height: 450px;
+    width: 500px;
+    overflow: scroll;
+    margin-left: 40px;
+    margin-top: 100px;
+    padding: 20px 30px;
+	background-color: rgba(0,80,143,.95);
+    box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+}
+
+.smallFont {
+    font-size: .8em;
+    font-style: italic;
+}
+
+.home-form {
+    padding: 20px 60px;
+}
+
+h3 {
+    text-align: center;
+}
+/* ==========================================
+   NAVBAR STYLING
+   ========================================== */
+.navbar {
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.navbar a{
+    display: inline-block;
+    text-align: center;
+    padding: 14px 20px;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: -4px;
+    color: white;
+}
+
+.navbar a:hover{
+    cursor: pointer;
+    background-color: rgba(255,255,255,.4);
+}
+
+
+/* ==========================================
+   HEADER/FOOTER STYLING
+   ========================================== */
+header {
+    padding: 50px;
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding-left: 50px;
+    margin-bottom: 0px;
+    font-weight: 200;
+}
+
+
+/* ==========================================
+   BUTTON STYLING
+   ========================================== */
+button {
+    cursor: pointer;
+}
+
+.btnRight {
+    float: right;
+    margin-right: 10px;
+    width: 100px;
+    color: black;
+
+}
+
+.bigBtn {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-weight: 700;
+    margin-top: 20px;
+    border-radius: 4px;
+    width: 120px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+    border: none;
+}
+
+.bigBtn:hover {
+    background-color: rgba(255,255,255,.1);
+    color: white;
+    font-weight: 900;
+}
+
+.bigBtn2 {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-weight: 700;
+    margin-top: 20px;
+    border-radius: 4px;
+    width: 200px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+    border: none;
+}
+
+.bigBtn2:hover {
+    background-color: rgba(255,255,255,.1);
+    color: white;
+    font-weight: 900;
+}
+
+
+.lilBtn {
+    padding: 10px;
+    margin-right: 20px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+    border: none;
+    border-radius: 4px;
+    width: 120px;
+}
+
+.lilBtn:hover {
+    background-color: rgba(255,255,255,.1);
+    color: white;
+}
+
+.lilBtn a {
+    text-decoration: none;
+    color: black;
+}
+
+.favBtn {
+    font-size: 1em;
+    font-weight: 100;
+    color: white;
+    padding: 4px 7px;
+    background-color: rgba(255,255,255,.2);
+    box-shadow: 4px 4px 8px rgba(0,0,0,.3);
+    border: none;
+    border-radius: 4px;
+}
+
+.favBtn:hover {
+    background-color: rgba(255,255,255,.5);
+    color: white;
+}
+
+
+/* ==========================================
+   TABLE STYLING
+   ========================================== */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	margin-top: 30px;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+    border-spacing: 0;
+    height: 35px;
+}
+
+thead {
+    margin-top: 0;
+	background-color: rgb(0,88,143);
+	z-index: 1;
+}
+
+tbody {
+    max-height: 300px;
+    max-width: 100%;
+    overflow: scroll;
+}
+
+th{
+	padding: 6px 12px;
+	font-weight: 700;
+	font-size: 1em;
+	cursor: pointer;
+    border: 1px solid white;
+}
+
+th:hover {
+	background-color: rgba(255,255,255,.4);
+}
+
+.headerRow {
+    background-color: rgba(0,0,0,.4);
+}
+
+tr td{
+	height: 25px;
+	border-bottom: 1px solid rgba(0,0,0,.4);
+	border-spacing: 0;
+	word-wrap: normal;
+	padding: 4px;
+	font-size: .8em;
+	width: auto;
+    top: 0;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: rgba(0,0,0,.3);
+}
+
+.numbered-table td:first-child:before
+{
+  counter-increment: Serial;      /* Increment the Serial counter */
+  content: counter(Serial); /* Display the counter */
+}
+
+.center {
+	text-align: center;
+	width: 10%;
+}
+
+.left {
+	text-align: left;
+	width: 35%;
+	padding-left: 15px;
+}
+
+.right {
+	text-align: right;
+	padding-right: 15px;
+	width: 30%;
+}
+
+
+/* ==========================================
+   DETAILS LINK STYLING
+   ========================================== */
+.details-link {
+    cursor: pointer;
+    color: white;
+}
+
+.details-link:hover {
+    color: red;
+}

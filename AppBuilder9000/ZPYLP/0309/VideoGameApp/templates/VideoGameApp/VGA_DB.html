@@ -1,0 +1,26 @@
+{% extends 'VideoGameApp/VideoGame_Base.html' %}
+{% load static %}
+{% block title %}Checking The Database!{% endblock %}
+{% block content %}
+
+
+ <div class="details-container">
+        <table>
+            <tr>
+                <th>{{ VideoGames.Title }}</th>
+            </tr>
+                <tr>
+                    <td class="data-container">
+                        <p>Title: {{ VideoGames.Title }}</p>
+                        <p>Platform: {{ VideoGames.Platform }}</p>
+                        <p>Genre: {{ VideoGames.Genre }}</p>
+                        <p>Opinion: {{ VideoGames.Opinion }}</p>
+                    </td>
+            </tr>
+        </table>
+    </div>
+    <a href="{% url 'Display_Data' %}">
+        <center><button type="button">Return to Lookup Page</button></center>
+    </a>
+
+{% endblock %}

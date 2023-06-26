@@ -1,0 +1,54 @@
+{% extends "Stocks/stocks_base.html" %}
+
+{% block title %}Stocks{% endblock %}
+
+{% block header %}Your favorite stocks{% endblock %}
+
+{% block content %}
+<!--
+<div>
+    <form name="stockForm" method="POST" action="">
+        <div>
+            {% csrf_token %}
+            <label for="menu_id">Select</label>
+            <select id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
+                {% for stock in stocks %}
+                <option value="..//{{ stock.pk }}/details/">{{ stock.ticker }}</option>
+                {% endfor %}
+            </select>
+            <div>
+                <a href="{% url 'add_favorites' %}"><button type="button">Add Favorites</button></a>
+                <a href="{% url 'stocks_home' %}"><button type="button">Cancel</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+-->
+
+
+    <div class="center-txt">
+        {% csrf_token %}
+        <div>
+            <table class="center-tbl">
+                <tr>
+                    <th>Ticker</th>
+                    <th>Name</th>
+                </tr>
+                {% for stock in stocks %}
+                <tr>
+                    <td><a href="../{{ stock.pk }}/details/">{{ stock.ticker | upper }}</a></td>
+                    <td>{{ stock.name | title }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+        <div>
+            <a href="{% url 'add_favorites' %}"><button type="button">Add Favorites</button></a>
+            <a href="{% url 'stocks_home' %}"><button type="button">Cancel</button></a>
+        </div>
+    </div>
+
+
+{% endblock %}

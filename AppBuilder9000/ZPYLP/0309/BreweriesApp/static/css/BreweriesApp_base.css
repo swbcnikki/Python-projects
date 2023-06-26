@@ -1,0 +1,27 @@
+/* main page background */
+.background {
+    background-color: gray;
+    background-image: url('/static/images/beerbackground.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+    background-position: center;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.main-content {
+    font-family: roboto, sans-serif;
+    color: rgba(243,243,243,1);
+    position: center;
+}
+
+h1 {
+    text-align:center;
+}
+
+body {
+    background-color:rgba(0,0,0,0.0);
+}

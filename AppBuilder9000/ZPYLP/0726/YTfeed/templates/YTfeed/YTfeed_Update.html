@@ -1,0 +1,13 @@
+{% extends "YTfeed/YTfeed_base.html" %}
+{% load static %
+{% block title %}Edit Youtubers{% endblock %}
+{% block content %}
+<h1>Please update the information you would like to change:</h1>
+<div>
+    <form method="POST" id="youtuber-form">
+        {% csrf_token %}
+        {{form.as_p }}
+        <button id="edit-button" type="submit" name="add-youtuber">Save Changes</button>
+    </form>
+</div>
+{% endblock %}

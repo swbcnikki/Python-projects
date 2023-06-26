@@ -1,0 +1,130 @@
+/* Custom CSS classes */
+
+/* NOTICE that many classes are the same. While this is repetitive,
+    I decided to keep it this way after I lost formatting trying
+    to consolidate these repetitious classes. */
+
+
+
+
+/* Sticky footer setup */
+.footer-base--container
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: none;
+    color: gold;
+    text-align: center
+}
+
+/* Adding stroke to footer text */
+.footer-home--text
+{
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
+               -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Background image will present unmoved in background, creating 3D effect */
+.html-base--bg
+{
+    background-image:url("../images/bike_and_lake.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* mtb_trails_base webpage container */
+.header-base--container
+{
+    height: 11em;
+    position: relative
+    margin: 0;
+    background: none;
+    color: white;
+    font-family: "Lucida Handwriting",Helvetica;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* mtb_trails_review container */
+.form-review--container
+{
+    height: 11em;
+    /* margin: 0; */
+    color: white;
+    background: none;
+    position: absolute;
+    top: 65%;   /* Sets the content slightly below title */
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Adding space to bottom of forms and footer */
+.bottom-page--padding
+{
+    padding-bottom: 100px
+}
+
+/* existing_reviews webpage container */
+.existing-reviews--container
+{
+    height: 11em;
+    /* margin: 0; */
+    color: white;
+    background: none;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* mtb_trails_home container for buttons */
+.home-btn--container
+{
+    height: 11em;
+    /* margin: 0; */
+    color: white;
+    background: none;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* scraped_data webpage container */
+.scraped-data--container
+{
+    height: 11em;
+    margin: 0;
+    color: white;
+    background: none;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* mtb_project_api webpage container */
+.mtb-project--container
+{
+    height: 11em;
+    margin: 0;
+    color: white;
+    background: none;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}

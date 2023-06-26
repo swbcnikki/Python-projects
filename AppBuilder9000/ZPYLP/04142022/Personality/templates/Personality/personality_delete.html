@@ -1,0 +1,16 @@
+{% extends "Personality_base.html" %}
+
+{% block title %}Personality{% endblock %}
+
+{% block header %}Take the test or die!{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <h3>Permanently delete {{ person.name }}'s account?</h3>
+        <br>
+        <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+    </form>
+<br>
+<button type="submit" class="new-account-button"><a href="{% url 'personality_edit' person.id %}">Return</a></button>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+
+<header class="page_header">
+    <h1>Musicians</h1>
+</header>
+
+
+
+
+<!--SELECT VIEW BUTTONS BAND-->
+<div class="button-container">
+    <div>{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}</div>
+    <div class="alphabet">
+        <a href="#" class="active">All</a>
+        <a href="#">A</a>
+        <a href="#">B</a>
+        <a href="#">C</a>
+        <a href="#">D</a>
+        <a href="#">E</a>
+        <a href="#">F</a>
+        <a href="#">G</a>
+        <a href="#">H</a>
+        <a href="#">I</a>
+        <a href="#">J</a>
+        <a href="#">K</a>
+        <a href="#">L</a>
+        <a href="#">M</a>
+        <a href="#">N</a>
+        <a href="#">O</a>
+        <a href="#">P</a>
+        <a href="#">Q</a>
+        <a href="#">R</a>
+        <a href="#">S</a>
+        <a href="#">T</a>
+        <a href="#">U</a>
+        <a href="#">V</a>
+        <a href="#">W</a>
+        <a href="#">X</a>
+        <a href="#">Y</a>
+        <a class="last" href="#">Z</a>
+    </div>
+    <div>
+        <a class="icon-link " onclick="show_table()">
+            <i class="far fa-list-alt big-icon icon"></i>
+        </a>
+        &nbsp;
+        <a class="icon-link "  onclick="show_gallery()">
+            <i class="fas fa-grip-vertical big-icon icon"></i>
+        </a>
+        <a class="edit_icon" href="{% url 'ClassicalMusic_add_musician' %}">
+            <i class="far fa-plus-square big-icon"></i>
+        </a>
+    </div>
+</div>
+
+
+<!-- GALLERY -->
+<section id="gallery" >
+    <div class="gallery-container">
+        {% for musician in musicians %}
+            <!-- MUSICIAN-CONTAINER 1-->
+            <div class="musician-container">
+                <a class="gallery-link" href="{% url 'ClassicalMusic_details_musician' musician.pk %}">
+                    <div class="gallery-image-container">
+                        <img class="gallery-image" src="{% if musician.image_url %}{{ musician.image_url }}{% else %}{% static 'ClassicalMusic/images/music-4661526_1920.jpg' %}{% endif %}" alt="{{ musician.name }}">
+                    </div>
+                    <h6 class="center">{{ musician.name }}</h6>
+                    <span class="hidden">{{ musician.sort_name }}</span>
+                    <p class="role center">{{ musician.role|lower }}</p>
+                </a>
+            </div>
+            <!-- END MUSICIAN-CONTAINER 1-->
+
+        {% endfor %}
+    </div>
+</section>
+<!-- END GALLERY -->
+
+
+<section id="table">
+    <table class="table table-main">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for musician in musicians %}
+                <tr>
+                    <td>
+                        <a href="{% url 'ClassicalMusic_details_musician' musician.pk %}">{{ musician.name }}</a>
+                        <span class="hidden">{{ musician.sort_name }}</span>
+                    </td>
+                    <td>{{ musician.type }}</td>
+                    <td>{{ musician.role }}</td>
+
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+
+{% endblock %}
+
+

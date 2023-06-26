@@ -1,0 +1,37 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}My Books{% endblock %}
+{% block header%}My Books{% endblock %}
+{% block content %}
+<div class="section">
+    <h2 class="eighty">{{book.title}}
+        {% if book.read == True %}
+            <i class="far fa-check-square book-checkmark green-icon"></i>
+        {% else %}
+        <a class="book-icon" data-toggle="tooltip" data-placement="top" title="Mark this book as read" href="{% url 'BookClubApp_MarkRead' pk=book.pk read=book.read %}"><i class="far fa-check-square book-checkmark"></i></a>
+        {% endif %}
+        <a class="book-icon" data-toggle="tooltip" data-placement="top" title="Edit Book" id="delete-icon" href="{% url 'BookClubApp_edit' pk=book.pk %}"><i class="fas fa-edit"></i></a>
+    </h2>
+</div>
+<div class="content" style="margin-top:-20px;padding-top: 20px;">
+    <div class="inner-content">
+         {% for author in book.authors_as_list %}
+            <h5><em>{{ author|cut:","|cut:"["|cut:"]" }}</em></h5>
+         {% endfor %}
+        {% if book.image %}
+            <div class="book-page-image"><img src="{{book.image}}"/></div>
+        {% endif %}
+        {% if book.comments %}
+            <div class="book-page-comments">
+                <p>{{book.comments}}</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+{% endblock %}

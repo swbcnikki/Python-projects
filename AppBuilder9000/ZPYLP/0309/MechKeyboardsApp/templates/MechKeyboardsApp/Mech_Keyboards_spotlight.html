@@ -1,0 +1,44 @@
+<!-- Extends from the base html -->
+{% extends "MechKeyboardsApp/Mech_Keyboards_base.html" %}
+
+<!-- Page title -->
+{% block title %}MechKeyboards{% endblock %}
+
+<!-- Page header -->
+{% block header %}
+    <div class="container-lg">
+        <h1>Vendor Spotlight</h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-text">
+
+    <img src="/static/MechKeyboardsApp/images/KBDfans_logo.png" class="img-fluid" alt="KBDfans logo">
+
+    <p>
+        This month we are taking a look at KBDfans, a well known resource in the Mechanical Keyboard community for its<br>
+        wide selection of reasonably priced keyboard parts and accessories!<br>
+        <br>
+        Below is the latest KBDfans GroupBuy items<br>
+        Click images to check out product page<br>
+        *item availability subject to change*.
+    </p>
+
+    <div class="products">
+        {% for item in context_list %}
+            <div class="product-container">
+                <div class="img-container">
+                    <a href="{{ item.abs_link }}">
+                        <img class="product-img" src="{{ item.img_link }}" alt="product image">
+                    </a>
+                    <p class="product-title">{{ item.title }}</p>
+                    <p class="product-price">{{ item.price }}</p>
+                </div>
+            </div>
+        {% endfor%}
+    </div>
+</div>
+{% endblock %}

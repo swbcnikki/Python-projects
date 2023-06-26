@@ -1,0 +1,17 @@
+{% extends "HorseApp/HorseApp_Base.html" %}
+{% load static %}
+{%block title%}HorseApp{%endblock%}
+{%block header%}HorseApp | The Horses |{%endblock%}
+{%block content%}
+<!--form for user input to create and save a new horse-->
+<div class="add-horse-form">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button id="add-horse-button" type="submit" name="Save_Horse">Add Horse</button>
+    </form>
+    <br>
+</div>
+
+
+{%endblock%}

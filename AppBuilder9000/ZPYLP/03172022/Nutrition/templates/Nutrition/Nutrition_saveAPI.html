@@ -1,0 +1,28 @@
+{% extends 'Nutrition/Nutrition_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Be Aware of What You're Consuming</h4>
+  <p>You can type any food item you wish to explore nutritional information for. You may type a quantity (e.g. 3 eggs) or size descriptor (e.g. small pear).</p>
+  <hr>
+  <p class="mb-0">Examples: 'Big Mac', '2 large apples', 'small egg', 'lettuce', '3 Cheetos' ... </p>
+</div>
+<p class="text-warning">Here, you can type in a search and have the results saved for future reference automatically!</p>
+<p class="h1 text-center my-5"></p>
+<form method="GET" action="">
+{% csrf_token %}
+<input type="text" class="form-control" name="user_query" placeholder="type in any food!">
+<br>
+<button class="btn btn-warning btn-lg btn-block" type="submit">Search and Save</button>
+
+
+
+
+
+
+
+
+
+{% endblock %}

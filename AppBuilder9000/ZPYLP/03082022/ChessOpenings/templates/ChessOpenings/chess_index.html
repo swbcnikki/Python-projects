@@ -1,0 +1,26 @@
+{% extends "chess_base.html" %}
+
+{% block content%}
+
+<h1 class="text-white text-center">Welcome to the chess openings trainer!</h1>
+        <div id="board" style="width: 400px" ></div>
+                <button id="startBtn" class="btn btn-secondary">Start Position</button>
+                <button id="clearBtn" class="btn btn-secondary">Clear Board</button>
+
+
+
+
+<script >
+  var board1 = Chessboard('board', {
+          draggable: true,
+          dropOffBoard: 'trash',
+          sparePieces: false,
+
+
+})
+$('#startBtn').on('click', board1.start)
+$('#clearBtn').on('click', board1.clear)
+
+
+</script>
+{% endblock %}

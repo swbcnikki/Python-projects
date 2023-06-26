@@ -1,0 +1,19 @@
+{% load static %}
+
+body {
+  background-image: url("../images/motorcycle_main.jpg");
+  background-size: cover;
+}
+
+
+h1 {
+font-family: Helvetica, sans-serif;
+color: black;
+text-align: center;
+font-size: 40px;
+}
+
+h3 {
+color: red;
+font-family: Helvetica, sans-serif;
+}

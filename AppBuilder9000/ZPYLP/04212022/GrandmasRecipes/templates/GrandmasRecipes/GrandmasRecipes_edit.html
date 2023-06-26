@@ -1,0 +1,26 @@
+{% extends "GrandmasRecipes/GrandmasRecipes_base.html" %}
+{% load static %}
+
+{% comment %}
+    When the user clicks the edit button from the Details page they are brought to a form
+    where they can edit the content of the recipe and save it back to the database
+{% endcomment %}
+
+{% block title %}Grandmas Recipes{% endblock %}
+
+{% block header %}<h6>Track down that old Recipe of Grandma's</h6>{% endblock %}
+
+{% block content %}
+    <div id="form-container" class="form-group form-left w-50 mx-auto">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    {{ form.as_p }}
+                </div>
+            </div>
+            <button type="submit">Save Recipe</button>
+        </form>
+    </div>
+
+{% endblock %}

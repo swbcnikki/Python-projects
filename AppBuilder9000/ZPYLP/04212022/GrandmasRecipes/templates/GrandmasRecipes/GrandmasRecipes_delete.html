@@ -1,0 +1,36 @@
+{% extends "GrandmasRecipes/GrandmasRecipes_base.html" %}
+{% load static %}
+
+{% comment %}
+    When the user clicks the delete button from the Details page they are prompted
+to make sure for delete, and then item is deleted from Database.
+{% endcomment %}
+
+{% block title %}Grandmas Recipes{% endblock %}
+
+{% block header %}<h6>Delete that old recipe!</h6>{% endblock %}
+
+{% block content %}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ item.as_p }}
+
+                <!-- Delete Confirmation Content -->
+              <div class="confirm_delete">
+                  <p>Warning, you are about to delete the recipe from the database!</p>
+                  <p>Would you like to continue?</p>
+              </div> <!-- endcontent -->
+
+              <div class="confirm_delete_footer"> <!--footer-->
+                  <!-- Choice 1: cancel, return to View Recipes -->
+                  <a href="{% url 'GrandmasRecipes_cookbook' %}">
+                      <button type="button" class="btn btn-dark cancel_button">Cancel</button>
+                  </a>
+                  <!-- Choice 2: Save changes, delete from recipes -->
+                  <button type="submit" class="btn btn-dark delete_button">Delete Recipe</button>
+              </div> <!-- end modal-footer -->
+
+    </form> <!-- end form -->
+</div>
+{% endblock %}

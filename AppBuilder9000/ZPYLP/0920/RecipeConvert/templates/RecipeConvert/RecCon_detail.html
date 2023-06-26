@@ -1,0 +1,25 @@
+{% extends "RecipeConvert/RecCon_base.html" %}
+{% load static %}
+
+{% block title %}Recipe Converter{% endblock %}
+{% block header %}Your Converted Recipes{% endblock %}
+
+{% block content %}
+
+    <div class="admin_panel">
+        <form name="convertForm" method="POST" action="../details">
+            <table>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_table }}
+            </table>
+            <div class="frmBtn_container">
+                <input type="submit"> <!-- this will invoke the "action" method of the form above -->
+                <div class="frmBtn_container">
+                    <button class="btn"><a href="../{{ form.pk }}delete/">DELETE</a></button>
+                    <button class="btn"><a href="{% url 'home' %}">CANCEL</a></button
+                </div>
+            </div>
+    </div>
+
+{% endblock %}

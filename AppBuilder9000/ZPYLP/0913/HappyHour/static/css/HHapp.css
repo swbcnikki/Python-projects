@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+/* General Styling */
+
+html, body {
+	height: cover;
+	width: cover;
+	text-color: white;
+}
+
+body {
+    background-color: rgba(0,0,0,0.5);
+    background-image: url( "/static/images/bottles.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-color: white;
+    color: white;
+
+}
+/* style the create review form */
+form {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    width: 70%;
+    padding: 15px;
+    margin: auto;
+
+.add_form {
+    width: 90%;
+    margin: auto;
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+button {
+    flex: 45%;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-transform: uppercase;
+    border: 0;
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+.review_list {
+    margin: 20px;
+    background-color:
+}
+
+.restaurants {
+    border-bottom: 3px solid lime;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    margin-bottom: 10px;
+
+h1 {
+  background-color: white;
+  color: white;
+}
+

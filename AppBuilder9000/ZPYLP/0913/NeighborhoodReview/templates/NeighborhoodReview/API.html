@@ -1,0 +1,30 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% load static %}
+
+{% block title %}Find a Brewery Near Your Hood!{%  endblock %}
+
+{% block header %}Something from a Public API! {% endblock %}
+
+{% block content %}
+
+ <label>A Few Local Brewpubs to Checkout While Neighborhooding it!</label>
+    <form method = 'get'>
+        <select name ="id">
+            <option value=8569 label ="Baerlic Brewing Co">Baerlic Brewing Co</option>
+            <option value=8464 label = "Assembly brewing">Assembly</option>
+            <option value=8681 label = "Base Camp Brewing Co">Lucky Labrador Brewpub</option>
+        </select>
+        <button type="submit">Type a City find a Brewery</button>
+    </form>
+
+       <p>
+       {% if data %}
+          <p>  {{ data.name }} is a brewery in {{ data.city }} great place to meet a friend after work or on the
+          weekend it is considered {{ data.brewery_type }} and is on {{ data.street }}</p>
+       {% endif %}
+       </p>
+
+
+
+{% endblock %}

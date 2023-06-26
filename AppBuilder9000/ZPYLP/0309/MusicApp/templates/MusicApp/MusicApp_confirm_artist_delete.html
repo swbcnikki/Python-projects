@@ -1,0 +1,22 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+
+{% block title %}MusicApp{% endblock %}
+
+{% block header %}Delete Confirmation{% endblock %}
+
+{% block content %}
+
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <h2>Confirm Artist Delete</h2>
+        <p>Are you sure you would like to delete "{{artist.artist_name}}" from the database?</p>
+
+        {{ artist.as_p }}
+
+        <input type="submit" value="Yes, delete it!">
+        <a href="{% url 'MusicApp_artist_index %}"><button type="button">Cancel</button></a>
+    </form>
+
+{% endblock %}
+
+

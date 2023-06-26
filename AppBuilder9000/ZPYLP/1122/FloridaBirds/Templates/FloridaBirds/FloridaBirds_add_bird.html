@@ -1,0 +1,38 @@
+{% extends 'FloridaBirds/FloridaBirds_base.html' %}
+
+    {% block title %}Add New Bird{% endblock %}
+
+    {% block content %}
+
+<!-- the HTML form element is used to collect user input. The form attribute called method = POST
+ adds the form data to the HTTP request-->
+
+<!-HTML class attribute made so can refer to it in css styling->
+
+
+    <div class="col-sm-10 offset-sm-2">
+
+        <form method="POST" class="add_bird_form">
+
+
+
+            {% csrf_token %}
+            {{ form.as_p }}<!-Wraps form elements in table tags->
+            <button type="submit" name="add_bird">Add Bird</button>
+            <!--name attribute on button element used to reference form data after form has been submitted-->
+
+
+
+
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+    {% endblock %}

@@ -1,0 +1,42 @@
+{% extends "Personality_base.html" %}
+
+{% block title %}Personality{% endblock %}
+
+{% block header %}Take the test or die!{% endblock %}
+
+{% block content %}
+<h3>Big 5 Personality Manager</h3>
+    <div class="text-center">
+        <h5>This app is designed to help you understand your personality and to compare it to others. Click
+            "Discover your Personality" to take a test based on the Big 5 Personality theory with questions
+            taken from the International Personality Item Pool. You will receive a report on your results and may
+            search for jobs by location that correspond with your interests.</h5>
+        <br>
+        <br>
+        <h5>Developed by Carson Cook.</h5>
+        <br>
+        <br>
+        <h5>This project was built with the Django Framework and
+            Python to demonstrate proficiency with basic CRUD operations, API functionality and web scraping with
+        Beautiful Soup.</h5>
+        <br>
+        <br>
+        <!-- Add a template to the href so the button works-->
+
+        <button type="submit" class="new-account-button"><a href="{% url 'personality_create' %}">Discover your Personality</a></button>
+        <button type="submit" class="new-account-button"><a href="{% url 'personality_compare' %}">Compare Results</a></button>
+        <br>
+    </div>
+<h3>Big 5 Personality Traits (Wikipedia)</h3>
+<p>{{ info }}</p>
+<h3>Openness to experience</h3>
+<p>{{ openness }}</p>
+<h3>Conscientiousness</h3>
+<p>{{ conscientiousness }}</p>
+<h3>Extraversion</h3>
+<p>{{ extraversion }}</p>
+<h3>Agreeableness</h3>
+<p>{{ agreeableness }}</p>
+<h3>Neuroticism</h3>
+<p>{{ neuroticism }}</p>
+{% endblock %}

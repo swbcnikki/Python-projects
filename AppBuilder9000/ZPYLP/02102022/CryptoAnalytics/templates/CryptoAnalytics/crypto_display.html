@@ -1,0 +1,8 @@
+{% extends "crypto_analytics_base.html" %}
+{% block content %}
+    {% for i in all_objects %}
+        <ul>
+            <li><a href="{% url 'crypto_details' i.pk %}">{{ i.title }}</a></li>
+        </ul>
+    {% endfor %}
+{% endblock %}

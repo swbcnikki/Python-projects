@@ -1,0 +1,28 @@
+{% load static %}
+
+<!--a lot of the block tags inherit pages from other files-->
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+    <head>
+        <meta charset="UTF-8">
+        <!--grabs the title from the respected page-->
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/exercises.css'%}">
+    </head>
+    <body>
+        <div class="page_container">
+            <!--grabs the navbar-->
+           {% include "exercises_navbar.html" %}
+           <header class="header-title">
+                <h1>{% block header %}{% endblock %}</h1>
+           </header>
+            {% block content %}{% endblock %}
+        </div>
+        <!--grabs the footer-->
+        {% include "exercises_footer.html" %}
+
+    </body>
+</html>

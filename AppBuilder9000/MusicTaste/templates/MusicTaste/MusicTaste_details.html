@@ -1,0 +1,25 @@
+{% extends "MusicTaste_base.html" %}
+
+{% block title %}Music Taste {% endblock %}
+
+{% block header %} Return info {% endblock %}
+
+{% block content %}
+
+<h3>{{ details.Name }}'s account</h3>
+
+<div id="User-account">
+    <table class = "table table-responsive" id = "memory-table">
+        <tr id="headerRow">
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr>
+            <td class="center">{{ details.Name }}</td>
+            <td class="center">{{ details.Age }}</td>
+            <td class="center">{{ details.Gender }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

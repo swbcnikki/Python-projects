@@ -1,0 +1,26 @@
+{% extends "HeroAbility/heroability_base.html" %}
+{% load static %}
+
+{% block title %}New Hero{% endblock %}
+
+{% block headline %}Who's the rookie?{% endblock%}
+
+{% block content %}
+
+<div class="form-container">
+    <form class="form" method="post" action="{% url 'heroability_new_hero' %}">
+        <div>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+        </div>
+        <div>
+            <input class="button" type="submit" value="Register Hero" name="save_item" />
+            <a href="{% url 'heroability_home' %}"><button class="button" type="button" value="Cancel">Cancel</button></a>
+        </div>
+    </form>
+</div>
+
+
+
+{% endblock %}

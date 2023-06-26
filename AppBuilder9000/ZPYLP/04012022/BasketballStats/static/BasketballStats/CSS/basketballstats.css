@@ -1,0 +1,132 @@
+body {
+    background-image: url("../images/basketball_hoop.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+h3 {
+    text-align: center;
+    color: blue;
+}
+
+h6 {
+    text-align: center;
+    color: blue;
+}
+
+caption {
+    color: lightskyblue;
+    font-weight: bold;
+    text-align: right;
+}
+
+#list-container {
+    margin-bottom: 50px;
+}
+
+.my-menu {
+    text-align: center;
+}
+
+#container {
+    margin-bottom: 50px;
+}
+
+#eastern-conference {
+    margin-bottom: 50px;
+}
+
+#western-conference {
+    margin-bottom: 50px;
+}
+
+#logo-container {
+    margin-bottom: 50px;
+    background-color: #7F7F7F;
+}
+
+#atlantic-logos {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#central-logos {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#southeast-logos {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#northwest-logos {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#pacific-logos {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#southwest-logos {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.logo {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.card-images-container {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+}
+
+.card-image {
+    max-height: 90%;
+    max-width: 90%;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    position: absolute;
+    vertical-align: middle;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.card-nba-image {
+    max-height: 90%;
+    max-width: 40%;
+    overflow: hidden;
+    margin-top: 5%;
+}
+
+#card-container {
+    margin-bottom: 50px;
+}
+
+#card-info {
+    margin-bottom: 50px;
+}

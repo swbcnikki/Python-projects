@@ -1,0 +1,24 @@
+{% extends 'HappyHour/HH_Base.html' %}
+{% block title %}{{ details.name }} &#8212; {{ details.highlights }}{% endblock %}
+
+	{% block content %}
+		<div>
+            <div class="reviews_list">
+                <h1>
+                    {% filter upper %}
+                        {{ details.name }} &#8212; {{ details.highlights }}
+                    {% endfilter %}
+                </h1>
+                <div class="restaurants">
+                    <div class="info">
+                        <span class="review_details"><h3>Name:</h3> {{ details.name }}</span>
+                        <span class="review_details"><h3>Address:</h3> {{ details.address }}</span>
+                        <span class="review_details"><h3>Rating:</h3> {{ details.rating }}</span>
+                    </div>
+                    <p>{{ details.review }}</p>
+                    <a href="{% url 'HH_Edit' details.pk %}"><button>Edit</button></a>
+                    <a href="{% url 'HH_Delete' details.pk %}"><button>Delete</button></a>
+                </div>
+            </div>
+		</div>
+	{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "StarWarsApp/SW_base.html" %}
+
+{% block title %} Details Page {% endblock %}
+
+{% block header %}{{ recipe.Type }}{% endblock %}
+{% block content %}
+
+<div class="product-form-details">
+    <h2>{{ product.name }}</h2>
+    <h3> {{ product.product_number }} </h3>
+        <p>{{ product.product_price }}</p>
+    <h3> Summary:</h3>
+        <p>{{ product.summary }}</p>
+
+    <div class="button-container">
+        <button type="button" class="button-template"><a href="{% url 'SW_store' %}">Back</a></button>
+    </div>
+</div>
+{% endblock %}

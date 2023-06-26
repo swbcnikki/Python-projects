@@ -1,0 +1,20 @@
+{% extends "IceHockey_base.html" %}
+{% load static %}
+{% block title %}Login Page{% endblock %}
+{% block header %}Login Page{% endblock %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container bg-light py-5 mt-5" style="border-radius: 10px">
+	<h1 class="text-info px-3">Register</h1>
+	<form method="POST" class="px-3">
+		{% csrf_token %}
+		{{ register_form|crispy }}
+		<button class="btn btn-info" type="submit">Register</button>
+	</form>
+	<p class="text-center text-info">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+
+{% endblock %}

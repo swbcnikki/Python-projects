@@ -1,0 +1,13 @@
+{% extends "SciFiWatchlist/SciFiWatchlist_base.html" %}
+{% load static %
+{% block title %}Edit Movies {% endblock %}
+{% block content %}
+<h1>Please update the information you would like to change:</h1>
+<div>
+    <form method="POST" id="movie-form">
+        {% csrf_token %}
+        {{form.as_p }}
+        <button id="edit-button" type="submit" name="add-movie">Save Changes</button>
+    </form>
+</div>
+{% endblock %}

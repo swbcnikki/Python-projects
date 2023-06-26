@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<link rel= "stylesheet" href="{% static '/css/journal_layout.css' %}">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+		<title>{% block title%}My Journal{% endblock %}</title>
+	</head>
+
+	<div class="topnav">
+  <a href="{% url 'journal_home' %}">Home</a>
+  <a href="{% url 'journal_create' %}">Create</a>
+  <a href="{% url 'journal_read' %}">Read</a>
+  <a href="{% url 'journal_api' %}">API</a>
+  <a href="{% url 'journal_bs' %}">Beautiful Soup</a>
+  <a href="{% url 'journal_save_api' 1000 %}">Saved API</a>
+</div>
+	<body id="body">
+<div class="content-container-container">
+	<div class="content-container">
+		{% block content %}
+		{% endblock %}
+	</div>
+</div>
+
+
+
+	</body>
+</html>

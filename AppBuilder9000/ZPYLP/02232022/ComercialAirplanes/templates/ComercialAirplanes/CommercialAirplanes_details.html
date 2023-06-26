@@ -1,0 +1,27 @@
+{%extends "ComercialAirplanes_base.html"%}
+
+{% block title %}Details{% endblock %}
+
+
+{% block content %}
+<div>
+    <div>
+        <table class="description-width">
+            <tr>
+                <th>Propulsion</th>
+                <th>Manufacture</th>
+                <th>AircraftType</th>
+                <th>ModelNumber</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>{{ data.Propulsion }}</td>
+                <td>{{ data.Manufacture }}</td>
+                <td>{{ data.AircraftType }}</td>
+                <td>{{ data.ModelNumber }}</td>
+                <td>{{ data.description }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% endblock %}

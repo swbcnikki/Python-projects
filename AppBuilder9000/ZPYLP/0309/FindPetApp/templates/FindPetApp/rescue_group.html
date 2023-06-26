@@ -1,0 +1,51 @@
+{% extends "find_pet_base.html" %}
+{% load static %}
+
+{% block title %}Rescue Group{% endblock %}
+{% block content %}
+<div id="available_bg">
+</div>
+
+    <div class="apply_title">
+        <p id="applicant_title">From RescueGroups.org</p>
+        <p class="title_caption">These friends are ready to go home!</p>
+    </div>
+
+    <div class="row">
+
+            <div class="listing_container">
+                {% for names, species, breeds, sexes, descriptions, pet_pictures in pet_list %}
+            <div class="header_container2">
+                <p class="container_header">{{ names }}</p>
+            </div>
+            <table class="available_table">
+                <tr class="table_heading">
+					<th>Name</th>
+                    <th>Animal</th>
+					<th>Breed</th>
+					<th>Sex</th>
+				</tr>
+                <tr>
+					<td>{{ names }}</td>
+                    <td>{{ species}}</td>
+					<td>{{ breeds }}</td>
+					<td>{{ sexes }}</td>
+                </tr>
+            </table>
+            <table class="available_table">
+                <tr>
+                    <th>Photo</th>
+                    <th id="description_heading">Description</th>
+                </tr>
+                <tr>
+                    <td><img src={{pet_pictures}} alt="No Picture Provided"></td>
+                    <td id="table_description">{{ descriptions }}</td>
+                </tr>
+            </table>
+
+            {% endfor %}
+        </div>
+
+
+    </div>
+{% endblock %}

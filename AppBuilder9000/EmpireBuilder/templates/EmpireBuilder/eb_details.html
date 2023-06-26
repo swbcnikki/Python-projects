@@ -1,0 +1,26 @@
+
+{% extends 'eb_base.html' %}
+
+{% block title %}A Scenic Route{% endblock %}
+
+{% block header %}Rider details:{% endblock %}
+
+{% block content %}
+
+    <p>
+        First_name: {{ rider.first_name }}<br>
+        Last_name: {{ rider.last_name }}<br>
+        Date: {{ rider.travelDate }}<br>
+        Accommodation: {{ rider.accommodation }}<br>
+        Email: {{ rider.email }}<br>
+        Phone: {{ rider.phone }}<br>
+        Guests: {{ rider.guests }}<br>
+    </p>
+
+<button><a href="{% url 'eb_created' %}">Go Back</a></button>
+<button><a href="{% url 'eb_edit' rider.id %}">Edit Reservation</a></button>
+<button><a href="{% url 'eb_delete' rider.id %}">Delete Reservation</a></button>
+
+{{ rider.as_p }}
+
+{% endblock %}

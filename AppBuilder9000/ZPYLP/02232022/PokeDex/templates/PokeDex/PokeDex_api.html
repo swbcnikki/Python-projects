@@ -1,0 +1,35 @@
+{% extends "PokeDex/PokeDex_base.html" %}
+{% load static %}
+
+{% block title %} More Info {% endblock %}
+
+{% block header %}  {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/api.css' %}">
+<div class="api-container" style="margin-top: 70px;">
+    <h1>Pokémon Info</h1>
+    <br>
+    <form method="post" action="{% url 'more_info' %}">
+        {% csrf_token %}
+        <input type="text" name="pokemon" placeholder="Enter Pokémon name">
+        <input type="submit" value="Search">
+        <br>
+        {% for pokemon in complete_info %}
+            <h1>Results:</h1><br>
+            <h2>Pokémon Name:</h2>
+            <h4 style="padding-left: 10px;padding-top: 10px;">{{ pokemon.value }}</h4> <!-- This gets the name value from our views -->
+            <br>
+            <img src="{{ pokemon.front_picture }}" width="400" height="400" style="margin-left: 695px; position: fixed;"> <!-- this is how we get the image and style it on the page-->
+            <h2>Pokémon Type:</h2>
+            <h4 style="padding-left: 10px;padding-top: 10px;">{{ pokemon.species }}</h4> <!-- here we get the type of pokemon and we use the .0 to get the actual value we want-->
+            <br>
+            <br>
+            <h2>Pokémon Abilities:</h2>
+            <h4 style="padding-left: 10px;padding-top: 10px; padding-bottom: 50px;">{{ pokemon.ability }}</h4>
+            <button disabled style="margin-left: 695px; position: fixed; color: white;">This Pokémon has automatically been added to your PokeDex!</button>
+        {% endfor %}
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% load static %}
+
+{% include "hotsprings_navbar.html" %}
+
+{% block content %}
+
+    <h1 class="heading">Add a New Hot Springs to Our List:</h1>
+
+        <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="frmBtn_container">
+                <input type="submit" class="btn" id="btn" value="Add Hot Springs" name="Add_HotSprings">
+                <a href="{% url 'hotsprings_home' %}"><button type="button" class="btn" id="btn" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

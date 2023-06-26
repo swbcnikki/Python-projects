@@ -1,0 +1,22 @@
+{% extends "ComicBooks/ComicBooks_base.html" %}
+{% load static %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+
+<ul>
+    <br>
+    <br>
+    <h3><u>Comics for sale.</u></h3>
+        {% for Cbooks in comic %}
+            <li class="list-group"><a href="{% url 'Cominfo' Cbooks.pk %}">{{ Cbooks.name|lower }}</li>
+        {% endfor %}
+
+</ul>
+
+
+
+
+{% endblock %}

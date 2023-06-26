@@ -1,0 +1,39 @@
+<!-- Bootstrap Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home' %}">Back to Main App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'MusicApp_home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'MusicApp_artist_index' %}">Artists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'MusicApp_song_index' %}">Songs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'MusicApp_album_index' %}">Albums</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'MusicApp_top_artists_chart' %}">Top Artists</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Contribute +
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{% url 'MusicApp_create_artist' %}">Add Artist</a></li>
+            <li><a class="dropdown-item" href="{% url 'MusicApp_create_song' %}">Add Song</a></li>
+            <li><a class="dropdown-item" href="{% url 'MusicApp_create_album' %}">Add Album</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

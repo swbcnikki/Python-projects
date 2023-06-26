@@ -1,0 +1,30 @@
+{% extends "StatCheck/StatCheckBASE.html" %}
+{% load static %}
+{% block title %}StatChecked{% endblock %}
+
+
+{% block header %}
+    <h1>StatCheckDisplay</h1>
+{% endblock %}
+
+{% block content %}
+
+<div class="display">
+  <div class="col-sm-8">
+
+      {% for StatCheckDISPLAY in player_display %}
+
+       <td><a href="{% url 'StatCheckDETAIL' StatCheckDISPLAY.pk %}">Details</a></td>
+
+      <p>{{ StatCheckDISPLAY.first_name }}</p>
+      <p>{{ StatCheckDISPLAY.last_name }}</p>
+      <p>{{ StatCheckDISPLAY.what_number }}</p>
+      <p>{{ StatCheckDISPLAY.strong_feet }}</p>
+      <p>{{ StatCheckDISPLAY.what_position }}</p>
+
+<hr>
+
+    {% endfor %}
+</div>
+</div>
+{% endblock content %}

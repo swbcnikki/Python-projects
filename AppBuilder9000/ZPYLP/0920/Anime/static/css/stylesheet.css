@@ -1,0 +1,239 @@
+/***** General Page Styling *****/
+
+/* Set the height of the body to the window height. */
+html {
+    height: 60%;
+}
+
+body {
+	font-family: 'Times New Roman', sans-serif;
+    font-weight: bold;
+	text-align: center;
+    background-image: url('/static/images/MyHero.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: screen;
+    background-color: rgba(127, 127, 192, 0.3);
+}
+
+/* The body has this class until page load, at which time it's removed with JavaScript.
+   This ensures that the page and all its contents are hidden until the page fully loads. */
+body.fade-out {
+	opacity: 0;
+	transition: none;
+}
+/***** End General Page Styling *****/
+
+/**** Nav Bar Styling ****/
+
+/* Set the height of the nav over all other content, and fix it at the top of the page, over the full width. */
+nav {
+   z-index: 5;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+}
+
+/* The nav items are set to have no bullets. */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(84, 88, 117);
+}
+
+/* All list items are set to go left to right, and have some padding on all sides. */
+li {
+  float: left;
+  padding: 14px 16px;
+}
+
+/* Set the color to white, center in the block, with no underline, and ensure a smooth transition after mouseout. */
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .3s ease-in-out, color .3s ease-in-out;
+}
+
+/* On hover, smooth transition to blue and 1.4 times the size. */
+li a:hover {
+  color: rgb(168, 176, 234);
+  transform: scale(1.4);
+  transition: transform .3s ease-in-out, color .3s ease-in-out;
+  z-index: 7;
+}
+/**** End Nav Bar Styling ****/
+
+/**** General Body Styling ****/
+
+/* Set the height just under the nav bar, and slightly transparent background. */
+header {
+    z-index: 6 !important;
+    margin-top: 48px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: rgba(60, 100, 100, 0.7);
+}
+
+main {
+    margin-bottom: 2rem !important;
+}
+
+/* Ensure no underline to anchor tags. */
+a:hover {
+  text-decoration: none;
+}
+
+/* Ensure a smooth transition back to no shadow on mouseout. */
+.col .card {
+  box-shadow: 0px 0px 0px 0px #000;
+  transition: transform 0.3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+/* Ensure a smooth transition back to 1 scale on mouseout. */
+.col .card-title {
+    transform: scale(1);
+    transition: transform 1.5s cubic-bezier(0.1, -0.5, 0.735, 0.045);
+}
+
+/* When mouse pointer is over a card, simulate picking it up - add shadow and enlarge */
+.col .card:hover {
+  cursor: pointer;
+  transform: scale(1.12);
+  box-shadow: 8px 0px 8px 0px #000;
+  transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+  z-index: 5;
+}
+
+/* When the card is picked up, enlarge the title more than the card */
+.col .card:hover .card-title {
+    transform: scale(1.2);
+    transition: transform 1.5s cubic-bezier(0.1, 0.885, 0.32, 2);
+}
+
+/* Give the card curved corners, a slightly transparent background, and hide all contents that go beyond the border of the card. */
+.card {
+	border-radius: 25px;
+	background: rgba(255, 255, 255, .7);
+	overflow: hidden;
+}
+
+/* This is the div for the edit (pencil) link.  It just needs to be to the left of the favorite (heart) link. */
+.edit {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    z-index: 5;
+}
+
+/* Double the size of the pencil icon, and make it about half transparent. */
+.edit svg {
+    transform: scale(2);
+    opacity: 40%;
+    transition: opacity 1s;
+}
+
+/* On hover, make the pencil icon fully opaque. */
+.edit svg:hover {
+    cursor: pointer;
+    transition: opacity 1s;
+    opacity: 100%;
+
+}
+
+/* Put the favorite (heart) icon in the top right of the card, and double its size. */
+.favorite {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 5;
+    transform: scale(2);
+}
+
+/* Set the color and transparency of the icon to slightly transparent red. */
+.toggleFavorite {
+    color: rgba(255, 0, 0, .7);
+    transition: color .5s;
+}
+
+/* On hover, set the cursor to pointer, and transition to full opacity over half a second. */
+.toggleFavorite:hover {
+    cursor: pointer;
+    color: rgba(255, 0, 0, 1);
+    transition: color .5s;
+}
+
+/* These are the form tables on the create and edit templates.
+   This centers them, gives them a slight transparency, and curved corners. */
+table {
+    margin: auto auto;
+	background: rgba(255, 255, 255, .7);
+	border-radius: 25px;
+}
+
+/* In the top right cell, give a little padding between the top of the cell and the side of the form, and bottom-align the text field. */
+tr:first-of-type th, tr:first-of-type td {
+    padding-top: 10px;
+    vertical-align: bottom !important;
+}
+
+/* In the bottom right cell, give a little padding on the bottom between the cell and the side of the form. */
+tr:last-of-type td, tr:last-of-type th {
+    padding-bottom: 10px;
+}
+
+/* First of type is really unnecessary here because there's only one in each row,
+   but this gives some padding between the first column and the side of the form. */
+tr th:first-of-type {
+    padding-left: 10px;
+}
+
+/* Last of type is really unnecessary here because there's only one td in each row,
+   but this gives some padding between the last column and the side of the form. */
+tr td:last-of-type {
+    padding-right: 10px;
+    vertical-align: top !important;
+}
+
+/* Align right all the labels. */
+th {
+    text-align: right;
+}
+
+/* Make all the text fields the same size as the textarea. */
+input {
+    width: 100%;
+}
+
+/* One of these _should_ move the Favorite checkbox to the left of the cell but no... */
+td input[type=checkbox] {
+    margin: auto auto auto 0;
+    text-align: left;
+}
+/**** End General Body Styling ****/
+
+/**** Footer Styling ****/
+
+/* Set full width at the bottom of the window and ensure it's higher than everything else. */
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #545875;
+   color: white;
+   text-align: center;
+   z-index: 6;
+}
+
+/* Align center the footer paragraph. */
+footer p {
+    margin: auto auto;
+}
+/**** Footer Styling ****/

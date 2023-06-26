@@ -1,0 +1,13 @@
+{% extends 'MagicTheGathering/MagicTheGathering_base.html' %}
+{% block title%}Add New Card{% endblock %}
+{% block content %}
+			<div class="cardaddstyling">
+				<form method="POST"> <!-- Replace this with the Django Form -->
+					<h2> Add a Card:</h2>
+					{% csrf_token %}
+					{{form.as_p}}
+					<button id="new-Card-button" type="submit" name="Save_Card">Add Card</button>
+				</form>
+				<br>
+			</div>
+{% endblock %}

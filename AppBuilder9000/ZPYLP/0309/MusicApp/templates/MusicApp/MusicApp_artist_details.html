@@ -1,0 +1,46 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+
+{% block title %}MusicApp{% endblock %}
+
+{% block header %}Artist Details{% endblock %}
+
+{% block content %}
+
+<div class="Details">
+    <div class="details-container">
+        {% csrf_token %}
+         <h1>{{ artists.artist_name }} <a href="{% url 'MusicApp_edit_artist' artists.pk %}"><img src="/static/MusicApp/images/edit.png" class="edit-img"></a></h1>
+        <div>
+            <span class="details">
+                <h3>Group or Solo:</h3>
+                <p>{{ artists.group_or_solo }}</p>
+            </span>
+            <span class="details">
+                <h3>Genre:</h3>
+                <p>{{ artists.genre }}</p>
+            </span>
+            <span class="details">
+                <h3>Year Formed:</h3>
+                <p>{{ artists.year_formed }}</p>
+            </span>
+            <span class="details">
+                <h3>Active:</h3>
+                <p>{{ artists.active }}</p>
+            </span>
+            <span class="details">
+                <h3>Image URL:</h3>
+                <p>{{ artists.image_url }}</p>
+            </span>
+        </div>
+    </div>
+
+    <div>
+        <button type="button">
+            <a href="{% url 'MusicApp_artist_index' %}">Return to Artists</a>
+        </button>
+    </div>
+
+</div>
+
+
+{% endblock %}

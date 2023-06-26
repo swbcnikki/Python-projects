@@ -1,0 +1,24 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+
+<header class="page_header">
+    <h1>Search Composition Results</h1>
+</header>
+
+{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}
+
+<p class="table-main">Not yet implemented</p>
+
+
+{% endblock %}
+
+

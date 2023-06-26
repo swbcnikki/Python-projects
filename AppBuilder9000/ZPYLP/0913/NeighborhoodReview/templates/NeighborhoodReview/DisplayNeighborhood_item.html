@@ -1,0 +1,39 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% block title %}List all neighborhoods{%  endblock %} }
+
+{% block header %}Neighborhood Summary{% endblock %}
+
+{% block content %}
+
+<h2 style = "text-align: center">Selected Neighborhood</h2>
+                <table id ="review-table" >
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Average Rating</th>
+                    </tr>
+
+
+
+                    <tr>
+                        <td>{{ neigh_item.name }}</td>
+                        <td>{{ neigh_item.location }}</td>
+                        <td>{{ avg_rating.rating__avg }}</td>
+                    </tr>
+
+
+               </table>
+
+    <div class = form-btn-container>
+
+
+    <div class = "frmBtn_container">
+      <button class ='btn btn-primary' style ="margin-top:10px; width:75px">  <a href = "../edit_neighborhood/" style = "color:white;"> Edit </a> </button>
+        <button class ='btn btn-primary' style ="margin-top:10px; width:75px"> <a href ="../DeleteNeighborhood/" style = "color:white;" >Delete </a></button>
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "HappyHour/HH_Base.html" %}
+
+{% load static %}
+
+{% block title %}Happy Hours {%  endblock %} }
+
+{% block header %} Reviews {% endblock %}
+
+{% block content %}
+ <h3>Make an Edit</h3>
+
+        <form method ='POST'  >
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type = "submit">
+        </form>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+    {% extends "WarriorStats/stats_Base.html" %}
+
+
+    {% load static %}
+
+    {% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}GSW Player Details{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale-1.0">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/WarriorStatsStyle.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    </head>
+
+    <header class="header-title" style="text-align: center;">
+        <h1>{% block header %}Player Details{% endblock header %}</h1>
+    </header>
+
+
+    <body>
+        <div class="container">
+            <h1>{{ text }}</h1>
+                <h2>{{ text }}</h2>
+                <center><ul>
+                    <li>Name: {{ players.Name }}</li>
+                    <li>Position: {{ players.Position }}</li>
+                    <li>Points Per Game: {{ players.Points_Per_Game }}</li>
+                    <li>Rebounds Per Game: {{ players.Rebounds_Per_Game }}</li>
+                    <li>Assists Per Game: {{ players.Assists_Per_Game }}</li>
+                </ul></center>
+        </div>
+    </body>
+</html>
+
+    {% endblock content %}
+

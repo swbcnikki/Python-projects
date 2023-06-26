@@ -1,0 +1,16 @@
+{% extends 'KeyMaster_base.html' %}
+{% block title %}Add Game to List{% endblock %}
+{% block content %}
+    <h3>Wish List Game Details</h3>
+    <div class="GameContainer">
+
+        <strong>{{ wish.game_title }}</strong>
+        <ul class="GameList">
+        Genre: <li>{{ wish.genre|capfirst }}</li>
+        Purchased from: <li>{{ wish.store_name|capfirst }}</li>
+        Release Date:<li>{{ wish.release_date }}</li>
+        </ul>
+
+        </form>
+    </div>
+{% endblock %}

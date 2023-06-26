@@ -1,0 +1,32 @@
+                  {% extends "nba-base.html" %}
+
+{% block title %}Save Player{% endblock %}
+
+{% block header %}Player Saved To Favorites{% endblock %}
+
+{% block content %}
+    <div class="container-main">
+        <br>
+        <table id="myTable">
+            <tr class="headerRow">
+                <th>Player</th>
+                <th onclick="sortTable(1)">DRebs</th>
+                <th onclick="sortTable(2)">Steals</th>
+                <th onclick="sortTable(3)">Blocks</th>
+                <th onclick="sortTable(4)">Total Def Points</th>
+            </tr>
+
+            <tr>
+                <td class="left">{{ playerName }}</td>
+                <td class="center">{{ defRebs }}</td>
+                <td class="center">{{ steals }}</td>
+                <td class="center">{{ blocks }}</td>
+                <td class="right">{{ total }}</td>
+            </tr>
+        </table>
+        <br>
+        <a href="{% url 'b-ref' %}"><button class="lilBtn btnRight">OK</button></a>
+
+    </div>
+
+{% endblock %}

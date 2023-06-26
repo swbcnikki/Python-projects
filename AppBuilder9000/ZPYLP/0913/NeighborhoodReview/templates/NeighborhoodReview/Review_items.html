@@ -1,0 +1,39 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% block title %}List all Reviews{%  endblock %} }
+
+{% block header %}Review Summary{% endblock %}
+
+{% block content %}
+
+<h2 style = "text-align: center">Review List</h2>
+                <table id ="review-table" >
+                    <tr>
+                       <th>Review ID</th>
+                        <th>Review Date</th>
+                        <th>Comment</th>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="left">{{get_item.id  }}</td>
+                        <td class="left">{{get_item.date}}</td>
+                        <td class ="left">{{ get_item.comment  }}</td>
+                    </tr>
+
+
+               </table>
+
+    <div class = "form-btn-container">
+
+
+    <div class = "btn-block">
+        <button><a href = "../edit_review/" > Edit </a></button>
+        <a href ="../DeleteReview/" >Delete </a>
+
+    </div>
+</div>
+
+
+{% endblock %}

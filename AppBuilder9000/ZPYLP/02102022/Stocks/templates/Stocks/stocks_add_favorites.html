@@ -1,0 +1,21 @@
+{% extends "Stocks/stocks_base.html" %}
+
+{% block title %}Stocks{% endblock %}
+
+{% block header %}Add Favorites{% endblock %}
+
+{% block content %}
+    <div class="center-txt">
+        <form method="POST" action="{% url 'add_favorites' %}">
+            <div>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div>
+                <button type="submit" name="Save_Item">Submit</button>
+                <a href="{% url 'stocks_favorites' %}"><button type="button" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

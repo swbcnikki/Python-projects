@@ -1,0 +1,29 @@
+{% extends 'SportsCars_base.html' %}
+{% block title %}Supercars{% endblock %}
+{% block content %}
+			<h2>SUPERCARS</h2>
+
+			<table class="table table-responsive" id ="Supercars-table">
+				<tr id="headerRow">
+					<th>Year</th>
+					<th>Make</th>
+					<th>Model</th>
+					<th>Engine</th>
+					<th>Horsepower</th>
+					<th>Top Speed</th>
+				</tr>
+				{% for CarEntries in sportscar %}
+				<tr>
+					<td class="center">{{ CarEntries.Year }}</td>
+					<td class="center">{{ CarEntries.Make }}</td>
+					<td class="left"><a href="{% url 'CarDetails' CarEntries.pk %}">{{ CarEntries.Model }}</a></td>
+					<td class="right">{{ CarEntries.Engine }}</td>
+					<td class="right">{{ CarEntries.Horsepower }}</td>
+					<td class="right">{{ CarEntries.Top_Speed }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+
+			<br><br>
+{% endblock %}
+

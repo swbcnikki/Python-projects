@@ -1,0 +1,43 @@
+<!-- Extends from the base html -->
+{% extends "MetalGearApp/MetalGearApp_Base.html" %}
+
+<!-- Page title -->
+{% block title %}Metal Gear App{% endblock %}
+
+{% block content %}
+
+<h2 style="background-color: white; text-align: center;">{{ dDog.codePrefix }} {{ dDog.codeSuffix }}</h2>
+
+<div class="container-details bg-white">
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-secondary">First Name</span>
+            <p class="detail-p">{{ dDog.fName }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-secondary">Last Name</span>
+            <p class="detail-p">{{ dDog.lName }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-secondary">Gender</span>
+            <p class="detail-p">{{ dDog.gender }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-secondary">Specialization</span>
+            <p class="detail-p">{{ dDog.specialization }}</p>
+        </div>
+
+        <div class="col">
+            <span class="badge bg-secondary">Email</span>
+            <p class="detail-p">{{ dDog.email }}</p>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

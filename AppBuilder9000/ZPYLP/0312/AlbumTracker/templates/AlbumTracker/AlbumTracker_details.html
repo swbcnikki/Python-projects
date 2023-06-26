@@ -1,0 +1,35 @@
+{% extends "AlbumTracker/AlbumTracker_base.html" %}
+
+{% block title %}Album Details{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1 class="display-4 text-center">The Albums</h1>
+		<p class="lead text-center">A list of everything you've added!</p>
+	</div>
+</div>
+
+<div class="container" id="grid-cont">
+	<div class="row" id="row-extra">
+		<div class="col" id="col1-extra">Album Title</div>
+		<div class="col" id="col2-extra">Artist</div>
+		<div class="col-3 col-sm-3 col-md-2 col-lg-1 col-xl-1" id="col3-extra">Date</div>
+		<div class="col-6 d-none d-sm-none d-lg-block" id="col4-extra">Notes</div>
+	</div>
+
+	{% for album in albums %}
+
+	<div class="row" id="row-content">
+		<div class="col">{{ album.title }}</div>
+		<div class="col">{{ album.artist }}</div>
+		<div class="col-3 col-sm-3 col-md-2 col-lg-1 col-xl-1" id="date-font">{{ album.date_listened }}</div>
+		<div class="col-6 d-none d-sm-none d-lg-block">{{ album.notes }}</div>
+	</div>
+
+	{% endfor %}
+
+</div>
+
+{% endblock %}

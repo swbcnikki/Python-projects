@@ -1,0 +1,36 @@
+{% extends "Books/Books_Base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %} Book Api{% endblock %}
+
+
+{% block content %}
+<h1 class="fancy">Book Reviews generated from an API!</h1>
+<table class="book-tables">
+    <thead>
+    <tr>
+        <td>Title</td>
+        <td>Author</td>
+        <td>Rating</td>
+        <td>Description</td>
+
+    </tr>
+
+    </thead>
+    <tbody>
+    {% for title, author, rating, description in zipped_list %}
+    <tr>
+        <td style='font-size:70%'>{{ title }}</td>
+        <td style='font-size:70%'>{{ author }}</td>
+        <td style='font-size:70%'>{{ rating }}</td>
+        <td style='font-size:70%'>{{ description }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

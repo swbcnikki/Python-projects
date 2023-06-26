@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+/* background image styling*/
+body {
+    background-image: url("../images/cars.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* style for title of page*/
+.header-title {
+	padding: 5px 20px;
+	text-align: center;
+	margin-top: 5%;
+}
+/* style the navbar on top of page*/
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+/*list items side by side */
+ul.navbar li {
+    float: left;
+    text-decoration: none;
+}
+/* style the links*/
+ul.navbar li a {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 15px 18px;
+    text-decoration: none;
+    font-size: 18px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}

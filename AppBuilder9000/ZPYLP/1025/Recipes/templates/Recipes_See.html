@@ -1,0 +1,39 @@
+{% extends "Recipes_Base.html" %}
+{% load static %}
+{% block title %}Recipes{% endblock %}
+
+{% block header %}
+                <h1>View Recipes</h1>
+                <p>You can view the collection of recipes here</p>
+{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr id="top">
+            <th>Type</th>
+            <th>User Name</th>
+            <th>Recipe Name</th>
+            <th>Main Ingredient</th>
+            <th>Main Ingredient 2</th>
+            <th>Steps</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes %}
+        <tr id="">
+            <td>{{ recipe.type }}</td>
+            <td>{{ recipe.user_name }}</td>
+            <td>{{ recipe.recipe_name }}</td>
+            <td>{{ recipe.main_ingredient }}</td>
+            <td>{{ recipe.main_ingredient_2 }}</td>
+            <td>{{ recipe.steps }}</td>
+            <td><a href="{% url 'Recipes_Details' recipe.pk %}">View Details</a></td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

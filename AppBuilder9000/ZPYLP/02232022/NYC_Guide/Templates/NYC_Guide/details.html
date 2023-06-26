@@ -1,0 +1,22 @@
+{% extends 'nyc_base.html' %}
+
+{% block title%}Details{% endblock %}
+
+	{% block content %}
+			<h1>{{ rest_request.restaurant_name }}</h1>
+
+			<table class="details-table">
+				<tr>
+					<th>Cuisine</th>
+					<th>Neighborhood</th>
+					<th>Address</th>
+					<th>Price Range</th>
+				</tr>
+				<tr>
+					<td>{{ rest_request.cuisine }}</td>
+					<td>{{ rest_request.neighborhood }}</td>
+					<td>{{ rest_request.address }}, {{ rest_request.borough }}, {{ rest_request.state }}  {{ rest_request.zip_code }}</td>
+					<td>{{ rest_request.price_range }}</td>
+				</tr>
+			</table>
+	{% endblock %}

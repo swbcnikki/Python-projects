@@ -1,0 +1,65 @@
+{% extends "PetAdoption_base.html" %}
+{% load static %}
+
+{% block title %}Portland Animals for Adoption{% endblock %}
+
+{% block header %}Portland Animals for Adoption{% endblock %}
+
+{% block content %}
+
+<div class="borderbox">
+    <h3>Search by Species</h3>
+        <form method="POST" action="{% url 'pet_adoption_portland' %}">
+        {% csrf_token %}
+        <div class="my-menu">
+            <label for="species" style="color: white">Choose a species:</label>
+            <select name="species" id="species">
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Rabbit">Rabbit</option>
+                <option value="Bird">Bird</option>
+            </select>
+        </div>
+        <br>
+        <button type="submit" value="Submit" class="btn btn-dark btn-lg btn-block w-25 mx-auto">Submit</button>
+        </form>
+</div>
+<br><br>
+<h2 class="text-center" style="color: white">Results</h2>
+
+<!-- bootstrap cards for displaying search data from api -->
+{% for animal in animals_avail %}
+<div class="row min-vw-50 justify-content-md-center">
+    <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+              ADOPT ME!
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ animal.name|capfirst }}</h5>
+            <img class="card-img-top" src="{{ animal.photo }}" alt="animal">
+            <p class="card-text">{{ animal.description }}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Breed: {{ animal.breed }}</li>
+                    <li class="list-group-item">Color: {{ animal.color }}</li>
+                    <li class="list-group-item">Size: {{ animal.size }} </li>
+                    <li class="list-group-item">Sex: {{ animal.sex }}</li>
+                    <li class="list-group-item">
+                        <form action="{% url 'pet_adoption_add' animal.id %}" method="POST">
+                            {% csrf_token %}
+                            <input type="submit" value="Add Pet to List" />
+                        </form>
+                    </li>
+                </ul>
+          </div>
+          <div class="card-footer text-muted">
+            {{ animal.species }}
+          </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% endfor %}
+
+
+{% endblock %}

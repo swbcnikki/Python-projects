@@ -1,0 +1,19 @@
+{% extends 'Camping_Supplies_Base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block header %}Camping Supplies{% endblock %}
+
+
+{% block content %}
+<h1 class="Edit">Edit Camping Supplies</h1>
+
+    <div class="container">
+        <form method="POST" class="TentForm">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="frmBtn_container">
+                <button id="edit_site" type="submit" value="Save Edit" name="save_site">Save</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

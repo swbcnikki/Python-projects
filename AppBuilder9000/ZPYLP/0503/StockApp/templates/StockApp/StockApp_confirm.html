@@ -1,0 +1,22 @@
+{% extends 'StockApp/StockApp_base.html' %}
+
+{% block title %}Add A Stock{% endblock %}
+
+
+{% block content %}
+
+
+    <form method="POST" action="" >
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you would like to delete "{{this_stock.name}}" from the database?</p>
+
+        {{ this_stock.as_p }}
+
+        <input type="submit" value="Delete">
+        <button type="submit"><a href="{%url 'StockApp_home'  %}"> cancel</a></button>
+
+    </form>
+
+
+{% endblock %}

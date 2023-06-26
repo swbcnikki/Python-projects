@@ -1,0 +1,35 @@
+{% extends 'MuayThai/MuayThai_base.html' %}
+{% load static %}
+
+{% block title %}Muay Thai Fighters API{% endblock %}
+
+{% block content %}
+
+<h1>THE RANK CHAMPIONS</h1>
+<div class="container">
+    <table class="table table-hover table-striped text-center">
+        <thead class="thead-dark text-light">
+        <tr>
+            <th>Fighter:</th>
+            <th>Weight Class:</th>
+            <th>Rankings:</th>
+        </tr>
+        </thead>
+        <tbody class="bg-light">
+         <!-- use a for loop for the lists in the zip function -->
+            {% for weight, fighter_rank, fighter_name in zipped_list %}
+            <tr class="text-dark font-weight-bolder">
+                <td>{{ fighter_name }}</td>
+                <td>{{ weight }}</td>
+                <td>{{ fighter_rank }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+{% endblock %}

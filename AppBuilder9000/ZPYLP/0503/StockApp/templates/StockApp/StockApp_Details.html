@@ -1,0 +1,30 @@
+{% extends 'StockApp/StockApp_base.html' %}
+
+{% block title %}Details{% endblock %}
+
+
+
+{% block content %}
+<div>
+    <ul>
+        <div id="content" class="grid-container" >
+
+            <div id="content" >
+            <br>{% csrf_token %}
+                <ul>Stock: {{ this_stock.name }}</ul>
+                <ul>Market Cap:{{ this_stock.market_cap }}</ul>
+                <ul>Time Checked: {{ this_stock.time_stamp }}</ul>
+                <ul>Price: {{ this_stock.price }}</ul>
+                <ul>ID: {{ this_stock.pk }} </ul>
+                <form method="POST" action="" >
+                    <button><a href="{%url 'StockApp_edit' pk=this_stock.pk %}"> Edit</a></button>
+                    <button><a href="{%url 'StockApp_confirm' pk=this_stock.pk %}"> Delete</a></button>
+                <br>
+                </form>
+            </div>
+
+        </div>
+    </ul>
+</div>
+
+{% endblock %}

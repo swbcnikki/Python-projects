@@ -1,0 +1,32 @@
+{% extends "EdTech/EdTech_Base.html" %}
+{% load static %}
+{% block title %} Educational Technology Details {% endblock %}
+
+{% block header %}
+    <h1>Resource Details</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <table id="table">
+            <thead>
+                <tr id="th">
+                    <th>Name</th>
+                    <th>URL</th>
+                    <th>Free Version</th>
+                    <th>Key Features</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="td">
+                    <td>{{ details.name }}</td>
+                    <td>{{ details.URL }}</td>
+                    <td>{{ details.free_version }}</td>
+                    <td>{{ details.key_features }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="{% url 'EdTech_Edit' details.pk %}"><button>Edit</button></a>
+        <a href="{% url 'EdTech_Delete' details.pk %}"><button>Delete</button></a>
+    </div>
+{% endblock %}

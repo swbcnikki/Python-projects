@@ -1,0 +1,40 @@
+/*=====================
+    General Styling
+=====================*/
+/* this styles and resizes the background image on home.html */
+body {
+    background-image: url('../images/bg_img.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #bfbfc0;
+    margin-bottom: 5vh;
+}
+
+#footer_text {
+    margin: auto;
+}
+
+h1 {
+    color: white;
+}
+
+.add_cocktail_form {
+	position: relative;
+	width: 30vw;
+	margin-top: 10vh;
+    margin-left: 35vw;
+    margin-right: 35vw;
+	color: white;
+}
+
+#test {
+    background-color: rgba(162,162,162,0.9);
+    color: black;
+    text-align: center;
+}
+
+.display-4 {
+    color: black
+}

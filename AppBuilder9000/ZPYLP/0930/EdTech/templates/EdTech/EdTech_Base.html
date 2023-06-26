@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/EdTech_stylesheet.css' %}">
+    </head>
+
+    <body class="fade-out">
+    <!--NAV BAR-->
+        <nav>
+            <ul>
+                    <li><a href="{% url 'EdTech_Home' %}">Home</a></li>
+                    <li><a href="{% url 'EdTech_Create' %}">Add Resource</a></li>
+                    <li><a href="{% url 'EdTech_Entries' %}">Library</a></li>-
+            </ul>
+        </nav>
+    <!--NAV BAR-->
+
+    <!--HEADER-->
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    <!--END HEADER-->
+
+    <!--BODY-->
+        <main class="mx-4">
+            {% block content %} {% endblock %}
+            <br>
+        </main>
+    <!--END BODY-->
+
+    <!--FOOTER-->
+    <footer class="align-middle">
+        <p>Educational Technology Library &copy;2021 | By Amanda Bull</p>
+    </footer>
+    <!--END FOOTER-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/stylesheet.js' %}"></script>
+    </body>
+</html>

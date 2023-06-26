@@ -1,0 +1,18 @@
+{% extends "wordnerd/WordNerd_base.html" %}
+
+{% block content %}
+<!--once a word name is clicked the name and the corresponding details are listed-->
+<div id="details_box">
+{% for word in word_get %}
+    Word Name: {{ word.word_name }} <br>
+
+    Definition: {{ word.word_definition }} <br>
+
+    Sentence Example: {{ word.word_in_a_sentence }} <br>
+
+    Parent Language(s): {{ word.parent_languages }}<br>
+
+    Where You Heard The Word: {{ word.where_did_you_find_the_word }} <br>
+{% endfor %}
+</div>
+{% endblock %}

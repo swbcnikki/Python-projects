@@ -1,0 +1,18 @@
+{% extends "SciFiWatchlist/SciFiWatchlist_base.html" %}
+{% load static %}
+{% block title %} Movies {% endblock %}
+{% block content %}
+<h1>All Titles:</h1>
+<input type="text" id="movieSearch" onkeyup="searchFunction()" placeholder="Search..." title="Enter a title..."><button id="search-button" type= "search" name="search">SEARCH!</button>
+<ul id="movieMenu">
+    {% for Movie in Movies %}
+    <li><a id="addedMovies" href="{% url 'Movie-Details' Movie.id %}">{{ Movie.FilmName|capfirst }} ({{ Movie.ReleaseYear}})</a>
+    </li>
+    <a class="function-button" href="{% url 'Update' Movie.id %}">Edit</a> <a  class="function-button" href="{% url 'Delete' Movie.id %}">Delete</a>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
+
+

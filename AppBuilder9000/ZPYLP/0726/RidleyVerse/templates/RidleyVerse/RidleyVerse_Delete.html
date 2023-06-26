@@ -1,0 +1,17 @@
+{% extends "RidleyVerse/RidleyVerse_base.html" %}
+{% load static %
+{% block title %} Remove Movie {% endblock %}
+{% block content %}
+
+
+<div>
+    <form method="POST" id="movie-form">
+        {% csrf_token %}
+        {{form.as_p }}
+        <h3>Confirm Delete Entry? </h3>
+        <button id="remove-button" type="submit">Remove</button>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "RidleyVerse/RidleyVerse_base.html" %}
+{% load static %}
+{% block title %} Add Movies {% endblock %}
+{% block content  %}
+<h1>ADD A MOVIE TO YOUR WATCHLIST!</h1>
+    <div id="add-movie-form">
+        <form method="POST" id="movie-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="new-button" type= "submit" name="add-movie">ADD IT!</button>
+        </form>
+        <br>
+    </div>
+
+{% endblock %}

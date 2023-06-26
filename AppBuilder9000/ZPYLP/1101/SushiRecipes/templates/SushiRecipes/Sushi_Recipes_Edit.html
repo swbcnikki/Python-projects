@@ -1,0 +1,18 @@
+{% extends 'SushiRecipes/Sushi_Recipes_Base.html' %}
+
+{% block title %}Add New Sushi Recipe{% endblock %}
+
+
+
+{% block content %}
+<h3>Add Your Favorite Sushi Recipe!</h3>
+
+	<div class="sushi_container">
+		<form method="POST">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button id="edit_sushi_button" type="submit" name="Edit_Recipe"> Edit </button>
+		</form>
+	</div>
+
+{% endblock %}

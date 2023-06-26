@@ -1,0 +1,15 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Edit Cryptocurrency {% endblock %}
+
+{% block header %}Edit Currency Basic Information{% endblock %}
+
+{% block content %}
+
+    <form method="POST" class="edit-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+{% endblock %}

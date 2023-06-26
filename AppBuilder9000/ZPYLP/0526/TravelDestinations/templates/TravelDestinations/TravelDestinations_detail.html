@@ -1,0 +1,19 @@
+{% extends 'TravelDestinations/TravelDestinations_base.html' %}
+{% load static %}
+{% block title %} Travel Details Here! {% endblock %}
+
+{% block content %}
+
+<div id="TravelDetails">
+    <ul style="list-style-type:circle">
+        <li> City Name: {{TravelDestinations_detail.City_Name }}</li>
+        <li> Country Name: {{TravelDestinations_detail.Country_Name }}</li>
+        <li> Activity: {{TravelDestinations_detail.Activity }}</li>
+        <li>Dates: {{TravelDestinations_detail.Travel_Date }}</li>
+    </ul>
+    <ul>id : {{TravelDestinations_detail.pk }}</ul>
+
+</div>
+
+
+{% endblock %}

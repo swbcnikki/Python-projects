@@ -1,0 +1,31 @@
+{% extends "BasketballStats_base.html" %}
+{% load static %}
+{% block title %}Basketball Stats{% endblock %}
+
+{% block header %}NBA History{% endblock %}
+
+{% block content %}
+<div id="container" class="table-responsive w-75 mx-auto">
+    <table id="table" class="table table-dark table-bordered table-hover text-center" data-toggle="table">
+        <caption>Finals MVP award was first introduced in 1969.</caption>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Champions</th>
+                <th>Runner-up</th>
+                <th>Finals MVP</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for champ in champion_list %}
+            <tr>
+                <td>{{ champ.0 }}</td>
+                <td>{{ champ.1 }}</td>
+                <td>{{ champ.2 }}</td>
+                <td>{{ champ.3 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

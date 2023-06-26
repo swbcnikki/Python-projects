@@ -1,0 +1,17 @@
+{% extends "Novels/Novels_base.html" %}
+
+{% block title %} Github Lookup {% endblock %}
+
+{% block header %} Github API {% endblock %}
+
+{% block content %}
+    <label>Enter GitHub username:</label>
+    <form method = 'get'>
+        <input type="text" name="username">
+        <button type="submit">Search on GitHub</button>
+    </form>
+    {% if user %}
+        <p>{{ user.name }} has {{ user.public_repos }} public repositories on GitHub! </p>
+    {% endif %}
+
+{% endblock %}

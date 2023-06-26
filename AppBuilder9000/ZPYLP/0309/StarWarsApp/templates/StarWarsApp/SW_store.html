@@ -1,0 +1,21 @@
+{% extends "StarWarsApp/SW_base.html" %}
+{% load static %}
+{% block title %}Dok-Ondar’s Den of Antiquities{% endblock %}
+{% block header %}Greatest prices in the galaxy{% endblock %}
+
+
+{% block content %}
+<!--displaying db items-->
+    <div class="store">
+        {% for p in products %}
+            <div class="ProductInfo">
+                Name:  <h2>{{ p.name }}</h2>
+                Item Number: <h2>{{ p.product_number }}</h2>
+                Price <h2>{{ p.product_price }}</h2>
+                <button type="button" class="button-template"><a href="{% url 'SW_Details' p.pk %}">Details {{ p.Type }}!</a></button>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

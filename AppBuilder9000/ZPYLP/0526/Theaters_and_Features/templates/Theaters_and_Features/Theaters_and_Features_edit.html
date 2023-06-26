@@ -1,0 +1,16 @@
+{% extends "Theaters_and_Features/Theaters_and_Features_base.html" %}
+{% block title %}Edit Theaters{% endblock %}
+{% block header %} Edit This Theater {% endblock %}
+{% block content %}
+
+    <div class="FormContainer">
+        <div class="ContainerForm">
+            <form name="TheaterForm" method="POST" action="">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" value="Update">Update</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

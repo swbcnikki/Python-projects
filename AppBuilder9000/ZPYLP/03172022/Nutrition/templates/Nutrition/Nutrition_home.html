@@ -1,0 +1,50 @@
+{% extends "Nutrition/Nutrition_base.html" %}
+
+{% block title %}Nutrition for Immunity{% endblock %}
+
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+
+<div class="jumbotron alert-success">
+  <h1 class="display-4">Welcome to The NutritionApp!</h1>
+  <p class="lead">Our app strives to make health and nutrition take front and center stage in your life.</p>
+  <hr class="my-4">
+  <p>We help you create your own Nutrition Path, look at nutrition details for any food, and
+	  stay up-to-date with the latest nutritional supplement news.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'create_account' %}" role="button">Get Started Today!</a>
+  </p>
+</div>
+
+
+
+<button class="btn btn-large btn-warning">What can NutritionApp do for you?</button><br><br>
+
+<div id="div1" class="alert alert-success" role="alert" style="display:none;">
+  <h2 class="alert-heading">Create your own Path to Nutritional Wellness</h2>
+
+  <hr>
+  <p class="mb-0">We offer you some innovative tools and options to create a path to wellness.</p>
+</div>
+
+<div id="div2" class="alert alert-success" role="alert" style="display:none;">
+   <h2 class="alert-heading">Discover the Latest in Nutrition</h2>
+
+  <hr>
+  <p class="mb-0">We scour the web in search of the biggest, most innovative nutrition news catered just for you.</p>
+</div>
+
+<div id="div3" class="alert alert-success" role="alert" style="display:none;">
+   <h2 class="alert-heading">Find the Truth about Your Foods</h2>
+
+  <hr>
+  <p class="mb-0">Search any food you can imagine and get up-to-date nutrition information to inform your health choices.</p>
+</div>
+
+
+
+{% endblock %}
+

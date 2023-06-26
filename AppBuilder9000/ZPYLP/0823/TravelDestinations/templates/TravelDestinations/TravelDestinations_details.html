@@ -1,0 +1,42 @@
+{% extends 'TravelDestinations/TravelDestinations_base.html' %}
+
+{% load static %}
+
+{% block title %} Trip Details {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block content %}
+
+<div>
+    <br>
+    <br>
+    <div>
+        <table style="width:100%">
+            <tr>
+                <th>Trip Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>{{ details.TripName }}</td>
+                <td>{{ details.City }}</td>
+                <td>{{ details.State }}</td>
+                <td>{{ details.Country }}</td>
+                <td>{{ details.Notes }}</td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<div>
+    <button><a href="{% url 'TravelDestinations_edit.html' details.id %}">EDIT</a></button>
+    <button><a href="{% url 'TravelDestinations_delete.html' details.id %}">DELETE</a></button>
+</div>
+
+{% endblock %}

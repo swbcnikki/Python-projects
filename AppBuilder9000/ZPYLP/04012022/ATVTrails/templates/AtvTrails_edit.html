@@ -1,0 +1,22 @@
+{% extends "ATVTrails_base.html" %}
+{% load static %}
+
+{% block title %} Edit Trail Details {% endblock %}
+{% include "AtvTrails_navbar.html" %}
+{% block header %} <h1>Edit Trail</h1> {% endblock %}
+
+{% block content %}
+    <div id="form-container" class="table">
+        <form method="POST">
+            {%csrf_token %}
+
+            <table id="table" class="table">
+                {{ form.as_table }}
+            </table>
+            <button type="submit" class="btn">Save</button>
+            <a href = "../{{ show_trail.pk }}AtvTrails_delete/"><button type="button" class="btn">Delete Trail</button></a>
+            <a href="{% url 'Atv_home' %}"><button type="button" class="btn">Cancel</button></a>
+
+        </form>
+    </div>
+{% endblock %}

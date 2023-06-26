@@ -1,0 +1,36 @@
+{% extends "CarPartsApp/CarPartsApp_base.html" %}
+{% load static %}
+{% block title %}My Parts{% endblock %}
+{% block header %}Here are recently added parts{% endblock %}
+
+
+{% block content %}
+<!--
+    {{ parts }}
+    {{ parts.part }}
+
+    {% for part in parts %}
+        <p>{{ part.part }}</p>
+    {% endfor %}
+-->
+    <div class="myParts">
+        {% for part in parts %}
+            <div class="partsInfo">
+                <h2><a href="{% url 'CarPartsApp_details' part.id %}"> {{ part.user_name }}</a></h2>
+                <h2>{{ part.year }} {{ part.make }} {{ part.car_Model }}</h2>
+                <h2>{{ part.part }}</h2>
+                <h2>{{ part.total }}</h2>
+                <a href="{% url 'CarPartsApp_edit' part.id %}">
+                    <button type="" class="edit_button">Edit</button>
+                </a>
+                <div class="parts_img">
+                    {{ part.image }}
+                </div>
+
+                <hr>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

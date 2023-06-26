@@ -1,0 +1,31 @@
+{% extends "StatCheck/StatCheckBASE.html" %}
+{% load static %}
+{% block title %} Player Details {% endblock %}
+
+{% block header %}
+    <h1>View Player</h1>
+{% endblock %}
+
+{% block content %}
+
+<div class="display">
+  <div class="col-sm-9">
+
+    <h1 style="text-decoration: underline">First Name</h1>
+    <h2>{{ CheckDetail.first_name }}</h2>
+    <hr>
+    <h3 style="text-decoration: underline">Last Name</h3>
+    <h4>{{ CheckDetail.last_name }}</h4>
+    <hr>
+    <h3 style="text-decoration: underline">Number</h3>
+    <h5>{{ CheckDetail.what_number }}</h5>
+    <hr>
+    <h3 style="text-decoration: underline">Strong feet</h3>
+    <h5 style="overflow-wrap: break-word">{{ CheckDetail.strong_feet }}</h5>
+    <hr>
+    <h3 style="text-decoration: underline">Position</h3>
+    <h5>{{ CheckDetail.what_position }}</h5>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "SuperCarsBase.html" %}
+
+{% block title %}Super Car Sales{% endblock %}
+
+{% block header %}Welcome to the worlds most sought after rides!{% endblock %}
+
+{% block content %}
+
+
+{% for product in products %}
+
+    <ul>
+
+        <li><a href="{% url 'SuperCars_Details' product.id  %}">{{ product.name }}</a></li>
+
+
+    </ul>
+{% endfor %}
+
+{% endblock %}

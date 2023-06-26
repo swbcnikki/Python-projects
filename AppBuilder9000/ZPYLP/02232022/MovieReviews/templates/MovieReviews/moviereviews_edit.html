@@ -1,0 +1,31 @@
+{% extends "MovieReviews/moviereviews_base.html" %}
+
+
+{% block title %} Edit Review {% endblock %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block header %}Edit Review{% endblock %}
+{% block content %}
+<!--- This page allows the user to edit the items in the database -->
+<div id="form-container" class="table-responsive w-50 mx-auto">
+    <form name="MovieForm" method="POST" action="../moviereviews_edit/">
+       {% csrf_token %}
+        <table id="table" class="table table-dark table-bordered table-hover text-center">
+            {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-light btn-lg btn-block w-100 mx-auto">Edit Review</button>
+            <div id="form_container" class="table-responsive w-50 mx-auto">
+                <a href="../{{ form.pk }}moviereviews_delete/"><button type="button" class="btn btn-light me-md-4">DELETE</button></a>
+                <a href="{% url 'moviereviews_display' %}" ><button type="button" class="btn btn-light me-md-4">CANCEL</button></a>
+            </div>
+
+
+
+    </form>
+</div>
+
+
+{% endblock %}

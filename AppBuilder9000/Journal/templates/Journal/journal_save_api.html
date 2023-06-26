@@ -1,0 +1,18 @@
+{% extends "journal_base.html" %}
+
+{% block content %}
+<h1>Saved API Weather</h1>
+<table>
+    <tr>
+        <th>Temperature</a></th>
+        <th>Date</a></th>
+    </tr>
+    {% for m in moment %}
+    <tr>
+        <td>{{ m.temperature }}<span>&#176;</span>F</a></td>
+        <td>{{ m.date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

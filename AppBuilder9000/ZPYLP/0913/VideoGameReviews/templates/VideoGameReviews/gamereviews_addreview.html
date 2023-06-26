@@ -1,0 +1,19 @@
+{% extends 'VideoGameReviews/gamereviews_base.html' %}
+
+{% block title %}Video Game Reviews - Add Review{% endblock %}
+
+{% block header %} Add a new review {% endblock %}
+
+{% block content %}
+    <!-- This is the review creation form -->
+    <div class="create_form p-3 mb-2 bg-dark text-white">
+        <form method ="POST" action = "{% url 'gamereviews_addreview' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type ="submit" class="btn btn-secondary" value="Add New Entry" name="Save_Entry">
+            <a href="{% url 'gamereviews_home' %}"><button type="button" class="btn btn-secondary" value="Cancel">Cancel</button></a>
+        </form>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends "PetAdoption_base.html" %}
+{% load static %}
+
+{% block title %}List a Pet for Adoption{% endblock %}
+
+{% block header %}List a Pet for Adoption{% endblock %}
+
+{% block content %}
+    <div class="form_container">
+        <form method="POST">
+            <div class="frmObject_container">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <div class="frmBtn_container">
+                <button class="formbtn" type="submit" name="List_Pet">List</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

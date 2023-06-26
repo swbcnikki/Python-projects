@@ -1,0 +1,30 @@
+{% extends "HeroAbility/heroability_base.html" %}
+{% load static %}
+
+{% block headline %}New Heroes to Investigate{% endblock %}
+
+{% block content %}
+
+ <div class="container">
+     <table class="table table-hover table-striped text-center">
+         <thead class="thead-dark text-light">
+            <tr>
+                <th>Hero Alias:</th>
+                <th>Possible Secret Identity:</th>
+            </tr>
+         </thead>
+         <tbody class="bg-light">
+            <!-- use a for loop for the lists in the zip function -->
+            {% for alias, name in random_heroes %}
+            <tr class="text-dark font-weight-bolder">
+                <td>{{ alias }}</td>
+                <td>{{ name }}</td>
+            </tr>
+            {% endfor %}
+         </tbody>
+     </table>
+ </div>
+
+
+
+{% endblock %}

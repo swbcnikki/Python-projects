@@ -1,0 +1,20 @@
+{% extends "Anime_base.html" %}
+{% load static %}
+{% block title %} Anime - View Entries {% endblock %}
+
+{% block header %} All Reviews {% endblock %}
+
+{% block content %}
+<div>
+    <ul>
+        <div class="mx-4" >
+        {% for entry in entries %}
+
+            <ul>Anime:{{ entry.anime }} Reviewer:{{ entry.name }}</ul>
+            <ul><a href="{% url 'Anime_details' entry.pk %}">Anime Details</a></ul>
+            {% endfor %}
+        </div>
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet", type="text/css", href="{%static 'css/KeyMaster.css' %}">
+    </head>
+    <body>
+        <div>
+            <nav class="navbar">
+                <ul class="menu">
+                    <a href="{% url 'home' %}"><li>Live Projects Home</li></a>
+                    <a href="{% url 'KeyMaster_home' %}"><li>KeyMaster Home</li></a>
+                    <a href="{% url 'addgame' %}"><li>Add a Game</li></a>
+                    <a href="{% url 'adddlc' %}"><li>Add DLC</li></a>
+                    <a href="{% url 'addwish' %}"><li>Add to Wishlist</li></a>
+                    <a href="{% url 'gamelist' %}"><li>Game List</li></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="head_container">
+            <header class="center">
+                <h1>{% block header %}{% endblock %}</h1>
+            </header>
+
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        <footer>
+            <p>The KeyMaster | &copy 2021</p>
+        </footer>
+    </body>
+</html>

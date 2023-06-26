@@ -1,0 +1,46 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}Book Club{% endblock %}
+
+{% block content %}
+    <style>
+    .title-header {
+        display: none;
+    }
+    </style>
+    <!--Hero Section-->
+    <div class="jumbotron">
+        <p class="lead">How the pros track reading</p>
+        <h1 class="display-4">Book Club</h1>
+        <p class="lead button">
+            <a class="btn btn-outline-light" href="{% url 'BookClubApp_about' %}" role="button">Get started</a>
+        </p>
+    </div>
+
+    <!--Call to Action Section-->
+    <div class="content book-list">
+      <div class="row">
+        <div class="col" style="margin-right:5%;">
+            <h2>My Books</h2>
+          <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="{% static 'images/booklist.png' %}" alt="book covers">
+                <div class="card-body">
+                    <p class="card-text">Add books you've read to your library.</p>
+                    <a class="btn btn-secondary" href="{% url 'BookClubApp_AddBook' %}">Add Titles</a>
+                </div>
+            </div>
+        </div>
+        <div class="col" style="margin-left:5%;">
+            <h2>Wishlist</h2>
+            <div class="card" style="width: 100%;">
+                <img class="card-img-top" src="{% static 'images/short-titles.png' %}" alt="book covers">
+                <div class="card-body">
+                    <p class="card-text">Create a Wishlist of books to read.</p>
+                    <a class="btn btn-secondary" href="{% url 'BookClubApp_searchForm' %}">Search Titles</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

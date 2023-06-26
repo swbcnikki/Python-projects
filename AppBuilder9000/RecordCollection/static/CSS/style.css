@@ -1,0 +1,63 @@
+/* Nav Bar Styling */
+.recordsnav {
+    font-family: 'Shrikhand', cursive;
+}
+
+/* Header Styling */
+.recordshead {
+    font-family: 'Shrikhand', cursive;
+    font-size: 3.5rem;
+    width: 23%;
+    color: #ffffff;
+    margin: auto;
+    -webkit-text-stroke-width: .1rem;
+    -webkit-text-stroke-color: black;
+}
+
+/* Body Styling */
+
+.recordsbody {
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.recordscard {
+    margin: auto;
+    margin-top: 3%;
+    font-size: 5.8rem;
+    line-height: 1.2;
+    padding-top: px;
+    background-color: rgba(0,0,0,.5);
+    font-family: 'Shrikhand', cursive;
+}
+
+.recordscard .card-text {
+    -webkit-text-stroke-width: .1rem;
+    -webkit-text-stroke-color: black;
+}
+
+.recordsbtn {
+    margin: auto;
+    background-color: rgba(0,0,0,1);
+    font-family: 'Shrikhand', cursive;
+}
+
+.line3 {
+    line-height: .8;
+    -webkit-text-stroke-width: .1rem;
+    -webkit-text-stroke-color: black;
+}
+
+/* Form Styling */
+.recordsform {
+    font-family: 'Ruda', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.addh1 {
+    -webkit-text-stroke-width: .095rem;
+    -webkit-text-stroke-color: black;
+}

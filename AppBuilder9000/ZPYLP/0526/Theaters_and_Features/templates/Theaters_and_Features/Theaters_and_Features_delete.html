@@ -1,0 +1,21 @@
+{% extends "Theaters_and_Features/Theaters_and_Features_base.html" %}
+{% block title %}Delete Theater{% endblock %}
+{% block header %}Remove "{{edit_theaters.Name}}" <br> from the database?{% endblock %}
+{% block content %}
+
+<div class="ContainerForm">
+    <form method="POST" action="" >
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you would like to delete "{{edit_theaters.Name}}" from the database?</p>
+
+        {{ edit_theaters.as_p }}
+
+        <input type="submit" value="Yes Delete">
+        <button type="submit"><a href="{%url 'Theater_home'  %}">Cancel</a></button>
+
+    </form>
+</div>
+
+
+{% endblock %}

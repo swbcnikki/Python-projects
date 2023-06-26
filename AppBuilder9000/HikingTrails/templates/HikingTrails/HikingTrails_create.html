@@ -1,0 +1,15 @@
+{% extends "HikingTrails/HikingTrails_base.html" %}
+{% load static %}
+{% block content %}
+
+    <div id="form-container" class="table-responsive w-50 mx-auto">
+		<form method="POST">
+			{% csrf_token %}
+                <table id="table" class="table table-light table-bordered table-hover text-container"></table>
+			{{form.as_p}}
+			<button type="submit" class="btn btn-light btn-lg btn-block w-50 mx-auto" name="">Add a trail!</button>
+		</form>
+		<br>
+	</div>
+
+{% endblock %}

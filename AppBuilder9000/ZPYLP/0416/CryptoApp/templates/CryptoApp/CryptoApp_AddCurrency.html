@@ -1,0 +1,17 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Add Cryptocurrency {% endblock %}
+
+{% block header %}New Currency{% endblock %}
+
+{% block content %}
+
+    <div class="cryptoapp-addcurrency--form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <button class="cryptoapp-addcurrency--button" type="submit" name="Save_Crypto">Create Cryptocurrency</button>
+        </form>
+    </div>
+
+{% endblock %}

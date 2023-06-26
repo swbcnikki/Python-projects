@@ -1,0 +1,13 @@
+{% extends 'SportsCars_base.html' %}
+{% block title %}Add Super Car{% endblock %}
+{% block content %}
+	<h3>ADD YOUR FAVORITE SUPER CAR TO THE DATABASE</h3>
+	<div id="NewSportsCar-form">
+		<form method="POST">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button id="NewSportsCar-button" type="submit" name="Save_Car">Save Super Car</button>
+		</form>
+		<br>
+	</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}CultClassics{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS/cultclassics.css' %}">
+    </head>
+    <body>
+        <header class="header">
+            <ul class="main-nav">
+                <li><a href="{% url 'cultclassicsHome' %}">Home</a></li>
+                <li><a href="{% url 'CultClassicsCreate' %}">Add Cult Film</a></li>
+                <li><a href="{% url 'CultClassicsMovies' %}">Movie Lists</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+            <div class="title">
+                {% block header %}
+
+                {% endblock %}
+            </div>
+
+                {% block content %}
+
+                {% endblock %}
+            <div class="footer">
+                <p>CultClassics &#169;2021 | Matthew White</p>
+            </div>
+    </body>
+</html>

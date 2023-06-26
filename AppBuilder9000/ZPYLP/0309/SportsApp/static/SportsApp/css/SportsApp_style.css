@@ -1,0 +1,255 @@
+html {
+    margin: 0;
+    padding:0;
+}
+
+body {
+    background-image: url('../images/Sports_2_NBA.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    overflow: scroll;
+    width: 100wh;
+    height: 100vh;
+}
+
+.navbar{
+    padding-bottom: 5px;
+    border-radius: 8px;
+}
+
+.home-header {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.home-text {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+h1 {
+
+    text-align: center;
+}
+
+.createPage-header {
+    display: inline-flex;
+    background-color:  rgba(178, 189, 207, 0.8);
+}
+
+.createPage-text {
+    text-align: center;
+}
+
+.createPage-txt-wrapper {
+    display: inline-flex;
+    background-color:  rgba(178, 189, 207, 0.8);
+}
+
+.createPage-form {
+    background-color: rgba(178, 189, 207, 0.8);
+    border-radius: 10px;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: block;
+    width: 75%;
+}
+
+.newsPhoto {
+    border: 2px solid black;
+    border-radius: 8px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsLink {
+    text-align: center;
+    background-color: black;
+    position: absolute;
+    bottom: 200px;
+    right: 35%;
+    left: 45%;
+    margin-left:-140px;
+}
+
+.home-news {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.home-wrapper {
+    display: block;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+.indexPage-wrapper {
+    margin: 0 auto;
+    height 85%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.game-table {
+    background-color: rgba(178, 189, 207, 0.8);
+    margin: auto;
+    padding; 20px;
+    font-size: 20px;
+    color: black;
+}
+
+.indexFav-wrapper {
+    margin: 0 auto;
+    height 85%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.fav-table {
+    background-color: rgba(178, 189, 207, 0.8);
+    margin: auto;
+    padding; 20px;
+    font-size: 20px;
+    color: black;
+}
+th {
+    padding: 20px;
+    background-color: rgba(0,0,0, 0.8 );
+    color: white;
+    border: solid white 2px;
+
+}
+
+td {
+    padding: 15px;
+    font-weight: bold;
+    border: solid white 2px;
+
+}
+
+.paginator {
+    display: inline-block;
+    background-color: rgba(178, 189, 207, 0.8);
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    border: black
+}
+
+/* Details Page Styling*/
+.detail-text {
+    width: 100%;
+    padding: 2px 2px;
+    text-align: center;
+}
+
+.detail-email {
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,.4);
+
+}
+
+.detail-text-box {
+    width: 50%;
+    margin-left: 0%;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.col {
+    width: 90%;
+    border: 2px solid #000000;
+    border-radius: 2px;
+    margin: 2px 3px;
+}
+
+.row {
+    width: auto;
+    padding: 2px 16px;
+}
+
+.badge {
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.details-wrapper {
+    margin: 0 auto;
+    height 85%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+    background-color: rgba(178, 189, 207, 0.8);
+}
+
+.btn-wrapper {
+    text-align: center;
+}
+.east-conf {
+    width: 50rem;
+    float: left;
+    margin: 10px;
+    margin-left: 75px;
+    background-color: rgb(178, 189, 207);
+    border: solid black 4px;
+    overflow: scroll;
+    height: 40rem;
+    text-align: center;
+}
+
+.west-conf {
+    width: 50rem;
+    float: right;
+    margin: 10px;
+    margin-right: 125px;
+    background-color: rgb(178, 189, 207);
+    border: solid black 4px;
+    overflow: scroll;
+    height: 40rem;
+    text-align: center;
+}
+
+.border {
+    border: solid 2px;
+}
+
+#footer {
+    position: fixed;
+    margin-left: 45%;
+    margin-right: 45%;
+    font-size: 25px;
+    bottom: 5px;
+    color: white;
+    background-color: black;
+    width: 12%;
+    height: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+

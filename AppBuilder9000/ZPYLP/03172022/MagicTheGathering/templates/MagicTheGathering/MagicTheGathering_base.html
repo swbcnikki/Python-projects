@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{% static 'CSS/mtg.css' %}">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<title>{% block title%}{% endblock %}</title>
+	</head>
+	<header>
+		<div class="JavaScriptDropdown">
+			<div class="btn-group">
+				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Menu</button>
+				<div class="dropdown-menu"><!-- Add in links based on your registered URLs -->
+					<a href="{% url 'MagicTheGathering_home' %}" class="dropdown-item">Home</a>
+					<a href="{% url 'How_Too' %}" class="dropdown-item">About</a>
+					<a href="{% url 'add' %}" class="dropdown-item">Add New Card</a>
+					<a href="{% url 'collection' %}" class="dropdown-item">View Card DataBase</a>
+					<a href="{% url 'MagicTheGathering_API' %}" class="dropdown-item">API</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<body>
+
+		<div class="page_container">
+            <header class="header-title">
+                <h1>{% block header %}{% endblock %}</h1>
+            </header>
+            {% block content %}{% endblock %}
+        </div>
+
+
+		<section id="block-footer">
+			<p id="footer-right"><a href="#">Terms</a>|<a href="#">Privacy</a></p>
+			<p id="footer-left">&copy;2020 - MTGPrep</p>
+		</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	</body>
+</html>
+
+

@@ -1,0 +1,58 @@
+{% extends "BreweriesApp/BreweriesApp_base.html" %}
+
+{% block title %} Breweries {% endblock %}
+
+{% block header %} Brewery Details: {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <table class="table table-details table-striped table-dark">
+        <tr>
+            <th colspan="6">Name:</th>
+            <th colspan="3">Best Style:</th>
+            <th colspan="3">Second Best:</th>
+        </tr>
+        <tr>
+            <td colspan="6">{{details.name}}</td>
+            <td colspan="3">{{details.beerstyles1}}</td>
+            <td colspan="3">{{details.beerstyles2}}</td>
+        </tr>
+        <tr>
+            <th colspan="6">Location Line 1:</th>
+            <th colspan="6">Location Line 2:</th>
+        </tr>
+        <tr>
+            <td colspan="6">{{details.address1}}</td>
+            <td colspan="6">{{details.address2}}</td>
+        </tr>
+        <tr>
+            <th colspan="6">City:</th>
+            <th colspan="3">State:</th>
+            <th colspan="3">Zip Code:</th>
+        </tr>
+        <tr>
+            <td colspan="6">{{details.city}}</td>
+            <td colspan="3">{{details.state}}</td>
+            <td colspan="3">{{details.zip}}</td>
+        </tr>
+        <tr>
+            <th colspan='12'>Field Notes:</th>
+        </tr>
+        <tr>
+            <td colspan='12'>{{details.notes}}</td>
+        </tr>
+    </table>
+    <td><button type="button" class="btn btn-danger col-1 float-right mr-5"><a href="{% url 'BA_index' %}">Back</a></button></td>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

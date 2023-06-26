@@ -1,0 +1,28 @@
+{% extends "StarWarsApp/SW_base.html" %}
+{% load static %}
+
+{% block title %} Add to Dok-Ondar’s Den of Antiquities {% endblock %}
+
+{% block header %}Credits or USD Accepted{% endblock %}
+
+{% block content %}
+<div>
+    <div class="product-form">
+        <form action="{% url 'SW_AddProduct' %}" method="POST">
+            {% csrf_token %}
+            <table class="product-table">
+            {{ form.as_table }}
+            </table>
+            <div class="button-container">
+                    <input class="button-template" value="Submit" type="submit">
+                    <button class="button-template" type="button"><a href="{% url 'SW_Home' %}">Cancel</a></button>
+                <br>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<br>
+
+{% endblock %}

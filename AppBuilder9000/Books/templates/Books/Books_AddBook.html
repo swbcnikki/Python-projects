@@ -1,0 +1,21 @@
+{% extends "Books/Books_Base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %} Add a Book{% endblock %}
+
+
+{% block content %}
+<h1 class="fancy">Create a Review</h1>
+<div class="add-book-container">
+    <form method="POST" class="add-book-form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button class="btn btn-success" type="submit" name="Save_Review">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% load static %}
+
+{% block title %}Portland Neighborhood Review App {%  endblock %}
+
+{% block header %}Import Oregon Housing Stats {% endblock %}
+
+{% block content %}
+
+    <label style = "font-size:20px">Distribution of Housing by Property Value</label>
+    <form method = 'get'>
+        <select name ="year" style = "width:100px; margin-bottom:15px;">
+            <option value='2019' label ="2019">2019</option>
+            <option value='2018' label = "2018">2018</option>
+            <option value='2017' label = "2017">2017</option>
+        </select>
+        <br>
+        <button type="submit" class = "btn btn-primary" style = ";margin-bottom:15px;">Submit</button>
+    </form>
+
+
+
+    <table style = "height:50%;">
+                <tr>
+
+                    <td style = "width:25%; text-align: center;font-size:18px;">Year</td>
+                    <td style = "width:25%; text-align: center;font-size:18px;">Property Value</td>
+                    <td  style = "width:25%; text-align: center; font-size:18px;"># of Units</td>
+                    <td style = "width:25%; text-align: center; font-size:18px;">Percent of Total</td>
+
+                </tr>
+
+
+        {% for td in zipped_data   %}
+            <tr>
+                <td style = "width:25%; text-align: center">
+                    {{ td.0 }}
+                </td>
+                 <td style = "width:25%; text-align: center">
+                    {{ td.1 }}
+                </td>
+                 <td style = "width:25%; text-align: center">
+                    {{ td.2 }}
+                </td>
+                 <td style = "width:25%; text-align: center">
+                    &#37;{{ td.3 }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

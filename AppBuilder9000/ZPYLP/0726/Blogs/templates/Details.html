@@ -1,0 +1,41 @@
+{% extends 'blogs_home.html' %}
+
+{% block content%}
+
+
+    <section class="section">
+        <div class="container">
+
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <a href="{% url 'EditPage' Entryinfo.pk %}">Edit Post</a><br>
+                            <a href="{% url 'DeletePage' Entryinfo.pk %}">Delete Post</a>
+
+                        </div>
+                    </div>
+                </article>
+
+
+
+                <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>{{ Entryinfo.date_posted }}</strong>
+                                    <br> <strong> My mood was: </strong> {{ Entryinfo.Mood }}
+                                    <br> <strong>Passing Thoughts: </strong> {{ Entryinfo.text }}
+                                    <br> <strong>Posted By:</strong> {{ Entryinfo.name | lower|capfirst }}
+                                </p>
+                            </div>
+                        </div>
+                </article>
+
+
+        </div>
+    </section>
+
+
+
+{% endblock %}
+

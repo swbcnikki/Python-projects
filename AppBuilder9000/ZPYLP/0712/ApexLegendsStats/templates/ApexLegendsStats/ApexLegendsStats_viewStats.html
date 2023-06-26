@@ -1,0 +1,26 @@
+{% extends "ApexLegendsStats/ApexLegendsStats_base.html" %}
+
+<!--inserting the title and headers that I want into the base html file to create my home page-->
+
+{% block title %}View Your Stats{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            {% for name in statsList %}
+            <br>
+            <h3><a href="{% url 'statsDetails' name.id %}">{{ name }}</a></h3>
+            <br>
+            <ul>
+                <li>Legend: {{ name.legend }}</li>
+                <li>Games Played: {{ name.gp }}</li>
+                <li>Total Kills: {{ name.kills }}</li>
+                <li>Times Placed Top 3: {{ name.tpt3 }}</li>
+            </ul>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

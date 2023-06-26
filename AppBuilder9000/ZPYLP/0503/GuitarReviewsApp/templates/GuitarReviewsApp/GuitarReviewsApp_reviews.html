@@ -1,0 +1,17 @@
+{% extends 'GuitarReviewsApp/GuitarReviewsApp_base.html'%}
+{% load static %}
+
+{% block title %} Details {% endblock %}
+
+{% block content %}
+    <h2>Reviews</h2>
+    <h3>Read reviews that other guitarist have<br>
+    made on guitars based upon their experiences.</h3>
+    <div id="review_list">
+        {% for item in reviews %}
+        <ul>
+            <li><h4>Guitar:</h4><a href="{% url 'GuitarReviews_details' item.id  %}"> {{ item.brand }} - {{ item.model }}</a></li>
+        </ul>
+    </div>
+        {% endfor %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{%extends "yoga_base.html"%}
+{% block title %}Create New Entry{% endblock %}
+
+{% block header %}Welcome and create your own yoga poses!{% endblock %}
+
+{% block content %}
+
+<div class="formContainer">
+    <form method="POST">
+        <div class="frmObject_container">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" name="yoga_create">Submit</button>
+        </div>
+    </form>
+
+</div>
+
+
+
+{% endblock %}

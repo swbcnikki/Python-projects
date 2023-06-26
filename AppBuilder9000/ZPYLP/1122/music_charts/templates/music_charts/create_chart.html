@@ -1,0 +1,19 @@
+
+{% extends 'music_charts/mcharts_base.html' %}
+{% load static %}
+{% block title %}<p class="create_charts_title">Add musical records below</p>{% endblock %}
+
+{% block content %}
+<!------ this page shows the music records created ---------------->
+<div class="create-table">
+    <form method="POST" class="music-choices">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="chart-button" value="Submit">Submit</button>
+    </form>
+</div>
+
+<footer id="bottom-info">
+      Top Music Charts &copy; 2021 | Michael Martinez
+</footer>
+{% endblock %}

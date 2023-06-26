@@ -1,0 +1,134 @@
+{% extends "cim_base.html" %}
+
+{% block title %}Core Item Management{% endblock %}
+
+
+{% block header %}
+<div class="cim_Title">
+    <h1>Core Item Management</h1>
+    <h2>Item List</h2>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div style="width: 100%;">
+    <!-- Container -->
+    <div>
+        <div>
+            {{found}}
+        </div>
+        <!-- Search Bar -->
+        <!-- Does not work yet so it has been removed
+        <div style="padding: 1rem;">
+            <form action="">
+                <input type="text" name="search" placeholder="Enter search category" value="{{request.GET.title}}">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        -->
+        <!-- Search Bar -->
+
+        <!-- Add new item button -->
+        <div style="padding: 1rem;">
+            <a href="{% block add-button %}{% url 'cim_new' %}{% endblock %}" class="left"><button>Add new item</button> </a>
+        </div>
+        <!-- Add new item button -->
+
+        <!-- Item table -->
+        <table>
+            <tr>
+                <th class="center">ID</th>
+                <th class="center"></th>
+                <th class="center">Part Number</th>
+                <th class="center nameColumn">Name</th>
+                <th class="center">Count</th>
+                <th class="center categoryColumn">Category</th>
+                <th class="center vendorColumn">Vendor</th>
+            </tr>
+            {% for item in produce %}
+            <tr>
+                <td class="center">{{ item.id }}</td>
+                <td class="center" style="margin: 0; padding: 4px;"><button>Edit</button></td>
+                <td class="center categoryColumn"><a href="/CoreItemManagement/item/{{ item.id }}">{{ item.item_pn }}</a></td>
+                <td class="center nameColumn">{{ item.item_name }}</td>
+                <td class="center">{{ item.item_count }}</td>
+                <td class="center categoryColumn">{{ item.item_category }}</td>
+                <td class="center vendorColumn">{{ item.item_vendor.vendor_name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <!-- Item table -->
+        <!-- Page bar -->
+        <!--
+        <div class="pagination">
+            <div class="page_bar_center">
+                {% if produce.has_previous %}
+                    <a href="?page={{ produce.previous_page_number }}" class="page_button">previous</a>
+                {% endif %}
+            </div>
+
+            <div class="page_bar_center">
+                Page {{ produce.number }} of {{ produce.paginator.num_pages }}.
+            </div>
+
+            <div class="page_bar_center">
+                {% if produce.has_next %}
+                    <div><a href="?page={{ produce.next_page_number }}" class="page_button">next</a></div>
+                {% endif %}
+            </div>
+        </div>
+        -->
+        <!-- Page bar -->
+    </div>
+    <div>
+        <!-- Item table -->
+        <table>
+            <tr>
+                <th class="center">ID</th>
+                <th class="center"></th>
+                <th class="center">Part Number</th>
+                <th class="center nameColumn">Name</th>
+                <th class="center">Count</th>
+                <th class="center categoryColumn">Category</th>
+                <th class="center vendorColumn">Vendor</th>
+            </tr>
+            {% for item in other %}
+            <tr>
+                <td class="center">{{ item.id }}</td>
+                <td class="center" style="margin: 0; padding: 4px;"><button>Edit</button></td>
+                <td class="center categoryColumn"><a href="/CoreItemManagement/item/{{ item.id }}">{{ item.item_pn }}</a></td>
+                <td class="center nameColumn">{{ item.item_name }}</td>
+                <td class="center">{{ item.item_count }}</td>
+                <td class="center categoryColumn">{{ item.item_category }}</td>
+                <td class="center vendorColumn">{{ item.item_vendor.vendor_name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <!-- Item table -->
+
+        <!-- Page bar -->
+        <div class="pagination">
+            <div class="page_bar_center">
+                {% if other.has_previous %}
+                    <a href="?page={{ other.previous_page_number }}" class="page_button">previous</a>
+                {% endif %}
+            </div>
+
+            <div class="page_bar_center">
+                Page {{ other.number }} of {{ other.paginator.num_pages }}.
+            </div>
+
+            <div class="page_bar_center">
+                {% if other.has_next %}
+                    <div><a href="?page={{ other.next_page_number }}" class="page_button">next</a></div>
+                {% endif %}
+            </div>
+        </div>
+        <!-- Page bar -->
+    </div>
+</div>
+
+
+
+{% endblock %}

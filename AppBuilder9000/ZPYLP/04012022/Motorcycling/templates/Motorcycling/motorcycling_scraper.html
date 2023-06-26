@@ -1,0 +1,20 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+
+{% block content %}
+  <center>
+  {% block header %}<h3>Past Top-Rated Motorcycles</h3>{% endblock %}
+  </center>
+  <!-- Setting up the for loop to iterate through the list -->
+  {% for name in cycle %}
+
+<div class="list-block d-inline-block">
+    <ul class="list-group">
+      <li class="list-group-item"> {{ name }}</li>
+    </ul>
+</div>
+
+  {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "yoga_base.html"%}
+
+{% block title %} Yoga Details {% endblock %}
+{% block header %}  Details {% endblock %}
+
+
+{% block content%}
+
+<div class="detailContainer">
+    <div class="detail1">
+        <table>
+            <tr>
+                <th>{{'Type'|upper}}</th>
+                <th>{{'Name'|upper}}</th>
+                <th>{{'Benefits'|upper}}</th>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="detail2">
+        <table>
+            <tr>
+
+                <td>{{details.type}}</td>
+                <td>{{details.name}}</td>
+                <td>{{details.benefits}}</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

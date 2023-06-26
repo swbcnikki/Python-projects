@@ -1,0 +1,27 @@
+Colors for site: #90FCF9; #63B4D1; #7699D4; #9448BC; #480355;
+body {
+    background-color: grey;
+}
+a:hover {
+  background-color: teal;
+}
+#color:hover {
+  color: white;
+}
+#AboutColor:hover {
+  color: white;
+}
+#ContactColor:hover {
+  color: white;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #9448BC;
+  color: white;
+  text-align: center;
+}
+
+

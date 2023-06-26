@@ -1,0 +1,38 @@
+{% extends "StudyApp/study_app_base.html" %}
+{% load static %}
+
+{% block title %} Members' Info {% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+    <div class="form-container">
+        <form name="UserForm" method="POST" action="">
+            <h1> Members' Info </h1>
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+                {% for member in register %}
+                    <tr>
+                        <td>{{ member.first_name|title }}</td>
+                        <td>{{ member.last_name|title }}</td>
+                        <td>{{ member.username|title }}</td>
+                        <td>{{ member.email }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <div class="">
+                <a href="../edit/"><button class="btn" type="button" value="Cancel">Edit Profile</button></a>
+                <a href="../delete/"><button name="delete" class="btn" type="button" value="Delete">Delete Member</button></a>
+                <a href="{% url 'members' %}"><button class="btn" type="button" value="Cancel">Back</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

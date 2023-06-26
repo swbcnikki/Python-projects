@@ -1,0 +1,47 @@
+{% extends 'skates_base.html' %}
+
+{% block title %}Speed Skate Reviews{% endblock %}
+
+{% block header %}<h5>Inline Speed Skate Review Summary</h5>{% endblock %}
+
+<!-- Review Display Condensed Begin -->
+{% block content %}
+
+<!-- Display Table Header Only -->
+<style>
+    h5{
+        color: #00ff00;
+        text-shadow: 1px 1px 1px white;
+        font-weight: bold;
+    }
+</style>
+
+    <div class="table-container">
+        <table id="table">
+            <thead>
+                <tr id="th">
+                    <!-- static table headers -->
+                    <th>Date</th>
+                    <th>User</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Overall Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for record in records %}
+                <tr id="td">
+                    <!-- Review_Display function pulls records from database via the below xrefs -->
+                    <!-- Date field serves as hyperlink to launch expanded review details via Review_Details function -->
+                    <td><a href="{% url 'Review_Details' record.pk %}">{{ record.date }}</a></td>
+                    <td>{{ record.username }}</td>
+                    <td>{{ record.skate_brand }}</td>
+                    <td>{{ record.model }}</td>
+                    <td>{{ record.overall_rating }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+<!-- Review Display Condensed End -->

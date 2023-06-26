@@ -1,0 +1,14 @@
+{% extends "crypto_analytics_base.html" %}
+{% block content %}
+
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+            Details List
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">{{ details.author }}</a>
+            <a href="#" class="list-group-item list-group-item-action">{{ details.content }}</a>
+            <a href="#" class="list-group-item list-group-item-action">{{ details.title }}</a>
+            <a href="#" class="list-group-item list-group-item-action">{{ details.date_posted }}</a>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "CampSite/CampSite_base.html" %}
+{% load static %}
+
+{% block title %} Browse Campsites {% endblock %}
+
+{% block jumbotron-text %} Find <br> Your <br> Spot {% endblock %}
+
+
+{% block content%}
+<br><br>
+			<h2 class="table_header">All Campsites:</h2>
+
+			<table class="table table-responsive browse_table">
+				<tr id="header_row">
+					<th>Name</th>
+					<th>State</th>
+					<th>Type</th>
+					<th>Access</th>
+					<th>Description</th>
+					<th id="info_column">More Info</th>
+				</tr>
+				{% for page_obj in page_obj %}
+				<tr>
+					<td>{{ page_obj.name }}</td>
+					<td>{{ page_obj.state }}</td>
+					<td>{{ page_obj.type }}</td>
+					<td>{{ page_obj.access }}</td>
+					<td>{{ page_obj.description }}</td>
+					<td><a href="{% url 'campsite_details' page_obj.id %}"> Details </a></td>
+				</tr>
+				{% endfor %}
+
+			</table>
+			<div class="pagination">
+				<span class="step-links">
+					{% if page_obj.has_previous%}
+						<a href="?page=1">&laquo; first</a>
+						<a href="?page={{ page_obj.previous_page_number }}">previous</a>
+					{% endif %}
+
+					<span class="current">
+						Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+					</span>
+
+					{% if page_obj.has_next %}
+						<a href="?page={{ page_obj.next_page_number }}">next</a>
+						<a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+					{% endif %}
+				</span>
+			</div>
+			<a href="{% url 'add_campsite' %}" class="btn btn-primary" id="new_site_button2">Add New Site!</a>
+
+
+{% endblock %}

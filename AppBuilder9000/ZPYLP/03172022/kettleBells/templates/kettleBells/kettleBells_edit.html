@@ -1,0 +1,23 @@
+{% extends 'kettleBells_base.html' %}
+
+{% block title %}KettleBells{% endblock %}
+
+{% block header %}Edit:{% endblock %}
+
+{% block content %}
+
+<div class="adminBox">
+    <form name="MovesForm" method="POST">
+        <table>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_table }}
+        </table>
+        <div class="btnBox">
+            <input type="submit" class="btn" value="Make Change" name="addItem">
+            <button class="btn"><a href="{% url 'KB_moves' %}">Cancel</a></button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

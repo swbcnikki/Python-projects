@@ -1,0 +1,43 @@
+{% extends 'campsites_base.html' %}
+{% block header %}CampSites{% endblock %}
+
+{% include "campsites_navbar.html" %}
+
+{% block content %}
+
+<div class="admin_panel">
+    <form name="campsitesForm" method="POST" action="">
+        <div class="formObject">
+            {% csrf_token %}
+            <label for="menu_id">Select a campsite from the list to edit:</label>
+            <select id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
+            {% for campsites in campsites %}
+                <option value="">_</option>
+                <option value="../{{ campsites.pk }}/campsites_details/">{{ campsites.name }}</option>
+            {% endfor %}
+            </select>
+            <div class="fromBtn_container">
+                <a href="{% url 'campsites_create' %}"><button type="button" class="btn">Add a New Campsite</button></a>
+                <a href="{% url 'campsites_home' %}"><button type="button" class="btn">Home</button></a>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+
+<div class="main">
+
+	{% for campsites in campsites %}
+
+	<a href = "../{{ campsites.pk }}/campsites_details/">{{ campsites.name }}<br/></a>
+        {{ campsites.description}}<br/>
+	<hr/>
+
+	{% endfor %}
+
+</div>
+
+{% endblock %}

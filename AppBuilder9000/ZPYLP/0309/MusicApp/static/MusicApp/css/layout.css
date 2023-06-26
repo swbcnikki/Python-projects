@@ -1,0 +1,427 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height:100%;
+    position:relative;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+
+}
+
+
+/* ------- Make footer stick to bottom -------- */
+.footer {
+    position: absolute;
+    left: 0 ; right: 0; bottom: 0;
+    height: [footer:height]
+}
+
+/* -------- Padding at top of page ----------- */
+header {
+    padding-top: 70px;
+    text-align: center;
+    font-family: 'Staatliches', cursive;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: white;
+    font-family: 'Staatliches', cursive;
+    text-align: center;
+}
+
+/*-------- Background Image ----------*/
+.bg_img {
+    background-color: gray;
+    background-image: url('/static/MusicApp/images/background.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+    background-position: center;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*---------Footer--------------*/
+
+footer {
+    clear: both;
+    position: relative;
+    left:0;
+    bottom:0;
+    width:100%;
+    margin-top: 60px;
+    margin-bottom: 0;
+    color: white;
+    background-color: rgba(0, 8, 11);
+    text-align: right;
+    padding: 10px 40px 10px 0px;
+    font-size: 15px;
+    font-family: 'Roboto Slab', serif;
+}
+/* -------Set size of input text areas, margins, sizing, borders, etc... ----- */
+
+input, textarea {
+    width: 30%;
+    margin: .5% 0 0 0;
+    padding: .5% 0 .5% 1%;
+    line-height: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 2px solid silver;
+
+}
+
+/* ------- Labels for input boxes --------- */
+label {
+	display: inline-block;
+    width: 85%;
+    text-align: left;
+    font-family: 'Staatliches', cursive;
+    margin: 1% 0 0 0;
+    color: white;
+    line-height: 18px;
+    font-size: 24px;
+}
+
+/* ------ Submit Buttons -------- */
+input[type="submit"] {
+    flex-grow: 1;
+    width: 30%;
+    justify-content: right;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    background-color: transparent;
+    color: white;
+    padding: 2px 0px 2px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+    position: absolute;
+	top: 85%;
+	left: 63%;
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+
+}/* ------ Submit Buttons -------- */
+input[type="submit"] {
+    flex-grow: 1;
+    width: 30%;
+    justify-content: right;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    background-color: transparent;
+    color: white;
+    padding: 2px 0px 2px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* ---------- Style Buttons ---------- */
+button[type="button"] {
+    flex-grow: 1;
+    width: 10%;
+    justify-content: right;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    background-color: transparent;
+    color: white;
+    padding: 2px 0px 2px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+button[type="button"]:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+
+
+/* ------ Transparent Box around Forms ------- */
+.input-forms {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+	height: 500px;
+	padding: 80px 40px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.container-fluid {
+    font-family: 'Roboto Slab', serif;
+}
+
+
+/*----------- Index Tables ---------- */
+.index_container {
+    margin: 0 auto;
+    height: 85%;
+    transform: translate(-50%, -50%)
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.index_table {
+    background-color: rgba(0,0,0,0.5);
+    margin: auto;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    text-align: left;
+}
+
+th, td {
+    padding: 5px 25px 5px;
+    text-align: left;
+    border: 1px solid white;
+}
+
+th {
+    color: white;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+
+
+}
+
+/* ------- Pagination -------*/
+.pagination {
+    list-style-type: none;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 16px;
+    width: 600px;
+}
+
+.search-input {
+    text-align: center;
+}
+
+.searchbox {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+    padding: 10px;
+
+}
+
+/* Index Containers and Text */
+
+.text-container {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%)
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+.home-container {
+    position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 500px;
+	height: 300px;
+	padding: 80px 40px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.Details {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%)
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+
+}
+
+.details-container {
+        font-family: 'Merriweather', serif;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+
+}
+
+/* Changed hyperlink color to make them visible on dark background */
+
+a {
+    color: white;
+}
+
+/* --------- Scrollbar --------- */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+ /*------- Small Edit Image ------ */
+.edit-img {
+    width: 30px;
+    height: 40px;
+}
+
+
+/* ------ Edit Forms ------- */
+.Edit {
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+	height: 550px;
+	padding: 80px 40px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.container-fluid {
+    font-family: 'Roboto Slab', serif;
+}
+
+
+/*---------Confirm Delete Modal---------*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; /* placed on top of elements */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  /* centers modal on screen */
+    width: 30%:
+    height: 20%;
+    overflow: auto; /* enable scroll if needed */
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 50px;
+    border: 1px solid black;
+    font-family: 'Roboto Slab', serif;
+    color: white;
+}
+
+.modal_container {
+    padding: 5px;
+    text-align: center;
+    background-color: rgba(200, 201, 201, 0.5);
+}
+
+.modal-content {
+    margin: auto;
+}
+
+hr {
+    border: 3px solid  rgba(200, 201, 201, 0.5);
+}
+
+/* X to Close Modal in top Right */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(200, 201, 201, 0.5);
+}
+
+.close:hover,
+ .close:focus {
+    color: white; /* X turns white on hover */
+    cursor: pointer;
+}
+
+
+.delete_btn,
+.cancel_btn {
+    width: 15% !important;
+    margin: 10px !important;
+    float: left !important;
+
+}
+
+.delete_btn {
+    margin-left: -5% !important;
+}
+
+
+.artist-chart {
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+	height: 550px;
+	padding: 80px 40px;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.artist-list {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+}

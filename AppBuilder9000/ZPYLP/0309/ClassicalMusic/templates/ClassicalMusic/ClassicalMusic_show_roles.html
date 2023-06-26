@@ -1,0 +1,102 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+
+<header class="page_header">
+    <h1>Roles</h1>
+</header>
+
+<!--ERRORS & BUTTONS BAND-->
+<div class="button-container">
+    <div>{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}</div>
+    <div >
+    </div>
+    <div>
+        <a class="edit_icon" href="{% url 'ClassicalMusic_add_role' %}">
+            <i class="far fa-plus-square big-icon"></i>
+        </a>
+
+    </div>
+</div>
+
+
+<table  id="sort-table" class="table">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Role</th>
+            <th>Type</th>
+            <th>Type of Contributer</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for role in roles %}
+            <tr>
+                <td>{{ role.role }}</td> {# make into dynamic link in story 4 #}
+                <td>{{ role.type }}</td>
+                <td>{{ role.role_type }}</td>
+                <td>
+                    <a class="eicon-link" href="{% url 'ClassicalMusic_edit_role' role.pk %}">
+                        <i class="far fa-edit icon"></i>
+                    </a>
+
+                </td>
+                <td>
+                    <a data-val1="{% url 'ClassicalMusic_delete_role' role.pk %}" data-modal_body_text="Are you sure you want to delete '{{ role.role }}' from the database?" data-toggle="modal" data-target="#confirm_delete_pk">
+                        <i class="far fa-trash-alt icon"></i>
+                    </a>
+                </td>
+
+
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+<!--CONFIRM DELETE MODAL -->
+<div class="modal" id="confirm_delete_pk">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Comfirm Deletion</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            Text is set by jQuery
+
+        </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <form method="POST" action="" class="delete_link">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger" >Delete</button>
+              <button type="button" class="btn btn-custom-color" data-dismiss="modal">Cancel</button>
+          </form>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+

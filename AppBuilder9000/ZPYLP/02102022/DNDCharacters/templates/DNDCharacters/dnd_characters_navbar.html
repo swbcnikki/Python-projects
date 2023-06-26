@@ -1,0 +1,17 @@
+<ul class="topnav">
+                <li><a href="{% url 'dnd_characters_home' %}">Dungeons and Dragons Characters!</a></li>
+                <li><a href="{% url 'dnd_characters_HowTo' %}">How To</a></li>
+                <li><a href="{% url 'dnd_characters_ClassDescript' %}">Class Descriptions</a></li>
+                <li><a href="{% url 'createCharacter' %}">Create A Character</a></li>
+                <li><a href="{% url 'dnd_character_lookup' %}">Created Characters</a></li>
+                <div class="search_container">
+                    <form class="d-flex" method=POST action="{% url 'dnd_character_search' %}">
+                        {% csrf_token %}
+
+                        <input class="form-control me-auto" type="search" placeholder="Search" aria-label="Search" name="searched">
+                        <button class="btn btn-outline-secondary" type="submit">Search</button>
+
+                    </form>
+                </div>
+
+</ul>

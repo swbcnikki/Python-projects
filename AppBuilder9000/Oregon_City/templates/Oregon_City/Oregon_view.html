@@ -1,0 +1,24 @@
+{% extends "Oregon_base.html" %}
+
+{% block content %}
+
+<h1>View Activities</h1>
+<table class="Activities">
+    <tr>
+        <th>Activity Name:</th>
+        <th>Activity Snacks:</th>
+        <th>Description:</th>
+        <th>Distance:</th>
+    </tr>
+    {%  for Activity in Activities %}
+    <tr>
+        <td class="center"><a href="{% url 'Oregon_details' Activity.id %}">{{ Activity.Name }}</a></td>
+        <td class="center">{{ Activity.Snacks }}</td>
+        <td class="center">{{ Activity.Description }}</td>
+        <td class="center">{{ Activity.Distance }}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}

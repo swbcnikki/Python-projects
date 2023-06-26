@@ -1,0 +1,36 @@
+{% extends "Stocks/stocks_base.html" %}
+
+{% block title %}Stocks{% endblock %}
+
+{% block header %}Details{% endblock %}
+
+{% block content %}
+
+<div class="center-txt">
+    {% csrf_token %}
+    <div>
+        <table class="center-tbl">
+            <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ item.ticker | upper }}</td>
+                <td>{{ item.name | title }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <a href="../{{ stock.pk }}edit/"><button type="button" value="Edit">Edit</button></a>
+            <a href="{% url 'stocks_favorites' %}"><button type="button" value="back">Back</button></a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

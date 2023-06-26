@@ -1,0 +1,25 @@
+{% extends "Recipes_Base.html" %}
+
+{% block title %}Recipes{% endblock %}
+
+{% block header %}
+                <h1>Recipes Details</h1>
+                <p>A more detailed look into the Recipes</p>
+{% endblock %}
+
+{% block content %}
+
+ <form name="RecipeForm" method="POST" action="../Recipes_Details/">
+
+    <table>
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_table }}
+    <table>
+ </form>
+
+
+
+
+
+{% endblock %}

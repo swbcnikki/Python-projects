@@ -1,0 +1,17 @@
+{% extends 'Rock/RockBase.html' %}
+{% block title %}Add Band Member{% endblock %}
+{% block content %}
+	<h3>ADD BAND MEMBER</h3>
+
+	<div class="form_container">
+		<form method="POST">
+			<div class="frmObject_container">
+				{% csrf_token %}
+				{{form.as_p}}
+
+				<button type="submit" name="RockCreate">Add Band Member</button>
+			</div>
+		</form>
+		<br>
+	</div>
+{% endblock %}

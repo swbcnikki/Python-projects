@@ -1,0 +1,42 @@
+{% extends 'blogs_home.html' %}
+
+{% block content%}
+
+
+
+    <section class="section">
+        <div class="container">
+
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <a href="{% url 'EntryPage' %}">Add new entry</a>
+                    </div>
+
+                </div>
+            </article>
+
+            {% for entry in entries %}  <!-- # Loops over each item in an array, making the item available in a context variable. -->
+
+                <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+
+                                    <strong><a href="{% url 'DetailsPage' pk=entry.id %}">{{ entry.date_posted }}</a></strong>
+                                    <br> <strong> My mood was: </strong> {{ entry.Mood }}
+                                    <br> <strong>Passing Thoughts: </strong> {{ entry.text }}
+                                    <br> <strong>Posted By:</strong> {{ entry.name | lower|capfirst }}
+                                </p>
+                            </div>
+                        </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "Theaters_and_Features/Theaters_and_Features_base.html" %}
+{% block title %}Theater Details{% endblock %}
+{% block header %}Features and Details for {{ get_theaters.Name }}{% endblock %}
+{% block content %}
+
+
+    <table>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Movie Type</th>
+            <th>Seat Type</th>
+            <th>Beverages</th>
+            <th>Concessions</th>
+            <th></th>
+        </tr>
+
+        {% for Theater in get_theaters %}
+        <tr>
+            <td><a href="{% url 'edit_details' Theater.id %}">Edit this Theater</a></td>
+            <td>{{ Theater.Name }}</td>
+            <td>{{ Theater.Address }}</td>
+            <td>{{ Theater.Phone }}</td>
+            <td>{{ Theater.MovieType }}</td>
+            <td>{{ Theater.SeatType }}</td>
+            <td>{{ Theater.HasAlcohol }}</td>
+            <td>{{ Theater.Food }}</td>
+            <td><a href="{% url 'delete_Theater' Theater.id %}">Remove this Theater</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "FootballStats/Football_Stats_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block header %}  {% endblock %}
+
+
+
+{% block content %}
+<h1 class="heading text-center text-white">Football Stats</h1>
+<h2 class="heading text-center text-white">Add a New Player Stat:</h2>
+    <div class="container text-center text-white">
+        <form method="POST" class="control-label col-xs-1">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="frmBtn_container">
+                <input type="submit" class="btn btn-primary" id="btn" value="Add New Player Stat" name= "add_player_stat">
+                <a href="{% url 'football_stats_home' %}"><button type="button" class="btn btn-secondary" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+

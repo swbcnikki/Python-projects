@@ -1,0 +1,17 @@
+/* footer styles */
+
+.footer {
+    clear: both;
+    position: fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    margin-top: 2rem;
+    margin-bottom: 0 auto;
+    color: rgb(243,243,243);
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: right;
+    padding: 15px 40px 15px 15px;
+    font-size: 15px;
+    font-family: roboto, sans-serif;
+}

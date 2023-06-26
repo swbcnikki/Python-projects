@@ -1,0 +1,26 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    <h1>Rated Routes</h1>
+
+{% for Route in route_list %}
+<div class="list-block d-inline-block">
+    <center>
+    <h3 style="color:red;"><strong>{{ Route }}</strong></h3>
+    </center>
+    <ul>
+    <li class="list-group-item list-group-item-dark"><a class="" href="{% url 'route_detail' Route.id %}">Starting Point: {{ Route.START_DESTINATION }}</a></li>
+    <li class="list-group-item list-group-item-secondary">Ending Point: {{ Route.END_DESTINATION }}</li>
+    <li class="list-group-item list-group-item-warning">Rating: {{ Route.RATING }}</li>
+    </ul>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}
+
+

@@ -1,0 +1,29 @@
+{% extends 'music_charts/mcharts_base.html' %}
+
+
+{% load static %}
+
+{% block title %}Hot_100{% endblock %}
+
+{% block header %}Hot 100 current artist{% endblock %}
+
+{% block content %}
+<!---this is where the html tags and code will fall--->
+<p class="hot-one-title">HOT 100</p>
+<table class="chart-row">
+    <tr>
+        <th class="chart-header">w/Rank</th>
+        <th class="chart-header">Song</th>
+        <th class="chart-header">Artist</th>
+    </tr>
+            {% for version in song_list %}
+    <tr>
+        <td class="music-row">{{ version.0 }}</td><td class="music-row">{{ version.1 }}</td><td class="music-row">{{ version.2 }}</td>
+    </tr>
+        {% endfor %}
+</table>
+
+
+
+<!--- end of html tags and python code----->
+{% endblock %}

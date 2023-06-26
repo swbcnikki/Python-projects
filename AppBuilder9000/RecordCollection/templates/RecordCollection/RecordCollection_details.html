@@ -1,0 +1,51 @@
+{% extends "RecordCollection/RecordCollection_base.html" %}
+
+{% load static %}
+
+{% block title %} Collection Detail {% endblock %}
+
+
+{% block content %}
+<div class="recordscard card card-body text-white text-center" style="max-width: 69rem;">
+
+    <h1 class="addh1">Album Details</h1>
+
+    <div>
+        <div class="row">
+            <div class="col addh1"><h2>{{ details.artistFN }} {{ details.artistLN }}     -     {{ details.title }}</h2></div>
+        </div>
+        <div class ="row recordsform">
+            <div class="col">Format: {{ details.format }} -
+                Condition: {{ details.quality }} - Rating: {{ details.rating }}</div>
+        </div>
+        <div class="row recordsform">
+            <div class="col">Notes: {{ details.comments }}</div>
+        </div>
+
+        <h1 class="addh1"> {{ year }}</h1>
+
+        <img class="albumArt" src={{ cover }}>
+
+    <a href="{% url 'records_edit' details.id %}" class="recordsbtn btn btn-dark">Edit Details</a>
+    <a href="{% url 'records_delete' details.id %}" class="recordsbtn btn btn-dark">Delete Album</a>
+    <a href="{% url 'records_view' %}" class="recordsbtn btn btn-dark">Back to Collection</a>
+
+    </div>
+
+</div>
+{% endblock %}
+
+
+
+
+
+<!--
+
+<div class="recordscard card text-white text-center mb-3 " style="max-width: 69rem;">
+  <div class="card-body">
+    <p class="card-text">A Work In Progress<br>Details coming soon</p>
+      <a href="{% url 'records_home' %}" class="recordsbtn btn btn-dark">Home</a>
+  </div>
+</div>
+
+-->

@@ -1,0 +1,24 @@
+{% extends "CarPartsApp/CarPartsApp_base.html" %}
+{% load static %}
+{% block title %}Details{% endblock %}
+{% block header %} Would You like to make changes? {% endblock %}
+
+{% block content %}
+
+    <div class="formContainer">
+        <form action="{% url 'CarPartsApp_edit' parts.id %}" method="POST">
+            {% csrf_token %}
+            {{ CarPartsForm }}
+            {{ form.as_p }}
+            <div class="frmBtn">
+                <input type="submit" name="submit" class="btn">
+            </div>
+            <a href="{% url 'CarPartsApp_delete' parts.id %}">
+                <button type="button" class="btn btn-danger btn-lg">Delete</button>
+            </a>
+        </form>
+    </div>
+
+
+
+{% endblock %}

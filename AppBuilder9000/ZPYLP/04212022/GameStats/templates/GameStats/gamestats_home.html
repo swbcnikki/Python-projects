@@ -1,0 +1,42 @@
+{% extends "gamestats_base.html" %}
+
+{% load static %}
+
+{% block title %} Game Reviews {% endblock %}
+
+{% block header %} Welcome to Shadow Game Reviews {% endblock %}
+<!--- Paragraph on the home page of the app -->
+{% block content %}
+
+<div class="card-container">
+  <div class="card-group">
+      <div class="card text-white bg-dark neu" style="width: 18rem;">
+      <img class="card-img-top neu-top-left" src="../static/images/homecard1.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Action</h5>
+        <p class="card-text">Find your favorite action games and see how they stack up against the competition.</p>
+        <a href="#" class="btn btn-outline-secondary bottom neu-button">Action games</a>
+      </div>
+    </div>
+      <div class="card text-white bg-dark neu" style="width: 18rem;">
+      <img class="card-img-top" src="../static/images/homecard2.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Racing</h5>
+        <p class="card-text">Find out what critics think about your favorite racing games.</p>
+        <a href="#" class="btn btn-outline-secondary bottom neu-button">Racing games</a>
+      </div>
+    </div>
+      <div class="card text-white bg-dark neu" style="width: 18rem;">
+      <img class="card-img-top neu-top-right" src="../static/images/homecard3.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Top Games</h5>
+        <p class="card-text">Find out what the top games are!</p>
+        <a href="{% url 'gamestats_topgames' %}" class="btn btn-outline-secondary bottom neu-button">Top games</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}

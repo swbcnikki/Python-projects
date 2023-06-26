@@ -1,0 +1,56 @@
+<!-- This is the home page of Movie Reviews App --->
+
+{% extends "MovieReviews/moviereviews_base.html" %}
+
+{% load static %}
+
+{% block title %} Movie Reviews {% endblock %}
+
+<!--- Header for this page --->
+{% block header %} Welcome to my Movie Review App! {% endblock %}
+<!--- Paragraph on the home page of the app -->
+{% block content %}
+                    <p>If you love movies you're in the right place!<br>
+                    You can see all our reviewed movies and even<br>
+                    create your own reviews too!<br> Below are some of our Reviewed Movies!</p>
+
+<div class="card-deck mx-auto pt-4" style="max-width: 50vw; opacity:90%;">
+<!--    Card #1-->
+    <div class="card-group">
+          <div class="card text-light bg-dark my-4 ml-4" style="max-width: 18rem; text-align:center;">
+            <div class="card-header">Movie Classics </div>
+            <div class="card-body">
+              <img class="card-img-top" src="../static/images/casablanca.jpg" alt="Card image cap">
+              <h5 class="card-title">Casablanca</h5>
+            </div>
+          </div>
+      <!--- Card #2-->
+           <div class="card text-light bg-dark my-4 ml-4" style="max-width: 18rem; text-align:center;">
+            <div class="card-header">Movie Dramas</div>
+            <div class="card-body">
+              <img class="card-img-top" src="../static/images/onceupon.jpg" alt="Card image cap">
+              <h5 class="card-title">Once Upon A Time In Hollywood</h5>
+            </div>
+          </div>
+      <!--Card #3 -->
+            <div class="card text-light bg-dark my-4 ml-4" style="max-width: 18rem; text-align:center;">
+                <div class="card-header">Movie Comedies</div>
+                    <div class="card-body">
+                        <img class="card-img-top" src="../static/images/horriblebosses.jpg" alt="Card image cap">
+                        <h5 class="card-title">Horrible Bosses</h5>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+
+
+
+

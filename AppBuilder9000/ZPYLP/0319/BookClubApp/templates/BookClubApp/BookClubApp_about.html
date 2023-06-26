@@ -1,0 +1,47 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}Book Club{% endblock %}
+{% block header%}Get Started{% endblock %}
+
+{% block content %}
+<style>
+.row {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 70vh;
+}
+.container-image {
+    width: 100%;
+    height: 100%;
+}
+</style>
+<div class="content">
+    <div class="container" style="max-width: 100% !important; padding: 0; margin: 0;">
+          <div class="row" style="padding: 50px 20px 25px 20px;">
+            <div class="col" style="margin-left: 10%; padding-top: 50px;padding-bottom: 50px; color: #444;">
+                <h2>Read List</h2>
+                <p>Keep up with the books you've read by adding them to your read list.</p>
+                <a class="btn btn-secondary" href="{% url 'BookClubApp_AddBook' %}">Add Titles</a>
+            </div>
+            <div class="col" style="margin-right: 10%;">
+              <div class="container-image" style="background: url({% static 'images/dog-reading.png' %}) no-repeat; background-size:cover; background-position:center;"></div>
+            </div>
+          </div>
+          <div class="row" style="padding: 25px 20px 50px 20px;">
+            <div class="col" style="margin-left: 10%; padding-top: 50px;padding-bottom: 50px; color: #444;">
+                <h2>Wishlist</h2>
+                <p>Search our book database to add items to your wishlist.</p>
+                <a class="btn btn-secondary" href="{% url 'BookClubApp_searchForm' %}">Search Titles</a>            </div>
+            <div class="col" style="margin-right: 10%;">
+                <div class="container-image" style="background: url({% static 'images/cat-reading.png' %}) no-repeat; background-size:cover; background-position:center;"></div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}

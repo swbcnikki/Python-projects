@@ -1,0 +1,27 @@
+{% extends 'Composers/composers_base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        {% block header %} Create New Composer {% endblock %}
+        <title>{% block title %} Create Composer {% endblock %}</title>
+    </head>
+        <body>
+            {% block content %}
+            <div class="jumbotron jumbotron-fluid w-100 display1">
+                <h2 class="display-4">Create a New Composer</h2>
+            </div>
+            <div id="form-container" class="form-group form-centered w-50 mx-auto">
+                <form method="POST">
+                    {% csrf_token %}
+                        <table id="table" class='table table-info  table-hover table-bordered table-centered'>
+                        {{ form.as_table }}
+                        </table>
+                        <button type="submit" class="btn btn-primary">Add Composer</button>
+                </form>
+            </div>
+            {% endblock %}
+        </body>
+    </html>

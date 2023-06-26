@@ -1,0 +1,29 @@
+{% extends 'Prowrestlers/ProWrestling_base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="admin_panel">
+    <table>
+       <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Number of Wins</th>
+        </tr>
+       </thead>
+        <tbody>
+        {% for view in view %}
+            <tr>
+                <td><a href="{% url 'wrestlers_details' view.id %}">{{ view.first_name }}</a></td>
+                <td>{{ view.last_name }}</td>
+                <td>{{ view.win_number }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+
+
+{% endblock %}

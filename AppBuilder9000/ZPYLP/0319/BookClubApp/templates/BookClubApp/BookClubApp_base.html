@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		{% include "BookClubApp/BookClubApp_head.html" %}
+		<title>{% block title%}{% endblock %}</title>
+	</head>
+	<nav>
+        {% include "BookClubApp/BookClubApp_nav.html" %}
+	</nav>
+	<body id="body">
+		<div class="title-header" style="background:url({% static 'images/book-header.png'%}) no-repeat; background-size:cover; background-position:center;">
+			<h1>{% block header%}{% endblock %}</h1>
+		</div>
+		<div>
+			{% block content %}{% endblock %}
+		</div>
+		<footer>
+            {% include "BookClubApp/BookClubApp_footer.html" %}
+		</footer>
+	</body>
+</html>

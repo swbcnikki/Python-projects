@@ -1,0 +1,32 @@
+{% extends "MuayThai/MuayThai_base.html" %}
+{% load static %}
+
+<!-- Set Headline -->
+{% block headline %}Current Fighters{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <table class="table table-hover table-striped">
+            <thead class="thead-dark text-light">
+                <tr>
+                    <th>First Name:</th>
+                    <th>Last Name:</th>
+                   <th>Country:</th>
+                    <th>Gym:</th>
+                </tr>
+            </thead>
+            <tbody class="bg-light">
+                {% for fighter in fighters %}
+                <tr class="text-dark font-weight-bolder">
+                    <td><a href="../{{ fighter.pk }}/details/">{{ fighter.first_name }}</a></td>
+                    <td>{{ fighter.last_name }}</td>
+                    <td>{{ fighter.country }}</td>
+                    <td>{{ fighter.gym }}</td>
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+
+
+
+{% endblock %}

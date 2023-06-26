@@ -1,0 +1,18 @@
+{% extends "IceHockey_base.html" %}
+{% load static %}
+{% block title %}Ice Hockey Details{% endblock %}
+
+{% block header %}Item Details{% endblock %}
+
+{% block content %}
+    <h2 class="display-2 text-info text-center">Edit Profile Information</h2>
+    <div id="form-container" class="table-responsive w-50 mx-auto">
+        <form method='POST'>
+            {% csrf_token %}
+            <table id="table" class="table table-info table-bordered">
+                {{ form.as_table }}
+            </table>
+            <button type="submit" class="btn btn-info btn-lg btn-block w-50 mx-auto">Edit Player</button>
+        </form>
+    </div>
+{% endblock %}

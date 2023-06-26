@@ -1,0 +1,60 @@
+{% extends 'ChefKnives\ChefKnives_Base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Brands</th>
+            <th scope="col">Price</th>
+            <th scope="col">Country Of Origin</th>
+            <th scope="col">Steal</th>
+            <th scope="col">Blade</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        {% for view in view %}
+          <tr>
+            <th scope="row">{{view.brands}}</th>
+            <td>{{view.price}}</td>
+            <td>{{view.country_origin}}</td>
+            <td>{{view.steal}}</td>
+            <td>{{view.blade_style}}</td>
+            <td>
+
+              <a class="btn btn-outline-info mr-1 font-weight-bold" href="{% url 'ChefKnives_Details' view.pk %}" role="button">Details</a>
+
+              <a class="btn btn-outline-info mr-1 font-weight-bold" href="{% url 'ChefKnives_Edit' view.pk %}" role="button">EDIT</a>
+
+              <a class="btn btn-outline-info mr-1 font-weight-bold" href="{% url 'ChefKnives_Delete' view.pk %}" role="button">DELETE</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

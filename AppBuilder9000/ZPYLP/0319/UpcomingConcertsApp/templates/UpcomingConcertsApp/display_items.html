@@ -1,0 +1,61 @@
+{% extends 'UpcomingConcertsApp\sub_pages_base.html' %}
+{% block title %}View Items{% endblock %}
+{% block page-title %}View Database Items{% endblock %}
+{% block sub-heading %}This page displays all database items{% endblock %}
+{% block sub-body %}
+
+<h2>Events</h2>
+<div class="flex-box">
+    {% for event in all_events %}
+    <div class="card">
+        <img class="card-img-top" src="../../static/imgs/card_image_bso.jpg" alt="Boston Symphony Orchestra">
+        <div class="card-body">
+            <h5 class="card-title">{{ event.event_name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ event.date }}</h6>
+            <p class="card-text">{{ event.orchestra }}</p>
+            <a href="{{ event.id }}/details" class="btn btn-dark">View</a>
+            <a href="{% url 'edit_event' pk=event.id %}" class="btn btn-dark">Edit</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<h2>Pieces in the Database:</h2>
+{% for piece in all_pieces %}
+<h5>Piece Name:</h5>
+{{ piece.piece_name }}<br/>
+<h5>Composer:</h5>
+{{ piece.piece_composer }}<br/>
+<h5>Concerts on which it is programmed:</h5>
+{% for piece_program in all_event_pieces %}
+    {% if piece_program.piece_id == piece.id %}
+        {% for event in all_events %}
+            {% if piece_program.concert_id == event.id %}
+                {{ event.event_name }}, {{ event.orchestra }}<br>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+<a href="{% url 'edit_piece' pk=piece.id %}" class="btn btn-dark">Edit</a>
+<hr/>
+{% endfor %}
+
+<h2>Orchestras in the Database</h2>
+{% for orchestra in all_orchestras %}
+
+{{ orchestra.orchestra_name }}
+
+<a href="{% url 'edit_orchestra' pk=orchestra.id %}" class="btn btn-dark">Edit</a>
+<hr/>
+
+{% endfor %}
+
+<h2>Conductors in the Database</h2>
+{% for conductor in all_conductors %}
+{{ conductor.conductor_name }}<br/>
+<a href="{% url 'edit_conductor' pk=conductor.id %}" class="btn btn-dark">Edit</a>
+<hr/>
+
+{% endfor %}
+
+{% endblock %}

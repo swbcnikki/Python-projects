@@ -1,0 +1,36 @@
+{% extends 'Camping_Supplies_Base.html' %}
+{% block header %}Camping Supplies:{% endblock %}
+
+
+{% block content %}
+<h1 class="header">Site Details</h1>
+
+<div class="table_container">
+    <table class="table" id="detailTbl">
+        <thead>
+            <tr class="Head">
+                 <th>Color</th>
+                <th>PersonCount</th>
+                <th>Price</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="Body">
+                <td>{{ details.Color }}</td>
+                <td>{{ details.PersonCount }}</td>
+                <td>{{ details.Price }}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="submitBtn">
+    <div class="submitBtn">
+        <a href="../{{ form.pk }}Tent_Delete/"><button type="button" class="btn">Delete</button></a>
+        <button class="btn btn-info"><a href="{% url 'SuppliesList' %}">CANCEL</a></button>
+         <a href="../{{ form.pk }}Tent_Edit/"><button type="button" class="btn">Edit</button></a>
+    </div>
+</div>
+{% endblock %}

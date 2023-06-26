@@ -1,0 +1,15 @@
+{% extends "Stocks/stocks_base.html" %}
+
+{% block title %}Stocks{% endblock %}
+
+{% block header %}Check your favorite stocks{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <img src="/static/images/stocks_img.jpg" alt="..." style="width:100%">
+        <div class="container-card">
+            <a href="{% url 'stocks_favorites' %}"><h4>Click here to check your favorite stocks</h4></a>
+        </div>
+    </div>
+{% endblock %}

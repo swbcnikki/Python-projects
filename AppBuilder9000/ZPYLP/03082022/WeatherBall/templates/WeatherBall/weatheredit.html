@@ -1,0 +1,24 @@
+{% extends "WeatherBall/weatherbase.html" %}
+{% load static %}
+{% block title %}WeatherBall{% endblock %}
+{% block header %}Get Your Local Weather Here!"{% endblock %}
+{% block content %}
+<div>
+    <h2>"Edit User Information"</h2>
+</div>
+<div>
+    <div>
+        <form method="POST">
+                <!-- Cross Site Request Forgery {csrf_token} protection -->
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            <div>
+                <input type="submit" class="btn" value="Save Changes" name="Save_Changes">
+                <a href="{% url 'weather_home' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+                <a href="{% url 'weather_delete' edit.id %}"><button type="button" class="btn" value="Delete">Delete</button></a>
+            </div>
+         </form>
+    </div>
+</div>
+{% endblock %}

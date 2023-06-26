@@ -1,0 +1,18 @@
+{% extends 'Prowrestlers/ProWrestling_base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="heading text-center text-white">Adding ProWrestlers</h2>
+    <div class="container text-center text-white">
+        <form method="POST" class="control-label col-xs-1">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="frmBtn_container">
+                <input type="submit" class="btn btn-primary" id="btn" value="Add New ProWrestler" name= "Save_Wrestler">
+                <a href="{% url 'wrestlers_home' %}"><button type="button" class="btn btn-secondary" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

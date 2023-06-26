@@ -1,0 +1,412 @@
+/************** General Styles ***********************/
+body{
+    font-family: 'Archivo Narrow', sans-serif;
+}
+.content {
+    min-height: 60vh;
+    background: #eee;
+    padding-bottom:50px;
+}
+.title-header {
+    height: 300px;
+    padding-top: 100px;
+}
+.section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background: #05716c;
+    color: #fff;
+}
+.eighty {
+    margin: 10px auto;
+    width: 80%;
+}
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    background: #fff !important;
+}
+/************** Typography Styles ***********************/
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+    font-size: 90px;
+    text-align: center;
+    color: #fff;
+}
+h2 {
+    font-family: 'Julius Sans One', sans-serif;
+    margin: 20px 0 10px 0;
+}
+p{
+    font-size:20px;
+}
+a {
+    color: #1fbfb8;
+}
+a:hover {
+    color: #65adaa;
+    text-decoration: none;
+}
+/************** Homepage Styles ***********************/
+.jumbotron {
+    background: url(../images/books-background-dark.png) no-repeat;
+    background-position: center;
+    background-size:cover;
+    color: #fff;
+    text-align: center;
+    padding: 7rem 2rem;
+    border-radius: 0px;
+    margin: 0;
+}
+h1.display-4 {
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+    font-size: 90px;
+}
+p.lead {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 32px;
+}
+p.lead.button {
+    margin-top: .5em;
+}
+.content.book-list .row {
+    width: 80%;
+    margin: 0px auto;
+    padding-top: 25px;
+}
+/************** Button Styles ***********************/
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    padding: .375rem 3rem;
+    font-size: 1.75rem;
+    line-height: 2;
+    border-radius: 0;
+    border: 2px solid #fff;
+}
+.btn-outline-light:hover {
+    color: #fff;
+    background-color: #062f4f;
+    border-color: #062f4f;
+}
+.btn.btn-secondary {
+    background: #813773;
+    font-size: 20px;
+    padding: .375rem 2rem;
+    border: none;
+}
+.btn:hover {
+    box-shadow: 0 0 10px #444;
+}
+button a {
+    color: #fff;
+}
+button a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/************** Form Styles ***********************/
+form input,
+form label {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+form label {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0px 20px;
+    top: 52px;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    color: #696767;
+}
+.filled label {
+    top: 0;
+    padding:0;
+    color: #444;
+    font-size: .95em;
+}
+input[type=text], select, textarea, input[type=url] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+label[for=id_comments] {
+    display: block;
+}
+
+.book-form {
+  border-radius: 5px;
+  background-color: #eee;
+  padding: 20px;
+}
+form {
+    width: 60%;
+    margin: 20px auto;
+}
+
+/************** BookList Styles ***********************/
+.booklist {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 25px auto;
+}
+.content .card {
+    margin: 15px 0;
+}
+.booklist .card {
+    width: 31%;
+    margin: 1%;
+    min-height: 400px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.booklist .card:hover {
+    box-shadow: 0 0 10px #444;
+    transform: scale(1.025);
+    transform-origin: center;
+}
+a.icon {
+    float: right;
+    margin: 0 5px;
+}
+h4.card-header {
+    background: #062f4f;
+    padding: .75rem 1rem;
+    color: #fff;
+}
+h4.card-header a {
+    color: #fff;
+}
+.card-header .title {
+    width: 70%;
+    float: left;
+    display: inline-block;
+}
+.card-header .icons {
+    width: 30%;
+    display: inline-block;
+    float: right;
+}
+.pagination {
+    width: 80%;
+    margin: 0 auto;
+}
+li.page-item.active {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #dee2e6;
+    border: 1px solid #dee2e6;
+}
+li.page-item.disabled {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    border: 1px solid #dee2e6;
+}
+
+/************** Results Styles ***********************/
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.search-result {
+    width: 31%;
+    margin: 1%;
+    min-height: 400px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.search-result:hover {
+    box-shadow: 0 0 10px #444;
+    transform: scale(1.025);
+    transform-origin: center;
+}
+.book-image{
+    width: 100%;
+    min-height: 500px;
+}
+.search-result form {
+    padding-bottom: 20px;
+    display: block;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    width: 100%;
+    margin-top: 0;
+}
+img.book-image {
+    width: 100%;
+}
+i.far.fa-plus-square {
+    font-size: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.book-title, .book-authors {
+    padding: 5px 10px;
+}
+
+/************** Book Page Styles ***********************/
+.inner-content {
+    width: 80%;
+    margin: 0 auto;
+}
+i.far.fa-check-square.book-checkmark {
+    float: right;
+    color: #ccc;
+}
+i.far.fa-check-square.book-checkmark:hover {
+    color: #444;
+}
+i.fas.fa-edit {
+    font-weight: 100;
+}
+i.far.fa-check-square.book-checkmark.green-icon{
+    color: #b3bb1f;
+    font-size: 35px;
+}
+.book-page-image {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+a.book-icon {
+    float: right;
+    margin: 0 5px;
+    font-size: 32px;
+    color: #ccc;
+}
+a.book-icon:hover {
+    color:#444;
+}
+
+/************** Top Book Page Styles ***********************/
+.top-books {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 50px auto;
+}
+.top-book.card {
+    width: 31%;
+    margin: 1%;
+    position: relative;
+}
+.top-book.card:hover {
+    box-shadow: 0 0 10px #444;
+    transform: scale(1.025);
+    transform-origin: center;
+}
+.top-book.card form {
+    padding-bottom: 20px;
+    display: block;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    width: 100%;
+    margin-top: 0;
+    position: relative;
+}
+a.top-book-inner-div {
+    width: 100%;
+}
+.top-book-image.card-img-top {
+    min-height: 500px;
+}
+.top-number {
+    position: absolute;
+    text-align: center;
+    background: #813773;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    left: 0;
+}
+
+
+/************** Footer Styles ***********************/
+footer {
+    margin-bottom: 0;
+    text-align: right;
+    background: #636569;
+    height: 100px;
+    color: #fff;
+    padding: 35px 25px;
+    font-size: 18px;
+}
+
+/************** Responsive Styles ***********************/
+@media only screen and (max-width: 1100px) {
+    .booklist .card, .search-result, .top-book.card {
+        width: 48%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    h1{
+        font-size: 70px;
+    }
+    .booklist .card, .search-result, .top-book.card {
+        width: 100%;
+    }
+    form {
+        width: 80%;
+    }
+    .row {
+        display: block;
+        height: auto !important;
+    }
+    .col {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .container-image {
+        height: 500px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    h1{
+        font-size: 50px;
+    }
+    form {
+        width: 90%;
+    }
+}

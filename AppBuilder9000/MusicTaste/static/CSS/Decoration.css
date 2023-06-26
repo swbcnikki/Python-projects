@@ -1,0 +1,14 @@
+body {
+    background-color: tan;
+}
+
+.Title, .paragraph {
+    text-align: center;
+    color: white;
+}
+
+.Title {
+    font: Times New Roman;
+    font-weight: bold;
+
+}

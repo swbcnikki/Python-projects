@@ -1,0 +1,43 @@
+
+{% extends 'eb_base.html' %}
+
+{% block title %}A Scenic Route{% endblock %}
+
+{% block header %}Stations on the Route{% endblock %}
+
+{% block content %}
+
+<style>
+    table, th, td {
+    font-family: courier, sans-serif; border: 2px solid black; padding: 5px}
+    th, tr, td {
+    border: 1px solid black, text-align: center;}
+</style>
+<table>
+    <tr>
+        <th>State</th>
+        <th>Long Stop</th>
+        <th>Short Stop</th>
+    </tr>
+
+    <tr>
+        <td>Illinois</td>
+        <td>Chicago</td>
+        <td>Glenview</td>
+    </tr>
+
+    <tr>
+        <td>Washington</td>
+        <td>Seattle</td>
+        <td>Everett</td>
+    </tr>
+
+    <tr>
+        <td>Oregon</td>
+        <td>Portland</td>
+        <td>none</td>
+    </tr>
+</table>
+
+
+{% endblock %}

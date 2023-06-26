@@ -1,0 +1,16 @@
+{% extends "nyc_base.html" %}
+{% load static %}
+
+{% block title %}New York City Eats: A Guide{% endblock %}
+
+{% block content %}
+
+    <h1>Welcome to your guide to New York City Restaurants!</h1>
+
+    <img src="{% static 'images/header_image.png' %}" alt="header_image" class="center-image">
+
+    <p>Don't know where you want to eat this weekend? We have you covered. You can search by borough, neighborhood, or cuisine.<br>
+        You can also add your favorite restaurant to our list.<br>
+        And finally...if you are feeling really adventurous, you can do our random select feature!</p>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'FloridaBirds/FloridaBirds_base.html' %}
+
+{% block title %}  Florida Birds Delete {% endblock %}
+
+{% block navbar%}{% endblock %}
+
+{% block content %}
+
+
+
+<form method="POST" action=".">
+    {% csrf_token %}
+    <h2 style="color:black;text-align:center;">Confirm Delete</h2>
+    <!--wildcard in curly brackets calls the item, exercise-->
+    <p style="color:black;text-align:center;">Are you sure you want to delete {{birddelete.bird_name}} from the database?</p>
+    <!--form-->
+    {{ birddelete.as_p }}
+
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-danger" type="submit" >Yes, let's do it</button>
+    </div>
+</form>
+
+
+{% endblock %}

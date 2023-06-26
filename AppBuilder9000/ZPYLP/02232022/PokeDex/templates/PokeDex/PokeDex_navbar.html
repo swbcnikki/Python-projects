@@ -1,0 +1,13 @@
+<!-- This is a dropdown navbar that was grabbed from bootstrap 4 and is using a jquery function to make the navbar drop down-->
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false"
+  onclick="$('.dropdown-toggle').dropdown()">
+    Destination
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'PokeDex_home' %}">Home</a>
+    <a class="dropdown-item" href="{%url 'PokeDex_search'%}">Search Pokemon</a>
+    <a class="dropdown-item" href="{% url 'Add_Pokemon_to_PokeDex' %}">Add Pokemon</a>
+    <a class="dropdown-item" href="{% url 'show_pokemon' %}">Your PokeDex</a>
+  </div>
+</div>

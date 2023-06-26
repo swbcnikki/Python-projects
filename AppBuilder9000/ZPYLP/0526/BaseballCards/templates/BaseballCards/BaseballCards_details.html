@@ -1,0 +1,39 @@
+{% extends "BaseballCards_base.html" %}
+
+{% block title %}Catalog Item{% endblock %}
+
+{% block content %}
+
+
+
+<div id="table-con">
+    <h1>Card Details</h1>
+    <table class="table table-bordered border-danger table-striped">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Active?</th>
+            <th>Position</th>
+            <th>Bats/Throws</th>
+            <th>Career BA or ERA</th>
+            <th>Career HR or SO</th>
+        </tr>
+        {% for cards in cards %}
+        <tr>
+            <td>{{ cards.first_name | title }}</td>
+            <td>{{ cards.last_name }}</td>
+            <td>{{ cards.active }}</td>
+            <td>{{ cards.position }}</td>
+            <td>{{ cards.bats_throws }}</td>
+            <td>{{ cards.career_ba_or_era }}</td>
+            <td>{{ cards.career_hr_or_so }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+
+
+
+{% endblock %}

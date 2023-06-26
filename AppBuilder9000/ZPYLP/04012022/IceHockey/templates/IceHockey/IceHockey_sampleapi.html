@@ -1,0 +1,28 @@
+{% extends "IceHockey_base.html" %}
+{% load static %}
+{% block title %}Api Team Data{% endblock %}
+
+{% block header %}Api Team Data{% endblock %}
+
+{% block content %}
+<h3 class="display-2 text-light text-center mt-5 mb-5">Your  Team: {{ urlname }} </h3>
+ <table id="table" class="table table-light table-bordered table-hover w-25 text-center text-info mx-auto" data-toggle="table">
+    <thead>
+       <tr>
+          <th scope="col">Player Name</th>
+          <th scope="col">Pos.</th>
+          <th scope="col">#</th>
+       </tr>
+    </thead>
+       <tbody>
+          {% for number_list, position_code, roster in zipped_list%}
+             <tr>
+                <td>{{ number_list }}</td>
+                <td>{{ position_code }}</td>
+                <td>{{ roster }}</td>
+             </tr>
+          {% endfor %}
+       </tbody>
+ </table>
+
+{% endblock %}

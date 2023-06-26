@@ -1,0 +1,72 @@
+{% extends 'SteamInterestApp/SIA_base.html' %}
+
+{% load static %}
+
+<!--This page will be used for adding an entry to our templates!
+It also extends our base, which means minimal formatting
+-->
+
+{% block title %} Steam Interest App - API Call {% endblock %}
+
+{% block header %}
+    {% if steam_success == 200 %}
+        <h1>API found!</h1>
+    {% else %}
+        <h1>API not found...</h1>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="justify-content-center text-center">
+        {% if steam_success == 200 and number_of_stories > 0%}
+            <p>Success! See API info below:</p>
+            <!-- I'm looking to grab the 'title', 'urls', and 'content' from this json!-->
+            <table class="table text-white" style="width: 75%; margin: 0px auto">
+                <thead>
+                    <tr>
+                        <!--Setting up the basic headers of our table-->
+                        <td>Content Title</td>
+                        <td>Link</td>
+                        <td>Content</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--This is when we get confusing with loops!
+                    We're essentially calling on the values of the initial dictionary-->
+                    {% for x,y in api_full_news.items %}
+                        <tr>
+                            <!--Now that we have the values of the initial dictionary, we call on the list of values
+                            for this nested dictionary!-->
+                            {% for z in y %}
+                                <!--We have to account for the second one being a hyper link!
+                                By checking if the first 4 characters of z are http, this will tell us
+                                if z is a hyper link!-->
+                                {% if z|slice:4 == "http" %}
+                                    <td><a href="{{z}}" target="_blank">Click me!</a></td>
+                                {% else %}
+                                    <td> {{ z }}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        <!--This will call if the API call works but there aren't any updates for the game! Check 139550 for an example-->
+        {% elif number_of_stories == 0 %}
+            <h3>Kind of...</h3>
+            <p>While this is a game's ID, they haven't posted a single update for it.
+            Sorry, but I can't show any game info here.</p>
+        <!--Finally, if the API call is unsuccessful, this block with execute-->
+        {% else %}
+            <p>I'm sorry, but there was no STEAM game found with that ID...</p>
+            <p>Please try another entry by pressing the "back" button in your browser or by pushing the button below:</p>
+        {% endif %}
+
+        {# Number of news items: {{ number_of_stories }} #}
+        <br>
+        <button type="button" class="btn btn-info"  onclick="window.location.href='{% url 'SIASteamGameIDEntry' %}';">Go Back to Game ID Entry</button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'utada_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Music {% endblock %}
+
+
+
+
+{% block content %}
+<div class="container px-5 py-5 text-white bg-transparent">
+<h3>MUSIC</h3>
+    <div class="music_container">
+        <form method="POST">
+            {% csrf_token %}
+			{{form | crispy}}
+        <button type="Submit" class="btn btn-outline-light">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

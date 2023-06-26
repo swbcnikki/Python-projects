@@ -1,0 +1,61 @@
+{% extends 'SeaShanties/shanties_base.html' %}
+
+{% block title %} Shanties -- View Song {% endblock %}
+
+{% block content %}
+
+    {% for song in song %}
+        <div class="songTitleDiv">
+            <h2>{{ song.title }}</h2>
+        </div>
+
+        <!-- Youtube/Spotify embed
+            The embed link will need to be a Django call to SeaShanties.videoURL
+            for the selected song
+        -->
+
+        <div class="videoFrameDiv">
+            <iframe src="{{ song.videoURL }}"
+                    width="700" height="380" frameborder="0" allowtransparency="true"
+                    allow="encrypted-media">
+            </iframe>
+        </div>
+
+        <!-- Lyrics
+            The content inside the "lyricsDiv" needs to be called in from
+            SeaShanties.lyrics
+        -->
+
+        <div class="grid">
+            <div class="gridMain">
+            <h2>Lyrics</h2>
+                <div class="lyricsDiv">
+                    <p>{{ song.lyrics }}</p>
+                </div>
+            </div>
+
+            <!-- Song Origin
+                Here we're calling in SeaShanties.artist, .history and .year
+            -->
+            <div class="gridRight">
+                <h2>Song Origin</h2>
+                <div class="historyDiv">
+                    <div class="dateArtist">
+                        <p>Year: {{ song.year }}</p>
+                        <p>Artist: {{ song.artist }}</p>
+                    </div>
+                    <div class="historyBlurb">
+                        <p>{{ song.history }}</p>
+                    </div>
+                </div>
+                <div class="buttonPanel">
+                    <input type="button" class="btn" value="Edit">
+                    <input type="button" class="btn" value="Delete">
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+{% endblock %}
+
+

@@ -1,0 +1,39 @@
+{% extends "The_Force_Base.html" %}
+{% block title %}Star Wars Events Near You!!{% endblock %}
+
+{% block header %}
+    <h1>Find a Convention Near You!!</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="table-container">
+        <table id="table">
+            <thead>
+                <tr id="th">
+                    <th></th>
+                    <th>Your Name?</th>
+                    <th>Favorite Movie?</th>
+                    <th>Favorite Scene?</th>
+                    <th>Light or Dark Side?</th>
+                    <th>Are you a fan?</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for event in Event %}
+                <tr id="td">
+                    <td>{{ event.Jedi }}</td>
+                    <td>{{ event.Your_Name }}</td>
+                    <td>{{ event.Your_favorite_movie }}</td>
+                    <td>{{ event.Your_Favorite_Scene }}</td>
+                    <td>{{ event.Light_or_Dark }}</td>
+                    <td>{{ event.Is_The_Force_With_You }}</td>
+                    <td><a href="{% url 'Edit' event.pk %}">Edit Entry</a></td>
+                    <td><a href="{% url 'ConfirmDelete' event.pk %}">Delete Entry</a></td>
+                    <td><a href="{% url 'Details' event.pk %}">Details</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

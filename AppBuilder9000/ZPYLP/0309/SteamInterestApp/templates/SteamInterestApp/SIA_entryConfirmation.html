@@ -1,0 +1,24 @@
+{% extends 'SteamInterestApp/SIA_base.html' %}
+
+{% load static %}
+
+<!--This page will be used for adding an entry to our templates!
+It also extends our base, which means minimal formatting
+-->
+
+{% block title %} Steam Interest App - Entry Successful {% endblock %}
+
+{% block header %} You have successfully added an entry! {% endblock %}
+
+{% block content %}
+    <div class="justify-content-center text-center">
+        <h3>Do you wish to add another entry?</h3>
+        <br>
+        <!--Two simple buttons incorporating onclick events to go back to the entry page or to go back home!-->
+        <button type="button" class="btn btn-info" onclick="window.location.href='{% url 'SIAAllEntries' %}';">View All Entries</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='{% url 'SIAAddEntry' %}';">Add Another Entry</button>
+        <button type="button" class="btn btn-danger" onclick="window.location.href='{% url 'SIAHome' %}';">Go Back Home</button>
+
+    </div>
+
+{% endblock %}

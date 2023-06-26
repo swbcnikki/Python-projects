@@ -1,0 +1,17 @@
+{% extends "SnowboardingBase.html" %}
+{% block title %}Snowboarding{% endblock %}
+{% block content %}
+    <h1> Ryder Details</h1>
+
+    <div class="RyderInfo">
+        <ul class="Details">
+            <strong>First Name</strong><li> {{ Ryder_Details.First_Name }}</li>
+            <strong>Last Name</strong><li> {{ Ryder_Details.Last_Name }}</li>
+            <strong>Style</strong><li> {{ Ryder_Details.Style }}</li>
+            <strong>Sponsor</strong><li> {{ Ryder_Details.Sponsor }}</li>
+            <li><a href="{% url 'Edit_Ryder' Ryder_Details.pk %}">Edit Ryder</a></li>
+            <li><a href="{% url 'Delete_Ryder' Ryder_Details.pk %}">Delete Ryder</a></li>
+        </ul>
+
+    </div>
+{% endblock %}

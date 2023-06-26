@@ -1,0 +1,27 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>music_charts</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="{% static 'css/music_charts.css'%}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--- navigation bar for home page------>
+    <div class="top-nav">
+        {% include "music_charts/mcharts_nav.html" %}
+    </div>
+<!----- creates center motion logo------------>
+
+    {% block content %}{% endblock %}
+<!---- intro section of home page---->
+
+</body>
+</html>

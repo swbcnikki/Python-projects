@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{% static '../static/css/HorseApp_stylesheet.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>{%block title%}{%endblock%}</title>
+        <script src="{% static '../static/js/HorseApp_JavaScript.js' %}"></script>
+    </head>
+
+    <body>
+        <div class="hero-image"> <!--contains main image-->
+            <div class="hero-text"> <!--contains header/text/image overlay-->
+                <h1>{%block header%}{%endblock%}</h1>
+            </div>
+        </div>
+        <!--navigation-->
+        <div class="topnav" id="myTopnav">
+            <a href="{% url 'HorseApp_Home' %}" class="active">Home</a>
+            <a href="{% url 'HorseApp_Add_Horse' %}">Horses</a>
+            <a href="{% url 'HorseApp_Index' %}">Search</a>
+            <!--responsive nav, hamburger icon on small screens-->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
+            <form method="GET" class="index-form-container">
+                <input class="searchbox" type="text" name="q" value="{{ request.GET.q }}" placeholder="search for..">
+                <button class="index-button" type="submit" name="action"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!--main content of the current page will be displayed here-->
+        {%block content%}{%endblock%}
+
+
+    <footer>
+        <p>
+            <center>&copy; Teri Michelle Hopkins</center><br>
+
+    </footer>
+    </body>
+</html>

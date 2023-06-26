@@ -1,0 +1,29 @@
+{% extends 'ArtistTrack_base.html' %}
+{% block title %}ArtistTrack{% endblock %}
+{% block header %}All Songs{% endblock %}
+{% block body %}
+
+
+    <div class="container at-opaque-container at-songs-container">
+        <table class="table table-bordered">
+            <tr class="red-text">
+                <th class="" scope="col">Artist</th>
+                <th class="" scope="col">Song</th>
+                <th class="" scope="col">Album</th>
+                <th class="" scope="col">Genre</th>
+                <th class="" scope="col">Year</th>
+            </tr>
+            <!--.all is what allows me to iterate through that list of songs and access the relevant DB information-->
+            {% for song in songs %}
+            <tr class="text-white">
+                <td scope="row"><a href="{{ song.pk }}/artist_info">{{ song.artist }}</a></td>
+                <td scope="row"><a href="{{ song.pk }}/details">{{ song.song_name }}</a></td>
+                <td scope="row">{{ song.album }}</td>
+                <td scope="row">{{ song.genre }}</td>
+                <td scope="row">{{ song.year }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}

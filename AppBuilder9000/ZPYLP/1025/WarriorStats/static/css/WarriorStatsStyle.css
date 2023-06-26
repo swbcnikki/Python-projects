@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+}
+
+.container-fluid {
+    color: white;
+}
+
+.container-li {
+    text-align: center;
+}
+
+.header-title {
+    padding: 10px 16px
+    text-align: center
+    color: white;
+}
+
+body, html {
+    background-image: url('/static/images/warriors2.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+ul.topnav li {
+    float: left;
+}
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+ul.topnav li a:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+    background-color: grey;
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #333333;
+  width: 100%;
+  height: 40px
+  font-size: 18px;
+  text-align: center;
+}
+
+li {
+  float: left;
+  display: in-line-block;
+  color: white;
+  width: 33%;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    margin-bottom: 60px; /* Margin bottom by footer height */
+  }
+  .footer .container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+  }
+
+
+
+

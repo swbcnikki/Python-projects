@@ -1,0 +1,159 @@
+/*==================================
+Navigation Section
+===================================*/
+.navbar {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 637px;
+    border-radius: 0px 0px 15px 0px;
+    z-index: 2;
+    -webkit-animation: moveNav 1s;
+    animation: moveNav 1s;
+}
+
+@keyframes moveNav {
+    from {left: -100vw;}
+    to {left: 0vw;}
+}
+
+.navbar a {
+    float: left; /*puts sections side by side.*/
+    display: block;
+    color: white;
+    padding: 14px 16px; /*navbar size.*/
+    text-decoration: none; /*removed underlines, etc.*/
+    font-family: Avant Garde, Helvetica;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveNavText 1s;
+    animation: moveNavText 1s;
+}
+
+@keyframes moveNavText {
+    from {left: -100vw;}
+    to {left: 0vw}
+}
+
+@media screen and (max-width: 576px) {
+    .navbar a{
+        width: 25%;
+        font-size: 12px;
+    }
+}
+
+.navbar a:hover {
+    color: tan;
+    cursor: pointer;
+    transition: 0.25s ease-in;
+}
+
+/*==================================
+Body Section
+===================================*/
+body {
+    margin: 0; /*This is here to override the browser setting it to 3.*/
+    z-index: 0;
+    overflow: hidden; /*allows animation to play without scrollbar appearing*/
+    color: tan;
+}
+
+.background_video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/*==================================
+Logo
+===================================*/
+.logo {
+    position: relative;
+    padding-left: 36vw;
+    margin-top: 10px;
+}
+
+/*==================================
+Container
+===================================*/
+.create-container {
+	opacity: 0.80;
+	position: relative;
+	width: 600px;
+	height: auto;
+	border-radius: 8px;
+	border: 2px solid gray;
+	box-shadow: 4px 3px white;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	background-color: black;
+	text-align: center;
+	z-index: 1;
+}
+
+/*==================================
+View Container Section
+===================================*/
+table {
+    padding-left: 52px; /*moves whole table to the right*/
+}
+
+table tr th { /*label field*/
+    padding-left: 38px; /*moves labels to the right*/
+    text-align: left;
+    text-decoration: underline;
+}
+
+table tr td { /*data field*/
+    padding-top: 6px; /*adds space above & between data*/
+    padding-left: 38px; /*moves data to the right*/
+    text-align: left;
+    color: white;
+}
+
+/*==================================
+Skater Animation Section
+===================================*/
+div.skater_animation::before {
+    content: url("../images/skate_silhouette.png");
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    animation: move1 4s;
+    transform: translate(-420px, 53px);
+}
+
+@keyframes move1 {
+    from {transform: translate(100vw, 53px)}
+    to {transform: translate(-420px, 53px)}
+}
+
+/*==================================
+Footer Section
+===================================*/
+.footer {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    padding-left: 46vw;
+}
+
+.video_attribution {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: grey;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding-right: 12px;
+}

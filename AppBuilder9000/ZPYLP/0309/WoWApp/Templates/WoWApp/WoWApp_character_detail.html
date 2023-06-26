@@ -1,0 +1,35 @@
+{% extends 'WoWApp/WoWApp_base.html' %}
+
+
+{% block content %}
+
+<div class="w3-container w3-center w3-text-blue-gray w3-animate-top">
+    <div class= "detail-container">
+        <!--display the character's name-->
+        <h3>Name: {{ characters.name }}</h3>
+        <!--display the character's side-->
+        <h3>Side: {{ characters.side }}</h3>
+        <!--display the character's choice-->
+        <h3>Choice: {{ characters.choice }}</h3>
+        <!--display the character's power-->
+        <h3>Powers: {{ characters.powers }}</h3>
+        <!--display the character's biography-->
+        <h3>Back Story: {{ characters.bio }}</h3>
+        <!--redirect user to the specific instance of the WoWEditSubscriber url using the primary key-->
+        <a href="{% url 'WoWAppEditCharacter' pk=characters.id %}">
+            <button type="button" class="btn btn-success btn-lg">Edit</button>
+        </a>
+        <!--redirect user to the specific instance of the WoWDeleteSubscriber url using the primary key-->
+        <a href="{% url 'WoWAppDeleteCharacter' pk=characters.id %}">
+            <button type="button" class="btn btn-danger btn-lg">Delete</button>
+        </a>
+        <!--redirect user to WoWCharacterList-->
+        <a href="{% url 'WoWAppCharacterList' %}">
+            <button type="button" class="btn btn-secondary btn-lg">Cancel</button>
+        </a>
+    </div>
+
+</div>
+
+
+{% endblock %}

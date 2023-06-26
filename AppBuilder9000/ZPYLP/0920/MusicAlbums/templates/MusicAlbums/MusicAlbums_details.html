@@ -1,0 +1,11 @@
+{% extends 'MusicAlbums/MusicAlbums_base.html' %}
+{% load static %}
+{% block content %}
+<h1>Music Album Details</h1>
+<div class="albumdetails"><br>
+     Artist: {{ music_details.Artist }}<br>
+     Year: {{ music_details.Year }}<br>
+     Album: {{ music_details.Album }}<br>
+     Genre: {{ music_details.Genre }}<hr>
+</div>
+{% endblock %}

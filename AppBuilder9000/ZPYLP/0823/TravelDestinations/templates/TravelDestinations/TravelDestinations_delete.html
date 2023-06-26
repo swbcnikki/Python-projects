@@ -1,0 +1,27 @@
+ {% extends "TravelDestinations/TravelDestinations_base.html" %}
+
+{% load static %}
+
+ {% block title %} Delete Your Trip {% endblock title %}
+
+{% block content %}
+
+
+<form method="POST">
+    {% csrf_token %}
+    <strong>ARE YOU SURE YOU WANT TO DELETE?</strong>
+    <br>
+    <br>
+    Click YES to confirm
+    <br>
+    <br>
+    <input type = "submit" value="YES">
+    <br>
+    <br>
+    <br>
+    <br>
+    <button><a href="{% url 'TravelDestinations_destinations.html' %}">Cancel</a></button>
+ </form>
+
+
+ {% endblock %}

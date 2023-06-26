@@ -1,0 +1,85 @@
+
+
+{% load static %}
+
+<!doctype html>
+<html lang="en" >
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>{Portland Neighborhood Reviews</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet", href ="{% static '/CSS/layout.css' %}">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+
+    <!--Navbar-->
+
+    <div class="w3-top" id= navop>
+        <div class="w3-bar w3-grey w3-card w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue"  title="NavMenu"><i class="fa fa-bars"></i></a>
+            <a href= "{% url 'NeighborhoodReview/NeighborhoodReview_home.html' %}" class="w3-bar-item w3-button w3-padding-large w3-white" >Home</a>
+            <a href="{% url 'NeighborhoodReview/CreateReview.html' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Write a Review</a>
+            <a href="{% url 'NeighborhoodReview/CreateNewNeighborhood.html' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Add a New Neighborhood</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">TBD3</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">TBD4</a>
+        </div>
+    </div>
+
+
+
+
+
+
+<div class = "bgimg1 form-container">
+    <form>
+        <br>
+        <label class = "labelfill">Neighborhood</label><br>
+        <input type ="text" size = "50" name = "neighborhoodName" value = "{{ neighborhood_id }}" readonly style="text-align: center" class="labelfill">
+        <br><br>
+    </form>
+    <br><br>
+</div>
+
+<div class = "table-container table-dark">
+    <h2 style = "text-align: center">RECENT REVIEWS</h2>
+                <table id ="review-table" >
+                    <tr>
+                        <th>Date</th>
+                        <th>Rating</th>
+                        <th>Commute</th>
+                        <th>Walk Score</th>
+                        <th>Life Stage</th>
+                        <th>Comment</th>
+                    </tr>
+
+                    {% for key in reviews %}
+
+                    <tr>
+                        <td class="left">{{ key.date }} </td>
+                        <td class="left">{{ key.rating }}</td>
+                        <td class="left">{{ key.commute }}</td>
+                        <td class="left">{{ key.walkability }}</td>
+                        <td class="left">{{ key.reviewer_life_stage }}</td>
+                        <td id="comment-length" class="left-long">{{ key.comment }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+<div class = "form-btn-container">
+
+<!--do this later-->
+
+
+
+</div>
+
+
+
+</div>

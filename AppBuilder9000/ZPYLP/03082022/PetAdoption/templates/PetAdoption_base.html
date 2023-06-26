@@ -1,0 +1,45 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/petadoption.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
+
+</head>
+<body>
+    {% include 'PetAdoption/includes/messages.html' %}
+
+    <div id="page-container">
+
+    <!--NAVBAR-->
+    {% include "PetAdoption/PetAdoption_navbar.html" %}
+    <!--END NAVBAR-->
+
+    <!--HEADER-->
+    <br><br>
+        <div>
+            <h1>{% block header %}{% endblock %}</h1>
+        </div>
+    <!--END HEADER-->
+
+    <!--PAGE CONTENT-->
+        <div id="content-wrap">
+            {% block content %}{% endblock %}
+        </div>
+    <!--END PAGE CONTENT-->
+
+    </div>
+
+<script src="{% static 'JS/petadoption.js' %}" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+<footer class="footer">
+    <p>Jaq Law &copy; 2021</p>
+</footer>
+
+</html>

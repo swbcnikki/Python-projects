@@ -1,0 +1,18 @@
+{% extends "BasketballStats_base.html" %}
+{% load static %}
+{% block title %} Delete Favorite Team {% endblock %}
+
+{% block header %}
+    <h1>Delete Team From Favorites</h1>
+{% endblock %}
+
+{% block content %}
+<div id="form-container">
+    <form method = 'POST'>
+        {% csrf_token %}
+        {{ item.as_p }}
+        <h3 style="text-align: center; color: white;">Deleting Team: {{ item.team_name }}</h3>
+            <button type="submit" class="btn btn-dark btn-lg btn-block w-25 mx-auto" onclick="return confirm('Are you sure you want to delete this?')">Delete</button>
+    </form>
+</div>
+{% endblock %}

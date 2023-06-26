@@ -1,0 +1,81 @@
+/*================GENERAL STYLING=============*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*BODY */
+body {
+    background: url("/static/images/background.jpg") no-repeat center fixed;
+    background-size: cover;
+}
+
+.sushi_container {
+    opacity: 0.9;
+	position: relative;
+	width: 500px;
+	height: auto;
+	border-radius: 10px;
+	border: 3px;
+	box-shadow: 4px 3px black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	background-color: yellow;
+}
+
+/*NAVBAR STYLING*/
+.navbar {
+    overflow: hidden;
+    background-color: black;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: pink;
+    text-align; center;
+    font-family; Verdana, Geneva, sans-serif;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/*Table Styling */
+th{
+    opacity: 0.9;
+	position: relative;
+	width: 500px;
+	height: auto;
+	border-radius: 10px;
+	border: 3px;
+	box-shadow: 4px 3px pink;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	background-color: yellow;
+}
+}
+
+tr td{
+    height: 25px;
+    width: auto;
+}
+
+#head_row {
+    color: black;
+    text-align: center;
+}
+
+
+
+/* Style the footer*/
+.footer {
+    position: fixed;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    background: yellow;
+    text-align: center;
+}
+
+

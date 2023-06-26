@@ -1,0 +1,33 @@
+{% extends "Formula1/Formula1_base.html" %}
+
+{% block title %}Formula 1{% endblock %}
+
+{% block header %}Team Results{% endblock %}
+
+{% block content %}
+
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center col-2">#</th>
+                <th scope="col" class="text-center col-5">Team</th>
+                <th scope="col" class="text-center col-5">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%  for key, value in teams_sorted.items %}
+
+            <tr>
+                <td scope="row" class="text-center">{{ forloop.counter }}</td>
+                <td class="text-center"><a href="{% url 'team_details' value=key %}">{{ key }}</a></td>
+                {% for key2, value2 in value.items %}
+                <td class="text-center">{{ value2 }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

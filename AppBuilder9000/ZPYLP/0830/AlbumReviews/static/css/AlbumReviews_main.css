@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+body {
+    background-image: url("/static/images/records.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    display: block;
+    padding: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+nav li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: lime;
+}
+
+.home_link {
+    color: lime;
+}
+
+.container {
+    border: 1px black solid;
+    display: block;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    min-height: 75vh;
+    padding: 15px;
+}
+
+form {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    width: 70%;
+    padding: 15px;
+    margin: auto;
+}
+
+.add_form {
+    width: 90%;
+    margin: auto;
+}
+
+label {
+    display: block;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    flex: 45%;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-transform: uppercase;
+    border: 0;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+button:hover {
+    background-color: lime;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover a {
+    color: black;
+    font-weight: bold;
+}
+
+.album_list {
+    margin: 20px;
+    background-color:
+}
+
+h1 {
+    border-bottom: 1px solid white;
+}
+
+.album {
+    border-bottom: 3px solid lime;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.album h3, .info h3 {
+    display: inline;
+    font-size: 14pt;
+    padding-right: 5px;
+}
+
+.album_details {
+    padding-right: 10px;
+    font-size: 14pt;
+}
+
+.album p {
+    padding-top: 0px;
+    padding-bottom: 25px;
+}
+
+.info {
+    display: block;
+    width: 100%;
+}
+
+.delete_btn_container {
+    display: flex;
+    width: 70%;
+    margin: auto;
+}
+
+.delete_confirm button {
+    flex: 50%;
+    width: 45%;
+    padding: 10px;
+}
+
+.button {
+    flex: 45%;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: lime;
+    color: black;
+    font-weight: bold;
+}
+
+.top_10_container {
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+}
+
+.top_10 {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.top_10 tr {
+    border-bottom: 1px solid white;
+}
+
+.top_10 tr:last-child {
+    border-bottom: 0;
+}
+
+.top_10 td {
+    padding: 10px;
+}
+
+.top_10 .cover {
+    width: 60px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    display: block;
+    padding: 5px;
+}
+
+footer p {
+    margin-right: 15px;
+    text-align: right;
+}

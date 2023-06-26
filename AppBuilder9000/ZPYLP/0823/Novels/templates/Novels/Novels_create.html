@@ -1,0 +1,16 @@
+{% extends "Novels/Novels_base.html" %}
+
+{% block title %} New Entry {% endblock %}
+
+{% block header %} Create a New Entry {% endblock %}
+
+{%block content %}
+    <div class="form_container">
+        <form method ="POST" action = "{% url 'Novels_create' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type ="submit" class="btn" value="Create New Entry" name="Save_Entry">
+            <a href="{% url 'Novels_home' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+        </form>
+    </div>
+{% endblock %}

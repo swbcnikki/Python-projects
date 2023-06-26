@@ -1,0 +1,25 @@
+{% extends 'Basketball/Basketball_base.html' %}
+
+{% block content %}
+
+
+
+    <table>
+        <tr>
+        <th><p>Name:<p>{{ obj.name}}</th>
+        <th><p>Position:<p>{{ obj.position}}</th>
+        <th><p>Date:</p>{{ obj.date}}</th>
+        <th><p>Points:</p>{{ obj.points}}</th>
+        <th><p>Assists:</p>{{ obj.assists}}</th>
+        <th><p>Rebounds:</p>{{ obj.rebounds}}</th>
+        <th><p>Steals:</p>{{ obj.steals}}</th>
+        <th><p>Blocks:</p>{{ obj.blocks}}</th>
+        <th><p>Turnovers:</p>{{ obj.turnovers}}</th>
+        </tr>
+    </table>
+
+    <a href="{% url 'edit' obj.id %}">Edit</a>
+    <a href="{% url 'delete' obj.id %}">Delete</a>
+
+
+{% endblock %}

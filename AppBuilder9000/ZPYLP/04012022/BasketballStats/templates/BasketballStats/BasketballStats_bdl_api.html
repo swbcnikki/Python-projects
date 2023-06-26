@@ -1,0 +1,125 @@
+{% extends "BasketballStats_base.html" %}
+{% load static %}
+{% block title %}Basketball Stats{% endblock %}
+
+{% block header %}Ball Don't Lie API{% endblock %}
+
+{% block content %}
+<div class="row container w-75 mx-auto">
+    <div id="eastern-conference" class="col-lg-6 col-md-6 col-sm-12 mx-auto">
+        <table class="table table-dark table-bordered table-hover text-center" data-toggle="table">
+            <thead>
+                <tr>
+                    <th>Eastern Conference</th>
+                </tr>
+                <tr>
+                    <th>Atlantic Division</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for atlantic in atlantic %}
+                <tr>
+                    <td>{{ atlantic }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th><b>Central Division</b></th>
+                </tr>
+                {% for central in central %}
+                <tr>
+                    <td>{{ central }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th><b>Southeast Division</b></th>
+                </tr>
+                {% for southeast in southeast %}
+                <tr>
+                    <td>{{ southeast }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="western-conference" class="col-lg-6 col-md-6 col-sm-12 mx-auto">
+        <table class="table table-dark table-bordered table-hover text-center" data-toggle="table">
+             <thead>
+                <tr>
+                    <th>Western Conference</th>
+                </tr>
+                <tr>
+                    <th>Northwest Division</th>
+                </tr>
+             </thead>
+            <tbody>
+                {% for northwest in northwest %}
+                <tr>
+                    <td>{{ northwest }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th><b>Pacific Division</b></th>
+                </tr>
+                {% for pacific in pacific %}
+                <tr>
+                    <td>{{ pacific }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th><b>Southwest Division</b></th>
+                </tr>
+                {% for southwest in southwest %}
+                <tr>
+                    <td>{{ southwest }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div id="logo-container" class="mx-auto">
+
+        <div id="atlantic-logos" class="text-center logo">
+            <h3>Atlantic Division</h3>
+            {% for logo in atlantic_logos %}
+            <img src="{{ logo }}" width="200" height="200" style="display: inline-block;" class="mx-auto">
+            {% endfor %}
+        </div>
+
+        <div id="central-logos" class="text-center logo">
+            <h3>Central Division</h3>
+            {% for logo in central_logos %}
+            <img src="{{ logo }}" width="200" height="200" style="display: inline-block;" class="mx-auto">
+            {% endfor %}
+        </div>
+
+        <div id="southeast-logos" class="text-center logo">
+            <h3>Southeast Division</h3>
+            {% for logo in southeast_logos %}
+            <img src="{{ logo }}" width="200" height="200" style="display: inline-block;" class="mx-auto">
+            {% endfor %}
+        </div>
+
+        <div id="northwest-logos" class="text-center logo">
+            <h3>Northwest Division</h3>
+            {% for logo in northwest_logos %}
+            <img src="{{ logo }}" width="200" height="200" style="display: inline-block;" class="mx-auto">
+            {% endfor %}
+        </div>
+
+        <div id="pacific-logos" class="text-center logo">
+            <h3>Pacific Division</h3>
+            {% for logo in pacific_logos %}
+            <img src="{{ logo }}" width="200" height="200" style="display: inline-block;" class="mx-auto">
+            {% endfor %}
+        </div>
+
+        <div id="southwest-logos" class="text-center logo">
+            <h3>Southwest Division</h3>
+            {% for logo in southwest_logos %}
+            <img src="{{ logo }}" width="200" height="200" style="display: inline-block;" class="mx-auto">
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

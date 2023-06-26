@@ -1,0 +1,25 @@
+{% extends "CultClassicsBase.html" %}
+
+{% load static %}
+
+{% block title %}Add A Cult Classic!{% endblock %}
+
+{% block header %}
+<h1>Add a Cult Film</h1>
+<p>Start by entering your favorite Cult Classic film below</p>
+{% endblock %}
+
+{% block content %}
+
+<div class="application">
+    <form name="CultClassicForm" method="POST" action="{% url 'CultClassicsCreate' %}">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_p }}
+        <input type="Submit" class="btn" value="Create New Cult Classic Catalog" name="Save_CultClassics">
+    </form>
+</div>
+
+
+
+{% endblock %}

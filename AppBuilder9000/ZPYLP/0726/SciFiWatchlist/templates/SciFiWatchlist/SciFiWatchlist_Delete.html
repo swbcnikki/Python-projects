@@ -1,0 +1,19 @@
+{% extends "SciFiWatchlist/SciFiWatchlist_base.html" %}
+{% load static %
+{% block title %}Remove Entry {% endblock %}
+{% block content %}
+
+<div>
+    <form method="POST" id="movie-form">
+        {% csrf_token %}
+        {{form.as_p }}
+        <h3>Are you sure you would like to remove this entry? </h3>
+        <button id="remove-button" type="submit">Remove</button>
+</div>
+    </form>
+</div>
+<br>
+<div>
+
+
+{% endblock %}

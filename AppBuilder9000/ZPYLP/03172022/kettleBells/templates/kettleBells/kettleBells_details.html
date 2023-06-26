@@ -1,0 +1,18 @@
+{% extends 'kettleBells_base.html' %}
+
+{% block title %}KettleBells{% endblock %}
+
+{% block header %}{{ details.name }}{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class="adminBox">
+        <p class="kbli">Type: {{ details.type }}</p>
+        <p class="kbli">{{ details.description }}</p>
+        <button class="btn"><a href="{% url 'KB_edit' details.pk %}">Edit</a></button>
+        <button class="btn"><a href="{% url 'KB_delete' details.pk %}">Delete</a></button>
+    </div>
+</section>
+
+{% endblock %}

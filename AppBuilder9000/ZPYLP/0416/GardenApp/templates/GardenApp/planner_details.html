@@ -1,0 +1,92 @@
+{% extends "GardenApp\garden_base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="jumbotron col-xs-1 text-center">
+</div>
+
+
+
+<h1>{{ plan.Vegetable_Name }}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Growing Year</th>
+              <th scope="col">Growing Zone</th>
+              <th scope="col">Sowing Time</th>
+              <th scope="col">Harvesting Tips</th>
+              <th scope="col">General Care Tips</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ plan.Growing_Year| lower }}</td>
+              <td>{{ plan.Growing_Zone| lower }}</td>
+              <td>{{ plan.Sowing_Time_Frame| lower }}</td>
+              <td>{{ plan.Harvest_Tips| lower }}</td>
+              <td>{{ plan.General_Care_Tips| lower }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="col-2">
+        <div class="details-header">
+            <p>Garden Planner</p>
+            <div class="btn-container text-center">
+                <a class="btn btn-default" href="{% url 'planneredit' plan.pk %}">EDIT</a>
+                <a class="btn btn-default" href="{% url 'plannerdelete' plan.pk %}">DELETE</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+    {% if track %}
+    {% for t in track %}
+        {% if t.Vegetable_Name_id == plan.id %}
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Growing Season Observations</th>
+              <th scope="col">Harvest Weight</th>
+              <th scope="col">Harvest Observations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ t.Growing_Season_Observations| lower }}</td>
+              <td>{{ t.Harvest_Weight| lower }}</td>
+              <td>{{ t.Harvest_Observations| lower }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="col-2">
+            <div class="details-header">
+                <p>Garden Tracker</p>
+                 <div class="btn-container text-center">
+                    <a class="btn btn-default" href="{% url 'trackeredit' t.id %}">EDIT</a>
+                    <a class="btn btn-default" href="{% url 'trackerdelete' t.id %}">DELETE</a>
+                 </div>
+            </div>
+    </div>
+  </div>
+</div>
+
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "ArtistsApp/ArtistsApp_base.html" %}
+{% load static %}
+{% block title %}Art{% endblock %}
+{% block header %}<h1>Added Art pieces</h1>{% endblock %}
+
+{% block content %}
+
+<div class="index-display">
+    {% for pieces in page_obj %}
+    <a href = "{% url 'ArtistsApp_details' pieces.pk %}">
+            Title: {{pieces.piece_title}}<br>
+            Artist: {{pieces.artist}}<br>
+            Date Created: {{pieces.created_date}}<br>
+            Piece: {{pieces.type}}<br>
+
+    </div>
+{% endfor %}
+</a>
+    <span class="previous">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Back</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% endif %}
+    </span>
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}

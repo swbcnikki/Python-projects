@@ -1,0 +1,21 @@
+{% extends "WorkoutEquipment/WorkoutEquipBase.html" %}
+{% load static %}
+{% block title %}Workout Equipment{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+
+<div class="admin_panel">
+    <p>Edit Equipment Info</p>
+    <form method="POST">
+        <!-- Cross Site Request Forgery {csrf_token} protection -->
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_p }}
+        <div>
+            <input type="submit" class="btn" value="Save Changes" name="Save_Changes">
+            <a href="{% url 'workout_equip_console' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+            <a href="{% url 'workout_equip_delete' edit.id %}"><button type="button" class="btn" value="Delete">Delete</button></a>
+        </div>  <!--must have edit.id (edit from views func is obj) above to pass object by primary key & form instance to delete page for confirmation-->
+    </form>
+</div>
+{% endblock %}

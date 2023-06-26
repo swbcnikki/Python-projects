@@ -1,0 +1,18 @@
+{% extends 'Composers/composers_base.html' %}
+{% load static %}
+
+{% block title%}Composer Home{% endblock %}
+{% block header%}Composers Info{% endblock %}
+
+{% block content %}
+    <div class="jumbotron jumbotron-fluid bg-dark text-white">
+        <h1>Welcome to Composers R US!</h1>
+        <h2>This site will be used to catalogue composers and their information.</h2>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <img class="img-thumbnail" src="{% static 'images/composer_piano.jpg' %}">
+        <div>
+        <a class="btn btn-primary btn-lg" href="{% url 'composers_list' %}" role="button">See List of Composers</a>
+        </div>
+    </div>
+{% endblock %}

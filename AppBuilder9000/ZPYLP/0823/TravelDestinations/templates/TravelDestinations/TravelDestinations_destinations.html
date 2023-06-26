@@ -1,0 +1,20 @@
+{% extends 'TravelDestinations/TravelDestinations_base.html' %}
+
+{% load static %}
+
+{% block title %} Destinations {% endblock %}
+
+{% block content %}
+<br>
+<h1>Your Trips:</h1>
+<br>
+    <div>
+            {% for TripName in trips %}
+        <button><a href="{% url 'TravelDestinations_details.html' TripName.id %}">{{ TripName.TripName | linebreaks }}</a></button>
+            {% endfor %}
+    </div>
+<br>
+<br>
+
+{% endblock %}
+

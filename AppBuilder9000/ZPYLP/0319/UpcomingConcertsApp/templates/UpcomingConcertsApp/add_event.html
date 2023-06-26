@@ -1,0 +1,53 @@
+{% extends 'UpcomingConcertsApp\sub_pages_base.html' %}
+
+{% block title %}Add Event{% endblock %}
+{% block page-title %}Add Event{% endblock %}
+{% block sub-heading %}Fill out the form below to add your event{% endblock %}
+{% block sub-body %}
+<!-- FORMS -->
+<div class="event_form center">
+    <h2>Add your event</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ concert_form.as_p }}
+        <p>Please enter dates as mm/dd/yyyy</p>
+        <button id="new_event_button" type="submit" name="Save_Event">
+            Add Event
+        </button>
+    </form>
+    <p>If you don't see the orchestra, pieces, or conductor in the lists,
+        add them using the below forms:</p>
+</div>
+<div class="flex-container">
+    <div class="flex-child">
+        <h2>Add an Orchestra</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ orchestra_form.as_p }}
+            <button id="new_orchestra_button" type="submit" name="Save_Orchestra">
+                Add Orchestra
+            </button>
+        </form>
+    </div>
+    <div class="flex-child">
+        <h2>Add a piece</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ piece_form.as_p }}
+            <button id="new_piece_button" type="submit" name="Save_Piece">Add Piece</button>
+        </form>
+    </div>
+    <div class="flex-child">
+        <h2>Add a Conductor</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ conductor_form.as_p }}
+            <button id="new_conductor_button" type="submit" name="Save_Conductor">
+                Add Conductor
+            </button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

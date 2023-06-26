@@ -1,0 +1,61 @@
+
+body{
+    background-image: url( "/static/images/Glacial_Space.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    margin: 100px;
+}
+
+.form_container {
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(25, 25, 25, 0.7);
+}
+
+.frm_table {
+    margin: 0 auto;
+    color: white;
+}
+
+.delete_container {
+    margin
+}
+
+/* form submit button */
+.btn {
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    color: white;
+}
+
+nav {
+    overflow: hidden;
+    background-color: #303030;
+    position: relative;
+}
+
+nav a {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #303030;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.white_text {
+    color: white;
+}

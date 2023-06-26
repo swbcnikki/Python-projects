@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="background">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}The Wonderful World of Video games{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS/VideoGameApp_layout.css' %}">
+    </head>
+    <body>
+    {% include "VideoGameApp/VideoGame_Nav.html" %}
+    <div class="page_container">
+        <header>
+            <h1>{% block header %}{% endblock %}</h1>
+        </header>
+        {% block content %} {% endblock %}
+
+    </div>
+
+    {% include "VideoGameApp/VideoGame_Foot.html" %}
+    </body>
+</html>

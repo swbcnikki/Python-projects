@@ -1,0 +1,75 @@
+{% extends "BasketballStats_base.html" %}
+{% load static %}
+{% block title %}Basketball Stats{% endblock %}
+
+{% block header %}Welcome to my Basketball App{% endblock %}
+
+{% block content %}
+    <div class="jumbotron w-75 mx-auto">
+        <div class="container">
+            <h1 class="display-3">Basketball Stats!</h1>
+            <p>
+                This app utilizes the Django Framework. The "Add Players" page allows users
+                to create a "Player" and a few stats about that "Player." The "Players Added" page
+                displays all "Players" created using the form from the "Add Players" page. The API
+                section of this app has a "Standings" and a "Conferences & Divisions" page.
+                "Standings" shows the NBA standings for specific years, including the current
+                season. "Conferences & Divisions" displays all of the teams in their respective
+                divisions, and it also shows each team's logo separated into their divisions.
+                The Web Scraping section includes "NBA History" and the Portland Trail Blazers' Roster.
+                "NBA History" displays a list of previous NBA Champions, who they defeated,
+                and who won the Finals MVP. The "Portland Trail Blazers Roster" shows the current
+                roster according to Basketball-reference. The section under Favorites has an "Add Favorites"
+                page that allows users to save their favorite NBA team and a "Favorite Teams" page to
+                display all of the user's favorite teams. Clicking on a favorite team will open up the
+                details page of the team. Info about the team is scraped from Basketball-reference and is
+                displayed on the team details page.
+            </p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="#" role="button" onclick="return confirm('BOO!! This does nothing. For now...')">Button!</a>
+            </p>
+        </div>
+    </div>
+    <div class="card-deck w-75 mx-auto" id="card-container">
+        <div class="card w-25">
+            <div class="card-header card-images-container text-center">
+                <img class="card-img-top img-fluid card-nba-image" src="{% static 'BasketballStats/images/nba_logo.png' %}" alt="NBA Logo">
+            </div>
+            <div class="card-body">
+                <p class="card-text">Basketball-Reference is the go-to website for NBA stat junkies. It has all the stats
+                for every team and player. View the results of any NBA game, ever!</p>
+
+                <a href="https://www.basketball-reference.com/" class="card-link">Basketball-Reference</a>
+            </div>
+            <div class="card-footer">
+                <h4 class="text-center">NBA</h4>
+            </div>
+        </div>
+
+        <div class="card w-25">
+            <div class="card-header card-images-container text-center">
+                <img class="card-img-top img-fluid card-image" src="{% static 'BasketballStats/images/western_conference_logo.png' %}" alt="Western Conference Logo">
+            </div>
+            <div class="card-body">
+                <p class="card-text">Check out the standings for the NBA from the 2018 season to the current season.</p>
+                <a href="{% url 'basketball_stats_standings' %}" class="card-link">See Standings Here</a>
+            </div>
+            <div class="card-footer">
+                <h4 class="text-center">Standings</h4>
+            </div>
+        </div>
+
+        <div class="card w-25">
+            <div class="card-header card-images-container text-center">
+                <img class="card-img-top img-fluid card-image" src="{% static 'BasketballStats/images/rip_city_logo.png' %}" alt="Rip City Logo">
+            </div>
+            <div class="card-body">
+                <p class="card-text">View the Portland Trail Blazers' roster.</p>
+                <a href="{% url 'basketball_stats_web_scraping' %}" class="card-link">Trail Blazers' Roster</a>
+            </div>
+            <div class="card-footer">
+                <h4 class="text-center">Trail Blazers</h4>
+            </div>
+        </div>
+    </div>
+{% endblock %}

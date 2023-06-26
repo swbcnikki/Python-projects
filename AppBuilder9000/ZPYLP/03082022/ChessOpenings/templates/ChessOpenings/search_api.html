@@ -1,0 +1,26 @@
+{% extends "chess_base.html" %}
+{% block content%}
+
+
+        <form action="#" method="get" class="text-center">
+            <label>Copy fen code here:     PS only start fen code is reliable to create results </label><br>
+            <input type="text" value='rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq' name="fen_code" size="84"/><br>
+            <input type="submit" class="btn btn-secondary btn-lg btn-block w-50 mx-auto" value="Click" name="mybtn">
+        </form>
+        <table class="table table-hover text-white text-center" id="searchTable">
+                <tr>
+                    <th>Top 5 master games matching position</th>
+
+                </tr>
+        {% for key,value in games.items %}
+                <tr class="test" >
+                    <td>{{value.playerWhite}}, {{value.playerBlack}}</td>
+                    <td>winner: {{value.winner}} </td>
+                    <td>opening: {{value.opening}}</td>
+                </tr>
+
+        {% endfor %}
+            </table>
+
+
+{% endblock%}

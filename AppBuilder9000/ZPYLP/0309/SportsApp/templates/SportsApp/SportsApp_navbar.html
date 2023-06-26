@@ -1,0 +1,30 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!--Added href url 'home' for easy access to AppBuilder9000 from any webpage in SportsApp -->
+  <a class="navbar-brand" href="{% url 'home' %}">SportsApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'SportsApp_home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'nba_standings' %}">Standings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_nba_game' %}">Game Watch List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_game_archive' %}">WatchList Archives</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_fav_player' %}">Favorite Player!</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_fav_archive' %}">Favorite Player Archives</a>
+      </li>
+    </ul>
+  </div>
+</nav>

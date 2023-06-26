@@ -1,0 +1,29 @@
+<!-- Loading external files -->
+{% load static %}
+
+<html lang="en">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Boostrap CSS -->
+        <!-- Boostrap helps save time when working with html, css or js -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <!-- Getting Bootstrap to work with django forms without installing crispy forms is a pain, so I made a standalone css file -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">
+        <!-- Title -->
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+      <!-- Navbar -->
+      {% include "VideoGameReviews/gamereviews_navbar.html" %}
+      <!-- Header Content -->
+      <header>
+          <h1 class="text-light bg-dark">{% block header %}{% endblock %}</h1>
+      </header>
+      <!-- Background Image -->
+      <img src="{% static 'images/games.jpg' %}" class="img-fluid" alt="Video Game Reviews" stlye="z-index:-1;">
+      <!-- Additional Content -->
+      {% block content %}{% endblock %}
+    </body>
+</html>

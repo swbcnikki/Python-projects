@@ -1,0 +1,36 @@
+{% extends "HipHopReviews_base.html" %}
+{% load static %}
+
+{% block title %} Artist Details {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block content %}
+<h1>Artist Details</h1>
+<br>
+<br>
+<br>
+<div class="display">
+    <div class="display2">
+        <table class="center">
+            <tr>
+                <th>Artist Name</th>
+                <th>Album Name</th>
+                <th>Release Year</th>
+            </tr>
+            <tr>
+                <td>{{ details.ArtistName }}</td>
+                <td>{{ details.AlbumName }}</td>
+                <td>{{ details.ReleaseYear }}</td>
+            </tr>
+                <td>
+                    <button><a href="{% url 'HipHopReviews_edit' details.pk %}">Edit</a></button>
+                </td>
+                <td>or</td>
+                <td>
+                    <button><a href="{% url 'HipHopReviews_delete' details.pk %}">Delete</a></button>
+                </td>
+        </table>
+    </div>
+</div>
+{% endblock %}

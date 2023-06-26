@@ -1,0 +1,25 @@
+{% extends "BreweriesApp/BreweriesApp_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Breweries {% endblock %}
+
+{% block header %} Add a Brewery: {% endblock %}
+
+{% block content %}
+
+<div class="AddBrewery">
+    <form method="POST">
+        <div class="container">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <table>
+                {% crispy form %}
+            </table>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
+

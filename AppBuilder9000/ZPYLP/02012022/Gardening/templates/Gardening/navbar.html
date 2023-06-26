@@ -1,0 +1,27 @@
+
+{% load static %}
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #fff;">
+<!--  Navbar Title/logo-->
+  <a class="navbar-brand font-weight-bold" href="{% url 'gardening_home' %}" style="color: #ff5200;">🍂 THE GARDENING APP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<!--  Navigation Items-->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link active pr-5" href="{% url 'gardening_home' %}">HOME<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active px-5" href="#">HOW TO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active px-5" href="{% url 'create_plant' %}">MY GARDEN PLANNER</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active pl-5" href="#">CALENDARS</a>
+      </li>
+    </ul>
+  </div>
+</nav>

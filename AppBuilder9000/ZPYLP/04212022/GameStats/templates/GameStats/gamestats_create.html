@@ -1,0 +1,20 @@
+{% extends "gamestats_base.html" %}
+{% load static %}
+{% block title %}Game Reviews{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block header %}Review a game{% endblock %}
+
+{% block content %}
+<div class="edit-table-bg">
+<div id="form-container" class="table-responsive w-50 mx-auto myForm">
+    <form method="POST">
+        {% csrf_token %}
+            <table id="table" class="table table-dark table-bordered text-center">
+                {{ form.as_table }}
+            </table>
+        <button type="submit" class="btn btn-outline-secondary btn-lg btn-block w-100 mx-auto neu-button">Add Review</button>
+    </form>
+</div>
+</div>
+{% endblock %}

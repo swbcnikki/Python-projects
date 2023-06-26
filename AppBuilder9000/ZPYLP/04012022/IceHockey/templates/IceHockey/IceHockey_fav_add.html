@@ -1,0 +1,31 @@
+{% extends 'IceHockey_base.html' %}
+{% load static %}
+{% block title %}Save Favorite{% endblock %}
+
+{% block header %}Save Favorite{% endblock %}
+{% block content %}
+
+<div class="container-fluid mx-auto" style="width: 90%">
+    <h5 class="display-2 text-light text-center mt-5 mb-5">{{ user.first_name }}, do you want to add</h5>
+    <table class="table table-info table-bordered text-center mx-auto" style="width: 30%">
+        <tr>
+            <th>{{ pos }}</th>
+            <th>{{ num }}</th>
+            <th>{{ name }}</th>
+        </tr>
+    </table>
+    <h5 class="display-2 text-light text-center mt-5 mb-5">to your favorites?</h5>
+    <div class="container mx-auto text-center">
+        <form method='POST' action="{% url 'IceHockey_confirm_add' user.pk %}">
+            {% csrf_token %}
+            <input type="hidden" name="player_name" value="{{ name }}">
+            <input type="hidden" name="player_pos" value="{{ pos }}">
+            <input type="hidden" name="player_num" value="{{ num }}">
+            <input class="btn btn-info btn-lg mr-2" type='submit' value="Yes">
+            <button class="btn btn-info btn-lg mr-2"><a class="text-light" href="{% url 'IceHockey_details' user.pk %}">Cancel</a></button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

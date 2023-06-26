@@ -1,0 +1,32 @@
+{% extends 'SteamInterestApp/SIA_base.html' %}
+
+<!--Thanks to extending the SIA_base, a lot of our formatting is already done!
+We're using multiple instance of inheritance in the base and extending the base here, meaning
+actual content is all we need for this home page
+-->
+
+{% block title %} Steam Interest App - Home Page {% endblock %}
+
+{% block header %} Welcome to the Steam Interest App! {% endblock %}
+
+{% block content %}
+    <h3>Ever look at your Steam library and think, "Man, I have a lot of games but don't know what to play.."</h3>
+    <p>Everyone knows that Steam games are like Pokemon: You gotta catch them all!
+        Yet, with all the great sales Steam provides, it's hard to keep track of your library and what you want to play next...</p>
+    <h3>That's where the Steam Interest App comes in!</h3>
+    <p>This app provides an easy way to select what Steam game you want to play next! Just enter all the games you have in your Steam library
+        into this app's database which accounts for:</p>
+    <ol>
+        <li>Title of game</li>
+        <li>Genre</li>
+        <li>Date Released</li>
+        <li>Date Purchased</li>
+        <li>Interest Level</li>
+    </ol>
+
+    <p>With this list, you can easily keep track of your games while deciding on what game to play next!</p>
+    <p> Theoretically, in the future, this app will connect to your Steam account, bypassing the need to enter data yourself.
+        All you would need to do is put your interest level in the game, which would be initially determined by purchase date vs. current date.</p>
+    <p>Looking for some games to add to your Steam library? <a href = "{% url 'SIADataScrapeTest' %}">Why not check out GameSpot's 2020 recommendations?</a></p>
+
+{% endblock %}

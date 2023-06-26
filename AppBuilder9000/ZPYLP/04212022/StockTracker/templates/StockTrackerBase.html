@@ -1,0 +1,27 @@
+{% load static %}
+
+<!doctype html>
+<html>
+    <head>
+        <title> {% block StockTitle %} {% endblock %} </title>
+        <meta viewport="width=content-width">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/StockCSS.css' %}">
+    </head>
+    <body>
+    {% include 'StockTracker/StockNavBar.html' %}
+
+
+    <h2> {% block StockPageHeading %} {% endblock %} </h2>
+
+
+    <div class="content">
+        <p> {% block StockContent %} {% endblock %} </p>
+    </div>
+
+    {% include 'StockTracker/StockFooter.html' %}
+
+
+
+    </body>
+</html>

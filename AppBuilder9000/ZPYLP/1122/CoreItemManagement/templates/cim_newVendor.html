@@ -1,0 +1,25 @@
+{% extends "cim_base.html" %}
+
+{% block title %}Core Item Management{% endblock %}
+
+
+{% block header %}
+<div class="cim_Title">
+    <h1>Core Item Management</h1>
+    <h2>Add New Vendor</h2>
+</div>
+{% endblock %}
+{% block content %}
+<div class="content">
+    <h3></h3>
+    <div class="new-item-form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="new-item-button" type="submit" name="Save_item">Add New Item</button>
+        </form>
+        <br>
+    </div>
+</div>
+
+{% endblock %}

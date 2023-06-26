@@ -1,0 +1,30 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/vintage_cars_main.css' %}">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <header>
+        <div class="NavBar">
+            <a href="{% url 'VintageCarsHome' %}">Home</a>
+            <a href="">Rentals</a>
+            <a href="">something else</a>
+        </div>
+    </header>
+    <body>
+        <div class="body_content">
+           {% block content %}{% endblock %}
+        </div>
+        <section class="footer">
+            <p><a href="#">Terms</a>|<a href="#">Privacy</a></p>
+            <p>&copy;2022 - Vintage Car Rentals</p>
+        </section>
+    </body>
+</html>

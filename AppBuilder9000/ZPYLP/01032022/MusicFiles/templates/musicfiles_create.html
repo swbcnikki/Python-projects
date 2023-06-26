@@ -1,0 +1,25 @@
+{%extends "musicfiles_base.html"%}
+{% block title %}Create File Entry{% endblock %}
+
+{% block header %}Welcome to your Music File Manager!{% endblock %}
+
+{% block content %}
+
+<h3>Enter the fields for your newly-tracked music file:</h3>
+
+<div class="formContainer">
+    <form method="POST">
+        <div class="frmObject_container">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" name="musicfiles_create">SUBMIT</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+{% endblock %}

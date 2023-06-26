@@ -1,0 +1,18 @@
+{% extends "MMAStats/MMA_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this is a home page with some basic text to show you what the website is all about
+{% endcomment %}
+<section id="video">
+    <video muted autoplay loop id="homeMMAVideo">
+      <source src="{% static 'videos/home.mp4' %}" type="video/mp4">
+    </video>
+
+<section id="Home">
+    <h1>MMA Stats</h1>
+    <p>MMA stats from your favorite promotions!</p>
+    <p>You can create a new entry in the <a href="{% url 'MMA_Create' %}">create</a> page.</p>
+</section>
+{% endblock %}

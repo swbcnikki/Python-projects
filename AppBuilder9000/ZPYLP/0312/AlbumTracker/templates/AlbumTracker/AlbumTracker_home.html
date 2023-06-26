@@ -1,0 +1,35 @@
+{% extends "AlbumTracker/AlbumTracker_base.html" %}
+
+{% block title %}AlbumTracker{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1 class="display-4 text-center">AlbumTracker</h1>
+		<p class="lead text-center">A place to track your favorites</p>
+	</div>
+</div>
+
+<div id="copy">
+	<br>
+	<br>
+	<p class="lead text-center">This tool keeps track of albums you've listened to along with your notes about them.</p>
+	<br>
+	<p class="lead text-center">Use the notes to record favorite songs or anything else you'd like to remember about your experience.</p>
+	<br>
+	<br>
+</div>
+
+<div id="btns">
+	<br>
+	<div class="row">
+		<div class="col text-center">
+			<a href="{% url 'AlbumTracker_details' %}"><button type="button" class="btn btn-lg custom-btn">Albums</button></a>
+			<a href="{% url 'AlbumTracker_add' %}"><button type="button" class="btn btn-lg custom-btn">Add+</button></a>
+		</div>
+	</div>
+	<br>
+</div>
+
+{% endblock %}

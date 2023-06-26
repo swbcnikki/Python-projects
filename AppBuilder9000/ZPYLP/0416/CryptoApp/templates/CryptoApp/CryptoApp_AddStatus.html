@@ -1,0 +1,18 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Add Cryptocurrency {% endblock %}
+
+{% block header %}New Coin Status{% endblock %}
+
+{% block content %}
+
+    <div class="cryptoapp-addstatus--form">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_ul }}
+            <button class="cryptoapp-addstatus--button" type="submit" name="Save_Status">Create Status</button>
+        </form>
+        <p>To update an existing status, go to Summary Data and click the 'Update' link.</p>
+    </div>
+
+{% endblock %}

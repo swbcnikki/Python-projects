@@ -1,0 +1,94 @@
+
+
+body {
+background-image: url("https://images.pexels.com/photos/3591557/pexels-photo-3591557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+margin: 0;
+padding: 0;
+}
+
+/*--- NAVBAR ---*/
+
+.navbar {
+    overflow: hidden;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    opacity: 90%;
+}
+
+.navbar ul li {
+    text-decoration: none;
+    display: inline;
+    font-weight: bold;
+
+}
+
+.navbar a {
+
+    color: black;
+    padding: 10px;
+    font-family: Helvetica;
+    font-size: 4;
+    font-weight: none
+    text-decoration: none;
+}
+
+ul li {
+list-style: none;
+background-color: white;
+text-align: auto;
+padding: 2px;
+display: inline;
+}
+
+.display {
+background: white;
+position: relative;
+}
+
+.display2 {
+position: absolute;
+background: white;
+width: 100%;
+top: 50%;
+top: 70px;
+opacity: 90%;
+}
+
+.form {
+background: white;
+position: relative;
+}
+
+.form2 {
+position: absolute;
+background: white;
+width: 100%;
+top: 50%;
+top: 70px;
+opacity: 90%;
+}
+/*--- FOOTER ---*/
+.footer {
+background-color: white;
+width: 100%;
+max-width: 100%;
+position: absolute;
+bottom: 0;
+opacity: 90%;
+}
+
+.footer-text {
+color: black;
+font-weight: bold;
+margin-top: 11px;
+padding: 0;
+margin-bottom: 1px;
+text-align: center;
+
+
+
+

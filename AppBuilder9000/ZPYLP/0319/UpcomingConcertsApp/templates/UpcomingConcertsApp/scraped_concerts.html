@@ -1,0 +1,57 @@
+{% extends 'UpcomingConcertsApp\sub_pages_base.html' %}
+
+{% block title %}Potential Concerts{% endblock %}
+{% block page-title %}Potential Concerts{% endblock %}
+{% block sub-body %}
+
+
+<h2>Upcoming Concerts at the Berlin Philharmonic</h2>
+<div class="row">
+{% for concert in concerts %}
+    <div class="col-lg-3">
+        <div class="card " style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ concert.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    {% for artist in concert.artists %}
+                    {{ artist }}<br>
+                    {% endfor %}
+                    {% for star in concert.stars %}
+                    {{ star }}<br>
+                    {% endfor %}
+                </h6>
+                <p class="card-text">
+                    {% for work in concert.work_list %}
+                    <div class="works">
+                    {{ work }}<br>
+                    </div>
+                    {% endfor %}
+
+                </p>
+                <a href="https://www.digitalconcerthall.com/{{ concert.link }}" target="_blank" class="btn btn-primary">View Concert</a>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+
+<!--<h2>Title:</h2>-->
+<!--<br>-->
+
+<!--<h2>Artists</h2>-->
+
+<!--<h2>Stars:</h2>-->
+
+<!--<h2>Works</h2>-->
+
+<!--<br>-->
+<!--<hr>-->
+<!--<br>-->
+
+
+

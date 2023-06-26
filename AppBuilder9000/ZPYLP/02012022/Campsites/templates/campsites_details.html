@@ -1,0 +1,40 @@
+{% extends 'campsites_base.html' %}
+{% block header %}Camp Details:{% endblock %}
+
+
+{% block content %}
+<h1 class="header">Site Details</h1>
+
+<div class="table_container">
+    <table class="table" id="detailTbl">
+        <thead>
+            <tr class="Head">
+                <th>Name</th>
+                <th>Type</th>
+                <th>Amenities</th>
+                <th>Activities</th>
+                <th>City</th>
+                <th>State</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="Body">
+                <td>{{ details.name }}</td>
+                <td>{{ details.type }}</td>
+                <td>{{ details.site_amenities }}</td>
+                <td>{{ details.site_activities }}</td>
+                <td>{{ details.city }}</td>
+                <td>{{ details.state }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="submitBtn">
+    <div class="submitBtn">
+    <button class="btn btn-info"><a href="{% url 'edit_site' details.pk %}">EDIT</a> </button>
+    <button class="btn btn-info" ><a href="../{{ form.pk }}delete/">DELETE </a></button>
+    <button class="btn btn-info"><a href="{% url 'campsites_list' %}">CANCEL</a></button>
+    </div>
+</div>
+{% endblock %}

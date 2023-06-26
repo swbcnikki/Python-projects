@@ -1,0 +1,23 @@
+{% extends "ComicBooks/ComicBooks_base.html" %}
+
+
+
+{% block title %}Comic Info{% endblock %}
+{% block header %}<h1>ComicBook Info:</h1>{% endblock %}
+
+{% block content %}
+
+<table style="border: 2px solid black">
+    <tr><td>Type</td><td>{{ Cbooks.type }}</td></tr>
+    <tr><td>Name:</td><td>{{ Cbooks.name }}</td></tr>
+    <tr><td>Description:</td><td>{{ Cbooks.description }}</td></tr>
+    <tr><td>Price:</td><td>{{ Cbooks.price }} </td></tr>
+    <tr><td>Image:</td><td>{{ Cbooks.images }} </td></tr>
+</table>
+
+        <a href="{% url 'ComicBooks_index' %}">
+            <button type="button" class="btn btn-danger btn-lg">Back to ComicBooks</button>
+        </a>
+
+
+{% endblock %}

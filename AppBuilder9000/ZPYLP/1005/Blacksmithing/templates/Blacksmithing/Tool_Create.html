@@ -1,0 +1,19 @@
+{% extends "Blacksmithing/base.html" %}
+{% load static %}
+{% block title %} Add Your Favorite Blacksmithing Tools! {% endblock %}
+
+
+
+{% block header %}
+    <h1>Add a tool below</h1>
+{% endblock %}
+
+{% block content %}
+<div id="form-container">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-container" value="Submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

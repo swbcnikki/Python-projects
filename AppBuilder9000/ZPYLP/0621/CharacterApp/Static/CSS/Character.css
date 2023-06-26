@@ -1,0 +1,76 @@
+/***Navbar Css***/
+ul {
+  list-style-type: none;
+  margin-top: 0px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+/*** Navbar Ended ***/
+
+.background{
+  background-image: url("../Images/heroes.jpg");
+  background-color: #3d1f13;
+  background-attachment: fixed;
+  background-position: top 80px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-top: 30px;
+}
+
+#list_items{
+  background-color: #d6e462;
+  width: 150px;
+  border: 15px solid black;
+  padding: 25px;
+  margin: 20px;
+  position: relative;
+}
+
+.home_page h2{
+  border-width:8px;
+  border-style:inset;
+  position:absolute;
+  top:25%;
+  left:35%;
+}
+
+.home_page p{
+  border-width:8px;
+  border-style:outset;
+  position:absolute;
+  top:30%;
+  left:44%;
+  font-size:20px;
+}
+
+#detail_list{
+  background-color: #d6e462;
+  width: 150px;
+  border: 15px solid black;
+  padding: 25px;
+  margin: 20px;
+  position: relative;
+}

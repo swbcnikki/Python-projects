@@ -1,0 +1,19 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS/RecCon_main.css' %}">
+
+    </head>
+    <body id="home">
+        {% include "RecipeConvert/RecCon_navbar.html" %}
+        <header id="home-title">
+            <h1>{% block header %}{% endblock %}</h1>
+        </header>
+
+        {% block content %}{% endblock %}
+    </body>
+</html>

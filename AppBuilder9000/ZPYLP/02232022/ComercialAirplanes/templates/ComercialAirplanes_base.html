@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Commercial Airplane Sales Tracker</title>
+    <div style="background-color:white;" class="topnav">
+        <a class="" href="{% url 'ComercialAirplanes_home' %}">Home</a>
+        <a class="" href="{% url 'ComercialAirplanes_add' %}">Add Plane</a>
+        <a class="" href="{% url 'CommercialAirplanes_Collection' %}">View Plane</a>
+        <a class="" href="#contact">Contact Me</a>
+    </div>
+</head>
+
+<body style="background-color:blue;">
+{% block content%}
+<H1> Commercial Airplane Sales Tracker </H1>
+<p> This app is designed to help those who need to track the sales
+    <br>
+    and performance of the commercial aircraft</p>
+{% endblock %}
+</body>
+
+<footer>
+    <a>Created by Sean M Crawford</a>
+</footer>
+</html>

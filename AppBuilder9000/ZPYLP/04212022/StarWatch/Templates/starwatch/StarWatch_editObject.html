@@ -1,0 +1,30 @@
+{% extends "StarWatch_base.html" %}
+{% load static %}
+
+{% block title%}Edit{% endblock %}
+{% block header%}{% endblock %}
+
+{% block content %}
+
+    <div class=" m-4 jumbotron jumbotron-fluid w-80 display1">
+        <h2 class="text-center display-4">Edit</h2>
+    </div>
+            <div id="form-container" class="table-responsive w-50 mx-auto ">
+                <form method="POST">
+                    {% csrf_token %}
+                        <table id="table" class=' text-center box table table-info  table-hover table-bordered table-centered'>
+                        {{ form.as_table}}
+                        </table>
+                        <button type="submit" class="btn btn-primary">Apply</button>
+
+                        <a href="../{{ form.pk }}StarWatch_deleteObject" class="btn btn-primary">DELETE</a>
+                </form>
+            </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

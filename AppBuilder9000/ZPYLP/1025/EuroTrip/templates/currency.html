@@ -1,0 +1,35 @@
+{% extends "eurotripbase.html" %}
+{% load static %}
+{% block title %}Currency Converter{% endblock %}
+
+{% block content %}
+<form method="get" action="{% url 'currencyconverter' %}">
+    <input name="Currency1" type="text" placeholder="Please input the 3 letter code for your current currency (i.e. USD)" />
+    <input name="Currency2" type="text" placeholder="Please input the code for currency you want. (i.e. EUR)" />
+    <input name="Currency3" type="text" placeholder="Please input the amount you want to exchange (i.e. 5000)" />
+    <button type="submit" name="convert">Submit</button>
+</form>
+<table>
+    <th>
+        Old Currency
+    </th>
+    <th>
+        New Currency
+    </th>
+    <th>
+        Amount
+    </th>
+  <tr>
+    <td>
+        {{convertfrom}}
+    </td>
+    <td>
+        {{newcurrency}}
+    </td>
+    <td>
+        {{finalamount}}
+    </td>
+ </tr>
+</table>
+{% endblock %}
+

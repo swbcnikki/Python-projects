@@ -1,0 +1,15 @@
+{% extends "Novels/Novels_base.html" %}
+
+{% block title %} Why Read? {% endblock %}
+
+{% block header %} What are some benefits of reading? {% endblock %}
+
+{%block content %}
+
+{% for para_text in para_text %}
+    <p class="why_read">{{ para_text }}</p>
+{% endfor %}
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'ChefKnives\ChefKnives_Base.html' %}
+
+{% block title %} Chef Knives {% endblock %}
+
+{% block header %} Chef Knives {% endblock %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid bg-dark text-white text-center">
+    <h2 class="display-4">Add New Chef Knife</h2>
+</div>
+
+<div id="form-container" class="table-responsive w-50 mx-auto table-striped">
+    <form method="POST">
+        {% csrf_token %}
+            <table id="table" class='table bg-info text-white table-hover table-centered table-striped table-bordered'>
+            {{ form.as_table }}
+            </table>
+            <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+
+{% block header %}Hot Springs{% endblock %}
+
+{% include "hotsprings_navbar.html" %}
+
+{% block content %}
+
+<div class="admin_panel">
+    <form name="hotspringsForm" method="POST" action="">
+        <div class="formObject">
+            {% csrf_token %}
+            <label for="menu_id">Select a hot springs from the list to edit:</label>
+            <select id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
+            {% for hotsprings in hotsprings %}
+                <option value="../{{ hotsprings.pk }}/hotsprings_details/">{{ hotsprings.hot_springs_name }}</option>
+            {% endfor %}
+            </select>
+            <div class="fromBtn_container">
+                <a href="{% url 'hotsprings_create' %}"><button type="button" class="btn">Add New Hot Springs</button></a>
+                <a href="{% url 'hotsprings_home' %}"><button type="button" class="btn">Return Home</button></a>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+
+<div class="main">
+
+	{% for hotsprings in hotsprings %}
+
+	<a href = "../{{ hotsprings.pk }}/hotsprings_details/">{{ hotsprings.hot_springs_name }}<br/>
+	{{ hotsprings.description}}<br/>
+	<hr/>
+
+	{% endfor %}
+
+</div>
+
+{% endblock %}

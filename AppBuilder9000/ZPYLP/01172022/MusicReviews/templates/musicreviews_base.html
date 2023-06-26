@@ -1,0 +1,38 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} Welcome to Music Reviews! {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Music_Reviews.css' %}">
+    </head>
+<body>
+    {% comment %} background video {% endcomment %}
+    <div>
+        <video autoplay muted loop class="backgroundvideo">
+            <source src="{% static 'images/music_background.mp4' %}" type="video/mp4">
+            Your browser does not support HTML5 video
+        </video>
+    </div>
+
+    <div class="page_container">
+        <header>
+            <h1>{% block header %} {% endblock %}</h1>
+        </header>
+        {% block content %}
+
+
+
+
+
+
+
+
+
+
+
+        {% endblock %}
+    </div>
+</body>
+</html>

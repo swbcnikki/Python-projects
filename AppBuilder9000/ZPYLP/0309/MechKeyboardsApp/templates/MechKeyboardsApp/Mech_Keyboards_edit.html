@@ -1,0 +1,31 @@
+<!-- Extends from the base html -->
+{% extends "MechKeyboardsApp/Mech_Keyboards_base.html" %}
+
+<!-- Page title -->
+{% block title %}MechKeyboards{% endblock %}
+
+<!-- Page header -->
+{% block header %}
+    <div class="container-lg">
+        <h1>Edit Build</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+<!-- Create page form element -->
+<div class="container-text">
+    <div class="form-container">
+        <form method="POST" novalidate>
+            <div class="form-object-container">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div class="form-btn-container">
+                <input type="submit" class="btn" value="Save changes" name="save_item">
+                <a href="../build_details/"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

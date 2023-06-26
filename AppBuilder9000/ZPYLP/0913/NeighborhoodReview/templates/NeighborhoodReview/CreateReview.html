@@ -1,0 +1,21 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% load static %}
+
+{% block title %}Portland Neighborhood Review Blog {%  endblock %} }
+
+{% block header %}Portland Neighborhood Reviews {% endblock %}
+
+{% block content %}
+ <h3>Submit Your Review</h3>
+    <div id = "review-form" >
+        <form method ='POST'>
+            <div class ="form-group-lg">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button id ='review-form' class ="btn btn-primary"  type = "submit" name = "Save_Neighborhood">Add Review</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

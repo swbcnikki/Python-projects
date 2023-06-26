@@ -1,0 +1,19 @@
+{% extends 'Drones/Drones_base.html' %}
+{% block title %}Drones{% endblock %}
+{% block content %}
+    <h1>Drones</h1>
+    <div class="text-center">
+        <h3>Manage your existing Drone!</h3>
+        <div>
+            <label id="index-label">Choose Drone:</label>
+            {% csrf_token %}
+            {{ Drones_list }}
+            <button type="submit"><a href="{% url 'Drones_list' %}">Go to Drone</a></button>
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <h3>Add Drone!</h3>
+        <button type="submit" class="new-drone-button"><a href="{% url 'Drones_create' %}">Create Drone</a></button>
+    </div>
+{% endblock %}

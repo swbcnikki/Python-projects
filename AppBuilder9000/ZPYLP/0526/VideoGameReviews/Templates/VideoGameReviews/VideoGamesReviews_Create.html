@@ -1,0 +1,16 @@
+{% extends 'VideoGameReviews/VideoGameReviews_Base.html' %}
+{% block content %}
+
+    <h1> Add a Review </h1>
+
+    <div class="mb-3">
+        <form action="" method="post">
+        <table>
+        {% csrf_token %}
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+
+{% endblock %}

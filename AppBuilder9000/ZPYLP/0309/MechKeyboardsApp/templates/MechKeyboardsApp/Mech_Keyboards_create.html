@@ -1,0 +1,49 @@
+<!-- Extends from the base html -->
+{% extends "MechKeyboardsApp/Mech_Keyboards_base.html" %}
+
+<!-- Page title -->
+{% block title %}MechKeyboards{% endblock %}
+
+<!-- Page header -->
+{% block header %}
+    <div class="container-lg">
+        <h1>Keyboard Builder</h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-text">
+    <p>
+        The Keyboard Builder is a tool for creating a database that can keep track of all the keyboards
+        in your collection. Whether you need a place for simple cataloging, a way to organize client builds or a
+        place to store potential builds for the future; the Keyboard Builder can meet your needs.
+    </p>
+
+    <!-- Create page form element -->
+    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Preset Options
+    </button>
+
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <div class="form-container">
+                <form method="POST" novalidate>
+                    <div class="form-object-container">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        {{ form.as_p }}
+                    </div>
+                    <div class="form-btn-container">
+                        <input type="submit" class="btn" value="Create New Keyboard" name="save_item">
+                        <a href="{% url 'Mech_Keyboards_home' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

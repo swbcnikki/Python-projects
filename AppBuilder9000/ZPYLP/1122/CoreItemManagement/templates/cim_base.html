@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/cim_styles.css' %}">
+</head>
+<style>
+</style>
+<body>
+    <section class="header">
+        {% block navbar %}{% include 'cim_nav.html' %}{% endblock %}
+        {% block header %}{% endblock %}
+    </section>
+
+    <section class="content">
+        {% block content %}{% endblock %}
+    </section>
+
+    <section class="footer">
+        {% block footer %}{% include 'cim_footer.html' %}{% endblock %}
+    </section>
+</body>
+</html>

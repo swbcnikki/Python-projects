@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    background-image: url('/static/images/KeyMaster_background.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    margin: auto;
+    color: white;
+}
+
+.navbar {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 10px
+    padding: 20px;
+    text-align: center;
+}
+
+.menu {
+    color: white;
+	font: bold 12px/18px sans-serif;
+	text-align: center;
+	display: inline;
+	margin: 0% auto;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+.menu li, .button {
+	color: #000;
+	width: auto;
+	background-color: #9D9FA2;
+	display: inline-block;
+	margin: 0% auto;
+	position: relative;
+	padding: 15px 4%;
+	border: 1px solid red;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 800px;
+}
+
+.head_container {
+    margin: 50px;
+}
+
+h1, h3 {
+    color: white;
+}
+
+footer {
+    border-1px solid black;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    color: white;
+}
+
+
+
+label {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    padding: 5px;
+}
+
+.GameContainer {
+    margin-top: 50px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: 4px inset gray;
+    background-color: gray;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    color: black;
+}
+
+.GameList li {
+    border: 2px solid black;
+    background-color: white;
+    width: auto;
+    padding: 5px;
+}
+
+select {
+    width: 609px;
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px black solid;
+}
+
+input {
+    width: 600px;
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px black solid;
+}

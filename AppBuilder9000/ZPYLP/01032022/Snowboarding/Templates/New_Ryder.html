@@ -1,0 +1,16 @@
+{% extends "SnowboardingBase.html" %}
+
+{% block title %}Snowboarding{% endblock %}
+
+{% block header %}Add a Ryder!{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" name="New_Ryder_Form" id="sub-btn">Add Ryder</button>
+        </form>
+        <a href="{% url 'Snowboarding_Home' %}"><button id="cancel">Cancel</button></a>
+    </div>
+{% endblock %}

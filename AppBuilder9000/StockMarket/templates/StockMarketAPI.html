@@ -1,0 +1,16 @@
+{% extends "StockMarketBase.html" %}
+
+{% block StockTitle %} Stock Lookup {% endblock %}
+
+
+
+{% block StockPageHeading %} Stock Info {% endblock %}
+
+{% block Content %}
+
+{% for stock in data %}
+{{ stock.symbol }}
+{% endfor %}
+
+{% endblock %}
+

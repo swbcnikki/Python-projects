@@ -1,0 +1,21 @@
+<!--  Bootstrap navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand text-danger" href="{% url 'mtb_trails_home' %}">MTB Trails</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <a class="nav-item nav-link" href="{% url 'mtb_trails_review' %}">review a trail</a>
+
+      <a class="nav-item nav-link" href="{% url 'existing_reviews' %}">browse reviews</a>
+
+      <a class="nav-item nav-link" href="{% url 'trail_api' %}">search colorado</a>
+
+      <a class="nav-item nav-link" href="{% url 'top_mtb' %}">top MTBs 2022</a>
+
+    </div>
+  </div>
+</nav>

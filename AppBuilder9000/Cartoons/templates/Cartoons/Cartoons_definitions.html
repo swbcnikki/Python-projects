@@ -1,0 +1,36 @@
+{% extends "Cartoons/Cartoons_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page displays a list of the information that was inputted on the create page
+{% endcomment %}
+
+<div class="jumbotron jumbotron-fluid bg-primary text-light text-center">
+        <h1 class="display-4">Previously Searched Words</h1>
+</div>
+
+<div id="table-container" class="table-responsive mx-auto">
+
+    <table class="table table-hover mx-auto w-50 bg-danger table-striped">
+        <thead class="text-light font-weight-bold">
+            <tr> <!-- Headings for table -->
+                <th scope="col" data-field='value' data-sortable="True">Word:</th>
+                <th scope="col" data-field='definition' data-sortable="True">Definition:</th>
+            </tr>
+        </thead>
+        <tbody class="text-light"> <!-- These display all the specific items from the definition form -->
+        {% for definition in definition_list %}
+            <tr>
+                <td>{{definition.value | capfirst}}</a></td>
+                <td>{{definition.definition | capfirst }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a class="btn btn-success text-light btn-md font-weight-bold w-50"  href="{% url 'Cartoons_api' %}" role="button">Search a word!</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "EdTech/EdTech_Base.html" %}
+{% load static %}
+{% block title %} Educational Technology {% endblock %}
+
+{% block header %}
+    <h1>Library of Resources</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <table id="table" data-toggle="table">
+            <thead>
+                <tr id="th">
+                    <th>Resource Name</th>
+                    <th>Website URL</th>
+                    <th>Free Version</th>
+                    <th>Key Features</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entry in entries %}
+                <tr id="td">
+                    <td><a href="{% url 'EdTech_Details' entry.pk %}">{{ entry }}</a></td>
+                    <td>{{ entry.URL }}</td>
+                    <td>{{ entry.free_version }}</td>
+                    <td>{{ entry.key_features }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <h3>Note: Click on the Resource Name to update/edit its information.</h3>
+    </div>
+{% endblock %}

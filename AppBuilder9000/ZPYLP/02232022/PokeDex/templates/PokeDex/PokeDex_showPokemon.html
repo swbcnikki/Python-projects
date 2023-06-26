@@ -1,0 +1,32 @@
+{% extends "PokeDex/PokeDex_base.html" %}
+{% load static %}
+{% block title %}PokeDex{% endblock %}
+
+{% block header %}<h1>Your PokeDex</h1>{% endblock %}
+
+{% block content %}
+<!-- right here is just some styling I did for my table that I made that will display the names of what pokemon
+have been added to the database-->
+<div id="container" class="table-responsive table-sm mx-auto" style="padding-top: 35px; padding-right: 580px; padding-left: 580px;">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <!-- This is a row that has Name and then I used some code to add space for the text after-->
+          <th scope="col" style="padding-top: 2px;">Name:&emsp;&emsp;&emsp;&emsp;- click name for more info on Pokémon</th>
+        </tr>
+      </thead>
+      <tbody>
+      <!-- here is a for loop that will take the pokemon from the database and then go through it and turn it into
+      string and display it on the webpage and then I added an href tag to the names and connected it to my pokemon
+      details html file and to their primary key number so that way later when you click the name you can get more
+      info about the pokemon-->
+      {% for pokemon in show_pokemon %}
+        <tr>
+          <th scope="row" style="padding-left: 45px;"><a href="{%url 'pokemon_details' pokemon.pk %}">{{pokemon.name}}</a></th>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% endblock %}

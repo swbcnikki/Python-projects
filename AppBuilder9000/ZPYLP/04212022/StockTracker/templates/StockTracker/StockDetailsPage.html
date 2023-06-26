@@ -1,0 +1,29 @@
+{% extends "StockTrackerBase.html" %}
+
+{% block StockTitle %} Stock Tracker Home {% endblock %}
+
+{% block StockPageHeading %} Stock Details Page {% endblock %}
+
+{% block StockContent %}
+Here is my site content
+     <table>
+        <tr>
+            <th>Stock Company Name</th>
+            <th>Stock Ticker</th>
+            <th>Stock Price</th>
+            <th>Amount Held</th>
+        </tr>
+        <tr>
+            <td>{{ indiv_stock.StockCompanyName }}</td>
+            <td>{{ indiv_stock.StockTicker }}</td>
+            <td>{{ indiv_stock.StockPrice }}</td>
+            <td>{{ indiv_stock.StockAmount }}</td>
+        </tr>
+    </table>
+
+
+
+{% endblock %}
+
+
+{% block StockFooter %} {% endblock %}

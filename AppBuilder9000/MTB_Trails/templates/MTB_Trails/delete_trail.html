@@ -1,0 +1,21 @@
+{% extends "MTB_Trails/mtb_trails_base.html" %}
+{% load static %}
+
+<!-- THIS PAGE IS NOT BEING USED. Rather than risk an issue in views and urls, it will be left -->
+
+{% block title %}Successful Trail Deletion{% endblock %}
+
+{% block header %}trail deleted{% endblock %}
+
+{% block content %}
+    <!-- Bootstrap button layout with custom CSS -->
+    <div class="home-btn--container btn-toolbar-horizontal">
+        <a href="{% url 'mtb_trails_review' %}" class="btn btn-dark btn-lg active" role="button"
+           aria-pressed="true">review a trail</a>
+        <a href="{% url 'existing_reviews' %}" class="btn btn-dark btn-lg active" role="button"
+           aria-pressed="true">reviews</a>
+        <a href="#" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">search for a trail</a>
+    </div>
+
+
+{% endblock %}

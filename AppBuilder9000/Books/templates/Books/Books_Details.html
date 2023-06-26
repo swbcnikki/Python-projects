@@ -1,0 +1,38 @@
+{% extends "Books/Books_Base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block title %} Details Page{% endblock %}
+
+
+{% block content %}
+<h1 class="fancy">Details</h1>
+    <table class="book-tables">
+        <thead>
+            <tr>
+                <th>Genre</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Rating</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ details.book_genre }}</td>
+                <td>{{ details.book_title }}</td>
+                <td>{{ details.book_author }}</td>
+                <td>{{ details.book_description }}</td>
+                <td>{{ details.book_rating }}</td>
+                <td><a href="{% url 'books_delete' details.id %}"><i class="fa-solid fa-trash-can"></i></a></td>
+                <td><a href="{% url 'books_update' details.id %}">Edit</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+{% endblock%}

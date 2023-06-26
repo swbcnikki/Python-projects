@@ -1,0 +1,38 @@
+{% extends "EFT_Items/EFT_Items_base.html" %}
+
+{% block title %}Escape From Tarkov{% endblock %}
+
+{% block header %}Item Details:{% endblock %}
+
+{% block content %}
+
+<div>
+    <table class="display" id="TableStyle">
+        <thead>
+            <tr>
+                <th>Item Type</th>
+                <th>Item Name</th>
+                <th>Amount Required</th>
+                <th>Hideout</th>
+                <th>Quest</th>
+                <th>Found In Raid</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ details.type }}</td>
+                <td>{{ details.name }}</td>
+                <td>{{ details.amount_required|default_if_none:'' }}</td> <!-- default_if_none hides "None" from being displayed on table -->
+                <td>{{ details.hideout }}</td>
+                <td>{{ details.quest }}</td>
+                <td>{{ details.found_in_raid }}</td>
+                <td><a href="{% url 'eft_edit_item' details.pk %}">Edit</a></td>
+                <td><a href="{% url 'eft_delete_item' details.pk %}" class="confirm_delete">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

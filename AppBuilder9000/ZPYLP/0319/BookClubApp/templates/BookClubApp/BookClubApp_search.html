@@ -1,0 +1,52 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}Explore New Books{% endblock %}
+{% block header%}Search{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="book-form">
+        <form action="{% url 'BookClubApp_explore' %}" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-secondary"  type="submit" name="searchBook">Search</button>
+        </form>
+    </div>
+</div>
+<script>
+    $("form input").on("blur input focus", function() {
+        var $field = $(this).closest("p");
+        if (this.value) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+
+    $("form input").on("focus", function() {
+        var $field = $(this).closest("p");
+        if (this) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+    $("form textarea").on("blur input focus", function() {
+        var $field = $(this).closest("p");
+        if (this.value) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+
+    $("form textarea").on("focus", function() {
+        var $field = $(this).closest("p");
+        if (this) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+</script>
+{% endblock %}

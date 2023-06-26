@@ -1,0 +1,61 @@
+{% extends "MusicApp/MusicApp_base.html" %}
+
+{% block title %}MusicApp{% endblock %}
+
+{% block header %}Song Search Results{% endblock %}
+
+{% block content %}
+
+<form class="searchbox" action="{% url 'MusicApp_song_search_results' %}" method="GET" value="{{request.GET.q}}">
+<input type="text" name="q" value="{{request.GET.q}}" placeholder="Song Name"/>
+<input type="submit" name="submit" class="btn" value="Search"/>
+</form>
+<!--- q will be used to retain the query that the user inputs in name="q" and value="{{request.GET.q}}" ----->
+
+{% if submitbutton == 'Search' and request.GET.q != '' %}
+<!---- Ensures field isn't empty when button clicked to avoid an empty query---->
+    {% if results %}
+    <!-- if submit button was clicked and query is entered, then display: --->
+    <table class="index_table">
+         <tr>
+            <th>Name</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Song Length</th>
+            <th>Released</th>
+        </tr>
+        {% for result in results %}
+         <tr>
+            <td>
+                {{ result.song_name }}
+            </td>
+            <td>
+                {{ result.artist_name }}
+            </td>
+            <td>
+                {{ result.album_name }}
+            </td>
+            <td>
+                {{ result.song_length }}
+            </td>
+            <td>
+                {{ result.song_release_year }}
+            </td>
+        </tr>
+        {% endfor %}
+        <! ---------- If song isn't found in database------>
+        {% else %}
+        <div class="text-container">
+        <p class="text">There are no search results for that song name. <br>
+            Please check your spelling or you can add a new song <a href="{% url 'MusicApp_create_song' %}">Here.</a></p>
+        </div>
+        {% endif %}
+        {% endif %}
+
+    </table>
+
+<button type="button"><a href="{% url 'MusicApp_song_index' %}">Return</a></button>
+
+
+
+{% endblock %}

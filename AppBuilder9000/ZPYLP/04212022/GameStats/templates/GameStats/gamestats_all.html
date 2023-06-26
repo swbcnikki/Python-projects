@@ -1,0 +1,100 @@
+
+{% extends "gamestats_base.html" %}
+
+{% load static %}
+
+{% block title %} Game Reviews {% endblock %}
+
+{% block header %} Game Reviews {% endblock %}
+
+{% block content %}
+
+<div class="table-search-bg">
+<div class="searchContainer">
+
+<div class="dbSearch">
+    <form method="get" action="" accept-charset="utf-8">
+      Search by Rating:
+      <input class="queryBox" name="search_res" type="text" placeholder="Search">
+      <input class="btn btn-dark neu-button" type="submit" value="OK">
+    </form>
+</div>
+
+<div class="dbSearch">
+    <form method="get" action="" accept-charset="utf-8">
+      Search by Release Year:
+      <input class="queryBox" name="release_year" type="text" placeholder="Search">
+      <input class="btn btn-dark neu-button" type="submit" value="OK">
+    </form>
+</div>
+
+<div class="dbSearch">
+    <form method="get" action="" accept-charset="utf-8">
+      Search by Genre:
+        <select id="selectBox" name="genre">
+            <option class="selectOption" value="action">action</option>
+            <option class="selectOption" value="racing">racing</option>
+            <option class="selectOption" value="horror">horror</option>
+            <option class="selectOption" value="adventure">adventure</option>
+            <option class="selectOption" value="RPG">RPG</option>
+            <option class="selectOption" value="RTS">RTS</option>
+        </select>
+<!--      <input id="searchbox" class="queryBox" name="genre" type="text" placeholder="Search">-->
+      <input class="btn btn-dark  neu-button" type="submit" value="OK">
+    </form>
+</div>
+
+<div class="dbSearch">
+    <form  method="get" action="" accept-charset="utf-8">
+      Search by Name:
+      <input class="queryBox" name="name" type="text" placeholder="Search">
+      <input class="btn btn-dark neu-button" type="submit" value="OK">
+    </form>
+</div>
+
+</div>
+
+{% if game_list.has_other_pages %}
+<div class="pagination">
+    <ul class="pagination">
+        {% for i in game_list.paginator.page_range %}
+        {% if game_list.number == i %}
+        <li class="active btn btn-dark"><span>{{ i }} <span class="sr-only"></span></span></li>
+        {% else %}
+        <li><a class="btn btn-dark" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+
+<div id="container" class="table-responsive w-75 mx-auto">
+    <table id="table" class="table table-dark table-hover table-striped text-center add-spacing" data-toggle="table">
+        <thead class="table-spacer">
+            <tr>
+                <th scope="col" data-field="name" data-sortable="true" class="w-25 neu-table-left remove-border">Game</th>
+                <th scope="col" data-field="ratings" data-sortable="true" class="w-25 remove-border">Rating</th>
+                <th scope="col" data-field="release" data-sortable="true" class="w-25 remove-border">Release year</th>
+                <th scope="col" data-field="genre" data-sortable="true" class="w-25 neu-table-right remove-border">Genre</th>
+            </tr>
+        </thead>
+        <tbody class="table-spacer">
+            {% for Game in game_list %}
+            <tr>
+                <td class="w-25 neu-table-left remove-border"><a href="{% url 'gamestats_one' Game.id %}">{{ Game }}</a></td>
+                <td class="w-25 remove-border">{{ Game.rating }}/100</td>
+                <td class="w-25 remove-border">{{ Game.release_year }}</td>
+                <td class="w-25 neu-table-right remove-border">{{ Game.genre }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+
+
+{% endblock %}

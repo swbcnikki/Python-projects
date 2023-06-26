@@ -1,0 +1,61 @@
+{% extends 'coachBase.html' %}
+{% block title %}Child Roster{% endblock %}
+{% block content %}
+
+	<div class="lighten-20 rounded jumbotron jumbotron-fluid bg-primary text-light text-center">
+		<h2 class=" text-center">{{ details.First_Name }} {{ details.Last_Name }} </h2>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover text-truncate" >
+			<thead>
+				<tr>
+					<th scope="col">First Name</th>
+					<th scope="col">Last Name</th>
+					<th scope="col">Grade</th>
+					<th scope="col">Jersey #</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!--This displays all info from 'details' as defined in 'def childDetails'-->
+					<td class="left">{{ details.First_Name }}</td>
+					<td class="left">{{ details.Last_Name }}</td>
+					<td class="left">{{ details.Child_Grade }}</td>
+					<td class="left">{{ details.Jersey_Number }}</td>
+					<!--<td class="right">{{ key.Coach_Name }}</td>-->
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<table class="table table-hover text-truncate" >
+			<thead>
+				<tr>
+					<th scope="col">Parent Name</th>
+					<th scope="col">Parent Phone</th>
+					<th scope="col">Parent Email</th>
+					<th scope="col">Notes</th>
+					<th scope="col">Coach</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<!--This displays all info from 'details' as defined in 'def childDetails'-->
+
+					<td class="left">{{ details.Parent_Name }}</td>
+					<td class="left">{{ details.Parent_Phone }}</td>
+					<td class="left">{{ details.Parent_Email }}</td>
+					<td class="left">{{ details.Notes_or_Allergies }}</td>
+					<!--<td class="right">{{ key.Coach_Name }}</td>-->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br>
+	<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+		<a href="{% url 'coachChildRoster' %}" class="btn btn-primary" role="button">Roster</a>
+		<a href="{% url 'coachChildUpdate' details.id %}" class="btn btn-primary" role="button">Edit</a>
+		<a href="{% url 'coachChildDelete' details.id %}" class="btn btn-primary" role="button">Delete</a>
+	</div>
+{% endblock %}
+
+<!--{% for child in childForDelete %} {% endfor %}-->

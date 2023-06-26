@@ -1,0 +1,31 @@
+{%extends "musicfiles_base.html"%}
+{% load static %}
+
+
+{% block title %}Music File Manager{% endblock %}
+
+{% block header %}Welcome to your Music File Manager!{% endblock %}
+
+{% block content %}
+
+<table>
+     <tr>
+         <th>{{'ID'|upper}}</th>
+         <th>{{'Name'|upper}}</th>
+         <th>{{'Type'|upper}}</th>
+         <th>{{'Genre'|upper}}</th>
+     </tr>
+ <tr>
+
+     <td>{{details.id}}</td>
+     <td>{{details.name}}</td>
+     <td>{{details.type}}</td>
+     <td>{{details.genre}}</td>
+ </tr>
+</table>
+
+
+
+
+
+{% endblock %}

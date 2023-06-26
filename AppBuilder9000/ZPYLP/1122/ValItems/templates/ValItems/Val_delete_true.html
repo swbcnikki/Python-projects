@@ -1,0 +1,27 @@
+{% extends "Val_base.html" %}
+{% load staticfiles %}
+{% block title %}Valheim Items{% endblock %}
+
+<html>
+    <body>
+        {% block content %}
+        <form method="POST">
+        {% csrf_token %}
+            <h3> Delete an Item </h3>
+                <div>
+                    <p>Are you sure you want to delete this item?</p>
+                        <ul class="item_ul">
+                            <li>Name: {{ items_delete.item_name }}</li>
+                            <li>Type: {{ items_delete.item_type }}</li>
+                            <li>Level: {{ items_delete.item_level }}</li>
+                            <li>Description: {{ items_delete.item_description }}</li>
+                        </ul>
+                        <button class="edit-item-button"><a href="{% url 'Items' %}">Cancel</a></button>
+                        <button type="submit" class="delete-item-button" value="CONFIRMED">Delete</a></button>
+                </div>
+        </form>
+        {% endblock %}
+
+    </body>
+
+</html>

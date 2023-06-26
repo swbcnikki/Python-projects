@@ -1,0 +1,27 @@
+{% extends "VP_TrackShows/base.html" %}
+{% load static %}
+
+{% block title %}Show Info{% endblock %}
+{% block header %}<h1>SHOW INFO</h1>{% endblock %}
+{% block content %}
+    <div class="container">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+                <th>AirDay</th>
+                <th>AirTime</th>
+                <th>Network</th>
+            </tr>
+            <tr>
+                <td>{{ details.show_title }}</td>
+                <td>{{ details.status }}</td>
+                <td>{{ details.day_of_week }}</td>
+                <td>{{ details.airtime }}</td>
+                <td>{{ details.network }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'edit' details.pk %}"><button>EDIT</button></a>
+        <a href="{% url 'delete' details.pk %}"><button>DELETE</button></a>
+    </div>
+{% endblock %}

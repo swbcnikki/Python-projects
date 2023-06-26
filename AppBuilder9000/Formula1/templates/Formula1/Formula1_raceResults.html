@@ -1,0 +1,44 @@
+{% extends "Formula1/Formula1_base.html" %}
+
+{% block title %}Formula 1{% endblock %}
+
+{% block header %}Race Results{% endblock %}
+
+{% block content %}
+
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Driver</th>
+                <th scope="col" class="text-center">Team</th>
+                <th scope="col" class="text-center">Race</th>
+                <th scope="col" class="text-center">Position</th>
+                <th scope="col" class="text-center">Fastest Lap</th>
+                <th scope="col" class="text-center">Points</th>
+                <th scope="col" class="text-center"></th>
+                <th scope="col" class="text-center"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {%  for result in data %}
+            <tr>
+                <td scope="row" class="text-center"><a href="{% url 'driver_details' value=result.Driver_Name %}">{{ result.Driver_Name }}</a></td>
+                <td class="text-center"><a href="{% url 'team_details' value=result.Current_Team %}">{{ result.Current_Team }}</a></td>
+                <td class="text-center">{{ result.Race }} - {{ result.Race_Type }}</td>
+                <td class="text-center">{{ result.Finishing_Position }}</td>
+                <td class="text-center">{% if result.Fastest_Lap %}
+                        &#10004
+                    {% else %}
+                        &#10060
+                    {% endif %}
+                </td>
+                <td class="text-center">{{ result.Points_Earned }}</td>
+                <td class="text-right"><a href="{% url 'edit_result' pk=result.id %}" style="text-decoration: none">&#9999;</a></td>
+                <td class="text-left"><a href="{% url 'delete_result' pk=result.id %}" style="text-decoration: none">&#128465;</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

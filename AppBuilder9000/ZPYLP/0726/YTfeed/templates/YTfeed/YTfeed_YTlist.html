@@ -1,0 +1,15 @@
+{% extends "YTfeed/YTfeed_base.html" %}
+{% load static %}
+{% block title %} Youtubers {% endblock %}
+{% block content %}
+<h1>Your Subscriptions:</h1>
+<ul id="movieMenu">
+    {% for Youtuber in Youtubers %}
+    <li>
+      <a id="addedMovies" href="{% url 'View-Youtubers' Youtuber.id %}">{{ Youtuber.YTname|capfirst }}</a>
+    </li>
+    <a class="function-button" href="{% url 'Update' Youtuber.id %}">See New Uploads!!</a><br>
+    <a class="function-button" href="{% url 'Update' Youtuber.id %}">Edit!!!</a><a  class="function-button" href="{% url 'Delete' Youtuber.id %}">Delete</a>
+    {% endfor %}
+</ul>
+{% endblock %}

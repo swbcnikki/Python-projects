@@ -1,0 +1,39 @@
+{% extends "Formula1/Formula1_base.html" %}
+
+{% load static %}
+
+{% block title %}Formula 1{% endblock %}
+
+{% block header %}{{ summary.0 }}{% endblock %}
+
+{% block content %}
+
+<div class="card mx-auto text-dark bg-secondary mb-3 border border-dark" style="width: 18rem;">
+  <img class="card-img-top team-img" src="{% static summary.3 %}" alt="Card image cap">
+  <div class="card-body text-white bg-dark border-top border-white">
+    <h5 class="card-title">{{ summary.0 }}</h5>
+    <p class="card-text">Drivers:
+      {% for driver in summary.1 %}
+        {% if forloop.counter < summary.1|length %}
+          {{ driver }},
+        {% else %}
+          {{ driver }}
+        {% endif %}
+      {% endfor %}
+      <br>Total Points: {{ summary.2 }}</p>
+  </div>
+  <ul class="list-group list-group-flush text-white bg-dark">
+    {% for key, value in races.items %}
+    <li class="list-group-item text-white bg-dark border-top border-white race-name">
+      {{ value.0 }} -
+      {% if value.1 == 'Sprint Race' %}
+      <span class="badge badge-warning">Sprint</span>
+      {% endif %}
+      <span class="badge badge-info">{{ value.2 }} Points</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+{% endblock %}

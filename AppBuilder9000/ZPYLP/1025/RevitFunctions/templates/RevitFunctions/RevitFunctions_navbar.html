@@ -1,0 +1,41 @@
+<!------------------------------ NAVBAR with Brand on left, toggle by window size with button on the right without any drop menu ------------------------------>
+<!-- MUST add Bootstrap jQuery Script to end of Base.html for navbar to function properly -->
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">                                               <!-- responsive behavior: Navbar requires a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl} for responsive collapsing and color scheme classes.
+                                                                                                                        .navbar-dark for dark background colors. Then, customize with .bg-* utilities.
+                                                                                                                        Ensure accessibility by using a <nav> element or, if using a more generic element such as a <div>, add a role="navigation" to every navbar to explicitly identify
+                                                                                                                        it as a landmark region for users of assistive technologies. -->
+                                                                                                                <!-- The <nav> element indicates that a group of links are for navigation -->
+            <div class="container px-5">                                                                        <!-- Navbar and their contents are fluid by default. Use optional containers to limit their horizontal width. -->
+
+                <a class="navbar-brand">&lt;&lt; Revit Functions &gt;&gt;</a>                                                     <!-- Text on navbar without link -->
+                                                                                                                <!-- navbar built-in sub-components: .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles. -->
+                                                                                                               <!-- Brand on the left, Toggle on the right. if code online5 is after line 11: Brand on right & Toggle on left -->
+                <!-- NAVBAR turns to the 3 lines button icon if screen is too small  -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">                                   <!-- navbar built-in sub-components: .navbar-toggler for use with our collapse plugin and other navigation toggling behaviors. -->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">                              <!-- navbar built-in sub-components & responsive behavior: .collapse.navbar-collapse: classes to change when their content collapses behind a button. -->
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">                                                <!-- because classes are utilized for nav, can avoid list-based approach entirely: <a class="nav-item nav-link active" href="#">Home</a> -->
+                                                                                                                <!-- navbar built-in sub-components: .navbar-nav for a full-height and lightweight navigation (including support for dropdowns).
+                                                                                                                        spacing utility class: ms-auto mb-2 mb-lg-0 https://getbootstrap.com/docs/4.0/utilities/spacing/ -->
+
+                        <li class="nav-item"><a class="nav-link" href="{% url 'RevitFunctions_home' %}">Home</a></li>
+                                                                                                                <!-- replace href="about.html" with proper Django attribute reference: with Django block tag -->
+                                                                                                                <!-- create a simple horizontal menu, add the .nav class to a <ul> element, followed by .nav-item for each <li> and add the .nav-link class to their links
+                                                                                                                      Active states—with .active—to indicate the current page can be applied directly to .nav-links or their immediate parent .nav-items. -->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'RevitFunctions_AddUser' %}">+User</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'RevitFunctions_AddRvtFunction' %}">+RVT Func</a></li>
+
+                        <!-- Story3, Step 1: Create a new HTML page, link it from your home page. -->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'RevitFunctions_RvtRecords' %}">Records</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </main>
+</body>

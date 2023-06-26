@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="background_image">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS/Styling.css' %}">
+    </head>
+    <body>
+        <div class="page_wrap">
+        <header>
+                <h1>{% block header %} {% endblock %}</h1>
+                <div class="navbar">
+                        <ul><a href="{% url 'home' %}">App Builder 9000 Directory</a></ul><br>
+                        <ul><a href="{% url 'Theater_home' %}">Home page</a></ul><br>
+                        <ul><a href="{% url 'new_Theater' %}">Add a Theater</a></ul><br>
+                        <ul><a href="{% url 'find_Theater' %}">Find a Theater</a></ul>
+                </div>
+        </header>
+            <div>
+            {% block content %} {% endblock %}
+            </div>
+        </div>
+         <section class="footer">
+            <p>Theaters and Features &copy;2021</p>
+        </section>
+    </body>
+</html>

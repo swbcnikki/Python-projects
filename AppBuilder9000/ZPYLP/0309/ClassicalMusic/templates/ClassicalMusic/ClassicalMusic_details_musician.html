@@ -1,0 +1,143 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+
+<header class="page_header">
+    <h1>{{ musician }}</h1>
+</header>
+
+{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}
+
+<!--EDIT & DELETE BUTTONS BAND-->
+<div class="d-flex justify-content-end">
+
+</div>
+
+<!-- ERRORS & BUTTONS BAND-->
+<div class="button-container">
+    <div>{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}</div>
+    <div >
+    </div>
+    <div>
+        <a class="icon-link" href="{% url 'ClassicalMusic_edit_musician' musician.pk %}">
+            <i class="far fa-edit big-icon icon"></i>
+        </a>
+        <a data-toggle="modal" data-target="#confirm_delete">
+            <i class="far fa-trash-alt big-icon icon"></i>
+        </a>
+        <a class="edit_icon" href="{% url 'ClassicalMusic_add_musician' %}">
+            <i class="far fa-plus-square big-icon"></i>
+        </a>
+    </div>
+</div>
+
+<!--DETAILS TABLE-->
+<table class="table ">
+    <tbody>
+        <tr class="">
+            <td class=" w-header h-minimum">Name</td>
+            <td class="w-center h-minimum">{{ musician.name }} </td>
+            <td class="w-image" rowspan="6"><img class="portret" src="{% if musician.image_url %}{{ musician.image_url }}{% else %}{% static 'ClassicalMusic/images/music-4661526_1920.jpg' %}{% endif %}"></td>
+        </tr>
+        <tr class="">
+            <td class="  h-minimum" >Sort name</td>
+            <td class="">{{ musician.sort_name }}</td>
+
+        </tr>
+        <tr class="">
+            <td class="  h-minimum" >Type</td>
+            <td class="">{{ musician.type }}{% if musician.gender %}, {{ musician.gender }}{% endif %}</td>
+
+        </tr>
+        <tr class="">
+            <td class="  h-minimum">Role</td>
+            <td class="">{{ musician.role }}</td>
+
+        </tr>
+        <tr class="">
+            <td class="  h-minimum" >Life</td>
+            <td class="">{{ musician.life_begin }} - {{ musician.life_end }}</td>
+
+        </tr>
+
+        {# Don't display the Works section if it is empty #}
+        {% if musician.composition_set.all %}
+            <tr class="">
+                <td class=" h-auto" >Works</td>
+                <td class="">
+                    {% for composition in musician.composition_set.all %}
+                        {{ composition.title }}
+                        <br>
+                    {% endfor %}
+                </td>
+
+            </tr>
+        {% endif %}
+
+        {# Don't display the Recordings section if it is empty #}
+        {% if musician.track_set.all %}
+            <tr class="">
+                <td class=" h-auto" >Recordings</td>
+                <td class="">
+                    {% for track in musician.track_set.all %}
+                        {{ track.movement }}
+                        <br>
+                    {% endfor %}
+                </td>
+
+            </tr>
+        {% endif %}
+
+        {# If no recordings and no compositions, include empty row with auto height to match vertical space of image #}
+        {% if musician.track_set.all or musician.composition_set.all  %}
+        {% else %}
+            <tr >
+                <td class=" h-auto"></td>
+                <td></td>
+            </tr>
+        {% endif %}
+
+    </tbody>
+</table>
+
+<!--CONFIRM DELETE MODAL -->
+<div class="modal" id="confirm_delete">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Comfirm Deletion</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure you want to delete '{{ musician }}' form the database?
+        </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <form method="POST" action="{% url 'ClassicalMusic_delete_musician' musician.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger" >Delete</button>
+              <button type="button" class="btn btn-custom-color" data-dismiss="modal">Cancel</button>
+          </form>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,28 @@
+
+<!--<nav class="navbar navbar-dark">-->
+<!--    <div class="">-->
+<!--        <a href="{% url 'at_home' %}">Home</a>-->
+<!--        <a href="{% url 'at_library' %}">Library</a>-->
+<!--        <a href="{% url 'add_song' %}">Add Song</a>-->
+<!--        <a href="{% url 'add_playlist' %}">Add Playlist</a>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-dark nav-opaque-container">
+  <a class="navbar-brand" href="{% url 'at_home' %}">ArtistTrack</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+<!--   this gets the url name and saves it as url_name-->
+      {% with url_name=request.resolver_match.url_name %}
+<!--   if url_name = current url, style nav button as active (bootstrap class)-->
+        <a class="nav-item nav-link {% if url_name == 'at_library' %}active{% endif %}" href="{% url 'at_library' %}">Library</a>
+      <a class="nav-item nav-link {% if url_name == 'at_all_songs' %}active{% endif %}" href="{% url 'at_all_songs' %}">Songs <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link {% if url_name == 'add_song' %}active{% endif %}" href="{% url 'add_song' %}">Add Song</a>
+      <a class="nav-item nav-link {% if url_name == 'add_playlist' %}active{% endif %}" href="{% url 'add_playlist' %}">Add Playlist</a>
+      {% endwith %}
+    </div>
+  </div>
+</nav>

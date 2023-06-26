@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html class="cryptoapp-base--html">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/CryptoApp.css' %}">
+        {# Placeholder for individual page titles #}
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+
+    <body class="cryptoapp-base--body">
+
+        <header class="cryptoapp-base--header">
+            <nav>
+                {# Inserting navbar from separate file #}
+                {% include "CryptoApp/CryptoApp_navbar.html" %}
+            </nav>
+
+            {# Placeholder for uniform header #}
+            <h2 class="cryptoapp-base--h2">
+                {% block header %}{% endblock %}
+            </h2>
+        </header>
+
+
+        <div class="cryptoapp-base--container">
+            {# Placeholder for individual page content #}
+            {% block content %}{% endblock %}
+        </div>
+
+
+        <footer class="cryptoapp-base--footer">
+            <br>
+            &#169; 2021 The Cryptocurrency App |
+            {# Link back to project main page #}
+            <a href="{% url 'home' %}">Back to AppBuilder9000</a>
+        </footer>
+
+    </body>
+
+</html>

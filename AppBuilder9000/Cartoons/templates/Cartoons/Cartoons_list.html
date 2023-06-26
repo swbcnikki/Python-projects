@@ -1,0 +1,44 @@
+{% extends "Cartoons/Cartoons_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page displays a list of the information that was inputted on the create page
+{% endcomment %}
+
+<div class="jumbotron jumbotron-fluid bg-primary text-light text-center">
+    <h1 class="display-4">Your favorite cartoons</h1>
+    <h4>Click on a title to learn more!</h4>
+</div>
+
+<div id="table-container" class="table-responsive mx-auto">
+
+    <table class="table table-hover mx-auto w-50 bg-danger table-striped">
+        <thead class="text-light font-weight-bold">
+            <tr> <!-- Headings for table -->
+                <th scope="col" data-field='title' data-sortable="True">Title:</th>
+                <th scope="col" data-field='premier_date' data-sortable="True">Premier Date:</th>
+                <th>Update/Delete:</th>
+            </tr>
+        </thead>
+        <tbody class="text-light"> <!-- Table information pulled from the cartoon form -->
+        {% for cartoon in cartoon_list %}
+            <tr>
+                <td><a href="{% url 'Cartoons_details' cartoon.id %}" class="text-primary font-weight-bold">{{cartoon.title | capfirst}}</a></td>
+                <td>{{cartoon.premier_date | capfirst }}</td>
+                <td>
+                    <div>
+                        <a class="btn btn-success text-light btn-md"  href="{% url 'Cartoons_up_date' cartoon.id %}" role="button">Update</a>
+                        <a class="btn btn-primary text-light btn-md"  href="{% url 'Cartoons_delete' cartoon.id %}" role="button">Delete</a>
+                    </div>
+                </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a class="btn btn-success text-light btn-md font-weight-bold w-50"  href="{% url 'Cartoons_create' %}" role="button">Add a Cartoon</a>
+    </div>
+</div>
+
+{% endblock %}

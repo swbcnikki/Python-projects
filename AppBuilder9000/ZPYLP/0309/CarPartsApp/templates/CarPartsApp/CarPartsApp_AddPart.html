@@ -1,0 +1,32 @@
+{% extends "CarPartsApp/CarPartsApp_base.html" %}
+{% load static %}
+{% block title %}Add Parts{% endblock %}
+{% block header %} Which car part would you like to add? {% endblock %}
+
+{% block content %}
+<!--- Display my form -->
+<br>
+    <div class="formContainer">
+        <div class="formContainer2">
+            <form method="POST" action="{% url 'CarPartsApp_AddPart' %}">
+                <div class="formImg">
+                    <img src="/static/images/auto-parts-200.jpg" alt="parts" width="300" height="300">
+                </div>
+                <div class="formBlock">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.as_p }}
+                </div>
+                <div class="formBtn">
+                    <input type="submit" class="btn" value="Add New Part" name="Save_Item">
+                    <a href="{% url 'CarPartsApp_home' %}"><button class="btn" type="button" value="Cancel">Cancel</button></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="formImg2">
+            <img src="/static/images/racecar_logo.jpg" alt="logo">
+        </div>
+    </div>
+
+{% endblock %}

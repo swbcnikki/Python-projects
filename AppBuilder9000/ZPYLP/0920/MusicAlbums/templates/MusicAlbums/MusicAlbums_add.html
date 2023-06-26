@@ -1,0 +1,13 @@
+{% extends 'MusicAlbums/MusicAlbums_base.html' %}
+{% block title %}Add Album{% endblock %}
+{% block content %}
+<h1>Add Album Here</h1>
+<div class="addform" id="AlbumForm">
+    <form method="post">
+        <br>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button id="button" type="submit">post</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "MTB_Trails/mtb_trails_base.html" %}
+{% load static %}
+
+{% block title %}Review Submission Successful{% endblock %}
+
+{% block header %}successful review submission{% endblock %}
+
+{% block content %}
+    <!-- Bootstrap button layout with custom CSS -->
+    <div class="home-btn--container btn-toolbar-horizontal">
+        <a href="{% url 'mtb_trails_review' %}" class="btn btn-dark btn-lg active" role="button"
+           aria-pressed="true">leave another?</a>
+        <a href="{% url 'existing_reviews' %}" class="btn btn-dark btn-lg active" role="button"
+           aria-pressed="true">reviews</a>
+        <a href="#" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">search for a trail</a>
+    </div>
+{% endblock %}

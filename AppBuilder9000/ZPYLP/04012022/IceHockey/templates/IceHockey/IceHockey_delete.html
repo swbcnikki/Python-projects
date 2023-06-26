@@ -1,0 +1,16 @@
+{% extends "IceHockey_base.html" %}
+{% load static %}
+{% block title %}Ice Hockey Details{% endblock %}
+
+{% block header %}Item Details{% endblock %}
+
+{% block content %}
+<div id="form-container">
+    <form method = 'POST'>
+        {% csrf_token %}
+        {{ item.as_p }}
+        <h2 class="display-2 text-info text-center">Deleting {{ item.first_name }}'s Profile: </h2>
+            <button type="submit" class="btn btn-info btn-lg btn-block w-25 mx-auto" onclick="return confirm('Confirm Delete?')">Delete Profile</button>
+    </form>
+</div>
+{% endblock %}

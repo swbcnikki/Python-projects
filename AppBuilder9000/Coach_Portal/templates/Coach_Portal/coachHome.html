@@ -1,0 +1,18 @@
+{% extends 'coachBase.html' %}
+{% block title %} Welcome to the Chelsea Coach Portal. {% endblock %}
+{% block content %}
+
+
+    <h2 class=" text-center font-weight-bold">Welcome to the Chelsea Coach Portal</h2>
+    <hr>
+    <div class="text-center">
+        <h5>Log-in to view your assigned players.</h5>
+    </div>
+    <hr>
+    <div class="text-center">
+        <h5>Add another account!</h5>
+        <!-- Add a template to the href so the button works-->
+        <button type="submit" class="btn btn-light text-light"><a href="{% url 'coachCreate' %}">Create Account</a></button>
+    </div>
+
+{% endblock %}

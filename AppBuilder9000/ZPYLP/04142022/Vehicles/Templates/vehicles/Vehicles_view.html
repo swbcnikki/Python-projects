@@ -1,0 +1,27 @@
+{% extends "vehicles/Vehicles_base.html" %}
+{% load static %}
+{% block title %}Vehicle List{% endblock %}
+
+{% block content %}
+<div id="container" class="table-responsive table-sm mx-auto" style= "margin-left: 35%; padding-left: 100px; padding-right: 100px; margin-right: 20%; background-color: black; align-content: center; text-decoration: none;">
+    <table id="table" class="table table-dark table-bordered table-hover text-center" data-toggle="table" style="color: white; margin-top: 1%; ">
+        <caption>Click on the Vehicle Model to show more details!</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-field="year" data-sortable="true" class="w-25" style="font-size: 3rem">Year</th>
+                <th scope="col" data-field="vehicle_make" data-sortable="true" class="w-25" style="font-size: 3rem">Make</th>
+                <th scope="col" data-field="vehicle_model" data-sortable="true" class="w-25" style="font-size: 3rem">Model</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for Vehicles in vehicles_list %}
+            <tr>
+                <td style="margin-top: 2%; font-size: 2rem;">{{ Vehicles.year }}</td>
+                <td style="margin-top: 2%; font-size: 2rem;">{{ Vehicles.vehicle_make }}</td>
+                <td style="margin-top: 2%; font-size: 2rem;"><a href="{% url 'vehicle_details' Vehicles.id %}" style="text-decoration: none; color: lightblue;">{{ Vehicles.vehicle_model }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,184 @@
+html, body {
+    height: cover;
+    width: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: impact;
+    text-align: center;
+    background-image: url('../../static/images/app-images/KB_img.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: scroll;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    padding: 55px;
+    font-size: 100px;
+    text-align: center;
+    color: rgb(240, 182, 67);
+    text-shadow: 2px 4px rgba(66, 65, 64, 0.75);
+}
+
+div {
+    display: block;
+}
+
+/* Nav bar */
+
+.navbar {
+    list-style-type: none;
+    width: 100%;
+    overflow: hidden;
+    background color: rgb(128, 121, 107);
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.nbli {
+    float: left;
+}
+
+.nbli a {
+    float: left;
+    display: inline-block;
+    color: rgb(240, 182, 67);
+    padding: 12px 15px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.nbli a:hover {
+    cursor: pointer;
+    transition: 0.6s ease-in;
+    color: rgb(188, 230, 50);
+}
+
+/* End Navbar */
+
+.container {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.box-in {
+    background-color: rgba(128, 105, 56, 0.726);
+    color: rgb(188, 230, 50);
+    text-shadow: 1px 2px rgb(12, 51, 46);
+    border-radius: 30px;
+    padding: 25px;
+    margin: auto;
+    text-align: center;
+    width: 600px;
+    height: 200px;
+}
+
+.kbli {
+    padding: 25px;
+    font-size: 25px;
+    text-align: center;
+    color: rgb(188, 230, 50);
+    text-shadow: 2px 4px rgba(66, 65, 64, 0.75);
+    text-decoration: none;
+}
+
+.kbli a {
+    color: rgb(188, 230, 50);
+    text-decoration: none;
+}
+
+.kbli a:hover {
+    color: rgb(240, 182, 67);
+}
+
+/* Box styling for add exercise form */
+
+.adminBox {
+    margin: 0 auto;
+    width: 50%;
+    height: 75%;
+    background-color: rgba(128, 105, 56, 0.726);
+    color: rgb(188, 230, 50);
+    border-radius: 30px;
+}
+
+.frmContainer {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Button styles */
+
+.btnBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.btn {
+    flex-grow:2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    max-width: 100px;
+    margin: 2% 2% 2% 2%;
+    color: rgb(240, 182, 67);
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(128, 121, 107);
+    box-shadow: rgba(46, 52, 54, 0.075);
+}
+
+.btn:hover {
+    background-color: black;
+    color: rgb(188, 230, 50);
+}
+
+/* End Box styling for add exercise form */
+
+/* Footer */
+
+#footer {
+    background-color: rgb(128, 121, 107);
+    text-align: center;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    bottom: 0;
+    height: 40px;
+    margin: auto;
+    padding 50px;
+    padding-left: 25px;
+}
+
+#footer p {
+    color: rgb(128, 121, 107);
+    text-align: center;
+    padding-left: 25px;
+}
+
+#footer p:hover {
+    color: rgb(188, 230, 50);
+    transition: 0.6s ease-in;
+}
+
+/* End Footer */

@@ -1,0 +1,19 @@
+{% extends "PreciousMetals_base.html" %}
+
+{% block title %} Current Prices {% endblock title %}
+
+{% block content %}
+<!-- api/soup for metal_rates -->
+<div class="liststyle">
+    <h3>Current Gold Price:</h3>
+    <p>${{ gold_data }}</p>
+</div>
+<div class="liststyle">
+    <h3>Current Silver Price:</h3>
+    <p>${{ silver_data }}</p>
+</div>
+<div class="liststyle">
+    <h3>Current Canadian Gold 1oz Maple Leaf:</h3>
+    <p>{{ get_item }}</p>
+</div>
+{% endblock content %}

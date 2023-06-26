@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+
+</head>
+
+
+
+<body class="bg_color">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Blogging
+      </h1>
+      <p class="subtitle">
+        Articulate a path through your <strong> thoughts! </strong>
+      </p>
+    </div>
+  </section>
+
+  <nav class="level">
+    <p class="level-item has-text-centered">
+      <a class="link is-info" href="{% url 'blogs' %}">Home</a>
+    </p>
+    <p class="level-item has-text-centered">
+      <a class="link is-info" href="{% url 'DisplayPage' %}">Entries</a>
+    </p>
+
+    <p class="level-item has-text-centered">
+      <a class="link is-info">Contact</a>
+    </p>
+  </nav>
+
+    <!-- other html page content will be displayed here -->
+
+        {% block content %}
+
+        {% endblock %}
+
+
+        <!-- Footer -->
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+          <strong>  &copy; 2021 Copyright | Robert Lawblog </strong>
+
+      </p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

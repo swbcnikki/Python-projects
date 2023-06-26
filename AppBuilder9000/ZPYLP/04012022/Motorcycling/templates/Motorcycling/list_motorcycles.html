@@ -1,0 +1,32 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    <h1>Rated Motorcycles</h1>
+
+{% for Motorcycle in motorcycle_list %}
+
+<div class="list-block d-inline-block">
+    <center>
+    <h3 style="color:red;"><strong>{{ Motorcycle }}</strong></h3>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-dark"><a class="" href="{% url 'motorcycle_details' Motorcycle.id %}">Brand: {{ Motorcycle.BRAND_MOTORCYCLE }}</a></li>
+        <li class="list-group-item list-group-item-secondary">Model: {{ Motorcycle.MODEL_TYPE }}</li>
+        <li class="list-group-item list-group-item-secondary">Engine: {{ Motorcycle.ENGINE_SIZE }}</li>
+        <li class="list-group-item list-group-item-secondary">Style: {{ Motorcycle.TYPE_MOTORCYCLE }}</li>
+        <li class="list-group-item list-group-item-warning">Rating: {{ Motorcycle.RATING }}</li>
+    </ul>
+    </center>
+</div>
+{% endfor %}
+
+
+{% endblock %}
+
+
+
+
+
+

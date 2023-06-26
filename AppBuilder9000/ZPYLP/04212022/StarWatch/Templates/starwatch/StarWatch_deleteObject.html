@@ -1,0 +1,44 @@
+{% extends "StarWatch_base.html" %}
+
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+    <div class="box jumbotron jumbotron-fluid w-80 display1">
+        <h2 class="text-center display-3 ">Confirm Delete</h2>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="m-5 text-center justify-content-center centered_container box">">
+        <form method="POST" action=".">
+            {% csrf_token %}
+            <p class="box_content">Are you sure you would like to delete "{{ details.object_name }}" from the database?</p>
+            <input type="submit" value="Delete" class="btn"  id="button">
+            <a href="{% url 'StarWatch_listObjects' %}"><button class="btn" type="button" id="button3">Cancel</button></a>
+
+
+
+            <br>
+            <br>
+            <br>
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+
+<form method="POST" class="stockForm">
+    <div>
+        {% csrf_token %}
+
+        {{ form }}
+
+    </div>
+    <p>Here is some text to ensure that include is working</p>
+    <input type="Submit" value="Submit">
+</form>

@@ -1,0 +1,18 @@
+{% extends 'ItemsApp/base.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+    <div class="view_panel">
+        <form method="POST" action=".">
+            {% csrf_token %}
+            <h2>Confirm Delete</h2>
+            <p>Are you sre you would like to delete "{{item.name}}" from the database?"</p>
+
+            {{ item.as_p }}
+
+            <input type="submit" value="Delete" class="btn">
+            <a href="{% url 'itemsApp_home' %}"><button class="btn" type="button">Cancel</button></a>
+        </form>
+    </div>
+{% endblock %}

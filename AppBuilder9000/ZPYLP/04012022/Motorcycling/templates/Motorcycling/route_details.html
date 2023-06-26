@@ -1,0 +1,28 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    <table class="table table-dark table-bordered table-hover text-center">
+  <thead>
+    <tr>
+      <th scope="col">Start Destination</th>
+      <th scope="col">End Destination</th>
+      <th scope="col">Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{route_detail.START_DESTINATION}}</td>
+      <td>{{route_detail.END_DESTINATION}}</td>
+      <td>{{route_detail.RATING}}</td>
+      <td><a href="{% url 'update_route' route_detail.id %}">UPDATE</a></td>
+      <td><a href="{% url 'delete_route' route_detail.id %}">DELETE</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+{% endblock %}
+

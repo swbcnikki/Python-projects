@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Robot" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/stocks_test.css' %}">
+        <title>{% block title %} {% endblock %}</title>
+
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="item">
+                {% include "Stocks/stocks_navbar.html" %}
+                <h1>{% block header %} {% endblock %}</h1>
+            </div>
+            <div class="item">
+                {% block content %} {% endblock %}
+            </div>
+            <div class="item">
+                {% include "Stocks/footer.html" %}
+            </div>
+        </div>
+
+
+    </body>
+</html>

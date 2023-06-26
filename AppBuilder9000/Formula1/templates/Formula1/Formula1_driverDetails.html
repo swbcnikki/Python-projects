@@ -1,0 +1,36 @@
+{% extends "Formula1/Formula1_base.html" %}
+
+{% load static %}
+
+{% block title %}Formula 1{% endblock %}
+
+{% block header %}{{ summary.0 }}{% endblock %}
+
+{% block content %}
+
+<div class="card mx-auto text-dark bg-secondary mb-3 border border-dark" style="width: 18rem;">
+  <img class="card-img-top driver-img" src="{% static summary.3 %}" alt="Card image cap">
+  <div class="card-body text-white bg-dark border-top border-white">
+    <h5 class="card-title">{{ summary.0 }}</h5>
+    <p class="card-text">Team: {{ summary.1 }}<br>Total Points: {{ summary.2 }}</p>
+  </div>
+  <ul class="list-group list-group-flush text-white bg-dark">
+    {% for result in data %}
+    <li class="list-group-item text-white bg-dark border-top border-white race-name">
+      {{ result.Race }} -
+      {% if result.Race_Type == 'Sprint Race' %}
+      <span class="badge badge-warning">Sprint</span>
+      {% else %}
+        {% if result.Fastest_Lap %}
+        <span class="badge badge-primary">Fastest Lap</span>
+        {% endif %}
+      {% endif %}
+      <span class="badge badge-success">Pos: {{ result.Finishing_Position }}</span>
+      <span class="badge badge-info">{{ result.Points_Earned }} Points</span>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "ATVTrails_base.html" %}
+
+{% load static %}
+{% include "AtvTrails_navbar.html" %}
+{% block content %}
+<!--This table displays all items in the database-->
+<div id="table_container" class="container mx-auto">
+    <h2 class="d-inline p-1 my-1 text-success">{{trails.trail_name}} Details</h2>
+    <hr>
+<!--    <div class="spacer"></div>-->
+    <table>
+<!--        This is the header row of the table-->
+        <thead class="trails_head">
+        <tr>
+          <th scope="col">Trail Name</th>
+          <th scope="col">Vehicle Type</th>
+          <th scope="col">Distance</th>
+          <th scope="col">Terrain</th>
+          <th scope="col">Description</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+        </tr>
+      </thead>
+<!--        This is the content added to the table from the database-->
+      <body>
+        <tr class="trails_body">
+          <th scope="row">{{details.trail_name}}</th>
+          <td>{{details.vehicle_type}}</td>
+          <td>{{details.trail_distance}}</td>
+          <td>{{details.trail_terrain}}</td>
+          <td>{{details.trail_description}}</td>
+          <td>{{details.city}}</td>
+          <td>{{details.state}}</td>
+        </tr>
+      </body>
+    </table>
+    <a href="{% url 'trail_edit' details.pk %}"><button type="button" class="btn">Edit/Delete</button></a>
+
+
+</div>
+
+{% endblock %}

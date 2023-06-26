@@ -1,0 +1,38 @@
+{% extends "IceHockey_base.html" %}
+{% load static %}
+{% block title %}Scraped Data{% endblock %}
+
+{% block header %}Scraped Data{% endblock %}
+
+{% block content %}
+
+<h5 class="display-2 text-light text-center mt-5 mb-5">Your Favorite Player: Wayne Gretzky</h5>
+<div class="container" id="list-container">
+    <div id="container" class="table-responsive mx-auto">
+        <table id="table" class="table table-light table-bordered-info table-hover text-center text-info" data-toggle="table">
+            <thead>
+                <tr>
+                    <th scope="col">Season</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">League</th>
+                    <th scope="col">Goals</th>
+                    <th scope="col">Assists</th>
+                </tr>
+            </thead>
+                <tbody>
+                {% for player_years, player_teams, player_leagues, player_goals, player_assists in zipped_list %}
+                <tr>
+                    <td>{{ player_years }}</td>
+                    <td>{{ player_teams }}</td>
+                    <td>{{ player_leagues }}</td>
+                    <td>{{ player_goals }}</td>
+                    <td>{{ player_assists }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

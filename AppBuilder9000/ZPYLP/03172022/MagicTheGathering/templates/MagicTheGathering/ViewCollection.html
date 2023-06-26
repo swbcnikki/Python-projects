@@ -1,0 +1,42 @@
+{% extends 'MagicTheGathering/MagicTheGathering_base.html' %}
+{% block title %}Collection{% endblock %}
+{% block content %}
+			<div id="all-collection-form">
+				<form name="" method="POST" action="">
+					<div class="formObject"style="center">
+						{% csrf_token %}
+						<label for="menu_id" style="center">Select a card to edit:</label>
+						<select id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
+							<option value="#">-----------</option>
+						{% for cards in cards %}
+							<option value="../{{ cards.pk }}/Card_details/">{{ cards.card_name }}</option>
+						{% endfor %}
+						</select>
+							<br><br>
+					</div>
+				</form>
+			<h2>Card Collection</h2>
+			<div class="tablestyling">
+				<table class="table table-responsive" id ="transactions-table" style="margin-left:auto;margin-right:auto">
+					<!-- Replace this with the Django populated transactions -->
+					<tr id="headerRow" style="center">
+						<th>Name</th>
+						<th>Color</th>
+						<th>Type</th>
+						<th>Cost</th>
+						<th>Text</th>
+					</tr>
+					{% for card in cards %}
+					<tr>
+						<td class="center">{{ card.card_name }}</td>
+						<td class="center">{{ card.card_color }}</td>
+						<td class="left">{{ card.card_type }}</td>
+						<td class="right">{{ card.card_cost }}</td>
+						<td class="right">{{ card.card_text }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+
+
+{% endblock %}

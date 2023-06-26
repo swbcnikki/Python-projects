@@ -1,0 +1,55 @@
+body {
+    padding-top: 50px;
+}
+
+section{
+    padding:40px 0 40px 0;
+}
+
+section#feature{
+    background:#040404;
+    color:#fff;
+    padding:40px
+    overflow: auto;
+}
+
+section#feature img{
+    float:right;
+    position:relative;
+    top: -150px;
+
+section#feature ul li{
+    font-size: 17px;
+    list-style: none;
+}
+
+table {
+	border: 2px solid black;
+}
+
+td:hover {
+	background-color: red;
+	color: black
+}
+
+tr, th {
+	background-color: red;
+	color: black;
+}
+
+tr, td {
+	background-color: black;
+	color: white;
+}
+
+
+
+
+
+footer{
+    background:#040404;
+    color:#fff;
+    paddings:30px 0 20px 0;
+}
+
+

@@ -1,0 +1,367 @@
+/*========================
+General Styling
+========================*/
+
+html {
+scroll-behavior: smooth;
+
+}
+p {
+	padding: 2px 16px;
+	color: black;
+	font-weight:bold;
+	text-shadow: 0 0 4px white;
+	border:black;
+
+}
+
+
+body {
+    background-image: url('../img/workoutequipment8.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 5vh;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#355664;
+    box-shadow: 10px 10px 5px 12px lightblue;
+
+    }
+
+
+/* Float the list items side by side */
+ul.topnav li {
+    float: left;
+}
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+ul.topnav li a:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+    background-color: #6c757d;
+}
+/* Hide the list item that contains the link that should
+   open and close the topnav on small screens */
+ul.topnav li.icon {
+	display: none;
+}
+
+.hdr-title {
+	padding: 2px 16px;
+	text-align: center;
+	color:  black;
+	text-shadow: 0 0 4px white;
+	border:black;
+	background:#355664;
+
+
+}
+
+#footer-left {
+    width: 40%;
+    text-align: right;
+    bottom:0;
+ }
+ #block-footer {
+    clear: both;
+    display: flex;
+    width: 100%;
+	-moz-box-sizing: border-box;
+    margin: 0 auto;
+    background-color: #6c757d;
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+}
+#block-footer a, #block-footer p {
+    flex: 1;
+    color: white;
+    padding: 15px 15px;
+	font-size: 14px;
+    line-height: 10px;
+	font-family:'PT Sans', Arial, Helvetica, sans-serif;
+}
+#footer-left {
+    width: 40%;
+    text-align: right;
+}
+#block-footer{
+	float:left;
+	clear:both;
+	width:100%;
+}
+#block-footer a {
+	color: white;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	text-decoration: none;
+	outline: medium none;
+}
+#block-footer a:hover {
+    color: #CABE96;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.admin_panel {
+    margin: 0 auto;
+    width: 50%;
+    height: 60%;
+    background-color: #6c757d;
+	border: 1px solid #d6d6d6;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    transition: 0.3s;
+}
+
+.details  {
+color: #57BAF5;
+text-decoration: underline;
+font-weight:bold;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn {
+	flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 150px; /* button size */
+    margin: 2% 2% 2% 2%;
+    color: white;
+    background-color:#696969;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+    font-weight:bold;
+}
+
+.btn:hover {
+    background-color: #355664;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+
+}
+/* This controls the form size and contents */
+.admin_panel {
+    margin: 0 auto;
+    width: 50%;
+    height: 80%;
+    background-color: #c757d;
+	border: 1px solid #d6d6d6;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    transition: 0.3s;
+}
+.admin_panel:hover {
+    frmBtn_container-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+.formObject_container {
+	display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    padding-top: 5%;
+    background-color: #c757d;
+}
+.table_text {
+    font-family:'PT Sans', Arial, Helvetica, sans-serif;
+}
+/*========================
+Beautiful soup Styling
+========================*/
+
+.bs-text {
+    font-family:'PT Sans', Arial, Helvetica, sans-serif;
+    padding: 10px 16px;
+	text-align: center;
+	word-spacing: 3px;
+	line-height: 26pt;
+	border-radius:5px 5px 5px 5px;
+	background-color:#F0F8FF;
+}
+.bs-title {
+	padding: 2px 1px;
+	text-align: center;
+	color:  black;
+	text-shadow: 0 0 4px white;
+	border:black;
+	background-color: #F0F8FF;
+	border-radius:5px 5px 5px 5px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+	font-style:italic;
+
+}
+
+/*========================
+Slideshow Styling
+========================*/
+
+
+.mySlides {
+    display:none ; /* hides images for slideshow, will display using js loops*/
+}
+
+.Navbar a {
+    float: left; /*TXT FLOAT ON LEFT OF NAVBAR*/
+    display: block; /*all txt on same row*/
+    color:rgb(156, 253, 248);
+    padding: .75vw 1vw; /*padding around txt*/ /* changing to responsive unit measurement vw*/
+    text-decoration: none; /*gets rid of underlines*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+    position: relative; /* THIS SETES THE TEXT RELATIVE TO ITS NORMAL POSITIONING, ALLOWING US TO USE THE ANIMATION BELOW */
+    -webkit-animation: moveNavText 5.75s;
+    animation: moveNavText .75s;
+}
+
+@keyframes moveNavText {
+    from {top:-100vw;} /* THIS SETS THE NAVBAR TEXT 100% ABOVE THE VEIWPORT (OUT OF VIEW)*/
+    to {top:0vw;} /*THIS LOWERS THE NAVBAR TEXT ONTO THE NAVBAR FROM ABOVE VIEW*/
+}
+#slideshow_container {
+    width: 39.5vw; /* relative sizing of the container for slideshow 39.5 viewport width */
+    height: auto; /* height of container is auto adjusted based on content it is displaying*/
+    padding-top: 0;
+    background: rgba(255, 255, 255, 0);
+    position: relative; /* sets container relative to normal positioning*/
+    margin: auto; /* Horizontally centers the container on the page*/
+
+
+}
+#slideshow_background {
+    background: rgba(255, 255, 255, 0);
+}
+#slideshow_container a {
+    text-decoration: none; /* removes the underline from previous and nxt btns*/
+}
+.slideshow_imgs {
+    padding-top: 50px;
+    width:100%;
+    vertical-align: middle; /* This centers the images vertically within the slideshow container*/
+    height: auto; /* height of imgs auto adjusted based on content, if different size imgs different size displayed*/
+    box-shadow: 0px 5px 10px 12px rbga(0,0,0, .75); /*adds shadow around imgs*/
+    width: 100%; /* width auto adjusted based on content*/
+
+}
+.previous, .nxt {
+    cursor: pointer;
+    position: absolute; /* This makes the next and previous buttons positioned relative to the slideshow container */
+    top: 75%; /* This moves the buttons up in the slideshow container*/
+    width: auto; /* auto adjusted based on content*/
+    padding: 2vw;
+    color: rgb(156, 253, 248);
+    font-weight: bold;
+    font-size: 3.5vw;
+    border-radius: 0 3px 0 3px 0; /* Adds rounded corners on top and bottom right corners*/
+    user-select: none; /* user cannot highlight text*/
+    transition: 0.6 ease; /* This specifies the details of the hvr trans for prv nxt elemnets*/
+}
+.nxt {
+    right: 0; /* This moves the btn to right side of slideshw container*/
+    border-radius: 3px 0 0 3px; /* This changes cormers on the nxt btn top and bttm left*/
+}
+/*hover effects for the nxt/prv btns*/
+.previous:hover, .nxt:hover {
+    background-color: 0,0,0, 0,8; /*transparent grey*/
+    color:#355664;; /*when hovered over*/
+
+}
+.text {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom:0; /* this property sets the txt to bttm of img */
+    width:100%; /* full width of img*/
+    text-align: center;
+    font-family:"Trebuchet MS" , Optima;
+    letter-spacing: .1vw; /* this gives slight spacing btwn letters*/
+    font-size: 1.5vw;/* font sz relative to viewprt width*/
+    background-color: rgba(0,0,0,0.75); /*transprnt blk background*/
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px; /* curved corners btm lft and rt */
+}
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin:.25vw; /* adds spacing in between dots*/
+    background-color: white; /* dots white*/
+    border-radius: 50%; /* makes dot circles by completely rounding corners*/
+    display: inline-block; /* dots sit nxt to eachother instead of on a new line*/
+    transition: background-color 0.6 ease; /* when you click/hover over dots they transition to other color ( effect is defined below)*/
+    z-index: 1; /*dots displayed above elements*/
+}
+/* hover effects slideshow dots*/
+.active, .dot:hover {
+    background-color: rgb(156, 253, 248);
+}
+.fade {
+    animation-name:fade; /*fade anitmation defintion below*/
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;/* for safari 4.0-8.0*/
+    -webkit-animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {opacity:.4;}/*img starts transparent*/
+    to{opacity:1;}/*img ends opaque*/
+}
+@keyframes fade {
+    from{opacity:.4;}
+    to{opacity:1;}
+}
+.container h1, h4 {
+    position: relative;
+    -webkit-animation: moveTitleText 5.75s;
+    animation: moveTitleText .75s;
+}
+
+@keyframes moveTitleText {
+    from {top:-100vw;} /* THIS SETS THE NAVBAR TEXT 100% ABOVE THE VEIWPORT (OUT OF VIEW)*/
+    to {top:0vw;} /*THIS LOWERS THE NAVBAR TEXT ONTO THE NAVBAR FROM ABOVE VIEW*/
+}
+
+.tbl-txt {
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom:0; /* this property sets the txt to bttm of img */
+    width:100%; /* full width of img*/
+    text-align: center;
+    font-family:"Trebuchet MS" , Optima;
+    letter-spacing: .1vw; /* this gives slight spacing btwn letters*/
+    font-size: 1.5vw;/* font sz relative to viewprt width*/
+    background-color: rgba(0,0,0,0.75); /*transprnt blk background*/
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px; /* curved corners btm lft and rt */
+}
+
+

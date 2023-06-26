@@ -1,0 +1,50 @@
+{% extends 'coachBase.html' %}
+{% block title %}Create New Account{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<div class="childBox">
+	<div class="lighten-20 rounded jumbotron jumbotron-fluid bg-primary text-light text-center">
+		<h2 class=" text-center font-weight-bold">Add A Child Participant</h2>
+	</div>
+	<div class= "w-90">
+		<form method="POST" novalidate>
+			{% csrf_token %}
+			<div class="row text-truncate">
+				<div class="form-group col-md ">
+					{{ form.First_Name|as_crispy_field }}
+				</div>
+				<div class="form-group col-md">
+					{{ form.Last_Name|as_crispy_field }}
+				</div>
+				<div class="form-group col-md">
+					{{ form.Child_Grade|as_crispy_field }}
+				</div>
+				<div class="form-group col-md-2">
+					{{ form.Jersey_Number|as_crispy_field }}
+				</div>
+			</div>
+			<br>
+			<div class="row text-truncate">
+				<div class="form-group col-md ">
+					{{ form.Parent_Name|as_crispy_field }}
+				</div>
+				<div class="form-group col-md-3">
+					{{ form.Parent_Phone|as_crispy_field }}
+				</div>
+				<div class="form-group col-md">
+					{{ form.Parent_Email|as_crispy_field }}
+				</div>
+			</div>
+			<div class="row text-truncate">
+				<div class="form-group">
+					{{ form.Notes_or_Allergies|as_crispy_field }}
+				</div>
+			</div>
+			<br>
+
+
+			<button type="submit" class="btn btn-primary">Create Account</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

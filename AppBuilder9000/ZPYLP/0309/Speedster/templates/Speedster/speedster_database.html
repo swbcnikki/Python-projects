@@ -1,0 +1,19 @@
+{% extends 'Speedster/speedster_base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+{% for cars in cars %}
+<section>
+    <div class="my_table">
+        <h4><a href="{% url 'Speedster_details' cars.id %}">{{ cars.brand }}</a></h4>
+    </div>
+</section>
+{% endfor %}
+
+
+{% endblock %}
+
+
+

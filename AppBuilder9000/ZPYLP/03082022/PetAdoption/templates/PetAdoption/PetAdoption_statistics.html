@@ -1,0 +1,33 @@
+{% extends "PetAdoption_base.html" %}
+{% load static %}
+
+{% block title %}Pet Adoption Statistics{% endblock %}
+
+{% block header %}Pet Adoption Statistics{% endblock %}
+
+{% block content %}
+<div id="container" class="table-responsive w-75 mx-auto">
+    <table id="table" class="table table-dark table-bordered text-center" data-toggle="table">
+        <caption>Cat and Dog Adoption Statistics</caption>
+        <thead>
+            <tr>
+                <th>Pet</th>
+                <th># Entering Shelters Annually</th>
+                <th># Euthanized in Shelters Annually</th>
+                <th># Adopted from Shelters</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pet in pet_list %}
+            <tr>
+                <td>{{ pet.0 }}</td>
+                <td>{{ pet.1 }}</td>
+                <td>{{ pet.2 }}</td>
+                <td>{{ pet.3 }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

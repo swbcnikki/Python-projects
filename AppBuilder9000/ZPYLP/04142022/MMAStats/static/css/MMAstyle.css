@@ -1,0 +1,87 @@
+body {
+    background-color: #17191b;
+}
+
+/* basic styling for my tables */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+/* fonts and general text styling */
+h1 {
+    color: yellow;
+    text-align: center;
+    font-family: Impact;
+    letter-spacing: 5px;
+}
+
+p {
+    color: yellow;
+    text-align: center;
+    font-family: Trebuchet MS;
+    letter-spacing: 2px;
+}
+
+form {
+   text-align:center;
+}
+
+/* video background */
+#homeMMAVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+}
+
+/* loading style and animation */
+
+.loading {
+    position: fixed;
+    z-index: 1001;
+    border: 16px solid lightgray;
+    border-top: 16px solid #FFCC00;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    animation: loading 4s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+/* stats fly-in */
+.dataEntries {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+.dataEntries {
+    text-align: left;
+    animation: fly-In 2s ease-out;
+}
+
+@keyframes fly-In {
+0%   {
+    transform: translateX(500%);
+}
+100% {
+    transform: translateX(0%);
+    }
+}

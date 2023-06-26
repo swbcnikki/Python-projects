@@ -1,0 +1,27 @@
+{% extends 'WoWApp/WoWApp_base.html' %}
+
+{% block title %}World of Warcraft Create {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+        <div class="container">
+            <!--thia will grab the form from the WoWAppCreateCharacter url and send a POST-->
+            <form action="{% url 'WoWAppCreateCharacter' %}" method="POST" class="form-container" id="createForm">
+                <!--passing the django required csrf token for forms-->
+                {% csrf_token %}
+                <table>
+                    <!--putting the form in table format using the built in django "as_table" function-->
+                    {{ form|crispy }}
+                </table>
+                <div class="btn_container">
+                    <!--button submits my form-->
+                    <button type="submit" class="btn-primary btn-lg">Submit</button>
+                    <!--button redirects user to the WoWApp_home url-->
+                    <a href="{% url 'WoWApp_home' %}">
+                        <button type="button" class="btn-secondary btn-lg"> Cancel</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+{% endblock %}

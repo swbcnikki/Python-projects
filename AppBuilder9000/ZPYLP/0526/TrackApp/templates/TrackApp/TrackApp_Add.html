@@ -1,0 +1,17 @@
+{% extends 'TrackApp/TrackApp_base.html' %}
+
+{% block title %} TrackApp -- New Locations {% endblock %}
+
+{% block content %}
+
+<div id="TrackAppForm" class="TrackAppForm">
+<h2>Add New Your new Location here!</h2>
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button id="new-location-btn" type="submit" name="Save_location">Save Location</button>
+</form>
+<br>
+</div>
+
+{% endblock %}

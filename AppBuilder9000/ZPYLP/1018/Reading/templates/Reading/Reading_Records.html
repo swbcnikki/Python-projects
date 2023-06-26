@@ -1,0 +1,33 @@
+{% extends "Reading/Reading_Base.html" %}
+{% block title %}Reading Archive{% endblock %}
+
+{% block header %}
+    <h1>Archive of Records</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="table-container">
+        <table id="table">
+            <thead>
+                <tr id="th">
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Number of Pages Read</th>
+                    <th>Description of Passage Read</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for record in records %}
+                <tr id="td">
+                    <td><a href="{% url 'Reading_Details' record.pk %}">{{ record.date }}</a></td>
+                    <td>{{ record.title }}</td>
+                    <td>{{ record.author }}</td>
+                    <td>{{ record.number_of_pages_read }}</td>
+                    <td>{{ record.description_of_passage_read }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% load static %}
+
+{% block title %}Portland Neighborhood Review App {%  endblock %} }
+
+{% block header %}Portland Neighborhood Reviews {% endblock %}
+
+{% block content %}
+ <h3>CREATE NEW NEIGHBORHOOD</h3>
+    <div id = account-form>
+        <form method ='POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class ="btn btn-primary" type = "submit" name = "Save_Account">Add Neighborhood</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+/* NAVBAR */
+nav {
+    border: 5px solid black;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
+
+/* HEADER */
+header {
+    color: white;
+    text-align: center;
+}
+
+/* BODY */
+ html, body {
+    background-color: white;
+    background-image: url('/static/images/tvshows.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+ul {
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: sticky;
+    top: 0;
+}
+
+li {
+    display: inline-block;
+    float: left;
+}
+
+input, select {
+    display: inline-block;
+    float: left;
+}
+
+li a {
+    color: black;
+    display: inline-block;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* FOOTER */
+footer {
+    background: white;
+    border: 5px solid black;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 50;
+}
+
+/* FORM */
+.container {
+    background: lightgray;
+    border:2px solid black;
+    color: black;
+    display: inline-block;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+}
+
+h1, h2 {
+    background-color: black;
+    color: white;
+}
+
+table, th, td {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 800px;
+}
+
+th {
+    height: 25px;
+}

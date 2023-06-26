@@ -1,0 +1,38 @@
+{% extends 'PasswordManager/PwdMgr_base.html' %}
+
+x{% block title %}View Saved Passwords{% endblock %}
+{% block header %}Your Saved Passwords{% endblock %}
+
+{% block appcontent %}
+<div class="form-container" id="pwdsList-table">
+    <table class="table table-responsive">
+        <tr id="headerRow">
+            <th>Saved Passwords</th>
+        </tr>
+        {% for eachPwd in content %} <!-- for each password in db's table, dynamically update this doc with their key/value pairs -->
+        <tr>
+            <td class="left"><a href="../details/{{ eachPwd.id }}/">{{ eachPwd.password }}</a></td>
+        </tr>
+        {% endfor %}
+
+        <!-- Code below manages any paginated data / source: https://docs.djangoproject.com/en/3.2/topics/pagination/ -->
+        <div class="pagination">
+            <span class="step-links">
+                {% if content.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ content.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page: {{ content.number }} of {{ content.paginator.num_pages }}
+                </span>
+
+                {% if content.has_next %}
+                    <a href="?page={{ content.next_page_number }}">next</a>
+                    <a href="?page={{ content.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </table>
+</div>
+{% endblock %}

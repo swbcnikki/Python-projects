@@ -1,0 +1,26 @@
+{% extends "ControlInventory/ControlInventory_base.html" %}
+{% load static %}
+
+{% block title %}Item Query Page{% endblock %}
+
+{% block header %}Item Details{% endblock %}
+
+{% block content %}
+    <table id = "products">
+        <tr>
+            <th>Account:</th>
+            <th>Product Name:</th>
+            <th>Product Cost:</th>
+            <th>Product Description:</th>
+        </tr>
+        {% for Product in item_get %}
+        <tr>
+            <td>{{ Product.account }}</td>
+            <td>{{ Product.name|title }}</td>
+            <td>{{ Product.amount|title }}</td>
+            <td>{{ Product.info }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+{% endblock %}

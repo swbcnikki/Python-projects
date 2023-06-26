@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/AlbumReviews_main.css' %}">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{% url 'AlbumReviews_home' %}" class="home_link">Album Reviews</a></li>
+                <li><a href="{% url 'AlbumReviews_add' %}">Add Album</a></li>
+                <li><a href="{% url 'AlbumReviews_list' %}">View Collection</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+
+            <header class="header-title">
+                <h1>{% block header %}{% endblock %}</h1>
+            </header>
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer>
+            <p>2021 - Kris Lovett</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'StarWatch_base.html' %}
+{% load static %}
+
+{% block title%}Objects List{% endblock %}
+{% block header %}
+    <div class=" m-4 jumbotron jumbotron-fluid w-80 display1">
+                <h2 class="text-center display-2">Objects List</h2>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    {# Filter Categories #}
+    <div class="box m-5 ">
+        <div class="centered_container">
+            <table id="main_list" class=' text-center box table table-info  table-hover table-bordered table-centered'>
+                <tr>
+                    <th class="filter"><a href="{% url 'StarWatch_filterPlanets' %}">Planets</a></th>
+                    <th class="filter"><a href="{% url 'StarWatch_filterStars' %}">Stars</a></th>
+                    <th class="filter"><a href="{% url 'StarWatch_filterMoons' %}">Moons</a></th>
+                    <th class="filter"><a href="{% url 'StarWatch_filterOther' %}">Other</a></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+{% block catalog %}
+    <div class="box m-4 ">
+        <div class="centered_container">
+            <table id="table" class='text-center box table table-info  table-hover table-bordered table-centered'>
+                <thread>
+                    <tr>
+                        <th scope="col" data-field="object_name">Object</th>
+                        <th scope="col" data-field="object_nickName">Nick-Name</th>
+                        <th scope="col" data-field="object_type">Type</th>
+                        <th scope="col" data-field="object_description">Description</th>
+                        <th scope="col" data-field="object_brightness">Brightness</th>
+                    </tr>
+                </thread>
+                <tbody>
+                {% for object in object_list %}
+                    <tr>
+                        <td><a href="{% url 'StarWatch_objectDetails' object.id %}">{{ object }}</a></td>
+                        <td>{{ object.object_nickName }}</td>
+                        <td>{{ object.object_type }}</td>
+                        <td>{{ object.object_description }}</td>
+                        <td>{{ object.object_brightness }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% endblock %}
+

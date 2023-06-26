@@ -1,0 +1,23 @@
+{% extends "MuayThai/MuayThai_base.html" %}
+{% load static %}
+
+{% block title %} Legendary Thais {% endblock %}
+
+{% block header %} The Best Muay Thai Fighters {% endblock %}
+
+{% block content %}
+
+<p class="MuayThaiHome">
+    <a href="https://fightersvault.com/best-muay-thai-fighters/#:~:text=Samart%20Payakaroon&text=He%20is%20arguably%20the%20best,successful%20in%20his%20early%20career."></a>
+</p>
+
+<div class="MuayThaiSoup">
+    {% for mauy in muays %}
+        <h3>{{muay}}</h3>
+    {% endfor %}
+</div>
+
+</body>
+</html>
+
+{% endblock %}

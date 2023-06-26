@@ -1,0 +1,34 @@
+{% extends 'NoteTaking/NoteTaking_base.html' %}
+
+{% block title %} NoteTaking - Add Categories {% endblock title %}
+
+
+{% block content %}
+    <div class="add_notes_page_container">
+
+        <div class="add_notes_page_title">
+            <h1>Add a Category</h1>
+        </div>
+
+        <hr>
+
+        <div class="add_category_form">
+            <form class="add_category_form_container" method="POST">
+                <div>
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.as_p }}
+                </div>
+
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Create New Category">
+                    <a href="{% url 'NoteTaking_home' %}">
+                        <button type="button" class="btn btn-danger" value="Cancel">
+                            Cancel
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

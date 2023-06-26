@@ -1,0 +1,33 @@
+{% extends 'PasswordManager/PwdMgr_base.html' %}
+
+x{% block title %}View Password Details{% endblock %}
+{% block header %}Requested Password's Details{% endblock %}
+
+{% block appcontent %}
+<div class="form-container" id="passwords-table">
+    <table class="table table-responsive">
+        <tr id="headerRow">
+            <th>No.</th>
+            <th>Type</th>
+            <th>Date Stored</th>
+            <th>Date Last Modified</th>
+            <th>Website</th>
+            <th>Email</th>
+            <th>User Name</th>
+            <th>Password</th>
+            <th>Favorite?</th>
+        </tr>
+        <tr>
+            <td class="center">{{ chosenPwd.id }}</td>
+            <td class="center">{{ chosenPwd.type }}</td>
+            <td class="center">{{ chosenPwd.creation_date }}</td>
+            <td class="center">{{ chosenPwd.last_modified_date }}</td>
+            <td class="left">{{ chosenPwd.website }}</td>
+            <td class="left">{{ chosenPwd.email }}</td>
+            <td class="center">{{ chosenPwd.username }}</td>
+            <td class="center"><strong>{{ chosenPwd.password }}</strong></td>
+            <td class="center">{{ chosenPwd.favorite }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

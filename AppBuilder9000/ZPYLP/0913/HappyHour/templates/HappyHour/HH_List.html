@@ -1,0 +1,17 @@
+{% extends 'HappyHour/HH_Base.html' %}
+	{% block title%}Happy Hours{% endblock %}
+    {% block header %}Happy Hours{% endblock %}
+
+	{% block content %}
+		<div>
+            <div class="review_list">
+                {% for a in restaurants %}
+                    <div class="restaurant">
+                        <h2>
+                            <a href="{% url 'HH_Details' a.id %}"> {% filter upper %}  {{ a.name }} {% endfilter %} &#8212;</a>
+                        </h2>
+                    </div>
+                {% endfor %}
+            </div>
+		</div>
+	{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "MTB_Trails/mtb_trails_base.html" %}
+{% load static %}
+
+
+{% block title %}MTB Trails | Singletracks{% endblock %}
+
+{% block header %}search Colorado trails{% endblock %}
+
+{% block content %}
+    <!-- This custom class centers our elements -->
+    <div class="mtb-project--container">
+        <!-- This class adds padding to bottom of page -->
+        <div class="bottom-page--padding">
+            {% for name, desc, city, difficulty in trail_list %}
+            <div class="my-5">
+                <div class="card border-white text-white bg-dark" style="max-width: 50rem;">
+                    <div class="card-header border-white text-white">
+                        <div class="card-body">
+                            <p class="card-title text-danger text-center pb-4 border-white">Review: {{ name }}</p>
+                            <p class="card-text">
+                                <span class="text-danger">Description:</span> {{ desc }}
+                                <br>
+                                <br>
+                                <span class="text-danger">City:</span> {{ city }}
+                                <br>
+                                <br>
+                                <span class="text-danger">Difficulty:</span> {{ difficulty }}
+                            </p>
+                        </div>
+                            <div class="card-footer border-white text-danger text-center">
+                                <p class="float-left">Singletracks trails</p>
+                                <a href="https://www.singletracks.com/mountain-bike-trails/"
+                                   class="btn btn-danger float-right active" role="button" aria-pressed="true"
+                                   target="_blank">Link</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

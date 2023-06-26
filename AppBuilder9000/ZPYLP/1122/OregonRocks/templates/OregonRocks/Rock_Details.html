@@ -1,0 +1,30 @@
+{% extends "OregonRocks/OregonRocksBase.html" %}
+{% load static %}
+{% block title %} Rock Location Details {% endblock %}
+
+{% block header %}
+    <h1>Rock Location Details</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <table id="table">
+            <thead>
+                <tr id="th">
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Created at</th>
+                    <th>Description of Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="td">
+                    <td>{{ details.created_at }}</td>
+                    <td>{{ details.name }}</td>
+                    <td>{{ details.address }}</td>
+                    <td>{{ details.location_description }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

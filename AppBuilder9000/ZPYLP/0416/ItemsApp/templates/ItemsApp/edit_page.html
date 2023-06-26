@@ -1,0 +1,21 @@
+{% extends "ItemsApp/base.html" %}
+
+{% block title %}Edit Page{% endblock %}
+
+{% block content %}
+    <div class="item_panel">
+        <form name="itemForm" method="POST" action="">
+            {% csrf_token %}
+            <label for="menu_id">Select an item from the list to edit:</label>
+            <select id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
+            {% for item in items %}
+                <option value="../{{ item.pk }}/edit_form/">{{ item.name }}</option>
+            {% endfor %}
+            </select>
+            <div class="fromBtn_container">
+                <a href="{% url 'new_item' %}"><button type="button" class="btn">Create New Item</button></a>
+                <a href="{% url 'itemsApp_home' %}"><button type="button" class="btn">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

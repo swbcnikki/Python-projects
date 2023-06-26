@@ -1,0 +1,53 @@
+{% load static %}
+
+.gardening_body{
+    background: url("/static/images/gardening_background.jpg") 0 20% no-repeat;
+    font-family: 'Raleway', sans-serif;
+}
+
+/**NAVBAR STYLING**/
+
+/**END NAVBAR STYLING**/
+
+/**HEADER STYLING**/
+.hero_title{
+    color: #fff;
+    font-weight: bolder;
+    padding-top: 5rem;
+    padding-left: 1rem;
+    text-align:center;
+    text-shadow: 3.5px 3.5px #ff5200;
+}
+
+.subtitle{
+   color: #fff;
+   padding-top: 1rem;
+   padding-left: 1rem;
+   text-align:center;
+   text-shadow: 3px 3px #ff5200;
+}
+/**END HEADER STYLING**/
+
+/**FOOTER STYLING**/
+.footer_text{
+    color: #000;
+}
+
+/**END FOOTER STYLING**/
+
+/**GARDEN PLANNER TABLE STYLING**/
+
+#table_container{
+    background-color: white;
+    font-weight:bold;
+    padding: 10px;
+    color:#000;
+    border-radius: 7px;
+}
+
+/**END GARDEN PLANNER TABLE STYLING**/
+
+
+
+
+

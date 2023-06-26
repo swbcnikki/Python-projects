@@ -1,0 +1,25 @@
+{%extends "ComercialAirplanes_base.html"%}
+
+
+
+{% block title %}Plane Collection{% endblock %}
+
+{% block header %}These are the top cities according to our users!{% endblock %}
+
+{% block content %}
+
+<div>
+    <table>
+        <tr>
+            <th>Manufacture</th>
+            <th>ModelNumber</th>
+        </tr>
+        {% for Airplane in PC %}
+        <tr>
+            <td><a href="{% url 'CommercialAirplanes_details' Airplane.pk %}">{{ Airplane.Manufacture }}</a></td>
+            <td>{{ Airplane.ModelNumber }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

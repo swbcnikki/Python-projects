@@ -1,0 +1,46 @@
+{% extends 'ChefKnives\ChefKnives_Base.html' %}
+
+{% block title%} Details {% endblock %}
+
+{% block header%} Details for Knives {% endblock %}
+
+{% block content %}
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Brands</th>
+            <th scope="col">Price</th>
+            <th scope="col">Country Of Origin</th>
+            <th scope="col">Steal</th>
+            <th scope="col">Blade</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{details.brands}}</th>
+            <td>{{details.price}}</td>
+            <td>{{details.country_origin}}</td>
+            <td>{{details.steal}}</td>
+            <td>{{details.blade_style}}</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

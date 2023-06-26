@@ -1,0 +1,309 @@
+/* Fonts */
+@font-face {
+    font-family: 'Poiret One', cursive;
+    src: url('../static/MechKeyboardsApp/fonts/PoiretOne-Regular.ttf')
+}
+
+body {
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.background {
+    width: 100%;
+    height: 20%;
+    z-index: -10;
+}
+
+/* Homepage image */
+.img-fluid {
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#home-welcome {
+    font-size: 4rem;
+}
+
+/* Page Containers */
+.container-text {
+    width: 100%;
+    margin: 10px auto;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    padding: 10px 5px;
+}
+
+.container-details {
+    width: 50%;
+    margin: 10px auto;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    padding: 10px 5px;
+}
+
+/* Heading Elements */
+h1 {
+    font-family: 'Poiret One', cursive;
+    color: #ffffff;
+}
+
+h2 {
+    margin: 0 auto;
+    width: 25%;
+    text-align: center;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    padding: 4px 2px;
+    background-color: #606060;
+    color: #ffffff;
+}
+
+/* Paragraph Elements */
+p {
+    padding: 10px 5px;
+    text-align: center;
+    margin-top: 45px;
+}
+
+/* Header */
+.container-lg {
+    background-color: #000000;
+    text-align: center;
+}
+
+/* Form button */
+.form-btn-container {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+/* Details button */
+.detail-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+	flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 150px; /* button size */
+    margin: 2% 2% 2% 2%;
+    background-color: #ffffff;
+    color: black;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid #c0c0c0;
+    border-radius: 5px;
+}
+
+/* Buttons hover effects */
+.btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* Form Labels */
+label {
+	display: inline-block;
+    width: 95%;
+    text-align: center;
+    margin: 1% 0 0 0;
+    color: black;
+    line-height: 18px;
+    font-size: 20px;
+}
+
+/* Dropdown selection elements */
+select {
+	padding: 4px 10px;
+	width: 40%;
+	display: inline-block;
+	margin: 1% 0% 0 1%;
+	border: 2px solid #c0c0c0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #E8E8E8 inset;
+}
+
+/* Input and Textarea elements */
+input, textarea {
+    width: 41%;
+    margin: 1% 0 0 0;
+    padding: 1% 0 2% 1%;
+    line-height: 18px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 2px solid #c0c0c0;
+}
+
+/* Submit button */
+input[type="submit"] {
+    flex-grow: 1;
+    width: 40%;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    color: black;
+    padding: 9px 0px 9px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid #c0c0c0;
+    border-radius: 5px;
+}
+
+/* Submit button hover effects */
+input[type="submit"]:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* Error messages */
+.errorlist {
+    color: #ff0000;
+}
+
+/* Page navigation*/
+.page-link {
+    color: #ffffff;
+}
+
+.page-link:hover {
+    color: #808080;
+}
+
+.pagination {
+    padding-top: 12px;
+    margin-top: 7px;
+    margin-bottom: 3px;
+}
+
+.current {
+    background-color: #2b2d2f;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    padding: 0px 3px;
+    font-size: .9vw;
+}
+
+/* Table elements */
+td a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    width: 100%;
+}
+
+#table-header a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+/* Details Page Elements */
+.detail-p {
+    width: 100%;
+    padding: 0px 0px;
+    text-align: left;
+}
+
+.notes {
+    width: 25%
+}
+
+.detail-textarea {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.col {
+    width: 90%;
+    border: 2px solid #000000;
+    border-radius: 2px;
+    margin: 2px 3px;
+}
+
+.row {
+    width: auto;
+    padding: 2px 16px;
+}
+
+.badge {
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+
+/* Vendor page elements */
+.products {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+}
+
+.product-container {
+    border: 1px solid #000000;
+    border-radius: 2px;
+    margin: 8px 0px;
+}
+
+.product-title {
+    border-top: 1px solid #000000;
+    margin-top: 0px;
+    padding-top: 5px;
+    font-size: 1rem;
+    color: #000000;
+    text-align: center;
+}
+
+.product-price{
+    margin-top: 0px;
+    padding-top: 1px;
+    font-size: .8rem;
+    color: #000000;
+    text-align: center;
+}
+
+.product-img {
+    width: 25rem;
+    height: 27rem;
+}
+
+.img-container {
+    width: 25rem;
+}

@@ -1,0 +1,64 @@
+{% extends 'SteamInterestApp/SIA_base.html' %}
+
+{% load static %}
+
+<!--This page will be used for adding an entry to our templates!
+It also extends our base, which means minimal formatting
+-->
+
+{% block title %} Steam Interest App - Edit an Entry {% endblock %}
+
+{% block morestyling %}<script src="{% static 'JS/SIA_deleteConfirmation.js' %}" defer></script>{% endblock %}
+
+{% block header %} Edit your entry below! {% endblock %}
+
+{% block content %}
+    <div class="formtable d-flex justify-content-center text-center">
+        <form name="SIAEntryEdit" method="POST" action=".">
+            <table>
+                {% csrf_token %}
+                {{ item.non_field_errors }}
+                {{ item.as_table }}
+            </table>
+            <div class="frmBtn_container formentrysubmit">
+                <input type="submit" class="btn btn-success" value="Save Entry" name="Save_Entry">
+                <!--Changed this button to no longer call the JS function. Instead, it calls the modal! -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#SIADeleteModal" value="Delete Entry" name="Delete_Entry">Delete Entry </button>
+            </div>
+        </form>
+    </div>
+
+
+    <!--The code below is for a modal from Bootstrap's site... Yet, it's not cooperating for some reason.
+    The modal won't load/show at all, which is odd.
+    I'll have to play around with the modal more tomorrow morning if I can figure out why it's being difficult.
+    -->
+
+    <!--Success! I was forgetting the JS code for bootstrap, which was causing the issues.
+    I added the references to the base template so all templates can now use it. My bad!-->
+
+    <div class="modal fade text-danger" id="SIADeleteModal" tabindex="-1" role="dialog" aria-labelledby="SIADeleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="SIADeleteModalLabel">DELETION CONFIRMATION</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this entry? This action cannot be undone!
+          </div>
+          <div class="modal-footer">
+            <!--Gives the user another layer of confirmation to prevent hasty/accidental deletions!
+             If the user does want to delete an entry, it'll call the JS function I set up before, which
+             will call an alert before doing so. It is a little redundant, so I may remove that later...-->
+            <button type="button" class="btn btn-danger" onclick="ConfirmDelete('{{primarykey}}')">Yes, delete my entry</button>
+            <button type="button" class="btn btn-warning" data-dismiss="modal">Take me back!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

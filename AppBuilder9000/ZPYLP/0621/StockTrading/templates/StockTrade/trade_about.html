@@ -1,0 +1,35 @@
+{% extends "trade_base.html" %}
+{% block title %} TradeBase | Admin {% endblock %}
+
+{% block content %}
+
+<div class="p-5 mt-3 justify-content-center">
+
+    <h5 class="h4 text-center p-3 text-secondary"><strong>ADMIN PANEL</strong></h5>
+    <div class="row gap-5 text-start">
+
+        <div  class="col bg-light p-4 rounded">
+            <h3 class="h5 text-start text-secondary"><strong>Add a Story</strong></h3>
+            <form action="story/" method="POST" class="p-3">
+                {% csrf_token %}
+                {{ form1.as_p }}
+                <button type="submit" href="{% url 'story' %}" class="btn btn-primary">Add Story</button>
+            </form>
+        </div>
+
+        <div style="" class="col bg-light p-4 rounded">
+            <h3 class="h5 text-start text-secondary"><strong>Add a Resource</strong></h3>
+            <form action="resource/" method="POST" class="p-3">
+                {% csrf_token %}
+                {{ form2.as_p }}
+                <button type="submit" href="{% url 'resource' %}" class="btn btn-primary">Add Resource</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+

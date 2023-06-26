@@ -1,0 +1,45 @@
+<!--Extends from the base html -->
+{%extends "SportsApp/SportsApp_base.html" %}
+
+{% load crispy_forms_tags %}
+
+<!-- Page Title -->
+{% block title %}SportsApp{% endblock %}
+
+<!--Page Header-->
+{% block header %}
+    <div class="createPage-header">
+        <h1>SportsApp Favorite Player</h1>
+    </div>
+{% endblock%}
+
+
+{% block content %}
+
+<!--Page Content -->
+<!--NOTE: Using same css classes from create.html file to reduce code/use same styling -->
+<div class="createPage-text">
+    <p class="createPage-txt-wrapper">
+        Welcome to the SportsApp's newest feature!<br>Now you can save your favorite player and if they are playing<br>
+        today we will let you know with an email! Thanks for using SportsApp and enjoy!<br>
+        Note: Only currently working when you have a previously saved game in GameWatch List!<br>
+        We have plans to upgrade functionality. Check Back with us soon!
+    </p>
+</div>
+
+<!-- Create Page Form Element -->
+<div class="createPage-form">
+    <form method = "POST">
+        <div class="FavPlayer-container">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <table>
+                {% crispy form %}
+            </table>
+        </div>
+    </form>
+
+</div>
+
+
+{% endblock %}

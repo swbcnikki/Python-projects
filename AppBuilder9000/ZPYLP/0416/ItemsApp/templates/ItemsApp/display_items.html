@@ -1,0 +1,35 @@
+{% extends 'ItemsApp/base.html' %}
+
+{% block title %}Views Items{% endblock %}
+
+{% block content %}
+
+    <div class="item_panel">
+            {% for item in item %}
+        <h1><b><u>{{ item.name }}</u></b></h1>
+            <h4><u>General Information</u></h4>
+                <li>Type: {{ item.type|title }}</li>
+                <li>Equipment Slot: {{ item.slot|title }}</li>
+                <li>Speed: {{ item.speed }}</li>
+                <li>Attack Range: {{ item.range }}</li>
+                <li>Image: {{ item.image }}</li>
+            <h4><u>Attack Bonuses</u></h4>
+                <li>Stab: {{ item.atk_stab }}</li>
+                <li>Slash: {{ item.atk_slash }}</li>
+                <li>Crush: {{ item.atk_crush }}</li>
+                <li>Magic: {{ item.atk_magic }}</li>
+                <li>Range: {{ item.atk_range }}</li>
+            <h4><u>Defence Bonuses</u></h4>
+                <li>Stab: {{ item.def_stab }}</li>
+                <li>Slash: {{ item.def_slash }}</li>
+                <li>Crush: {{ item.def_crush }}</li>
+                <li>Magic: {{ item.def_magic }}</li>
+                <li>Range: {{ item.def_range }}</li>
+            <h4><u>Other Bonuses</u></h4>
+                <li>Strength: {{ item.bns_strength }}</li>
+                <li>Range: {{ item.bns_range }}</li>
+                <li>Magic: {{ item.bns_magic }}</li>
+                <li>Prayer: {{ item.bns_prayer }}</li>
+            {% endfor %}
+    </div>
+{% endblock %}

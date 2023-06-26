@@ -1,0 +1,19 @@
+{% extends "Novels/Novels_base.html" %}
+
+{% block title %} Details {% endblock %}
+
+{% block header %} Details and Reviews {% endblock %}
+
+{% block content %}
+
+<form method="POST" action="../Novels_details/">
+    <table>
+        {% csrf_token %}
+        {{ form.as_table }}
+    </table>
+    <input type="submit" class="btn" value="Click here to confirm edits">
+    <button class="btn"><a href="../{{ form.pk }}Novels_delete/">Delete Record</a></button>
+</form>
+
+
+{% endblock %}

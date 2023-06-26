@@ -1,0 +1,21 @@
+{% extends "chess_base.html" %}
+{% load static %}
+{% block content %}
+    <div class="chess_details">
+        <h1 class="details_heading h1">{{game.title}} details</h1>
+        <h3 class="details_heading ">{{game.playerWhite}}, {{game.playerBlack}} -- {{game.yearPlayed}}</h3>
+        <h5 class="details_heading">Winner: {{game.winner}}</h5>
+        <blockquote class="details_blockquote ">{{game.PGN}}</blockquote>
+        <a target="_blank"  class="btn btn-secondary btn-lg btn-block w-50 mx-auto"
+            onclick="getId({{game.id}})">
+            Edit
+        </a>
+    </div>
+    <script>
+        function getId(x) {
+            console.log(x);
+            window.location.href=`/ChessOpenings/${x}/edit/`
+
+            }
+    </script>
+{% endblock %}

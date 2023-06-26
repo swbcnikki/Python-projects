@@ -1,0 +1,20 @@
+{% extends "chess_base.html" %}
+{% block content%}
+<div id="form-container" class="table-responsive  mx-auto text-white">
+    <form method="POST">
+        {% csrf_token %}
+            <table id="table" class="table table-lite table-bordered table-hover text-center">
+                {{ form.as_table }}
+            </table>
+        <button type="submit" class="btn btn-secondary btn-lg btn-block w-50 mx-auto">Edit Game</button>
+        <button type="button" onclick="confirmDelete({{game.pk}})"  class="btn btn-secondary btn-lg btn-block w-50 mx-auto">Delete Game</button>
+    </form>
+</div>
+<script>
+    function confirmDelete (var1) {
+        if (confirm("are you sure you want to delete this game?")){
+            window.location.href=`/ChessOpenings/${var1}/delete/`
+        }
+    }
+</script>
+{% endblock %}

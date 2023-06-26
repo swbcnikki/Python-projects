@@ -1,0 +1,42 @@
+<!-- Code for the navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" xmlns="http://www.w3.org/1999/html">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'motorcycling_home' %}">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'rate_motorcycle' %}">Motorcycle-Rating</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'rate_route' %}">Route-Rating</a>
+        </li>
+        </br>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'list_motorcycles' %}">Rated-Motorcycles</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'list_routes' %}">Rated-Routes</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'BS_scraper' %}">Best-Bike_of_2021</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'motorcycling_API' %}">Random-Ride-Generator</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+

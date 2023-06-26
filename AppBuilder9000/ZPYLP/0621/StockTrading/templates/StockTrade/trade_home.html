@@ -1,0 +1,115 @@
+{% extends "trade_base.html" %}
+{% block title %} TradeBase | Home {% endblock %}
+{% load static %}
+
+{% block content %}
+
+    <!-- MAIN CARD CONTENT -->
+<div class="row mt-5 pt-3" style="display: flex; width: 100%; background-color: #fff;">
+    <div class="col-7 p-5" style="flex: 3;">
+        <div style="height: 20em; border-radius: 15px; background-size: 100% auto; background-repeat: no-repeat;" class="p-5">
+            <h1 class="h1 p-1 text-dark"><strong>
+                Welcome to StockBase
+            </strong></h1>
+            <h3 class="p-1  text-dark">
+                a place with python algorithmic stock trading resources
+            </h3>
+            <p class="p-1 text-dark">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
+                ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum do
+                lor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i ncididunt ut l
+                abore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, c
+                onsectetur adipiscing elit, sed
+            </p>
+        </div>
+    </div>
+    <!-- END MAIN CARD CONTENT -->
+
+    <!-- SEARCH / INFO PANEL -->
+    <div class="col-5 p-5" style="flex: 2; padding: 16px;">
+        <div style="border-radius: 15px; min-height: 20em;" class="bg-light">
+
+            <div class="row">
+                <div class="col-12 p-1 text-center">
+                    {% include 'StockTrade/trade_search.html' %}
+                </div>
+                <h3 class=" h6 p-1 text-center text-secondary bold"><strong>StockBase Featured Articles</strong></h3>
+                <div class="col-12 p-1 text-center">
+                    {% include 'StockTrade/trade_results.html' %}
+                </div>
+                <div class="col-12 p-1 text-center">
+                    {% include 'StockTrade/trade_tags.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SEARCH / INFO PANEL -->
+
+    <!-- CARD GALLERY -->
+    <div  style="display: flex; padding-left: 2em; flex-direction: row;">
+            <div style="flex: 2">
+                <image src="{%  static 'images/banner-2.jpg' %}"
+                       width="100%"
+                       height="100%"
+                       style="max-height: 15em;"
+                       class="p-1"
+            ></image>
+            </div>
+            <div style="flex: 1">
+                <image src="{%  static 'images/banner-3.jpg' %}"
+                       width="100%"
+                       height="100%"
+                       style="max-height: 15em;"
+                       class="p-1"
+                ></image>
+            </div>
+    </div>
+    <div  style="display: flex; padding-left: 2em; flex-direction: row;">
+            <div style="flex: 1">
+                <image src="{%  static 'images/banner-4.jpg' %}"
+                       width="100%"
+                       height="100%"
+                       style="max-height: 15em;"
+                       class="p-1"
+            ></image>
+            </div>
+            <div style="flex: 1">
+                <image src="{%  static 'images/banner-5.jpg' %}"
+                       width="100%"
+                       height="100%"
+                        style="max-height: 15em;"
+                       class="p-1"
+                ></image>
+            </div>
+            <div style="flex: 1">
+                <image src="{%  static 'images/banner-6.jpg' %}"
+                       width="100%"
+                       height="100%"
+                       style="max-height: 15em;"
+                       class="p-1"
+                ></image>
+            </div>
+    </div>
+    <div  style="display: flex; padding-left: 2em; flex-direction: row;">
+                <div style="flex: 1">
+                    <image src="{%  static 'images/banner-7.jpg' %}"
+                           width="100%"
+                           height="100%"
+                           style="max-height: 15em;"
+                           class="p-1"
+                ></image>
+                </div>
+                <div style="flex: 2">
+                    <image src="{%  static 'images/banner-8.jpg' %}"
+                           width="100%"
+                           height="100%"
+                           style="max-height: 15em;"
+                           class="p-1"
+                    ></image>
+                </div>
+    </div>
+    <!-- END CARD GALLERY -->
+</div>
+
+{% endblock %}
+

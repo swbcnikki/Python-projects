@@ -1,0 +1,28 @@
+{% extends "chess_base.html" %}
+{% block content %}
+<script>
+    function getId(x) {
+        window.location.href=`/ChessOpenings/${x.id}/details/`
+        console.log(x.id);
+        }
+
+    console.log('umm')
+</script>
+    <h1 class=" text-white text-center">Select a game to view it on the board.</h1>
+
+            <table class="table table-hover text-white text-center" id="searchTable">
+                <tr>
+                    <th>Game Title</th>
+                    <th>White Pieces</th>
+                    <th>Black Pieces</th>
+                </tr>
+    {% for item in games %}
+                <tr class="test" onclick="getId(this)" id={{item.pk}}>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.playerWhite}}</td>
+                    <td>{{ item.playerBlack}}</td>
+                </tr>
+    {% endfor %}
+            </table>
+
+{% endblock %}

@@ -1,0 +1,173 @@
+/* ----- Basic Page Styling ----- */
+
+body {
+    background-image: url("/static/images/Novel_background3.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.why_read {
+text-align: left;
+font-size: 16pt;
+}
+
+/* ----- End Basic Page Styling ----- */
+
+/* ----- Display Table Styling ----- */
+
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+background-color: white;
+}
+
+th, td {
+padding: 15px;
+}
+
+td {
+text-align: center;
+}
+
+tr:hover {
+opacity: 70%;
+}
+
+/* ----- End Display Table Styling ----- */
+
+/* ----- Navbar Styling ----- */
+
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+top: 0;
+width: 100%;
+}
+
+li {
+float: left;
+}
+
+li a {
+display: block;
+}
+
+li a:hover {
+background-color: #111
+}
+
+a.button1{
+display:inline-block;
+padding:0.35em 1.2em;
+border:0.1em solid #FFFFFF;
+margin:0 0.3em 0 0;
+border-radius:0.12em;
+box-sizing: border-box;
+text-decoration:none;
+font-weight:300;
+color:#FFFFFF;
+text-align:center;
+transition: all 0.2s;
+}
+
+a.button1:hover{
+color:#000000;
+background-color:#FFFFFF;
+}
+
+/* Navbar Animation */
+
+.bouncy {
+animation: bouncy 7s infinite linear;
+position: relative;
+}
+
+@keyframes bouncy {
+0%{top:0em}
+40%{top:0em}
+43%{top:-0.9em}
+46%{top:0em}
+48%{top:-0.4em}
+50%{top:0em}
+100%{top:0em;}
+}
+
+/* End Navbar Animation */
+
+/* ----- End Navbar Styling ----- */
+
+/* ----- Button Styling ----- */
+
+.btn {
+display:inline-block;
+border-radius:10px;
+box-sizing: border-box;
+text-decoration:none;
+padding: 14px 18px;
+margin-top: 25px;
+margin-left: 54px;
+font-weight:300;
+color:#FFFFFF;
+background-color:#4eb5f1;
+text-align:center;
+transition: all 0.2s;
+cursor: pointer;
+}
+
+.find_btn {
+display:inline-block;
+border-radius:10px;
+box-sizing: border-box;
+text-decoration:none;
+padding: 14px 18px;
+font-weight:300;
+color:#FFFFFF;
+background-color:#4eb5f1;
+text-align:center;
+transition: all 0.2s;
+cursor: pointer;
+}
+
+.btn:hover {
+background-color:#4095c6;
+}
+
+.find_btn:hover {
+background-color:#4095c6;
+}
+
+/* ----- End Button Styling ----- */
+
+/* ----- Form Styling ----- */
+
+.create_form {
+display: block;
+text-align: center;
+}
+
+.create_form textarea {
+height: 170px;
+width: 35%;
+}
+
+.create_form textarea:focus{
+background-color: #C6FAFA;
+border: 3px solid #687C7C;
+}
+
+.create_form input:focus {
+background-color: #C6FAFA;
+border: 3px solid #687C7C;
+}
+
+.dropdown {
+margin-top: 15px;
+}
+
+
+/* ----- End Form Styling ----- */

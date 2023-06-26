@@ -1,0 +1,33 @@
+{% extends "SportsApp/SportsApp_base.html" %}
+
+{%block title %}SportsApp{% endblock %}
+
+{% block header %}
+    <div class="createPage-header">
+        <h1>Edit Saved Games</h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<!--Create Page Form Element -->
+<div class="createPage-text">
+    <div class="createPage-txt-wrapper">
+        <form method="POST" novalidate>
+            <div class="form-object-container">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{ form.as_p }}
+            </div>
+            <div class="form-btn-container">
+                <input type="submit" class="btn" value="Save changes" name="save_item">
+                <a href="../game_details/"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

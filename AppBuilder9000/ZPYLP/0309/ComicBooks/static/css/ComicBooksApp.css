@@ -1,0 +1,17 @@
+
+html {
+     background-color: blue;
+
+}
+
+
+.Form {
+    display: block;
+    background-color: white;
+    border-radius: 15px;
+    color: blue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding: 0px;
+}

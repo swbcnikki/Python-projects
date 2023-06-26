@@ -1,0 +1,29 @@
+{% extends "WeatherBall/weatherbase.html" %}
+{% load static %}
+{% block title %}WeatherBall{% endblock %}
+{% block content %}
+                <div class="container">
+                    <h2>User Profile Display</h2>
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr class="table-primary">
+                                <th scope="col" data-field="fname" data-sortable="true" class="w-25">First Name</th>
+                                <th scope="col" data-field="lname" data-sortable="true" class="w-25">Last Name</th>
+                                <th scope="col" data-field="email" data-sortable="true" class="w-25">Email</th>
+                                <th scope="col" data-field="state" data-sortable="true" class="w-25">State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in display %}
+                            <tr class="table-info">
+                                <td class="table-secondary"><a href="{% url 'weather_details' i.id %}">{{ i.fname }}</a></td>
+                                <td class="table-secondary">{{ i.lname }}</td>
+                                <td class="table-secondary">{{ i.email }}</td>
+                                <td class="table-secondary">{{ i.state }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "find_pet_base.html" %}
+{% load static %}
+
+{% block title %}Applicants{% endblock %}
+{% block content %}
+<div id="apply_bg">
+</div>
+
+    <div class="apply_title">
+        <p id="applicant_title">Apply now!</p>
+        <p class="title_caption">Add your name to our contact listing, or if you're assisting in helping a pet find a good home, list them too!</p>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <div class="form_container">
+                <div class="header_container">
+                    <p class="container_header">Apply to Adopt</p>
+                </div>
+                <p class="caption">Add your name to the applicant list!</p>
+                <form method="POST">
+                    {% csrf_token %}
+					{{ applyform.as_p }}
+					<button class="form_submit" type="submit" name="Add_Applicant">Add Applicant</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="form_container2">
+                <div class="header_container">
+                    <p class="container_header">To Be Rescued</p>
+                </div>
+                <p class="caption">Reposted listings from shelters are encouraged, the more awareness the better!</p>
+                <form method="POST" id="rescue_form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="column">
+                            <p class="form_label">Name:</p> {{ petform.name }}
+                            <p class="form_label">Birthday:</p> {{ petform.birthday }}
+                            <p class="form_label">Breed:</p> {{ petform.breed }}
+                            <p class="form_label">Animal:</p> {{ petform.animal }}
+                        </div>
+                        <div class="column">
+                            <p class="form_label">Color:</p> {{ petform.color }}
+                            <p class="form_label">Email:</p> {{ petform.email }}
+                            <p class="form_label">Location:</p> {{ petform.location }}
+                        </div>
+                    </div>
+                    <div id="description_row">
+                        <p class="form_label">Description:</p> {{ petform.description }}
+                    </div>
+                    <div class="row">
+                        <button class="form_submit" type="submit" name="Add_Rescue">Add Rescue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

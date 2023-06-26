@@ -1,0 +1,49 @@
+{% extends "GardenApp\garden_base.html" %}
+{% load static %}
+
+{% block title %}Home{%endblock %}
+
+
+{% block content %}
+
+
+<div class="card-deck">
+            <div class="card text-center">
+                <img class="card-img-top" src="{% static 'images/garden11.jpg' %}" alt="Card image cap">
+                <div class="card-img-overlay">
+                        <h5 class="card-title1">GardenApp</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">GardenApp knows every vegetable is as different as each growing season. There's a lot to keep
+                        track of year after year. And GardenApp is here to help. Save your data and observations by vegetable, then compare your seasons for years to come.</p>
+                </div>
+            </div>
+            <div class="card text-center">
+                <img class="card-img-top" src="{% static 'images/garden13.jpg' %}" alt="Card image cap">
+                <div class="card-img-overlay">
+                  <h5 class="card-title2">Garden Planner</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">The Garden Planner can save all your vegetables individually along with their sowing and caretaking instructions. </p>
+                    <a href="{% url 'gardenplanner' %}" class="btn btn-primary">Garden Planner</a>
+                </div>
+            </div>
+            <div class="card text-center">
+                <img class="card-img-top" src="{% static 'images/garden14.jpg' %}" alt="Card image cap">
+                <div class="card-img-overlay">
+                      <h5 class="card-title2">Garden Tracker</h5>
+                </div>
+                <div class="card-body">
+                        <p class="card-text">The Garden Tracker let's you write down observations from your growing season, as well as your harvest data. </p>
+                        <a href="{% url 'gardentracker' %}" class="btn btn-primary">Garden Tracker</a>
+                </div>
+            </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}

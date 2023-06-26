@@ -1,0 +1,39 @@
+{% extends "WarriorStats/stats_Base.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Add a New Player{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale-1.0">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/WarriorStatsStyle.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <header class="header-title" style="text-align: center;">
+                    <h1>{% block header %}Add A Player{% endblock header %}</h1>
+        </header>
+
+        <div class="container">
+                <form method="POST">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button id="add_player_button" type="submit" name="add_player" style="margin-left: 45%">Add Player</button>
+                </form>
+                <br>
+        </div>
+    </body>
+</html>
+{% endblock content %}

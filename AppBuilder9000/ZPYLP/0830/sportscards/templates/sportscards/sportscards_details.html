@@ -1,0 +1,24 @@
+{% extends "SportsCards/SportsCards_base.html" %}
+
+{% block title %} Details {% endblock %}
+
+{% block header %} Details {% endblock %}
+
+{% block content %}
+
+<form method="POST" action="../sportscards_details/">
+    <table>
+        {% csrf_token %}
+    </table>
+    <input type="submit" class="btn" value="Click here to confirm edits">
+    <button class="btn"><a href="../{{ form.pk }}sportscards_delete/">Delete Record</a></button>
+</form>
+
+<ul>
+<li>{{ card.Player }}</li>
+<li>{{ card.Year }}</li>
+<li>{{ card.Team }}</li>
+<li>{{ card.Brand }}</li>
+</ul>
+
+{% endblock %}

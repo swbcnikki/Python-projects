@@ -1,0 +1,43 @@
+
+{% extends 'eb_base.html' %}
+
+{% block title %}A Scenic Route{% endblock %}
+
+{% block header %}Created Reservations{% endblock %}
+
+{% block content %}
+<!-- When reservations are made, they are displayed on this page -->
+<style>
+    table, th, td {
+    font-family: courier, sans-serif; border: 2px solid black; padding: 5px}
+    th, tr, td {
+    border: 1px solid black, text-align: center;}
+</style>
+
+<table class="table table-responsive" id ="reservations-table">
+
+				<tr id="headerRow">
+					<th>Date</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Accommodation</th>
+					<th>Guests</th>
+				</tr>
+				{% for rider in booking %}
+				<tr>
+					<td class="center">{{ rider.travelDate }}</td>
+					<td class="center"><a href="{% url 'eb_details' rider.id %}">{{ rider.first_name }}</a></td>
+					<td class="left">{{ rider.last_name }}</td>
+					<td class="right">{{ rider.accommodation }}</td>
+					<td class="right">{{ rider.guests }}</td>
+
+                </tr>
+				{% endfor %}
+
+				</table>
+<button><a href="{% url 'eb_reservation' %}">Another Reservation</a></button>
+<button><a href="#">Checkout</a></button>
+
+<h4>To make changes, please click on the first name of the record you would like to edit.</h4>
+
+{% endblock %}

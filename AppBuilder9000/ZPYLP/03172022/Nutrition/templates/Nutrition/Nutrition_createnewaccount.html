@@ -1,0 +1,20 @@
+{% extends 'Nutrition/Nutrition_base.html' %}
+{% load static %}
+
+{% block title %}Create New Account{% endblock %}
+{% block content %}
+
+<div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">Create a New User Account</h4>
+  <p>Never been here before? Create a new account to reap the rewards of NutritionApp Membership!</p>
+</div>
+
+	<div class="form-group">
+		<form method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button class="btn btn-primary" type="submit" name="Save_Account">Create Account</button>
+		</form>
+		<br>
+	</div>
+{% endblock %}

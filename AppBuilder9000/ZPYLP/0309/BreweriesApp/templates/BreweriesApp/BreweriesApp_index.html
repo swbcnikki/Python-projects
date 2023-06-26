@@ -1,0 +1,34 @@
+{% extends "BreweriesApp/BreweriesApp_base.html" %}
+
+{% block title %} Breweries {% endblock %}
+
+{% block header %} All Breweries: {% endblock %}
+
+{% block content %}
+<div class="table-container">
+    <table class="table table-hover">
+        <tr>
+            <th class="thead"><a href="?order_by=name&sort={{sortby}}">Name</a></th>
+            <th class="thead"><a href="?order_by=beerstyles1&sort={{sortby}}">Style 1</a></th>
+            <th class="thead"><a href="?order_by=beerstyles2&sort={{sortby}}">Style 2</a></th>
+            <th class="thead"><a href="?order_by=city&sort={{sortby}}">City</a></th>
+            <th class="thead"><a href="?order_by=state&sort={{sortby}}">State</a></th>
+        </tr>
+        {% for b in allbreweries %}
+        <tr>
+            <td scope="col-md-4"><a href="{% url 'BA_details' b.id %}">{{ b.name }}</a></td>
+
+            <td scope="col-md-2">{{ b.beerstyles1 }}</td>
+
+            <td scope="col-md-2">{{ b.beerstyles2 }}</td>
+
+            <td scope="col-md-2">{{ b.city }}</td>
+
+            <td scope="col-md-2">{{ b.state }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br><br>
+</div>
+
+{% endblock %}

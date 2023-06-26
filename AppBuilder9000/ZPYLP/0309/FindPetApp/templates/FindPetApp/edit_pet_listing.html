@@ -1,0 +1,46 @@
+{% extends "find_pet_base.html" %}
+{% load static %}
+
+{% block title %}Edit Listing{% endblock %}
+{% block content %}
+<div id="available_bg">
+</div>
+
+    <div class="apply_title">
+        <p id="applicant_title">Edit Listing</p>
+        <p class="title_caption">Better or updated info? Change here!</p>
+    </div>
+
+    <div class="row">
+
+
+            <div class="form_container2">
+                <div class="header_container">
+                    <p class="container_header">Edit details for: {{ pet.name }}</p>
+                </div>
+                <br>
+                <form method="POST" id="rescue_form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="column">
+                            <p class="form_label">Name:</p> {{ petform.name }}
+                            <p class="form_label">Birthday:</p> {{ petform.birthday }}
+                            <p class="form_label">Breed:</p> {{ petform.breed }}
+                            <p class="form_label">Animal:</p> {{ petform.animal }}
+                        </div>
+                        <div class="column">
+                            <p class="form_label">Color:</p> {{ petform.color }}
+                            <p class="form_label">Email:</p> {{ petform.email }}
+                            <p class="form_label">Location:</p> {{ petform.location }}
+                        </div>
+                    </div>
+                    <div id="description_row">
+                        <p class="form_label">Description:</p> {{ petform.description }}
+                    </div>
+                    <div class="row">
+                        <button class="form_submit" type="submit" name="Edit_Listing">Save</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+{% endblock %}

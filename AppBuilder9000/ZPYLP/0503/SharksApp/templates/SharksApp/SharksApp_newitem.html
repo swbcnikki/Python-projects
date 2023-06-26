@@ -1,0 +1,21 @@
+{% extends "SharksApp_base.html" %}
+
+{% block title %} Add Shark {% endblock %}
+
+{% block header %} Add Your Favorite Shark Species! {% endblock %}
+
+{% block content %}
+
+    <div class="form_container">
+        <form name="SharksForm" method="POST" action="{% url 'SharksApp_newitem' %}">
+            <div class="formObject_container">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="btn">
+                    <input type="submit">
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "fantasyFB_base.html" %}
+
+{% block title %}Fantasy Football{% endblock %}
+
+{% block content %}
+    <div class="details">
+        <h2>{{ players.name }}</h2>
+        <div class="details-info">
+            <p class="left">Team: {{ players.team }}</p>
+            <p class="right">Position: {{ players.position }}</p>
+        </div>
+        <p id="reason-header">"Why would this hero be good at this position?"</p>
+        <div class="reason">
+            <p>{{ players.reason }}</p>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

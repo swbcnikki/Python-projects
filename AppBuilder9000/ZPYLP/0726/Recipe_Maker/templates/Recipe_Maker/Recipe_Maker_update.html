@@ -1,0 +1,16 @@
+{% extends 'Recipe_Maker/Recipe_Maker_base.html' %}
+
+{# custom title for the home page#}
+
+{% block title %}Update Recipe{% endblock %}
+
+
+
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" class="btn btn-outline-dark">
+</form>
+{% endblock %}

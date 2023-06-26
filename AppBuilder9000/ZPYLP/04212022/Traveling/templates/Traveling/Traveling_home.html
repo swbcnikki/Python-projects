@@ -1,0 +1,36 @@
+{% extends "Traveling/Traveling_base.html" %}
+
+{% load static from staticfiles %}
+
+
+
+{% block title %}Travel Agency{% endblock %}
+
+{% block header %}Everywhere in your hand{% endblock %}
+
+{% block content %}
+ <div id="Home">
+            <video  autoplay muted loop id="Video">
+                <source src="{% static 'images/video.mp4' %}">
+            </video>
+ </div>
+
+    <h1><span style="color: pink;">Travel Agency</span></h1>
+    <h2><span style="color: pink; ">Everything within your hand's reach!!</span></h2>
+    <div class="container">
+
+          <p class="text"><i>
+        Wanna get away to an amazing vacation to exotic places?<br>
+        Checkout our travel plans and package. You are one click away!</i>
+          </p>
+        <img src="{% static 'images/travel.jpg' %}">
+        <br>
+        <a href="{% url 'Traveling_place' %}" ><button class='btn-two' type="button">Book Flights!</button></a>
+        <a href="{% url 'Traveling_create' %}"><button class='btn' type="button">Sign Up!</button></a>
+
+    </div>
+<br>
+<br>
+
+
+{% endblock %}

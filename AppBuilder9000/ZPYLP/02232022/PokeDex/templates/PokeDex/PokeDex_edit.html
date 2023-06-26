@@ -1,0 +1,21 @@
+{% extends "PokeDex/PokeDex_base.html" %}
+{% load static %}
+
+{% block title %} Edit PokeDex {% endblock %}
+
+{% block header %} <h1>Edit PokeDex</h1> {% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+    <h3 style="padding-top: 275px; padding-left: 230px;">Edit Pokémon in PokeDex</h3>
+    <div id="form-container" class="table-responsive table-sm mx-auto" style="padding-top: 30px; padding-left: 225px; padding-right: 965px;">
+        <form method="post">
+            {%csrf_token %}
+            <table id="table" class="table table-secondary table-hover text-center">
+                {{ form.as_table }}
+            </table>
+            <button type="submit" class="btn btn-dark btn-lg btn-block w-25 mx-auto" style="float: left;">Save</button>
+            <a href="{% url 'show_pokemon' %}"><button type="button" class="btn btn-dark btn-lg w-25 mx-auto" style="float: right;">Cancel</button></a>
+        </form>
+    </div>
+{% endblock %}

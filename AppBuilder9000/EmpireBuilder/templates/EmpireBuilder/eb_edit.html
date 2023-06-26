@@ -1,0 +1,24 @@
+
+{% extends 'eb_base.html' %}
+
+{% block title %}A Scenic Route{% endblock %}
+
+{% block header %}Edit number of Guests{% endblock %}
+
+{% block content %}
+
+
+<p>
+	You can update your reservation on this page.
+</p>
+
+<h1>Update</h1>
+<form method="POST">
+        {% csrf_token %}
+{{ form.as_p }}
+
+<button type="submit">Submit</button>
+<button><a href="{% url 'eb_reservation' %}">Delete Reservation</a></button>
+</form>
+
+{% endblock %}

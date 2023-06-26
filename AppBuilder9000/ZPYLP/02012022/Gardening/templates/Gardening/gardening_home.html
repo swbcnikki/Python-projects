@@ -1,0 +1,47 @@
+<!--This is the home page of the gardening app-->
+{% extends "Gardening/gardening_base.html" %}
+
+{% load static %}
+<!--Page Header-->
+{% block heading %}{% endblock %}
+
+{% block content %}
+
+<!--Cards with page links-->
+
+  <div class="card-deck mx-auto pt-2" style="max-width: 80vw; opacity:90%;">
+<!--    Card #1-->
+    <a href="#">
+      <div class="card text-dark bg-white my-3 ml-3" style="max-width: 18rem; text-align:center;">
+        <div class="card-header">Gardening How-To Guides</div>
+        <div class="card-body">
+          <img class="card-img-top" src="../static/images/gardening3.jpg" alt="Card image cap">
+          <h5 class="card-title">Learn gardening with our helpful guides</h5>
+        </div>
+      </div>
+    </a>
+<!--    Card #2-->
+    <a href="{% url 'create_plant' %}">
+      <div class="card text-dark bg-white my-3 ml-3" style="max-width: 18rem; text-align:center;">
+        <div class="card-header">My Garden Planner</div>
+        <div class="card-body">
+          <img class="card-img-top" src="../static/images/gardening1.jpg" alt="Card image cap">
+          <h5 class="card-title">Track the dates you sow and harvest</h5>
+        </div>
+      </div>
+    </a>
+<!--    Card #3-->
+    <a href="#">
+      <div class="card text-dark bg-white my-3 ml-3" style="max-width: 18rem; text-align:center;">
+        <div class="card-header">Gardening Calendars</div>
+        <div class="card-body">
+          <img class="card-img-top" src="../static/images/gardening2.jpg" alt="Card image cap">
+          <h5 class="card-title">Discover what to plant this season</h5>
+        </div>
+        </div>
+      </div>
+    </a>
+
+
+  </div>
+{% endblock %}

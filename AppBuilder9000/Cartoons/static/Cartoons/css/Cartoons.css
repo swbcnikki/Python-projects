@@ -1,0 +1,115 @@
+/* GENERAL SECTION STYLING */
+html {
+    scroll-behavior: smooth;
+    font-size: 200 px
+}
+
+html body {
+    background-color: #fcdd60;
+    background-image: url('../images/cartoon_background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* FADE EFFECT ON SITE LOADING USING JAVASCRIPT */
+body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+body.fade {
+    opacity: .1;
+}
+
+.content {
+    background-color: rgba(255,255,255,0.2);
+    padding-bottom: 450px;
+    padding-top: 50px;
+}
+
+nav {
+    font-size: 20px;
+    -webkit-animation: moveNav 2s;
+    animation: moveNav 2s;
+}
+
+@keyframes moveNav {
+    from {left: -100vw;}
+    to {left: 0vw;}
+}
+
+footer {
+    position: fixed; /* footer always visible at bottom */
+    left: 0px;
+    bottom: 0px;
+    width:100%;
+    background: #fcdd60;
+}
+
+/* FIXED TABLE INPUT SIZES */
+input[type="text"],
+textarea {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    resize: none;
+
+    /* for column with internal spacing */
+    width: 100%;
+    padding: 0.3rem;
+    margin: 0.1rem 0.1rem;
+    border: 1px solid #ddd;
+}
+
+input[type="select"],
+select {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    resize: none;
+
+    /* for column with internal spacing */
+    width: 100%;
+    padding: 0.3rem;
+    margin: 0.1rem 0.1rem;
+    border: 1px solid #ddd;
+}
+
+/* FONT SECTION */
+h1, .h1 {
+    transition: transform .5s ease-in-out;
+    font-size: 70px !important;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    transition: transform .5s ease-in-out;
+}
+
+h2 {
+    transition: transform .5s ease-in-out;
+}
+
+h2:hover {
+    transform: scale(1.1);
+    transition: transform .5s ease-in-out;
+}
+
+.display-4 {
+    font-family: "Patrick Hand SC", cursive;
+}
+
+.navbar-nav {
+    font-family: "Patrick Hand SC", cursive;
+    font-size: 27px;
+}
+
+
+
+
+
+

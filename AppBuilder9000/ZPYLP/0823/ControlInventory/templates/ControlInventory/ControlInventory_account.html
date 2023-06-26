@@ -1,0 +1,16 @@
+{% extends "ControlInventory/ControlInventory_base.html" %}
+{% load static %}
+
+    {% block title %} Add User Profile {% endblock %}
+
+    {% block content %}
+	    <h3>Create New User Account</h3>
+	        <div id="account-form">
+		        <form method="POST">
+			    {% csrf_token %}
+			    {{form.as_p}}
+			    <button id="new-account-button" type="submit" name="Save_Account">Create Account</button>
+		    </form>
+		    <br>
+	        </div>
+    {% endblock %}

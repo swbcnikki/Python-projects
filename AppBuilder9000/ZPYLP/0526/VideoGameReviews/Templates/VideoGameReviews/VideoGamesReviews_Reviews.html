@@ -1,0 +1,15 @@
+{% extends 'VideoGameReviews/VideoGameReviews_Base.html' %}
+{% block content %}
+{% load static %}
+<h1>Video game Reviews</h1>
+    {% for item in all %}
+<a href="{% url 'VideoGamesReviews_Details' item.pk %}">More info here!</a><br>
+    <ul>
+        <strong><li>Title: {{ item.GameName }}</li></strong><br>
+        <li>Genre: {{ item.GameGenre }}</li><br>
+        <li>Rating: {{ item.GameRating}} </li><br>
+    </ul>
+    {% endfor %}
+</div>
+
+{% endblock %}

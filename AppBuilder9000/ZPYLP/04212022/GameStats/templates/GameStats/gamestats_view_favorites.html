@@ -1,0 +1,31 @@
+{% extends "gamestats_base.html" %}
+{% load static %}
+{% block title %}Game Reviews{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block header %}Add your favorite games{% endblock %}
+
+{% block content %}
+
+<div id="container" class="table-responsive w-75 mx-auto">
+    <table id="table" class="table table-dark table-hover table-striped text-center add-spacing" data-toggle="table">
+        <thead class="table-spacer">
+            <tr>
+                <th scope="col" data-field="name" data-sortable="true" class="w-25 neu-table-left remove-border">Game</th>
+                <th scope="col" data-field="ratings" data-sortable="true" class="w-25 remove-border">Rating</th>
+                <th scope="col" data-field="release" data-sortable="true" class="w-25 remove-border neu-table-right">Release year</th>
+            </tr>
+        </thead>
+        <tbody class="table-spacer">
+            {% for Game in favorites %}
+            <tr>
+                <td class="w-25 neu-table-left remove-border">{{ Game.name }} &nbsp;&nbsp; <form id="favorite" method="POST">{% csrf_token %}<input type="submit" name="{{ Game.name }}" class="btn btn-outline-secondary neu-button" value="Remove"></form></td>
+                <td class="w-25 remove-border">{{ Game.rating }}/100</td>
+                <td class="w-25 remove-border neu-table-right">{{ Game.release_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

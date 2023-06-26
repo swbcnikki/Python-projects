@@ -1,0 +1,28 @@
+<!-- This page will display useful information sourced from beautiful soup webscraping method-->
+
+{% extends "WorkoutEquipment/WorkoutEquipBase.html" %}
+
+{% block title %} Equipment Information {% endblock %}
+
+{% block header %} Your Home Gym Blog (Web scraped) {% endblock %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+    <h1 class = 'bs-title'>{{ title }}</h1>
+        <h5 class = 'bs-text'>{{ blogP }}</h5>
+            <a class = 'bs-text' href="https://www.usedfitnesssales.com">https://www.usedfitnesssales.com</a>
+            <a class = 'bs-text' href="https://www.usedfitnesssales.com/chooschoosing-your-best-new-home-gym-fitness-equipment-for-the-new-yearing-your-best-new-home-gym-fitness-equipment-for-the-new-year/">
+                Blog source: Choose your new home gym equipment</a>
+            <a class = 'bs-text' href="{% url 'WorkoutEquipHome' %}">Back to home</a>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

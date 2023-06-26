@@ -1,0 +1,19 @@
+
+{% extends 'eb_base.html' %}
+
+{% block title %}A Scenic Route{% endblock %}
+
+{% block header %}Across America by Rail{% endblock %}
+
+{% block content %}
+
+<h1>Delete</h1>
+<form method="POST">
+        {% csrf_token %}
+        <h3>This will delete the reservation for "{{ rider.first_name }}". Would you like to proceed?</h3>
+        <br>
+        <button type="submit">Delete</button>
+    </form>
+<button><a href="{% url 'eb_created' %}">Go Back</a></button>
+
+{% endblock %}

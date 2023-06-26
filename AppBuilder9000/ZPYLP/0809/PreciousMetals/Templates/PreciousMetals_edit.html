@@ -1,0 +1,18 @@
+{% extends "PreciousMetals_base.html" %}
+
+{% block title %} Edit Your Inventory {% endblock title %}
+{% block content %}
+
+
+<div class="edit_style">
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input class="submit" type="submit" value="Submit Edit">
+    </form>
+</div>
+<br><br>
+
+{% endblock content %}

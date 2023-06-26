@@ -1,0 +1,49 @@
+{% extends "Traveling/Traveling_base.html" %}
+
+{% load static from staticfiles %}
+
+
+
+{% block title %}Edit your account{% endblock %}
+
+{% block header %}Edit!{% endblock %}
+
+{% block content %}
+
+<div class="bg_img_c">
+    <form name="TravelerForm" method="POST" action="" class="cs_container">
+
+
+        <table>
+            {% csrf_token %}
+            {{ form.as_p }}
+
+        </table>
+
+
+            <div >
+                <button class="btn-submit" type="submit">Confirm</button>
+                <div>
+                    <button class="btn-del"><a style="text-decoration:none; color:#fff;" href="{% url 'Traveling_delete' item.pk %}" >Delete</a></button>
+                    <a href="{% url 'Traveling_place' %}" ><button class="btn-can" >Cancel</button></a>
+                </div>
+
+
+
+            </div>
+
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

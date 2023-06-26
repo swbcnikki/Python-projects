@@ -1,0 +1,30 @@
+{% extends 'Quotes/Quotes_base.html' %}
+
+{% block title %}Add your Quote{% endblock %}
+
+{% block header %}Quote Add{% endblock %}
+
+
+{% block content %}
+
+<div>
+    <form method="POST" action="{% url 'Quotes_add' %}">
+        <div class="form_container">
+            <header class="header pb-2">
+                <h1><u>Add your Quote</u></h1>
+            </header>
+            <table class="frm_table">
+                {% csrf_token %}
+                {{ form.as_table }}
+            </table>
+            <div class="mx-auto text-center">
+                <button type="submit" class="btn btn-light" value="Submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+{% endblock %}

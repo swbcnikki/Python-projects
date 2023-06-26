@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    background-color: #0a0a0a;
+}
+
+
+
+
+/* ------------ background image and page header ---------------- */
+.MainBG {
+    background-image: url('/static/images/louvre.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    font-family: 'Consolas';
+    text-align: center;
+    color: 	#ad0a0a;
+}
+
+h1 {
+
+font-family: 'Consolas';
+    text-align: center;
+    color: 	#ad0a0a;
+
+
+}
+
+
+
+.btn {
+	flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 150px;
+    margin: 2% 2% 2% 2%;
+    color: #ad0a0a;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+.frmBtn_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 98%;
+}
+
+.frmObject_container {
+	display: block;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.Artwork {
+    margin: 0 auto;
+    width: 50%;
+    height: 80%;
+	border: 1px solid #ad0a0a;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    transition: 0.3s;
+    color: 	#ad0a0a;
+}
+
+.art-form {
+    display: block;
+    background-color: blue;
+    border-radius: 25px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 10px;
+}
+
+.index-display{
+    font-family: 'Consolas';
+    text-align: left;
+    color: 	#ad0a0a;
+}
+
+.detail-table{
+    color: red;
+    width: 80%;
+    text-align: center;
+    background-color: lightgray;
+
+}

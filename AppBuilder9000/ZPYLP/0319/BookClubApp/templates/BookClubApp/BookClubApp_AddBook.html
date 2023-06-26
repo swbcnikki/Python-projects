@@ -1,0 +1,55 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}Add Book{% endblock %}
+{% block header%}Add Book{% endblock %}
+{% block content %}
+<!-- Form to add read books to the templates -->
+<div class="content">
+    <div class="section">
+        <p class="eighty">Add books that you've read to your list. Books you add will appear on the <a href="{% url 'BookClubApp_bookList' %}">My Books page</a>.</p>
+     </div>
+    <div class="book-form">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-secondary"  type="submit" name="Save_Book">Add Book</button>
+        </form>
+    </div>
+</div>
+<script>
+    $("form input").on("blur input focus", function() {
+        var $field = $(this).closest("p");
+        if (this.value) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+
+    $("form input").on("focus", function() {
+        var $field = $(this).closest("p");
+        if (this) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+    $("form textarea").on("blur input focus", function() {
+        var $field = $(this).closest("p");
+        if (this.value) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+
+    $("form textarea").on("focus", function() {
+        var $field = $(this).closest("p");
+        if (this) {
+            $field.addClass("filled");
+        } else {
+            $field.removeClass("filled");
+        }
+    });
+</script>
+{% endblock %}

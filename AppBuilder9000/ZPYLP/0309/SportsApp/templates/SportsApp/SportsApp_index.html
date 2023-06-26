@@ -1,0 +1,76 @@
+{% extends "SportsApp/SportsApp_base.html" %}
+
+{% block title %} SportsApp {% endblock %}
+
+{% block header %}
+    <div class="createPage-header">
+        <h1>WatchList Archive: </h1>
+    </div>
+{% endblock %}
+
+{%block content %}
+
+<div class="indexPage-wrapper">
+    <table class="game-table">
+        <tr>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Game Date</th>
+            <th>Start Time</th>
+            <th>Game Details</th>
+        </tr>
+        {% for game in game_list %}
+        <tr class="border">
+            <td>
+                {{ game.home_team }}
+            </td>
+            <td>
+                {{ game.away_team }}
+            </td>
+            <td>
+                {{ game.date_game }}
+            </td>
+            <td>
+                {{ game.time_start }}
+            </td>
+            <td>
+                <a href="{% url 'game_details' game.id %}">Click for details...</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+{% if game_list.has_other_pages %}
+  <ul class="paginator">
+    {% if game_list.has_previous %}
+      <li><a href="?page={{ game_list.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in game_list.paginator.page_range %}
+      {% if game_list.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only"></span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if game_list.has_next %}
+      <li><a href="?page={{ game_list.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

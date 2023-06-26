@@ -1,0 +1,32 @@
+{% extends 'ATVTrails_base.html' %}
+{% block header %}ATV Trails{% endblock %}
+
+{% include "AtvTrails_navbar.html" %}
+
+{% block content %}
+
+<div class="admin_panel">
+    <form name="Trails_Form" method="POST" action="">
+            <div>
+                <a href="{% url 'add_trail' %}"><button type="button" class="trails_main">Add a New Trail</button></a>
+
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+<div class="trails_main">
+
+	{% for trails in trails %}
+
+	<a href = "../{{ trails.pk }}/AtvTrails_details/">{{ trails.trail_name }}<br/></a>
+        {{ trails.trail_description}}<br/>
+	<hr/>
+
+	{% endfor %}
+
+</div>
+
+{% endblock %}

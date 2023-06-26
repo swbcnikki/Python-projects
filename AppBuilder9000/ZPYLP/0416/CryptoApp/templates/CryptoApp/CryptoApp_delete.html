@@ -1,0 +1,17 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Delete Cryptocurrency {% endblock %}
+
+{% block header %}Delete Currency{% endblock %}
+
+{% block content %}
+
+    <form method="POST" class="edit-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>Are you sure you want to delete {{ coin.chain_name }}?</p>
+        <button class="btn btn-default" type="submit">Delete</button>
+        <br><br><a class="btn btn-default" href="{% url 'CryptoApp_display' %}">Abort</a>
+    </form>
+
+{% endblock %}

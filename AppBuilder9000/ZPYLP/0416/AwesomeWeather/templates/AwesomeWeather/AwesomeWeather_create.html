@@ -1,0 +1,26 @@
+{% extends "AwesomeWeather/AwesomeWeather_base.html" %}
+{% load static %}
+
+{% block title %}Awesome Weather Events{% endblock %}
+{% block content %}
+<h1>Awesome Weather Events!!</h1>
+<table border="1" width="600">
+<tr>
+<td>State</td>
+<td>Town</td>
+<td>Date</td>
+<td>Event</td>
+</tr>
+
+{% for Facts in objects %}
+<tr>
+<td>{{ Facts.state }}</td>
+<td>{{ Facts.town }}</td>
+<td>{{ Facts.date }}</td>
+<td>{{ Facts.event }}</td>
+<td><a href="{% url 'weather_details' Facts.id  %}">Details {{ Facts.id }}</a></td>
+</tr>
+
+{% endfor %}
+</table>
+{% endblock %}

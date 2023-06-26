@@ -1,0 +1,321 @@
+
+/*=====================================================
+    GENERAL STYLING
+==========================================================================*/
+html {
+    background-color: darkblue;
+}
+.main {
+    background-image: linear-gradient(#213e4a, darkblue);
+    color: white;
+}
+h1, h2, h3, h4, h5 {
+    margin-left: 40px;
+}
+p {
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+/*=============================================================
+    CAROUSEL CUSTOM STYLING (BOOTSTRAP)
+=====================================================================================*/
+#carouselExampleCaptions {
+    width: 450px;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 3px;
+    margin-bottom: 090px;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+}
+.hints-caption {
+    color: black;
+}
+
+/*=================================================
+    NAVBAR STYLING
+====================================================================*/
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #213e4a;
+}
+
+ul.topnav li {
+    float: left;
+}
+/* Style the links inside the list items */
+.navbar_item {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.active, .navbar_item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+    background-color: darkblue;
+    color: white;
+    font-weight: 900
+}
+ul.topnav li a:focus {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+    background-color: lightblue;
+    color: black;
+    font-weight: 900
+}
+
+.center {
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+/*========================================================
+    Study App Forms
+==========================================================*/
+
+.form-container {
+    margin: 0 auto;
+    width: 50%;
+    height: 60%;
+    background: #213e4a;
+    color: white;
+    border: 2px solid blue;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* form-container for API form */
+.api-container {
+     margin: 0 auto;
+    width: 50%;
+    background: #213e4a;
+    color: white;
+    border: 2px solid blue;
+    border-radius: 10px;
+}
+
+.api-container label, .api-container input, .api-container p {
+    display: block;
+    margin-left: 40px;
+}
+.messages {
+    font-weight: 900;
+    color: red;
+}
+.api-container input[type="submit"] {
+    margin-left: 40px;
+    width: 8%;
+    background: #213e4a;
+    color: lightblue;
+    border: 2px solid lightblue;
+}
+#end {
+    margin-bottom: 30px;
+}
+.api-container input[type="submit"]:hover {
+    background: blue;
+    color: white;
+    border: 2px solid white;
+    font-weight: 900;
+    width: 10%;
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+}
+
+.form-object {
+      display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+.form-object label {
+    margin-right: 40%;
+}
+
+input[type="email"] {
+    margin-left: 20%
+}
+.di_form {
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+}
+.di_form label {
+    margin-right: 10px;
+    margin-left: 0;
+}
+.di_form input {
+    margin-left: 10%;
+}
+.di_form select {
+    margin-left: 8%;
+}
+.di_form textarea {
+    margin-left: 18.9%;
+}
+
+input[type="password"] {
+    margin-left: 4%;
+}
+.buttons {
+    margin-top: 30px;
+}
+
+button[value="Delete"], button[name="Members"], button[name="Back"], button[value="Create"], button[value="Cancel"] {
+	flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 100px; /* button size */
+    margin: 2% 2% 2% 2%;
+    color: white;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: black;
+}
+button[name="Members"], button[name="Back"], button[value="Create"], button[value="Cancel"]:hover {
+    background-color: darkgray;
+    color: black;
+    font-weight: 900;
+    border: 2px solid darkblue;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+button[value="Delete"]:hover {
+    background: red;
+    border: 2px solid white
+    color: white;
+    font-weight: 900;
+}
+
+input[type="submit"] {
+    flex-grow: 1;
+    width: 10%;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    color: white;
+    padding: 9px 0px 9px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+input[type="submit"]:hover {
+    background-color: blue;
+    color: white;
+    font-weight: 900;
+    border: 2px solid darkblue;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Database Container on Members Page */
+.db-container {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: 200px;
+    align-items: center;
+    font-size: 15pt;
+    font-weight: 500;
+}
+
+/*=============================================================
+    MEMBERS INFO TABLE
+=================================================================== */
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+td, th {
+    border: 2px solid white;
+    padding: 0 20px 0 20px;
+}
+
+th {
+    background: darkblue;
+    font-weight: 900;
+}
+
+/*======================================================================
+    FOCUS TIME STYLING
+==============================================================================================*/
+.page-container {
+    display: flex;
+}
+
+.tips-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Side Navbar Section */
+.sidenav-container {
+    width: 30%;
+    position: fixed;
+    display: block;
+    margin-left: 78%;
+}
+.sidenav {
+    list-style-type: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

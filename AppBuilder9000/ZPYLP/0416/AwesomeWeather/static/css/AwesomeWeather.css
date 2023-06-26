@@ -1,0 +1,23 @@
+
+
+form {
+    margin: 10px;
+    padding: 5px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: goldenrod;
+}
+
+
+p {
+  font-family: Arial, Helvetica;
+  color: black;
+
+}

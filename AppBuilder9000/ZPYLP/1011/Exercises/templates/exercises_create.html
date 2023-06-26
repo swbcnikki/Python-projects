@@ -1,0 +1,27 @@
+{% extends "exercises_base.html" %}
+
+{% block title %}Exercises{% endblock %}
+
+{% block header %}Create a new workout:{% endblock %}
+
+{% block content %}
+
+<div class="exercises_names">
+    <!--action calling create record for dB-->
+    <form method="POST" action="{% url 'exercises_create' %}">
+        <div class="frmObject_container">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <!--as paragraph-->
+            {{ form.as_p }}
+        </div>
+        <div class="frmBtn_container">
+            <!--input goes to action-->
+            <input type="submit" class="btn" value="Create New Exercise" name="Save_Item">
+            <a href="{% url 'exercises_names' %}"><button type="button" class="btn" value="Cancel">Cancel</button></a>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

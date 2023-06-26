@@ -1,0 +1,170 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+{% block body_id %}body_API{% endblock %}
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+
+<header class="page_header">
+    <h1>{{ musician.name }}</h1>
+</header>
+
+
+{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}
+
+<!--EDIT & DELETE BUTTONS BAND-->
+<div class="d-flex justify-content-end">
+    <a data-toggle="modal" data-target="#confirm_save">
+        <i class="far fa-save big-icon icon-dark"></i>
+    </a>
+</div>
+
+
+<!--DETAILS TABLE-->
+<table class="table">
+    <tr>
+        <td class=" w-header" >Name</td>
+        <td class="w-center">{% if musician.sort_name %}{{ musician.sort_name }}{% else %}{{ musician.name }}{% endif %}</td>
+        <td class="w-image" rowspan="6" ><img class="portret" src="{{ image_urls.0 }}"><br>{{ image_url.o }}</td>
+    </tr>
+    <tr>
+        <td class="  " scope="row">Type</td>
+        <td>{{ musician.type }}{% if musician.gender %}, {{ musician.gender }}{% endif %}</td>
+    </tr>
+    <tr>
+        <td class="  " scope="row">Disambiguation</td>
+        <td>{{ musician.disambiguation }}</td>
+    </tr>
+    <tr>
+        <td class="  " scope="row">Life</td>
+        <td>{{ musician.life_begin }} - {{ musician.life_end }}</td>
+    </tr>
+
+    {# Don't display the Works section if it is empty #}
+    {% if catalogues %}
+        <tr>
+            <td class="  " scope="row">Catalogues</td>
+            <td>
+                {% for catalogue in catalogues %}
+
+                    {{ catalogue.title }}<br>
+
+                <!--The nested table below is for showing compositions from the catalogue-->
+<!--                <table class="nested-table">-->
+<!--                       <thead class="thead-inverse">-->
+<!--                            <tr>-->
+<!--                                <th>#</th>-->
+<!--                                <th>Title</th>-->
+
+<!--                            </tr>-->
+<!--                        </thead>-->
+<!--                          <tbody>-->
+<!--                            {% for composition in catalogue.compositions %}-->
+<!--                                <tr>-->
+<!--                                    <td>-->
+<!--                                        {{ composition.opus }}-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        {{ composition.title }}-->
+<!--                                    </td>-->
+
+<!--                                </tr>-->
+<!--                            {% endfor %}-->
+
+<!--                        </tbody>-->
+<!--                    </table>-->
+<!--                    <br>-->
+<!--                -->
+                {% endfor %}
+            </td>
+        </tr>
+
+    {% endif %}
+
+    {# Don't display the Recordings section if it is empty #}
+    {% if recordings %}
+        <tr>
+            <td class="  " scope="row">Recordings</td>
+            <td>
+                <table class="nested-table">
+                   <thead class="thead-inverse">
+                        <tr>
+                            <th>Title</th>
+                            <th>Disambiguation</th>
+                            <th>Length</th>
+
+                        </tr>
+                    </thead>
+                      <tbody>
+                        {% for recording in recordings %}
+                            <tr>
+                                <td>
+                                    {{ recording.title }}
+                                </td>
+                                <td>
+                                    {{ recording.disambiguation }}
+                                </td>
+                                <td>
+                                    {{ recording.length }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                <form id="page_number" method="POST" action="{% url 'ClassicalMusic_search_details_musician' musician.MBID  %}">
+					{% csrf_token %}
+					<label class="page_label" for="page">Number of pages: {{ pages }}. Select page: </label>
+                    <input type="number" id="page" name="page" min="1" max="{{ pages }}" required value="{{ page }}" onchange="page_number_validate()">
+				</form>
+
+
+            </td>
+        </tr>
+    {% endif %}
+
+</table>
+
+<!--CONFIRM SAVE MODAL -->
+<div class="modal" id="confirm_save">
+    <div class="modal-dialog">
+        <form method="POST" action="{% url 'ClassicalMusic_add_musician' %}">
+            {% csrf_token %}
+
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Save to database</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    {{ form.non_field_errors }}
+                    {{ form.as_p }}
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-custom-color" >Save</button>
+                    <button type="button" class="btn btn-custom-color" data-dismiss="modal">Cancel</button>
+                </div>
+
+
+            </div>
+        </form>
+
+  </div>
+</div>
+
+
+{% endblock %}
+
+

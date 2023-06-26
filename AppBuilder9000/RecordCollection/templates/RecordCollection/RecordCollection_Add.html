@@ -1,0 +1,64 @@
+
+{% extends "RecordCollection/RecordCollection_base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Add to Your Collection {% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+
+<div class="recordscard card text-white text-center" style="max-width: 69rem;">
+    <h1 class="addh1">Add an Album</h1>
+<div class="recordsform form-group form-centered w-50 mx-auto">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6 mb-0">
+            {{ form.artistFN|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-6 mb-0">
+            {{ form.artistLN|as_crispy_field }}
+          </div>
+        </div>
+        {{ form.title|as_crispy_field }}
+        <div class="form-row">
+          <div class="form-group col-md-4 mb-0">
+            {{ form.format|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-4 mb-0">
+            {{ form.quality|as_crispy_field }}
+          </div>
+          <div class="form-group col-md-4 mb-0">
+            {{ form.rating|as_crispy_field }}
+          </div>
+        </div>
+        {{ form.comments|as_crispy_field }}
+        <button type="submit" class="recordsbtn btn btn-dark">Add Album</button>
+        <a href="{% url 'records_home' %}" class="recordsbtn btn btn-dark">Home</a>
+    </form>
+</div>
+</div>
+
+
+
+
+<!--
+<div id="form-container" class="form-group form-centered w-50 mx-auto">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    {{ form|crispy }}
+                </div>
+            </div>
+            <button type="submit" class="recordsbtn btn btn-dark px-3 my-4">Add Album</button>
+            <a href="{% url 'records_home' %}" class="recordsbtn btn btn-dark">Home</a>
+        </form>
+</div>
+-->
+
+{% endblock %}
+

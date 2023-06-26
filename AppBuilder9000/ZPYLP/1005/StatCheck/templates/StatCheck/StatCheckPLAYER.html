@@ -1,0 +1,16 @@
+{% extends "StatCheck/StatCheckBASE.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<form method="POST" action="{% url 'StatCheckPLAYER' %}">
+{% csrf_token %}
+{{ playerForm|crispy }}
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Submit Player</button>
+        </div>
+</form>
+{% endblock %}

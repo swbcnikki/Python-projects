@@ -1,0 +1,17 @@
+{% extends "GrandmasRecipes/GrandmasRecipes_base.html" %}
+{% load static %}
+
+{% block title %}Grandmas Recipe Collection{% endblock %}
+
+{% block header %}<h4>Add to the Collection!</h4>{% endblock %}
+
+{% block content %}
+  <!-- Creates the form for user input-->
+  <div id="form-container" >
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Create Memory</button>
+    </form>
+  </div>
+{% endblock %}

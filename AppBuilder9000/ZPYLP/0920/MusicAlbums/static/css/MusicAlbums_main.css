@@ -1,0 +1,24 @@
+body {
+    background-image: url('/static/images/Background.jpg');
+    background-size: cover;
+}
+
+.displaylist {
+    color: white;
+    text-align: center;
+}
+
+.addform {
+    color: white;
+    text-align: center;
+}
+
+.albumdetails {
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}

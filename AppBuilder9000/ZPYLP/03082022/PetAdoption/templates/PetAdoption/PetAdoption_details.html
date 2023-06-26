@@ -1,0 +1,32 @@
+{% extends "PetAdoption_base.html" %}
+{% load static %}
+
+{% block title %}Animal Details{% endblock %}
+
+{% block header %}Animal Details{% endblock %}
+
+{% block content %}
+<div class="row min-vw-50 justify-content-md-center">
+    <div class="col-sm-6">
+        <div class="card text-center">
+          <div class="card-header">
+              ADOPT ME!
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ details.name|capfirst }}</h5>
+            <img class="card-img-top" src="../../static/images/allanimals.jpeg" alt="allanimals">
+            <p class="card-text">{{ details.description }}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Breed: {{ details.breed }}</li>
+                    <li class="list-group-item">Color: {{ details.color }}</li>
+                    <li class="list-group-item">Weight: {{ details.weight }} lbs</li>
+                    <li class="list-group-item">Sex: {{ details.sex }}</li>
+                </ul>
+          </div>
+          <div class="card-footer text-muted">
+            {{ details.species }}
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "WorkoutEquipment/WorkoutEquipBase.html" %}
+
+{% block title %} Workout Equipment {% endblock %}
+
+{% block header %}Add New Item: {% endblock %}
+
+{% block content %}
+
+<div class="admin_panel">
+    <form method="POST" action="{% url 'workout_equip_create' %}">
+        <div class ='formObject_container'>
+            <!-- Cross Site Request Forgery (csrf_token) protection -->
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_p }}
+        </div>
+        <div class="frmBtn_container">
+            <input type="submit" class="btn" value="Add New Item" name="Save_Item">
+            <a href="{% url 'workout_equip_console' %}"><button type="button" class=btn value='Cancel'>Cancel</button></a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

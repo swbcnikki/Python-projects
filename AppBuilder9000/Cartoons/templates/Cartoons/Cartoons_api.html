@@ -1,0 +1,35 @@
+{% extends "Cartoons/Cartoons_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page displays a list of the information that was inputted on the create page
+{% endcomment %}
+
+<div class="jumbotron jumbotron-fluid bg-primary text-light text-center">
+    <h1 class="display-4">Oxford Dictionary</h1>
+    <br>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="word_id" placeholder="Search Dictionary..." class="form-control w-50 mx-auto"><br>
+            <input type="submit" value="Search" class="btn btn-success font-weight-bold">
+        </form>
+    </div>
+    <hr class="my-4">
+    <div class="card w-50 mx-auto">
+        <div class="card-header bg-warning">
+            <h2 class="card-text">{{ value.capitalize }}<br></h2>
+        </div>
+        <div class="card-body bg-success">
+            <h3 class="card-text">{{ definition.0 }}</h3>
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <a class="btn btn-danger text-light btn-md font-weight-bold"  href="{% url 'Cartoons_definitions' %}" role="button">View previously searched words</a>
+    </div>
+</div>
+
+
+{% endblock %}

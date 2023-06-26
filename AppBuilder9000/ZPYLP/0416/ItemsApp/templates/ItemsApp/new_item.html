@@ -1,0 +1,20 @@
+{% extends "ItemsApp/base.html" %}
+
+{% block title %}Add Item{% endblock %}
+
+{% block content %}
+
+    <div class="item_panel">
+        <form name="item_form" method="POST" action="">
+            <table>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                {{form.as_table}}
+            </table>
+            <div class="frmBtn_container">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

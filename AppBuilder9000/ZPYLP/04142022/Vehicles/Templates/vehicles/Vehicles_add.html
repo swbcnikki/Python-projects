@@ -1,0 +1,23 @@
+{% extends "vehicles/Vehicles_base.html" %}
+
+{% load static %}
+
+{% block title %} Vehicles {% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block header %} <h1>Add Vehicles Here!</h1> {% endblock %}
+
+{% block content %}
+
+    <div id="form-container" class="table-responsive table-sm mx-auto" style= "padding-left: 582px; padding-right: 582px; padding-top: 90px;">
+        <form method="post" action="">
+            {% csrf_token %}
+                <table id="table" class="table table-secondary table-bordered table-hover text-center">
+                    {{ form.as_table }}
+                </table>
+            <br>
+            <button type="submit" class="btn btn-info btn-lg btn-block w-50 mx-auto">Add to Vehicles</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "Formula1/Formula1_base.html" %}
+
+{% block title %}Formula 1{% endblock %}
+
+{% block header %}Driver Results{% endblock %}
+
+{% block content %}
+
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center col-1">#</th>
+                <th scope="col" class="text-center col-4">Driver</th>
+                <th scope="col" class="text-center col-4">Team</th>
+                <th scope="col" class="text-center col-3">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%  for key, value in drivers_sorted.items %}
+
+            <tr>
+                <td scope="row" class="text-center">{{ forloop.counter }}</td>
+                <td class="text-center"><a href="{% url 'driver_details' value=key %}">{{ key }}</a></td>
+                {% for key2, value2 in value.items %}
+                    {% if forloop.counter == 1 %}
+                        <td class="text-center"><a href="{% url 'team_details' value=value2 %}">{{ value2 }}</a></td>
+                    {% else %}
+                        <td class="text-center">{{ value2 }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

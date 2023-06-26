@@ -1,0 +1,8 @@
+{% load static %}
+
+<!-- This displays the left side bar with trail links -->
+<ul class="side_bar">
+    {% for trail in trails %}
+      <li class="list_item"><a href="{% url 'details' trail.id %}"> {{ trail.name | title }} </a></li>
+    {% endfor %}
+</ul>

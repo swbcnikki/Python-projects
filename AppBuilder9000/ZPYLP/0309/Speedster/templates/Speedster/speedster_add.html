@@ -1,0 +1,14 @@
+{% extends 'Speedster/speedster_base.html' %}
+
+{% load static %}
+{% block content %}
+    <h3>ADD VEHICLE</h3>
+<div id="account-form">
+		<form method="POST">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button id="new-Vehicle-button" type="submit" name="Save_Account">Add Vehicle</button>
+		</form>
+		<br>
+	</div>
+{% endblock %}

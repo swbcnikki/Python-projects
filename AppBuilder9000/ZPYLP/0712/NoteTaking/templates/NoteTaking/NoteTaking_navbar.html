@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse fixed-top" id="sidebar" role="navigation">
+    <ul class="nav sidebar-nav">
+
+        <!-- Header for Sidebar -->
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <p>NoteTaking</p>
+            </div>
+        </div>
+
+        <li>
+            <a href="{% url 'NoteTaking_home' %}">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'NoteTaking_addnotes' %}">
+                Add Notes
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'NoteTaking_addcategories' %}">
+                Add Categories
+            </a>
+        </li>
+    </ul>
+</nav>

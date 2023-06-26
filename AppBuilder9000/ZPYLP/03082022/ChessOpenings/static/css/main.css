@@ -1,0 +1,18 @@
+.chess_details {
+    margin: 3em;
+
+
+
+}
+.details_heading {
+    padding: 1em;
+}
+.details_blockquote {
+
+    word-break: break-all;
+    padding: 1em;
+    font-size: 1.2em;
+}
+.startBtn {
+    align: left;
+}

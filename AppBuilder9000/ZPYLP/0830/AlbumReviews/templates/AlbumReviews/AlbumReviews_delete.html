@@ -1,0 +1,13 @@
+{% extends 'AlbumReviews/AlbumReviews_base.html' %}
+	{% block title%}Delete Album?{% endblock %}
+
+	{% block content %}
+		<form class="delete_confirm">
+			{% csrf_token %}
+			<h1>{{ item.Name }} by {{ item.Artist }} will be deleted. Are you sure?</h1>
+			<div class="delete_btn_container">
+				<button type="submit" formmethod="POST">Yes</button>
+				<a class="button" href="{% url 'AlbumReviews_details' item.id %}">No</a>
+			</div>
+		</form>
+	{% endblock %}

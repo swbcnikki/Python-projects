@@ -1,0 +1,317 @@
+/*******************************************************************************
+*                               GENERAL STYLES                                 *
+*******************************************************************************/
+
+body {
+    background-image: url("../images/shipsea.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgb(73, 64, 68);
+}
+
+p {
+    color: beige;
+    font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+    text-shadow: 2px 2px black;
+    text-shadow: -2px -2px black;
+    font-weight: bold;
+}
+
+h1, h2 {
+    font-size: 300%;
+    text-align: center;
+    color: beige;
+    text-shadow: 4px 4px black;
+    font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.lyricsDiv {
+    color: beige;
+    font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+    text-shadow: 2px 2px black;
+    text-shadow: -2px -2px black;
+    font-weight: bold;
+    white-space: break-spaces;
+}
+
+/*******************************************************************************
+*                               NAVBAR STYLES                                  *
+*******************************************************************************/
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #111;
+}
+
+/*******************************************************************************
+*                                FORM STYLES                                   *
+*******************************************************************************/
+
+input {
+    color: black;
+    font-family: Helvetica, sans-serif;
+    font-shadow: none;
+}
+
+.btn {
+	flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 150px; /* button size */
+    margin: 2% 2% 2% 2%;
+    color: black;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #355664;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+input[type="submit"] {
+    flex-grow: 1;
+    width: 10%;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    color: black;
+    padding: 9px 0px 9px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #355664;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+select {
+	padding: 4px 10px;
+	width: 40%;
+	display: inline-block;
+	margin: 1% 0% 0 1%;
+	border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #E8E8E8 inset;
+}
+
+input, textarea {
+    width: 100%;
+    margin: 1% 0 0 0;
+    padding: 1% 0 2% 1%;
+    line-height: 18px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 2px solid silver;
+}
+
+label {
+	display: inline-block;
+    width: 95%;
+    text-align: left;
+    margin: 1% 0 0 0;
+    color: beige;
+    line-height: 18px;
+    font-size: 20px;
+    font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+}
+
+.ShantiesForm {
+    Display: Flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ShantiesForm label {
+    font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+
+
+/*******************************************************************************
+*                               SONG SELECTOR                                  *
+*******************************************************************************/
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .dropbtn {
+    background-color: slategray;
+    color: beige;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd}
+
+  /* Show the dropdown menu -- JS */
+  .show {display:block;}
+
+
+/*******************************************************************************
+*                                 GRIDDING                                     *
+*******************************************************************************/
+
+.grid {
+    display: grid;
+    grid-template-areas:
+        'left left left left right right';
+    margin-left: 20%;
+    margin-right: 10%;
+}
+
+.gridMain {
+    grid-area: left;
+}
+
+.gridRight {
+    grid-area: right;
+}
+
+/*******************************************************************************
+*                            DISPLAY TABLE STYLES                              *
+*******************************************************************************/
+
+table, th, td {
+    border: 2px solid silver;
+    background-color: darkslategray;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+td {
+    color: beige;
+    font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+}
+
+th {
+    color: beige;
+    font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+/*******************************************************************************
+*                               EMBED FRAME                                    *
+*******************************************************************************/
+
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*******************************************************************************
+*                          FOOTER NAV BAR STYLES                               *
+*******************************************************************************/
+
+.footbar {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.footbar li {
+    float: left;
+}
+
+.footbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.footbar li a:hover {
+    background-color: #111;
+}
+
+.footbar .active {
+    background-color: darkslategray;

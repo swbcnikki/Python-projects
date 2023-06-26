@@ -1,0 +1,16 @@
+{% extends 'Speedster/speedster_base.html' %}
+{% load static %}
+{% block title %}Speedster{% endblock %}
+
+
+{% block content %}
+
+<ul>
+    <div class="index">
+        {% for cars in cars %}
+            <a href="{% url 'Speedster_details' car.id %}">{{ cars.brand }}</a>
+        {% endfor %}
+    </div>
+</ul>
+
+{% endblock %}

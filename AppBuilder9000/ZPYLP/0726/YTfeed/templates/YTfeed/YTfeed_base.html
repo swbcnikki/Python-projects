@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'YTfeed/CSS/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&family=Oswald&family=Share+Tech+Mono&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="backdrop">
+<!--Navbar-->
+<div >
+    <div class="navbar">
+        <a href="{% url 'YTfeed-home' %}">Home</a>
+        <a href="{% url 'Add-Youtubers' %}">Add Youtubers</a>
+        <a href="{% url 'List-Youtubers' %}">Youtubers List</a>
+    </div>
+</div>
+<!--End Navbar-->
+
+<!--Body content -->
+<div class="content">
+{% block content %} {% endblock %}
+</div>
+<!--End content-->
+
+<!--Footer-->
+<!--End Footer-->
+
+</body>
+</html>

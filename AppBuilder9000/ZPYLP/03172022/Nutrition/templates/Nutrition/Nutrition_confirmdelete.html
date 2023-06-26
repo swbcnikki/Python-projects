@@ -1,0 +1,26 @@
+{% extends 'Nutrition/Nutrition_base.html' %}
+{% load static %}
+
+{% block title %}Confirm Delete{% endblock %}
+
+{% block header %}Delete Confirmation:{% endblock %}
+
+{% block content %}
+
+    <form method="POST" action="."><!--saying w/e method got you to this page, go back to that one and
+                                    POST the data...the method that got us here was delete() ... the
+                                    delete method specifies that with a POST, it will delete the selection
+                                    and then return the user to admin_console aka products_page-->
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you would like to delete "{{ item.name }}" from the database?</p>
+
+        {{ item.as_p }}<!--if any other info we wanted to paint, can paint here-->
+
+        <input type="submit" value="Yes, delete it!" class="btn btn-danger"><!--calls the action in form tag-->
+        <a href="{% url 'display_db' %}"><button class="btn btn-primary" type="button">Cancel</button></a>
+        <!--takes user back to displaydb.html-->
+
+    </form>
+
+{% endblock %}

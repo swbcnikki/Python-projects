@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="{% static 'Dallas/css/Dallas.css' %}">
+		<title>{% block title%} Dallas, Texas {% endblock %}</title>
+	</head>
+
+
+    <!-- NAVBAR -->
+		<header>
+			<div class="Dropdown-list">
+				<div class="btn-group">
+					<button type="button">Menu</button>
+					<div class="dropdown-menu">
+						<a href="{% url 'home' %}" class="dropdown-item">HOME</a>
+						<a href="{% url 'Dallas_raffle' %}" class="dropdown-item">RAFFLE CONTEST</a>
+						<a href="" class="dropdown-item">SPORTS</a>
+						<a href="" class="dropdown-item">FOOD</a>
+					</div>
+				</div>
+			</div>
+		</header>
+    <!-- END NAVBAR -->
+
+	<body id="body">
+		<div class="content-container">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+        <!-- FOOTER -->
+		<section id="block-footer">
+			<p id="footer-right"><a href="#">Terms</a>|<a href="#">Privacy</a></p>
+			<p id="footer-left">&copy;2022 - Visit Dallas. All Rights Reserved.</p>
+		</section>
+        <!-- END FOOTER -->
+</html>

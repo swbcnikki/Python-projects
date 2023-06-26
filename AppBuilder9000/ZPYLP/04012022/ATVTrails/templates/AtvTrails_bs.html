@@ -1,0 +1,24 @@
+{% extends "AtvTrails_base.html" %}
+
+{% block title %}Scraped Info{% endblock %}
+
+{% block header %}<center>Trending Trails</center>{% endblock %}
+
+{% block content %}
+<div style="height:500px;width:500px;overflow:auto;background-color:green;color:white;scrollbar-base-color:gold;font-family:sans-serif;padding:10px;">
+    <table class="table-trending">
+        <tr colspan="2">
+            <th>Trending Trails</th>
+            <th>Distance</th>
+        </tr>
+        <tr>
+            {% for trails, distances in zipped_list %}
+            <td>{{ trails }}</td>
+            <td>{{ distances }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

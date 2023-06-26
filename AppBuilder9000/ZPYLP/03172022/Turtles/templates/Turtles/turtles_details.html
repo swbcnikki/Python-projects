@@ -1,0 +1,36 @@
+{% extends "Turtles/turtles_base.html" %}
+
+{% block title %}Turtles!{% endblock %}
+
+{% block header %}Choose your new buddy!{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <table class="table table-hover table-dark", class="table table-bordered ">
+        <thead>
+        <!-- This is the data to be displayed in the table header -->
+            <tr>
+              <th scope="col" data-field="name">Name</th>
+              <th scope="col" data-field="species">Species</th>
+              <th scope="col" data-field="description">Description</th>
+              <th scope="col" data-field="rescue_cost">Rescue Cost</th>
+              <th scope="col" data-field="locality">Region Found</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <!-- Calls all data for specific rescue in the database. -->
+              <td>{{ details.name }}</td>
+              <td>{{ details.species }}</td>
+              <td>{{ details.description }}</td>
+              <td>{{ details.rescue_cost }}</td>
+              <td>{{ details.locality }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'turtles_edit' details.pk %}"><button type="button" class="btn btn-dark btn-lg w-25 mx-auto">Edit</button></a>
+    <a href="{% url 'turtles_delete' details.pk %}"><button type="button" class="btn btn-dark btn-lg w-25 mx-auto">Delete</button></a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "RecordCollection/RecordCollection_base.html" %}
+
+{% load static %}
+
+{% block title %} View Your Collection {% endblock %}
+
+
+{% block content %}
+<div class="recordscard card-body card text-white text-center" style="max-width: 69rem;">
+        <h1 class="addh1">View Collection</h1>
+        <div class="recordsform table-responsive w-75 mx-auto">
+
+            <table id="table" class="table table-hover text-center sortable">
+                <thead>
+                    <tr>
+                        <th scope="col" data-field="artistFN" class="w-25">Artist</th>
+                        <th scope="col" data-field="title" class="w-25">Album</th>
+                        <th scope="col" data-field="rating" class="w-25">Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for item in records_db %} <!-- iterate through database, output results to table -->
+                    <tr>
+                      <td> {{ item.artistFN }} {{ item.artistLN }}</td>
+                      <td> <a href="{% url 'records_details' item.id %}">{{ item.title }}</td>
+                      <td> {{ item.rating }}</td>
+                    </tr>
+                  {% empty %}
+                    <h1 class="addh1">Collection is currently empty.</h1>
+                  {% endfor %}
+                </tbody>
+            </table>
+            <a href="{% url 'records_home' %}" class="recordsbtn btn btn-dark">Home</a>
+        </div>
+</div>
+
+{% endblock %}

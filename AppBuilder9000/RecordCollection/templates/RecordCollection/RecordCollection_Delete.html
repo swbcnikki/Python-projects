@@ -1,0 +1,24 @@
+{% extends "RecordCollection/RecordCollection_base.html" %}
+
+{% load static %}
+
+{% block title %} Delete an Album {% endblock %}
+
+
+
+{% block content %}
+
+<div class="recordscard card text-white text-center" style="max-width: 69rem;">
+    <h1 class="addh1">Delete {{ item.artistFN }} {{ item.artistLN }}  -  {{ item.title }}? </h1>
+    <form method="post">
+    {% csrf_token %}
+
+    <input type="submit" value="Yes" class="recordsbtn btn btn-dark">
+    <a href="{% url 'records_view' %}" class="recordsbtn btn btn-dark">Back to Collection</a>
+</form>
+
+</div>
+
+
+
+{% endblock %}

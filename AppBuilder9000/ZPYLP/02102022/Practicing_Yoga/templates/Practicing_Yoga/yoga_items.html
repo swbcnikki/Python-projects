@@ -1,0 +1,19 @@
+{% extends "yoga_base.html"%}
+
+{% block title %} Yoga Items{% endblock %}
+{% block header %} List of some popular poses. {% endblock %}
+
+
+{% block content%}
+
+{% for yoga in obj %}
+<ul>
+    <li> <a href="{% url 'yoga_details' yoga.id %}"> {{ yoga.name }}</a> </li>
+</ul>
+
+{% endfor %}
+
+
+
+
+{% endblock %}

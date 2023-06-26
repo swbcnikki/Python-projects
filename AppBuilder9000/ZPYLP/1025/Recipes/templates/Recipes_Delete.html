@@ -1,0 +1,26 @@
+{% extends "Recipes_Base.html" %}
+{% load static %}
+{% block title %}Delete Recipes{% endblock %}
+
+{% block header %}
+                <h1>Delete Recipes</h1>
+                <p>Get rid of unwanted Recipes</p>
+{% endblock %}
+
+{% block content %}
+
+ <form name="RecipeForm" method="POST">
+
+    <table>
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_table }}
+    <table>
+    <button id="Deletebtn" type="submit" onclick="return confirm('Do you wish to delete this recipe?')">DELETE</button>
+ </form>
+
+
+
+
+
+{% endblock %}

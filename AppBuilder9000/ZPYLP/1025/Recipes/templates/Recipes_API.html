@@ -1,0 +1,46 @@
+{% extends "Recipes_Base.html" %}
+{% load static %}
+{% block title %}Recipes{% endblock %}
+
+{% block header %}
+                <h1>Recipes API</h1>
+                <p></p>
+{% endblock %}
+
+{% block content %}
+
+ <form name="APIForm" method="POST">
+
+    <table>
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_table }}
+    <table>
+ </form>
+
+
+
+    <table>
+    <thead>
+        <tr id="">
+            <th>Title</th>
+            <th>Cooking Time</th>
+            <th>Servings</th>
+            <th>URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in apidata.results %}
+        <tr id="">
+            <td>{{ recipe.title }}</td>
+            <td>{{ recipe.readyInMinutes }}</td>
+            <td>{{ recipe.servings }}</td>
+            <td><a href="{{ recipe.sourceUrl }}">click me</td>
+        </tr>
+
+    {% endfor %}
+
+
+
+
+{% endblock %}

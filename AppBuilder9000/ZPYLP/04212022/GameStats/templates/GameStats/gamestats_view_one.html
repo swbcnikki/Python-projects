@@ -1,0 +1,34 @@
+{% extends "gamestats_base.html" %}
+
+{% load static %}
+
+{% block title %} Game Reviews {% endblock %}
+
+{% block header %} Welcome to Shadow Game Reviews {% endblock %}
+<!--- Paragraph on the home page of the app -->
+{% block content %}
+
+<div class="container-lg bg-dark p-5 neu-jumbo">
+  <img class="scrapeTop" src="{{ image }}" alt="image">
+  <h2 class="display-4 text-white scrapeTop">{{ name }} </h2>
+  <div id="favoriteButton">
+    <form id="favorite" method="POST">
+    {% csrf_token %}
+    {% if status %}
+    <input type="submit" class="btn btn-outline-secondary neu-button topFavorite" value="Remove">
+    {% else %}
+    <input type="submit" class="btn btn-outline-secondary neu-button topFavorite" value="Favorite">
+    {% endif %}
+    </form>
+  </div>
+
+
+  <p class="lead text-white">This game released on {{ date }} and scored a {{ rating }}/100 on Metacritic.</p>
+  {% if summary %}
+  <hr class="my-4 text-white">
+  <h3 class="display-6 text-white">About</h3>
+  <p class="text-white">{{ summary }}</p>
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'NoteTaking/NoteTaking_base.html' %}
+
+{% block title %} NoteTaking - Details {% endblock title %}
+
+
+{% block content %}
+    <div class="notetaking_page_container">
+        <div class="notetaking_page_title">
+            <h1>Details</h1>
+        </div>
+        <hr>
+        <div class="list_notes">
+            <form method="POST" action="../Details/">
+                <table>
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.as_table }}
+                </table>
+                <hr/>
+                <div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                      Update Note
+                    </button> -
+                    {% include "NoteTaking/NoteTaking_confirmedit.html" %}
+                    <button class="btn btn-danger">
+                        <a href="../{{ form.pk }}Delete" style="color: white;">
+                            Delete Note
+                        </a>
+                    </button> -
+                    <a href="{% url 'NoteTaking_home' %}">
+                        <button type="button" class="btn btn-secondary">
+                            Go back
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends "HikingApp/HikingApp_base.html" %}
+
+{% block title %} Hiking Trails {% endblock %}
+
+{% block header %} Trail Details {% endblock %}
+
+{% block content %}
+
+<div class="TrailDetails">
+    <div class="details_container">
+        <!-- Cross site request forgery (csrf_token) protection -->
+        {% csrf_token %}
+        <h1>{{ trails.name }} <a href="{% url 'HikingApp_edit' trails.pk %}"><img src="/static/images/edit_icon.png" class="edit_image"></a></h1>
+        <div class="column1">
+            <span class="details">
+                <h2>Location:</h2>
+                <p>{{ trails.location }}</p>
+            </span>
+            <span class="details">
+                <h2>Length:</h2>
+                <p>{{ trails.miles }} miles</p>
+            </span>
+            <span class="details">
+                <h2>Difficulty:</h2>
+                <p>{{ trails.difficulty }}</p>
+            </span>
+            <span class="details">
+                <h2>Camping Available:</h2>
+                <p>{{ trails.camping|yesno:"Yes,No" }}</p>
+            </span>
+        </div>
+        <div class="column2">
+            <div class="img_wrap">
+                <img src="{{ trails.image }}" class="trail_image" alt="{{ trails.name }}">
+            </div>
+        </div>
+        <div class="bottom_row">
+            <span class="details">
+                <h2>Description:</h2>
+                <p>{{ trails.description }}</p>
+             </span>
+        </div>
+    </div>
+
+    <div>
+        <button type="button" class="details_btn">
+            <a href="{% url 'HikingApp_index' %}">Return</a>
+        </button>
+    </div>
+
+</div>
+
+
+{% endblock %}

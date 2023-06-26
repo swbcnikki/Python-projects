@@ -1,0 +1,94 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_jumbotron.html" %}
+{% load staticfiles %}
+
+
+{% block jumbotron %}
+	<h2>Add Musician</h2>
+
+    <form method="post" class="was-validated">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+
+        <div id="form-part1">
+            {% for field in form.visible_fields|slice:":5" %}
+                {{ field.label }} {{ field }}
+            {% endfor %}
+            <br>
+            <div class="button-container">
+                <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_show_musicians' %}">Cancel</a>
+                <a class="btn btn-custom-color"  onclick="next_form('1')"><i class="fas fa-angle-right big-icon  icon"></i></a>
+<!--                <a class="btn btn-custom-color"  id="next1">Next (event)</a>-->
+            </div>
+        </div>
+
+
+        <div id="form-part2">
+            {% for field in form.visible_fields|slice:"5:" %}
+                {{ field.label }} {{ field }}
+            {% endfor %}
+            <br>
+            <div class="button-container">
+                <a class="btn btn-custom-color"  onclick="previous_form('2')"><i class="fas fa-angle-left big-icon icon"></i></a>
+                <button type="submit" class="btn btn-custom-color">Save</button>
+                <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_show_musicians' %}">Cancel</a>
+            </div>
+        </div>
+
+
+
+        <br><br>
+        <div class="button-container">
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_composition' %}">Composition</a>
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_release' %}">Release</a>
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_role' %}">Role</a>
+        </div>
+    </form>
+
+
+<!--The below shows TEST for every field-->
+<!--    <form method="post" class="was-validated">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.non_field_errors }}-->
+<!--        {% for hidden in form.hidden_fields %}-->
+<!--            {{ hidden }}-->
+<!--        {% endfor %}-->
+<!--        {% for field in form.visible_fields %}-->
+<!--            {% if forloop.counter <= 4 %}-->
+<!--                {{ field.label }} TEST {{ field }}-->
+<!--            {% else %}-->
+<!--                {{ field.label }} TEST {{ field }}-->
+<!--            {% endif %}-->
+
+
+<!--        {% endfor %}-->
+
+<!--        <button type="submit" class="btn btn-custom-color">Save Musician</button>-->
+<!--        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_show_musicians' %}">Cancel</a>-->
+<!--        <br><br>-->
+<!--        <div class="button-container">-->
+<!--            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_composition' %}">Composition</a>-->
+<!--            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_release' %}">Release</a>-->
+<!--            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_role' %}">Role</a>-->
+<!--        </div>-->
+<!--    </form>-->
+
+<!--    <form method="post" class="was-validated">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form.non_field_errors }}-->
+<!--        {{ form.as_p }}-->
+<!--        <button type="submit" class="btn btn-custom-color">Save Musician</button>-->
+<!--        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_show_musicians' %}">Cancel</a>-->
+<!--        <br><br>-->
+<!--        <div class="button-container">-->
+<!--            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_composition' %}">Composition</a>-->
+<!--            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_release' %}">Release</a>-->
+<!--            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_role' %}">Role</a>-->
+<!--        </div>-->
+<!--    </form>-->
+
+{% endblock %}
+
+

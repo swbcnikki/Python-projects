@@ -1,0 +1,74 @@
+{% extends 'HorseApp/HorseApp_Base.html' %}
+{% load static %}
+{%block title%}HorseApp|Archives{%endblock%}
+{%block header%}HorseApp  | The Archives |{%endblock%}
+
+{%block content%}
+<!--viewing area for all data-->
+
+<div class="index-container">
+
+
+    <!--searchbox for index-->
+
+    <!--results/index table-->
+    <div class="row">
+        {% if horse_index_list %}
+        {% for racehorses in horse_index_list %}
+        <div class="column">
+            <table class="index-table">
+
+            <tr>
+                <td><h1><strong>{{ racehorses.horse_name }}</strong></h1></td>
+            </tr>
+            <tr>
+                <td><button class="detail_btn" onclick="myFunction_show()"><i>click to view details</i></button></td>
+            </tr>
+            </table>
+        </div>
+
+        <!--details table for index-->
+        <div class="column" id="hide">
+            <dl class="index-table">
+                <dt>Age:</dt>
+                <dd>{{ racehorses.age }}</dd>
+                <dt>Gender:</dt>
+                <dd>{{ racehorses.gender }}</dd>
+                <dt>Color:</dt>
+                <dd>{{ racehorses.color }}</dd>
+                <dt>Sire:</dt>
+                <dd>{{ racehorses.sire }}</dd>
+                <dt>Dam:</dt>
+                <dd>{{ racehorses.dam }}</dd>
+                <dt>Speed figure</dt>
+                <dd>{{ racehorses.speed_figure }}</dd>
+
+            </dl>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="pagination">
+                    <span class="pages">
+                        {% if search_horseindex %}
+                        {% if horse_index_list.has_previous %}
+                            <a href="?q={{ request.GET.q }}&page=1"> <<  </a>
+                            <a href="?q={{ request.GET.q }}&page={{ horse_index_list.previous_page_number }}">  <  </a>
+                        {% endif %}
+
+                        <span class="current-page">
+                            page {{ horse_index_list.number }} / {{ horse_index_list.paginator.num_pages }}
+                        </span>
+
+                        {% if horse_index_list.has_next %}
+                            <a href="?q={{ request.GET.q }}&page={{ horse_index_list.next_page_number }}">  >   </a>
+                            <a href="?q={{ request.GET.q }}&page={{ horse_index_list.paginator.num_pages }}">  >>  </a>
+                        {% endif %}
+                        {% endif %}
+                    </span>
+                </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+{% block head %}
+	{% include "ClassicalMusic/includes/ClassicalMusic_head.html" %}
+{% endblock %}
+
+
+
+<body id="body_bg_image" class="h-100" >
+	<div class="container justify-content-md-center d-flex h-100"><!--d-flex and h-100 are necessary for vertical center of jumbotron-->
+		<div class="jumbotron my-auto">
+			{% block jumbotron %}{% endblock %}
+		</div>
+	</div>
+
+
+
+
+
+	{% block javascript %}
+    	{% include "ClassicalMusic/includes/ClassicalMusic_script.html" %}
+	{% endblock %}
+
+
+</body>

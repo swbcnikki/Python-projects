@@ -1,0 +1,28 @@
+<!-- Extends from the base html -->
+{% extends "MechKeyboardsApp/Mech_Keyboards_base.html" %}
+
+<!-- Page title -->
+{% block title %}MechKeyboards{% endblock %}
+
+<!-- Page header -->
+{% block header %}
+    <div class="container-lg">
+        <h1>Build Details</h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-text">
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you would like to delete {{ build.username }}'s "{{ build.case }}" from the database?</p>
+
+        {{ build.as_p }}
+
+        <input type="submit" value="Confirm Delete" class="btn">
+        <a href="../build_details/"><button class="btn" type="button">Cancel</button></a>
+    </form>
+</div>
+{% endblock %}

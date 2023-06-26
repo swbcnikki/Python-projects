@@ -1,0 +1,38 @@
+{% extends "IceHockey_base.html" %}
+{% load static %}
+{% block title %}Ice Hockey Details{% endblock %}
+
+{% block header %}Item Details{% endblock %}
+
+{% block content %}
+<div class="container-fluid mx-auto" style="width: 90%">
+    <div class="table-striped w-80 mx-auto mt-5">
+        <table class="table table-info table-bordered text-center">
+            <thead>
+                <tr>
+                    <th scope="col" data-field="first_name" class="w-25">First Name</th>
+                    <th scope="col" data-field="last_name" class="w-25">Last Name</th>
+                    <th scope="col" data-field="favorite_team" class="w-25">Favorite NHL Team</th>
+                    <th scope="col" data-field="favorite_player" class="w-25">Favorite NHL Player</th>
+                </tr>
+            </thead>
+        <tbody>
+            <tr>
+                <td>{{ details.first_name }}</td>
+                <td>{{ details.last_name }}</td>
+                <td>{{ details.favorite_team }}</td>
+                <td>{{ details.favorite_player }}</td>
+            </tr>
+        </tbody>
+    </table>
+        <div class="d-flex mt-5 justify-content-center">
+            <a href="{% url 'IceHockey_edit' details.pk %}"><button type="button" class="btn btn-info btn-lg mr-2">Edit</button></a>
+            <a href="{% url 'IceHockey_delete' details.pk %}"><button type="button" class="btn btn-info btn-lg mr-2">Delete</button></a>
+            <a href="{% url 'IceHockey_scrapeddata' details.pk %}"><button type="button" class="btn btn-info btn-lg mr-2">Scrape Web for Data</button></a>
+            <a href="{% url 'IceHockey_api_page' details.pk %}"><button type="button" class="btn btn-info btn-lg mr-2">API Team Roster Data</button></a>
+            <a href="{% url 'IceHockey_show_favorites' details.pk %}"><button type="button" class="btn btn-info btn-lg mr-2">Show Favorites</button></a>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

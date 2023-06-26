@@ -1,0 +1,127 @@
+/*
+Author: Nathan Saxton
+*/
+
+body {
+    background-image: url("../images/heroability_bg.jpg");
+    background-color: black;
+    background-attachment: fixed;
+    background-position: center;
+    color: yellow;
+    text-align: center;
+    padding: 1% 0;
+}
+
+h1 {
+    line-height: 50px;
+    font-weight: 900;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.navbar {
+    height: 55px;
+    max-height: 340px;
+    margin: 0% auto;
+    display: block;
+    width: 100%;
+    z-index: 100;
+    padding: 0;
+}
+
+.menu {
+    color: #758885;
+    font: bold 12px/18px sans-serif;
+    text-align: center;
+    display: inline;
+    margin: 0% auto;
+    padding: 0;
+    list-style: none;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0% auto;
+    position: relative;
+    padding: 15px 4%;
+}
+
+li {
+    background-color: white;
+    padding: 3px;
+}
+
+.form-container {
+    width: 60%;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0px auto;
+    background-color: rgba(227, 222, 222, .4);
+    box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, .1), 1px 2px 10px 0 rgba(0, 0, 0, .5);
+}
+
+form {
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    padding: 12px 12px;
+    width: 80%;
+    border: 1px solid #808080;
+    margin: 2% auto;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, .6);
+    box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, .3);
+    font-family: 'Raleway', sans-serif;
+}
+
+form label{
+    display: block;
+}
+
+#id_ability_Summary, #id_threat_Level, form input[type="text"]{
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    color: #fff;
+    padding: 2% 1%;
+    width: 80%;
+    border-top: 1px solid #090b0d;
+    border-right: 2px solid #424549;
+    border-bottom: 2px solid #424549;
+    border-left: 1px solid #090b0d;
+    margin: 10px 1em;
+    border-radius: 7px;
+    background: #13161b;
+    box-shadow: inset 0px 3px 0px 0px rgba(5, 5, 5, .15);
+    font-family: 'Raleway', sans-serif;
+}
+
+#id_threat_Level{
+    width: 50%;
+    text-align: center;
+}
+
+.button, .button a {
+    color: rgb(225, 225, 225);
+    cursor: pointer;
+    border: none;
+    font-weight: 900;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    margin: 0px 3%;
+    padding: 7px 0px;
+    width: 22%;
+    font-size: 18px;
+    transition: border-color 0.3s color 0.3s background-color 0.3s;
+    border-radius: 7px;
+    background-color: #797a7b;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .3);
+}
+
+.button:hover, .button a:hover {
+    color: #000;
+    background-color: #8d8e8f;
+    box-shadow: inset 1px 2px 15px 0 rgba(0, 0, 0, .5);
+}

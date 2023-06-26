@@ -1,0 +1,25 @@
+{% extends "DNDCharacters/dnd_characters_base.html" %}
+
+{% block title %}Dungeons and Dragons Characters!{% endblock %}
+
+
+{% block header %} {% endblock %}
+
+{% block content%}
+    <div class="table_container_links">
+        {% if searched %}
+            <h1>You Searched for {{ searched }}</h1>
+            <br/>
+            <table class="table_container_links">
+                {% for character in character %}
+                    <a href="{% url 'show_character' character.id %}"> {{ character }} </a><br/>
+
+                {% endfor %}
+            </table>
+        {% else %}
+            <h1>You did not search for a Character</h1>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

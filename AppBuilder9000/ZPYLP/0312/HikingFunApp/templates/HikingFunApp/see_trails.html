@@ -1,0 +1,24 @@
+{% extends "HikingFunApp/HikingFunApp_base.html" %}
+
+{% block title%} Trails in Seattle {% endblock %}
+
+{% block header %} Trails {% endblock %}
+
+{% block content %}
+
+        <table>
+            <tr>
+                <th> Name </th>
+                <th> Location </th>
+                <th> Roundtrip Miles </th>
+            </tr>
+            {% for trail in trails %}
+                <tr>
+                    <td> - {{ trail.name|lower|title }} </td>
+                    <td> {{ trail.location|lower|title }} </td>
+                    <td> {{ trail.roundtripMiles }} </td>
+                </tr>
+             {% endfor %}}
+        </table>
+		
+{% endblock %}

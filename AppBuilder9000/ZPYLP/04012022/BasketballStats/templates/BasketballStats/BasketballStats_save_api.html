@@ -1,0 +1,32 @@
+{% extends "BasketballStats_base.html" %}
+{% load static %}
+{% block title %} Favorites {% endblock %}
+
+{% block header %}
+    <h1>Add a Favorite Team!</h1>
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron w-50 mx-auto">
+    <div class="container">
+        <h2 class="text-center">Select Your Favorite Teams!</h2>
+        <div class="dropdown text-center">
+            <form method="POST" action="{% url 'basketball_stats_save_favorites' %}">
+                {% csrf_token %}
+                <label for="Teams" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">Choose a Team:</label>
+                <select id="Teams" name="value" class="dropdown-menu">
+                    <option class="dropdown-item">-----------</option>
+                    {% for team in team_names %}
+                    <option class="dropdown-item" value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" name="new_team" class="btn btn-primary btn-lg">
+            </form>
+        </div>
+    </div>
+    <div class="container w-75 text-center">
+        <h1>View Your Favorite Teams:</h1>
+        <a class="btn btn-lg btn-primary btn-block w-50 mx-auto" href="{% url 'basketball_stats_favorites' %}">Your Favorite Teams!</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "Reading/Reading_Base.html" %}
+{% load static %}
+{% block title %} Reading Archive Details {% endblock %}
+
+{% block header %}
+    <h1>Record Details</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <table id="table">
+            <thead>
+                <tr id="th">
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Number of Pages Read</th>
+                    <th>Description of Passage Read</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="td">
+                    <td>{{ details.date }}</td>
+                    <td>{{ details.title }}</td>
+                    <td>{{ details.author }}</td>
+                    <td>{{ details.number_of_pages_read }}</td>
+                    <td>{{ details.description_of_passage_read }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

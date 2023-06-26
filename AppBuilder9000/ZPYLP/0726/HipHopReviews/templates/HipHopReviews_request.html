@@ -1,0 +1,29 @@
+{% extends "HipHopReviews_base.html" %}
+{% load static %}
+
+{% block title %} Request a Review {% endblock %}
+
+{% block header %} {% endblock %}
+
+{% block content %}
+<h1> Submit a Request!</h1>
+<br>
+<h3>Here you can submit a request for one of our <br>
+    staff members to write a Review! Just fill out the following information:<br>
+</h3>
+<br>
+<div class="form">
+    <div class="form2">
+    <form method="POST" align="center">{% csrf_token %}
+        <table class="form3" align="center">
+            <tr colspan="2">
+                {{ form }}
+            </tr>
+        </table>
+        <br>
+        <button class="button" type="submit">Submit</button>
+    </form>
+    </div>
+</div>
+
+{% endblock %}

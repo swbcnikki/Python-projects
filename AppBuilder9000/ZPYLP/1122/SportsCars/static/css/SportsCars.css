@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+}
+
+html {
+    background-color: #FF6400;
+}
+
+body {
+	position: relative;
+	overflow: hidden;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+	padding: 0;
+}
+h1 {
+    color: black;
+    font-family: 'Lobster';
+    text-shadow: 3px 2px 1px rgba(181, 184, 255, 1);
+    margin:auto auto;
+    text-align: center;
+}
+.container {
+    padding: 2px 16px;
+}
+.backgroundImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+/* Float the list items side by side */
+ul.topnav li {
+    float: left;
+}
+/* Style the links inside the list items */
+ul.topnav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+ul.topnav li a:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+    background-color: #355664;
+}
+/* Hide the list item that contains the link that should
+   open and close the topnav on small screens */
+ul.topnav li.icon {
+	display: none;
+}
+.header-title {
+	padding: 2px 16px;
+	text-align: center;
+}
+.NewSportsCar-form {
+	position: relative;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+}
+.NewSportsCar-button{
+	background-color: darkgray;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+th{
+	border: 3px solid black;
+}
+
+tr td{
+	height: 25px;
+	border: 2px solid black;
+	word-wrap: normal;
+	vertical-align: top;
+	width: auto;
+}
+
+#headerRow {
+	color: darkslateblue;
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+	width: 15%;
+}
+
+.left{
+	padding-left: 10px;
+	width: 30%;
+	word-wrap: normal;
+}
+
+.right {
+	padding-right: 5px;
+	width: 20%;
+	text-align: right;
+}
+#Supercars-table {
+	background-color:white;
+	width: 90%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+	border: 2px solid gray;
+	border-collapse: collapse;
+	border-radius: 8px;
+	table-layout: auto;
+	float: center;
+	position: relative;
+}

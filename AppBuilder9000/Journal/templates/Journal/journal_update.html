@@ -1,0 +1,12 @@
+{% extends "journal_base.html" %}
+
+{% block content %}
+<h1>Update</h1>
+<form method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit">Save Changes</button>
+		</form>
+		<button type="submit"><a href="{% url 'journal_delete' entry.id %}">Delete</a></button>
+<button type="submit"><a href="{% url 'journal_details' entry.id %}">Return</a></button>
+{% endblock %}

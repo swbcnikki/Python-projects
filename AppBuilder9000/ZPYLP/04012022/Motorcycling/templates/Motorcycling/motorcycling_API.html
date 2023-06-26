@@ -1,0 +1,17 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+
+<!-- This is the html page that will display a random city near the user-->
+
+{% block content %}
+<center>
+    <div id="form-container" class="table">
+        <form method="POST" action="{% url 'motorcycling_API' %}">
+            {% csrf_token %}
+            <h2>You should head to {{info.0}} only {{distance.0}} miles away!</h2>
+            <h2>Population = {{population.0}}. Plenty of new friend possibilities!</h2>
+        </form>
+    </div>
+</center>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "journal_base.html" %}
+
+{% block content %}
+<h1>My Journal</h1>
+<p>This app manages journal entries. It was created to demonstrate CRUD fundamentals.</p>
+<button type="submit"><a href="{% url 'journal_create' %}">Create</a></button>
+<button type="submit"><a href="{% url 'journal_read' %}">Read</a></button>
+{% endblock %}

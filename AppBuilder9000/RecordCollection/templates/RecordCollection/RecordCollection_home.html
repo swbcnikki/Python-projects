@@ -1,0 +1,22 @@
+{% extends "RecordCollection/RecordCollection_base.html" %}
+
+{% load static %}
+
+{% block title %} Record Collection Home {% endblock %}
+
+
+
+{% block content %}
+
+<div class="recordscard card text-white text-center mb-3 " style="max-width: 69rem;">
+  <div class="card-body">
+    <p class="card-text">A Place To Store<br>
+        A Place To Find<br>
+        <div class="line3">A Place To Share That Which Moves Us</div></p>
+    <a href="{% url 'records_view' %}" class="recordsbtn btn btn-dark">View Collection</a>
+    <a href="{% url 'records_add' %}" class="recordsbtn btn btn-dark">Add to Collection</a>
+    <a href="{% url 'records_random' %}" class="recordsbtn btn btn-dark">What Should I Listen To?</a>
+  </div>
+</div>
+
+{% endblock %}

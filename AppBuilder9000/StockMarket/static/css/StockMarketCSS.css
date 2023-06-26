@@ -1,0 +1,267 @@
+/* General Styling */
+
+html, body {
+	height: cover;
+	width: cover;
+}
+
+body {
+    background-image: url("../images/StockCharts.jpg");
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
+
+h1{
+	color: #4267B2;
+	font-size: 40px;
+	text-align: center;
+	text-shadow: #000000;
+}
+
+h2{
+    color: #0F9D58;
+	font-size: 36px;
+	text-align: center;
+	text-shadow: #F4B400;
+}
+h4{
+    color: #DB4437;
+	text-shadow: #F4B400;
+}
+
+/* General Form Field Styling */
+label {
+	width: 125px;
+	margin-left: 50px;
+	font-weight: bold;
+	opacity: initial;
+}
+
+#index-label {
+    margin-left: -75px;
+    margin-bottom: 15px;
+}
+
+input, select{
+	width: 500px;
+	border-radius: 5px;
+	box-shadow: 4px 2px #4267B2;
+}
+
+/* General Table Styling */
+th{
+	border: 3px solid black;
+}
+
+tr td{
+	height: 25px;
+	border: 2px solid black;
+	word-wrap: normal;
+	vertical-align: top;
+	width: auto;
+}
+
+#headerRow {
+	color: #4285F4;
+	text-align: center;
+}
+
+#headerRows {
+	color: #4285F4;
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+	width: 15%;
+}
+
+.left{
+	padding-left: 10px;
+	width: 30%;
+	word-wrap: normal;
+}
+
+.right {
+	padding-right: 5px;
+	width: 20%;
+	text-align: right;
+}
+
+
+/* Drop-Down Menu Styling */
+.JavaScriptDropdown{
+	position: relative;
+	margin-top: 0;
+}
+
+/*Container Styling */
+.checkbook-container{
+	opacity: 0.8;
+	position: relative;
+	width: 800px;
+	height: auto;
+	border-radius: 8px;
+	border: 2px solid gray;
+	box-shadow: 4px 3px darkslateblue;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	background-color: skyblue;
+}
+
+.checkbook-container h2{
+	color: darkslateblue;
+	font-size: 32px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.checkbook-container h3{
+	font-size: 24px;
+	text-decoration: underline;
+	text-align: center;
+	color:darkslateblue;
+	font-weight: bold;
+	margin-left: 25px;
+	margin-top: 15px;
+}
+
+/* All Transactions Form and Table Styling */
+#all-transactions-form {
+	position: relative;
+}
+
+#all-transactions-form button{
+	background-color: lightgray;
+	position: relative;
+	left: 50px;
+	float: center;
+}
+
+#all-transactions-form button:hover {
+	background-color: #F4B400;
+}
+
+#accountholder {
+	width: 575px;
+}
+
+#balance{
+	width: 250px;
+}
+
+#transactions-table {
+	background-color: #555555;
+	width: 40%;
+	height: auto;
+	padding: 10px;
+	border: 5px #4285F4;
+	border-radius: 8px;
+	position: relative;
+}
+
+
+#transactions-table2 {
+	background-color: #555555;
+	width: 90%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+	border: 5px #4285F4;
+	border-collapse: collapse;
+	border-radius: 8px;
+	table-layout: auto;
+	float: center;
+	position: relative;
+}
+
+#transactions-table3 {
+	background-color: #555555;
+	width: 90%;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+	border: 5px #4285F4;
+	border-collapse: collapse;
+	border-radius: 8px;
+	table-layout: auto;
+	float: center;
+	position: relative;
+}
+
+/* New Account and New Transaction Styling */
+.account-form, .new-transaction-form, .transactions-form {
+	position: relative;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+}
+
+/* Button styling */
+.checkbook-container button, .new-account-button{
+	background-color: darkgray;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+button a, button a:hover{
+    text-decoration: none;
+	text-align: center;
+	color:black;
+}
+
+.checkbook-container button:hover, .new-account-button:hover{
+	background-color: lightgray;
+}
+
+/* Footer styling */
+#block-footer {
+    clear: both;
+    display: flex;
+    width: 100%;
+	-moz-box-sizing: border-box;
+    margin: 0 auto;
+    background-color: #4285F4;
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+}
+#block-footer a, #block-footer p {
+    flex: 1;
+    color: white;
+    padding: 15px 15px;
+	font-size: 14px;
+    line-height: 10px;
+	font-family:'PT Sans', Arial, Helvetica, sans-serif;
+}
+#footer-left {
+    width: 40%;
+    text-align: right;
+}
+#block-footer{
+	float:left;
+	clear:both;
+	width:100%;
+}
+#block-footer a {
+	color: #555555;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	text-decoration: none;
+	outline: medium none;
+}
+#block-footer a:hover {
+    color: #DB4437;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}

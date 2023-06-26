@@ -1,0 +1,17 @@
+{% extends "nba-base.html" %}
+
+{% block title %}Delete Favorite{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<script>
+    var timer = setTimeout(function() {
+        window.location='{% url 'favorites' %}'
+    }, 2000);
+</script>
+
+<div class="container-alert">
+    <h3>{{ player }} Removed From Favorites</h3>
+</div>
+{% endblock %}

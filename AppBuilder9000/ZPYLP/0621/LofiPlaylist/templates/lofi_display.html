@@ -1,0 +1,38 @@
+{% extends 'lofi_base.html' %}
+
+{% block title %}DATABASE{% endblock %}
+
+{% block header %}SONG LIST{% endblock %}
+
+{% block content %}
+
+            <table class="panel">
+                <thead>
+                    <tr>
+                        <th class="sizem">Song</th>
+                        <th class="sizem">Artist</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for songs in LofiPlaylist %}
+                        <tr>
+                            <td>
+                                {{ songs.name }}
+                            </td>
+                            <td>
+                                {{ songs.artist }}
+                            </td>
+                            <td>
+                                <button><a href="{% url 'lofi_details' songs.pk %}" style="text-decoration: none;">Song Details</a></button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+
+{% endblock %}
+
+

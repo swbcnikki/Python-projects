@@ -1,0 +1,23 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_jumbotron.html" %}
+{% load staticfiles %}
+
+
+{% block jumbotron %}
+	<h2>Add Composition</h2>
+    <form method="post" class="was-validated">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-custom-color">Save Composition</button>
+        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_show_compositions' %}">Cancel</a>
+        <br><br>
+        <div class="button-container">
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_musician' %}">Musician</a>
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_release' %}">Release</a>
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_role' %}">Role</a>
+        </div>
+    </form>
+
+{% endblock %}
+
+

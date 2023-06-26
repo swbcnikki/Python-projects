@@ -1,0 +1,17 @@
+{% extends "BookClubApp/BookClubApp_base.html" %}
+{% load static %}
+{% block title %}Delete Book{% endblock %}
+{% block header%}Delete Book{% endblock %}
+{% block content %}
+    <!-- Form to delete books to the templates -->
+    <div class="content">
+        <div class="book-form">
+            <form method="POST">
+                {% csrf_token %}
+                <h3>Are you sure you want to delete the book?</h3>
+                <button class="btn btn-secondary"  type="submit" name="Delete_Book" value="Yes">Delete</button>
+                <a class="btn btn-secondary" href="{% url 'BookClubApp_bookList' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

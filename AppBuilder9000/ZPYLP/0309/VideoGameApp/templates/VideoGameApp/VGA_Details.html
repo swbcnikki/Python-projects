@@ -1,0 +1,35 @@
+{% extends 'VideoGameApp/VideoGame_Base.html' %}
+{% load static %}
+{% block title %}Showing The Opinions{% endblock %}
+
+{% block content %}
+<h1>Video Game Lookup</h1>
+
+    <div class="table-container">
+
+
+       </form>
+
+        <table class="table-class-style" >
+            <tr>
+                <th> Title: </th>
+                <th> Platform: </th>
+                <th> Genre: </th>
+                <th> Opinion: </th>
+            </tr>
+        {% for game in games %}
+            <a href="{% url 'VGDetailedGames' game.id">
+
+            <tr>
+                <td><a href="{% url 'SingleItem' game.id %}">{{ game.Title }}</a></td>
+                <td>{{ game.Platform }}</td>
+                <td>{{ game.Genre }}</td>
+                <td>{{ game.Opinion }}</td>
+            </tr>
+                </a>
+        {% endfor %}
+        </table>
+        <p><br></br><br></br>Also, after you click on the item and see the information about it, just either click the 'Database' or
+        'Add A Game' hotlinks up in the Navigation Bar.</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'ChefKnives/ChefKnives_Base.html' %}
+
+{% load static %}
+
+{% block title %} Chef Knives {% endblock %}
+
+
+{% block header %} <h1>Chef Knives</h1> {% endblock %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid bg-dark text-white text-center">
+    <h2 class="display-4">Top Rated Knives From Amazon</h2>
+</div>
+
+<div id="form-container" class="table-responsive w-50 mx-auto table-striped">
+    <form method="get">
+        <table id="table" class='table bg-info text-white table-hover table-centered table-striped table-bordered'>
+            {{ form.as_p }}
+
+{% for list, price, stars in reviews %}
+          <tr>
+            <td>{{ list }}</td>
+            <td>{{ price }}</td>
+            <td>{{ stars }}</td>
+        </tr>
+    {% endfor %}
+            </table>
+            <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
+
+

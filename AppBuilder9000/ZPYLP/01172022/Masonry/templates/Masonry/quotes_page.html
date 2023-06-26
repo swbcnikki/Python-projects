@@ -1,0 +1,30 @@
+{% extends "Masonry/Masonry_base.html" %}
+{% load static %}
+
+{% block title %}Mina's Masonry{% endblock %}
+
+{% block content %}
+
+<div class="quote_panel">
+    <form name="quoteForm" method="POST" action="">
+        <div class="form-text">
+            {% csrf_token %}
+            <label for="menu_id" class="labelIndex">Look at quotes:</label>
+            <select class="selectIndex" id="menu_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
+                <option value="">...</option>
+                {% for quote in quotes %}
+                    <option value="../{{ quote.pk }}/details/">{{ quote.Namerec }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+
+    <div class="fromBtn_container">
+        <a href="{% url 'createQuote' %}"><button type="button" class="btn">Create New Product</button></a>
+        <a href="{% url 'masonry_home' %}"><button type="button" class="btn">Logout of Profile</button></a>
+
+    </div>
+
+</div>
+
+{% endblock %}

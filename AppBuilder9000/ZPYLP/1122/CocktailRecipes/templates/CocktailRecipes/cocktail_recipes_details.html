@@ -1,0 +1,25 @@
+{% extends 'cocktail_recipes_base.html' %}
+    {% block title %}{{details.cocktail_name|title}} Recipe{% endblock %}
+    {% block content %}
+        <div class="jumbotron">
+          <h1 class="display-4">{{details.cocktail_name|title}}</h1>
+          <p class="lead">{{details.description}}</p>
+          <hr class="my-4">
+            <h3>Ingredients:</h3>
+
+            <ul>
+                {% for ingredient in ingredient_lst %}
+                <li>{{ingredient}}</li>
+                {% endfor %}
+            </ul>
+            <br>
+
+            <br>
+            <h3>Directions:</h3>
+            <ul>
+                <li>{{details.directions}}</li>
+            </ul>
+          <a class="btn btn-secondary btn-lg" href="{% url 'cocktail_recipes_cocktail_list' %}" role="button">Return to Cocktail list</a>
+        </div>
+
+    {% endblock %}

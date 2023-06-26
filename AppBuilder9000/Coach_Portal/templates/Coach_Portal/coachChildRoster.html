@@ -1,0 +1,26 @@
+{% extends 'coachBase.html' %}
+{% block title %}Child Roster{% endblock %}
+{% block content %}
+
+	<div class="lighten-20 rounded jumbotron jumbotron-fluid bg-primary text-light text-center">
+		<h2 class=" text-center ">Full Child Roster</h2>
+	</div>
+	<table class="table table-responsive" id ="roster-table">
+		<tr id="headerRow">
+			<th>Last Name</th>
+			<th>Grade</th>
+			<th>Jersey #</th>
+			<th>Coach</th>
+		</tr>
+		{% for child in rosterList %}
+		<tr>
+			<td><a href=" {% url 'coachChildDetails' child.id %}" class=" text-light center">{{ child.Last_Name }}</a></td>
+			<td class="left">{{ child.Child_Grade }}</td>
+			<td class="left">{{ child.Jersey_Number }}</td>
+			<!--<td class="right">{{ key.Coach_Name }}</td>-->
+		</tr>
+		{% endfor %}
+	</table>
+
+	<br><br>
+{% endblock %}

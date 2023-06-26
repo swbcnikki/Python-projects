@@ -1,0 +1,131 @@
+.header-title {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.search-box {
+    margin: auto;
+    width: 60%;
+    align-content: center;
+}
+
+/* ADD RESULT FORM STYLING */
+#bootstrap-override .form-obj-container {
+    text-align: center;
+    width: 30%;
+    margin: auto;
+}
+
+#bootstrap-override .form-obj-container label {
+    font-size: large;
+}
+
+#bootstrap-override .form-dropdown {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    border-radius: 5px;
+}
+
+#bootstrap-override .form-radio {
+    list-style-type: none;
+    display: inline;
+}
+
+#bootstrap-override .small-form-dropdown {
+    font-size: large;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#bootstrap-override .form-btn-container {
+    text-align: center;
+    width: 30%;
+    margin: auto;
+}
+
+#bootstrap-override .btn-form {
+    border: 1px solid black;
+    width: 45%;
+    height: 50px;
+    font-size: large;
+    border-radius: 5px;
+}
+
+#bootstrap-override #btn-cancel {
+    transition: background-color 1s;
+}
+
+#bootstrap-override #btn-cancel:hover {
+    background-color: #d75a5a;
+    transition: background-color 1s;
+}
+
+#bootstrap-override #btn-submit {
+    transition: background-color 1s;
+}
+
+#bootstrap-override #btn-submit:hover {
+    background-color: #55a255;
+    transition: background-color 1s;
+}
+
+#bootstrap-override .messages {
+    width: 50%;
+    list-style-type: none;
+    margin: 20px 23.5%;
+    text-align: center;
+    font-size: large;
+}
+
+#bootstrap-override .error {
+    background-color: #d75a5a;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+#bootstrap-override .success {
+    background-color: #55a255;
+    border: 1px solid green;
+    border-radius: 5px;
+    animation-name: fadeOut;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#bootstrap-override .driver-img {
+    width: 60%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+#bootstrap-override .team-img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+#bootstrap-override .race-name {
+    font-size: small;
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+#bootstrap-override .spacer {
+    padding-bottom: 100px;
+}
+
+#bootstrap-override .confirm-delete {
+    text-align: center;
+}

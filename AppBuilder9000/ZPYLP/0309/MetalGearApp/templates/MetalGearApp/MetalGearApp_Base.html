@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+    <!--Links-->
+    <link rel="stylesheet" type="text/css" href="{% static '/MetalGearApp/CSS/MetalGearApp.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <ul class="menu">
+        <li>
+            <a href="{% url 'MetalGearApp_Home' %}" id="logo" class="link">Metal Gear App</a>
+        </li>
+        <li>
+            <a href="{% url 'create' %}" id="create" class="link text-white">Enlist</a>
+        </li>
+        <li>
+            <a href="{% url 'index' %}" id="index" class="link text-white">See the Diamond Dogs</a>
+        </li>
+    </ul>
+</header>
+<body>{% block content %}{% endblock %}</body>
+
+</body>
+</html>

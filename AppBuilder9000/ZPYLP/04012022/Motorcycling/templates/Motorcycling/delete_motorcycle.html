@@ -1,0 +1,17 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+{% block header %}
+<center></center>
+<h2>Delete Motorcycle</h2>
+</center>
+{% endblock %}
+
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <h3>Are you sure you want to delete this?</h3>
+        <button type="submit" onclick="return confirm('Last chance!!')">Delete</button>
+    </form>
+{% endblock %}

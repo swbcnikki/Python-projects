@@ -1,0 +1,35 @@
+{% extends 'speed_run_base.html' %}
+{% load static %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+
+<h1 class="homeHeading">Search for more info on your favorite games</h1>
+<div>
+    <form class="" method="POST">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <input type="text" class="form-control form-control-md" name="searchItem" placeholder="Type game here and press Enter">
+        </div>
+    </form>
+</div>
+
+  <div class="card-group">
+    {% for game in search_list  %}
+        {% if forloop.counter|divisibleby:"4" %}
+            </div><div class="card-group">
+        {% endif %}
+  <div class="card mx-auto mb-4">
+    <img src="{{ game.0 }}" class="card-img-top" alt="game">
+    <div class="card-body">
+      <h5 class="card-title">{{ game.1 }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ game.2 }}</h6>
+        <p class="card-text">{{ game.3 }}</p>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

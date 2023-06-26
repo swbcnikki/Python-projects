@@ -1,0 +1,26 @@
+{% extends 'Composers/composers_base.html' %}
+{% load static %}
+
+{% block title %} Search API {% endblock %}
+{% block header %} Search {% endblock %}
+
+
+{% block content %}
+<div class="jumbotron jumbotron-responsive w-100 bg-dark text-white">
+        <h2 class="display-4">Search</h2>
+    </div>
+        <form  method="POST">
+            {% csrf_token %}
+            <input type="text" name="word_id" placeholder="Search Oxford Dictionary"><br>
+            <input type="submit" value="Search">
+        </form>
+        <br>
+<div class="jumbotron jumbotron-responsive w-100 bg-white">
+    <h1>{{ value.capitalize }} <br> </h1>
+        <br>
+        <h2>{{ whole_definition.0 }}</h2>
+</div>
+
+    <img class="img width:200px height: 200px" src="{% static 'images/cello.jpg' %}">
+
+{% endblock %}

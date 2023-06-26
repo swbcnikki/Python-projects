@@ -1,0 +1,38 @@
+{% extends "MTB_Trails/mtb_trails_base.html" %}
+{% load static %}
+
+{% block title %}Review Details{% endblock %}
+
+{% block header %}review details{% endblock %}
+
+{% block content %}
+<!-- This custom class centers our elements -->
+<div class="existing-reviews--container">
+    <!-- This class adds padding to bottom of page -->
+     <div class="bottom-page--padding">
+         <!-- This class necessary to add padding to top and bottom of each review card -->
+         <div class="my-5">
+            <div class="card border-white text-white bg-dark" style="max-width: 50rem">
+                <div class="card-header border-white text-danger">{{ trail.trail_name }}
+                    <div class="float-right">Rider: {{ trail.rider_name }}</div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ trail.nearest_city }}, {{ trail.state }}</h5>
+                    <p class="card-text">{{ trail.review }}</p>
+                </div>
+                <div class="card-footer border-white text-danger">{{ trail.difficulty }}
+                    <div class="float-right">Water available? {{ trail.water_available }}</div>
+                </div>
+            </div>
+         </div>
+
+            <!-- Bottom alert box containing create and delete hyperlinks -->
+         <div class="alert bg-dark text-center border-white" role="alert">
+            <p>
+                Are you {{ trail.rider_name }}? Manage your review <a href="{% url 'edit_or_delete' trail.pk %}"
+                                                                      class="alert-link text-danger">here.</a>
+            </p>
+         </div>
+     </div>
+</div>
+{% endblock %}

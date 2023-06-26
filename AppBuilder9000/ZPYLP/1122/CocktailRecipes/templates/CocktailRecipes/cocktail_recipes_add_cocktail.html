@@ -1,0 +1,9 @@
+{% extends 'cocktail_recipes_base.html' %}
+    {% block title %}Add New Cocktail Recipe{% endblock %}
+    {% block content %}
+        <form method="POST" class="add_cocktail_form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" name="add_cocktail">Add Cocktail</button>
+        </form>
+    {% endblock %}

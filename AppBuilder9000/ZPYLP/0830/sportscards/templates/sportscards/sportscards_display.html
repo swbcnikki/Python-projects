@@ -1,0 +1,33 @@
+{% extends "SportsCards/SportsCards_base.html" %}
+
+{% block title %} All Entries {% endblock %}
+
+{% block header %} All Current Entries {% endblock %}
+
+{% block content %}
+
+        <table>
+            <tr>
+                <th>Player</th>
+                <th>Year</th>
+            </tr>
+
+            {% for cards in all_cards %}
+                <tr>
+                    <td><a href="{% url 'SportsCards_details' cards.id %}"> {{ cards.Player }}</a></td>
+                    <td>{{ cards.Year }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+<div class="dropdown">
+        <label>Select a player from the list to see more information</label>
+        <select onChange="top.location.href=this.options[this.selectedIndex].value;">
+            <option value=""></option>
+        {% for cards in all_cards %}
+            <option value="../{{ cards.pk }}/sportscards_details/">{{ cards.Title }}</option>
+        {% endfor %}
+        </select>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Cryptocurrency Details {% endblock %}
+
+{% block header %}{{ coin_detail.coin_name }} Details{% endblock %}
+
+{% block content %}
+
+    <div>
+        <ul class="cryptoapp-details--list">
+            {# Doing differently than in the display page for more flexibility #}
+            <li>Currency: {{ coin_detail.coin_name }}</li>
+            <li>Coin/Token: {{ coin_detail.coin_unit }}</li>
+            <li>Blockchain Type: {{ coin_detail.chain_type }}</li>
+            <li>Launch Date: {{ coin_detail.launch_date }}</li>
+            <li>Coin Value(USD): {{ coin_detail.value }}</li>
+            <li>Last Updated: {{ coin_detail.as_of_date }}</li>
+            <li>Total Supply of Coins: {{ coin_detail.supply }}</li>
+            <li>Market Capitalization: {{ coin_detail.market_cap }}</li>
+            <li>Maximum Transactions per Second: {{ coin_detail.transactions_per_sec }}</li>
+        </ul>
+    </div>
+
+{% endblock %}

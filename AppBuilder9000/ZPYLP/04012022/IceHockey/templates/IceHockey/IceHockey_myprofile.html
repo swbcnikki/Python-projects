@@ -1,0 +1,35 @@
+{% extends 'IceHockey_base.html' %}
+{% block title %}Create New User{% endblock %}
+{% block content %}
+
+<div class="container-fluid mx-auto" style="width: 90%">
+    <div id="jtron" class="jumbotron jumbotron-fluid border border-info text-info bg-light mt-5" style="border-radius: 10px;">
+      <div class="container m-5">
+          <h1 class="text-info">My Profile</h1>
+          <h5 class="lead text-info">Check out other user's favorite teams and players</h5>
+      </div>
+    </div>
+    <div id='card-container' class="container-fluid">
+        <div class="row mx-auto">
+        {% for profiles in profile_list reversed %}
+             <div class="card mr-4 ml-4 mb-4 mx-auto" onclick="location.href='{% url 'IceHockey_details' profiles.pk %}'" style="width: 50%; border-radius: 10px">
+                 <div id='cardbody' class="card-body text-center" onclick="findDetails()">
+                     <h5 class="card-title">{{ profiles.first_name }} {{ profiles.last_name }}</h5>
+                     <h6 class="card-text text-info">Favorite Team: {{ profiles.favorite_team }}</h6>
+                     <h6 class="card-text text-info">Favorite Player: {{ profiles.favorite_player }}</h6>
+                     <div class="container mt-3">
+                         <a href="{% url 'IceHockey_details' profiles.pk %}">See Profile Details</a><br>
+                         <a href="{% url 'IceHockey_show_favorites' profiles.pk %}">See Favorite Players</a><br>
+                         <a href="{% url 'IceHockey_api_page' profiles.pk %}">Add New Favorites</a><br>
+                         <a href="{% url 'IceHockey_scrapeddata' profiles.pk %}">Scrape Web for Data</a><br>
+                         <a href="{% url 'IceHockey_api_page' profiles.pk %}">{{ profiles.favorite_team }} Roster</a><br>
+                     </div>
+                 </div>
+             </div>
+       {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

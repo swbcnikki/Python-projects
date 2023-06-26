@@ -1,0 +1,76 @@
+body {
+    background-image: url(../images/at-bg-photo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: Helvetica, sans-serif;
+    font-size: 1em;
+    overflow-y: auto;
+}
+
+h1 {
+    font-family: "Brush Script MT";
+    font-weight: 600;
+    color: gray;
+    text-shadow: 2px 2px red;
+}
+
+a {
+    color: yellow;
+}
+
+a:hover {
+    color: white
+}
+
+.nav-opaque-container {
+    background-color: black;
+    opacity; .7;
+    border: 4px ridge gray;
+    border-radius: 8px;
+
+}
+
+.at-songs-container {
+    max-height: 33em;
+    overflow-y: scroll;
+}
+
+.at-library-container {
+    max-height: 33em;
+    overflow-y: scroll;
+    display: flex;
+    /* this makes it so the tables will make a new row if space is needed because
+    of a smaller screen, or many playlists to display. */
+    flex-wrap: wrap;
+    /* gives the tables an even amount of space between and outside of them */
+    justify-content: center;
+    align-content: space-between;
+    align-items: flex-start;
+}
+
+.at-playlist-table {
+    margin: 1em;
+    height: 24em;
+    width: 24em;
+    /* set to auto, scrollbar will only show if the content overflows vertically. */
+    overflow-y: auto;
+}
+
+/* This styles most of the containers for the app. */
+.at-opaque-container {
+    background-color: black;
+    opacity: .7;
+    border: 4px ridge gray;
+    border-radius: 8px;
+    font-weight: 300;
+    padding: 1em;
+}
+
+.red-text {
+    color: red;
+    font-weight: 600;
+}
+
+
+
+

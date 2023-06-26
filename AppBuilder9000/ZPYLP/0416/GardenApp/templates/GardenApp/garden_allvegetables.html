@@ -1,0 +1,60 @@
+{% extends "GardenApp\garden_base.html" %}
+{% load static %}
+
+{% block title %}Garden Vegetables{%endblock %}
+
+{% block content %}
+<div class="jumbotron col-xs-1 text-center">
+        <p>Find ALL your vegetables' Planner and Tracker data here</p>
+</div>
+        <div class="container-care">
+            <p>Just want planner and tracker data for one veggie? Click on the vegetable name!</p>
+            <h1>GARDEN PLANNER</h1>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Vegetable Name</th>
+              <th scope="col">Growing Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                {% for p in plan %}
+              <th scope="row"><a href="{% url 'plannerdetails' p.id %}">{{ p.Vegetable_Name| upper }}</a></th>
+              <td>{{ p.Growing_Year| lower }}</td>
+
+            </tr>
+                {% endfor %}
+          </tbody>
+        </table>
+
+            <div class="container-care"><h1>GARDEN TRACKER</h1></div>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Vegetable Name</th>
+                  <th scope="col">Harvest Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    {% if track %}
+                        {% for t in track %}
+                    <th scope="row"><a href="{% url 'trackerdetails' t.id %}">{{ t.Vegetable_Name | upper }}</a></th>
+                  <td>{{ t.Harvest_Weight| lower }}</td>
+
+                </tr>
+                    {% endfor %}
+                  {% endif %}
+
+
+
+              </tbody>
+            </table>
+
+
+
+
+
+{% endblock %}

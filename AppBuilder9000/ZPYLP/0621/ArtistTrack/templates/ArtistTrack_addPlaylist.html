@@ -1,0 +1,23 @@
+{% extends 'ArtistTrack_base.html' %}
+{% block title %}Artist Track{% endblock %}
+{% block header %}Add Playlist{% endblock %}
+{% block body %}
+
+<div class="container at-opaque-container">
+<!--    Will display all messages in an unordered list.-->
+    {% if messages %}
+    <ul class="messages text-white">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <form class="red-text" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary" name="Save_Playlist" type="submit">Add Playlist</button>
+    </form>
+
+
+</div>
+{% endblock %}

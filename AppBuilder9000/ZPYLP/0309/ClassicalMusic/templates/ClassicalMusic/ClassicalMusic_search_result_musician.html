@@ -1,0 +1,65 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+{% block body_id %}body_API{% endblock %}
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+
+<header class="page_header">
+    <h1>{{ search_name }}</h1>
+</header>
+
+{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}
+
+<table class="table table-main">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Disambiguation</th>
+            <th>Life</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for musician in musicians %}
+            <tr>
+
+                <td>
+                    <a href="{% url 'ClassicalMusic_search_details_musician' musician.MBID %}">
+                        {# name may be in foreign alphabet, so sort_name is prefered #}
+                        {% if musician.sort_name %}{{ musician.sort_name }}{% else %}{{ musician.name }}{% endif %}
+                    </a>
+                </td>
+                <td>{{ musician.type }}{% if musician.gender %}, {{ musician.gender }}{% endif %}</td>
+                <td>{{ musician.disambiguation }}</td>
+                <td>{{ musician.life_begin }} - {{ musician.life_end }}</td>
+
+            </tr>
+
+        {% endfor %}
+        <tr>
+            <td colspan="4">
+                 <form id="page_number" method="POST" action="{% url 'ClassicalMusic_search_musician' %}">
+					{% csrf_token %}
+					<label class="page_label" for="page">Number of pages: {{ pages }}. Select page: </label>
+                     <input type="hidden" value="{{ search_name }}" name="search">
+                    <input type="number" id="page" name="page" min="1" max="{{ pages }}" required value="{{ page }}" onchange="page_number_validate()">
+				</form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+{% endblock %}
+
+

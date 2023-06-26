@@ -1,0 +1,17 @@
+{% extends "ComicBooks/ComicBooks_base.html" %}
+
+
+{% block title %}Sell your Comic{% endblock %}
+
+{% block content %}
+<h1>Submit your comicbook</h1>
+    <div class="Form">
+        <form action="" class="form-container center" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit" class="center">
+        </form>
+    </div>
+{% endblock %}

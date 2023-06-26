@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/seattle_style.css' %}">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div>
+            {% include 'Seattle/seattle_navbar.html' %}
+        </div>
+        <div class="welcome">
+            <h1>{% block header %}{% endblock %}</h1>
+        </div>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

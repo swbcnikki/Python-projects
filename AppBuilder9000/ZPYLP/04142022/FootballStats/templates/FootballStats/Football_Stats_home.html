@@ -1,0 +1,31 @@
+{% extends "FootballStats/Football_Stats_base.html" %}
+
+{% block title %} Football Stats {% endblock %}
+{% block header %}  {% endblock %}
+
+{% block content %}
+<h1 class="heading text-center text-primary">Welcome to Football Stats!</h1>
+<div class="cardstyling">
+<div class="position-relative">
+<div class="position-absolute top-50 start-50 translate-middle-y">
+<div class="card-deck w-200 mx-auto" id="card-container">
+        <div class="card w-50">
+            <div class="card-header card-images-container text-center">
+                <img class="card-img-top img-fluid card-nfl-image" src="../../static/images/NFL-Team-Logos.jpg" alt="NFL Logo">
+            </div>
+            <div class="card-body">
+                <p class="card-text">Pro-Football-Reference is the place to go for all things pro-football. Get every stat
+                for every team and player. View the results of any NFL game, ever!</p>
+
+                <a href="https://www.pro-football-reference.com/" class="card-link">Pro-Football-Reference</a>
+            </div>
+            <div class="card-footer">
+                <h4 class="text-center">NFL</h4>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{% extends "Blacksmithing/base.html" %}
+{% load static %}
+{% block title %} Delete Entry{% endblock %}
+
+{% block content %}
+
+<!-- Prompts the user to confirm deletion -->
+<div id="form-container">
+    <h3 style="text-align:center; color:white;"> Deleting Entry: {{ item.name }}</h3>
+    <form method ="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-container" onclick="return confirm('Are you sure you want to delete this?')">Confirm</button>
+
+
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'nyc_base.html' %}
+
+{% block title%}View all New York City Restaurant Recommendations{% endblock %}
+
+	{% block content %}
+		<h1>All Restaurants</h1>
+				<table class="all-table">
+					<tr>
+						<th>Name</th>
+						<th>Cuisine</th>
+						<th>Price Range</th>
+					</tr>
+					{% for Restaurants in every_rest %}
+						<tr>
+							<td><a href="{% url 'details' Restaurants.id %}">{{ Restaurants.restaurant_name }}</a></td>
+							<td>{{ Restaurants.cuisine }}</td>
+							<td>{{ Restaurants.price_range }}</td>
+						</tr>
+					{% endfor %}
+				</table>
+	{% endblock %}

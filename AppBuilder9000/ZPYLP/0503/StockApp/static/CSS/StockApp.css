@@ -1,0 +1,86 @@
+p {
+   color: white;
+}
+h1 {
+   color: white;
+}
+h2 {
+   color: white;
+}
+
+h3 {
+   color: white;
+}
+
+ body {
+   background-image: url(https://m.foolcdn.com/media/dubs/images/stock_chart_up_2.original.jpg);
+   background-color: transparent;
+   text-color: white;
+
+}
+
+ul {
+   text-align: center;
+   font-size: 30px;
+   font-style: italic;
+   text-color: white;
+
+}
+
+
+BLANK {
+    text-color: white;
+}
+
+h3{
+    text-color: white;
+}
+
+
+.th {
+    text-color: white;
+    text: center;
+}
+
+td {
+    text-color: white;
+    text: center;
+}
+
+Title {
+   text-color: white;
+}
+
+table {
+    text-color: white;
+}
+
+
+body {
+    text-color: white;
+    text-size: 24px;
+}
+
+#content {
+    text-color: white;
+    text-size: 20px;
+    width: 300px;
+    background: white;
+    position: relative;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 20px;
+    background-color #2196F3;
+    padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;  /* Do each seperately */
+  text-align: center;
+  font-size: 30px;
+}
+

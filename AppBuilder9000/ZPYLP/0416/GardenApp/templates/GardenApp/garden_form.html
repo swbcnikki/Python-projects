@@ -1,0 +1,11 @@
+{% extends "GardenApp\garden_base.html" %}
+{% load static %}
+
+{% block content %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="cancel" class="btn btn-danger">Cancel</button>
+  </form>
+{% endblock content %}

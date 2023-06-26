@@ -1,0 +1,22 @@
+{% extends "DNDCharacters/dnd_characters_base.html" %}
+
+{% block title %}Dungeons and Dragons Characters!{% endblock %}
+
+{% block header %} <h1 class="welcomeh1">Delete Character: </h1>{% endblock %}
+
+{% block content%}
+
+    <div class="Container">
+
+        <form method="POST">
+            {% csrf_token %}
+            <p class="text-light">They will be missed. Confirm Removal of: <br/><br/>
+                "{{ characters.Character_Name }}"?</p>
+            <button type="submit" class="btn btn-warning btn-block text-white"
+                    onclick="return confirm('Are you sure?')">Delete</button>
+
+        </form>
+
+
+    </div>
+{% endblock %}

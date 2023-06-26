@@ -1,0 +1,21 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+	<head>
+	    <meta charset="UTF-8">
+		<title>{% block title%}{% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/SuperCars.css' %}">
+	</head>
+    <body>
+        <div class="page_container">
+            {% include "SuperCars/SuperCarsNavbar.html" %}
+            <header class="header-title">
+                <h1>{% block header %}{% endblock %}</h1>
+		    </header>
+        </div>
+         <div>
+             {% block content %}{% endblock %}
+        </div>
+             {% include "SuperCars/SuperCarsFooter.html" %}
+    </body>
+</html>

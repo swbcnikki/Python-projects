@@ -1,0 +1,42 @@
+<!--Extends from the base html -->
+{%extends "SportsApp/SportsApp_base.html" %}
+
+{% load crispy_forms_tags%}
+
+<!--Page Title -->
+{%block title %}SportsApp{% endblock %}
+
+<!--PageHeader -->
+{%block header%}
+    <div class="createPage-header ">
+        <h1>SportsApp Game Watchlist!</h1>
+    </div>
+{%endblock%}
+
+
+{%block content%}
+<div class="createPage-text">
+    <p class="createPage-txt-wrapper">
+        Welcome to the SportsApp GameWatchlist! <br> Here you can save all the NBA games you want to watch
+        in a convenient and easy to use interface.<br> Just save the game with us and we will send out an email
+        to remind you that your game is about to start!!<br> Thanks for using SportsApp and enjoy!<br>
+        Note: Only currently working with NBA games. We have plans to add all Sports Games in the future!!
+        Check Back with us Soon!
+    </p>
+</div>
+    <!--Create Page Form Element -->
+<div class="createPage-form">
+    <form method = "POST">
+        <div class="GameWatch-container">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <table>
+                {% crispy form %}
+            </table>
+        </div>
+    </form>
+
+
+</div>
+
+{%endblock%}

@@ -1,0 +1,24 @@
+{% extends "WorkoutEquipment/WorkoutEquipBase.html" %}
+
+{% block title %} Delete Confirmation {% endblock %}
+
+{% block header %} Delete Confirmation {% endblock %}
+
+{% block content %}
+<div class="admin_panel">
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+
+            <p>Are you sure you would like to delete "{{item.name}}" from the database?</p>
+
+            {{ item.as_p }}
+         <div class="frmBtn_container">
+             <button class="btn"><a href="{% url 'admin_console' %}">Yes Delete it!</a></button>
+             <button class="btn"><a href="{% url 'admin_console' %}">CANCEL</a></button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "BestGamesEver/base.html" %}
+{% load static %}
+
+{% block title %} Top Games {% endblock %}
+
+{% block header %}<h1>All Entries</h1>{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col" data-field="game" data-sortable="true">Game</th>
+                    <th scope="col" data-field="genre" data-sortable="true">Genre</th>
+                    <th scope="col" data-field="year" data-sortable="true">Year</th>
+                    <th scope="col" data-field="description" data-sortable="true">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for Game in game_list %}
+                <tr>
+                    <td>{{ Game }}</td>
+                    <td>{{ Game.genre }}</td>
+                    <td>{{ Game.year }}</td>
+                    <td>{{ Game.description }}</td>
+                    <td><a href="{% url 'Game_Details' Game.id %}">Details</a></td>
+                    <td><a href="{% url 'Edit_Games' Game.id %}">Edit</a></td>
+                    <td><a href="{% url 'Delete_Games' Game.id %}">Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

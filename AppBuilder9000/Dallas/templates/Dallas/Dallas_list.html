@@ -1,0 +1,36 @@
+{% extends 'Dallas/Dallas_base.html' %}
+
+{% block content %}
+
+<div>
+    <h1>Raffle Participants</h1>
+</div>
+
+<div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name:</th>
+                <th>Last Name:</th>
+                <th>Favorite Sports Team:</th>
+                <th>Favorite Activity:</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for D in Dallas %}
+            <tr>
+                <td><a href="{% url 'RaffleDetails' D.id %}">{{D.first_name}}</a></td>
+                <td>{{D.last_name}}</td>
+                <td>{{D.fav_sports_team}}</td>
+                <td>{{D.fav_activity}}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <a href="{% url 'Dallas_raffle' %}" role="button">Enter the Raffle!</a>
+    </div>
+</div>
+
+{% endblock %}

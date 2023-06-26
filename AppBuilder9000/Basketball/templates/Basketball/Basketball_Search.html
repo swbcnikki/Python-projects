@@ -1,0 +1,29 @@
+{% extends 'Basketball/Basketball_base.html' %}
+
+{% block content %}
+
+<center>
+    {% if searched %}
+        <h1>You searched for {{ searched }}</h1>
+    {% for i in posts %}
+    <table>
+        <tr>
+        <th><p>Name:<p>{{ i.name}}</th>
+        <th><p>Position:<p>{{ i.position}}</th>
+        <th><p>Date:</p>{{ i.date}}</th>
+        <th><p>Points:</p>{{ i.points}}</th>
+        <th><p>Assists:</p>{{ i.assists}}</th>
+        <th><p>Rebounds:</p>{{ i.rebounds}}</th>
+        <th><p>Steals:</p>{{ i.steals}}</th>
+        <th><p>Blocks:</p>{{ i.blocks}}</th>
+       <th><p>Turnovers:</p>{{ i.turnovers}}</th>
+        </tr>
+    </table>
+    {% endfor %}
+
+    {% else %}
+    <h1>You forgot to search...</h1>
+    {% endif %}
+</center>
+
+{% endblock %}

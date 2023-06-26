@@ -1,0 +1,112 @@
+
+/* Basic HTML Style */
+html, body {
+    font-family: Georgia, Garamond, serif;
+    text-align: center;
+}
+
+.bg_img {
+    background-image: url('/static/images/vh_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+/* Basic Header Style */
+.header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 120px;
+    background-color: #4b4200;
+    color: black;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+/* End Basic Header Style */
+
+/* Basic Navbar Style */
+.navbar {
+    top: 120px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    background-color: #4b4200;
+}
+
+.base_ul {
+    float: center;
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+li a:hover {
+    text-decoration: underline;
+    background-color: yellow;
+}
+
+
+/* End Basic Navbar Style */
+
+/* Basic Footer Style */
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #4b4200;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+}
+/* End Basic Footer Style */
+
+/* Add Item Form Container Styling */
+.form-container {
+    background-color: white;
+}
+/* End Add Item Form Container Styling */
+
+/* Add Item Page Style */
+form {
+    display: inline-block;
+    position: absolute;
+    margin-top: 150px;
+    margin-left: -100px;
+    text-align: left;
+}
+
+.item_ul {
+    display: flex;
+    position: inline;
+    padding: 10px;
+}
+
+.view_container {
+    position: absolute;
+    margin-top: 150px;
+    margin-left: -10px;
+    word-wrap: normal;
+}
+
+.save-item-button .delete-item-button {
+    display: inline-block;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+

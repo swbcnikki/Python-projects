@@ -1,0 +1,27 @@
+{% extends 'recipesbase.html' %}
+{% load static %}
+
+{% block title %}Recipes{% endblock %}
+
+{% block header %}Recipes{% endblock %}
+
+{% block content %}
+<div class="centered_container">
+    <table class="display_table">
+        <thread>
+            <tr>
+                <th scope="col" data-field="recipe_name">Recipe</th>
+                <th scope="col" data-field="recipe_description">Description</th>
+            </tr>
+        </thread>
+        <tbody>
+        {% for Recipe in recipes_list %}
+            <tr>
+                <td><a href="{% url 'recipes_details' Recipe.id %}">{{ Recipe }}</a></td>
+                <td>{{ Recipe.recipe_description }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

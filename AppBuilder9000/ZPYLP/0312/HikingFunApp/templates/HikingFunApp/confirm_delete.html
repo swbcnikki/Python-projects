@@ -1,0 +1,14 @@
+{% extends 'HikingFunApp/HikingFunApp_base.html' %}
+
+{%block header %}  {% endblock %}
+
+{% block content %}
+    <p>Are you sure you want to delete "{{ item.name }}" from this trail?</p>
+
+    <form method="POST" action="{% url 'delete' item.id %}">
+        {% csrf_token %}
+        <button class="btn" type="submit"> DELETE </a></button>
+        <button class="btn" type="submit"> <a href="{% url 'hiking_home'%}"> DON'T delete </a></button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'OregonRocks/OregonRocksBase.html' %}
+{% block title %}Rockhounding Locations{% endblock %}
+
+{% block content %}
+<div class="form_container">
+    <form method="POST">
+        <div class="frmObject_container">
+            {% csrf_token %}
+            <!-- organize form as a table. {{ form.as_p}} will format it as a paragraph -->
+            {{ form.as_p }}
+            <button type="submit" name="update">Submit Update</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'Speedster/speedster_base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+
+<div class="details">
+        <p class="row1">Brand:  {{ cars.brand }}</p>
+        <p class="row1">Green:   {{ cars.green }}</p>
+        <p class="row1">Year:   {{ cars.year }}</p>
+        <p class="row1">Color:   {{ cars.color }}</p>
+    </div>
+    <a href="{% url 'Speedster_database' %}">
+        <button type="button" class="btn btn-warning btn-med">Back to Vehicles</button>
+    </a>
+
+
+{% endblock %}

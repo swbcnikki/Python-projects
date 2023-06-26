@@ -1,0 +1,22 @@
+{% extends "StudyApp/study_app_base.html" %}
+{% load static %}
+
+{% block title %} Update Info {% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+    <div class="form-container">
+
+        <form method="POST" name="UserForm" action="."> <!-- "." keeps you in the same location you're in-->
+            {% csrf_token %}
+            <h1>Are You Sure?</h1>
+            <p>By confirming, you will remove "{{ inst.username }}" and all their info from the database.</p>
+
+            {{ inst.as_p }}
+
+                <input type="submit" class="btn" value="Confirm" name="Confirm_Delete">
+                <a href="../info/"><button class="btn" type="button" value="Cancel">Back</button></a>
+
+{% endblock %}

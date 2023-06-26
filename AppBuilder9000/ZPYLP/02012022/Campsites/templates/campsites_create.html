@@ -1,0 +1,19 @@
+{% extends 'campsites_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block header %}CampSites{% endblock %}
+
+{% block content %}
+<h1 class="heading text-center">Add a New Campsite:</h1>
+    <div class="container">
+        <form method="POST" class="control-label col-xs-1">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="frmBtn_container">
+                <input type="submit" class="btn btn-primary" id="btn" value="Add CampSite" name="Add_CampSite">
+                <a href="{% url 'campsites_home' %}"><button type="button" class="btn btn-secondary" value="Cancel">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

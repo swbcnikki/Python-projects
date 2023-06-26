@@ -1,0 +1,37 @@
+{% extends "PetAdoption_base.html" %}
+{% load static %}
+
+{% block title %}All Animals for Adoption{% endblock %}
+
+{% block header %}All Animals for Adoption{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+{% for pet in pets %}
+    <div class="row">
+        <div class="col-sm-4 mb-5">
+            <div class="cards h-100">
+                <div class="card h-100" style="width: 18rem;">
+                    <img class="card-img-top" src="../../static/images/allanimals.jpeg" alt="allanimals">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: {{ pet.name|capfirst }} </h5>
+                        <p class="card-text">Description: {{ pet.description }}</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'pet_adoption_details' pet.id %}" class="btn btn-dark">Details</a>
+                        </div>
+                        <br><br>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'pet_adoption_edit' pet.id %}" class="btn btn-dark">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+    </div>
+</div>
+{% endblock %}

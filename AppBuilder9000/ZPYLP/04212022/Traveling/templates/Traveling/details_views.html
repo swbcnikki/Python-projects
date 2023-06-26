@@ -1,0 +1,46 @@
+{% extends "Traveling/Traveling_base.html" %}
+
+{% load static from staticfiles %}
+
+
+
+{% block title %}View your account{% endblock %}
+
+{% block header %}Account Summary!{% endblock %}
+
+{% block content %}
+
+
+<div class="bg_img_c" >
+    <br>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>{{ item.first_name }}</td>
+            <td>{{ item.last_name }}</td>
+            <td>{{ item.email }}</td>
+        </tr>
+    </table>
+    <br>
+    <a href="../details/"><button class="btn-centerview " type="button" >Edit</button></a>
+    <a href="{% url 'Traveling_place' %}"><button class="btn" type="button">Confirm</button></a>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

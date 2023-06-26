@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/swu_css.css' %}">
+        <title>{% block title %} Star Wars Universe {% endblock %}</title>
+    </head>
+<!-- Navigation bar -->
+    <header>
+        <div class="navbar">
+                <a href="{% url 'swu_home' %}">HOME</a>
+                <a href="{% url 'swu_characters' %}">ADD A CHARACTER</a>
+                <a href="{% url 'swu_sources' %}">SOURCES</a>
+        </div>
+    </header>
+
+<!-- body  -->
+    <body class="background">
+        <div id="center">
+            {% block content %}{% endblock %}
+        </div>
+    <section class="footer">
+        <p class="footer-text">SWU &copy; |  2021</p>
+    </section>
+
+    </body>
+</html>
+<!-- want to add cards -->

@@ -1,0 +1,30 @@
+{% extends 'FloridaBirds/FloridaBirds_base.html' %}
+
+{% block title %}  Edit {% endblock %}
+
+{% block navbar%}{% endblock %}
+
+{% block content %}
+
+<h3>Edit Bird Details for {{birdedit.bird_name}}</h3>
+
+<br>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <br/>
+
+    <input type="submit" value="Save"
+           class="btn btn-secondary">
+
+
+
+</form>
+
+
+
+
+
+{% endblock %}

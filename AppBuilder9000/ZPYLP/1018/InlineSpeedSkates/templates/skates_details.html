@@ -1,0 +1,60 @@
+{% extends 'skates_base.html' %}
+
+{% block title %}Speed Skate Details{% endblock %}
+
+{% block header %}<h5>Inline Speed Skate Review Details</h5>{% endblock %}
+
+<!-- Review Details Display Expanded Begin -->
+{% block content %}
+
+<!-- Details Table Header Only -->
+<style>
+    h5{
+        color: #00ff00;
+        text-shadow: 1px 1px 1px white;
+        font-weight: bold;
+    }
+</style>
+
+    <div class="table-container">
+        <table id="table">
+            <thead>
+                <tr id="th">
+                    <!-- static table headers -->
+                    <th>Date</th>
+                    <th>User</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Boot Materials</th>
+                    <th>Boot Style</th>
+                    <th>Frame</th>
+                    <th>Bearings Rating</th>
+                    <th>Bearings Material</th>
+                    <th>Comfort</th>
+                    <th>Overall Rating</th>
+                    <th>Pros</th>
+                    <th>Cons</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="td">
+                    <!-- Review_Display function pulls records from database via the below xrefs -->
+                    <td>{{ details.date }}</td>
+                    <td>{{ details.username }}</td>
+                    <td>{{ details.skate_brand }}</td>
+                    <td>{{ details.model }}</td>
+                    <td>{{ details.boot_materials }}</td>
+                    <td>{{ details.boot_style }}</td>
+                    <td>{{ details.frame }}</td>
+                    <td>{{ details.bearings_rating }}</td>
+                    <td>{{ details.bearings_material }}</td>
+                    <td>{{ details.comfort }}</td>
+                    <td>{{ details.overall_rating }}</td>
+                    <td>{{ details.pros }}</td>
+                    <td>{{ details.cons }}</td>
+                </tr>
+            <tbody>
+        </table>
+    </div>
+{% endblock %}
+<!-- Review Details Display Expanded End -->

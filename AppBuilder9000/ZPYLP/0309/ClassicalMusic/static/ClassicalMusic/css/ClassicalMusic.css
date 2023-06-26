@@ -1,0 +1,379 @@
+body {
+    overflow-x: hidden;
+}
+
+#body_menu {
+    background: rgba(187,108,53,1);/*custom color MEDIUM*/
+    color: white;
+    padding-top: 45px;
+}
+
+#body_API {
+    background: rgba(237,195,153,1);/* custom color LIGHT*/
+    padding-top: 45px;
+    color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+#body_bg_image {
+  background: rgba(187,108,53,1);/*custom color MEDIUM*/
+  background-image: url('../images/music-4661526_1920.jpg');
+  color: white;
+}
+
+
+.navbar-colors {
+    background: rgba(52,18,2,1);/*custom color DARK*/
+    color: white;
+}
+
+.page_header {
+    background-image: url('../images/music-4661526_1920.jpg');
+    color: rgba(255,236,225,1);/* custom color ALMOST_WHITE*/
+    position:relative;
+    width: 100vw;
+    margin-left:-50vw;
+    left: 50%;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    margin-bottom: 10px
+}
+
+
+.jumbotron {
+    background: rgba(25,9,1,0.7);/* custom color transparent*/
+    color: white;
+}
+.jumbotron h2 {
+    color: rgba(255,236,225,1);/* custom color ALMOST_WHITE*/
+}
+
+
+
+
+.form-control {
+    background: rgba(255,236,225,1);/* custom color ALMOST_WHITE*/
+    color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+.form-control:focus {
+    background: rgba(255,236,225,1);/* custom color ALMOST_WHITE*/
+    color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+.form-control:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255,236,225,1) inset !important;/* custom color ALMOST_WHITE*/
+  -webkit-text-fill-color: rgba(52,18,2,1);/*custom color DARK*/
+}
+.form-control:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255,236,225,1) inset !important;/* custom color ALMOST_WHITE*/
+  -webkit-text-fill-color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+.navbar .form-control {
+    background: rgba(237,195,153,1);/* custom color LIGHT*/
+    color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+.navbar .form-control:focus {
+    background: rgba(237,195,153,1);/* custom color LIGHT*/
+    color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+.navbar .form-control:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(237,195,153,1) inset !important;/* custom color LIGHT*/
+  -webkit-text-fill-color: rgba(52,18,2,1);/*custom color DARK*/
+}
+.navbar .form-control:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(237,195,153,1) inset !important;/* custom color LIGHT*/
+  -webkit-text-fill-color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+h1,
+h3,
+h2 {
+    color: rgba(255,236,225,1);/* custom color ALMOST_WHITE*/
+    text-align: center;
+}
+
+
+.form-control::-webkit-scrollbar {
+    background-color: rgba(237,195,153,1);/* custom color LIGHT*/
+}
+
+
+.form-control::-webkit-scrollbar-track {
+    outline: 1px solid rgba(52,18,2,1);/*custom color DARK*/
+  }
+
+.form-control::-webkit-scrollbar-thumb {
+    background-color: rgba(187,108,53,1);/*custom color MEDIUM*/
+    outline: 1px solid rgba(52,18,2,1);/*custom color DARK*/
+}
+
+
+.modal .modal-dialog .modal-content{
+    background-color: rgba(25,9,1,0.7);/* custom color transparent*/
+}
+
+.modal {
+    color: white;
+    background-image: url('../images/music-4661526_1920.jpg');
+}
+
+.modal-header {
+    border-bottom: 0 none;
+}
+
+.modal-footer {
+    border-top: 0 none;
+}
+
+.page_label,
+.italic,
+.role {
+    font-style: italic;
+}
+
+.btn-custom-color {
+    background: rgba(187,108,53,1);/*custom color MEDIUM*/
+    text-decoration: none;
+    border: 2px solid rgba(52,18,2,1);/*custom color DARK*/
+    color: white;
+}
+
+.btn-custom-color:hover {
+    color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+.hr_multiple_form {
+    border: 5px solid rgba(51,18,1,1);;
+    border-radius: 5px;
+}
+
+.w-header {
+    width: 12%;
+}
+.w-center {
+    width: 48%;
+}
+.w-image {
+    width: 40%;
+}
+
+.w-icons {
+    width: 100px;
+}
+
+.w-movemnts {
+    width: 50;
+}
+
+.nested-table tr td {
+    border: none;
+}
+
+.no-left-padding {
+    padding-left: 0;
+    margin-left:0;
+}
+
+.table {
+    color: white;
+}
+
+table.dataTable tbody tr {
+    background: rgba(187,108,53,1);/*custom color MEDIUM*/
+
+}
+
+
+#body_API .table {
+    color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.gallery-link,
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery-link h6 {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.gallery-link:hover,
+.nav-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.icon-link {
+    text-decoration: none;
+}
+
+a:hover,
+.icon:hover {
+    color: rgba(52,18,2,1);/*custom color DARK*/
+    cursor: pointer;
+}
+
+nav a,
+ul li a:hover {
+    color: inherit;
+}
+
+.icon-dark:hover {
+    color: white;
+}
+
+.big-icon {
+    font-size: 150%;
+    color: rgba(255,236,225,1);/* custom color ALMOST_WHITE*/
+}
+
+.icon-dark {
+    color: rgba(52,18,2,1);/*custom color DARK*/
+}
+.nav-link:hover {
+    color: black;
+    background-color: rgba(187,108,53,1);/*custom color MEDIUM*/
+}
+
+
+
+
+.fa-bars {
+  color: rgba(237,195,153,1);/* custom color LIGHT*/
+}
+
+.fa-bars:hover {
+  color: white;
+}
+
+
+.search-btn {
+  background-color: inherit;
+  border-color: rgba(237,195,153,1);/* custom color LIGHT*/
+  color: rgba(237,195,153,1);/* custom color LIGHT*/
+  cursor: pointer;
+}
+
+
+.search-btn:hover {
+  background-color: rgba(187,108,53,1);/*custom color MEDIUM*/
+  color: white;
+}
+
+.dropdown-menu {
+  border: 2px solid rgba(187,108,53,1);/*custom color MEDIUM*/
+  background-color: rgba(52,18,2,1);/*custom color DARK*/
+}
+
+.carousel-image {
+    height: 50vh;
+    width: 50vh;
+    object-fit: cover;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#table {
+    display: none;
+}
+
+.release-container,
+.musician-container {
+    display: inline-block;
+    border: 4px solid rgba(52,18,2,1);/*custom color DARK*/
+    background-color: rgba(52,18,2,1);/*custom color DARK*/
+    margin-bottom: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    width: 208px;
+    border-radius: 8px;
+}
+
+.release-container {
+    Height: 320 px;
+
+}
+.musician-container {
+    Height: 272px;
+
+}
+
+.gallery-image-container {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.gallery-image {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.card-top{
+    display:block;
+    width:100%;
+    height:70px;
+    overflow: hidden;
+    }
+
+.card-bottom{
+    display:block;
+    width:100%;
+    height:50px;
+    overflow: hidden;
+    }
+
+.gallery-image:hover {
+  transition: transform 1s;
+  transform: scale(1.1);
+}
+
+.center {
+    text-align: center;
+}
+.portret {
+    width: 100%;
+}
+
+.h-minimum {
+    height: 1em;
+}
+
+.h-auto {
+    height: auto;
+}
+
+#form-part1 {
+    display: block;
+}
+
+#form-part2 {
+    display: none;
+}

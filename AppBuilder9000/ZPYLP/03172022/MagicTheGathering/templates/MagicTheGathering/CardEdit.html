@@ -1,0 +1,30 @@
+{% extends 'MagicTheGathering/MagicTheGathering_base.html' %}
+
+{% load static %}
+
+{% block title %}Card Edit{% endblock %}
+
+{% block content %}
+
+<div class="cardaddstyling">
+    {% if form %}
+    <form name="productForm" method="POST" action="../editCardInfo/"><!--go back one directory (..) and say details-->
+
+        <table>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_table }}
+        </table>
+        <div class="frmBtn_container" style="center">
+            <input type="submit" value="Submit">
+            <div class="frmBtn_container">
+                <a href="../{{ form.pk }}delete_card/" class="btn" id="button5">DELETE</a>
+                <a href="{% url 'collection' %}" class="btn" id="button4">CANCEL</a>
+            </div>
+        </div>
+    </form>
+
+    {% endif %}
+
+{% endblock %}
+

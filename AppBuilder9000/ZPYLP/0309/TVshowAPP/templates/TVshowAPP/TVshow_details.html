@@ -1,0 +1,25 @@
+{% extends "TVshowAPP/base.html" %}
+
+{% block title %}List of Shows with info{% endblock %}
+
+{% block header %}Selected Show{% endblock %}
+
+{% block content %}
+<h1>Selected Show:</h1>
+    <table class="sur-le-table">
+      <tr>
+        <th>Show Name:</th>
+        <th>Genre:</th>
+        <th>Network:</th>
+        <th>Seasons:</th>
+        <th>Summary:</th>
+      </tr>
+      <tr>
+          <td>{{ tvform.show_name }}</td>
+          <td>{{ tvform.genre }}</td>
+          <td>{{ tvform.network }}</td>
+          <td>{{ tvform.seasons }}</td>
+          <td>{{ tvform.summary }}</td>
+      </tr>
+    </table>
+{% endblock %}

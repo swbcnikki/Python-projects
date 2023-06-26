@@ -1,0 +1,37 @@
+<!-- 4. templates utilizing Django block tags.
+	# prior to this is 3. views.py
+    # templates renders the webpage, describes the design with basic logic statements of the page in html.
+		#Child can override Parent's settings.
+	# This is the main page, same as heroability_home.html
+	# next requires connecting the classes (views) with the functions by 5. urls.py
+-->
+
+{% extends "RevitFunctions/RevitFunctions_base.html" %}
+
+{% block title %}Revit Functions{% endblock %}
+
+{% block content %}
+
+<!-- Full Page Image Header with Vertically Centered Content -->
+<header>
+  <div class="masthead">
+    <div class="container h-100">
+
+    </div>
+  </div>
+  <div class="imageText">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="fw-bolder">{% block header %}REVIT FUNCTIONS YOU CAN TACKLE!{% endblock %}</h1>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- IMAGE SOURCE -->
+<section class="py-1" >
+  <div class="container text-center">
+    <small>Image: https://coarchitects.com/project/oregon-health-science-university-medical-education-building/?all=20</small>
+  </div>
+</section>
+
+{% endblock %}

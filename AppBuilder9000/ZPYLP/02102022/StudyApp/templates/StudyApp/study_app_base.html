@@ -1,0 +1,40 @@
+{%  load static %}
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>{% block title %} {% endblock %}</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/study_app_stylesheet.css' %}">
+            <script src="../static/js/study_app_javascript.js" defer></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity=
+        </head>
+        <body class="main">
+            <div id="nav_id">
+                <!-- NAVBAR SECTION -->
+                <!-- Navbar subject to change depending on time
+                     Must create and add links to other webpages -->
+                <ul class="topnav">
+                    <li><a class="navbar_item active"href="{% url 'study_home' %}">Home</a></li>
+                    <li><a class="navbar_item"href="{% url 'members' %}">Members</a></li>
+                    <li><a class="navbar_item" href="{% url 'diary' %}">Diary</a></li>
+                    <li><a class="navbar_item" href="{% url 'focus' %}">Focus Time</a></li>
+                    <li><a class="navbar_item" href="{% url 'activity' %}">Activities</a></li>
+                </ul>
+                <header>
+                    <h1>{% block header %} {% endblock %}</h1>
+                </header>
+                {% block content %}
+                {% block carousel %} {% endblock %}
+                {% endblock %}
+            </div>
+            <div class="center">
+                <p><a href="{% url 'study_home' %}"> Study App</a> | &copy; 2021 | <a href="www.learncodinganywhere.com">The Tech Academy</a></p>
+            </div>
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        </body>
+    </html>

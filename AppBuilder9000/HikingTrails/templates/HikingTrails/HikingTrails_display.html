@@ -1,0 +1,27 @@
+{% extends 'HikingTrails/HikingTrails_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2>Trails:</h2>
+
+        <div id="form-container" class="table-responsive w-50 mx-auto">
+			<table id="table" class="table table-light table-bordered table-hover text-container">
+				<tr id="headerRow">
+					<th>Trail Name</th>
+					<th>Distance</th>
+					<th>State</th>
+				</tr>
+				{%  for trail in trails %}
+				<tr>
+                    <td class="center"><a href="{% url 'HikingTrails_details' trail.id %}">{{ trail.trail_name }}</a></td>
+					<td class="center">{{ trail.distance }}</td>
+					<td class="left">{{ trail.state }}</td>
+				</tr>
+				{% endfor %}
+
+			</table>
+        </div>
+
+{% endblock %}

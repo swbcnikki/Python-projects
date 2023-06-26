@@ -1,0 +1,41 @@
+
+body {
+    background-image: url( "/static/images/GrandTetons.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    margin: 100px;
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+}
+
+.nav .menu-bar {
+    width: 100%;
+    text-align: center;
+    box-shadow: 1px 2px 4px white;
+    background: rgba(0,0,0,0);
+}
+
+.menu-bar li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 15px;
+    margin: 0px 20px;
+    font-size: 25px;
+    font-family: sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-bar li:hover {
+    background: #007bff;
+    color: white;
+}
+
+li a {
+    color: black;
+}
+

@@ -1,0 +1,34 @@
+{%extends "musicfiles_base.html"%}
+
+{% load static %}
+
+
+{% block title %}Music File Manager{% endblock %}
+
+{% block header %}List of Music Files{% endblock %}
+
+{% block content %}
+
+<h3>Here is a list of your tracked music files:</h3>
+
+ <table>
+     <tr>
+         <th>{{'ID'|upper}}</th>
+         <th>{{'Name'|upper}}</th>
+         <th>{{'Type'|upper}}</th>
+         <th>{{'Genre'|upper}}</th>
+     </tr>
+ <tr>
+     {% for file in file_list %}
+     <td><a href="{% url 'musicfiles_details' file.pk  %}">{{ file.name }}</a> </td>
+     <td>{{file.id}}</td>
+     <td>{{file.name}}</td>
+     <td>{{file.type}}</td>
+     <td>{{file.genre}}</td>
+ </tr>
+     {% endfor %}
+</table>
+
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'Val_base.html' %}
+{% block title %}Add Item{% endblock %}
+{% block content %}
+
+<p>ADD A VALHEIM ITEM</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button id="new-item-button" type="submit" name="Save_Item">Add Item</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'coachBase.html' %}
+{% block title %}Child Roster{% endblock %}
+{% block content %}
+
+    <div class="lighten-20 rounded jumbotron jumbotron-fluid bg-danger text-light text-center">
+            <h3 class="font-weight-bold">Are you sure you want to delete {{childForDelete.First_Name}}?</h3>
+    </div>
+        <form method="POST">
+        {% csrf_token %}
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <input class="btn btn-danger text-light btn-md font-weight-bold" type="submit" value="Yes"/>
+            <a class="btn btn-success text-light btn-md font-weight-bold" href="{% url 'coachChildRoster' %}">Cancel</a>
+        </div>
+        </form>
+    </div>
+
+{% endblock %}

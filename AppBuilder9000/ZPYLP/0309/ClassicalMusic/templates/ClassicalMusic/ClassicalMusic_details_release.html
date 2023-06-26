@@ -1,0 +1,176 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_menu.html" %}
+
+{% load staticfiles %}
+
+
+{% block search_action %}
+    {% url 'ClassicalMusic_search_musician' %}
+{% endblock %}
+
+
+{% block content %}
+<header class="page_header">
+    <h1>{{ release }}</h1>
+</header>
+
+<!-- ERRORS & BUTTONS BAND-->
+<div class="button-container">
+    <div>{% include "ClassicalMusic/includes/ClassicalMusic_errors.html" %}</div>
+    <div >
+    </div>
+    <div>
+        <a class="icon-link" href="{% url 'ClassicalMusic_edit_tracks' release.pk %}">
+            <i class="far fa-edit big-icon icon"></i>
+        </a>
+        <a data-toggle="modal" data-target="#confirm_delete">
+            <i class="far fa-trash-alt big-icon icon"></i>
+        </a>
+        <a class="edit_icon" href="{% url 'ClassicalMusic_add_release' %}">
+            <i class="far fa-plus-square big-icon"></i>
+        </a>
+    </div>
+</div>
+
+<!--MAIN TABLE-->
+<table class="table ">
+    <tr>
+        <td class=" w-header h-minimum">Title</td>
+        <td class="w-center h-minimum">
+            {{ release }}
+                <a class="icon-link" href="{% url 'ClassicalMusic_edit_release' release.pk %}">
+                    <i class="far fa-edit icon"></i>
+                </a>
+        </td>
+        <td class="w-image" rowspan="6"><img class="portret" src="{% if release.image_url %}{{ release.image_url }}{% else %}{% static 'ClassicalMusic/images/music-4661526_1920.jpg' %}{% endif %}"></td>
+    </tr>
+    <tr>
+        <td class=" h-auto">Tracks</td>
+        <td>
+
+            <table class="nested-table">
+                <tbody>
+                    {% for track in release.track_set.all %}
+                        {% ifchanged %}
+                            <tr>
+                                <td>Disk {{ track.disk }}</td>
+                                <td colspan="3">
+                                    <strong><a href="{% url 'ClassicalMusic_details_composition' track.movement.composition.pk %}">{{ track.movement.composition }}</a></strong><br>
+                                    {% for author in track.movement.composition.authors.all %}
+                                        {% if forloop.last %}
+                                            <strong><a href="{% url 'ClassicalMusic_details_musician' author.pk %}">{{  author }}</a></strong> - <span class="role">{{ author.role|lower }}</span>
+                                        {% else %}
+                                            <strong><a href="{% url 'ClassicalMusic_details_musician' author.pk %}">{{  author }}</a></strong> - <span class="role">{{ author.role|lower }}</span>,
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {% for performer in track.performers.all %}
+                                        {% if forloop.last %}
+                                            <strong><a href="{% url 'ClassicalMusic_details_musician' performer.pk %}">{{  performer }}</a> - <span class="role">{{ performer.role|lower }}</span></strong>
+                                        {% else %}
+                                            <strong><a href="{% url 'ClassicalMusic_details_musician' performer.pk %}">{{  performer }}</a> - <span class="role">{{ performer.role|lower }}</span></strong>,
+                                        {% endif %}
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endifchanged %}
+                        <tr>
+                            <td></td>
+                            <td>
+                                {{ track.track_number }}
+                            </td>
+                            <td>
+                                {{ track.movement.title }}
+                            </td>
+                            <td>
+                                <a data-val1="{% url 'ClassicalMusic_delete_track' release.pk track.pk %}" data-modal_body_text="Are you sure you want to delete '{{ track.movement.title }}' from '{{ release }}'?" data-toggle="modal" data-target="#confirm_delete_pk">
+                                    <i class="far fa-trash-alt icon"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+            <a class="edit_icon" href="{% url 'ClassicalMusic_add_additional_track' release.pk %}">
+                        <i class="far fa-plus-square "></i><span class="italic">&nbsp;Add track</span>
+            </a>
+
+
+
+
+
+
+        </td>
+    </tr>
+
+</table>
+
+<!--CONFIRM DELETE RELEASE MODAL -->
+<div class="modal" id="confirm_delete">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Comfirm Deletion</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure you want to delete '{{ release }}' from the database?
+        </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <form method="POST" action="{% url 'ClassicalMusic_delete_release' release.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger" >Delete</button>
+              <button type="button" class="btn btn-custom-color" data-dismiss="modal">Cancel</button>
+          </form>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--CONFIRM DELETE TRACK MODAL -->
+<div class="modal" id="confirm_delete_pk">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Comfirm Deletion</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            Text is set by jQuery
+
+        </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+          <form method="POST" action="" class="delete_link">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger" >Delete</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+          </form>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+

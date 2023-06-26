@@ -1,0 +1,29 @@
+{% extends 'SteamInterestApp/SIA_base.html' %}
+
+{% load static %}
+
+<!--This page will be used for adding an entry to our templates!
+It also extends our base, which means minimal formatting
+-->
+
+{% block title %} Steam Interest App - Add an entry {% endblock %}
+
+{% block morestyling %}<link href="{% static 'CSS/SIA_newEntry.css' %}" rel="stylesheet" type="text/css">{% endblock %}
+
+{% block header %} Add an entry from your Steam Library! {% endblock %}
+
+{% block content %}
+    <div class="formtable d-flex justify-content-center text-center">
+        <form name="SIAEntry" method="POST" action=".">
+            <table>
+                {% csrf_token %}
+                {{ formentry.non_field_errors }}
+                {{ formentry.as_table }}
+            </table>
+            <div class="frmBtn_container formentrysubmit">
+                <input type="submit" class="btn btn-light" value="Create New Entry" name="Save_Entry">
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "Cartoons/Cartoons_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page displays a single Cartoon selected from the list page.
+{% endcomment %}
+
+<div class="jumbotron jumbotron-fluid bg-primary text-light text-center">
+   <h1 class="display-4">Cartoon Details</h1>
+</div>
+
+<div id="table-container" class="table-responsive mx-auto">
+
+    <table class="table table-hover mx-auto w-50 bg-danger">
+        <thead class="text-light font-weight-bold">
+            <tr> <!--Headings for table-->
+                <th scope="col" data-field='title' data-sortable="True">Title:</th>
+                <th scope="col" data-field='premier_date' data-sortable="True">Premier Date:</th>
+                <th scope="col" data-field='network' data-sortable="True">Network:</th>
+                <th scope="col" data-field='genre' data-sortable="True">Genre:</th>
+                <th scope="col" data-field='brief_description' data-sortable="True">Description:</th>
+            </tr>
+        </thead>
+        <tbody class="text-light">
+            <tr> <!-- These display all the specific items from the cartoon form -->
+                <td>{{item.title | capfirst}}</td>
+                <td>{{item.premier_date | capfirst }}</td>
+                <td>{{item.network | capfirst }}</td>
+                <td>{{item.genre | capfirst }}</td>
+                <td>{{item.brief_description | capfirst }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="text-center">
+    <a class="btn btn-success text-light btn-md font-weight-bold w-50"  href="{% url 'Cartoons_create' %}" role="button">Add a Cartoon</a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_jumbotron.html" %}
+{% load staticfiles %}
+
+
+{% block jumbotron %}
+	<h2>Edit Tracks</h2>
+    <h3>{{ release }}</h3>
+    <form method="post" class="was-validated">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ formset.management_form }}
+            {% for form in formset %}
+                {{ form.as_p }}
+                <hr class="hr_multiple_form">
+            {% endfor %}
+        <button type="submit" class="btn btn-custom-color">Save Tracks</button>
+        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_details_release' release.pk %}">Cancel</a>
+
+
+    </form>
+
+{% endblock %}
+
+

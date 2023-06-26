@@ -1,0 +1,13 @@
+{% extends 'nyc_base.html' %}
+
+{% block title%}Update{% endblock %}
+
+	{% block content %}
+        <form action="" method=POST>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<br>
+        <button id="new-rest-button" type="submit" name="Update">Update</button>
+        </form>
+
+	{% endblock %}

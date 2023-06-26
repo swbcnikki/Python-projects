@@ -1,0 +1,15 @@
+{% extends "YTfeed/YTfeed_base.html" %}
+{% load static %}
+{% block title %} Add Youtuber {% endblock %}
+{% block content  %}
+<h1>ADD A YOUTUBER TO YOUR FAVORITES!</h1>
+    <div id="add-youtuber-form">
+        <form method="POST" id="youtuber-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="new-button" type= "submit" name="add-youtuber">ADD THEM!</button>
+        </form>
+        <br>
+    </div>
+
+{% endblock %}

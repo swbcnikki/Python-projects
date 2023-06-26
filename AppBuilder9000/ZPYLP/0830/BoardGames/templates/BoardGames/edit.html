@@ -1,0 +1,20 @@
+{% extends "BoardGames/base.html" %}
+{% load static %}
+{% block title %} Board Games - Add a Board Game {% endblock %}
+
+{% block header %}
+    <h1>Edit the details for the board game in the form below.</h1>
+{% endblock %}
+
+{% block content %}
+<div class="add-game-form">
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <a id="delete-game-button" href="{% url 'BoardGames_delete' id %}" class="btn btn-secondary" role="button" aria-disabled="true">Delete Game</a>
+        <button id="edit-game-button" class="btn btn-primary" type="submit" name="Edit_Game">Update Details</button>
+    </form>
+</div>
+{% endblock %}

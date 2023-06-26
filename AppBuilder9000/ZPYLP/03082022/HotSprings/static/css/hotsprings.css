@@ -1,0 +1,13 @@
+/*========================
+General Styling
+========================*/
+
+body {
+    background-image: url('../img/hotsprings.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 5vh;
+}
+

@@ -1,0 +1,83 @@
+
+{% extends 'eb_base.html' %}{% load static %}
+
+{% block title %}A Scenic Route{% endblock %}
+
+{% block header %}Gallery{% endblock %}
+
+{% block content %}
+<style>
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+
+            <!-- need to create the modal box to complete the slideshow setup... later -->
+<section>
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene1.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(1)" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene2.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(2)" alt="">
+        </div>
+    </div>
+
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene4.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(4)" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene5.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(5)" alt="">
+        </div>
+    </div>
+
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene9.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(9)" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene10.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(10)" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene11.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(11)" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene12.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(12)" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene13.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(13)" alt="">
+        </div>
+    </div>
+
+    <div>
+        <div class="column">
+            <img src="{% static 'images/scene14.jpg' %}" style="width: 75%" onclick="openModal (); currentSlide(14)" class="center" alt="">
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

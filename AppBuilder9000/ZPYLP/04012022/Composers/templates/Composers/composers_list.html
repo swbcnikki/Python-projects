@@ -1,0 +1,33 @@
+{% extends 'Composers/composers_base.html' %}
+{% load static %}
+
+{% block title%}Composers List{% endblock %}
+{% block header%}Composers List{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-responsive w-100 bg-secondary text-white">
+        <h2 class="display-4">Table of Composers</h2>
+    </div>
+
+<div id="table-container" class="table-responsive mx-auto">
+
+    <table class="table table-hover mx-auto w-50">
+        <thead>
+            <tr> <!--Headings for table-->
+                <th scope="col" data-field='First_Name' data-sortable="True">First Name</th>
+                <th scope="col" data-field='Last_Name' data-sortable="True">Last Name</th>
+            </tr>
+        </thead>
+        <tbody> <!--table information with first letter capitalized-->
+        {% for item in composer_list %}
+            <tr>
+                <td><a href="{% url 'composers_details' item.id %}">{{item.first_name |  capfirst}}</td>
+                <td>{{ item.last_name | capfirst }}</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    <h6>Click the First Name to see more details!</h6>
+</div>
+{% endblock %}

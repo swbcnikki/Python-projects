@@ -1,0 +1,29 @@
+{% extends "BasketballStats_base.html" %}
+{% load static %}
+{% block title %}Basketball Stats{% endblock %}
+
+{% block header %}Player Stats{% endblock %}
+
+{% block content %}
+<div id="container" class="table-responsive w-75 mx-auto">
+    <table id="table" class="table table-dark table-bordered table-hover text-center" data-toggle="table">
+        <caption>Click on a player's name to view their details</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-field="name" data-sortable="true" class="w-25">Player</th>
+                <th scope="col" data-field="mvp_awards" data-sortable="true" class="w-25">MVP Awards</th>
+                <th scope="col" data-field="championships" data-sortable="true" class="w-25">Championships</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for Player in player_list %}
+            <tr>
+                <td><a href="{% url 'basketball_stats_details' Player.id %}">{{ Player }}</a></td>
+                <td>{{ Player.mvp_awards }}</td>
+                <td>{{ Player.championships }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

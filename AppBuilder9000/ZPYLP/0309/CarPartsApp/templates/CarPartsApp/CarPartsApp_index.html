@@ -1,0 +1,18 @@
+{% extends "CarPartsApp/CarPartsApp_base.html" %}
+{% load static %}
+{% block title %}Index{% endblock %}
+{% block header %} Welcome to the index {% endblock %}
+
+{% block content %}
+
+<ul>
+    <br>
+
+    <div class="index">
+        {% for part in parts %}
+            <a href="{% url 'CarPartsApp_details' part.id %}">{{ part.user_name }}</a>
+        {% endfor %}
+    </div>
+</ul>
+
+{% endblock %}

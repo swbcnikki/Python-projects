@@ -1,0 +1,53 @@
+{% extends 'StarWatch_base.html' %}
+{% load static %}
+
+{% block title %}Objects{% endblock %}
+
+{% block header %}
+    <div class=" m-4 jumbotron jumbotron-fluid w-80 display1">
+        <h2 class=" text-center display-3">{{ details.object_name}}</h2>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div id="object-details" class="m-3">
+
+        <div class=" m-3 jumbotron jumbotron-fluid w-80 display2">
+        <h1 class="ml-4">Description</h1>
+        <p id="object-description" class=" ml-5">{{ details.object_description }}</p>
+        </div>
+
+        <br>
+
+        <table id="table" class=' text-center table table-info  table-hover table-bordered table-centered'>
+            <tr>
+                <td class="details-cell">Nickname:</td>
+                <td class="details-cell">{{ details.object_nickName }}</td>
+            </tr>
+            <tr>
+                <td class="details-cell">Type of Object:</td>
+                <td class="details-cell">{{ details.object_type }}</td>
+            </tr>
+            <tr>
+                <td class="details-cell">Brightness:</td>
+                <td class="details-cell">{{ details.object_brightness }}</td>
+            </tr>
+            <tr>
+                <td class="details-cell">Type of Object:</td>
+                <td class="details-cell">{{ details.object_latitude }}</td>
+            </tr>
+            <tr>
+                <td class="details-cell">Direction:</td>
+                <td class="details-cell">{{ details.object_direction }}</td>
+            </tr>
+
+        </table>
+<div class="fromBtn_container">
+	<a href="{% url 'StarWatch_editObject' details.id %}"><button type="submit" class="btn" id="button2">Edit  Information</button></a>
+
+</div>
+
+    </div>
+
+{% endblock %}

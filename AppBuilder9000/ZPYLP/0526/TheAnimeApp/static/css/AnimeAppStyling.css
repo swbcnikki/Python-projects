@@ -1,0 +1,57 @@
+body {
+    background-image: url('/static/images/app-images/background.jpg');
+    background-color: #B28B84;
+}
+
+container {
+    text-align: center;
+
+}
+
+ul {
+    text-align: center;
+    font-family: courier;
+    font-size: 18px;
+    display: block;
+}
+
+h2 {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: courier;
+    color: #50BCB9;
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+    font-family: courier;
+    font-size: 18px;
+}
+/*** Navbar Styling ***/
+.Navbar {
+  overflow: hidden;
+  background-color: #FFB600;
+}
+
+.Navbar a {
+  float: left;
+  color: #322514;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.Navbar a:hover {
+  background-color: #50BCB9;
+  color: White;
+}
+
+.Navbar a.active {
+  background-color: #50BCB9;
+  color: white;
+}

@@ -1,0 +1,21 @@
+{% extends "NeighborhoodReview/NeighborhoodReview_base.html" %}
+
+{% block title %}List all neighborhoods{%  endblock %} }
+
+{% block header %}Select Neighborhood to Edit{% endblock %}
+
+{% block content %}
+
+
+<h4>Neighborhood List</h4>
+
+    <table id ="table">
+        {% for neigh in neigh_list   %}
+            <tr >
+                <td ><a href = "{% url 'DisplayNeighborhood_item.html' neigh.id %}" class ="list-font" >{{ neigh.name }} </a> </td>
+            </tr>
+       {% endfor %}
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "Anime_base.html" %}
+
+{% block title %} Anime - View Review {% endblock %}
+
+{% block header %} Review Details {% endblock %}
+
+{% block content %}
+
+<!-- Details list -->
+<!--Test-->
+  <ul class="list-group">
+    <h2>Anime</h2>
+    <ul>{{ details.anime }}</ul>
+    <h2>Release</h2>
+    <ul>{{ details.release }}</ul>
+    <h2>Genre</h2>
+    <ul>{{ details.genre }}</ul>
+    <h2>Episodes</h2>
+    <ul>{{ details.episodes }}</ul>
+  </ul>
+  <!-- Delete, Edit, Back Buttons -->
+  <div class="btn-group" role="group">
+    <a href="{% url 'Anime_entries' %}"><button type="button" class="btn btn-secondary">Back</button></a>
+  </div>
+</div>
+
+{% endblock %}

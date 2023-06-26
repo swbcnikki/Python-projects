@@ -1,0 +1,55 @@
+{% extends 'Cartoons/Cartoons_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid bg-primary text-light text-center">
+  <h1 class="display-4">What's your favorite cartoon?</h1>
+</div>
+
+<br>
+<div class="container mx-auto">
+    <div class="row">
+      <div class="col-sm-5 mx-auto">
+        <div class="card bg-danger text-light">
+          <div class="card-body text-center">
+            <h4 class="card-title">Add a Cartoon</h4>
+            <h6 class="card-text text-left">Tell us all about your favorite cartoon to enter it into our database!</h6>
+            <a href="{% url 'Cartoons_create' %}" class="btn btn-primary text-light">Add Cartoon</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5 mx-auto">
+        <div class="card text-center bg-success text-light">
+          <div class="card-body">
+            <h4 class="card-title">List of Cartoons</h4>
+            <h6 class="card-text text-left">Click the button below to learn more about the cartoon favorites we’ve collected so far.</h6>
+            <a href="{% url 'Cartoons_list' %}" class="btn btn-danger text-light">View Cartoons</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-5 mx-auto">
+        <div class="card text-center bg-warning text-light">
+          <div class="card-body">
+            <h4 class="card-title">Top Ten Cartoons</h4>
+            <h6 class="card-text text-left">See the top ten animated series of all time according to IndieWire.</h6>
+            <a href="{% url 'Cartoons_rankings' %}" class="btn btn-success text-light">See Top Ten</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5 mx-auto">
+        <div class="card text-center bg-primary text-light">
+          <div class="card-body">
+            <h4 class="card-title">Top 100 Animated Movies</h4>
+            <h6 class="card-text text-left">Check out the top 100 animated movies according to Rotten Tomatoes.</h6>
+            <a href="{% url 'Cartoons_movies' %}" class="btn btn-warning text-light">See Top 100</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

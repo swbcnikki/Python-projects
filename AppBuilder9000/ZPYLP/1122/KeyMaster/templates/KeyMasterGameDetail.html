@@ -1,0 +1,17 @@
+{% extends 'KeyMaster_base.html' %}
+{% block title %}Add Game to List{% endblock %}
+{% block content %}
+    <h3>Game Details</h3>
+    <div class="GameContainer">
+
+        <strong>{{ games.game_name }}</strong>
+        <ul class="GameList">
+        <strong>Genre:</strong> <li>{{ games.genre|capfirst }}</li>
+        <strong>Purchased from:</strong> <li>{{ games.store_name|capfirst }}</li>
+        <strong>Game Key(if applicable):</strong><li>{{ games.game_key }}</li>
+        </ul>
+        <button class="button"><a href="{% url 'KeyMaster_edit' games.pk %}">Edit</a></button>
+        <button class="button"><a href="../{{ form.pk }}KeyMaster_delete/">Delete</a></button>
+        </form>
+    </div>
+{% endblock %}

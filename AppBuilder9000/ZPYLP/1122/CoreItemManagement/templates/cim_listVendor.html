@@ -1,0 +1,78 @@
+{% extends "cim_base.html" %}
+
+{% block title %}Core Item Management{% endblock %}
+
+
+{% block header %}
+<div class="cim_Title">
+    <h1>Core Item Management</h1>
+    <h2>Vendor List</h2>
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div style="width: 100%; display: inline-flex;">
+    <!-- Container -->
+    <div style="width: 100%;">
+        <!-- Search Bar -->
+        <!-- Does not work yet so it has been removed
+        <div style="padding: 1rem; width: 100%;">
+            <form action="">
+                <input type="text" name="search" placeholder="Enter search term" value="{{request.GET.title}}">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        -->
+        <!-- Search Bar -->
+        <!-- Add new item button -->
+        <div style="padding: 1rem; width: 100%;">
+            <a href="{% block add-button %}{% url 'cim_newVendor' %}{% endblock %}"><button>Add new vendor</button> </a>
+        </div>
+        <!-- Add new item button -->
+        <!-- Item table -->
+        <table>
+            <tr>
+                <th></th>
+                <th class="center">Name</th>
+                <th class="center">Vendor Number</th>
+                <th class="center">Category</th>
+                <th class="center">Contact</th>
+            </tr>
+            {% for vendor in vendors %}
+            <tr>
+                <td class="center"><button>Edit</button></td>
+                <td class="center nameColumn">{{ vendor.vendor_name }}</td>
+                <td class="center">{{ vendor.vendor_number }}</td>
+                <td class="center categoryColumn">{{ vendor.vendor_category }}</td>
+                <td class="center vendorColumn">{{ vendor.vendor_contact }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <!-- Item table -->
+        <!-- Page bar -->
+        <div class="pagination">
+            <div class="page_bar_center">
+                {% if vendors.has_previous %}
+                    <a href="?page={{ vendors.previous_page_number }}" class="page_button">previous</a>
+                {% endif %}
+            </div>
+
+            <div class="page_bar_center">
+                Page {{ vendors.number }} of {{ vendors.paginator.num_pages }}.
+            </div>
+
+            <div class="page_bar_center">
+                {% if vendors.has_next %}
+                    <div><a href="?page={{ vendors.next_page_number }}" class="page_button">next</a></div>
+                {% endif %}
+            </div>
+        </div>
+        <!-- Page bar -->
+    </div>
+    <!-- Container -->
+</div>
+
+
+
+{% endblock %}

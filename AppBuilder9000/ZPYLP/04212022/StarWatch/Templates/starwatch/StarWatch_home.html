@@ -1,0 +1,124 @@
+{% extends 'StarWatch_base.html' %}
+{% load static %}
+
+{% block title %}Star Watch{% endblock %}
+
+
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+    <h1 id="title"> Star Watch</h1>
+    <div id="home_header">
+       <p id="slogan"> A personal astronomy assistant </p>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="box m-5 border border-primary shadow-lg">
+    <br>
+        <p id="summary">
+            For countless generations human-kind has gazed into the night sky with an unyielding sense of wonder.
+            They are the furnaces of all creation that illuminate a vastly dark universe and have been given constant praise
+            for what they provide. Staring into the depth of the cosmos is a truly daunting expedition, but Star Watch is supposed
+            to help with that. While I still have to plan out future features, Star Watch will be an app designed to asist the user
+            in tracking and identifying stars based on their brightness and position in the sky.
+        </p>
+    <br>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="box">
+    <br>
+        <div id="search">
+            <h3 class="box_title"> Search for something here </h3>
+            <div class="box_content">
+                <p>Search Bar HERE</p>
+            </div>
+        </div>
+    <br>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="box">
+    <br>
+        <div id="add">
+            <h3 class="box_title"> Add a finding here</h3>
+            <div class="box_content">
+                <p>BUTTONS HERE</p>
+            </div>
+        </div>
+     <br>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="box">
+    <br>
+        <div id="catalog">
+            <h3 class="box_title">Catalog</h3>
+            <div class="box_content">
+                <ul>
+                    <li>
+                        Dummy_Content
+                    </li>
+                    <li>
+                        Dummy_Content
+                    </li>
+                    <li>
+                        Dummy_Content
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <br>
+    </div>
+
+    <br>
+    <br>
+    <br>
+  <div class="box m-4 ">
+        <div class="centered_container">
+            <table id="table" class='text-center box table table-info  table-hover table-bordered table-centered'>
+                <thread>
+                    <tr>
+                        <th scope="col" data-field="object_name">Object</th>
+                        <th scope="col" data-field="object_nickName">Nick-Name</th>
+                        <th scope="col" data-field="object_type">Type</th>
+                        <th scope="col" data-field="object_description">Description</th>
+                        <th scope="col" data-field="object_brightness">Brightness</th>
+                    </tr>
+                </thread>
+                <tbody>
+                {% for object in object_list %}
+                    <tr>
+                        <td><a href="{% url 'StarWatch_objectDetails' object.id %}">{{ object }}</a></td>
+                        <td>{{ object.object_nickName }}</td>
+                        <td>{{ object.object_type }}</td>
+                        <td>{{ object.object_description }}</td>
+                        <td>{{ object.object_brightness }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}

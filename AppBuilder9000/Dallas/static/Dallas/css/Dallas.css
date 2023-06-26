@@ -1,0 +1,14 @@
+/* GENERAL SECTION STYLING */
+html {
+    scroll-behavior: smooth;
+    font-size: 200 px
+}
+
+html body {
+    background-color: #fcdd60;
+    background-image: url('../images/background-image.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+}

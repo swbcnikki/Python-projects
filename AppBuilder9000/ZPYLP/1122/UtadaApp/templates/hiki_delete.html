@@ -1,0 +1,27 @@
+{% extends 'utada_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Music {% endblock %}
+
+
+{% block content %}
+
+
+<form method="POST">
+    {% csrf_token %}
+<div class="p-container">
+    <p>Do you really want to delete this item?</p>
+    {{ item.as_p}}
+</div>
+
+
+<div class="btn-container">
+    <button class="btn btn-outline-light btn-md mx-auto d-block" type="submit" name="Delete Song">Yes, Delete This Song</button>
+</div>
+
+</form>
+
+
+
+
+{% endblock %}

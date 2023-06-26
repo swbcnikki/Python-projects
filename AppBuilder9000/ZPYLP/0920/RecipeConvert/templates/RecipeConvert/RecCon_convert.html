@@ -1,0 +1,24 @@
+{% extends "RecipeConvert/RecCon_base.html" %}
+{% load static %}
+
+{% block title %}Recipe Converter{% endblock %}
+{% block header %}Convert Your Recipe{% endblock %}
+
+{% block content %}
+
+    <div class="admin_panel">
+        <form method="POST">
+            <div>
+                <p>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                </p>
+                <div class="frmBtn_container">
+                    <button class="btn" type="submit" value="Submit">CONVERT</button>
+                    <button class="btn"><a href="{% url 'home' %}">CANCEL</a></button
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

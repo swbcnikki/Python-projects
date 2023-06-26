@@ -1,0 +1,51 @@
+{% extends "IceHockey_base.html" %}
+{% load static %}
+{% block title %}Api Team Data{% endblock %}
+
+{% block header %}Api Team Data{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<h5 class="display-2 text-light text-center mt-5 mb-5">Your Favorite Team: {{ user.favorite_team }}</h5>
+
+<div class="container-fluid mx-auto bg-light" style="width: 50%; border-radius: 10px">
+   <form method='POST' action="{% url 'IceHockey_api_choice' user.pk %}">
+      {% csrf_token %}
+         {{ form|crispy }}
+         <input class="btn btn-info mb-2" type='submit' value="View">
+   </form>
+</div>
+
+<table id="table" class="table table-light table-bordered table-hover w-25 text-center text-info mx-auto mt-5" data-toggle="table">
+    <thead>
+       <tr>
+          <th scope="col">Player Name</th>
+          <th scope="col">Pos.</th>
+          <th scope="col">#</th>
+          <th scope="col">Add Fav.</th>
+       </tr>
+    </thead>
+       <tbody>
+          {% for roster, position_code, number_list in zipped_list%}
+             <tr>
+                <td class="align-middle">{{ roster }}</td>
+                <td class="align-middle">{{ position_code }}</td>
+                <td class="align-middle">{{ number_list }}</td>
+                <td class="align-middle">
+                    <form method='POST' action="{% url 'IceHockey_fav_add' user.pk %}" id="PlayerForm">
+                       {% csrf_token %}
+                       <input type="hidden" name="player_name" value="{{ roster }}">
+                       <input type="hidden" name="player_pos" value="{{ position_code }}">
+                       <input type="hidden" name="player_num" value="{{ number_list }}">
+                       <input type='submit' value="Add Fav">
+                       <!-- for loop similtaneously populates cells and 'hidden' form values to be passed
+                       from template to view -->
+
+                   </form>
+                </td>
+             </tr>
+          {% endfor %}
+       </tbody>
+ </table>
+
+{% endblock %}

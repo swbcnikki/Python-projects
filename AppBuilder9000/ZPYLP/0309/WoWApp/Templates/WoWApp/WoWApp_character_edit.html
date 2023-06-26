@@ -1,0 +1,27 @@
+{% extends 'WoWApp/WoWApp_base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <!--form will be submitted with the POST method-->
+    <form class="form-container" method="POST">
+        <!--django required csrf token-->
+        {% csrf_token %}
+        <table>
+        <!--form will be presented as a table using the django "as_table" function-->
+        {{ form|crispy}}
+        </table>
+        <div class="btn_container">
+            <!--form will be submitted to the templates-->
+            <button type="submit" class="btn-primary btn-lg">Save</button>
+            <!--user will be redirected to the WoWAppSubscriberList url-->
+            <a href="{% url 'WoWAppCharacterList' %}">
+                <button type="button" class="btn-secondary btn-lg">Cancel</button>
+            </a>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

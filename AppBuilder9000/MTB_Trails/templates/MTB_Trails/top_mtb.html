@@ -1,0 +1,37 @@
+{% extends "MTB_Trails/mtb_trails_base.html" %}
+{% load static %}
+
+
+{% block title %}MTB Trails | Top Ten{% endblock %}
+
+{% block header %}top ten mountain bikes of 2022{% endblock %}
+
+{% block content %}
+    <!-- Centering elements with custom CSS -->
+    <div class="scraped-data--container">
+        <!-- This class adds padding to bottom of page -->
+        <div class="bottom-page--padding">
+                <div class="my-5">
+                    <div class="card border-white text-white bg-dark" style="max-width: 60rem;">
+                        <div class="card-header border-white text-white">
+                            <div class="card-body border-white">
+                                <h1 class="card-title text-danger text-center pb-4 border-white">2022 Top Ten MTBs</h1>
+                                <p class="card-text">
+                                    {% for bike_model in full_bike_desc %}
+                                    <ul>
+                                        <li>{{ bike_model }}</li>
+                                    </ul>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                                <div class="card-footer border-white text-danger text-center">Top ten list by GearLab.
+                                <a href="https://www.outdoorgearlab.com/topics/biking/best-mountain-bike"
+                                   class="btn btn-danger float-right active" role="button"
+                                   aria-pressed="true" target="_blank">Link</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+{% endblock %}

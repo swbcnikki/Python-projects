@@ -1,0 +1,404 @@
+html {
+    font-family: 'Nerko One', cursive;
+    font-size: 1.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+  	-webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    text-shadow: 4px 4px 6px purple;
+}
+
+body {
+    margin: 0%;
+    z-index: 0;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+/* Navbar */
+.Navbar {
+	overflow: hidden;
+	background-color: rgba(231, 113, 125, 0.8);
+	position: fixed;
+	top: 0;
+	width: 100%;
+    z-index: 1;
+    display: block;
+}
+
+/* Navbar text */
+.Navbar a {
+	float: left;
+	display: block;
+	color: white;
+	padding: .75vw 1vw;
+	text-decoration: none;
+	font-size: 2vw;
+	text-align: center;
+    position: relative;
+    text-shadow: 2px 2px 4px black
+}
+
+.Navbar a:hover {
+	background-color: rgba(179, 90, 99, 0.8);
+	color: white;
+	cursor: pointer;
+  	-webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    text-shadow: 4px 4px 6px purple;
+}
+
+#contact {
+    float: right;
+}
+
+.footer {
+    background-color: rgba(231, 113, 125, 0.8);
+    color: white;
+    text-shadow: 2px 2px 6px black;
+    font-size: 1em;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding: 5px 0px 10px 0px;
+    position: fixed;
+}
+
+.footer:hover {
+    text-align: center;
+    text-shadow: 6px 6px 12px purple;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
+#foot-left {
+    float: left;
+    padding: 0px 0px 0px 20px;
+}
+
+#foot-right {
+    float: right;
+    padding: 0px 20px 0px 0px;
+}
+
+#homepage_bg {
+    background: url('../images/findpet_home_bg.jpeg'); /* image source: https://medium.com/tip-top/5-best-animal-rescue-charities-e27d26c9c463 */
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    display: block;
+    height: 1000px;
+    position: fixed;
+}
+
+#apply_bg {
+    background: url('../images/applicant_bg.jpg'); /* image source: https://www.humanesociety.org/animal-rescue */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: left top;
+    width: 100%;
+    height: 1000px;
+    position: fixed;
+    z-index: -1;
+}
+
+#available_bg {
+    background: url('../images/listings_bg.jpg'); /* image source: https://americanhumane.org/app/uploads/2016/08/shutterstock_162633491.jpg */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: left top;
+    width: 100%;
+    height: 1000px;
+    position: fixed;
+    z-index: -1;
+}
+
+.title {
+    width: 70%;
+    margin: 150px auto 0px auto;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 6px black;
+}
+
+.apply_title {
+    width: 70%;
+    margin: 0px auto 0px auto;
+    padding: 60px 0 0 0;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 6px black;
+}
+
+#homepage_title {
+    font-size: 4em;
+}
+
+#applicant_title {
+    font-size: 2em;
+    margin: 0px auto 50px auto;
+    padding: 120px 0px 0px 0px;
+    width: 70%;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 6px black;
+}
+
+.title_caption {
+    font-size: 1.5em;
+}
+
+.form_container {
+    width: 60%;
+    margin: 40px auto 200px auto;
+    text-align: center;
+    display: block;
+    border: ridge pink 10px;
+    background-color: rgba(200, 113, 125, 0.4);
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    box-shadow:5px 10px 30px 8px rgb(0, 0, 0);
+}
+
+.form_container2 {
+    width: 60%;
+    margin: 40px auto 200px auto;
+    text-align: center;
+    display: block;
+    border: ridge pink 10px;
+    background-color: rgba(200, 113, 125, 0.4);
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    box-shadow:5px 10px 30px 8px rgb(0, 0, 0);
+}
+
+.form_container3 {
+    width: 90%;
+    margin: 40px auto 200px auto;
+    text-align: center;
+    display: block;
+    border: ridge pink 10px;
+    background-color: rgba(200, 113, 125, 0.4);
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    box-shadow:5px 10px 30px 8px rgb(0, 0, 0);
+}
+
+.container_header {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 5px auto 10px auto;
+}
+
+.header_container {
+    border: ridge pink 6px;
+    background-color: rgba(231, 113, 125, 0.7);
+    width: 50%;
+    margin: 30px auto 0px auto;
+}
+
+.header_container2 {
+    border: ridge pink 6px;
+    background-color: rgba(231, 113, 125, 0.7);
+    width: 40%;
+    margin: 30px auto 0px auto;
+}
+
+.caption {
+    font-size: 1em;
+    text-align: center;
+    padding: 0px 8px;
+}
+
+.form_submit {
+    background-color: rgba(231, 113, 125, 0.7);
+    margin: 5px auto 20px auto;
+    font-size: 1.5em;
+    font-family: 'Nerko One', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    box-shadow: 1px 4px 4px 2px rgb(0, 0, 0);
+    width: 50%;
+}
+
+.form_submit:hover {
+    text-shadow: 3px 3px 10px purple;
+    background-color: rgba(255, 113, 175, 1);
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
+#rescue_form {
+    text-align: left;
+    margin: 0px 0px 10px 30px;
+    padding: 0px 0px 00px 0px;
+}
+
+#filter_form {
+    text-align: center;
+    margin: 0px 0px 10px 30px;
+    padding: 0px 0px 00px 0px;
+}
+
+ul{
+ list-style-type: none;
+}
+
+.form_label{
+    margin: 5px 15px 0px 0px;
+    padding: 0;
+    text-align: left;
+}
+
+#description_row {
+    display: flex;
+    margin: 15px 0 10px 0;
+}
+
+.listing_container {
+    width: 90%;
+    margin: 40px auto 100px auto;
+    text-align: center;
+    display: block;
+    border: ridge pink 10px;
+    background-color: rgba(200, 113, 125, 0.4);
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    box-shadow:5px 10px 30px 8px rgb(0, 0, 0);
+}
+
+.available_table {
+	width: 95%;
+	height: auto;
+	margin: 10px auto 20px auto;
+	padding: 20px 0px 20px 0px;
+	border: ridge pink 10px;
+	border-collapse: collapse;
+	table-layout: auto;
+	float: center;
+	position: relative;
+}
+
+#applicant_table {
+	width: 95%;
+	height: auto;
+	margin: 10px auto 20px auto;
+	padding: 20px 0px 20px 0px;
+	border: ridge pink 10px;
+	border-collapse: collapse;
+	table-layout: auto;
+	float: center;
+	position: relative;
+}
+
+.table_heading th {
+	text-align: center;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+td {
+    font-family: Helvetica;
+    padding: 10px 0 10px 0;
+}
+
+#description_heading {
+    text-align: center;
+	font-weight: normal;
+	text-decoration: underline;
+	padding: 10px 0 0px 0;
+}
+
+#table_description {
+	word-wrap: normal;
+	text-align: center;
+	padding: 10px 0 20px 0;
+}
+
+.edit_delete_container {
+    width: 100%;
+    padding: 10px 0 20px 0;
+}
+
+#edit_btn, #delete_btn, .delete_btn, .close_btn {
+    background-color: rgba(231, 113, 125, 0.7);
+    margin: 5px 25px 25px 10px;
+    font-size: 1.5em;
+    font-family: 'Nerko One', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    box-shadow: 1px 4px 4px 2px rgb(0, 0, 0);
+    float:right;
+    display: block;
+    padding: 0px 15px;
+    border:none;
+}
+
+#edit_btn:hover, .close_btn:hover {
+    text-shadow: 3px 3px 10px purple;
+    background-color: rgba(255, 113, 175, 1);
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    cursor:pointer;
+}
+
+#delete_btn:hover, .delete_btn:hover {
+    text-shadow: 3px 3px 10px purple;
+    background-color: rgba(229, 21, 21, 1);
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    cursor:pointer;
+}
+
+.edit_caption {
+    display: block;
+    float: right;
+    margin: 10px 15px 0px 0px;
+    font-size: 1.25em;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  padding-top: 300px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal_content {
+    width: 85%;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    border: ridge pink 10px;
+    background-color: rgba(239, 184, 192, 1);
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    box-shadow:5px 10px 30px 8px rgb(0, 0, 0);
+    padding: 25px 0 0 0;
+}
+
+#close {
+  float:right;
+}
+
+.modal_confirmation {
+    font-size: 2em;
+    text-align: center;
+    margin: 0px auto 10px auto;
+}

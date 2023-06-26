@@ -1,0 +1,99 @@
+<!-- 4. templates utilizing Django block tags.
+	# prior to this is 3. views.py
+	# templates renders the webpage, describes the design with basic logic statements of the page in html.
+		#Child can override Parent's settings.
+	# save file and check if these are working in browser.
+		#check dB and make sure objects are populated.
+	# next requires connecting the classes (views) with the functions by 5. urls.py
+-->
+
+<!-- Add RvtFunctions page -->
+<!-- Story4, Step1: Add details template to the template folder, register the url pattern  -->
+<!-- this page only appears when user click on the 'details' link in the records page -->
+{% extends 'RevitFunctions/RevitFunctions_base.html' %}   						<!-- MUST remember to add the app name prior to the Masonry_base.html!!!! -->
+{% block title %}Details of Revit Functions{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-5">
+	    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">&lt;Records&gt; Revit Functions</h2>
+                <p class="lead fw-normal text-muted mb-0">Revit Functions You Can Tackle!</p>
+            </div>
+
+			<div class="table">
+				<table class="table table-responsive" id ="transactions-table">
+					<!-- Replace this with the Django populated transactions -->
+					<!-- Story4, Step4: Display all the details of the item on the details page. -->
+					<tr id="th">
+						<th>Revit Title</th>									<!-- header fields -->
+						<th>Revit Description</th>
+						<th>Revit Category</th>
+						<th>Revit Level</th>
+						<th>Job Category</th>
+						<th>Google Search Keywords</th>
+					</tr>
+
+						<tr id="td">
+							<td>{{ rvtdetails.revit_title }}</td>				<!-- shows all categories, make sure spelling match -->
+							<td>{{ rvtdetails.revit_description }}</td>			<!-- should read the custom variable from the RevitFunctions_RvitDetails function, not the function itself.-->
+							<td>{{ rvtdetails.revit_category }}</td>
+							<td>{{ rvtdetails.revit_level }}</td>
+							<td>{{ rvtdetails.job_category }}</td>
+							<!-- Story6 API, Step 4: Create a way to get any input information from the user and get the specific response for that input.
+    								(e.g. allow user to search specific terms through the api, getting all data for that search) -->
+							<td>{{ rvtdetails.google_keywords }}</td>			<!-- for predefined google search keywords -->
+						</tr>
+
+				</table>
+			</div>
+			<br>
+			<br>
+			<div class="container px-5">
+				<div class="text-center mb-5">
+					<p class="lead fw-normal text-muted mb-0">Click the SEARCH Button: <br>Predefined Google Search Keywords Has Been Generated for You!</p>
+					<br>
+					<form id="form" method="GET" action="{% url 'searchKeywords' %}">   <!-- call the method named GET and the action is to execute the block tag -->
+						<input type="text" id="query" name="q" value="{{ rvtdetails.google_keywords }}">
+																						<!-- both placeholder or value will generate the keywords -->
+						<button class="btn btn-primary btn-lg" id="searchButton" type="submit">SEARCH</button>
+																						<!-- button must be type submit -->
+					</form>
+				</div>
+			<div>
+			</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="py-5">
+    <div class="container px-5">
+	    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+				<h2 class="fw-bolder">ONLINE TUTORIALS</h2>
+				<p class="lead fw-normal text-muted mb-0">Try These Links!</p>
+			</div>
+
+			<div class="table">
+				<table class="table table-responsive">
+					<tr>
+						<th>URL Title</th>											<!-- header fields -->
+						<th>URL Link</th>
+					</tr>
+					{% for key,value in dictionary.items %}							<!-- pass in the key, value pair in dictionary.items. must add .items to dictionary, or error will state 2 values is required -->
+					<tr>
+						<td>{{ key }}</td>								<!-- populate all keys -->
+						<td><a href="{{ value }}">{{ value }}</a></td>			<!-- populate all values as links, add the anchor tag then the link is {{ vlaue }} -->
+					</tr>
+					{% endfor %}													<!-- must end the for loop -->
+				</table>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}

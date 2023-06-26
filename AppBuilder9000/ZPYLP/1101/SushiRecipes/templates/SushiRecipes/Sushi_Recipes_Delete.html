@@ -1,0 +1,37 @@
+{% extends 'SushiRecipes/Sushi_Recipes_Base.html' %}
+
+{% block title %}Delete Sushi Recipe{% endblock %}
+
+
+
+{% block content %}
+	<h1>Are you sure you want to delete this item?</h1>
+	<div class="sushi_container">
+		<form action='.' method='POST'>
+			{% csrf_token %}
+			{{ object.as_table }}
+
+			<table>
+			<tr id="head_row">
+			<th>Style</th>
+        	<th>Ingredients</th>
+        	<th>Steps</th>
+        	<th>Notes</th>
+			</tr>
+
+			<tr>
+			<td> {{object.style}} </td>
+			<td> {{object.ingredients}}</td>
+			<td> {{object.steps}}</td>
+			<td> {{object.notes}}</td>
+		</tr>
+
+
+		</table>
+
+
+
+			<p><input type="submit" value="YES" /> <a href="{% url 'Sushi_Recipes_View' %}">Cancel</a></p>
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "nba-base.html" %}
+
+{% block title %}Basketball Reference{% endblock %}
+
+{% block header %}2020-2021 Season{% endblock %}
+
+{% block content %}
+    <div class="container-main">
+        <p class="smallFont">Players who had +200 Defensive Fantasy Points</p>
+        <table id="myTable" name="brTable">
+            <thead class="sticky">
+                <tr class="headerRow">
+                    <th>Player</th>
+                    <th onclick="sortTable(1)">DRebs</th>
+                    <th onclick="sortTable(2)">Steals</th>
+                    <th onclick="sortTable(3)">Blocks</th>
+                    <th onclick="sortTable(4)">Total Def Points</th>
+                    <th>Favorite</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for value in player_dict %}
+            <tr name="{{ value.pk }}, {{ value.playerName }},
+            {{ value.defRebs }}, {{ value.steals }}, {{ value.blocks }}, {{ value.total_def_points }}">
+                <td class="left" onclick='showDiv(); savePlayerFunc("{{ value.pk }}");'>{{ value.playerName }}</td>
+                <td class="center" onclick='showDiv(); savePlayerFunc("{{ value.pk }}");'>{{ value.defRebs }}</td>
+                <td class="center" onclick='showDiv(); savePlayerFunc("{{ value.pk }}");'>{{ value.steals }}</td>
+                <td class="center" onclick='showDiv(); savePlayerFunc("{{ value.pk }}");'>{{ value.blocks }}</td>
+                <td class="right" onclick='showDiv(); savePlayerFunc("{{ value.pk }}");'>{{ value.total_def_points }}</td>
+                <td class="center"><a href="./{{ value.pk }}/favorites/"><button class="favBtn">&#10003;</button></a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container-two" id="show-div" style="display:none">
+        <p class="smallFont">Highlighted Player</p>
+        <table>
+            <thead class="sticky">
+                <tr class="headerRow">
+                    <th>Player</th>
+                    <th>DRebs</th>
+                    <th>Steals</th>
+                    <th>Blocks</th>
+                    <th>Total Def Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr>
+                    <td class="left" id="playerName"></td>
+                    <td class="center" id="defRebs"></td>
+                    <td class="center" id="steals"></td>
+                    <td class="center" id="blocks"></td>
+                    <td class="right" id="total"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+
+

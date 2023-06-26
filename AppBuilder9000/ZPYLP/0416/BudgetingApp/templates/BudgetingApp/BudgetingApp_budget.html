@@ -1,0 +1,14 @@
+{% extends 'BudgetingApp/BudgetingApp_base.html' %}
+
+{% block title %} Your Budget!{% endblock %}
+
+{% block content %}
+  <h2>Your Budget!</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

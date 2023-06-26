@@ -1,0 +1,98 @@
+{% extends 'Nutrition/Nutrition_base.html' %}
+{% load static %}
+
+
+{% block title %}Database Contents{% endblock %}
+{% block content %}
+<div class="alert alert-secondary" role="alert">
+  <h4 class="alert-heading">User Accounts and Nutrition Paths</h4>
+  <p>By clicking on the desired ID number, you can inspect, edit, or delete any database entry.</p>
+</div>
+
+<div class="container">
+
+  <div class="row">
+	  <!--<h2>ACCOUNTS IN DATABASE</h2>-->
+    <div class="col">
+		<table>
+			<tr class="">
+            	<th class="pb-3"><h4>User Accounts</h4></th>
+          	</tr>
+
+			<tr id="headerRow">
+				<td class="pr-3"><h5>Account ID</h5></td>
+
+				<td><h5>Name</h5></td>
+
+			</tr>
+			{% for account in accounts %}
+			<tr>
+
+
+				<td class="center"><a href="{% url 'display_account_details' account.id %}"><button class="btn">{{ account.id }}</button></a></td>
+				<td class="center">{{ account.name }}</td>
+
+
+			</tr>
+			{% endfor %}
+
+		</table>
+	</div>
+	  <!--<h2>NUTRITION PATHS IN DATABASE</h2>-->
+    <div class="col">
+		<table>
+			<tr class="">
+            	<th class="pb-3"><h4>Nutritional Paths</h4></th>
+          	</tr>
+
+				<tr id="headerRow">
+					<td class="pr-3"><h5>Account ID</h5></td>
+					<td class="pr-3"><h5>Name</h5></td>
+					<td class="pl-3"><h5>Area of Health</h5></td>
+
+
+
+				</tr>
+				{% for nutritionquery in nutritionqueries %}
+				<tr>
+					<td class="center"><a href="{% url 'display_nutrition_details' nutritionquery.id %}"><button class="btn">{{ nutritionquery.id }}</button></a></td>
+					<td class="center">{{ nutritionquery.name }}</td>
+					<td class="center pl-3">{{ nutritionquery.area_of_health }}</td>
+
+				</tr>
+				{% endfor %}
+
+			</table>
+	</div>
+
+  </div>
+</div>
+
+
+
+
+          <!--  <h2>NUTRITION PATHS IN DATABASE</h2>
+		<div class="tablescroll">
+			<table class="table table-responsive" id ="transactions-table2">
+
+				<tr id="headerRow">
+					<td>Nutrition ID</td>
+					<td>Name</td>
+					<td>Area of Health</td>
+
+
+				</tr>
+				{% for nutritionquery in nutritionqueries %}
+				<tr>
+					<td class="center"><a href="{% url 'display_nutrition_details' nutritionquery.id %}"><button class="btn">{{ nutritionquery.id }}</button></a></td>
+					<td class="center">{{ nutritionquery.name }}</td>
+					<td class="center">{{ nutritionquery.area_of_health }}</td>
+
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+
+			<br><br>-->
+{% endblock %}

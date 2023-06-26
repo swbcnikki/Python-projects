@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+{% block head %}
+	{% include "ClassicalMusic/includes/ClassicalMusic_head.html" %}
+{% endblock %}
+
+<body id="{% block body_id %}body_menu{% endblock %}" class="h-100">
+	<div class="container-fluid h-100 d-flex flex-column"><!--These classes are needed to keep the footer at the bottom of the screen-->
+
+
+
+		{% block nav %}
+		<nav class="navbar navbar-expand-lg fixed-top navbar-dark navbar-colors">
+			<a class="navbar-brand nav-link" href="{% url 'ClassicalMusic_home' %}">Home</a>
+
+			<!--The button shows up when the navbar items disappear in small screens to control the dropdown menu-->
+			<button class="navbar-toggler search-btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-bars "></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  		<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link active" href="{% url 'ClassicalMusic_show_releases' %}">Releases</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="{% url 'ClassicalMusic_show_compositions' %}">Compositions</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="{% url 'ClassicalMusic_show_musicians' %}">Musicians</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="{% url 'ClassicalMusic_show_roles' %}">Roles</a>
+					</li>
+					<li class="nav-item dropdown">
+						  <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add</a>
+						  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							  <a class=" nav-link" href="{% url 'ClassicalMusic_add_role' %}">Add Role</a>
+							  <a class=" nav-link" href="{% url 'ClassicalMusic_add_musician' %}">Add Musician</a>
+							  <a class=" nav-link" href="{% url 'ClassicalMusic_add_composition' %}">Add Composition</a>
+							  <a class=" nav-link" href="{% url 'ClassicalMusic_add_release' %}">Add Release</a>
+							  <a class=" nav-link disabled" href="{% url 'ClassicalMusic_add_default_data' %}">Add Default Data</a>
+						  </div>
+					</li>
+
+					<li class="nav-item dropdown">
+						  <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdownMenuLinkTEST" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TEST API</a>
+						  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkTEST">
+							  <a class="dropdown-item" href="{% url 'ClassicalMusic_TEST_api_musician_collection' %}">TEST Collection</a>
+							  <a class="dropdown-item" href="{% url 'ClassicalMusic_TEST_api_musician_single' %}">TEST single</a>
+							  <a class="dropdown-item" href="{% url 'ClassicalMusic_TEST_api_musician_collection_POST' %}">TEST POST</a>
+							  <a class="dropdown-item" href="{% url 'ClassicalMusic_TEST_api_musician_single_DELETE' %}">TEST DELETE</a>
+							  <a class="dropdown-item" href="{% url 'ClassicalMusic_TEST_api_musician_single_POST' %}">TEST EDIT</a>
+							  <a class="dropdown-item" href="{% url 'ClassicalMusic_TEST_api_composition_single' %}">TEST Composition single</a>
+
+						  </div>
+					</li>
+
+				</ul>
+				<form class="form-inline my-2 my-lg-0" method="POST" action="{% block search_action %}{% endblock %}">
+					{% csrf_token %}
+					<input class="form-control mr-sm-2" type="search" placeholder="Search MusicBrainz" aria-label="Search" name="search" required>
+					<button class="btn search-btn my-2 my-sm-0" type="submit"><i class="fas fa-search "></i></button>
+				</form>
+			</div>
+
+		</nav>
+
+		{% endblock %}
+
+
+		{% block content %}{% endblock %}
+
+
+		{% block footer %}
+			{% include "ClassicalMusic/includes/ClassicalMusic_footer.html" %}
+		{% endblock %}
+
+
+	</div>
+
+
+
+		{% block javascript %}
+    		{% include "ClassicalMusic/includes/ClassicalMusic_script.html" %}
+		{% endblock %}
+
+</body>

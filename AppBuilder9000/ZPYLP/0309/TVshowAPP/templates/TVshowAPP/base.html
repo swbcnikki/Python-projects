@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Streaming TV Shows</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'TVshowAPP/css/tvshows.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'TVshow_home' %}">Home</a>
+        <a href="{% url 'addShow' %}">Add TV Show</a>
+        <a href="{% url 'seeShow' %}">View Favorite Shows Entered</a>
+        <a href="{% url 'showIndex' %}">More info on Shows</a>
+    </nav>
+    {% block content %}{% endblock %}
+
+</body>
+</html>

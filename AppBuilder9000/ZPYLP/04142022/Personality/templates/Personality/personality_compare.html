@@ -1,0 +1,38 @@
+{% extends "Personality_base.html" %}
+
+{% block title %}Personality{% endblock %}
+
+{% block header %}Take the test or die!{% endblock %}
+
+{% block content %}
+<table class="table table-responsive" id ="transactions-table">
+    <tr id="headerRow">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>Openness</th>
+        <th>Conscientiousness</th>
+        <th>Extroversion</th>
+        <th>Agreeableness</th>
+        <th>Neuroticism</th>
+    </tr>
+    {% for key in person %}
+    <tr>
+        <td class="center"><a href="{% url 'personality_details' key.id %}">{{ key.name }}</a></td>
+        <td class="center">{{ key.age }}</td>
+        <td class="left">{{ key.sex }}</td>
+        <td class="right">{{ key.o_average_score }}%</td>
+        <td class="right">{{ key.c_average_score }}%</td>
+        <td class="right">{{ key.e_average_score }}%</td>
+        <td class="right">{{ key.a_average_score }}%</td>
+        <td class="right">{{ key.n_average_score }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+<button type="submit" class="new-account-button"><a href="{% url 'personality_create' %}">Add Person</a></button>
+{% endblock %}
+ o_average_score = models.FloatField(max_length=5)
+    c_average_score = models.FloatField(max_length=5)
+    e_average_score = models.FloatField(max_length=5)
+    a_average_score = models.FloatField(max_length=5)
+    n_average_score

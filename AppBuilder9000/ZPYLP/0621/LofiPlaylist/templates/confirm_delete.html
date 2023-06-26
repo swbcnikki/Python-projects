@@ -1,0 +1,24 @@
+{% extends 'lofi_base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+
+<div class="form_container">
+    <form method="POST" class="frm_table">
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you want to delete this song?</p>
+        <input type="submit" value="Yes">
+        <a href="{% url 'lofi_display' %}"><button type="button">Cancel</button></a>
+    </form>
+</div>
+
+
+
+
+
+{% endblock %}

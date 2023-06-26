@@ -1,0 +1,18 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_jumbotron.html" %}
+{% load staticfiles %}
+
+
+{% block jumbotron %}
+	<h2>Edit Musician through API</h2>
+    <form method="post" class="was-validated" action="http://127.0.0.1:8000/ClassicalMusic/api/v1/musicians/2/">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-custom-color">Edit Musician</button>
+        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_show_musicians' %}">Cancel</a>
+
+    </form>
+
+{% endblock %}
+
+

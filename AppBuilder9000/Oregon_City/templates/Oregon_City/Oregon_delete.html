@@ -1,0 +1,11 @@
+{% extends "Oregon_base.html" %}
+{% block content %}
+<h1>Delete</h1>
+<form method="POST">
+    {% csrf_token %}
+    <h3>Are you sure you want to delete:<br><br>{{ a.activity_name }}</h3>
+    <br>
+    <button type="submit">Delete</button>
+    </form>
+<button type="submit"><a href="{% url 'oregon_update' activity.id %}">Return</a></button>
+{% endblock %}

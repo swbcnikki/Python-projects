@@ -1,0 +1,47 @@
+{% extends "StockMarketBase.html" %}
+
+{% block StockTitle %} Account Information {% endblock %}
+
+
+
+{% block StockPageHeading %} Client Details {% endblock %}
+
+{% block Content %}
+
+
+
+   <div id="all-transactions-form">
+
+        <br><br>
+    </div>
+
+	<h2>Client list and Information</h2>
+
+
+	<table class="table table-responsive" id ="transactions-table2">
+
+		<!-- Replace this with the Django populated transactions -->
+		<tr id="headerRows">
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Initial Deposit</th>
+
+		</tr>
+
+
+		<tr>
+			<td class="center">{{ selected.first_name }}</td>
+			<td class="center">{{ selected.last_name }}</td>
+			<td class="center">{{ selected.email_address }}</td>
+			<td class="center">{{ selected.initial_deposit }}</td>
+
+
+		</tr>
+
+
+	</table>
+	<button><a href ="{% url 'edit' selected.id %}">Edit/Delete Account</a></button>
+	<br><br>
+
+{% endblock %}

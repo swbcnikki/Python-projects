@@ -1,0 +1,58 @@
+{% extends "fantasyFB_base.html" %}
+
+{% block title %}&#127944;Fantasy Roster&#127944;{% endblock %}
+
+{% block header %}The Roster{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="column">
+        <h2 class="tbl-head">Team Marvel</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                    {% if player.team == 'Marvel' %}
+                <tr>
+                    <td>{{ player.position }}</td>
+                    <td><a href="{% url 'fantasyFB_details' player.pk %}">{{ player.name }}</a></td>
+                    {% endif %}
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="column">
+        <h2 class="tbl-head">Team DC</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                    {% if player.team == 'DC' %}
+                <tr>
+                    <td>{{ player.position }}</td>
+                    <td><a href="{% url 'fantasyFB_details' player.pk %}">{{ player.name }}</a></td>
+                    {% endif %}
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

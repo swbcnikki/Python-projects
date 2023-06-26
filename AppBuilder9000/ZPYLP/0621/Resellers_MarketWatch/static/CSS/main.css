@@ -1,0 +1,56 @@
+
+/*  Background CSS  */
+body{
+    background-image: url( "../images/publicmarket.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    margin: 54px;
+}
+/*  END Background CSS  */
+
+/*  Home.html input form styling    */
+#home-row1, #home-r1c1 {
+    height:100px;
+}
+
+#home-r2c1 {
+    background-color: #E0E0E0;
+    opacity: 0.7;
+}
+
+#home-r2c1:hover {
+    opacity: 1;
+}
+/*  END Home*/
+
+/*  List.html styling   */
+
+#list-col1 {
+    overflow: auto;
+}
+
+#list-r1c1 {
+    background-color: #E0E0E0;
+    opacity: 0.7;
+}
+
+#list-r1c1:hover {
+    opacity: 0.8;
+}
+/*  END List styling    */
+
+/*  Account.html Styling    */
+#account-row1, account-r1c1 {
+    height:100px;
+}
+
+#account-r2c1 {
+    background-color: #E0E0E0;
+    opacity: 0.7;
+}
+
+#account-r2c1:hover {
+    opacity: 1;
+}
+
+/*  END Account.html Styling*/

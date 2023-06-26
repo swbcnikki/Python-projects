@@ -1,0 +1,47 @@
+{% extends "acnhbase.html" %}
+{% load static %}
+{% block title %} Your Collection {% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" class="bg_img">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ACNH DB</title>
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>ACNH DB</title>
+</head>
+
+
+
+  <body>
+    <div class="container">
+            <h1>{{ text }}</h1>
+
+                <h2>{{ text }}</h2>
+                <ul>
+                    <li>Name: {{ Items.name }}</li>
+                    <li>Amount: {{ Items.amount }}</li>
+                    <li>Type: {{ Items.item_type }}</li>
+                </ul>
+
+    </div>
+
+ </body>
+{% endblock content %}
+<div class="footer-container">
+    {% include "acnh_footer.html" %}
+</div>
+    <!-- End Footer -->
+
+</body>
+
+
+</html>
+
+
+
+

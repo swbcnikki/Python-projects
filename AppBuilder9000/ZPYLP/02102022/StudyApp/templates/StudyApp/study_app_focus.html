@@ -1,0 +1,97 @@
+{% extends "StudyApp/study_app_base.html" %}
+{% load static %}
+
+{% block title %} Focus {% endblock %}
+
+{% block header %}<br/>{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="tips-container">
+        <h1>FOCUS TIME!!!</h1>
+        <br>
+        <p>Experiencing frustrating roadblocks while working on your goal? -OR- Not sure where to start...</p>
+        <p>These tips can help guide you:</p>
+        <br/>
+        <h2>Top 10 Tips To Study Smarter Not Longer</h2>
+        <br><br>
+        <!-- Tip #1 -->
+        <h4 id="tip1">{{ top_ten.0|title }}</h4> <br>
+        <p>{{ top_ten.1 }}</p>
+        <p>{{ top_ten.2 }}</p>
+        <br><br>
+        <!-- Tip #2 -->
+        <h4 id="tip2">{{ top_ten.3|title }}</h4><br>
+        <p>{{ top_ten.4 }}</p>
+        <p>{{ top_ten.5 }}</p>
+        <br><br>
+        <!-- Tip #3 -->
+        <h4 id="tip3">{{ top_ten.6|title }}</h4><br>
+        <p>{{ top_ten.7 }}</p>
+        <p>{{ top_ten.8 }}</p>
+        <br><br>
+        <!-- Tip #4 -->
+        <h4 id="tip4">{{ top_ten.9|title }}</h4><br>
+        <p>{{ top_ten.10 }}</p>
+        <p>{{ top_ten.11 }}</p>
+        <br><br>
+        <!-- Tip #5 -->
+        <h4 id="tip5">{{ top_ten.12|title }}</h4><br>
+        <p>{{ top_ten.13 }}</p>
+        <p>{{ top_ten.14 }}</p>
+        <br><br>
+        <!-- Tip #6 -->
+        <h4 id="tip6">{{ top_ten.15|title }}</h4><br>
+        <p>{{ top_ten.16 }}</p>
+        <p>{{ top_ten.17 }}</p>
+        <br><br>
+        <!-- Tip #7 -->
+        <h4 id="tip7">{{ top_ten.18|title }}</h4><br>
+        <p>{{ top_ten.19 }}</p>
+        <p>{{ top_ten.20 }}</p>
+        <br><br>
+        <!-- Tip #8 -->
+        <h4 id="tip8">{{ top_ten.21|title }}</h4><br>
+        <p>{{ top_ten.22 }}</p>
+        <p>{{ top_ten.23 }}</p>
+        <br><br>
+        <!-- Tip #9 -->
+        <h4 id="tip9">{{ top_ten.24|title }}</h4><br>
+        <p>{{ top_ten.25 }}</p>
+        <p>{{ top_ten.26 }}</p>
+        <br><br>
+        <!-- Tip #10 -->
+        <h4 id="tip10">{{ top_ten.27|title }}</h4><br>
+        <p>{{ top_ten.28 }}</p>
+        <p>{{ top_ten.29 }}</p>
+        <p>{{ top_ten.30 }}</p>
+        <p>{{ top_ten.31 }}</p>
+        <br><br>
+        <!-- Bonus Tip -->
+        <h4 id="bonus">{{ top_ten.32|title }}</h4><br>
+        <p>{{ top_ten.33 }}</p>
+        <p>{{ top_ten.34 }}</p>
+        <p>{{ top_ten.35 }}</p>
+        <br><br>
+
+        <h5>See the full article <a href="https://www.sciencenewsforstudents.org/article/top-10-tips-study-smarter-not-longer-study-skills">here</a>.</h5>
+    </div>
+
+    <div class="sidenav-container">
+        <h2>Navigation Links</h2><br>
+        <ul class="sidenav">
+            <li><a href="#tip1">{{ top_ten.0 }}</a></li>
+            <li><a href="#tip2">{{ top_ten.3 }}</a></li>
+            <li><a href="#tip3">{{ top_ten.6 }}</a></li>
+            <li><a href="#tip4">{{ top_ten.9 }}</a></li>
+            <li><a href="#tip5">{{ top_ten.12 }}</a></li>
+            <li><a href="#tip6">{{ top_ten.15 }}</a></li>
+            <li><a href="#tip7">{{ top_ten.18 }}</a></li>
+            <li><a href="#tip8">{{ top_ten.21 }}</a></li>
+            <li><a href="#tip9">{{ top_ten.24 }}</a></li>
+            <li><a href="#tip10">{{ top_ten.27 }}</a></li>
+            <li><a href="#bonus">{{ top_ten.32 }}</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

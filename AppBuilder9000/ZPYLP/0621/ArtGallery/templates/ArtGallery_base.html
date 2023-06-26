@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="{% static '/css/artgallery.css' %}">
+        <title>{% block title %} Poseidon's Eye Gallery {% endblock %}</title>
+    </head>
+<!-- NAV BAR -->
+    <header>
+        <div class="navbar">
+            <ul>
+                <li><a href="{% url 'ArtGallery_home' %}">HOME</li></a>
+                <li><a href="{% url 'ArtGallery_users' %}">USERS</li></a>
+                <li><a href="{% url 'ArtGallery_login' %}">APPLICATION</li></a>
+            </ul>
+        </div>
+    </header>
+
+    <body id="body">
+        <div id="center">
+            {% block content %}{% endblock %}
+        </div>
+    <section class="footer">
+            <p class="footer-text"> Poseidon's Eye Gallery |&nbsp; Portland, OR &nbsp;| 2021</p>
+            <br>
+    </section>
+ </body>
+</html>

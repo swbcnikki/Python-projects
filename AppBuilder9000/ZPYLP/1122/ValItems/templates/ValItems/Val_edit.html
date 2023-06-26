@@ -1,0 +1,22 @@
+{% extends "Val_base.html" %}
+{% load staticfiles %}
+{% block title %}Valheim Items{% endblock %}
+
+<html>
+    <body>
+        {% block content %}
+
+
+                    <form method="POST">
+                            <h2>Edit an item</h2>
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <button id="new-item-button" type="submit" name="Save_Item">Add Item</button>
+                    </form>
+
+
+        {% endblock %}
+
+    </body>
+
+</html>

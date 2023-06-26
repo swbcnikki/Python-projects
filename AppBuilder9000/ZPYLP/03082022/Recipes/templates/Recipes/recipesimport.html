@@ -1,0 +1,22 @@
+{% extends 'recipesbase.html' %}
+{% load static %}
+
+{% block title %}Import{% endblock %}
+
+{% block header %} {{ recipe.0 }} {% endblock %}
+
+{% block content %}
+    <div id="recipe-details">
+        <p id="recipe-description">{{ recipe.1 }}</p><br>
+        <table id="details-table">
+            <tr>
+                <td class="details-cell">Ingredients:</td>
+                <td class="details-cell">{{ recipe.2 }}</td>
+            </tr>
+            <tr>
+                <td class="details-cell">Instructions:</td>
+                <td class="details-cell">{{recipe.3}}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

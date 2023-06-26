@@ -1,0 +1,18 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Search Results {% endblock %}
+
+{% block header %}Cryptocurrency Search Results (Powered by CoinGecko API){% endblock %}
+
+{% block content %}
+
+        <p> Name: {{ coin_info.name }} </p>
+        <p> Symbol: {{ coin_info.symbol }} </p>
+        <p> Launch Date: {{ coin_info.genesis_date }} </p>
+        <p> Market Cap Rank: {{ coin_info.market_cap_rank }} </p>
+        <p> Liquidity Score: {{ coin_info.liquidity_score }} </p>
+        <p> Hashing Algorithm: {{ coin_info.hashing_algorithm }} </p>
+        <p> Block Time in Minutes: {{ coin_info.block_time_in_minutes }} </p>
+        <p> Description: {{ coin_info.description }} </p>
+
+{% endblock %}

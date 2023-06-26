@@ -1,0 +1,53 @@
+{% extends 'Speedster/speedster_base.html' %}
+{% load static %}
+{% block title %}Speedster{% endblock %}
+
+
+{% block content %}
+
+    <section id="middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Collection</h2>
+                    <img src="{% static 'images/ferrai.jpg' %}" class="img-thumbnail" alt="lambo">
+                    <p>Check out our huge inventory of exotic sports vehicles. For every event and every occasion, whatever your taste we have something fun for everybody.</p>
+                    <a href="#" class="btn btn-warning">Click Here</a>
+                </div>
+                <div class="col-md-4">
+                    <h2>Booking</h2>
+                    <img src="{% static 'images/mclaren.jpg' %}" class="img-thumbnail" alt="mclaren">
+                    <p>Found your perfect vehicle? Book here now. Once Booked you can stop by one of our many pickup dealers. Its that easy. Choose,book,pickup and your on the road.</p>
+                    <a href="#" class="btn btn-warning">Click Here</a>
+                </div>
+                <div class="col-md-4">
+                    <h2>Become A Member</h2>
+                    <img src="{% static 'images/merce.jpg' %}" class="img-thumbnail" alt="merce">
+                    <p>Not a member, join now to become a part of our speedster club. Learn about deals/exclusive offers. As well as incoming inventory before everyone else.</p>
+                    <a href="#" class="btn btn-warning">Click Here</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="feature">
+        <div class="container">
+            <div class="row">
+                <div class="col-med-4 col-med-offset-1">
+                    <h1>OUR POLICY</h1>
+                    <ul>
+                        <li>ENDLESS OPTIONS: Choose from our forever building inventory.</li>
+                        <li>24/7 CUSTOMER SUPPORT: We provide around the clock support.</li>
+                        <li>100% PROTECTION: Drive worry free. Our protection plans provide full coverage.</li>
+                    </ul>
+                    </div>
+                    <div class="col-med-4 col-med-offset-2">
+                        <img class="big-logo" src="{% static 'images/symbol.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

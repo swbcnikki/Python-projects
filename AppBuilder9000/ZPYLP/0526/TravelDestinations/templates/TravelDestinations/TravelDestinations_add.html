@@ -1,0 +1,16 @@
+{% extends 'TravelDestinations/TravelDestinations_base.html' %}
+
+{% block title %} Add Destination {% endblock %}
+
+{% block content %} 
+
+    <div id="TravelsForm" class="TravelForm">
+    <h3 style="text-align: center;"> Add your escape from reality </h3>
+        <h4 style="background-color:powderblue; text-align: center; text-decoration: underline;"> “Travel makes one modest. You see what a tiny place you occupy in the world.” -Gustav Flaubert</h4>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="new-travel-btn" type="submit" name="Save_NewTravel"> Save New Travel Destination</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,310 @@
+body {
+  background-image: url("/static/images/charts-bg.jpg");
+  margin: 0;
+  position: relative;
+  min-height: 100vh;/*------------------------------ gives created image for bg--*/
+}
+/*---------------------- shaking logo ---------------------------------*/
+
+.logo-box {
+    border: solid black 2px;
+    /*---------------------- created gradient/linear bg, set 45 degree angle, chose color and size of stripe---------------------------------*/
+    background: repeating-linear-gradient(45deg, #ffffff, #fff 10px, #d6d6d0 10px, #8fffd8 20px);
+    position:absolute;
+    top: 30%;
+    left: 40%;
+    border-radius: 90px;
+    width: 20%;
+    justify-content: center;
+    height: 35vh;
+    text-align: center;
+}
+.fas {
+    position: relative;
+   font-size: 25vh;
+   color: #1a1a1a;
+   top: 10%;
+   transform: rotate(5deg);
+}
+
+.fas:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+/*-------------------------------------navigation section---------------------------------------------------*/
+.top-nav {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  display: flex; /*--- created nav with raw css, using flex display to only fit to content needs------------------*/
+}
+
+/*-------------------------------------navigation links section---------------------------------------------------*/
+.top-nav a {
+  border: solid 1px black;
+  color: #000000;
+  width: 25%; /*---------------------------------give an equal section to each <a>------------------------------------------------------*/
+  text-decoration: none;
+  font-size: 2vh;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+  height: 4vh;
+  font-family: 'Josefin Sans', sans-serif;
+}
+.top-nav a:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+/*------- footer section ---------- */
+
+
+#bottom-info {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font: bold;
+  font-size: 1rem;
+  font-family: 'Teko', sans-serif;
+  text-align: center;
+  padding-top: .5vh;
+}
+/*------- end of footer section ---------- */
+
+.create_charts_title{ /*-------------------------------------update charts section---------------------------------------------------*/
+
+    width: auto;
+    font-family: 'Teko', sans-serif;
+    font-size: 3vh;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1.5vh;
+    left: 40%;
+    position: absolute;
+    top: 17%;
+}
+.create-table {
+    position: absolute;
+    left: 25%;
+    top: 30%;
+    background-color: #fff;
+    width: 50%;
+}
+.music-choices {
+    font-size: 2vh;
+    font-family: 'Teko', sans-serif;
+    border: 1px solid black;
+    padding: 4vh;
+}
+.chart-button {
+    background-color: #e3e3e3;
+    width: 20%;
+    position: absolute;
+    left: 41%;
+    padding 2vh;
+    height: 3vh;
+    top: 88%;
+}
+
+.music-choices input {
+    background-color: #fff;
+    width: 70%;
+    position: absolute;
+    right: 5%;
+    height: 2.5vh;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.music-choices select {
+    width: 70%;
+    position: absolute;
+    right: 5%;
+    height: 2.5vh;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+/*------------------------------------------------ This next section is for the 'Charts' page--------------------*/
+.data-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 3vh;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 8px;
+    width: 20%;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    text-align: center;
+
+}
+.record-table {
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 70%;
+    position: absolute;
+    left: 16%;
+    top: 20%;
+}
+
+.t-row {
+    background-color: white;
+    height: 4vh;
+}
+
+.t-data {
+    font-family: 'Teko', sans-serif;
+    background-color: #d6d6d0;
+    height: 4vh;
+    text-align: center;
+}
+/*------------------------------------------------------- details page section--------------------------------------------------*/
+.details-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 3vh;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 8px;
+    width: 20%;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    text-align: center;
+}
+.detail-form {
+    background-color: white;
+    width: 40%;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    height: 40%;
+    border-radius: 8px;
+}
+
+.detail-table {
+   background-color: #e3e3e3;
+   position: absolute;
+   top: 10%;
+   left: 10%;
+   width: 80%;
+   height: 80%;
+}
+
+.detail-table label {  /*------------------------------------- this is for the label titles ex Selection, Artist name, Song title etc---------------------------------------------------*/
+    font-size: 2vh;
+    font-family: 'Josefin Sans', sans-serif;
+    left: 10%;
+}
+
+.detail-table input { /*------------------------------------- this is for the input information for, Selection, Artist name, Song title etc---------------------------------------------------*/
+    width: 90%;
+    height: 2vh;
+    padding: .8vh;
+    font-size: 2vh;
+    font-family: 'Teko', sans-serif;
+}
+
+.detail-table select {
+    width: 90%;
+    height: 3.5vh;
+    height: 3.5vh;
+    padding: .8vh;
+    overflow: hidden;
+}
+
+/*------------------------------------- this is for the input information for, Selection, Artist name, Song title etc----------------------------------------------*/
+.edit-tbl-master {
+    background-color: white;
+    position: absolute;
+    top: 25%;
+    width: 60%;
+    border: solid 1px black;
+    border-radius: 12px;
+    left: 20%;
+}
+.edit-btn {
+    position: relative;
+    float: right;
+    margin: 2vh 2vh;
+    width: 15%;
+    height: 3vh;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+.edit-tbl p {
+    height: 5vh;
+    width: 100%;
+}
+
+.edit-tbl p label {
+    font-size: 2vh;
+    position: relative;
+    left: 5%;
+    width: 15%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+
+}
+
+.edit-tbl p input {
+    position: absolute;
+    left: 30%;
+    height: 3vh;
+    width: 60%;
+}
+
+.edit-tbl p select {
+    position: absolute;
+    left: 30%;
+    height: 3vh;
+    width: 20%;
+}
+
+/*------------------------------------- top-100 ----------------------------------------------*/
+.hot-one-title {
+    font-family: 'Teko', sans-serif;
+    font-size: 3vh;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 8px;
+    width: 20%;
+    position: absolute;
+    top: 8%;
+    left: 40%;
+    text-align: center;;
+}
+.chart-row {
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    top: 18%;
+}
+
+.chart-header {
+    background-color: #e3e3e3;
+    border: solid 1px black;
+}
+
+.music-row {
+    border: solid 1px black;
+    background-color: white;
+}

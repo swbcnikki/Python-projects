@@ -1,0 +1,19 @@
+{% extends "CryptoApp/CryptoApp_base.html" %}
+
+{% block title %} Search Coins {% endblock %}
+
+{% block header %}Coin Lookup{% endblock %}
+
+{% block content %}
+
+    <p>Here you can look up information on a specific coin by currency name (e.g., 'bitcoin'):</p>
+    <div class="cryptoapp-lookup--form">
+        <form method="POST" action="results/">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="search-crypto-button" type="submit" name="crypto_lookup">Search</button>
+        </form>
+    </div>
+
+
+{% endblock %}

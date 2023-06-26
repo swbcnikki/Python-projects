@@ -1,0 +1,19 @@
+{% extends "Motorcycling/motorcycling_base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<center>
+<h3>Edit Your Route</h3>
+<div id="form-container" class="table-responsive w-50 mx-auto">
+    <form method="POST">
+        {% csrf_token %}
+        <table id="table" class="table table-dark table-bordered table-hover text-center">
+            {{ form.as_p }}
+        </table>
+        <button type="submit" value="update" class="btn btn-dark btn-sm btn-block w-20 mx-auto">Edit Review</button>
+    </form>
+</div>
+</center>
+{% endblock %}

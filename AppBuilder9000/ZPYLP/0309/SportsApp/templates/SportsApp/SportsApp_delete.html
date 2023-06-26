@@ -1,0 +1,34 @@
+<!--Extends from the base html-->
+{%extends "SportsApp/SportsApp_base.html" %}
+
+<!--Title-->
+{% block title %}SportsApp{% endblock %}
+
+{% block header %}
+<div class="createPage-header">
+    <h1>Delete Confirmation Page</h1>
+</div>
+
+{% endblock %}
+
+{% block content%}
+<div class="createPage-text">
+    <div class="createPage-txt-wrapper">
+    <form method="POST" action=".">
+        {% csrf_token %}
+        <h2>Confirm Delete</h2>
+        <p>Do you really want to delete {{ game.email }}'s saved game entry from the database?</p>
+
+        {{ build.as_p }}
+
+        <input type="submit" value="Confirm Delete" class="btn">
+        <a href="../game_details/"><button class="btn" type="button">Cancel</button></a>
+    </form>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

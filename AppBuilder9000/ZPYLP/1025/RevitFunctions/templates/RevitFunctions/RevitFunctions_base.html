@@ -1,0 +1,48 @@
+<!-- Base template
+        other templates that inherent the settings from base must add Django block tag, extends to this html,
+        Base template that inherent from other templates must add Django block tag, include that html.
+        but it can't have both, as it will cause RecursionError at: maximum recursion depth exceeded...,
+        This means: Masonry_base.html with this line of code is running as an infinite loop -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=UTF-8">                   <!-- Meta information is details about the web page itself, such as the title of the page -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="author" content="Amy Ling"/>
+        <meta name="description" content="an app to show case Revit functionality and allowing users to search & log what they should learn next" />
+
+
+        <!-- Core theme CSS (includes Bootstrap) -->
+        <link href="{% static 'css/RevitFunctions.css' %}" rel="stylesheet" type="text/css"/>
+
+
+        <!-- MUST CHECK THIS FOR EVERY PROJECT!!!!! -->
+        <!-- must add Bootstrap jQuery or NavBar to function properly, vertical navbar & horizontal navbar was on in correct location -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- source JS file -->
+        <script src="{% static 'js/RevitFunctions.js' %}"></script>
+
+    </head>
+    <body>
+
+        {% include "RevitFunctions/RevitFunctions_navbar.html" %}
+                                                <!-- only add it in base html, inheritance, will show up in all other documents based on base
+                                                                do not add Django Block tag of extends to base html in navbar html, as it will cause error:
+                                                                RecursionError at: maximum recursion depth exceeded...,
+                                                                This means: base html with this line of code is running as an infinite loop -->
+
+
+        {% block content %} {% endblock %}
+                                                 <!-- only add it in base html, inheritance, will show up in all other documents based on base
+                                                                do not add Django Block tag of extends to contact html in contact html, as it will cause error
+                                                                RecursionError at: maximum recursion depth exceeded...,
+                                                                This means: base html with this line of code is running as an infinite loop -->
+
+    </body>
+
+    <footer>
+        {% include "RevitFunctions/RevitFunctions_footer.html" %}
+    </footer>
+</html>

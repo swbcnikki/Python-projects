@@ -1,0 +1,24 @@
+{% extends "nba-base.html" %}
+
+{% block title %}Enter New Player{% endblock %}
+
+{% block header %}Enter New Player{% endblock %}
+
+{% block content %}
+    <div class="home-form container-main">
+            <form method="post">
+                <h4>Enter new player's defensive stats:</h4>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <button class="lilBtn" type="submit">Submit</button>
+                <button class="lilBtn btnRight"><a href="{% url 'display-all' %}">Cancel</a></button>
+                <br><br>
+            </form>
+    </div>
+
+<!-- Footer Section -->
+    <footer>
+        <p>Created by Eric Lemiere</p>
+    </footer>
+{% endblock %}

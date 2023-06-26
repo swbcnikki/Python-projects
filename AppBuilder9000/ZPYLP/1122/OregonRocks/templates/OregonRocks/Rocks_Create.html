@@ -1,0 +1,16 @@
+{% extends 'OregonRocks/OregonRocksBase.html' %}
+{% block title %}Rockhounding Locations{% endblock %}
+
+{% block content %}
+<div class="form_container">
+    <form method="POST">
+        <h1>Rockhounding Location Form</h1>
+        <div class="frmObject_container">
+        {% csrf_token %}
+        {{ form.as_p }}
+            <button type="submit" name="Rocks_Create">Add Location</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

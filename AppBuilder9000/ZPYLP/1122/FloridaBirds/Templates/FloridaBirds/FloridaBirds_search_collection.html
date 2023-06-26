@@ -1,0 +1,14 @@
+{% extends 'FloridaBirds/FloridaBirds_base.html' %}
+
+{% block title %}See all Birds{% endblock %}
+
+{% block content %}
+
+    {% if searched %}
+        <p>you searched for {{ searched }}</p>
+
+    {% else %}
+        <p>You forgot to search</p>
+    {% endif %}
+
+{% endblock %}

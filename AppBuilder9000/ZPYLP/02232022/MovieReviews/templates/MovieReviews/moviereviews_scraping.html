@@ -1,0 +1,30 @@
+{% extends "MovieReviews/moviereviews_base.html" %}
+
+{% load static %}
+
+{% block title %}Top 25 Movies{% endblock %}
+<!---This page scrapes data from a webpage and displays that info in a table --->
+{% block content %}
+<h1>Top 25 Movies of all Time</h1>
+<div id="table_container" class="table-responsive w-50 mx-auto">
+    <table id="table" class="table table-dark table-bordered table-striped text-center" data-toggle="table">
+            <thread class="thread-dark">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Rating</th>
+                </tr>
+            </thread>
+            <tbody>
+            {% for title, rating in movie_info %}
+                <tr>
+                    <td>{{ title }}</td>
+                    <td>{{ rating }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+</div>
+
+{% endblock %}
+

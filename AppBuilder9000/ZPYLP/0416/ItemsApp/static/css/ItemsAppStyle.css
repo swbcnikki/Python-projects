@@ -1,0 +1,170 @@
+html {
+    height: 100%;
+    overflow: scroll;
+}
+
+body {
+    background: black url(https://www.runescape.com/img/rsp777/bg2.jpg) repeat-y center top;
+    margin: 0 auto;
+    padding: 0 50px;
+    width: 815px;
+    height: 100%
+    overflow: scroll;
+}
+
+.banner {
+    background: url(https://www.runescape.com/img/rsp777/title2/rslogo3.png) no-repeat center;
+    display: block;
+    margin-bottom: 25px;
+    min-height: 135px;
+    text-align: center;
+}
+
+.footer {
+    display: block;
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+    background: transparent;
+    color: white;
+    text-align: center;
+}
+
+.item_panel {
+    text-align: center;
+    margin: 5px auto;
+    width: 100%;
+    height: auto;
+    background: url(https://www.runescape.com/img/rsp777/scroll/backdrop_745.gif) repeat-y top center;
+	border: 1px solid #d6d6d6;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    transition: 0.3s;
+}
+
+.item_panel:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+.frmBtn_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+.btn {
+    background-color: white;
+	flex-grow: 2;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    width: 150px; /* button size */
+    margin: 2% 2% 2% 2%;
+    color: black;
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #355664;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+input[type="submit"] {
+    background-color: white;
+    flex-grow: 1;
+    width: 150px;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+    color: black;
+    padding: 9px 0px 9px 0px;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #355664;
+    color: white;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav_2 {
+  float: left;
+}
+
+.nav_2 a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.nav_2 a:hover {
+  background: transparent;
+}
+
+.about_panel {
+    text-align: center;
+    margin: 5px auto;
+    width: 100%;
+    height: auto;
+    background: url(https://www.runescape.com/img/rsp777/scroll/backdrop_745.gif) repeat-y top center;
+	border: 1px solid #d6d6d6;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    transition: 0.3s;
+}
+
+.about_panel:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+	transition: opacity 0.3s ease-in-out;
+}
+
+h2, p {
+    text-align: center;
+}
+
+.view_panel {
+    margin: 5px auto;
+    width: 100%;
+    height: auto;
+    background: url(https://www.runescape.com/img/rsp777/scroll/backdrop_745.gif) repeat-y top center;
+	border: 1px solid #d6d6d6;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+	border-radius: 10px;
+    transition: 0.3s;
+}
+

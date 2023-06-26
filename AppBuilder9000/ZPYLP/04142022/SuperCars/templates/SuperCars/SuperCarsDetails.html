@@ -1,0 +1,34 @@
+{% extends "SuperCarsBase.html" %}
+
+{% block header %}SuperCars Details:{% endblock %}
+
+{% block content %}
+
+
+<div class="admin_panel">
+    <table>
+       <thead>
+        <tr>
+            <th>type</th>
+            <th>name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>image</th>
+        </tr>
+       </thead>
+        <tbody>
+            <tr>
+                <td>{{ products.type }}</td>
+                <td>{{ products.name }}</td>
+                <td>{{ products.description }}</td>
+                <td>{{ products.price }}</td>
+                <td>{{ products.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "Blacksmithing/base.html" %}
+{% load static %}
+
+{% block title %} Best Tools {% endblock %}
+
+{% block header %}<h1>All Tools</h1>{% endblock %}
+
+{% block content %}
+    <div class="container-sm" style="font-size: small; margin: 0 600px;">
+        <table class="table table-hover table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col" data-field="name" data-sortable="true">Tool</th>
+                    <!--    added colspan 3 to make the small lightgrey lines on top of the table span
+                            across the whole table. It's a small cosmetic thing but it looks better -->
+                    <th scope="col" colspan="3" data-field="price" data-sortable="true">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for Tool in tool_list %}
+
+
+                <tr>
+                    <td>{{ Tool }}</td>
+                    <td>{{ Tool.price }}</td>
+                    <td><a href="{% url 'Tool_Details' Tool.id %}">Details</a></td>
+                    <td><a href="{% url 'Edit_Tools' Tool.id %}">Edit</a></td>
+                    <td><a href="{% url 'Delete_Tools' Tool.id %}">Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

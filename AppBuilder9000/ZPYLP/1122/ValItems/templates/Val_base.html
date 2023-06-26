@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en" class="bg_img">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/val_basic.css' %}">
+</head>
+
+<div class="header">
+    <h1>Valheim Items</h1>
+</div>
+
+<div class="navbar">
+    <ul class="base_ul">
+        <li><a href="{% url 'Val_home' %}">Home</a></li>
+        <li><a href="{% url 'Items' %}">Items</a></li>
+        <li><a href="{% url 'AddItem' %}">Add</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+</div>
+
+<body id="body">
+
+    <div class="form-container">
+        {% block content %}{% endblock %}
+        <div class="footer">
+            <p>Valheim Items - &copy Terry Nye 2021</p>
+        </div>
+    </div>
+
+{% block script %}
+{% endblock %}
+
+
+</body>
+
+</html>

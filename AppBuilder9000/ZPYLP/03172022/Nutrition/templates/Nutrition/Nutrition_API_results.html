@@ -1,0 +1,72 @@
+{% extends 'Nutrition/Nutrition_base.html' %}
+{% load static %}
+
+{% block content %}
+{% for item in user_query.items %}
+<div class="alert alert-success" role="alert">
+
+    Success! We found the info on <strong class="pl-2 pr-2">{{ item.1 }}</strong>you were looking for below . . .
+
+
+</div>
+{% endfor %}
+<!--Future idea: show the user what it was they searched within the alert-success text above-->
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="">
+          <tr class="">
+            <th class=""><h4>Nutrients</h4></th>
+          </tr>
+        <tr class="">
+            <td>Calories (kcal)</td>
+        </tr>
+        <tr class="">
+            <td>Total Fat (grams)</td>
+        </tr>
+        <tr class="">
+            <td>Saturated Fat (grams)</td>
+        </tr>
+        <tr class="">
+            <td>Cholesterol (milligrams)</td>
+        </tr>
+        <tr class="">
+            <td>Sodium (milligrams)</td>
+        </tr>
+        <tr class="">
+            <td>Total Carbohydrates (grams)</td>
+        </tr>
+        <tr class="">
+            <td>Dietary Fiber (grams)</td>
+        </tr>
+        <tr class="">
+            <td>Sugars (grams)</td>
+        </tr>
+        <tr class="">
+            <td>Protein (grams)</td>
+        </tr>
+        <tr class="">
+            <td>Potassium (milligrams)</td>
+        </tr>
+
+	  </table>
+    </div>
+    <div class="col">
+      <table class="">
+      <tr class="">
+        <th class=""><h4>Values</h4></th>
+      </tr>
+        {% for key, value in nutrients_dict.items %}
+            <tr>
+                <td>{{ value }}</td>
+            </tr>
+
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

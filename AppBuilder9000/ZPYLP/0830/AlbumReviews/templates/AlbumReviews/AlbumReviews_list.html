@@ -1,0 +1,24 @@
+{% extends 'AlbumReviews/AlbumReviews_base.html' %}
+	{% block title%}Album Collection{% endblock %}
+    {% block header %}Album Collection{% endblock %}
+
+	{% block content %}
+		<div>
+            <div class="album_list">
+                {% for a in albums %}
+                    <div class="album">
+                        <h2>
+                            {% filter upper %}
+                                {{ a.Name }} &#8212; {{ a.Artist }}
+                            {% endfilter %}
+                        </h2>
+                        <span class="album_details"><h3>Year:</h3> {{ a.Year }}</span>
+                        <span class="album_details"><h3>Genre:</h3> {{ a.Genre }}</span>
+                        <span class="album_details"><h3>Rating:</h3> {{ a.Rating }}</span><br>
+                        <p>{{ a.Review|truncatechars:400 }}</p>
+                        <a href="{% url 'AlbumReviews_details' a.id %}"><button>View Details</button></a>
+                    </div>
+                {% endfor %}
+            </div>
+		</div>
+	{% endblock %}

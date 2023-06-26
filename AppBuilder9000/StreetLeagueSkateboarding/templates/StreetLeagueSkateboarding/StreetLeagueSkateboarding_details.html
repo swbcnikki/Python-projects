@@ -1,0 +1,13 @@
+{% extends "StreetLeagueSkateboarding_base.html" %}
+
+{% block content %}
+<h1>Details</h1>
+<h3>
+    {{ entry.first_name }} {{ entry.last_name }}<br><br>
+    Age: {{ entry.age }}<br><br>
+    Hometown: {{ entry.hometown }}
+</h3>
+<p>{{ entry.body }}</p>
+<button><a href="{% url 'StreetLeagueSkateboarding_update' entry.id %}">Update Entry</a></button>
+{{ entry.as_p }}
+{% endblock %}

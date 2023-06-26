@@ -1,0 +1,69 @@
+{% extends "find_pet_base.html" %}
+{% load static %}
+
+{% block title %}Pet Details{% endblock %}
+{% block content %}
+<script src="{% static 'js/find_pet.js' %}" defer></script>
+
+
+<div id="available_bg">
+</div>
+
+<p id="applicant_title">Ready to rescue? Contact now!</p>
+
+    <div class="row">
+
+        <div class="listing_container">
+            <div class="header_container2">
+                <p class="container_header">Details for: {{ pet.name }}</p>
+            </div>
+            <table class="available_table">
+                <tr class="table_heading">
+					<th>Age</th>
+					<th>Birthday</th>
+					<th>Breed</th>
+					<th>Color</th>
+                    <th>Animal</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+				</tr>
+                <tr>
+					<td>{{ pet.age }}</td>
+					<td>{{ pet.birthday }}</td>
+					<td>{{ pet.breed }}</td>
+					<td>{{ pet.color }}</td>
+                    <td>{{ pet.animal }}</td>
+                    <td>{{ pet.location }}</td>
+                    <td>{{ pet.email }}</td>
+                </tr>
+            </table>
+            <table class="available_table">
+                <tr>
+                    <th id="description_heading">Description</th>
+                </tr>
+                <tr>
+                    <td id="table_description">{{ pet.description }}</td>
+                </tr>
+            </table>
+
+            <div class="edit_delete_container">
+                <button class="delete_btn" id="open_modal">Delete</button>
+                <a id="edit_btn" href="{% url 'edit_pet_listing' pet.id %}">Edit</a>
+                <p class="edit_caption">Need to edit or delete this listing?</p>
+            </div>
+        </div>
+
+    </div>
+
+<div id="delete_modal" class="modal">
+    <div class="modal_content">
+        <a id="close" class="close_btn">Close</a>
+        <form action="" method="post">
+            {% csrf_token %}
+            <button id="delete_btn" type="submit" name="delete_pet">Delete</button>
+        </form>
+        <p class="modal_confirmation">Are you sure you want to delete {{pet}}?</p>
+    </div>
+</div>
+
+{% endblock %}

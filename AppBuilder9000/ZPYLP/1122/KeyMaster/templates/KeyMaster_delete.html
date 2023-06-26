@@ -1,0 +1,18 @@
+{% extends 'KeyMaster_base.html' %}
+{% block title %}Add Game to List{% endblock %}
+{% block content %}
+    <h3>Delete Confirmation</h3>
+    <div class="GameContainer">
+        <form method="POST" action=".">
+            {% csrf_token %}
+            <h2>Confirm Delete</h2>
+            <p>Are you sure you would like to delete this game?</p>
+
+            {{ game.as_p }}
+
+            <input class="button" type="submit" value="Yes, Delete Game">
+            <a href="{% url 'KeyMaster_home' %}"><button class="button" type="button">Cancel</button></a>
+        </form>
+
+    </div>
+{% endblock %}

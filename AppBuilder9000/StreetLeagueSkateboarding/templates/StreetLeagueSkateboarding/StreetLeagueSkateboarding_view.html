@@ -1,0 +1,26 @@
+{% extends "StreetLeagueSkateboarding_base.html" %}
+
+{% block content %}
+
+<h1>Contestants</h1>
+<table>
+    <tr>
+        <th>First Name</a></th>
+        <th>Last Name</a></th>
+        <th>Age</a></th>
+        <th>Hometown</a></th>
+    </tr>
+    {% for e in entry %}
+    <tr>
+        <td><a href="{% url 'StreetLeagueSkateboarding_details' e.id %}">{{ e.first_name }}</a></td>
+        <!--e is for 'e in entry', id is for primary key-->
+        <td>{{ e.last_name }}</td>
+        <td>{{ e.age }}</td>
+        <td>{{ e.hometown }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<p>Click a first name above for more details!</p>
+<button><a href="{% url 'StreetLeagueSkateboarding_create' %}">Add Skater</a></button>
+
+{% endblock %}

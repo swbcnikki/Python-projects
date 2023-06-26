@@ -1,0 +1,23 @@
+{% extends "PetAdoption_base.html" %}
+{% load static %}
+
+{% block title %}Add Pet to Our Database{% endblock %}
+
+{% block header %}Add Pet to Our Database{% endblock %}
+
+{% block content %}
+    <div class="form_container">
+        <form method="POST">
+            <div class="frmObject_container">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input value="{{ animal.name }}">{{ form.name }}
+                </div>
+            </div>
+            <div class="frmBtn_container">
+                <button class="formbtn" type="submit" name="Add_Pet">Add</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

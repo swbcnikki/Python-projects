@@ -1,0 +1,44 @@
+{% extends 'FloridaBirds/FloridaBirds_base.html' %}
+
+    {% block title %}See all Birds{% endblock %}
+
+    {% block content %}
+
+<!- code to display all birds with certain fields.->
+<br>
+<h2> The birds on your app are:</h2>
+<br>
+{% for bird in bird_data %}
+
+
+<div class="col-sm-5">
+<div class="card">
+  <h5 class="card-header">{{ bird | upper }}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ bird.description }}</h5>
+    <p class="card-text">{{ bird.habitat}}</p>
+
+      <!-href specifies the url that must be gone to once "click here for more information" is clicked->
+    <a href="{% url 'florida_birds_details' bird.pk %}" class="btn btn-primary">Click here for more information</a>
+
+  </div>
+</div>
+</div>
+
+<br>
+
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}

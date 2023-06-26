@@ -1,0 +1,18 @@
+{% extends "PreciousMetals_base.html" %}
+
+{% block title %} Delete Your Inventory {% endblock title %}
+{% block content %}
+
+<br>
+<br>
+<div class="delete_style">
+    <form method="POST">
+    {% csrf_token %}
+     <h2>Are you sure you want to delete: {{ item_dets }}? </h2>
+        <input class="submit" type="submit" value="Delete">
+        <a href="{% url 'PreciousMetals_details' item_dets.id%}"><button class="submit" type="button">Cancel</button></a>
+    </form>
+</div>
+<br><br>
+
+{% endblock content %}

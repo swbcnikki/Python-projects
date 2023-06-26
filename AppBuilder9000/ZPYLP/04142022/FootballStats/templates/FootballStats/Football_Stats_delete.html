@@ -1,0 +1,20 @@
+{% extends "FootballStats/Football_Stats_base.html" %}
+{% load static %}
+{% block title %}  {% endblock %}
+
+{% block header %}
+    <h1 class="heading text-center text-white">Delete Player Stat</h1>
+{% endblock %}
+
+{% block content %}
+<div id="form-container text center">
+    <form method = 'POST'>
+        {% csrf_token %}
+        {{ item.as_p }}
+        <h3 style="text-align: center; color: white;">Deleting Player: {{ item.name }}</h3>
+            <div class="container text-center">
+            <button type="submit" class="btn btn-primary btn-block w-25 mx-auto text-center" onclick="return confirm('Are you sure you want to delete player stat?')">Delete</button>
+            </div>
+    </form>
+</div>
+{% endblock %}

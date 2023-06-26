@@ -1,0 +1,26 @@
+.bg_img{
+
+  background-image: url('/Static/Images/Ballpoint-Pen.jpg');
+}
+
+.bg_color{
+
+background-color: lightblue;
+
+}
+
+
+.bg_img_test {
+    background-color: gray;
+    background-image: url('/Static/Images/Ballpoint-Pen.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+    background-position: center;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+

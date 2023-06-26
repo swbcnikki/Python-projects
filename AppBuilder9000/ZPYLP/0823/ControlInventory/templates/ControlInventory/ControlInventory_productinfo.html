@@ -1,0 +1,28 @@
+{% extends "ControlInventory/ControlInventory_base.html" %}
+{% load static %}
+
+{% block title %}Product Information{% endblock %}
+
+{% block header %}Inventory Control Database {% endblock %}
+
+{% block content %}
+    <div id =>
+			<table id="products">
+				<tr>
+					<th>Account:</th>
+					<th>Product Name:</th>
+					<th>Product Cost:</th>
+					<th>Product Description:</th>
+				</tr>
+				{% for Product in inv_list %}
+				<tr>
+					<td>{{ Product.account }}</td>
+					<td>{{ Product.name }}</td>
+					<td>{{ Product.amount }}</td>
+					<td>{{ Product.info }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+    </div>
+
+{% endblock %}

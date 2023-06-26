@@ -1,0 +1,33 @@
+{% extends "MMAStats/MMA_base.html" %}
+{% load static %}
+
+{% block content %}
+{% comment %}
+    this page displays a single fighter from a selection made on the stats page.
+{% endcomment %}
+
+
+<h1>Fighter Details</h1>
+<table border="1", width="600">
+    <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Defenses</td>
+            <td>Pound For Pound Rank</td>
+            <td>Record</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td class="dataEntries">{{ stat.first_name }}</td>
+            <td class="dataEntries">{{ stat.last_name }}</td>
+            <td class="dataEntries">{{ stat.defenses }}</td>
+            <td class="dataEntries">{{ stat.p4p_rank }}</td>
+            <td class="dataEntries">{{ stat.record }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

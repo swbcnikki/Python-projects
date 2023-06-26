@@ -1,0 +1,37 @@
+{% extends "ClassicalMusic/ClassicalMusic_base_jumbotron.html" %}
+{% load staticfiles %}
+
+
+{% block jumbotron %}
+	<h2>Add Track</h2>
+    <h3>{{ release }}</h3>
+    <form method="post" class="was-validated">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ formset.management_form }}
+            {% for form in formset %}
+                {{ form.as_p }}
+                <hr class="hr_multiple_form">
+            {% endfor %}
+        <button type="submit" class="btn btn-custom-color">Save Tracks</button>
+        <a class="btn btn-custom-color float-right" href="{% url 'ClassicalMusic_show_releases' %}">Cancel</a>
+        <br><br>
+        <div class="button-container">
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_musician' %}">Musician</a>
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_composition' %}">Composition</a>
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_release' %}">Release</a>
+            <a class="btn btn-custom-color" href="{% url 'ClassicalMusic_add_role' %}">Role</a>
+        </div>
+
+    </form>
+
+{% endblock %}
+
+
+{% block javascript %}
+    {{ block.super }}
+    {# This script does not work if you put it in a .js file. It can't read the django variable then #}
+    <script>
+        $(".release-prefill").val({{ release.pk }})
+    </script>
+{% endblock %}

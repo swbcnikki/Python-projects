@@ -1,0 +1,239 @@
+
+body, html {
+    color: white;
+    height: 100%;
+    background: rgb(194,189,176);
+    background: linear-gradient(0deg, rgba(194,189,176,0.7908205518535539) 36%, rgba(0,0,0,1) 68%);
+    scroll-behavior: smooth;
+
+}
+/*header image*/
+.hero-image {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../static/images/HA_imageOne.jpg');
+    height: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+/*header image overlay text & animation*/
+.hero-text{
+    text-align: right;
+    position:absolute;
+    top: 45%;
+    left: 85%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 34px;
+    text-shadow: 2px 2px 8px #a09c91;
+    -webkit-animation: movehero-text 3s;
+    animation: movehero-text 3s;
+}
+
+@keyframes movehero-text {
+    from {top: -100vw;}
+    to {center: 0vw;}
+}
+
+@media screen and (max-width: 600px) {
+    .hero-text {
+    font-size: 14px;}
+}
+
+/*navigation*/
+.topnav {
+    background: rgb(194,189,176);
+    background: linear-gradient(0deg, rgba(194,189,176) 2%, rgba(0,0,0,0.4) 98%);
+    opacity: 80%;
+    overflow: hidden;
+    -webkit-animation: movNav 5s;
+    animation: moveNav 5s;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+
+.topnav a:hover {
+    color: black;
+}
+
+.topnav a.active {
+    color: black;
+    text-decoration:
+}
+
+.topnav .icon {
+    display: none;
+}
+/*responsive settings for nav*/
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    }
+}
+
+.index-form-container {
+    margin-left: 24%;
+    margin-top: 32px;
+    width: 50%;
+}
+
+.searchbox {
+    margin-top: -20px;
+    width: 30%;
+    height: 4%;
+    border-radius: 5px;
+    box-shadow: 1px 1px dark gray;
+}
+
+.index-button {
+    display: block;
+    decoration:none;
+    padding:0px;
+    margin-left:25%;
+    margin-top: -3%;
+    border: none;
+}
+
+.index-button a:hover {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+/*form styling*/
+label {
+    width: 60px;
+    margin-left:0;
+    font-wight: bold;
+    opacity: initial;
+}
+
+input, select {
+    width: 60px;
+    border-radius: 5px;
+    box-shadow: 1px 1px dark gray;
+}
+
+.add-horse-form {
+    background-color: #c2bdb0;
+    position: relative;
+    padding-top: 4px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.add-horse-button {
+    background-color: #c2bdb0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-horse-button a:hover {
+    background-color: #c2bdb0;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.index-container {
+    background-color: #c2bdb0, 0.5;
+    position: relative;
+    padding-top: 4px;
+    margin-top: 2px;
+    margin-left:50%;
+    width: 80%;
+    align: center;
+}
+
+.index-container a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+* {
+box-sizing: border-box;
+}
+
+.row {
+margin-left: -400px;
+margin-right: -400px;
+}
+
+.column {
+float: left;
+width: 50%;
+padding: 8px;
+}
+
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+.detail_btn {
+    background-color: #c2bdb0;
+    decoration: none;
+    border: .50px;
+    font-size: 20px;
+    margin-left: 4px;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.detail_btn:active {
+    background-color: #c2bdb0;
+    decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 50%;
+    border: none;
+    padding: 2px;
+}
+
+th, td {
+    text-align: left;
+    padding:20px
+}
+
+#hide {
+    display:none;
+    margin-left: -25%;
+    padding: 20px;
+}
+
